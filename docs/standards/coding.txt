@@ -1,0 +1,31 @@
+Coding
+------
+
+Standards per filetype:
+
+CSS  - W3C CSS3
+HTML - W3C HTML5
+PHP - PEAR Coding Standard
+XML - W3C XML 1
+XSL - W3C XSL 2
+
+Extras for PHP:
+
+1. PHP MessDetector with default rules for
+
+- codesize
+- design
+- naming
+- unusedcode
+
+2. PHP Copy Paste Detector with default rules
+
+3. Specific PHP rules:
+
+- No use of eval() and alike functionality like the preg_match-e-modifier
+- No use of echo and other verbose functions unless there is no alternative
+- No use of the use statement for imports due to bugs with some PHP handlers
+- Only one command per line and reduce nesting of commands as good as possible
+- No code that is within comments, link to e.g. tasks and tickets instead
+- No use of && and || because AND and OR do the same and are more readable
+- All parts that are unfinished or might need later changes must have a TODO tag

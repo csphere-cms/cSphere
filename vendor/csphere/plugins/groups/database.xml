@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>groups</plugin>
+    <tables>
+        <table name="groups">
+            <columns>
+                <column name="group_id" datatype="serial" max="0" default="" />
+                <column name="group_name" datatype="varchar" max="80" default="" />
+                <column name="group_since" datatype="integer" max="0" default="0" />
+                <column name="group_url" datatype="varchar" max="200" default="" />
+                <column name="group_info" datatype="text" max="0" default="" />
+            </columns>
+            <primary>
+                <column name="group_id" />
+            </primary>
+            <uniques>
+                <unique name="group_name">
+                    <column name="group_name" />
+                </unique>
+            </uniques>
+        </table>
+    </tables>
+    <data>
+        <insert table="options">
+            <column name="option_plugin">groups</column>
+            <column name="option_name">main_id</column>
+            <column name="option_value">0</column>
+        </insert>
+    </data>
+</database>

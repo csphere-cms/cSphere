@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="debug" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Debug</name>
+    <info>Contains debug tools and information</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="allow_url_fopen">Read from URLs</define>
+        <define name="allow_url_include">Execute from URLs</define>
+        <define name="backtrace">Backtrace</define>
+        <define name="call">Call</define>
+        <define name="code">Code</define>
+        <define name="component">Component</define>
+        <define name="control">Control</define>
+        <define name="database">Database</define>
+        <define name="debug">Debug</define>
+        <define name="disk_space">Disk space</define>
+        <define name="errors">Errors</define>
+        <define name="extensions">Extensions</define>
+        <define name="file">File</define>
+        <define name="file_uploads">File uploads</define>
+        <define name="hostname">Hostname</define>
+        <define name="includes">Includes</define>
+        <define name="line">Line</define>
+        <define name="logs">Logs</define>
+        <define name="max_input_time">Form data time limit</define>
+        <define name="max_execution_time">Execution time limit</define>
+        <define name="memory">Memory</define>
+        <define name="memory_limit">Memory limit</define>
+        <define name="message">Message</define>
+        <define name="ms">ms</define>
+        <define name="name">Name</define>
+        <define name="open_basedir">Secured path</define>
+        <define name="operating_system">Operating system</define>
+        <define name="parsetime">Parsetime</define>
+        <define name="php">PHP</define>
+        <define name="php_details">PHP Details</define>
+        <define name="php_extensions">PHP extensions</define>
+        <define name="php_handler">PHP handler</define>
+        <define name="php_setting">PHP setting</define>
+        <define name="php_version">PHP version</define>
+        <define name="post_max_size">Form data size limit</define>
+        <define name="short_open_tag">Open PHP like XML</define>
+        <define name="space">Space</define>
+        <define name="space_total">Total space</define>
+        <define name="space_used">Used space</define>
+        <define name="space_free">Free space</define>
+        <define name="step">Step</define>
+        <define name="upload_max_filesize">Upload limit per file</define>
+        <define name="value">Value</define>
+        <define name="version">Version</define>
+        <define name="webserver">Webserver</define>
+    </definitions>
+</language>

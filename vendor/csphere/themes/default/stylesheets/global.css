@@ -1,0 +1,42 @@
+/*------------------------------------------------------------
+
+  *Filename             global.css
+  *Description          BASIC STYLES CSS
+  *Version              0.1 (2013-11-23)
+  *Website              http://www.csphere.eu
+  *Author               Stefan Gräwe <sgrwe>
+
+------------------------------------------------------------*/
+
+
+body {
+    background-color: #FFF;
+    color: #333;
+    font-family: Arial, Tahoma, Verdana, "Helvetica Neue", "Neue Helvetica", Helvetica, sans-serif;
+    padding: 75px 0 60px;
+}
+
+
+/*  __LINKS
+------------------------------------------------------------*/
+a:link, a:visited { outline: none; text-decoration: none; }
+a:hover { color: #D72322; }
+
+
+/*  __BUTTONS
+------------------------------------------------------------*/
+button { outline: none; }
+
+
+/*  __SELECTIONS
+------------------------------------------------------------*/
+::-moz-selection {
+    background: #2CB4E8;
+    color: #FFF;
+    text-shadow: none;
+}
+::selection {
+    background: #2CB4E8;
+    color: #FFF;
+    text-shadow: none;
+}

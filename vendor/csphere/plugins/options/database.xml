@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>options</plugin>
+    <tables>
+        <table name="options">
+            <columns>
+                <column name="option_id" datatype="serial" max="0" default="" />
+                <column name="option_plugin" datatype="varchar" max="80" default="" />
+                <column name="option_name" datatype="varchar" max="80" default="" />
+                <column name="option_value" datatype="varchar" max="200" default="" />
+            </columns>
+            <primary>
+                <column name="option_id" />
+            </primary>
+            <uniques>
+                <unique name="option_combination">
+                    <column name="option_plugin" />
+                    <column name="option_name" />
+                </unique>
+            </uniques>
+        </table>
+    </tables>
+</database>

@@ -1,0 +1,34 @@
+Themes
+------
+
+Themes can use all template features except for conditions and loops.
+Watch the template documentation for more details on these placeholders.
+The following list is just about theme only placeholder functionality.
+Every page placeholder should not occur more than once.
+
+Required:
+
+{* page content *}
+
+Requested content of plugin actions will be loaded there.
+
+{* page title *}
+
+Outputs the generated website title and should be placed in the title tag.
+
+Optional:
+
+{* page debug *}
+
+If debug mode is enabled the debug toolbar will be loaded there.
+This placeholder is automatically attached in best position if not found.
+
+{* page javascripts *}
+
+Additional javascript files required for execution will be loaded there.
+This placeholder is automatically attached in best position if not found.
+
+{* page stylesheets *}
+
+Additional css files required for execution will be loaded there.
+This placeholder is automatically attached in best position if not found.

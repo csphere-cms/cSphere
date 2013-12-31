@@ -1,0 +1,12 @@
+What is this?
+-------------
+
+Tools to work with the XML directory content
+
+This includes schemas and examples for:
+
+- changelog
+- database
+- language
+- plugin
+- theme

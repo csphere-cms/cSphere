@@ -1,0 +1,10 @@
+What is this?
+-------------
+
+PHP Depend for generating Software Metrics
+
+Manual:
+
+http://pdepend.org
+
+Install it using PEAR

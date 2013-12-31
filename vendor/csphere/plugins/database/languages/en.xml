@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="database" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Database</name>
+    <info>Overview and tools for database content</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="control">Control</define>
+        <define name="database">Database</define>
+        <define name="driver">Driver</define>
+        <define name="encoding">Encoding</define>
+        <define name="host">Host</define>
+        <define name="plugin">Plugin</define>
+        <define name="records">Records</define>
+        <define name="schema">Schema</define>
+        <define name="size">Size</define>
+        <define name="table">Table</define>
+        <define name="tables">Tables</define>
+        <define name="version_client">Client version</define>
+        <define name="version_driver">Driver version</define>
+        <define name="version_server">Server version</define>
+    </definitions>
+</language>

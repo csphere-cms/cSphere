@@ -1,0 +1,111 @@
+Templates
+---------
+
+The following placeholders provide the documented functionality.
+Note that you can access nested array elements, e.g. "articles.headline".
+This works for nearly all placeholders dealing with variables or arrays.
+
+
+Conditions:
+
+{* if test == '5' *} ... {* endif test *}
+
+Checks a variable for a given value. Supported operations are:
+== equal, != unequal, < smaller than, > greater than
+Conditions can be nested without limits as long as the variable name stays unique
+Greater and smaller should only be used with integers
+
+{* else test *}
+
+Allows to check for the opposite of an earlier if check
+If used place it between the if and endif tag to work
+
+
+Date:
+
+{* date event *}
+
+Outputs date and time for the given variable named event
+Date and time output depends on user time settings
+
+
+Escaping and variables:
+
+{* url target *}
+
+Escapes the data variable named target to use it as an URL
+For creating internal links see the link and share placeholder
+
+{* var target *}
+
+Escapes the data variable named target to use it in HTML
+
+{* raw target *}
+
+Output data variable without escaping - be careful!
+
+
+Extensions:
+
+{* box users/login *}
+
+Includes the box "login" of the "users" plugin at the given place
+Boxes contain sub-content while actions are for full content pages
+Therefore actions can't be used as boxes and vice versa
+
+{* tpl users/login *}
+
+Adds the tpl "login" of the "users" plugin as a string at the given place
+Make sure to ship all data requested by that template or use a box instead
+
+
+Internal links:
+
+{* link articles/list *}
+{* link articles/view/id/$id$ *}
+
+First example creates a link to the plugin and action given
+Second example lets you provide a nested var placeholder for the id
+You can use as many nested var placeholders as you like
+
+{* share articles/list *}
+
+Works like link placeholder, but creates an absolute url for sharing
+
+
+Loops:
+
+{* foreach articles *} {* articles.headline *} {* endforeach articles *}
+
+Allows for using content of the articles array, e.g. the headline
+
+{* else articles *}
+
+Do something else if no article content is found
+Place it between the foreach and endforeach tag to work
+
+{* foreach categories *}
+{* categories.name *} ...
+{* foreach categories.articles *}
+{* articles.headline *} ...
+{* endforeach categories.articles *}
+{* endforeach articles *}
+
+Loops can be nested without limits as long as the array index name stays unique
+For nesting e.g. groups into groups call the dimensions groups1, groups2, etc.
+
+
+Translation:
+
+{* lang target *}
+
+Gets the content of the target string from the current language file
+Language XML strings support nested variables that work like those for links
+
+
+Development:
+
+{* debug key *}
+
+Output the given key of the data array with var_dump
+Warning: This will even work if debug mode is disabled

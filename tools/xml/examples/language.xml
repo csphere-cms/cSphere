@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="news" version_min="0.1"
+        short="de" />
+    <vendor>acme</vendor>
+    <version>0.1</version>
+    <published>2007-04-17</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>News</name>
+    <info>Nachrichten anzeigen und verwalten</info>
+    <engine name="csphere" version_min="2012.0" />
+    <icon type="default">layout</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="category">Kategorie</define>
+        <define name="no_news_found">Keine Nachricht vorhanden</define>
+    </definitions>
+</language>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="mashup">
+        <xs:attribute name="plugin" type="xs:string" use="required"/>
+        <xs:attribute name="version_min" type="xs:float" use="required"/>
+        <xs:attribute name="version_max" type="xs:float"/>
+    </xs:complexType>
+    <xs:element name="theme">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vendor" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="version" type="xs:float" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="published" type="xs:date" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="copyright" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="license" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="info" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="engine" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                        <xs:attribute name="version_min" type="xs:float" use="required"/>
+                        <xs:attribute name="version_max" type="xs:float"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="icon" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="type" type="xs:string" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="authors" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="current" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+                            <xs:element name="past" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="contact" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="email" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="adress" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="web" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="url" type="xs:anyURI" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="contains" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:attribute name="admin" type="xs:boolean" use="required"/>
+                        <xs:attribute name="install" type="xs:boolean" use="required"/>
+                        <xs:attribute name="layout" type="xs:boolean" use="required"/>
+                        <xs:attribute name="mobile" type="xs:boolean" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="media" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="preview" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                            <xs:element name="thumb" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="environment" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="needed" type="mashup" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="extend" type="mashup" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

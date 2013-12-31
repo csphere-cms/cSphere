@@ -1,0 +1,1 @@
+All files in this directory are located at http://www.csphere.eu/xml/schemas/ so be sure to save changes there, too.

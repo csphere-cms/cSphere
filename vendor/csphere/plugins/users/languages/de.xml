@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="users" version_min="0.1" short="de" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Benutzer</name>
+    <info>Verwalte und betrachte Benutzer</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">de</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="account">Benutzerkonto</define>
+        <define name="active">Aktiv</define>
+        <define name="email">E-Mail</define>
+        <define name="force_https">Logins nur per HTTPS</define>
+        <define name="home">Startseite</define>
+        <define name="https_required">Logins sind nur per HTTPS erlaubt. Klicke zum Fortfahren auf den folgenden Link.</define>
+        <define name="invisible">Unsichtbar</define>
+        <define name="language">Sprache</define>
+        <define name="laston">Letzter Login</define>
+        <define name="login">Anmelden</define>
+        <define name="login_browser">Web-Browser</define>
+        <define name="login_failed">Benutzername oder Passwort falsch</define>
+        <define name="login_since">Anmeldezeitpunkt</define>
+        <define name="logout">Abmelden</define>
+        <define name="logout_true">Abmeldung erfolgreich, komm bitte bald wieder!</define>
+        <define name="name">Name</define>
+        <define name="settings">Einstellungen</define>
+        <define name="password">Passwort</define>
+        <define name="password_confirm">Passwort bestätigen</define>
+        <define name="password_new">Neues Password</define>
+        <define name="password_old">Altes Password</define>
+        <define name="profile">Profil</define>
+        <define name="since">Erster login</define>
+        <define name="submit">Absenden</define>
+        <define name="users">Benutzer</define>
+        <define name="user_name">Benutzername</define>
+        <define name="user_password">Passwort</define>
+        <define name="user_cookie">Daten merken</define>
+        <define name="visits">Besuche</define>
+    </definitions>
+</language>

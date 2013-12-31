@@ -1,0 +1,35 @@
+What is this?
+-------------
+
+PHPStorm configuration files for cSphere developers
+
+Software Download:
+
+http://www.jetbrains.com/phpstorm
+
+Instructions:
+
+1. Install PHPStorm and start it
+
+2. Create a new project e.g. named csphere
+
+3. Add your PHP interpreter to settings
+
+4. Add your PEAR directory to include path settings
+   View info.txt in /tools/pear for further information on this
+
+5. Change path settings for PHP Mess Detector and Code Sniffer
+
+6. Copy the following files to your cSphere project directory:
+
+File                  -> Target directory
+---------------------------------------------------------------
+misc.xml              -> /.idea/
+profiles_csphere.xml  -> /.idea/inspectionProfiles/
+profiles_settings.xml -> /.idea/inspectionProfiles/
+
+The misc.xml will update your external Schemas and DTDs in PHPStorm
+Both profile files will update your inspection settings for code quality
+
+7. Check for new versions of the above named files from time to time
+   Please contact us if you have any questions or suggestions regarding this

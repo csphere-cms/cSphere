@@ -1,0 +1,27 @@
+Versioning
+----------
+
+Regarding version control systems:
+
+1. Only GIT is allowed with the following settings:
+
+- autocrlf = false
+- ignorecase = false
+- safecrlf = false
+- symlinks = false
+
+2. No commits to master branch, only merges on new versions
+
+3. All patches and change proposals must be submitted as a pull request
+
+4. Look at coding rules for further details, e.g. on filenames
+
+
+Regarding version numbers in general:
+
+1. Follow the Semantic Versioning Standard (http://www.semver.org)
+
+- Version consists of major.minor.patch, e.g. 1.2.3
+- API breaks are only allowed for major version changes
+- Minor and patch versions must be backwards-compatible
+- New features are not allowed for patch versions

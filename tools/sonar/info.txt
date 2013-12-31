@@ -1,0 +1,38 @@
+What is this?
+-------------
+
+Sonarqube for code quality checks
+
+Manual:
+
+http://docs.codehaus.org/display/SONAR
+
+Install:
+
+1. Sonarqube itself
+
+See documentation link above for more information
+
+2. Start Sonarqube and login, e.g. at localhost:9000
+
+User and Password are set to "admin" if unchanged
+
+3. Sonarqube PHP Plugin
+
+Can be done at Settings -> Update Center -> Available Plugins
+
+3. Import Quality Profile
+
+Click on "Restore Profile" (at Quality Profiles) and select "csphere_profile.xml"
+
+Afterwards mark this one as default, at least for this project
+
+4. Sonarqube Runner
+
+See documentation link above for more information
+
+5. Run Sonarqube Runner while Sonarqube server is running
+
+Important:
+The runner script files in this directory require environment settings
+Sonarqube Runner bin directory and Java must be set for global usage

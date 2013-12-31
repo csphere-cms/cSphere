@@ -1,0 +1,12 @@
+What is this?
+-------------
+
+Built-in web server
+
+As of PHP 5.4.0, the CLI SAPI provides a built-in web server.
+
+It is designed for developmental purposes only, don't use it in production!
+
+Changes to routing.php are detected while running, no need to restart the server.
+
+Source: http://php.net/manual/en/features.commandline.webserver.php

@@ -1,0 +1,20 @@
+/*------------------------------------------------------------
+
+  *Filename             bootsprap.css
+  *Description          BOOTSTRAP CUSTOM STYLES
+  *Version              0.1 (2013-11-23)
+  *Website              http://www.csphere.eu
+  *Author               Stefan Gräwe <sgrwe>
+
+------------------------------------------------------------*/
+
+
+/*  __PANEL
+------------------------------------------------------------*/
+.panel {}
+
+/* ----- __PANEL PANEL-BODY ----- */
+.panel .panel-body { padding-bottom: 0; padding-top: 0; }
+.panel .panel-body .page-header { margin-bottom: 10px; margin-top: 0; }
+.panel .panel-body .page-header h3 { font-weight: normal; }
+.panel .panel-body .page-header .btn-group { margin-top: 16px; }

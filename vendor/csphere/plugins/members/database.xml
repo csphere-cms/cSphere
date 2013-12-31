@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>members</plugin>
+    <tables>
+        <table name="members">
+            <columns>
+                <column name="member_id" datatype="serial" max="0" default="" />
+                <column name="group_id" datatype="integer" max="0" default="" />
+                <column name="user_id" datatype="integer" max="0" default="" />
+                <column name="member_since" datatype="integer" max="0" default="0" />
+                <column name="member_admin" datatype="integer" max="0" default="0" />
+            </columns>
+            <primary>
+                <column name="member_id" />
+            </primary>
+            <uniques>
+                <unique name="member_once">
+                    <column name="group_id" />
+                    <column name="user_id" />
+                </unique>
+            </uniques>
+        </table>
+    </tables>
+    <data>
+    </data>
+</database>

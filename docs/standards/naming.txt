@@ -1,0 +1,13 @@
+Naming
+------
+
+Filenames:
+
+- All filenames are lowercase to retain compatibility
+- Only hyphens, underscores, dots, numbers and letters are allowed
+
+PHP Classes:
+
+- CamelCase for class names, but filenames stay lowercase due to PHP limitations
+- CamelCase for method names and functions
+- Variable names should describe their usage as good as possible

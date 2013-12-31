@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/plugin.xsd">
+    <vendor>acme</vendor>
+    <version>0.1</version>
+    <published>2007-04-07</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Users</name>
+    <info>Manage and view users</info>
+    <engine name="csphere" version_min="2012.0" />
+    <icon type="default">user</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <required php="5.3.3">
+        <extension>date</extension>
+        <extension>gd</extension>
+    </required>
+    <environment>
+        <needed plugin="default" version_min="0.1" />
+        <needed plugin="access" version_min="0.1" />
+        <needed plugin="groups" version_min="0.1" />
+    </environment>
+    <entries>
+        <target plugin="options" action="list" />
+        <target plugin="admin" action="list" />
+    </entries>
+    <startup>
+        <file type="javascript" top="false" name="test.js" />
+        <file type="stylesheet" top="false" name="test.css" />
+    </startup>
+</plugin>

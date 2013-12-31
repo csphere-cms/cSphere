@@ -1,0 +1,66 @@
+Datamapper
+----------
+
+The Datamapper only supports SQL based database servers.
+View database documentation for more details on this.
+The approach of this datamapper is to abstract most common SQL usage.
+For special queries there is a query method to directly write SQL.
+Results are simple arrays, multiple records are delivered as nested arrays.
+
+Some examples for Datamapper Model usage:
+
+<?php
+// Init model
+$dm_articles = new \csphere\core\datamapper\Model('articles');
+
+// Test create and insert method
+$new = $dm_articles->create();
+$new['article_name'] = 'test';
+$new['article_text'] = 'abcdefg';
+
+// Get result again to have the serial attached
+$test = $dm_articles->insert($new);
+
+// Test update
+$test['article_name'] = 'test2';
+$dm_articles->update($test);
+
+// Test read and delete
+$article_id = $test['article_id'];
+
+$test2 = $dm_articles->read($article_id);
+
+$dm_articles->delete($test2);
+
+
+----------
+
+Some examples for Datamapper Finder usage:
+
+<?php
+// Init finder
+$dm_articles = new \csphere\core\datamapper\Finder('articles');
+
+// Method chaining is supported by finder
+$amount_abc = $dm_articles->where('articles_name', '=', 'abc')->count();
+
+// Methods "count", "find" and "first" finish the query and reset finder afterwards
+// Count does a COUNT(*) query
+// First returns the first matching record
+// Find uses limit and offset to fetch matching rows
+$all_abc = $dm_articles->where('articles_name', '=', 'abc')->find(0, 0);
+
+// The following methods can be used only once per query
+$dm_articles->columns('articles_id, articles_name');
+$dm_articles->groupBy('categories_id');
+
+// The following methods ca be used as often as needed per query
+$dm_articles->join('categories', '', 'categories_id');
+$dm_articles->where('articles_name', '!=', 'abc', true);
+$dm_articles->orderBy('categories_id');
+$dm_articles->having('categories_id', '<', 3);
+
+
+----------
+
+For more details see API documentation, alot of optional features are not shown here

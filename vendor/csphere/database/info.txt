@@ -1,0 +1,1 @@
+Database exts "pdo_sqlite" uses this directory to store SQLITE files.

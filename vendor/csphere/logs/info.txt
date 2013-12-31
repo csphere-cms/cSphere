@@ -1,0 +1,1 @@
+Logs mode "file" uses this directory to store LOG files.

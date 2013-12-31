@@ -1,0 +1,26 @@
+What is this?
+-------------
+
+PHP PEAR - "PHP Extension and Application Repository"
+
+Manual:
+
+http://pear.php.net/manual/en/installation.getting.php
+
+Steps to install on Windows:
+
+1. Download "http://pear.php.net/go-pear.phar"
+2. Move the file to the directory where PEAR should be installed
+3. Execute it using CMD with the command "php go-pear.phar"
+4. After installing it run the *.reg file in your PEAR directory
+5. Alter your Windows path environment to include your PEAR directory
+6. Update protocols in CMD via "pear channel-update pear.php.net"
+7. Run install.sh or install.bat depending on your operation system
+
+Command to update PEAR packages if needed:
+
+pear upgrade-all
+
+On problems, e.g. "No releases available for package ...":
+
+pear clear-cache

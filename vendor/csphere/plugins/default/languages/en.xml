@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="default" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>English</name>
+    <info>Provides basic stuff for e.g. language</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="back">Back</define>
+        <define name="continue">Continue</define>
+        <define name="control">Control</define>
+        <define name="create">Create</define>
+        <define name="default">Default</define>
+        <define name="edit">Edit</define>
+        <define name="hits">Hits</define>
+        <define name="list">List</define>
+        <define name="manage">Manage</define>
+        <define name="no">No</define>
+        <define name="no_record_found">No record found</define>
+        <define name="or">or</define>
+        <define name="page">Page</define>
+        <define name="record_cancel">Record left untouched</define>
+        <define name="record_deleted">Record deleted with success</define>
+        <define name="record_success">Record saved with success</define>
+        <define name="records">Records</define>
+        <define name="remove">Remove</define>
+        <define name="remove_sure">Really delete ID "$rid$" of this table?</define>
+        <define name="save">Save</define>
+        <define name="search">Search</define>
+        <define name="scriptinfo">Scriptinfo</define>
+        <define name="view">View</define>
+        <define name="yes">Yes</define>
+        <define name="options">Options</define>
+        <define name="options_success">Options saved with success</define>
+    </definitions>
+</language>

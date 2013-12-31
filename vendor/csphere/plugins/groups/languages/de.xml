@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="groups" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Gruppen</name>
+    <info>Verwalte und betrachte Gruppen</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">de</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="groups">Gruppen</define>
+        <define name="info">Info</define>
+        <define name="name">Name</define>
+        <define name="since">Erstellt am</define>
+        <define name="main_id">Team Seite</define>
+        <define name="main_name">Gruppenname des Teams</define>
+        <define name="team">Team</define>
+        <define name="url">Website</define>
+    </definitions>
+</language>

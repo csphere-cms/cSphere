@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="template" name="default" version_min="0.1" short="de" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Standard</name>
+    <info>Dieses Theme ist Bestandteil des Standard-Paketes</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">de</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="home">Startseite</define>
+        <define name="scriptinfo">Scriptinfo</define>
+        <define name="imprint">Impressum</define>
+        <define name="team">Team</define>
+        <define name="admin">Administration</define>
+        <define name="content">Inhalte</define>
+        <define name="system">System</define>
+    </definitions>
+</language>

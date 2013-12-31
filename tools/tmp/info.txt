@@ -1,0 +1,6 @@
+What is this?
+-------------
+
+Temporary directory for tools with generated files.
+
+All stuff in here is ignored by GIT, so use it as you like.

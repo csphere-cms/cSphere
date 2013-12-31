@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/plugin.xsd">
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2013-12-24</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Default</name>
+    <info>Contains basic stuff like flags and icons</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="fontawesome">fa-square</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <required php="5.4.0">
+        <extension>date</extension>
+        <extension>fileinfo</extension>
+        <extension>filter</extension>
+        <extension>json</extension>
+        <extension>mcrypt</extension>
+        <extension>pcre</extension>
+        <extension>pdo</extension>
+        <extension>session</extension>
+        <extension>xml</extension>
+    </required>
+    <environment>
+    </environment>
+    <startup>
+        <file type="stylesheet" top="false" name="csphere.css" />
+        <file type="javascript" top="false" name="ajax.js" />
+    </startup>
+</plugin>

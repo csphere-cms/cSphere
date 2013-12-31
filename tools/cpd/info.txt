@@ -1,0 +1,10 @@
+What is this?
+-------------
+
+PHP Copy Paste Detector
+
+Manual:
+
+http://github.com/sebastianbergmann/phpcpd
+
+Install it using PEAR

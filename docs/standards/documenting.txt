@@ -1,0 +1,7 @@
+Documenting
+-----------
+
+PHP:
+
+- Follow documentation rules set by PEAR Coding Standard
+- Fix all warnings shown in phpDocumentor API generation

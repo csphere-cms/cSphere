@@ -1,0 +1,10 @@
+What is this?
+-------------
+
+PHP Lines of Code
+
+Manual:
+
+http://github.com/sebastianbergmann/phploc
+
+Install it using PEAR

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>users</plugin>
+    <tables>
+        <table name="users">
+            <columns>
+                <column name="users_id" datatype="serial" max="0" default="" />
+                <column name="users_nick" datatype="varchar" max="80" default="" />
+                <column name="users_password" datatype="varchar" max="80" default="" />
+                <column name="users_email" datatype="varchar" max="80" default="" />
+                <column name="users_active" datatype="integer" max="1" default="0" />
+                <column name="users_info" datatype="text" max="0" default="" />
+            </columns>
+            <primary>
+                <column name="users_id" />
+            </primary>
+            <uniques>
+                <unique name="users_email">
+                    <column name="users_email" />
+                </unique>
+            </uniques>
+            <indexes>
+                <index name="users_login">
+                    <column name="users_email" />
+                    <column name="users_password" />
+                </index>
+            </indexes>
+            <foreigns>
+                <foreign table="groups">
+                    <column name="users_id" target="users_id" />
+                </foreign>
+            </foreigns>
+        </table>
+    </tables>
+    <data>
+        <insert table="users">
+            <column name="users_nick">admin</column>
+            <column name="users_active">0</column>
+        </insert>
+        <update table="users">
+            <column name="users_active">1</column>
+            <where column="users_nick">admin</where>
+        </update>
+        <delete table="users">
+            <where column="users_id">3</where>
+        </delete>
+    </data>
+</database>

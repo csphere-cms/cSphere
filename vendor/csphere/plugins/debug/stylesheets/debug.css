@@ -1,0 +1,38 @@
+/*------------------------------------------------------------
+
+  *Filename             csphere-debug.css
+  *Description          CSPHERE-DEBUG TEMPLATE STYLES
+  *Version              0.1 (2013-12-11)
+  *Website              http://www.csphere.eu
+  *Author               Stefan Gräwe <sgrwe>
+
+------------------------------------------------------------*/
+
+
+body { padding-top: 126px !important; }
+
+
+/*  __HEADER
+------------------------------------------------------------*/
+#header { top: 51px; }
+
+
+/*  __CSPHERE-DEBUG
+------------------------------------------------------------*/
+#csphere-debug { max-height: 750px; overflow: auto; z-index: 6000; }
+
+/* ----- __CSPHERE-DEBUG NAVBAR-TOGGLE ----- */
+#csphere-debug .navbar-toggle {
+    line-height: 34px;
+    max-height: 34px;
+    padding: 0;
+    width: 38px;
+}
+
+/* ----- __DEBUG LINKS ----- */
+#csphere-debug a { cursor: pointer; }
+#csphere-debug .nav li a:hover, .debug_toggle { background-color: #e7e7e7; color: #000 !important; }
+#csphere-debug .nav li a.text-danger { color: #a94442 !important; }
+
+/* ----- __DEBUG CONTENT ----- */
+#csphere-debug .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="errors" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Errors</name>
+    <info>Handles problems that occur</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="call">Call</define>
+        <define name="code">Code</define>
+        <define name="config">Config</define>
+        <define name="control">Control</define>
+        <define name="config_missing">Config file not found</define>
+        <define name="config_corrupt">Config file is corrupted</define>
+        <define name="count">Count</define>
+        <define name="date">Date</define>
+        <define name="details">Details</define>
+        <define name="entry">Entry</define>
+        <define name="errors">Errors</define>
+        <define name="file">File</define>
+        <define name="info">Info</define>
+        <define name="info_text">Details are saved in an error report. Please contact the webmaster for support.</define>
+        <define name="install">Installation</define>
+        <define name="install_info">This error often indicates that installation is missing or failed, so go ahead.</define>
+        <define name="latest_errors">Latest Errors</define>
+        <define name="line">Line</define>
+        <define name="message">Message</define>
+        <define name="no_file">No file found</define>
+        <define name="refresh">Refresh</define>
+        <define name="remove">Remove</define>
+        <define name="remove_ok">File removed with success</define>
+        <define name="step">Step</define>
+        <define name="time">Time</define>
+    </definitions>
+</language>

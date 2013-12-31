@@ -1,0 +1,14 @@
+What is this?
+-------------
+
+Source Code Cleaner with the following features:
+
+- Tries to change the file charset to UTF-8
+
+- Converts Windows line endings to Unix
+
+- Converts Tabs to Spaces
+
+- Trims whitespace at end of lines
+
+- Runs only on whitelisted file endings

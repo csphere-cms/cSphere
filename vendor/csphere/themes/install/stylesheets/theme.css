@@ -1,0 +1,23 @@
+/*------------------------------------------------------------
+
+  *Filename             theme.css
+  *Description          INSTALLER THEME STYLES
+  *Version              0.1 (2013-12-11)
+  *Website              http://www.csphere.eu
+  *Author               Stefan Gräwe <sgrwe>
+
+------------------------------------------------------------*/
+
+
+.container {
+    background-color: #FFF;
+    padding-bottom: 16px;
+    padding-top: 16px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,.1);
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+}

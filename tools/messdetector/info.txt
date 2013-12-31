@@ -1,0 +1,10 @@
+What is this?
+-------------
+
+PHP Mess Detector Frontend for PHP Depend
+
+Manual:
+
+http://phpmd.org
+
+Install it using PEAR

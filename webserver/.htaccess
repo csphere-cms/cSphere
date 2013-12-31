@@ -1,0 +1,28 @@
+## CHARSET - cSphere is optimized for UTF-8 so we should ensure it is enabled
+
+AddDefaultCharset UTF-8
+
+## MOD_REWRITE - Enable the required lines to use cSphere with Apache mod_rewrite
+## Documentation = http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html
+
+## Uncomment the next line when symlinks are not set in Apache configuration
+
+Options +FollowSymLinks
+
+## Uncomment the next line to disable Multiviews (if you have negotiation errors in your log files)
+
+#Options -Multiviews
+
+## Uncomment the next line to enable the usage of mod_rewrite (required)
+
+RewriteEngine on
+
+## Uncomment the next line and update the path to use the cSphere directory if you move this file
+
+#RewriteBase /
+
+## Redirect all requests to the cSphere index file (required)
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [PT,L]

@@ -1,0 +1,18 @@
+Externals
+---------
+
+This software uses the following external components:
+
+Images:
+
+- cSphere Logo and Favicon by Laszlo 'schiri' Korte
+
+- Flags by FAMFAMFAM (http://famfamfam.com)
+
+Javascript and Stylesheets:
+
+- Bootstrap by Twitter Bootstrap (http://getbootstrap.com)
+
+- Font Awesome by Dave Gandy (http://fontawesome.io)
+
+- Jquery by jQuery Foundation (http://jquery.com)

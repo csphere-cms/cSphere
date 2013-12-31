@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectResources">
+    <resource url="http://www.csphere.eu/xml/schemas/plugin.xsd" location="$PROJECT_DIR$/tools/xml/schemas/plugin.xsd" />
+    <resource url="http://www.csphere.eu/xml/schemas/changelog.xsd" location="$PROJECT_DIR$/tools/xml/schemas/changelog.xsd" />
+    <resource url="http://www.csphere.eu/xml/schemas/database.xsd" location="$PROJECT_DIR$/tools/xml/schemas/database.xsd" />
+    <resource url="http://www.csphere.eu/xml/schemas/theme.xsd" location="$PROJECT_DIR$/tools/xml/schemas/theme.xsd" />
+    <resource url="http://www.csphere.eu/xml/schemas/language.xsd" location="$PROJECT_DIR$/tools/xml/schemas/language.xsd" />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+</project>
+

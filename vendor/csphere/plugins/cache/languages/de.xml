@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="cache" version_min="0.1" short="de" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Cache</name>
+    <info>Speichert vorbereitete Daten zwischen</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">de</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="cache">Cache</define>
+        <define name="count">Anzahl</define>
+        <define name="clear">Cache leeren</define>
+        <define name="clear_ok">Cache mit Erfolg geleert</define>
+        <define name="control">Steuerung</define>
+        <define name="driver">Treiber</define>
+        <define name="key">Schlüssel</define>
+        <define name="no_entry">Kein Eintrag gefunden</define>
+        <define name="size">Größe</define>
+        <define name="time">Zeit</define>
+    </definitions>
+</language>

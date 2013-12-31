@@ -1,0 +1,28 @@
+Database
+--------
+
+Currently only PDO based database drivers are available.
+While newer versions of database servers work the same or even better
+this list of supported database servers contains the lowest working version:
+
+Microsoft SQLSRV 2012
+MySQL            5.5
+PostgreSQL       9.0
+SQLite           3.0
+
+Other drivers might be added if requested as long as they fit common criterias.
+Please visit our support website if you have questions regarding this.
+
+There are different possibilities to work with the database:
+
+1. Send queries directly to the Database component
+2. Use SQL DML and DDL tools to generate most common CRUD commands
+3. Use the Datamapper component which abstracts the above solutions (recommended)
+
+Since parameter binding is forced there is no need for escaping usual values.
+All database actions use prepared statements if supported by driver.
+Only the persistence layer is handled and abstracted by the Datamapper.
+If you need results cached between requests use e.g. the Cache component.
+Serial type for a column means that it is an integer with auto increment applied
+
+For details on how to work with the database view the datamapper documentation.

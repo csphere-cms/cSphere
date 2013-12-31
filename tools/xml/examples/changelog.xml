@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<changelog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/changelog.xsd">
+    <history type="plugin" name="default" />
+    <updates>
+        <update version="0.02" published="2007-04-14" compatible="0.01">
+            <information>test1</information>
+            <instructions>test2</instructions>
+            <added>
+                <item author="unknown" source="">test3</item>
+                <item author="nobody" source="">test4</item>
+            </added>
+            <reworked>
+                <item author="unknown" source="">test5</item>
+                <item author="unknown" source="">test6</item>
+            </reworked>
+            <fixed>
+                <item author="unknown" source="">test7</item>
+                <item author="unknown" source="">test8</item>
+            </fixed>
+            <removed>
+                <item author="nobody" source="">test9</item>
+                <item author="unknown" source="">test0</item>
+            </removed>
+        </update>
+        <update version="0.01" published="2007-04-14" compatible="">
+            <information>test1</information>
+            <instructions>test2</instructions>
+            <added>
+                <item author="unknown" source="">test3</item>
+                <item author="nobody" source="">test4</item>
+            </added>
+        </update>
+    </updates>
+</changelog>

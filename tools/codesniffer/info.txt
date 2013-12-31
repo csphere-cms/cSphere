@@ -1,0 +1,10 @@
+What is this?
+-------------
+
+PHP CodeSniffer to sniff php files for violations against the coding standard
+
+Manual:
+
+http://pear.php.net/manual/en/package.php.php-codesniffer.php
+
+Install it using PEAR

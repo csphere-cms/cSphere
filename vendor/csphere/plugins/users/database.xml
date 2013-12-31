@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>users</plugin>
+    <tables>
+        <table name="users">
+            <columns>
+                <column name="user_id" datatype="serial" max="0" default="" />
+                <column name="user_name" datatype="varchar" max="80" default="" />
+                <column name="user_email" datatype="varchar" max="80" default="" />
+                <column name="user_password" datatype="varchar" max="80" default="" />
+                <column name="user_active" datatype="integer" max="0" default="1" />
+                <column name="user_invisible" datatype="integer" max="0" default="0" />
+                <column name="user_since" datatype="integer" max="0" default="0" />
+                <column name="user_laston" datatype="integer" max="0" default="0" />
+                <column name="user_lang" datatype="varchar" max="40" default="" />
+                <column name="user_timezone" datatype="integer" max="0" default="0" />
+                <column name="user_dstime" datatype="varchar" max="10" default="" />
+            </columns>
+            <primary>
+                <column name="user_id" />
+            </primary>
+            <uniques>
+                <unique name="user_email">
+                    <column name="user_email" />
+                </unique>
+                <unique name="user_name">
+                    <column name="user_name" />
+                </unique>
+            </uniques>
+            <indexes>
+                <index name="user_login">
+                    <column name="user_id" />
+                    <column name="user_name" />
+                    <column name="user_password" />
+                </index>
+            </indexes>
+        </table>
+        <table name="users_logins">
+            <columns>
+                <column name="login_id" datatype="serial" max="0" default="" />
+                <column name="user_id" datatype="integer" max="0" default="0" />
+                <column name="login_since" datatype="integer" max="0" default="0" />
+                <column name="login_browser" datatype="varchar" max="80" default="" />
+            </columns>
+            <primary>
+                <column name="login_id" />
+            </primary>
+        </table>
+    </tables>
+    <data>
+        <insert table="options">
+            <column name="option_plugin">users</column>
+            <column name="option_name">force_https</column>
+            <column name="option_value">0</column>
+        </insert>
+    </data>
+</database>

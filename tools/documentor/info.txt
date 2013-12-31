@@ -1,0 +1,13 @@
+What is this?
+-------------
+
+PHP Documentor for generating a nice API documentation
+
+Manual:
+
+http://www.phpdoc.org
+
+Install it using PEAR
+
+If you get the error "Could not open input file: phpdoc.php" on Windows:
+http://stackoverflow.com/q/10404506/2023334

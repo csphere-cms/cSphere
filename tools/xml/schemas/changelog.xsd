@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="update_item">
+        <xs:sequence>
+            <xs:element name="item" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="author" type="xs:string" use="required"/>
+                            <xs:attribute name="source" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="changelog">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="history" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:attribute name="type" type="xs:string" use="required"/>
+                        <xs:attribute name="name" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="updates" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="update" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="information" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                        <xs:element name="instructions" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                        <xs:element name="added" type="update_item" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="reworked" type="update_item" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="fixed" type="update_item" minOccurs="0" maxOccurs="unbounded"/>
+                                        <xs:element name="removed" type="update_item" minOccurs="0" maxOccurs="unbounded"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="version" type="xs:string" use="required"/>
+                                    <xs:attribute name="published" type="xs:string" use="required"/>
+                                    <xs:attribute name="compatible" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

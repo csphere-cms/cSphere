@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="plugins" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Plugins</name>
+    <info>Manage installed extensions</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="action">Action</define>
+        <define name="admin">Administration</define>
+        <define name="authors_current">Current authors</define>
+        <define name="authors_past">Past authors</define>
+        <define name="contact_email">Email</define>
+        <define name="contact_web">Website</define>
+        <define name="contains_designs">Contains designs for</define>
+        <define name="control">Control</define>
+        <define name="copyright">Copyright</define>
+        <define name="details">Details</define>
+        <define name="engine">Engine</define>
+        <define name="entries">Entries</define>
+        <define name="environment_needed">Needed environment</define>
+        <define name="environment_extends">Environment it extends</define>
+        <define name="icon">Icon</define>
+        <define name="info">Info</define>
+        <define name="install">Installation</define>
+        <define name="layout">Layout</define>
+        <define name="license">License</define>
+        <define name="media">Media</define>
+        <define name="mobile">Mobile</define>
+        <define name="theme">Theme</define>
+        <define name="themes">Themes</define>
+        <define name="thumb">Thumb</define>
+        <define name="preview">Preview</define>
+        <define name="plugin">Plugin</define>
+        <define name="published">Published</define>
+        <define name="until">until</define>
+        <define name="vendor">Vendor</define>
+        <define name="version">Version</define>
+    </definitions>
+</language>
