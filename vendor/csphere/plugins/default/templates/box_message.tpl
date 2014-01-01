@@ -9,15 +9,15 @@
 
         {* if type == 'red' *}
         <br />
-        <a href="{* raw previous *}" class="btn btn-danger btn-lg btn-block">{* lang defaback *}</a>
+        <a href="{* raw previous *}" class="btn btn-danger btn-lg btn-block">{* lang default.continue *}</a>
         {* endif type *}
         {* if type == 'green' *}
         <br />
-        <a href="{* raw previous *}" class="btn btn-success btn-lg btn-block">{* lang defaback *}</a>
+        <a href="{* raw previous *}" class="btn btn-success btn-lg btn-block">{* lang default.continue *}</a>
         {* endif type *}
         {* if type == 'default' *}
         <br />
-        <a href="{* raw previous *}" class="btn btn-default btn-lg btn-block">{* lang defaback *}</a>
+        <a href="{* raw previous *}" class="btn btn-default btn-lg btn-block">{* lang default.continue *}</a>
         {* endif type *}
     </div><!--END well-->
 

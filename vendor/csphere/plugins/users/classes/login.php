@@ -49,7 +49,7 @@ abstract class Login
 
         $https = self::_https();
 
-        if ($https === true) {
+        if ($https === false) {
 
             $data = self::_httpsInfo();
 
