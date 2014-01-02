@@ -56,7 +56,7 @@ class Driver_HTML extends Base
     /**
      * Language shorthandle for translation
      **/
-    private $_language = 'en';
+    private $_language = '';
 
     /**
      * Creates the view handler object

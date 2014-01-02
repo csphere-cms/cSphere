@@ -46,7 +46,7 @@ abstract class Metadata
     /**
      * Language shorthandle for translation
      **/
-    protected $language = 'en';
+    protected $language = '';
 
     /**
      * Type of registry

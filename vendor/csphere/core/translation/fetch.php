@@ -31,14 +31,9 @@ namespace csphere\core\translation;
 abstract class Fetch
 {
     /**
-     * Local file path prefix
-     **/
-    private static $_path = '';
-
-    /**
      * Language shorthandle for translation
      **/
-    private static $_language = 'en';
+    private static $_language = '';
 
     /**
      * Service loader object
@@ -126,10 +121,14 @@ abstract class Fetch
 
     public static function lang()
     {
-        // Load cache and settings if not done yet
-        if (self::$_cache == null) {
+        // Load language short if not done yet
+        if (self::$_language == '') {
 
-            self::_settings();
+            // Get user language from session
+            $session  = new \csphere\core\session\Session();
+            $language = $session->get('user_lang');
+
+            self::$_language = empty($language) ? 'en' : $language;
         }
 
         return self::$_language;
@@ -143,9 +142,10 @@ abstract class Fetch
 
     private static function _settings()
     {
-        // Get path and basic objects
-        self::$_path = \csphere\core\init\path();
+        // Set language if not done yet
+        self::lang();
 
+        // Get basic objects
         self::$_loader = \csphere\core\service\Locator::get();
 
         self::$_cache = self::$_loader->load('cache');
@@ -153,16 +153,6 @@ abstract class Fetch
         $view = self::$_loader->load('view');
 
         self::$_theme = $view->getOption('theme');
-
-        // Get user language
-        $session = new \csphere\core\session\Session();
-
-        $language = (string)$session->get('user_lang');
-
-        if (!empty($language)) {
-
-            self::$_language = $language;
-        }
     }
 
     /**

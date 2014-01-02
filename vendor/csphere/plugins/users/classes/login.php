@@ -37,16 +37,18 @@ abstract class Login
      * Show form for login or handle post request
      *
      * @param boolean $box If view target area is a box
+     * @param string  $layout Template layout to use
      *
      * @return void
      **/
 
-    public static function form($box = false)
+    public static function form($box = false, $layout = '')
     {
         // Get view object
         $loader = \csphere\core\service\Locator::get();
         $view   = $loader->load('view');
 
+        // Check for HTTPS
         $https = self::_https();
 
         if ($https === false) {
@@ -58,7 +60,17 @@ abstract class Login
             $data = self::_check();
         }
 
-        $plugin = $data['tpl'] == 'message' ? 'default' : 'users';
+        // Determine plugin and layout
+        $plugin = 'users';
+
+        if ($layout == '' AND $data['tpl'] == 'message') {
+
+            $plugin = 'default';
+
+        } else {
+
+            $data['tpl'] = 'login' . $layout . '_' . $data['tpl'];
+        }
 
         // Pass data to template
         if (self::$_authed === true) {
@@ -119,7 +131,7 @@ abstract class Login
             $link .= ':' . $request['port'];
         }
 
-        $link .= $request['dirname'];
+        $link .= \csphere\core\url\Link::href('users', 'login');
 
         // Set data for template
         $data = array('tpl'         => 'message',
@@ -142,7 +154,7 @@ abstract class Login
     private static function _check()
     {
         // Always set a tpl to not cause errors
-        $data = array('tpl'         => 'login_form',
+        $data = array('tpl'         => 'form',
                       'login_name'  => '',
                       'login_error' => '');
 
@@ -168,7 +180,7 @@ abstract class Login
             } else {
 
                 // Show message for wrong login details
-                $data = array('tpl'         => 'login_form',
+                $data = array('tpl'         => 'form',
                               'login_name'  => $name,
                               'login_error' => 'yes');
             }

@@ -293,12 +293,22 @@ abstract class Parse
     public static function sandbox($file)
     {
         // Use output buffer to not get verbose
-        $debug = ini_get('display_errors');
-        ini_set('display_errors', 0);
         ob_start();
-        include $file;
+
+        // Try to include and execute the target file
+        try {
+
+            include $file;
+
+        } catch (\Exception $exception) {
+
+            $controller = new \csphere\core\errors\Controller($exception, true);
+
+            unset($controller);
+        }
+
+        // Clean output buffer
         ob_end_clean();
-        ini_set('display_errors', $debug);
 
         return true;
     }

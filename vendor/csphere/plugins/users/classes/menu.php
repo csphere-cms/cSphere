@@ -31,12 +31,13 @@ abstract class Menu
     /**
      * User menu if login was passed
      *
-     * @param boolean $box If view target area is a box
+     * @param boolean $box    If view target area is a box
+     * @param string  $layout Template layout to use
      *
      * @return void
      **/
 
-    public static function show($box = false)
+    public static function show($box = false, $layout = '')
     {
         // Get view object
         $loader = \csphere\core\service\Locator::get();
@@ -49,14 +50,17 @@ abstract class Menu
         $data = array('user_name' => $session->get('user_name'),
                       'user_id'   => $session->get('user_id'));
 
+        // Set template layout
+        $tpl    = 'login' . $layout . '_menu';
+
         // Box mode needs a different tpl file
         if ($box == false) {
 
-            $view->template('users', 'login_menu', $data);
+            $view->template('users', $tpl, $data);
 
         } else {
 
-            $view->template('users', 'box_login_menu', $data, true);
+            $view->template('users', 'box_' . $tpl, $data, true);
         }
     }
 }

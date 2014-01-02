@@ -59,7 +59,7 @@ abstract class CMD_Prepare
     public static function box(array $part)
     {
         // Check for valid placeholder key data
-        $target = isset($part['key']) ? explode('/', $part['key'], 2) : array();
+        $target = isset($part['key']) ? explode('/', $part['key'], 3) : array();
 
         if (isset($target[1])) {
 
@@ -83,6 +83,23 @@ abstract class CMD_Prepare
         } else {
 
             throw new \Exception('BOX target missing: ' . $part['cmd']);
+        }
+
+        // Handle additional parameters
+        if (isset($target[2])) {
+
+            $params = array();
+            $split  = explode('/', $target[2]);
+            $splits = count($split);
+
+            for ($i = 0; $i < $splits; $i++) {
+
+                $params[$split[$i]] = isset($split[($i+1)]) ? $split[($i+1)] : '';
+
+                $i++;
+            }
+
+            $part['params'] = $params;
         }
 
         return $part;
