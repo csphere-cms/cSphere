@@ -119,8 +119,8 @@ if ($test === true AND $error == '') {
 } else {
 
     $data['error']      = $error;
-    $data['user_name']  = $post['user_name'];
-    $data['user_email'] = $post['user_email'];
+    $data['user_name']  = isset($post['user_name']) ? $post['user_name'] : '';
+    $data['user_email'] = isset($post['user_email']) ? $post['user_email'] : '';
 
     // Send data to view
     $view = $loader->load('view');

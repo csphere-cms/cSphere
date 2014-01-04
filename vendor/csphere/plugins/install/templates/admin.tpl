@@ -15,33 +15,13 @@
 
         <form class="form-horizontal" role="form" action="{* link install/admin *}" method="POST">
 
-                <div class="form-group">
-                    <label for="inputUserName" class="col-sm-2 control-label">{* lang name *}</label>
-                    <div class="col-sm-10">
-                        <input type="text" autocomplete="off" class="form-control" id="inputUserName" name="user_name" value="{* var user_name *}" placeholder="{* lang name *}" />
-                    </div>
-                </div><!--END form form-group inputUserName-->
+            {* tpl default/com_input_adv name=user_name label=name value=user_name type=text holder=name *}
 
-                <div class="form-group">
-                    <label for="inputUserEmail" class="col-sm-2 control-label">{* lang email *}</label>
-                    <div class="col-sm-10">
-                        <input type="email" autocomplete="off" class="form-control" id="inputUserEmail" name="user_email" value="{* var user_email *}" placeholder="{* lang email *}" />
-                    </div>
-                </div><!--END form form-group inputUserEmail-->
+            {* tpl default/com_input_adv name=user_email label=email value=user_email type=email holder=email *}
 
-                <div class="form-group">
-                    <label for="inputUserPassword" class="col-sm-2 control-label">{* lang password *}</label>
-                    <div class="col-sm-10">
-                        <input type="password" autocomplete="off" class="form-control" id="inputUserPassword" name="user_password" value="" placeholder="{* lang password *}" />
-                    </div>
-                </div><!--END form form-group inputUserPassword-->
+            {* tpl default/com_input_pwd name=user_password label=password holder=password *}
 
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button class="btn btn-primary" type="submit">{* lang default.save *}</button>
-                    </div>
-                </div><!--END form form-group submit-->
-            </form><!--END form-->
+            {* tpl default/com_submit_btn caption=default.save *}
 
     </div><!--END panel panel-body-->
 </div><!--END panel-->

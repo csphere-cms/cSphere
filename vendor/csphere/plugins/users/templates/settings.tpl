@@ -7,28 +7,11 @@
 
         <form class="form-horizontal" role="form" action="{* link users/settings *}" method="POST">
 
-            <div class="form-group">
-                <label for="inputUserInvisible" class="col-sm-2 control-label">{* lang invisible *}</label>
-                <div class="col-sm-10">
-
-                    <label class="checkbox-inline">
-                        {* if users.user_invisible != '1' *}
-                        <input type="radio" name="user_invisible" value="0" checked="checked" /> {* lang default.no *}
-                        {* else users.user_invisible *}
-                        <input type="radio" name="user_invisible" value="0" /> {* lang default.no *}
-                        {* endif users.user_invisible *}
-                    </label>
-
-                    <label class="checkbox-inline">
-                        {* if users.user_invisible == '1' *}
-                        <input type="radio" name="user_invisible" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else users.user_invisible *}
-                        <input type="radio" name="user_invisible" value="1" /> {* lang default.yes *}
-                        {* endif users.user_invisible *}
-                    </label>
-
-                </div>
-            </div><!--END form form-group inputUserInvisible-->
+            {* if users.user_invisible == '1' *}
+            {* tpl default/com_input_yesno name=user_invisible label=invisible *}
+            {* else users.user_invisible *}
+            {* tpl default/com_input_noyes name=user_invisible label=invisible *}
+            {* endif users.user_invisible *}
 
             <div class="form-group">
                 <label for="inputUserLang" class="col-sm-2 control-label">{* lang language *}</label>
@@ -45,11 +28,7 @@
                 </div>
             </div><!--END form form-group inputUserLang-->
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang default.save *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=default.save *}
 
         </form><!--END form-->
 

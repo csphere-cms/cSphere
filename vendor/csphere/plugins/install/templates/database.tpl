@@ -30,53 +30,19 @@
                 </div>
             </div><!--END form form-group inputDatabaseDriver-->
 
-            <div class="form-group">
-                <label for="inputDatabaseHost" class="col-sm-2 control-label">{* lang db_host *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputDatabaseHost" name="database_host" value="{* var database.host *}" placeholder="{* lang db_host_info *}" />
-                </div>
-            </div><!--END form form-group inputDatabaseHost-->
+            {* tpl default/com_input_adv name=database_host label=db_host value=database.host type=text holder=db_host_info *}
 
-            <div class="form-group">
-                <label for="inputDatabaseUser" class="col-sm-2 control-label">{* lang db_user *}</label>
-                <div class="col-sm-10">
-                    <input type="text" autocomplete="off" class="form-control" id="inputDatabaseUser" name="database_user" value="{* var database.username *}" placeholder="{* lang db_user *}" />
-                </div>
-            </div><!--END form form-group inputDatabaseUser-->
+            {* tpl default/com_input_adv name=database_user label=db_user value=database.username type=text holder=db_user *}
 
-            <div class="form-group">
-                <label for="inputDatabasePassword" class="col-sm-2 control-label">{* lang password *}</label>
-                <div class="col-sm-10">
-                    <input type="password" autocomplete="off" class="form-control" id="inputDatabasePassword" name="database_pass" value="" placeholder="{* lang password *}" />
-                </div>
-            </div><!--END form form-group inputDatabasePassword-->
+            {* tpl default/com_input_pwd name=database_pass label=password holder=password *}
 
-            <div class="form-group">
-                <label for="inputDatabasePrefix" class="col-sm-2 control-label">{* lang db_prefix *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputDatabasePrefix" name="database_prefix" value="{* var database.prefix *}" placeholder="{* lang db_prefix_info *}" />
-                </div>
-            </div><!--END form form-group inputDatabasePrefix-->
+            {* tpl default/com_input_adv name=database_prefix label=db_prefix value=database.prefix type=text holder=db_prefix_info *}
 
-            <div class="form-group">
-                <label for="inputDatabaseSchema" class="col-sm-2 control-label">{* lang db_schema *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputDatabaseSchema" name="database_schema" value="{* var database.schema *}" placeholder="{* lang db_schema_info *}" />
-                </div>
-            </div><!--END form form-group inputDatabaseSchema-->
+            {* tpl default/com_input_adv name=database_schema label=db_schema value=database.schema type=text holder=db_schema_info *}
 
-            <div class="form-group">
-                <label for="inputDatabaseFile" class="col-sm-2 control-label">{* lang db_file *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputDatabaseFile" name="database_file" value="{* var database.file *}" placeholder="{* lang db_file_info *}" />
-                </div>
-            </div><!--END form form-group inputDatabaseFile-->
+            {* tpl default/com_input_adv name=database_file label=db_file value=database.file type=text holder=db_file_info *}
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang test *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=test *}
 
         </form><!--END form-->
 

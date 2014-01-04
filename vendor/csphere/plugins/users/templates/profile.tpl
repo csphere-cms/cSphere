@@ -7,46 +7,17 @@
 
         <form class="form-horizontal" role="form" action="{* link users/profile *}" method="POST">
 
-            <div class="form-group">
-                <label for="inputUserName" class="col-sm-2 control-label">{* lang name *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputUserName" name="user_name" value="{* var users.user_name *}" placeholder="{* lang name *}" />
-                </div>
-            </div><!--END form form-group inputUserName-->
+            {* tpl default/com_input name=user_name label=name value=users.user_name *}
 
-            <div class="form-group">
-                <label for="inputUserEmail" class="col-sm-2 control-label">{* lang email *}</label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputUserEmail" name="user_email" value="{* var users.user_email *}" placeholder="{* lang email *}" />
-                </div>
-            </div><!--END form form-group inputUserEmail-->
+            {* tpl default/com_input_adv name=user_email label=email value=users.user_email type=email holder=email *}
 
-            <div class="form-group">
-                <label for="inputUserPasswordOld" class="col-sm-2 control-label">{* lang password *}</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputUserPasswordOld" name="password_old" value="" placeholder="{* lang password_old *}" />
-                </div>
-            </div><!--END form form-group inputUserPasswordOld-->
+            {* tpl default/com_input_pwd name=password_old label=password holder=password_old *}
 
-            <div class="form-group">
-                <label for="inputUserPasswordNew" class="col-sm-2 control-label">{* lang password *}</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputUserPasswordNew" name="password_new" value="" placeholder="{* lang password_new *}" />
-                </div>
-            </div><!--END form form-group inputUserPasswordNew-->
+            {* tpl default/com_input_pwd name=password_new label=password holder=password_new *}
 
-            <div class="form-group">
-                <label for="inputUserPasswordConfirm" class="col-sm-2 control-label">{* lang password *}</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputUserPasswordConfirm" name="password_confirm" value="" placeholder="{* lang password_confirm *}" />
-                </div>
-            </div><!--END form form-group inputUserPasswordConfirm-->
+            {* tpl default/com_input_pwd name=password_confirm label=password holder=password_confirm *}
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang default.save *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=default.save *}
 
         </form><!--END form-->
 

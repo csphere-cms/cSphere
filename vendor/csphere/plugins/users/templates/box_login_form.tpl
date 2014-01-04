@@ -6,15 +6,9 @@
     </div>
     {* endif login_error *}
 
-    <div class="form-group">
-        <label class="sr-only" for="inputUserName">{* lang user_name *}</label>
-        <input type="text" class="form-control" id="inputUserName" name="login_name" placeholder="{* lang user_name *}" value="{* var login_name *}" required>
-    </div><!--END form form-group inputUserName-->
+    {* tpl default/com_input name=login_name label=user_name value=login_name *}
 
-    <div class="form-group">
-        <label class="sr-only" for="inputUserPassword">{* lang user_password *}</label>
-        <input type="password" class="form-control" id="inputUserPassword" name="login_password" placeholder="{* lang user_password *}" required>
-    </div><!--END form form-group inputUserPassword-->
+    {* tpl default/com_input_pwd name=login_password label=user_password holder=user_password *}
 
     <div class="form-group">
         <button type="submit" class="btn btn-success btn-block" onclick="csphere_ajax_form('users', 'login', '')">{* lang submit *}</button>

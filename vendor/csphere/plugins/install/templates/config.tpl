@@ -27,136 +27,52 @@
                     {* endif drivers.active *}
                     {* endforeach cache.drivers *}
                     </select>
-                    <br />
-                    {* lang cache_info *}
                 </div>
             </div><!--END form form-group inputCacheDriver-->
 
-            <div class="form-group">
-                <label for="inputLogs" class="col-sm-2 control-label">{* lang error_logs *}</label>
-                <div class="col-sm-10">
+            <span class="help-block">{* lang cache_info *}</span>
 
-                    <label class="checkbox-inline">
-                        {* if config.logs != '1' *}
-                        <input type="radio" name="logs" value="0" checked="checked" /> {* lang default.no *}
-                        {* else config.logs *}
-                        <input type="radio" name="logs" value="0" /> {* lang default.no *}
-                        {* endif config.logs *}
-                    </label>
+            {* if config.logs == '1' *}
+            {* tpl default/com_input_yesno name=logs label=error_logs *}
+            {* else config.logs *}
+            {* tpl default/com_input_noyes name=logs label=error_logs *}
+            {* endif config.logs *}
 
-                    <label class="checkbox-inline">
-                        {* if config.logs == '1' *}
-                        <input type="radio" name="logs" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else config.logs *}
-                        <input type="radio" name="logs" value="1" /> {* lang default.yes *}
-                        {* endif config.logs *}
-                    </label>
-                    <br />
-                    {* lang logs_info *}
-                </div>
-            </div><!--END form form-group inputLogs-->
+            <span class="help-block">{* lang logs_info *}</span>
 
-            <div class="form-group">
-                <label for="inputZlib" class="col-sm-2 control-label">{* lang zlib_compression *}</label>
-                <div class="col-sm-10">
+            {* if config.zlib == '1' *}
+            {* tpl default/com_input_yesno name=zlib label=zlib_compression *}
+            {* else config.zlib *}
+            {* tpl default/com_input_noyes name=zlib label=zlib_compression *}
+            {* endif config.zlib *}
 
-                    <label class="checkbox-inline">
-                        {* if config.zlib != '1' *}
-                        <input type="radio" name="zlib" value="0" checked="checked" /> {* lang default.no *}
-                        {* else config.zlib *}
-                        <input type="radio" name="zlib" value="0" /> {* lang default.no *}
-                        {* endif config.zlib *}
-                    </label>
+            <span class="help-block">{* lang zlib_info *}</span>
 
-                    <label class="checkbox-inline">
-                        {* if config.zlib == '1' *}
-                        <input type="radio" name="zlib" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else config.zlib *}
-                        <input type="radio" name="zlib" value="1" /> {* lang default.yes *}
-                        {* endif config.zlib *}
-                    </label>
-                    <br />
-                    {* lang zlib_info *}
-                </div>
-            </div><!--END form form-group inputZlib-->
+            {* if config.debug == '1' *}
+            {* tpl default/com_input_yesno name=debug label=debug_mode *}
+            {* else config.debug *}
+            {* tpl default/com_input_noyes name=debug label=debug_mode *}
+            {* endif config.debug *}
 
-            <div class="form-group">
-                <label for="inputDebug" class="col-sm-2 control-label">{* lang debug_mode *}</label>
-                <div class="col-sm-10">
+            <span class="help-block">{* lang debug_info *}</span>
 
-                    <label class="checkbox-inline">
-                        {* if config.debug != '1' *}
-                        <input type="radio" name="debug" value="0" checked="checked" /> {* lang default.no *}
-                        {* else config.debug *}
-                        <input type="radio" name="debug" value="0" /> {* lang default.no *}
-                        {* endif config.debug *}
-                    </label>
+            {* if config.rewrite == '1' *}
+            {* tpl default/com_input_yesno name=rewrite label=pretty_urls *}
+            {* else config.rewrite *}
+            {* tpl default/com_input_noyes name=rewrite label=pretty_urls *}
+            {* endif config.rewrite *}
 
-                    <label class="checkbox-inline">
-                        {* if config.debug == '1' *}
-                        <input type="radio" name="debug" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else config.debug *}
-                        <input type="radio" name="debug" value="1" /> {* lang default.yes *}
-                        {* endif config.debug *}
-                    </label>
-                    <br />
-                    {* lang debug_info *}
-                </div>
-            </div><!--END form form-group inputDebug-->
+            <span class="help-block">{* lang rewrite_info *}</span>
 
-            <div class="form-group">
-                <label for="inputRewrite" class="col-sm-2 control-label">{* lang pretty_urls *}</label>
-                <div class="col-sm-10">
+            {* if config.ajax == '1' *}
+            {* tpl default/com_input_yesno name=ajax label=ajax_full *}
+            {* else config.ajax *}
+            {* tpl default/com_input_noyes name=ajax label=ajax_full *}
+            {* endif config.ajax *}
 
-                    <label class="checkbox-inline">
-                        {* if config.rewrite != '1' *}
-                        <input type="radio" name="rewrite" value="0" checked="checked" /> {* lang default.no *}
-                        {* else config.rewrite *}
-                        <input type="radio" name="rewrite" value="0" /> {* lang default.no *}
-                        {* endif config.rewrite *}
-                    </label>
+            <span class="help-block">{* lang ajax_info *}</span>
 
-                    <label class="checkbox-inline">
-                        {* if config.rewrite == '1' *}
-                        <input type="radio" name="rewrite" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else config.rewrite *}
-                        <input type="radio" name="rewrite" value="1" /> {* lang default.yes *}
-                        {* endif config.rewrite *}
-                    </label>
-                    <br />
-                    {* lang rewrite_info *}
-                </div>
-            </div><!--END form form-group inputRewrite-->
-
-            <div class="form-group">
-                <label for="inputAJAX" class="col-sm-2 control-label">{* lang ajax_full *}</label>
-                <div class="col-sm-10">
-
-                    <label class="checkbox-inline">
-                        {* if config.ajax != '1' *}
-                        <input type="radio" name="ajax" value="0" checked="checked" /> {* lang default.no *}
-                        {* else config.ajax *}
-                        <input type="radio" name="ajax" value="0" /> {* lang default.no *}
-                        {* endif config.ajax *}
-                    </label>
-
-                    <label class="checkbox-inline">
-                        {* if config.ajax == '1' *}
-                        <input type="radio" name="ajax" value="1" checked="checked" /> {* lang default.yes *}
-                        {* else config.ajax *}
-                        <input type="radio" name="ajax" value="1" /> {* lang default.yes *}
-                        {* endif config.ajax *}
-                    </label>
-                    <br />
-                    {* lang ajax_info *}
-                </div>
-            </div><!--END form form-group inputAJAX-->
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang default.save *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=default.save *}
 
         </form><!--END form-->
 

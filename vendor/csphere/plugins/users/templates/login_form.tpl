@@ -15,25 +15,11 @@
             <br />
             {* endif login_error *}
 
-            <div class="form-group">
-                <label for="inputUserName" class="col-sm-2 control-label">{* lang user_name *}</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputUserName" name="login_name" value="{* var login_name *}" placeholder="{* lang name *}" />
-                </div>
-            </div><!--END form form-group inputUserName-->
+            {* tpl default/com_input name=login_name label=user_name value=login_name *}
 
-            <div class="form-group">
-                <label for="inputUserPassword" class="col-sm-2 control-label">{* lang user_password *}</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputUserPassword" name="login_password" value="" placeholder="{* lang password *}" />
-                </div>
-            </div><!--END form form-group inputUserPassword-->
+            {* tpl default/com_input_pwd name=login_password label=user_password holder=user_password *}
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang submit *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=submit *}
 
         </form>
 

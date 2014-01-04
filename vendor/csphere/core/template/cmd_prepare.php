@@ -174,11 +174,20 @@ abstract class CMD_Prepare
     {
         $split = explode(' ', $part['key']);
 
+        // Check for com details and data
         if (isset($split[1]) AND isset($coms[$split[1]])) {
 
-            $part = \csphere\core\template\Prepare::hooks(
-                $split[0], $coms[$split[1]], $part['plugin'], array()
-            );
+            // Text is a special case
+            if ($split[0] == 'text') {
+
+                $part = array('cmd' => 'text', 'text' => $coms[$split[1]]);
+
+            } else {
+
+                $part = \csphere\core\template\Prepare::hooks(
+                    $split[0], $coms[$split[1]], $part['plugin'], array()
+                );
+            }
 
         } else {
 

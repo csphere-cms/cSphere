@@ -30,11 +30,7 @@
                 </div>
             </div><!--END form form-group inputForceHTTPS-->
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button class="btn btn-primary" type="submit">{* lang default.save *}</button>
-                </div>
-            </div><!--END form form-group submit-->
+            {* tpl default/com_submit_btn caption=default.save *}
 
         </form><!--END form-->
 
