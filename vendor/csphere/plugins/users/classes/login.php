@@ -36,7 +36,7 @@ abstract class Login
     /**
      * Show form for login or handle post request
      *
-     * @param boolean $box If view target area is a box
+     * @param boolean $box    If view target area is a box
      * @param string  $layout Template layout to use
      *
      * @return void
