@@ -44,6 +44,16 @@ class Listed extends \csphere\core\rad\Base
     private $_like = array();
 
     /**
+     * Link to create
+     **/
+    private $_create = false;
+
+    /**
+     * Link to options
+     **/
+    private $_options = false;
+
+    /**
      * Finder closure
      **/
     private $_findercall = null;
@@ -73,14 +83,19 @@ class Listed extends \csphere\core\rad\Base
     /**
      * Set search input columns for queries
      *
-     * @param array $like Column names for search input
+     * @param array   $like    Column names for search input
+     * @param boolean $options Wether a link to options should be shown
+     * @param boolean $create  Wether a link to creation should be shown
      *
      * @return boolean
      **/
 
-    public function search(array $like)
+    public function search(array $like, $create = false, $options = false)
     {
         $this->_like = $like;
+
+        $this->_create  = (boolean)$create;
+        $this->_options = (boolean)$options;
 
         return true;
     }
@@ -184,6 +199,12 @@ class Listed extends \csphere\core\rad\Base
         $fn_table = $this->_finder($fn_table, $search);
 
         $data[$this->schema] = $fn_table->find($pages->offset(), $limit);
+
+        // Set plugin name and buttons
+        $data['plugin']  = $this->plugin;
+        $create          = $this->_create === false ? '' : 'yes';
+        $options         = $this->_options === false ? '' : 'yes';
+        $data['buttons'] = array('options' => $options, 'create' => $create);
 
         // Send data to view
         $this->view($data);

@@ -34,6 +34,11 @@ abstract class Prepare
     private static $_var = array('var' => 0, 'url' => 1, 'raw' => 2, 'form' => 3);
 
     /**
+     * List of commands that need the plugin name
+     **/
+    private static $_plugin = array('com' => 0, 'lang' => 1, 'tpl' => 2);
+
+    /**
      * Prepares nested array targets
      *
      * @param array $part Placeholder cmd and key, maybe even more
@@ -96,11 +101,12 @@ abstract class Prepare
      *
      * @param string $string Template file part as a string
      * @param string $plugin Name of the plugin for tpl files
+     * @param array  $coms   Array of commands to replace with others
      *
      * @return array
      **/
 
-    public static function template($string, $plugin = '')
+    public static function template($string, $plugin = '', array $coms = array())
     {
         // Add form end placeholder to form closing tags
         $pattern = "'((?:\{\* form end \*\}[\s]*)*\<\/form\>)'sS";
@@ -119,7 +125,7 @@ abstract class Prepare
 
         $parts = count($template);
 
-        $new = self::placeholders($template[0], $plugin);
+        $new = self::placeholders($template[0], $plugin, $coms);
 
         // Parts: i1 = cmd, i2 = key, i3 = equal i4 = cond, i5 = value, i6 = else
         for ($i = 1; $i < $parts; $i++) {
@@ -127,8 +133,8 @@ abstract class Prepare
             // Nesting of foreach and if tags
             if ($template[$i] == 'foreach' OR $template[$i] == 'if') {
 
-                $split = self::template($template[($i + 4)], $plugin);
-                $else  = self::template($template[($i + 5)], $plugin);
+                $split = self::template($template[($i + 4)], $plugin, $coms);
+                $else  = self::template($template[($i + 5)], $plugin, $coms);
 
                 $next = array('cmd'   => $template[$i],
                               'key'   => $template[($i + 1)],
@@ -140,7 +146,7 @@ abstract class Prepare
                 $new[] = self::sub($next);
 
                 // Add the part next to the nested content
-                $add = self::placeholders($template[($i + 7)], $plugin);
+                $add = self::placeholders($template[($i + 7)], $plugin, $coms);
 
                 $new = array_merge($new, $add);
 
@@ -157,15 +163,16 @@ abstract class Prepare
      *
      * @param string $string Template file part as a string
      * @param string $plugin Name of the plugin for tpl files
+     * @param array  $coms   Array of commands to replace with others
      *
      * @return array
      **/
 
-    public static function placeholders($string, $plugin = '')
+    public static function placeholders($string, $plugin, array $coms = array())
     {
         // Split string into an array of placeholders and content
         $search   = "'\{\* (?P<cmd>[\S]+?)"
-                  . " (?P<key>[\S]+?) \*\}"
+                  . " (?P<key>.*?) \*\}"
                   . "'S";
         $template = preg_split($search, $string, -1, PREG_SPLIT_DELIM_CAPTURE);
 
@@ -184,7 +191,9 @@ abstract class Prepare
 
             // Run hooks and add array elements afterwards
             try {
-                $new[] = self::_hooks($template[$j], $template[($j + 1)], $plugin);
+                $new[] = self::hooks(
+                    $template[$j], $template[($j + 1)], $plugin, $coms
+                );
             }
             catch (\Exception $exception) {
 
@@ -213,18 +222,19 @@ abstract class Prepare
      * @param string $cmd    Command of placeholder
      * @param string $key    Key data of placeholder
      * @param string $plugin Name of the plugin for tpl files
+     * @param array  $coms   Array of commands to replace with others
      *
      * @throws \Exception
      *
      * @return array
      **/
 
-    private static function _hooks($cmd, $key, $plugin = '')
+    public static function hooks($cmd, $key, $plugin, array $coms)
     {
         // Combine array and add plugin to lang and help
         $next = array('cmd' => $cmd, 'key' => $key);
 
-        if ($cmd == 'lang' OR $cmd == 'help') {
+        if (isset(self::$_plugin[$cmd])) {
 
             $next['plugin'] = $plugin;
         }
@@ -240,7 +250,7 @@ abstract class Prepare
 
         } elseif ($cmd != 'page' AND $cmd != 'debug') {
 
-            $next = \csphere\core\template\CMD_Prepare::$cmd($next);
+            $next = \csphere\core\template\CMD_Prepare::$cmd($next, $coms);
         }
 
         return $next;

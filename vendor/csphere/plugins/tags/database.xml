@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>tags</plugin>
+    <tables>
+        <table name="tags">
+            <columns>
+                <column name="tag_id" datatype="serial" max="0" default="" />
+                <column name="tag_name" datatype="varchar" max="80" default="" />
+                <column name="tag_since" datatype="integer" max="0" default="0" />
+            </columns>
+            <primary>
+                <column name="tag_id" />
+            </primary>
+            <uniques>
+                <unique name="tag_name">
+                    <column name="tag_name" />
+                </unique>
+            </uniques>
+        </table>
+    </tables>
+    <data>
+    </data>
+</database>

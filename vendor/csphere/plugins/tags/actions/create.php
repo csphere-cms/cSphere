@@ -1,12 +1,12 @@
 <?php
 
 /**
- * List action
+ * Create action
  *
  * PHP Version 5
  *
  * @category  Plugins
- * @package   Users
+ * @package   Tags
  * @author    Hans-Joachim Piepereit <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
@@ -14,12 +14,17 @@
  **/
 
  // Get RAD class for this action
-$rad = new \csphere\core\rad\Listed('users');
+$rad = new \csphere\core\rad\Create('tags');
 
-$rad->map('manage', 'manage');
+// Define closure to execute before record is send to database
+$record = function ($array) {
 
-// Define order columns
-$order = array('user_name', 'user_since');
+    $array['tag_since'] = time();
 
-$rad->search(array('user_name'), true, true);
-$rad->delegate('user_name', $order);
+    return $array;
+};
+
+$rad->callRecord($record);
+
+// Delegate action
+$rad->delegate();

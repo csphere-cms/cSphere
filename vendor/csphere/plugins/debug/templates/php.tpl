@@ -1,13 +1,7 @@
 <div id="debug-php" class="panel panel-default">
     <div class="panel-body">
 
-        <header>
-            <section class="page-header">
-                <h3>
-                    {* lang debug *} - {* lang php_details *}
-                </h3><!--END header page-header headline-->
-            </section><!--END header page-header-->
-        </header><!--END header-->
+        {* tpl default/com_header plugin=debug action=php_details *}
 
         <ul class="nav nav-tabs nav-justified">
             <li><a href="{* link debug/control *}">{* lang control *}</a></li>

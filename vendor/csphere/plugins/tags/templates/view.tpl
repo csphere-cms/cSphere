@@ -1,7 +1,9 @@
-<div id="users-view" class="panel panel-default">
+<div id="tags-view" class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=users action=default.view *}
+        {* tpl default/com_header plugin=tags action=default.view *}
+
+        <br />
 
         <table class="table table-striped table-hover">
             <tbody>
@@ -10,7 +12,7 @@
                         {* lang name *}
                     </th>
                     <td>
-                        {* var users.user_name *}
+                        {* var tags.tag_name *}
                     </td>
                 </tr>
                 <tr>
@@ -18,15 +20,7 @@
                         {* lang since *}
                     </th>
                     <td>
-                        {* date users.user_since *}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        {* lang laston *}
-                    </th>
-                    <td>
-                        {* date users.user_laston *}
+                        {* date tags.tag_since *}
                     </td>
                 </tr>
             </tbody><!--END table tbody-->

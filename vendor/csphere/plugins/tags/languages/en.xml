@@ -20,6 +20,8 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="name">Name</define>
+        <define name="since">Since</define>
         <define name="tags">Tags</define>
     </definitions>
 </language>

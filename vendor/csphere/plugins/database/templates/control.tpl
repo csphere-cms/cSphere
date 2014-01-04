@@ -1,13 +1,7 @@
 <div id="database-control" class="panel panel-default">
     <div class="panel-body">
 
-        <header>
-            <section class="page-header">
-                <h3>
-                    {* lang database *} - {* lang control *}
-                </h3><!--END header page-header headline-->
-            </section><!--END header page-header-->
-        </header><!--END header-->
+        {* tpl default/com_header plugin=database action=control *}
 
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a href="{* link database/control *}">{* lang control *}</a></li>

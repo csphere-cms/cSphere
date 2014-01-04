@@ -1,13 +1,7 @@
 <div id="users-settings" class="panel panel-default">
     <div class="panel-body">
 
-        <header>
-            <section class="page-header">
-                <h3>
-                    {* lang users *} - {* lang settings *}
-                </h3><!--END header page-header headline-->
-            </section><!--END header page-header-->
-        </header><!--END header-->
+        {* tpl default/com_header plugin=users action=settings *}
 
         <br />
 

@@ -118,7 +118,23 @@ abstract class CMD_Prepare
     public static function tpl(array $part)
     {
         // Check for valid placeholder key data
-        $target = isset($part['key']) ? explode('/', $part['key'], 2) : array();
+        $replace = isset($part['key']) ? explode(' ', $part['key']) : array();
+        $target  = explode('/', $replace[0], 2);
+
+        // Prepare commands if there are any
+        $cmds = array();
+
+        if (isset($replace[1])) {
+
+            $cmds   = array();
+            $splits = count($replace);
+
+            for ($i = 1; $i < $splits; $i++) {
+
+                $split           = explode('=', $replace[$i], 2);
+                $cmds[$split[0]] = isset($split[1]) ? $split[1] : '';
+            }
+        }
 
         if (isset($target[1])) {
 
@@ -129,13 +145,44 @@ abstract class CMD_Prepare
 
             // Get file content and prepare it
             $string = file_get_contents($file);
-            $parts  = \csphere\core\template\Prepare::template($string);
+            $parts  = \csphere\core\template\Prepare::template(
+                $string, $part['plugin'], $cmds
+            );
 
             $part = array('cmd' => 'multi', 'value' => $parts);
 
         } else {
 
             throw new \Exception('TPL target missing: ' . $part['cmd']);
+        }
+
+        return $part;
+    }
+
+    /**
+     * Allows for setting command details afterwards
+     *
+     * @param array $part Placeholder cmd and key, maybe even more
+     * @param array $coms Array of commands to replace with others
+     *
+     * @throws \Exception
+     *
+     * @return array
+     **/
+
+    public static function com(array $part, array $coms)
+    {
+        $split = explode(' ', $part['key']);
+
+        if (isset($split[1]) AND isset($coms[$split[1]])) {
+
+            $part = \csphere\core\template\Prepare::hooks(
+                $split[0], $coms[$split[1]], $part['plugin'], array()
+            );
+
+        } else {
+
+            throw new \Exception('COM data missing: ' . $part['key']);
         }
 
         return $part;

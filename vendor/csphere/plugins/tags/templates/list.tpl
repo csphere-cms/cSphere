@@ -1,7 +1,7 @@
-<div id="users-list" class="panel panel-default">
+<div id="tags-list" class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=users action=visits search=login_browser *}
+        {* tpl default/com_headsearch plugin=tags action=default.list search=name *}
 
         <br />
 
@@ -9,31 +9,31 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.login_since *}">{* lang login_since *}</a> {* raw arrow.login_since *}
+                        <a href="{* raw order.tag_name *}">{* lang name *}</a> {* raw arrow.tag_name *}
                     </th>
                     <th>
-                        <a href="{* raw order.login_browser *}">{* lang login_browser *}</a> {* raw arrow.login_browser *}
+                        <a href="{* raw order.tag_since *}">{* lang since *}</a> {* raw arrow.tag_since *}
                     </th>
                 </tr>
             </thead><!--END table thead-->
 
             <tbody>
-                {* foreach users_logins *}
+                {* foreach tags *}
                 <tr>
                     <td>
-                        {* date users_logins.login_since *}
+                        <a href="{* link tags/view/id/$tags.tag_id *}">{* var tags.tag_name *}</a>
                     </td>
                     <td>
-                        <span title="{* var users_logins.login_browser *}">{* var users_logins.scan_browser *}</span>
+                        {* date tags.tag_since *}
                     </td>
                 </tr>
-                {* else users_logins *}
+                {* else tags *}
                 <tr>
                     <th colspan="3" class="text-center">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>
-                {* endforeach users_logins *}
+                {* endforeach tags *}
             </tbody><!--END table tbody-->
         </table><!--END table-->
 

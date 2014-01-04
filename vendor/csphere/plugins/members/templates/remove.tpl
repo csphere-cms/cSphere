@@ -1,13 +1,7 @@
 <div id="members-remove" class="panel panel-default">
     <div class="panel-body">
 
-        <header>
-            <section class="page-header">
-                <h3>
-                    {* lang members *} - {* lang default.remove *}
-                </h3><!--END header page-header headline-->
-            </section><!--END header page-header-->
-        </header><!--END header-->
+        {* tpl default/com_header plugin=members action=default.remove *}
 
         <div class="well text-center">
             <h4>{* lang default.remove_sure *}</h4>

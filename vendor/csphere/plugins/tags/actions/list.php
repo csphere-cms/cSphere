@@ -6,7 +6,7 @@
  * PHP Version 5
  *
  * @category  Plugins
- * @package   Users
+ * @package   Tags
  * @author    Hans-Joachim Piepereit <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
@@ -14,12 +14,10 @@
  **/
 
  // Get RAD class for this action
-$rad = new \csphere\core\rad\Listed('users');
-
-$rad->map('manage', 'manage');
+$rad = new \csphere\core\rad\Listed('tags');
 
 // Define order columns
-$order = array('user_name', 'user_since');
+$order = array('tag_name', 'tag_since');
 
-$rad->search(array('user_name'), true, true);
-$rad->delegate('user_name', $order);
+$rad->search(array('tag_name'));
+$rad->delegate('tag_name', $order);

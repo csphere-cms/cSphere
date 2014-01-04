@@ -21,5 +21,5 @@ $rad->map('manage', 'manage');
 // Define order columns
 $order = array('group_name', 'group_since');
 
-$rad->search(array('group_name'));
+$rad->search(array('group_name'), true, true);
 $rad->delegate('group_name', $order);
