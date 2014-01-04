@@ -200,8 +200,7 @@ class Listed extends \csphere\core\rad\Base
 
         $data[$this->schema] = $fn_table->find($pages->offset(), $limit);
 
-        // Set plugin name and buttons
-        $data['plugin']  = $this->plugin;
+        // Set buttons for create and options
         $create          = $this->_create === false ? '' : 'yes';
         $options         = $this->_options === false ? '' : 'yes';
         $data['buttons'] = array('options' => $options, 'create' => $create);

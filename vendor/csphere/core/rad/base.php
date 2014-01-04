@@ -181,6 +181,7 @@ abstract class Base
 
         $url = $this->plugin . '/' . $this->action;
 
+        // Requests for a specific ID must contain it here
         if (!empty($rid)) {
 
             $url .= '/id/' . (int)$rid;
@@ -190,7 +191,8 @@ abstract class Base
         $bread->add($this->action, $url);
         $bread->trace();
 
-        // Set action
+        // Set plugin and action
+        $data['plugin'] = $this->plugin;
         $data['action'] = $this->action;
 
         // Apply registered closure
