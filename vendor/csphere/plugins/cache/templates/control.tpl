@@ -1,4 +1,4 @@
-<div id="cache-control" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>
@@ -25,7 +25,7 @@
                     <th>{* lang time *}</th>
                     <th class="text-center">{* lang size *}</th>
                 </tr>
-            </thead>
+            </thead><!--END table thead-->
 
             <tbody>
                 {* foreach entries *}
@@ -39,7 +39,7 @@
                     <th colspan="3" class="text-center">{* lang no_entry *}</td>
                 </tr>
                 {* endforeach entries *}
-            </tbody>
+            </tbody><!--END table tbody-->
         </table><!--END table-->
 
     </div><!--END panel panel-body-->

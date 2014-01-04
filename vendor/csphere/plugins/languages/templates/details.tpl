@@ -1,4 +1,4 @@
-<div id="languages-details" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>

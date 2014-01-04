@@ -14,4 +14,4 @@
         <button type="submit" class="btn btn-success btn-block" onclick="csphere_ajax_form('users', 'login', '')">{* lang submit *}</button>
     </div><!--END form form-group submit-->
 
-</form>
+</form><!--END form-->

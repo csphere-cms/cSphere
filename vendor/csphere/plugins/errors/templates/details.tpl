@@ -1,4 +1,4 @@
-<div id="errors-details" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>

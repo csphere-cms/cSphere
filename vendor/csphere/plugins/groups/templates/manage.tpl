@@ -1,4 +1,4 @@
-<div id="groups-manage" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_headsearch plugin=groups action=default.manage search=name *}

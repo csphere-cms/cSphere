@@ -1,4 +1,4 @@
-<div id="database-tables" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>

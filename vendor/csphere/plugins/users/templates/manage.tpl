@@ -1,4 +1,4 @@
-<div id="users-manage" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_headsearch plugin=users action=default.manage search=name *}

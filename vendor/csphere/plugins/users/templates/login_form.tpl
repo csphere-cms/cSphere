@@ -1,4 +1,4 @@
-<div id="users-login-form" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=users action=login *}
@@ -21,7 +21,7 @@
 
             {* tpl default/com_submit_btn caption=submit *}
 
-        </form>
+        </form><!--END form-->
 
     </div><!--END panel panel-body-->
 </div><!--END panel-->

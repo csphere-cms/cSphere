@@ -1,5 +1,5 @@
-<ul id="users-login-form-box" class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
     <li>
        <a href="{* link users/login *}">{* lang login *}</a>
     </li>
-</ul>
+</ul><!--END navbar-nav-->

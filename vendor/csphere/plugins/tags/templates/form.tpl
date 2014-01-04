@@ -1,4 +1,4 @@
-<div id="tags-form" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* if action == 'create' *}

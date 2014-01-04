@@ -1,4 +1,4 @@
-<div id="groups-remove" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=groups action=default.remove *}

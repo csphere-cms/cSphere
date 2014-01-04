@@ -1,4 +1,4 @@
-<div id="debug-space" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=debug action=disk_space *}

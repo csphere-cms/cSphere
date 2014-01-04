@@ -1,5 +1,5 @@
-<ul id="users-login-message-box" class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
     <li>
        <a href="{* raw previous *}">{* lang login *}</a>
     </li>
-</ul>
+</ul><!--END navbar-->

@@ -1,4 +1,4 @@
-<ul id="users-login-menu-box" class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" id="dropdownUsermenu" data-toggle="dropdown">{* var user_name *}  <b class="caret"></b></a>
 
@@ -13,4 +13,4 @@
             <li role="presentation"><a href="{* link users/logout *}" role="menuitem" tabindex="-1">{* lang logout *}</a></li>
         </ul>
     </li>
-</ul><!--END users-login-menu-box-->
+</ul><!--END navbar-nav->

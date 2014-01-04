@@ -1,4 +1,4 @@
-<div id="users-remove" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=users action=default.remove *}

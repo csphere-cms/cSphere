@@ -1,4 +1,4 @@
-<div id="themes-control" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=themes action=control *}

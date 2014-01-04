@@ -1,4 +1,4 @@
-<div id="default-pages" class="text-center">
+<div class="text-center">
     <ul class="pagination">
         {* if arrow.show == 'yes' *}
         <li><a href="{* raw arrow.first *}">&laquo;</a></li>

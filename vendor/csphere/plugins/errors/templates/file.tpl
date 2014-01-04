@@ -1,4 +1,4 @@
-<div id="errors-file" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>

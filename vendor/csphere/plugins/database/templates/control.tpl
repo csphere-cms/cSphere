@@ -1,4 +1,4 @@
-<div id="database-control" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=database action=control *}

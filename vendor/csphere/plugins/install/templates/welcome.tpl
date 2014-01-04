@@ -1,4 +1,4 @@
-<div id="install-language" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         <header>
@@ -12,13 +12,9 @@
 
         <br />
 
-        <div>
-
         {* lang welcome_info *}<br /><br />
 
         <a href="{* link install/language *}">{* lang default.continue *}</a>
-
-        </div>
 
     </div><!--END panel panel-body-->
 </div><!--END panel-->

@@ -1,4 +1,4 @@
-<div id="default-message-box">
+<div>
 
     <div class="page-header">
         <h4>{* var box_name *}</h4>
