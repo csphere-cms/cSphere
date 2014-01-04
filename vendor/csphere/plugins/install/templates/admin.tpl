@@ -23,5 +23,7 @@
 
             {* tpl default/com_submit_btn caption=default.save *}
 
+        </form><!--END form-->
+
     </div><!--END panel panel-body-->
 </div><!--END panel-->
