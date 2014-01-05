@@ -20,21 +20,34 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="columns">Columns</define>
         <define name="control">Control</define>
+        <define name="data">Data</define>
         <define name="database">Database</define>
-
+        <define name="deletes">Deletes</define>
+        <define name="details">Details</define>
         <define name="driver">Driver</define>
         <define name="encoding">Encoding</define>
+        <define name="foreigns">Foreigns</define>
         <define name="host">Host</define>
+        <define name="indexes">Indexes</define>
+        <define name="inserts">Inserts</define>
+        <define name="name">Name</define>
+        <define name="no_data">No data found</define>
+        <define name="no_table_found">No table found</define>
         <define name="plugin">Plugin</define>
+        <define name="primary">Primary</define>
         <define name="records">Records</define>
         <define name="schema">Schema</define>
         <define name="size">Size</define>
         <define name="table">Table</define>
         <define name="table_name_error">Table name is not valid</define>
         <define name="tables">Tables</define>
+        <define name="uniques">Uniques</define>
+        <define name="updates">Updates</define>
         <define name="version_client">Client version</define>
         <define name="version_driver">Driver version</define>
         <define name="version_server">Server version</define>
+        <define name="where">Where</define>
     </definitions>
 </language>

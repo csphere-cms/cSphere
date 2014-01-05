@@ -82,7 +82,10 @@ class Driver_Database extends Base
         // Check for data array
         if (empty($array['data'])) {
 
-            $array['data'] = array();
+            $array['data'] = array('insert' => array(),
+                                   'update' => array(),
+                                   'delete' => array());
+
         } else {
 
             $array['data'] = $this->_data($array['data'][0]);
@@ -161,18 +164,30 @@ class Driver_Database extends Base
         if (isset($data['insert'])) {
 
             $data['insert'] = $this->loopattr($data['insert']);
+
+        } else {
+
+            $data['insert'] = array();
         }
 
         // Shorten update as good as possible
         if (isset($data['update'])) {
 
             $data['update'] = $this->loopattr($data['update']);
+
+        } else {
+
+            $data['update'] = array();
         }
 
         // Shorten delete as good as possible
         if (isset($data['delete'])) {
 
             $data['delete'] = $this->loopattr($data['delete']);
+
+        } else {
+
+            $data['delete'] = array();
         }
 
         return $data;

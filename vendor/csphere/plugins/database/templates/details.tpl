@@ -1,13 +1,13 @@
 <div class="main_content_div">
 
-Database content for plugin: {* var plugin *}
+{* lang plugin *}: {* var plugin *}
 <br /><br />
-Tables:
+{* lang tables *}:
 <br /><br />
 {* foreach tables *}
 <ul>
-<li>Name: {* var tables.name *}</li>
-<li>Columns:
+<li>{* lang name *}: {* var tables.name *}</li>
+<li>{* lang columns *}:
 <ul>
 {* foreach tables.columns *}
 <li>{* var columns.name *} - {* var columns.datatype *}
@@ -18,7 +18,7 @@ Tables:
 </ul>
 </li>
 
-<li>Primary:
+<li>{* lang primary *}:
 <ul>
 {* foreach tables.primary *}
 <li>{* var primary.name *}</li>
@@ -26,10 +26,10 @@ Tables:
 </ul>
 </li>
 
-<li>Uniques:
+<li>{* lang uniques *}:
 <ul>
 {* foreach tables.uniques *}
-<li>Name: {* var uniques.name *}</li>
+<li>{* lang name *}: {* var uniques.name *}</li>
 <ul>
 {* foreach uniques.column *}
 <li>{* var column.name *}</li>
@@ -39,10 +39,10 @@ Tables:
 </ul>
 </li>
 
-<li>Indexes:
+<li>{* lang indexes *}:
 <ul>
 {* foreach tables.indexes *}
-<li>Name: {* var indexes.name *}</li>
+<li>{* lang name *}: {* var indexes.name *}</li>
 <ul>
 {* foreach indexes.column *}
 <li>{* var column.name *}</li>
@@ -52,10 +52,10 @@ Tables:
 </ul>
 </li>
 
-<li>Foreigns:
+<li>{* lang foreigns *}:
 <ul>
 {* foreach tables.foreigns *}
-<li>Name: {* var foreigns.table *}</li>
+<li>{* lang name *}: {* var foreigns.table *}</li>
 <ul>
 {* foreach foreigns.column *}
 <li>{* var column.name *} -&gt; {* var column.target *}</li>
@@ -67,16 +67,16 @@ Tables:
 </ul>
 <br /><br />
 {* else tables *}
-No tables found
+{* lang no_table_found *}
 {* endforeach tables *}
-Data:
+{* lang data *}:
 <br /><br />
-{* foreach data *}
+
 <ul>
-<li>Inserts:
+<li>{* lang inserts *}:
 <ul>
 {* foreach data.insert *}
-<li>Table: {* var insert.table *}</li>
+<li>{* lang table *}: {* var insert.table *}</li>
 <ul>
 {* foreach insert.column *}
 <li>{* var column.name *} = {* var column.value *}</li>
@@ -87,16 +87,16 @@ Data:
 </li>
 </ul>
 <ul>
-<li>Updates:
+<li>{* lang updates *}:
 <ul>
 {* foreach data.update *}
-<li>Table: {* var update.table *}</li>
+<li>{* lang table *}: {* var update.table *}</li>
 <ul>
 {* foreach update.column *}
 <li>{* var column.name *} = {* var column.value *}</li>
 {* endforeach update.column *}
 </ul>
-<li>Where:</li>
+<li>{* lang where *}:</li>
 <ul>
 {* foreach update.where *}
 <li>{* var where.column *} == {* var where.value *}</li>
@@ -107,10 +107,10 @@ Data:
 </li>
 </ul>
 <ul>
-<li>Deletes:
+<li>{* lang deletes *}:
 <ul>
 {* foreach data.delete *}
-<li>Table: {* var delete.table *}</li>
+<li>{* lang table *}: {* var delete.table *}</li>
 <ul>
 {* foreach delete.where *}
 <li>{* var where.column *} == {* var where.value *}</li>
@@ -121,8 +121,5 @@ Data:
 </li>
 </ul>
 <br /><br />
-{* else data *}
-No data found
-{* endforeach data *}
 
 </div>

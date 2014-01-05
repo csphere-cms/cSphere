@@ -25,9 +25,9 @@ $bread->add('details', 'database/details/dir/' . $dir);
 $bread->trace();
 
 // Get plugin database details if it exists
-$meta = new \csphere\core\plugins\Metadata();
+$meta = new \csphere\core\plugins\Database($dir);
 
-$exists = $meta->exists($dir);
+$exists = $meta->exists();
 
 if ($exists === true) {
 
