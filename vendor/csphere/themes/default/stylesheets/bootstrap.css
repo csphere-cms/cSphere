@@ -14,7 +14,7 @@
 .panel {}
 
 /* ----- __PANEL PANEL-BODY ----- */
-.panel .panel-body { padding-bottom: 0; padding-top: 0; }
-.panel .panel-body .page-header { margin-bottom: 10px; margin-top: 0; }
-.panel .panel-body .page-header h3 { font-weight: normal; }
-.panel .panel-body .page-header .btn-group { margin-top: 16px; }
+.panel.panel-body { padding-bottom: 0; padding-top: 0; }
+.panel.panel-body .page-header { margin-bottom: 10px; margin-top: 0; }
+.panel.panel-body .page-header h3 { font-weight: normal; }
+.panel.panel-body .page-header .btn-group { margin-top: 16px; }
