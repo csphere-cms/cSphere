@@ -22,6 +22,6 @@
     <environment>
     </environment>
     <entries>
-        <target plugin="admin" action="system" />
+        <target vendor="csphere" plugin="admin" action="system" />
     </entries>
 </plugin>

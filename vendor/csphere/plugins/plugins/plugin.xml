@@ -20,6 +20,6 @@
     <required php="5.4.0">
     </required>
     <entries>
-        <target plugin="admin" action="system" />
+        <target vendor="csphere" plugin="admin" action="system" />
     </entries>
 </plugin>

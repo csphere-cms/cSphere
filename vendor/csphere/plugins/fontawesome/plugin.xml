@@ -20,7 +20,7 @@
     <required php="5.4.0">
     </required>
     <environment>
-        <needed plugin="bootstrap" version_min="0.1" />
+        <needed vendor="csphere" plugin="bootstrap" version_min="0.1" />
     </environment>
     <entries>
     </entries>

@@ -20,9 +20,9 @@
     <required php="5.4.0">
     </required>
     <environment>
-        <needed plugin="default" version_min="0.1" />
+        <needed vendor="csphere" plugin="default" version_min="0.1" />
     </environment>
     <entries>
-        <target plugin="admin" action="system" />
+        <target vendor="csphere" plugin="admin" action="system" />
     </entries>
 </plugin>

@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:complexType name="mashup">
         <xs:attribute name="plugin" type="xs:string" use="required"/>
-        <xs:attribute name="vendor" type="xs:string"/>
+        <xs:attribute name="vendor" type="xs:string" use="required"/>
         <xs:attribute name="version_min" type="xs:string" use="required"/>
         <xs:attribute name="version_max" type="xs:string"/>
     </xs:complexType>
@@ -77,6 +77,7 @@
                         <xs:sequence>
                             <xs:element name="target" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
+                                    <xs:attribute name="vendor" type="xs:string" use="required"/>
                                     <xs:attribute name="plugin" type="xs:string" use="required"/>
                                     <xs:attribute name="action" type="xs:string" use="required"/>
                                 </xs:complexType>

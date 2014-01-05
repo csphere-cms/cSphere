@@ -24,7 +24,7 @@
         <thumb>images/thumb.png</thumb>
     </media>
     <environment>
-        <needed plugin="groups" version_min="0.1" />
-        <needed plugin="users" version_min="0.1" />
+        <needed vendor="csphere" plugin="groups" version_min="0.1" />
+        <needed vendor="csphere" plugin="users" version_min="0.1" />
     </environment>
 </theme>

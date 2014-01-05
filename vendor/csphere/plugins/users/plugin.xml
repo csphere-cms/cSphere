@@ -22,7 +22,7 @@
     <environment>
     </environment>
     <entries>
-        <target plugin="admin" action="content" />
-        <target plugin="options" action="control" />
+        <target vendor="csphere" plugin="admin" action="content" />
+        <target vendor="csphere" plugin="options" action="control" />
     </entries>
 </plugin>

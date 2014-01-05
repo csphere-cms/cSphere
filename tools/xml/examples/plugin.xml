@@ -23,13 +23,13 @@
         <extension>gd</extension>
     </required>
     <environment>
-        <needed plugin="default" version_min="0.1" />
-        <needed plugin="access" version_min="0.1" />
-        <needed plugin="groups" version_min="0.1" />
+        <needed vendor="csphere" plugin="default" version_min="0.1" />
+        <needed vendor="csphere" plugin="access" version_min="0.1" />
+        <needed vendor="csphere" plugin="groups" version_min="0.1" />
     </environment>
     <entries>
-        <target plugin="options" action="list" />
-        <target plugin="admin" action="list" />
+        <target vendor="csphere" plugin="options" action="list" />
+        <target vendor="csphere" plugin="admin" action="list" />
     </entries>
     <startup>
         <file type="javascript" top="false" name="test.js" />

@@ -20,7 +20,7 @@
     <required php="5.4.0">
     </required>
     <environment>
-        <needed plugin="jquery" version_min="0.1" />
+        <needed vendor="csphere" plugin="jquery" version_min="0.1" />
     </environment>
     <entries>
     </entries>

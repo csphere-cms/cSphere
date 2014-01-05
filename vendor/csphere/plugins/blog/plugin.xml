@@ -20,10 +20,10 @@
     <required php="5.4.0">
     </required>
     <environment>
-        <needed plugin="tags" version_min="0.1" />
-        <needed plugin="users" version_min="0.1" />
+        <needed vendor="csphere" plugin="tags" version_min="0.1" />
+        <needed vendor="csphere" plugin="users" version_min="0.1" />
     </environment>
     <entries>
-        <target plugin="admin" action="content" />
+        <target vendor="csphere" plugin="admin" action="content" />
     </entries>
 </plugin>

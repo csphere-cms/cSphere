@@ -24,5 +24,6 @@
         <thumb>images/thumb.png</thumb>
     </media>
     <environment>
+        <needed vendor="csphere" plugin="install" version_min="0.1" />
     </environment>
 </theme>
