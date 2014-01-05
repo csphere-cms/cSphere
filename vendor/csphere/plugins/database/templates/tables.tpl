@@ -9,6 +9,14 @@
         </section><!--END header page-header-->
     </header><!--END header-->
 
+    {* if error != '' *}
+    <div class="alert alert-danger text-center">
+        <strong>{* var error *}</strong>
+    </div>
+
+    <br />
+    {* endif error *}
+
     <ul class="nav nav-tabs nav-justified">
         <li><a href="{* link database/control *}">{* lang control *}</a></li>
         <li class="active"><a href="{* link database/tables *}">{* lang tables *}</a></li>

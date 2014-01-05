@@ -23,7 +23,7 @@ $bread->add('tables');
 $bread->trace();
 
 // Collect table information
-$data = array('tables' => array(), 'count' => 0);
+$data = array('tables' => array(), 'count' => 0, 'error' => '');
 
 $meta = new \csphere\core\plugins\Metadata();
 
@@ -40,9 +40,38 @@ foreach ($plugins AS $plugin) {
     foreach ($tables AS $table) {
 
         // Hope that all tables follow the unwritten naming rules
-        $name     = ($table == $plugin['short']) ? '' : explode('_', $table, 2)[1];
-        $dm_table = new \csphere\core\datamapper\Finder($plugin['short'], $name);
-        $records  = $dm_table->count();
+        $error   = '';
+        $name    = '';
+        $records = '';
+
+        if ($table != $plugin['short']) {
+
+            $split = explode('_', $table, 2);
+
+            if (isset($split[1])) {
+
+                $name = $split[1];
+
+            } else {
+
+                $name  = null;
+                $error = \csphere\core\translation\Fetch::key(
+                    'database', 'table_name_error'
+                );
+
+                $data['error'] .= $error . ': ' . $table . "\n";
+            }
+        }
+
+        // Get amount of entries from that table
+        if ($error == '') {
+
+            $dm_table = new \csphere\core\datamapper\Finder(
+                $plugin['short'], $name
+            );
+
+            $records = $dm_table->count();
+        }
 
         $data['tables'][] = array('table'   => $table,
                                   'plugin'  => $plugin['short'],

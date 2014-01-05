@@ -190,7 +190,10 @@ abstract class Parse
 
         } elseif ($part['cmd'] == 'var') {
 
-            $escape = htmlentities($part['data'], ENT_HTML5, 'UTF-8', false);
+            $escape = htmlspecialchars(
+                $part['data'], ENT_QUOTES | ENT_HTML5, 'UTF-8', false
+            );
+
             $escape = nl2br($escape);
 
         } else {

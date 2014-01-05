@@ -30,6 +30,7 @@
         <define name="schema">Schema</define>
         <define name="size">Größe</define>
         <define name="table">Tabelle</define>
+        <define name="table_name_error">Der Tabellenname ist nicht valide</define>
         <define name="tables">Tabellen</define>
         <define name="version_client">Client Version</define>
         <define name="version_driver">Treiber Version</define>
