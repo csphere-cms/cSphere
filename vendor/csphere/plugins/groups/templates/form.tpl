@@ -1,29 +1,27 @@
-<div class="panel panel-default">
-    <div class="panel-body">
+<div class="panel panel-default panel-body">
 
-        {* if action == 'create' *}
-        {* tpl default/com_header plugin=groups action=default.create *}
-        {* else action *}
-        {* tpl default/com_header plugin=groups action=default.edit *}
-        {* endif action *}
+    {* if action == 'create' *}
+    {* tpl default/com_header plugin=groups action=default.create *}
+    {* else action *}
+    {* tpl default/com_header plugin=groups action=default.edit *}
+    {* endif action *}
 
-        <br />
+    <br />
 
-        {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link groups/create *}" method="POST">
-        {* else action *}
-        <form class="form-horizontal" role="form" action="{* link groups/edit/id/$groups.group_id *}" method="POST">
-        {* endif action *}
+    {* if action == 'create' *}
+    <form class="form-horizontal" role="form" action="{* link groups/create *}" method="POST">
+    {* else action *}
+    <form class="form-horizontal" role="form" action="{* link groups/edit/id/$groups.group_id *}" method="POST">
+    {* endif action *}
 
-            {* tpl default/com_input name=group_name label=name value=groups.group_name *}
+        {* tpl default/com_input name=group_name label=name value=groups.group_name *}
 
-            {* tpl default/com_input name=group_url label=url value=groups.group_url *}
+        {* tpl default/com_input name=group_url label=url value=groups.group_url *}
 
-            {* tpl default/com_textarea name=group_info label=info rows=3 value=groups.group_info *}
+        {* tpl default/com_textarea name=group_info label=info rows=3 value=groups.group_info *}
 
-            {* tpl default/com_submit_btn caption=default.save *}
+        {* tpl default/com_submit_btn caption=default.save *}
 
-        </form><!--END form-->
+    </form><!--END form-->
 
-    </div><!--END panel panel-body-->
 </div><!--END panel-->
