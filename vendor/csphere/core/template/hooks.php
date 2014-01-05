@@ -62,14 +62,23 @@ abstract class Hooks
             // Dispatcher should handle everything by itself
             if (!empty($action) AND $action != 'dispatch') {
 
-                // Check if default plugin already translates that action
+                // Check if this plugin translates the action
                 $exists = \csphere\core\translation\Fetch::exists(
-                    'default', $action
+                    $plugin, $action
                 );
 
-                if ($exists == true) {
+                // Try default plugin as fallback
+                if ($exists != true) {
 
-                    $plugin = 'default';
+                    $exists = \csphere\core\translation\Fetch::exists(
+                        'default', $action
+                    );
+
+                    // Change plugin target if it exists
+                    if ($exists == true) {
+
+                        $plugin = 'default';
+                    }
                 }
 
                 $add = \csphere\core\translation\Fetch::key($plugin, $action);
