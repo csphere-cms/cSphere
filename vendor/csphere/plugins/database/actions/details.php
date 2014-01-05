@@ -18,7 +18,7 @@ $loader = \csphere\core\service\Locator::get();
 $dir = \csphere\core\http\Input::get('get', 'dir');
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('plugins');
+$bread = new \csphere\core\template\Breadcrumb('database');
 
 $bread->add('control');
 $bread->add('details', 'database/details/dir/' . $dir);
