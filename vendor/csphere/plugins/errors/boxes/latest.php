@@ -21,7 +21,8 @@ $path = \csphere\core\init\path() . 'csphere/logs/errors/';
 
 $files = \csphere\core\files\File::search($path, true, array('info.txt'));
 
-$data['files'] = array();
+$data['params'] = 'refresh/1';
+$data['files']  = array();
 
 $count = count($files);
 $stop  = ($count > 5) ? 5 : $count;

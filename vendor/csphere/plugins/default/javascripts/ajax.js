@@ -1,7 +1,7 @@
 function csphere_ajax_loading(place) {
 
     // Show a spinner
-    $(place).html('<i class="fa fa-spinner fa-spin"></i> Loading');
+    $(place).html('<i class="fa fa-spinner fa-spin"></i>');
 }
 
 function csphere_ajax_highlight(place, html) {
@@ -251,7 +251,7 @@ function csphere_ajax_post(hash, formdata, place) {
     });
 }
 
-function csphere_ajax_box(plugin, box, params) {
+function csphere_ajax_box_get(plugin, box, params) {
 
     // Send GET request to box only
     var place = 'div.box_' + plugin + '_' + box;
@@ -260,7 +260,7 @@ function csphere_ajax_box(plugin, box, params) {
     csphere_ajax_get(target, place);
 }
 
-function csphere_ajax_form(plugin, box, params) {
+function csphere_ajax_box_post(plugin, box, params) {
 
     // Send POST request to box only
     var place    = 'div.box_' + plugin + '_' + box;

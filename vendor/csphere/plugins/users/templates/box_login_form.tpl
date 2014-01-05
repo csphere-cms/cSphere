@@ -1,17 +1,23 @@
-<form name="form_login" method="POST" role="form">
+<div id="users-login-box">
 
-    {* if login_error == 'yes' *}
-    <div class="alert alert-danger text-center">
-        <strong>{* lang login_failed *}</strong>
-    </div>
-    {* endif login_error *}
+    <div class="page-header">
+        <h4>{* lang login *}</h4>
+    </div><!--END users-login-box page-header-->
 
-    {* tpl default/com_input name=login_name label=user_name value=login_name *}
+    <form name="form_login" method="POST" role="form">
 
-    {* tpl default/com_input_pwd name=login_password label=user_password holder=user_password *}
+        {* if login_error == 'yes' *}
+        <div class="alert alert-danger text-center">
+            <strong>{* lang login_failed *}</strong>
+        </div>
+        {* endif login_error *}
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-success btn-block" onclick="csphere_ajax_form('users', 'login', '')">{* lang submit *}</button>
-    </div><!--END form form-group submit-->
+        {* tpl default/com_box_input type=text name=login_name holder=user_name value=login_name *}
 
-</form><!--END form-->
+        {* tpl default/com_box_input type=password name=login_password holder=user_password value=login_pass *}
+
+        {* tpl default/com_box_post caption=login plugin=users box=login *}
+
+    </form><!--END form-->
+
+</div><!--END users-login-box-->

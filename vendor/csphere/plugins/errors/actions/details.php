@@ -36,6 +36,9 @@ $bread->add('file', 'errors/file/date/' . $date);
 $bread->add('entry', 'errors/file/date/' . $date . '/entry/' . $entry);
 $bread->trace();
 
+// List of special chars in error logs
+$special = array('{' => 0, '[' => 1);
+
 if (file_exists($path_error . $name)) {
 
     // Get contents of error log file and format them
@@ -77,16 +80,18 @@ if (file_exists($path_error . $name)) {
 
         // Split trace part into usable parts
         $step   = $i - $start - 1;
-        $string = explode(' ', $parts[$i]);
+        $string = explode(' ', $parts[$i], 3);
 
-        if (isset($string[1]) AND $string[1][0] == '{') {
+        if (isset($string[1]) AND isset($special[$string[1][0]])) {
 
             // Special case for curly braces
-            $file  = explode(' ', $parts[$i], 2)[1];
+            $nostep          = explode(' ', $parts[$i], 2)[1];
+            $split           = explode(':', $nostep, 2);
+            $call            = isset($split[1]) ? $split[1] : '';
             $data['trace'][] = array('step' => $step,
-                                     'file' => $file,
+                                     'file' => $split[0],
                                      'line' => '',
-                                     'call' => '');
+                                     'call' => $call);
 
         } elseif(isset($string[1])) {
 

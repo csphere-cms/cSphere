@@ -15,6 +15,6 @@
         {* endforeach files *}
     </div><!--END lerrors-latest-box ist-group-->
 
-    <button type="submit" class="btn btn-default pull-right" onclick="csphere_ajax_box('errors', 'latest', 'refresh/1')">{* lang refresh *}</button>
+    {* tpl default/com_box_get caption=refresh plugin=errors box=latest *}
 
 </div><!--END errors-latest-box-->

@@ -187,6 +187,10 @@ abstract class Login
 
         }
 
+        // Set params for box requests
+        $data['params']     = '';
+        $data['login_pass'] = '';
+
         return $data;
     }
 }
