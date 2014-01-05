@@ -83,9 +83,10 @@ abstract class Fetch
         } else {
 
             // Empty plugin means that a theme translation is going on
-            $error = ($plugin == '') ? 'Theme ' : 'Plugin "' . $plugin . '" ';
+            $error  = ($plugin == '') ? 'Theme' : 'Plugin "' . $plugin . '"';
+            $error .= ' fails to translate this key: ' . $key;
 
-            throw new \Exception($error . 'fails to translate this key: ' . $key);
+            throw new \Exception($error);
         }
 
         return $return;

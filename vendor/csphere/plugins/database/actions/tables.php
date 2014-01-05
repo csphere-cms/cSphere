@@ -66,11 +66,17 @@ foreach ($plugins AS $plugin) {
         // Get amount of entries from that table
         if ($error == '') {
 
-            $dm_table = new \csphere\core\datamapper\Finder(
-                $plugin['short'], $name
-            );
+            try {
+                $dm_table = new \csphere\core\datamapper\Finder(
+                    $plugin['short'], $name
+                );
 
-            $records = $dm_table->count();
+                $records = $dm_table->count();
+
+            } catch (\Exception $exception) {
+
+                $data['error'] .= $exception->getMessage() . "\n";
+            }
         }
 
         $data['tables'][] = array('table'   => $table,

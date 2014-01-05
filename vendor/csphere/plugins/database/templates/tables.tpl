@@ -34,7 +34,9 @@
         <tbody>
             {* foreach tables *}
             <tr>
-                <td>{* var tables.plugin *}</td>
+                <td>
+                    <a href="{* link database/details/dir/$tables.plugin$ *}">{* raw tables.plugin *}</a>
+                </td>
                 <td>{* var tables.table *}</td>
                 <td class="text-center">{* var tables.records *}</td>
             </tr>

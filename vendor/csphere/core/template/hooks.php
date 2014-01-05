@@ -68,7 +68,13 @@ abstract class Hooks
                 );
 
                 // Try default plugin as fallback
-                if ($exists != true) {
+                if ($exists == true) {
+
+                    $title .= ' - ' . \csphere\core\translation\Fetch::key(
+                        $plugin, $action
+                    );
+
+                } else {
 
                     $exists = \csphere\core\translation\Fetch::exists(
                         'default', $action
@@ -77,13 +83,11 @@ abstract class Hooks
                     // Change plugin target if it exists
                     if ($exists == true) {
 
-                        $plugin = 'default';
+                        $title .= ' - ' . \csphere\core\translation\Fetch::key(
+                            $plugin, $action
+                        );
                     }
                 }
-
-                $add = \csphere\core\translation\Fetch::key($plugin, $action);
-
-                $title .= ' - ' . $add;
             }
         }
 
