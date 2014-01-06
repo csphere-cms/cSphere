@@ -84,8 +84,8 @@ class Listed extends \csphere\core\rad\Base
      * Set search input columns for queries
      *
      * @param array   $like    Column names for search input
-     * @param boolean $options Wether a link to options should be shown
      * @param boolean $create  Wether a link to creation should be shown
+     * @param boolean $options Wether a link to options should be shown
      *
      * @return boolean
      **/
