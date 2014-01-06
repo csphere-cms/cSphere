@@ -32,7 +32,7 @@
                     {* if groups.group_url == '' *}
                     --
                     {* else groups.group_url *}
-                    <a href="{* url groups.group_url *}">{* url groups.group_url *}</a>
+                    <a href="{* var groups.group_url *}">{* var groups.group_url *}</a>
                     {* endif groups.group_url *}
                 </td>
             </tr>
