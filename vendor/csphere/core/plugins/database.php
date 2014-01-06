@@ -144,12 +144,14 @@ class Database
     /**
      * Uninstall plugin database tables and options
      *
+     * @param boolean $options Clear options table content
+     *
      * @throws \Exception
      *
      * @return boolean
     **/
 
-    public function uninstall()
+    public function uninstall($options = false)
     {
         // Remove all tables
         if (isset($this->_structure['tables'])) {
@@ -173,11 +175,14 @@ class Database
         }
 
         // Remove all options
-        $sql = \csphere\core\sql\DML::delete(
-            'options', 'option_plugin', $this->_plugin
-        );
+        if ($options == true) {
 
-        $this->_database->exec($sql['statement'], $sql['input']);
+            $sql = \csphere\core\sql\DML::delete(
+                'options', 'option_plugin', $this->_plugin
+            );
+
+            $this->_database->exec($sql['statement'], $sql['input']);
+        }
 
         return true;
     }

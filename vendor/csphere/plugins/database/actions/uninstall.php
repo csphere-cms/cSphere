@@ -37,7 +37,7 @@ $exists = $meta->exists();
 if ($exists === true) {
 
     // Work with plugin database content
-    $meta->uninstall();
+    $meta->uninstall(true);
 
     // Generate message content
     $params   = array('dir' => $dir);
