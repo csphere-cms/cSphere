@@ -84,7 +84,7 @@ abstract class Hooks
                     if ($exists == true) {
 
                         $title .= ' - ' . \csphere\core\translation\Fetch::key(
-                            $plugin, $action
+                            'default', $action
                         );
                     }
                 }
