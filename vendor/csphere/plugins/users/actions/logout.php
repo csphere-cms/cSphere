@@ -13,9 +13,16 @@
  * @link      http://www.csphere.eu
  **/
 
- // Get view object
 $loader = \csphere\core\service\Locator::get();
-$view   = $loader->load('view');
+
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('users');
+
+$bread->add('logout');
+$bread->trace();
+
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('users');
 
 // Clear authentication data
 $auth = new \csphere\core\authentication\Users();
@@ -23,9 +30,9 @@ $auth->logout();
 
 // Get request and language content
 $dirname = \csphere\core\http\Request::get('dirname');
-$plugin  = \csphere\core\translation\Fetch::key('users', 'users');
-$logout  = \csphere\core\translation\Fetch::key('users', 'logout');
-$message = \csphere\core\translation\Fetch::key('users', 'logout_true');
+$plugin  = $lang['users'];
+$logout  = $lang['logout'];
+$message = $lang['logout_true'];
 
 // Set data for template
 $data = array('tpl'         => 'message',
@@ -34,5 +41,7 @@ $data = array('tpl'         => 'message',
               'plugin_name' => $plugin,
               'message'     => $message,
               'previous'    => $dirname);
+
+$view = $loader->load('view');
 
 $view->template('default', 'message', $data);

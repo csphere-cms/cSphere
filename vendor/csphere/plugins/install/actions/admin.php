@@ -23,6 +23,9 @@ $bread->add('database');
 $bread->add('admin');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('install');
+
 // Define basic stuff
 $test  = false;
 $error = '';
@@ -42,7 +45,7 @@ if (isset($post['csphere_form'])) {
 
     if ($user_len < 4 OR $pass_len < 4) {
 
-        $error = \csphere\core\translation\Fetch::key('install', 'too_short');
+        $error = $lang['too_short'];
 
     } else {
 
@@ -66,7 +69,7 @@ if (isset($post['csphere_form'])) {
 
             if (empty($driver)) {
 
-                $error = \csphere\core\translation\Fetch::key('install', 'no_db');
+                $error = $lang['no_db'];
 
             } else {
 
@@ -101,9 +104,9 @@ if ($test === true AND $error == '') {
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'config');
-    $plugin   = \csphere\core\translation\Fetch::key('install', 'install');
-    $action   = \csphere\core\translation\Fetch::key('install', 'admin');
-    $message  = \csphere\core\translation\Fetch::key('install', 'admin_ok');
+    $plugin   = $lang['install'];
+    $action   = $lang['admin'];
+    $message  = $lang['admin_ok'];
 
     $data = array('previous'    => $previous,
                   'type'        => 'green',

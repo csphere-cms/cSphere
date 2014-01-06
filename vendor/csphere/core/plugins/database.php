@@ -142,7 +142,7 @@ class Database
     }
 
     /**
-     * Uninstall plugin database content
+     * Uninstall plugin database tables and options
      *
      * @throws \Exception
      *
@@ -157,8 +157,7 @@ class Database
             foreach ($this->_structure['tables'] AS $table) {
 
                 // Get table name and check prefix
-                $name = $table['name'];
-
+                $name   = $table['name'];
                 $prefix = substr($name, 0, strlen($this->_plugin));
 
                 if ($prefix != $this->_plugin) {
@@ -172,6 +171,13 @@ class Database
                 $this->_database->exec($sql['statement'], $sql['input'], true);
             }
         }
+
+        // Remove all options
+        $sql = \csphere\core\sql\DML::delete(
+            'options', 'option_plugin', $this->_plugin
+        );
+
+        $this->_database->exec($sql['statement'], $sql['input']);
 
         return true;
     }
@@ -242,8 +248,6 @@ class Database
 
     private function _data(array $data)
     {
-
-
         // Insert queries
         if (isset($data['insert'])) {
 

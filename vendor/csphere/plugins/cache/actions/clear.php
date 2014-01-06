@@ -22,6 +22,9 @@ $bread->add('control');
 $bread->add('clear');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('cache');
+
 // Clear cache
 $cache  = $loader->load('cache');
 $driver = $cache->clear();
@@ -30,9 +33,9 @@ $previous = \csphere\core\url\Link::href('cache', 'control');
 
 $data = array('previous' => $previous, 'type' => 'green');
 
-$data['plugin_name'] = \csphere\core\translation\Fetch::key('cache', 'cache');
-$data['action_name'] = \csphere\core\translation\Fetch::key('cache', 'clear');
-$data['message']     = \csphere\core\translation\Fetch::key('cache', 'clear_ok');
+$data['plugin_name'] = $lang['cache'];
+$data['action_name'] = $lang['clear'];
+$data['message']     = $lang['clear_ok'];
 
 // Send data to view
 $view = $loader->load('view');

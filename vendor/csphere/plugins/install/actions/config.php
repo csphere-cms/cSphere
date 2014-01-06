@@ -24,6 +24,9 @@ $bread->add('admin');
 $bread->add('config');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('install');
+
 // Define basic stuff
 $test  = false;
 $error = '';
@@ -73,7 +76,7 @@ if (isset($post['csphere_form'])) {
 
         if (empty($driver)) {
 
-            $error = \csphere\core\translation\Fetch::key('install', 'no_db');
+            $error = $lang['no_db'];
 
         } else {
 
@@ -85,7 +88,7 @@ if (isset($post['csphere_form'])) {
 
             if (!isset($admin['user_name'])) {
 
-                $error = \csphere\core\translation\Fetch::key('install', 'no_user');
+                $error = $lang['no_user'];
             }
         }
 
@@ -95,7 +98,7 @@ if (isset($post['csphere_form'])) {
 
         if ($result != $cache) {
 
-            $error = \csphere\core\translation\Fetch::key('install', 'no_cache');
+            $error = $lang['no_cache'];
         }
 
         // Try to write config file
@@ -120,7 +123,7 @@ if (isset($post['csphere_form'])) {
 
             if ($check === false) {
 
-                $error = \csphere\core\translation\Fetch::key('install', 'no_cfg');
+                $error = $lang['no_cfg'];
             }
         }
 
@@ -136,9 +139,9 @@ if ($test === true AND $error == '') {
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('users', 'login');
-    $plugin   = \csphere\core\translation\Fetch::key('install', 'install');
-    $action   = \csphere\core\translation\Fetch::key('install', 'config');
-    $message  = \csphere\core\translation\Fetch::key('install', 'config_ok');
+    $plugin   = $lang['install'];
+    $action   = $lang['config'];
+    $message  = $lang['config_ok'];
 
     $data = array('previous'    => $previous,
                   'type'        => 'green',

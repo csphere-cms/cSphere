@@ -21,24 +21,27 @@ $bread = new \csphere\core\template\Breadcrumb('install');
 $bread->add('language');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('install');
+
 // Get plugin metadata
 $meta = new \csphere\core\translation\Metadata();
 
 // Check for language changes
-$lang   = \csphere\core\http\Input::get('get', 'lang');
-$exists = $meta->exists($lang);
+$get_lang = \csphere\core\http\Input::get('get', 'lang');
+$exists   = $meta->exists($get_lang);
 
 if ($exists === true) {
 
     // Save language choice to session
     $session = new \csphere\core\session\Session();
-    $session->set('user_lang', $lang);
+    $session->set('user_lang', $get_lang);
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'database');
-    $plugin   = \csphere\core\translation\Fetch::key('install', 'install');
-    $action   = \csphere\core\translation\Fetch::key('install', 'language');
-    $message  = \csphere\core\translation\Fetch::key('install', 'language_ok');
+    $plugin   = $lang['install'];
+    $action   = $lang['language'];
+    $message  = $lang['language_ok'];
 
     $data = array('previous'    => $previous,
                   'type'        => 'green',

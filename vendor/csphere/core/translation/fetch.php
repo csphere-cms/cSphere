@@ -61,6 +61,37 @@ abstract class Fetch
     private static $_loaded = array();
 
     /**
+     * Fetches the whole translation table
+     *
+     * @param string $plugin Plugin to use for language file
+     *
+     * @throws \Exception
+     *
+     * @return array
+     **/
+
+    public static function keys($plugin)
+    {
+        $exists = self::exists($plugin);
+
+        // Return key if it exists
+        if ($exists == true) {
+
+            $return = self::$_loaded[$plugin];
+
+        } else {
+
+            // Empty plugin means that a theme translation is going on
+            $error  = ($plugin == '') ? 'Theme' : 'Plugin "' . $plugin . '"';
+            $error .= ' does not contain the requested translation';
+
+            throw new \Exception($error);
+        }
+
+        return $return;
+    }
+
+    /**
      * Delivers the requested translation string
      *
      * @param string $plugin Plugin to use for language file
@@ -93,7 +124,7 @@ abstract class Fetch
     }
 
     /**
-     * Checks if a plugin contains a translation key
+     * Checks if a plugin is translated or contains a key
      *
      * @param string $plugin Plugin to use for language file
      * @param string $key    Key to search in that file
@@ -101,7 +132,7 @@ abstract class Fetch
      * @return boolean
      **/
 
-    public static function exists($plugin, $key)
+    public static function exists($plugin, $key = '')
     {
         // Check if translation is already loaded
         if (!isset(self::$_loaded[$plugin])) {
@@ -109,7 +140,14 @@ abstract class Fetch
             self::$_loaded[$plugin] = self::_cache($plugin);
         }
 
-        $result = isset(self::$_loaded[$plugin][$key]) ? true : false;
+        if ($key == '') {
+
+            $result = isset(self::$_loaded[$plugin]) ? true : false;
+
+        } else {
+
+            $result = isset(self::$_loaded[$plugin][$key]) ? true : false;
+        }
 
         return $result;
     }

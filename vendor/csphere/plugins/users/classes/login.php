@@ -101,7 +101,7 @@ abstract class Login
         $request    = \csphere\core\http\Request::get('request');
         $https      = true;
 
-        if ($options['force_https'] == 1 AND $request != 'https') {
+        if (!empty($options['force_https']) AND $request != 'https') {
 
             $https = false;
         }
@@ -119,9 +119,7 @@ abstract class Login
     {
         // Get request and language content
         $request = \csphere\core\http\Request::get();
-        $login   = \csphere\core\translation\Fetch::key('users', 'login');
-        $plugin  = \csphere\core\translation\Fetch::key('users', 'users');
-        $https   = \csphere\core\translation\Fetch::key('users', 'https_required');
+        $lang = \csphere\core\translation\Fetch::keys('users');
 
         // Build link for HTTPS version of website
         $link = 'https://' . $request['dns'];
@@ -136,10 +134,10 @@ abstract class Login
         // Set data for template
         $data = array('tpl'         => 'message',
                       'type'        => 'default',
-                      'action_name' => $login,
-                      'plugin_name' => $plugin,
-                      'box_name'    => $login,
-                      'message'     => $https,
+                      'action_name' => $lang['login'],
+                      'plugin_name' => $lang['users'],
+                      'box_name'    => $lang['login'],
+                      'message'     => $lang['https_required'],
                       'previous'    => $link);
 
         return $data;

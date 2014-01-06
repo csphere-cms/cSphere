@@ -1,5 +1,9 @@
 <div class="main_content_div">
 
+<a href="{* link database/install/dir/$dir$ *}">{* lang install *}</a>
+- <a href="{* link database/uninstall/dir/$dir$ *}">{* lang uninstall *}</a>
+<br /><br />
+
 {* lang plugin *}: {* var plugin *}
 <br /><br />
 {* lang tables *}:

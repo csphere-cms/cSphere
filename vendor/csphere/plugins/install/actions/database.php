@@ -22,6 +22,9 @@ $bread->add('language');
 $bread->add('database');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('install');
+
 // Define basic stuff
 $test     = false;
 $db_error = null;
@@ -106,9 +109,9 @@ if ($test === true AND $db_error === null) {
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'admin');
-    $plugin   = \csphere\core\translation\Fetch::key('install', 'install');
-    $action   = \csphere\core\translation\Fetch::key('install', 'database');
-    $message  = \csphere\core\translation\Fetch::key('install', 'database_ok');
+    $plugin   = $lang['install'];
+    $action   = $lang['database'];
+    $message  = $lang['database_ok'];
 
     $data = array('previous'    => $previous,
                   'type'        => 'green',

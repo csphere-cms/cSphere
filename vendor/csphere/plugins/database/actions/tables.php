@@ -22,6 +22,9 @@ $bread->add('control');
 $bread->add('tables');
 $bread->trace();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('database');
+
 // Collect table information
 $data = array('tables' => array(), 'count' => 0, 'error' => '');
 
@@ -48,18 +51,17 @@ foreach ($plugins AS $plugin) {
 
             $split = explode('_', $table, 2);
 
-            if (isset($split[1])) {
+            if (isset($split[1]) AND $split[0] == $plugin['short']) {
 
                 $name = $split[1];
 
             } else {
 
                 $name  = null;
-                $error = \csphere\core\translation\Fetch::key(
-                    'database', 'table_name_error'
-                );
+                $error = $lang['table_name_error'] . ': ' . $table
+                       . ' (' . $plugin['short'] . ')' . "\n";
 
-                $data['error'] .= $error . ': ' . $table . "\n";
+                $data['error'] .= $error;
             }
         }
 

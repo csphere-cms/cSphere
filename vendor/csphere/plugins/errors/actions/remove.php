@@ -15,6 +15,9 @@
 
 $loader = \csphere\core\service\Locator::get();
 
+// Get language data
+$lang = \csphere\core\translation\Fetch::keys('errors');
+
 // Check for error log file
 $path = \csphere\core\init\path() . 'csphere/logs/errors/';
 
@@ -40,9 +43,9 @@ $previous = \csphere\core\url\Link::href('errors', 'control');
 
 $data = array('previous' => $previous, 'type' => 'green');
 
-$data['plugin_name'] = \csphere\core\translation\Fetch::key('errors', 'errors');
-$data['action_name'] = \csphere\core\translation\Fetch::key('errors', 'remove');
-$data['message']     = \csphere\core\translation\Fetch::key('errors', 'remove_ok');
+$data['plugin_name'] = $lang['errors'];
+$data['action_name'] = $lang['remove'];
+$data['message']     = $lang['remove_ok'];
 
 // Send data to view
 $view = $loader->load('view');
