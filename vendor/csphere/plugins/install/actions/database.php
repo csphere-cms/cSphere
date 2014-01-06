@@ -17,7 +17,7 @@ $loader = \csphere\core\service\Locator::get();
 
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('install');
-
+ 
 $bread->add('language');
 $bread->add('database');
 $bread->trace();
@@ -158,6 +158,9 @@ if ($test === true AND $db_error === null) {
 
     // Send data to view
     $view = $loader->load('view');
-
+	
+	// Load a Javascript to hide some fields at sqlite
+	\csphere\core\template\Hooks::javascript('install', 'database.js');
+	
     $view->template('install', 'database', $data);
 }
