@@ -59,6 +59,7 @@ class SQL
      **/
 
     public function query($prepare, array $assoc, $first = 0, $max = 1) {
+
         // Pass query to database driver
         $result = $this->_database->query($prepare, $assoc, $first, $max);
 

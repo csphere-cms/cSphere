@@ -56,7 +56,7 @@ abstract class Base extends \csphere\core\service\Drivers
     private function _log($query, array $assoc, $log = true)
     {
         // Replace assoc data to make queries readable
-        if($assoc != array()) {
+        if ($assoc != array()) {
 
             foreach ($assoc AS $key => $value) {
 
@@ -295,8 +295,8 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return array
      **/
 
-    public function query($prepare, array $assoc, $first = 0, $max = 1) {
-
+    public function query($prepare, array $assoc, $first = 0, $max = 1)
+    {
         // Check connection and transform data array
         $data = $this->_start($assoc);
 
