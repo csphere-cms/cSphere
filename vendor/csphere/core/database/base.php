@@ -75,7 +75,7 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return array
      **/
 
-    private function _start(array $assoc)
+    private function _start(array $assoc = array())
     {
         // Establish lazy connection if not done already
         if (!is_object($this->con)) {
@@ -219,11 +219,8 @@ abstract class Base extends \csphere\core\service\Drivers
 
     public function info()
     {
-        // Establish lazy connection if not done already
-        if (!is_object($this->con)) {
-
-            $this->connect();
-        }
+        // Check connection
+        $this->_start();
 
         // Build array with information to return
         $info = array();
