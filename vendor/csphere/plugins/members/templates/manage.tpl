@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=groups action=default.manage search=group_or_user *}
+        {* tpl default/com_headsearch plugin=members action=default.manage search=group_or_user *}
 
         <br />
 
