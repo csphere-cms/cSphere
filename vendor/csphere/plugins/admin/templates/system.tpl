@@ -1,7 +1,9 @@
-<div class="panel panel-default panel-body">
+<div class="panel panel-default">
+    <div class="panel-body">
 
-    {* tpl default/com_header plugin=admin action=system *}
+        {* tpl default/com_header plugin=admin action=system *}
 
-    {* tpl default/plugins *}
+        {* tpl default/plugins *}
 
+    </div><!--END panel-body-->
 </div><!--END panel-->

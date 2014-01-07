@@ -21,7 +21,6 @@
 
         </div><!--END header page-header btn-group-->
         {* endif buttons.create *}
-
     </section><!--END header page-header-->
 
     <section class="clearfix">
