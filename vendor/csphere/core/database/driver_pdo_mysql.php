@@ -29,12 +29,6 @@ namespace csphere\core\database;
 class Driver_PDO_MYSQL extends Base
 {
     /**
-     * Defines the drivers function name for a random ORDER BY
-     **/
-
-    protected $random = 'RAND()';
-
-    /**
      * Creates the database handler object
      *
      * @param array $config Configuration details as an array

@@ -29,6 +29,11 @@ namespace csphere\core\database;
 abstract class Base extends \csphere\core\service\Drivers
 {
     /**
+     * Stores the logger object
+     **/
+    private $_logger = null;
+
+    /**
      * Stores the database connection
      **/
     protected $con = null;
@@ -39,24 +44,27 @@ abstract class Base extends \csphere\core\service\Drivers
     protected $prefix = '';
 
     /**
-     * Defines the drivers function name for a random ORDER BY
-     **/
-    protected $random = 'RANDOM()';
-
-    /**
      * Logs database queries
      *
-     * @param string  $query The query that is executed
+     * @param string  $query The database query for this case
+     * @param array   $assoc Array with columns and values
      * @param boolean $log   Defaults to true which enables log files if used
      *
      * @return void
      **/
 
-    private function _log($query, $log = true)
+    private function _log($query, array $assoc, $log = true)
     {
-        $this->_log = $this->loader->load('logs');
+        // Replace assoc data to make queries readable
+        if($assoc != array()) {
 
-        $this->_log->log('database', $query, $log);
+            foreach ($assoc AS $key => $value) {
+
+                $query = str_replace(':' . $key, '\'' . $value . '\'', $query);
+            }
+        }
+
+        $this->_logger->log('database', $query, $log);
     }
 
     /**
@@ -73,6 +81,8 @@ abstract class Base extends \csphere\core\service\Drivers
         if (!is_object($this->con)) {
 
             $this->connect();
+
+            $this->_logger = $this->loader->load('logs');
         }
 
         // Rewrite assoc array to use named placeholders
@@ -196,7 +206,7 @@ abstract class Base extends \csphere\core\service\Drivers
             $this->error($prepare, $assoc);
         }
 
-        $this->_log($prepare, $log);
+        $this->_log($prepare, $assoc, $log);
 
         return $result;
     }
@@ -281,22 +291,14 @@ abstract class Base extends \csphere\core\service\Drivers
      * @param array   $assoc   Array with columns and values
      * @param integer $first   Number of the first dataset to show
      * @param integer $max     Number of datasets to show from first on
-     * @param boolean $random  Adds a driver specific ORDER BY random to the query
      *
      * @return array
      **/
 
-    public function query(
-        $prepare, array $assoc, $first = 0, $max = 1, $random = false
-    ) {
+    public function query($prepare, array $assoc, $first = 0, $max = 1) {
+
         // Check connection and transform data array
         $data = $this->_start($assoc);
-
-        // Apply replaces if required
-        if (!empty($random)) {
-
-            $prepare .= 'ORDER BY ' . $this->random;
-        }
 
         // Attach limit vars first and max
         if ($first != 0 OR $max != 0) {
@@ -341,7 +343,7 @@ abstract class Base extends \csphere\core\service\Drivers
             $this->error($prepare, $assoc);
         }
 
-        $this->_log($prepare, false);
+        $this->_log($prepare, $assoc, false);
 
         return $result;
     }
