@@ -124,6 +124,38 @@ abstract class Fetch
     }
 
     /**
+     * Search for a key in a given plugin and the default plugin
+     *
+     * @param string $plugin Plugin to use for language file
+     * @param string $key    Key to search in that file
+     *
+     * @return string
+     **/
+
+    public static function fallback($plugin, $key)
+    {
+        $target = '';
+        $exists = self::exists($plugin, $key);
+
+        // Search key in default plugin otherwise
+        if ($exists === true) {
+
+            $target = $plugin;
+
+        } else {
+
+            $exists = self::exists('default', $key);
+
+            if ($exists === true) {
+
+                $target = 'default';
+            }
+        }
+
+        return $target;
+    }
+
+    /**
      * Checks if a plugin is translated or contains a key
      *
      * @param string $plugin Plugin to use for language file

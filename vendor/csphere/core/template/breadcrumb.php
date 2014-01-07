@@ -66,20 +66,35 @@ class Breadcrumb
     /**
      * Adds a new part to the breadcrumb
      *
-     * @param string $key  Key name inside plugin specific language file
+     * @param string $key  Key name for plugin action
      * @param string $link Link as slash formated url if it is not /plugin/key
+     * @param string $text Text to show if it differs from translated key name
      *
      * @return boolean
      **/
 
-    public function add($key, $link = '')
+    public function add($key, $link = '', $text = '')
     {
-        // Check if default plugin already translates that action
-        $exists = \csphere\core\translation\Fetch::exists('default', $key);
-        $target = ($exists == true) ? 'default' : $this->_plugin;
+        // If no text is set the key must be fetched from translation
+        if ($text == '') {
 
-        $lang = \csphere\core\translation\Fetch::key($target, $key);
+            // Check if action is translated somewhere
+            $fallback = \csphere\core\translation\Fetch::fallback(
+                $this->_plugin, $key
+            );
 
+            // Only add action if a fallback was found
+            if ($fallback != '') {
+
+                $text = \csphere\core\translation\Fetch::key($fallback, $key);
+
+            } else {
+
+                $text = '[undefined]';
+            }
+        }
+
+        // When no link is given the key is used
         if ($link == '') {
 
             $link = $this->_plugin . '/' . $key;
@@ -87,7 +102,7 @@ class Breadcrumb
 
         $url = \csphere\core\url\Link::params($link);
 
-        $this->_road[] = array('key' => $lang, 'lang' => $lang, 'url' => $url);
+        $this->_road[] = array('key' => $key, 'text' => $text, 'url' => $url);
 
         return true;
     }
@@ -106,8 +121,8 @@ class Breadcrumb
 
         // Format data for template usage
         $plugin = $this->_plugin;
-        $lang   = \csphere\core\translation\Fetch::key($plugin, $plugin);
-        $plugin = array('url' => $this->_url, 'lang' => $lang);
+        $text   = \csphere\core\translation\Fetch::key($plugin, $plugin);
+        $plugin = array('url' => $this->_url, 'text' => $text);
         $data   = array('plugin' => $plugin, 'breadcrumb' => $this->_road);
 
         // Send data to view and fetch box result
