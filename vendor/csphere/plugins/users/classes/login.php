@@ -98,10 +98,10 @@ abstract class Login
         // Check if logins are HTTPS only
         $dm_options = new \csphere\core\datamapper\Options('users');
         $options    = $dm_options->load();
-        $request    = \csphere\core\http\Request::get('request');
+        $protocol   = \csphere\core\http\Request::get('protocol');
         $https      = true;
 
-        if (!empty($options['force_https']) AND $request != 'https') {
+        if (!empty($options['force_https']) AND $protocol != 'https') {
 
             $https = false;
         }

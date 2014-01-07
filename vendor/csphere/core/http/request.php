@@ -52,8 +52,11 @@ abstract class Request
         // Get current dns with protocol and port
         $request['protocol'] = 'http';
 
-        if (isset($server['HTTPS']) AND $server['HTTPS'] == 'on') {
-
+        if (isset($server['HTTPS'])
+            AND $server['HTTPS'] == 'on'
+            OR isset($server['HTTP_X_FORWARDED_PROTO'])
+            AND $server['HTTP_X_FORWARDED_PROTO'] == 'https'
+        ) {
             $request['protocol'] .= 's';
         }
 
