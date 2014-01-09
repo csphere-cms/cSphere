@@ -93,7 +93,7 @@ if (file_exists($path_error . $name)) {
                                      'line' => '',
                                      'call' => $call);
 
-        } elseif(isset($string[1])) {
+        } elseif (isset($string[1])) {
 
             // This is the default case
             $trace = array('step' => $step);
