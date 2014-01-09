@@ -17,5 +17,6 @@ before_script:
   - phpenv rehash
   
 script:
-  - phpcpd --progress vendor/csphere/core
+  - phpcpd --progress vendor/csphere
   - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full vendor/csphere
+  - pdepend vendor/csphere
