@@ -9,10 +9,14 @@ php:
 before_script:
   - pear channel-discover pear.phpmd.org
   - pear config-set auto_discover 1
+  - pear install phpmd/PHP_PMD
   - pear install pear.phpunit.de/phpcpd
   - pear install PHP_CodeSniffer
-  - pear install phpmd/PHP_PMD
   - phpenv rehash
+  - pear version
+  - phpcpd --version
+  - phpcs --version
+  - phpmd --version
   
 script:
   - phpcpd --progress vendor/csphere
