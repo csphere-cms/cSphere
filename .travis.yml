@@ -13,12 +13,12 @@ before_script:
   - pear install pear.phpunit.de/phpcpd
   - pear install PHP_CodeSniffer
   - phpenv rehash
+  
+script:
   - pear version
   - phpcpd --version
   - phpcs --version
   - phpmd --version
-  
-script:
   - phpcpd --progress vendor/csphere
   - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full vendor/csphere
   - phpmd vendor/csphere text codesize,design,naming,unusedcode
