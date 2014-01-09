@@ -102,68 +102,6 @@ abstract class Base
         // Get important objects
         $this->loader = \csphere\core\service\Locator::get();
         $this->view   = $this->loader->load('view');
-        
-        // Test for phpcpd and phpmd
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
-        if (1 == 1) {
-        
-        }
-        
     }
 
     /**
