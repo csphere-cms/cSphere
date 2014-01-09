@@ -7,9 +7,11 @@ php:
   - 5.4
 
 before_script:
+  - pear install pear.phpunit.de/phploc
   - pear install PHP_CodeSniffer
   - phpenv rehash
   
 script:
+  - phploc vendor/csphere
   - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full tools
   - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full vendor/csphere
