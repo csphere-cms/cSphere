@@ -39,25 +39,17 @@ class Loader
     private $_driver = array();
 
     /**
-     * Handles object creation errors by creating a log entry
+     * Get configuration
      *
-     * @param string     $component Name of the core component with driver support
-     * @param string     $driver    Driver name without any prefixes
-     * @param \Exception $exception Exception that occured and got catched
+     * @param array $config Array with config flags to store
      *
-     * @return string
+     * @return \csphere\core\service\Loader
      **/
 
-    private function _error($component, $driver, \Exception $exception)
+    public function __construct(array $config)
     {
-        $msg = 'Message: Service Container failed to load component "'
-             . $component . '" with driver "' . $driver . '"' . "\n"
-             . 'Exception: ' . $exception->getMessage() . "\n"
-             . 'Code: ' . $exception->getCode() . "\n"
-             . 'File: ' . $exception->getFile() . "\n"
-             . 'Line: ' . $exception->getLine();
-
-        return $msg;
+        // Get content of config array and store it
+        $this->_config = $config;
     }
 
     /**
@@ -79,38 +71,22 @@ class Loader
 
         try {
             $object = new $class($config);
-        }
-        catch (\Exception $driver_error) {
+
+        } catch (\Exception $driver_error) {
 
             // Try to use a fallback to keep the process alive
             if ($driver != 'none') {
 
-                $object = $this->_container($component, 'none', array());
+                $config['driver'] = 'none';
+
+                $object = $this->_container($component, 'none', $config);
             }
 
-            // Log the error
-            $log = ($component == 'logs') ? $object : $this->load('logs');
-
-            $msg = $this->_error($component, $driver, $driver_error);
-
-            $log->log('errors', $msg);
+            // Rethrow exception
+            throw $driver_error;
         }
 
         return $object;
-    }
-
-    /**
-     * Get configuration
-     *
-     * @param array $config Array with config flags to store
-     *
-     * @return \csphere\core\service\Loader
-     **/
-
-    public function __construct(array $config)
-    {
-        // Get content of config array and store it
-        $this->_config = $config;
     }
 
     /**
