@@ -1,7 +1,9 @@
+Travis CI Status: ![Build Status](https://travis-ci.org/csphere-dev/csphere.png?branch=dev)
+
+Travis CI Details: https://travis-ci.org/csphere-dev/csphere
+
 cSphere
 =======
-
-[![Build Status](https://travis-ci.org/csphere-dev/csphere.png?branch=dev)](https://travis-ci.org/csphere-dev/csphere)
 
 Generic PHP Web-CMS with low footprint and high extensibility
 
