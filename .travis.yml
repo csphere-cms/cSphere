@@ -15,10 +15,6 @@ before_script:
   - phpenv rehash
   
 script:
-  - pear version
-  - phpcpd --version
-  - phpcs --version
-  - phpmd --version
   - phpcpd --progress vendor/csphere
   - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full vendor/csphere
   - phpmd vendor/csphere text codesize,design,naming,unusedcode
