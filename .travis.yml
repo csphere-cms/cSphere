@@ -11,4 +11,5 @@ before_script:
   - phpenv rehash
   
 script:
-  - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=summary vendor/csphere
+  - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full tools
+  - phpcs -np --encoding=utf-8 --extensions=php --standard=PEAR --report=full vendor/csphere
