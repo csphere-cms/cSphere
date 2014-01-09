@@ -80,4 +80,20 @@ class Driver_None extends Base
 
         return $replace;
     }
+
+    /**
+     * Handles errors for the database connection
+     *
+     * @param string $query The database query for this case
+     * @param array  $assoc Array with columns and values
+     * @param string $msg   The error message if already known
+     * @param string $more  Append query and and data to message
+     *
+     * @return void
+     **/
+
+    protected function error($query, array $assoc, $msg = '', $more = true)
+    {
+        unset($query, $assoc, $msg, $more);
+    }
 }
