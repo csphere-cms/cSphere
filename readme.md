@@ -9,4 +9,4 @@ Look into /docs and /webserver for further information
 
 Our project website is located at http://www.csphere.eu
 
-Travis CI: [![Build Status](https://travis-ci.org/csphere-dev/csphere.png?branch=dev)](https://travis-ci.org/csphere-dev/csphere)
+Travis CI [![Build Status](https://travis-ci.org/csphere-dev/csphere.png?branch=dev)](https://travis-ci.org/csphere-dev/csphere)
