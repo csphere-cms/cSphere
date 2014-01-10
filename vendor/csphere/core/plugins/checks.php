@@ -129,18 +129,11 @@ class Checks
      * @param string  $target Name of target
      * @param boolean $box    Set this to true for box only requests
      *
-     * @throws \Exception
-     *
      * @return void
      **/
 
     public function setRoute($target, $box = false)
     {
-        if (!preg_match("=^[_a-z0-9-]+$=i", $target)) {
-
-            throw new \Exception('Name of plugin target contains unallowed chars');
-        }
-
         $directory = ($box == false) ? 'actions' : 'boxes';
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
@@ -152,18 +145,11 @@ class Checks
      *
      * @param string $target Name of target
      *
-     * @throws \Exception
-     *
      * @return void
      **/
 
     public function setTemplate($target)
     {
-        if (!preg_match("=^[_a-z0-9-]+$=i", $target)) {
-
-            throw new \Exception('Name of plugin target contains unallowed chars');
-        }
-
         $this->_file = 'csphere/plugins/' . $this->_plugin
                      . '/templates/' . $target . '.tpl';
     }

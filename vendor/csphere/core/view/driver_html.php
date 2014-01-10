@@ -160,14 +160,7 @@ class Driver_HTML extends Base
             // If cache loading fails prepare template file
             if ($tpl == false) {
 
-                // Load template file name and fetch file content
-                $target = new \csphere\core\plugins\Checks($plugin);
-                $target->setTemplate($template);
-                $file = $target->result();
-                $file = file_get_contents($file);
-
-                // Split template file content
-                $tpl = \csphere\core\template\Prepare::template($file, $plugin);
+                $tpl = \csphere\core\template\Prepare::load($plugin, $template);
 
                 // Save result for later requests
                 $this->_cache->save($key, $tpl);

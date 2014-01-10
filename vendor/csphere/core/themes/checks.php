@@ -91,6 +91,21 @@ class Checks
     }
 
     /**
+     * Set target for template files
+     *
+     * @param string $target Name of target
+     * @param string $plugin Name of plugin
+     *
+     * @return void
+     **/
+
+    public function setTemplate($target, $plugin)
+    {
+        $this->_file = 'csphere/themes/' . $this->_theme
+                     . '/templates/' . $plugin . '/' . $target . '.tpl';
+    }
+
+    /**
      * Checks if the target file exists
      *
      * @return boolean
