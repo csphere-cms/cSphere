@@ -67,6 +67,11 @@ abstract class Base
      * Previous action
      **/
     protected $previous = '';
+    
+    /**
+     * Previous text
+     **/
+    private $_text = '';
 
     /**
      * Data closure
@@ -110,15 +115,17 @@ abstract class Base
      * @param string $action   Action name if it differs from method name
      * @param string $tpl      Template file name
      * @param string $previous Adds the previous action to breadcrumb
+     * @param string $text     Text for previous if it differs from language key     
      *
      * @return boolean
      **/
 
-    public function map($action = '', $tpl = '', $previous = '')
+    public function map($action = '', $tpl = '', $previous = '', $text = '')
     {
         $this->action   = $action;
         $this->tpl      = $tpl;
         $this->previous = $previous;
+        $this->_text    = $text;
     }
 
     /**
@@ -174,7 +181,11 @@ abstract class Base
         // Set breadcrumb
         $bread = new \csphere\core\template\Breadcrumb($this->plugin);
 
-        if ($this->previous != '') {
+        if ($this->_text != '') {
+
+            $bread->add($this->previous, $this->_text);
+        
+        } elseif ($this->previous != '') {
 
             $bread->add($this->previous);
         }
