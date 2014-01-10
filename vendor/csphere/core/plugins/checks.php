@@ -129,11 +129,19 @@ class Checks
      * @param string  $target Name of target
      * @param boolean $box    Set this to true for box only requests
      *
+     * @throws \Exception
+     *
      * @return void
      **/
 
     public function setRoute($target, $box = false)
     {
+        // Route should not contain other chars
+        if (!preg_match("=^[_a-z0-9-]+$=i", $target)) {
+
+            throw new \Exception('Name of plugin target contains unallowed chars');
+        }
+
         $directory = ($box == false) ? 'actions' : 'boxes';
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
