@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     // hide the sqlite part
     $(".sqlite").hide();
 
-    $("#inputDatabaseDriver").change( function(){
+    $(window).on("load change", function(){
         if($("#inputDatabaseDriver").val() == "pdo_sqlite"){
             $(".others").hide();
             $(".sqlite").show();
