@@ -133,7 +133,7 @@ class Driver_PDO_SQLITE extends Base
         // Get encoding of database
         $encoding = $this->query('PRAGMA encoding', array(), 0, 0);
 
-        $info['encoding'] = $encoding[0]['encoding']; $a = $b;
+        $info['encoding'] = $encoding[0]['encoding'];
 
         // Get size of database
         $file = \csphere\core\init\path()
