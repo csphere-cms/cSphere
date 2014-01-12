@@ -22,7 +22,7 @@ $bread->add('control');
 $bread->trace();
 
 // Add data of errors
-$path = \csphere\core\init\path() . 'csphere/logs/errors/';
+$path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
 $files = \csphere\core\files\File::search($path, true, array('info.txt'));
 

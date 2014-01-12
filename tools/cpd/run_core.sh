@@ -1,2 +1,2 @@
 #!/bin/bash
-phpcpd --progress --log-pmd ../tmp/cpd.xml ../../vendor/csphere/core
+phpcpd --progress --log-pmd ../tmp/cpd.xml ../../csphere/core

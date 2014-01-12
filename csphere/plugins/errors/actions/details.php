@@ -17,7 +17,7 @@ $loader = \csphere\core\service\Locator::get();
 
 // Check for error log file
 $path       = \csphere\core\init\path();
-$path_error =  $path . 'csphere/logs/errors/';
+$path_error =  $path . 'csphere/storage/logs/errors/';
 
 $date  = \csphere\core\http\Input::get('get', 'date');
 $entry = (int)\csphere\core\http\Input::get('get', 'entry');
