@@ -60,7 +60,7 @@ class Driver_PDO_SQLITE extends Base
     protected function connect()
     {
         $file = \csphere\core\init\path()
-              . 'csphere/database/' . $this->config['file'];
+              . 'csphere/storage/database/' . $this->config['file'];
 
         $options = array();
 

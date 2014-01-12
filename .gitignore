@@ -10,10 +10,10 @@
 /lighttpd.conf
 /nginx.conf
 /web.config
-/vendor/csphere/cache/*.tmp
-/vendor/csphere/config/*.php
-/vendor/csphere/database/*.sqlite
-/vendor/csphere/logs/*/*.log
+/csphere/config/*.php
+/csphere/storage/cache/*.tmp
+/csphere/storage/database/*.sqlite
+/csphere/storage/logs/*/*.log
 /tools/tmp/api
 /tools/tmp/*.html
 /tools/tmp/*.svg

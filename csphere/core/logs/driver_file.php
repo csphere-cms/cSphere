@@ -47,7 +47,7 @@ class Driver_File extends Base
     {
         parent::__construct($config);
 
-        $this->_dir = \csphere\core\init\path() . 'csphere/logs/';
+        $this->_dir = \csphere\core\init\path() . 'csphere/storage/logs/';
 
         if (!is_writeable($this->_dir)) {
 

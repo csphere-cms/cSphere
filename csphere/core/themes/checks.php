@@ -143,7 +143,7 @@ class Checks
     public function dirname()
     {
         $dirname = \csphere\core\http\Request::get('dirname')
-                 . 'vendor/csphere/themes/' . $this->_theme . '/';
+                 . 'csphere/themes/' . $this->_theme . '/';
 
         return $dirname;
     }

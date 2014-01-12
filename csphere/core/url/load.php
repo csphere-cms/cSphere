@@ -78,7 +78,7 @@ abstract class Load
         }
 
         $image = self::$_prefix
-               . 'vendor/csphere/plugins/'
+               . 'csphere/plugins/'
                . $plugin
                . '/images/'
                . $directory

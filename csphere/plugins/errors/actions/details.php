@@ -18,8 +18,6 @@ $loader = \csphere\core\service\Locator::get();
 // Check for error log file
 $path       = \csphere\core\init\path();
 $path_error =  $path . 'csphere/logs/errors/';
-$vendor     = strrpos($path, 'vendor/');
-$above      = substr($path, 0, $vendor);
 
 $date  = \csphere\core\http\Input::get('get', 'date');
 $entry = (int)\csphere\core\http\Input::get('get', 'entry');
@@ -105,7 +103,7 @@ if (file_exists($path_error . $name)) {
             if (isset($file[0])) {
 
                 $file = str_replace('\\', '/', $file[0]);
-                $file = str_replace($above, '', $file);
+                $file = str_replace($path, '', $file);
 
             } else {
 

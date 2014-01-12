@@ -110,13 +110,11 @@ class Toolbar
         // Add included files to logs
         $includes = get_included_files();
         $path     = \csphere\core\init\path();
-        $vendor   = strrpos($path, 'vendor/');
-        $above    = substr($path, 0, $vendor);
 
         foreach ($includes AS $include) {
 
             $include            = str_replace('\\', '/', $include);
-            $info['includes'][] = str_replace($above, '', $include);
+            $info['includes'][] = str_replace($path, '', $include);
         }
 
         return $info;

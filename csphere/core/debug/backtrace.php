@@ -54,11 +54,8 @@ class Backtrace
     public function __construct(\Exception $exception)
     {
         // This prepares the file name shortening later on
-        $path        = \csphere\core\init\path();
-        $vendor      = strrpos($path, 'vendor/');
-        $this->_path = substr($path, 0, $vendor);
-
-        $this->_cut = strlen($this->_path);
+        $this->_path = \csphere\core\init\path();
+        $this->_cut  = strlen($this->_path);
 
         // Create backtrace content
         $this->_content['error'] = $this->_formatError($exception);

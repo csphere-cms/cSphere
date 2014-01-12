@@ -134,7 +134,7 @@ abstract class Hooks
         if (strpos($file, '://') === false) {
 
             $target = \csphere\core\http\Request::get('dirname')
-                    . 'vendor/csphere/plugins/' . $plugin . '/javascripts/' . $file;
+                    . 'csphere/plugins/' . $plugin . '/javascripts/' . $file;
         }
 
         $type = 'javascripts';
@@ -170,7 +170,7 @@ abstract class Hooks
         if (strpos($file, '://') === false) {
 
             $target = \csphere\core\http\Request::get('dirname')
-                    . 'vendor/csphere/plugins/' . $plugin . '/stylesheets/' . $file;
+                    . 'csphere/plugins/' . $plugin . '/stylesheets/' . $file;
         }
 
         $type = 'stylesheets';
