@@ -27,7 +27,7 @@ $lang = \csphere\core\translation\Fetch::keys('languages');
 $bread = new \csphere\core\template\Breadcrumb('languages');
 
 $bread->add('control');
-$bread->add($typed, 'languages/' . $type . '/short/' . $short);
+$bread->add($typed, 'languages/' . $typed . '/short/' . $short);
 
 $details = 'languages/details/short/' . $short . '/dir/' . $dir;
 
