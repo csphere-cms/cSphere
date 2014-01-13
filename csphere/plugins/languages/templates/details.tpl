@@ -4,7 +4,10 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages *} - {* lang language *}: {* var name *}
+                    {* lang languages *} - {* lang details *}
+                    <small>
+                        {* lang language *}: {* var short *} - {* if type == 'theme' *}{* lang theme *}{* else type *}{* lang plugin *}{* endif type *}: {* var dir *}
+                    </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
         </header><!--END header-->

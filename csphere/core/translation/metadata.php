@@ -98,4 +98,68 @@ class Metadata extends \csphere\core\xml\Metadata
 
         return $names;
     }
+
+    /**
+     * List of all plugins with their translation status
+     *
+     * @param string $lang Language short handle, e.g. en
+     *
+     * @return array
+    **/
+
+    public function plugins($lang)
+    {
+        // Get plugin metadata
+        $meta = new \csphere\core\plugins\Metadata();
+
+        $plugins = $meta->details();
+
+        // Add translation status to each entry
+        $result = array();
+
+        foreach ($plugins AS $plugin) {
+
+            $origin = $this->path . 'csphere/plugins/'
+                    . $plugin['short'] . '/languages/'
+                    . $lang . '.xml';
+
+            $plugin['exists'] = file_exists($origin) ? 'yes' : '';
+
+            $result[] = $plugin;
+        }
+
+        return $result;
+    }
+
+    /**
+     * List of all themes with their translation status
+     *
+     * @param string $lang Language short handle, e.g. en
+     *
+     * @return array
+    **/
+
+    public function themes($lang)
+    {
+        // Get plugin metadata
+        $meta = new \csphere\core\themes\Metadata();
+
+        $themes = $meta->details();
+
+        // Add translation status to each entry
+        $result = array();
+
+        foreach ($themes AS $theme) {
+
+            $origin = $this->path . 'csphere/themes/'
+                    . $theme['short'] . '/languages/'
+                    . $lang . '.xml';
+
+            $theme['exists'] = file_exists($origin) ? 'yes' : '';
+
+            $result[] = $theme;
+        }
+
+        return $result;
+    }
 }

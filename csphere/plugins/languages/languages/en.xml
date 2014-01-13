@@ -31,9 +31,6 @@
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
         <define name="engine">Engine</define>
-        <define name="entries">Entries</define>
-        <define name="environment_needed">Needed environment</define>
-        <define name="environment_extends">Environment it extends</define>
         <define name="icon">Icon</define>
         <define name="info">Info</define>
         <define name="install">Installation</define>
@@ -41,13 +38,13 @@
         <define name="languages">Languages</define>
         <define name="layout">Layout</define>
         <define name="license">License</define>
-        <define name="media">Media</define>
-        <define name="mobile">Mobile</define>
         <define name="short">Short</define>
-        <define name="thumb">Thumb</define>
-        <define name="preview">Preview</define>
         <define name="plugin">Plugin</define>
+        <define name="plugins">Plugins</define>
         <define name="published">Published</define>
+        <define name="theme">Theme</define>
+        <define name="themes">Themes</define>
+        <define name="translated">Translation</define>
         <define name="until">until</define>
         <define name="vendor">Vendor</define>
         <define name="version">Version</define>

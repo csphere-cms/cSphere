@@ -8,8 +8,7 @@
                 <tr>
                     <th>{* lang short *}</th>
                     <th class="text-center">{* lang language *}</th>
-                    <th class="text-center">{* lang version *}</th>
-                    <th class="text-center">{* lang published *}</th>
+                    <th class="text-center" colspan="2">{* lang details *}</th>
                 </tr>
             </thead><!--END table thead-->
 
@@ -17,12 +16,16 @@
                 {* foreach languages *}
                 <tr>
                     <td>
-                        <img src="{* raw languages.icon_url *}" alt="{* var languages.icon *}" /> &nbsp;
-                        <a href="{* link languages/details/short/$languages.short$ *}">{* var languages.short *}</a>
+                        <img src="{* raw languages.icon_url *}" alt="{* var languages.icon *}" />
+                        &nbsp; {* var languages.short *}
                     </td>
                     <td class="text-center">{* var languages.name *}</td>
-                    <td class="text-center">{* var languages.version *}</td>
-                    <td class="text-center">{* var languages.pub *}</td>
+                    <td class="text-center">
+                        <a href="{* link languages/plugins/short/$languages.short$ *}">{* lang plugins *}</a>
+                    </td>
+                    <td class="text-center">
+                        <a href="{* link languages/themes/short/$languages.short$ *}">{* lang themes *}</a>
+                    </td>
                 </tr>
                 {* endforeach languages *}
             </tbody><!--END table tbody-->
