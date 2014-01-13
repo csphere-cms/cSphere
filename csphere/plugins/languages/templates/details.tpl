@@ -14,6 +14,14 @@
 
         <br />
 
+        {* if error != '' *}
+        <div class="alert alert-danger text-center">
+            <strong>{* var error *}</strong>
+        </div>
+
+        <br />
+        {* endif error *}
+
         <dl class="dl-horizontal">
             <dt>{* lang vendor *}:</dt>
             <dd>{* var vendor *}</dd>
