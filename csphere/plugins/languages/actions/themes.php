@@ -1,7 +1,7 @@
 <?php
 
 /**
- * List of plugins with translation status
+ * List of themes with translation status
  *
  * PHP Version 5
  *
@@ -21,7 +21,7 @@ $short = \csphere\core\http\Input::get('get', 'short');
 $bread = new \csphere\core\template\Breadcrumb('languages');
 
 $bread->add('control');
-$bread->add('plugins', 'languages/themes/short/' . $short);
+$bread->add('themes', 'languages/themes/short/' . $short);
 $bread->trace();
 
 // Check if translation exists

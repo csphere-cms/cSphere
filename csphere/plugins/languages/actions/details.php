@@ -17,7 +17,7 @@ $loader = \csphere\core\service\Locator::get();
 
 $short = \csphere\core\http\Input::get('get', 'short');
 $dir   = \csphere\core\http\Input::get('get', 'dir');
-$theme = (int)\csphere\core\http\Input::get('get', 'theme');
+$theme = \csphere\core\http\Input::get('get', 'theme');
 $type  = empty($theme) ? 'plugin' : 'theme';
 $typed = $type . 's';
 
@@ -29,7 +29,7 @@ $bread->add($typed, 'languages/' . $type . '/short/' . $short);
 
 $details = 'languages/details/short/' . $short . '/dir/' . $dir;
 
-if ($type == 'plugin') {
+if ($type == 'theme') {
 
     $details .= '/theme/1';
 }
@@ -60,7 +60,6 @@ if ($exists === true AND $dir_exists === true) {
 
     $data = $xml->source($type, $dir, $short);
 
-    // Define required variables
     $data['short'] = $short;
     $data['dir']   = $dir;
     $data['type']  = $type;
