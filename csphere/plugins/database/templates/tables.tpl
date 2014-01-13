@@ -28,7 +28,7 @@
                 <tr>
                     <th>{* lang plugin *}</th>
                     <th>{* lang table *}</th>
-                    <th class="text-center">{* lang records *}</th>
+                    <th class="text-center">{* lang default.records *}</th>
                 </tr>
             </thead><!--END table thead-->
 
