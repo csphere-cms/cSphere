@@ -62,23 +62,39 @@ if ($exists === true AND $dir_exists === true) {
     $xml   = $loader->load('xml', 'language');
     $data  = $xml->source($type, $dir, $short);
 
-    // Compare definitions with the one in default plugin
-    $default  = $xml->source('plugin', 'default');
-    $def_lang = array();
-    $cur_lang = array();
-
-    foreach ($default['definitions'] AS $def) {
-
-        $def_lang[$def['name']] = $def['value'];
-    }
-
     foreach ($data['definitions'] AS $def) {
 
         $cur_lang[$def['name']] = $def['value'];
     }
 
-    $test = array_diff_key($cur_lang, $def_lang);
-    $bad  = array_diff_key($cur_lang, $test);
+    // Check if plugin name is set at all
+    if (!isset($cur_lang[$dir])) {
+
+        $error .= $lang['warn_noname'] . ': ' . $dir . "\n";
+    }
+
+    // Compare definitions with the one in default plugin
+    if ($type == 'theme' OR $dir != 'default') {
+
+        $default  = $xml->source('plugin', 'default');
+        $def_lang = array();
+        $cur_lang = array();
+
+        foreach ($default['definitions'] AS $def) {
+
+            $def_lang[$def['name']] = $def['value'];
+        }
+
+        $test = array_diff_key($cur_lang, $def_lang);
+        $bad  = array_diff_key($cur_lang, $test);
+
+    } else {
+
+        $bad = array();
+    }
+
+    // Remove plugin name since that setting is required
+    unset($bad[$dir]);
 
     foreach ($bad AS $key => $name) {
 

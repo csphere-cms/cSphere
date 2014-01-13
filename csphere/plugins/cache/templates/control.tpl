@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang cache *} - {* lang control *}
+                    {* lang cache *} - {* lang default.control *}
                     <small>
                         - {* lang count *}: {* raw count *} - {* lang driver *}: {* raw driver *}
                     </small>

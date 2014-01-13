@@ -25,7 +25,6 @@
         <define name="authors_past">Past authors</define>
         <define name="contact_email">Email</define>
         <define name="contact_web">Website</define>
-        <define name="control">Control</define>
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
         <define name="engine">Engine</define>

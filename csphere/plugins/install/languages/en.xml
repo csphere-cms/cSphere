@@ -47,7 +47,6 @@
         <define name="install">Install</define>
         <define name="language">Language</define>
         <define name="language_ok">Next page is translated as requested</define>
-        <define name="list">Sylvester Installone</define>
         <define name="logs_info">Saves errors that occur for later evaluation</define>
         <define name="name">Username</define>
         <define name="no_cache">Selected cache mode is not available</define>

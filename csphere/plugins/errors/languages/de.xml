@@ -23,7 +23,6 @@
         <define name="call">Aufruf</define>
         <define name="code">Code</define>
         <define name="config">Konfiguration</define>
-        <define name="control">Steuerung</define>
         <define name="config_missing">Die Konfigurationsdatei fehlt</define>
         <define name="config_corrupt">Die Konfigurationsdatei ist beschädigt</define>
         <define name="count">Anzahl</define>
@@ -41,7 +40,6 @@
         <define name="message">Meldung</define>
         <define name="no_file">Keine Datei gefunden</define>
         <define name="refresh">Aktualisieren</define>
-        <define name="remove">Entfernen</define>
         <define name="remove_ok">Datei erfolgreich gelöscht</define>
         <define name="step">Schritt</define>
         <define name="time">Zeit</define>

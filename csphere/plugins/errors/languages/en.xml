@@ -23,7 +23,6 @@
         <define name="call">Call</define>
         <define name="code">Code</define>
         <define name="config">Config</define>
-        <define name="control">Control</define>
         <define name="config_missing">Config file not found</define>
         <define name="config_corrupt">Config file is corrupted</define>
         <define name="count">Count</define>
@@ -41,7 +40,6 @@
         <define name="message">Message</define>
         <define name="no_file">No file found</define>
         <define name="refresh">Refresh</define>
-        <define name="remove">Remove</define>
         <define name="remove_ok">File removed with success</define>
         <define name="step">Step</define>
         <define name="time">Time</define>

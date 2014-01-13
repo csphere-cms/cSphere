@@ -19,7 +19,7 @@
         {* endif error *}
 
         <ul class="nav nav-tabs nav-justified">
-            <li><a href="{* link database/control *}">{* lang control *}</a></li>
+            <li><a href="{* link database/control *}">{* lang default.control *}</a></li>
             <li class="active"><a href="{* link database/tables *}">{* lang tables *}</a></li>
         </ul><!--END nav-tabs-->
 

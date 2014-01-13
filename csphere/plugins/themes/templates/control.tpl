@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=themes action=control *}
+        {* tpl default/com_header plugin=themes action=default.control *}
 
         <table class="table table-striped table-hover">
             <thead>

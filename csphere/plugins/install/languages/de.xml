@@ -47,7 +47,6 @@
         <define name="install">Installation</define>
         <define name="language">Sprache</define>
         <define name="language_ok">Übersetzung ist ab der folgenden Seite aktiv</define>
-        <define name="list">Sylvester Installone</define>
         <define name="logs_info">Speichert aufgetretene Fehler zur weiteren Auswertung</define>
         <define name="name">Benutzername</define>
         <define name="no_cache">Der gewählte Zwischenspeicher funktioniert nicht</define>

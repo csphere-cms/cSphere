@@ -24,7 +24,6 @@
         <define name="count">Count</define>
         <define name="clear">Clear cache</define>
         <define name="clear_ok">Cache cleared with success</define>
-        <define name="control">Control</define>
         <define name="driver">Driver</define>
         <define name="key">Key</define>
         <define name="no_entry">No entry found</define>

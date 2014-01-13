@@ -12,7 +12,7 @@
 
                 <div class="btn-group pull-right">
                     <a href="{* link errors/remove/date/$date *}" class="btn btn-danger">
-                        {* lang remove *}
+                        {* lang default.remove *}
                     </a>
                 </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->

@@ -1,10 +1,10 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=database action=control *}
+        {* tpl default/com_header plugin=database action=default.control *}
 
         <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="{* link database/control *}">{* lang control *}</a></li>
+            <li class="active"><a href="{* link database/control *}">{* lang default.control *}</a></li>
             <li><a href="{* link database/tables *}">{* lang tables *}</a></li>
         </ul><!--END nav-tabs-->
 

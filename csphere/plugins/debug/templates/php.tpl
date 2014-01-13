@@ -4,7 +4,7 @@
         {* tpl default/com_header plugin=debug action=php_details *}
 
         <ul class="nav nav-tabs nav-justified">
-            <li><a href="{* link debug/control *}">{* lang control *}</a></li>
+            <li><a href="{* link debug/control *}">{* lang default.control *}</a></li>
             <li class="active"><a href="{* link debug/php *}">{* lang php_details *}</a></li>
             <li><a href="{* link debug/space *}">{* lang disk_space *}</a></li>
         </ul><!--END nav-tabs-->

@@ -27,7 +27,6 @@
         <define name="contact_email">E-Mail</define>
         <define name="contact_web">Webseite</define>
         <define name="contains_designs">Beinhaltet das Aussehen für</define>
-        <define name="control">Steuerung</define>
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
         <define name="engine">Engine</define>
@@ -48,6 +47,7 @@
         <define name="until">bis</define>
         <define name="vendor">Hersteller</define>
         <define name="version">Version</define>
+        <define name="warn_noname">Der Name muss übersetzt sein</define>
         <define name="warn_difference">Unterschied zu anderer Hauptsprache</define>
         <define name="warn_override">Definition des Plugins default überschrieben</define>
     </definitions>

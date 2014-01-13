@@ -26,7 +26,6 @@
         <define name="call">Aufruf</define>
         <define name="code">Code</define>
         <define name="component">Komponente</define>
-        <define name="control">Steuerung</define>
         <define name="database">Datenbank</define>
         <define name="debug">Debug</define>
         <define name="disk_space">Speicherplatz</define>

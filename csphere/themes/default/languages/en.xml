@@ -20,8 +20,8 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="default">Default</define>
         <define name="home">Home</define>
-        <define name="scriptinfo">Scriptinfo</define>
         <define name="imprint">Imprint</define>
         <define name="team">Team</define>
         <define name="admin">Admin</define>

@@ -20,7 +20,6 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="control">Steuerung</define>
         <define name="options">Optionen</define>
     </definitions>
 </language>

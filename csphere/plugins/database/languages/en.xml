@@ -21,7 +21,6 @@
     </contact>
     <definitions>
         <define name="columns">Columns</define>
-        <define name="control">Control</define>
         <define name="data">Data</define>
         <define name="database">Database</define>
         <define name="deletes">Deletes</define>
@@ -39,7 +38,6 @@
         <define name="no_table_found">No table found</define>
         <define name="plugin">Plugin</define>
         <define name="primary">Primary</define>
-        <define name="records">Records</define>
         <define name="reload">Reload</define>
         <define name="schema">Schema</define>
         <define name="size">Size</define>

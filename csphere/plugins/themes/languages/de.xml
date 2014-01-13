@@ -27,7 +27,6 @@
         <define name="contact_email">E-Mail</define>
         <define name="contact_web">Webseite</define>
         <define name="contains_designs">Beinhaltet das Aussehen für</define>
-        <define name="control">Steuerung</define>
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
         <define name="engine">Engine</define>

@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang errors *} - {* lang control *}
+                    {* lang errors *} - {* lang default.control *}
                     <small> - {* lang count *}: {* raw count *}</small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
@@ -22,7 +22,7 @@
                 {* foreach files *}
                 <tr>
                     <td><a href="{* link errors/file/date/$files.date$ *}">{* var files.date *}</a></td>
-                    <td><a href="{* link errors/remove/date/$files.date *}">{* lang remove *}</a></td>
+                    <td><a href="{* link errors/remove/date/$files.date *}">{* lang default.remove *}</a></td>
                 </tr>
                 {* else files *}
                 <tr>

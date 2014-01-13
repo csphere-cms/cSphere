@@ -44,7 +44,7 @@ $previous = \csphere\core\url\Link::href('errors', 'control');
 $data = array('previous' => $previous, 'type' => 'green');
 
 $data['plugin_name'] = $lang['errors'];
-$data['action_name'] = $lang['remove'];
+$data['action_name'] = \csphere\core\translation\Fetch::key('default', 'remove');
 $data['message']     = $lang['remove_ok'];
 
 // Send data to view
