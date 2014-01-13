@@ -29,6 +29,7 @@
         <define name="contains_designs">Contains designs for</define>
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
+        <define name="duplication">Duplication</define>
         <define name="engine">Engine</define>
         <define name="icon">Icon</define>
         <define name="info">Info</define>

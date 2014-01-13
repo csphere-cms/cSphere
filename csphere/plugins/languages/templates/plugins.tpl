@@ -12,6 +12,10 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
+        <a href="{* link languages/duplication/short/$short$ *}">{* lang duplication *}</a>
+
+        <br /><br />
+
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
