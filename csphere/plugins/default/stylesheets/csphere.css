@@ -2,7 +2,7 @@
 
   *Filename             csphere.css
   *Description          CSPHERE CUSTOM STYLES
-  *Version              0.1 (2013-12-21)
+  *Version              0.1 (2014-01-14)
   *Website              http://www.csphere.eu
   *Author               Stefan Gräwe <sgrwe>
 
@@ -37,13 +37,15 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+.grid-list div:nth-child(2n) a { background-color: #FAFAFA; }
+.grid-list div a:hover { background-color: #F7F7F7; }
+
+/* ----- __GRID-LIST LINKS ICON ----- */
 .grid-list div a i {
     display: block;
     margin-bottom: 15px;
     text-shadow: 0 1px 0 #FFF, 0 3px 0 rgba(0,0,0,.15);
 }
-.grid-list div a:hover { background-color: #F5F5F5; }
-.grid-list div:nth-child(2n) a { background-color: #F5F5F5; }
 
 
 /*  __WORD-BREAK
