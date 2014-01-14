@@ -63,16 +63,17 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Try to find a source inside the cache or as a file
      *
-     * @param string $type Type of target, e.g. plugin
-     * @param string $name Directory name of the target
-     * @param string $lang Language if more than one is possible
+     * @param string  $type  Type of target, e.g. plugin
+     * @param string  $name  Directory name of the target
+     * @param string  $lang  Language if more than one is possible
+     * @param boolean $empty Return empty array if file is missing
      *
      * @throws \Exception
      *
      * @return array
      **/
 
-    public function source($type, $name, $lang = 'en')
+    public function source($type, $name, $lang = 'en', $empty = false)
     {
         // Set key here to not let drivers accidently overcut something
         $key = 'xml_' . $this->driver() . '_' . $type . '_' . $name . '_' . $lang;
@@ -97,6 +98,11 @@ abstract class Base extends \csphere\core\service\Drivers
 
                 // Save to cache for later usage
                 $this->cache->save($key, $string);
+
+            } elseif ($empty === true) {
+
+                // In some cases it is not relevant if the file exists
+                $string = array();
 
             } else {
 

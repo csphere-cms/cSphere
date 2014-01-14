@@ -26,7 +26,6 @@
         <define name="authors_past">Past authors</define>
         <define name="contact_email">Email</define>
         <define name="contact_web">Website</define>
-        <define name="contains_designs">Contains designs for</define>
         <define name="copyright">Copyright</define>
         <define name="details">Details</define>
         <define name="duplication">Duplication</define>
@@ -36,7 +35,6 @@
         <define name="install">Installation</define>
         <define name="language">Language</define>
         <define name="languages">Languages</define>
-        <define name="layout">Layout</define>
         <define name="license">License</define>
         <define name="short">Short</define>
         <define name="plugin">Plugin</define>

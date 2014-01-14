@@ -54,13 +54,24 @@ if ($type == 'plugin') {
 }
 
 $dir_exists = $target->exists($dir);
+$src_exists = false;
 
 // Only proceed if target was found and translation exists
 if ($exists === true AND $dir_exists === true) {
 
     $error = '';
     $xml   = $loader->load('xml', 'language');
-    $data  = $xml->source($type, $dir, $short);
+    $data  = $xml->source($type, $dir, $short, true);
+
+    if ($data != array()) {
+
+        // This is the one and only valid case
+        $src_exists = true;
+    }
+}
+
+// Only proceed if source file could be found
+if ($src_exists === true) {
 
     foreach ($data['definitions'] AS $def) {
 

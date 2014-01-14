@@ -43,14 +43,8 @@ if ($exists === true) {
         $source = array();
 
         // Check if plugin translation is missing
-        try {
-            $source = $xml->source('plugin', $plugin['short'], $short);
-            $source = $source['definitions'];
-
-        } catch (\Exception $exception) {
-
-            $error .= $exception->getMessage() . "\n";
-        }
+        $source = $xml->source('plugin', $plugin['short'], $short, true);
+        $source = isset($source['definitions']) ? $source['definitions'] : array();
 
         // Add definitions to super array
         foreach ($source AS $part) {
