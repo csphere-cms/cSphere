@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<changelog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="../schemas/changelog.xsd">
+    <history type="system" name="csphere" />
+    <updates>
+        <update version="2013.0-beta8" published="2014-01-14" compatible="">
+            <information>Improved quality assurence possibilities</information>
+            <instructions>PHP code and language XML files can now easily be checked in many ways</instructions>
+            <added>
+                <item author="hajo" source="">Added breadcrumb text option to set it manually</item>
+                <item author="tom08" source="">Added javascript file to install for database form</item>
+                <item author="hajo" source="">Added theme support for overwriting plugin template files</item>
+                <item author="hajo" source="">Added Travis CI (travis.yml) again to show build status</item>
+            </added>
+            <reworked>
+                <item author="hajo" source="">Reworked database query logs so that they show bound data</item>
+                <item author="hajo" source="">Reworked languages plugin and added duplication and error detection</item>
+                <item author="hajo" source="">Reworked readme.md to contain much more information</item>
+                <item author="equal" source="">Reworked theme and plugin template files</item>
+            </reworked>
+            <fixed>
+                <item author="ichraffsnicht" source="">Fixed database install javascript file added by tom08</item>
+                <item author="hajo" source="">Fixed https detection and https-only login option</item>
+            </fixed>
+            <removed>
+                <item author="hajo" source="">Removed database order by random support from drivers</item>
+                <item author="hajo" source="">Removed service loader error logging and rethrow exception instead</item>
+                <item author="hajo" source="">Removed vendor prefixes in directory structure</item>
+            </removed>
+        </update>
+    </updates>
+</changelog>
