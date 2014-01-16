@@ -7,7 +7,7 @@ The current version is available under the terms of the 'Simplified BSD License'
 
 Website: http://www.csphere.eu
 
-Travis CI: [![Build Status](https://travis-ci.org/csphere-dev/csphere.png?branch=dev)](https://travis-ci.org/csphere-dev/csphere)
+Travis CI: [![Build Status](https://travis-ci.org/csphere-cms/csphere.png?branch=dev)](https://travis-ci.org/csphere-cms/csphere)
 
 Table of contents
 =================
