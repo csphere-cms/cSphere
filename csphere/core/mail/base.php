@@ -39,6 +39,11 @@ abstract class Base extends \csphere\core\service\Drivers
     protected $content = array();
 
     /**
+     * Stores the logger object
+     **/
+    protected $logger = null;
+
+    /**
      * Creates the mail handler object
      *
      * @param array $config Configuration details as an array
@@ -181,8 +186,12 @@ abstract class Base extends \csphere\core\service\Drivers
                . 'Target: ' . $email . "\n"
                . 'Status: '  . (int) $status;
 
-        $this->log = $this->loader->load('logs');
+        // Get logger if not done yet
+        if ($this->logger == null) {
 
-        $this->log->log('mail', $store);
+            $this->logger = $this->loader->load('logs');
+        }
+
+        $this->logger->log('mail', $store);
     }
 }

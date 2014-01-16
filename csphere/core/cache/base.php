@@ -29,6 +29,11 @@ namespace csphere\core\cache;
 abstract class Base extends \csphere\core\service\Drivers
 {
     /**
+     * Stores the logger object
+     **/
+    protected $logger = null;
+
+    /**
      * Clears the cache content
      *
      * @return boolean
@@ -97,9 +102,13 @@ abstract class Base extends \csphere\core\service\Drivers
 
     protected function log($key)
     {
-        $this->log = $this->loader->load('logs');
+        // Get logger if not done yet
+        if ($this->logger == null) {
 
-        $this->log->log('cache', $key);
+            $this->logger = $this->loader->load('logs');
+        }
+
+        $this->logger->log('cache', $key);
     }
 
     /**

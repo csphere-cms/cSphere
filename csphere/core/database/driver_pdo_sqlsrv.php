@@ -109,7 +109,7 @@ class Driver_PDO_SQLSRV extends Base
         // Fix for selecting one result row without using ORDER BY
         if ($max == 1) {
 
-            $string = 'ORDER BY ' . $this->random . ' ' . $string;
+            $string = 'ORDER BY NEWID() ' . $string;
         }
 
         return $string;
