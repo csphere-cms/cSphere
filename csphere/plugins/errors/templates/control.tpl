@@ -26,7 +26,7 @@
                 </tr>
                 {* else files *}
                 <tr>
-                    <th colspan="2" class="text-center">{* lang no_file *}</td>
+                    <td colspan="2" class="text-center">{* lang no_file *}</td>
                 </tr>
                 {* endforeach files *}
             </tbody><!--END table tbody-->

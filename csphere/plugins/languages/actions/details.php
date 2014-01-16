@@ -55,6 +55,8 @@ if ($type == 'plugin') {
 
 $dir_exists = $target->exists($dir);
 $src_exists = false;
+$xml        = null;
+$data       = array();
 
 // Only proceed if target was found and translation exists
 if ($exists === true AND $dir_exists === true) {

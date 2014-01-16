@@ -59,6 +59,8 @@ class Loader
      * @param string $driver    Driver name without any prefixes
      * @param array  $config    Configuration options for the driver
      *
+     * @throws \Exception
+     *
      * @return object
      **/
 
@@ -79,7 +81,7 @@ class Loader
 
                 $config['driver'] = 'none';
 
-                $object = $this->_container($component, 'none', $config);
+                $this->_container($component, 'none', $config);
             }
 
             // Rethrow exception

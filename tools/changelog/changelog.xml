@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <changelog xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-    xs:noNamespaceSchemaLocation="../schemas/changelog.xsd">
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/changelog.xsd">
     <history type="system" name="csphere" />
     <updates>
         <update version="2013.0-beta8" published="2014-01-14" compatible="">

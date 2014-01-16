@@ -164,7 +164,7 @@ if ($test === true AND $error == '') {
     $data['config'] = $config;
 
     // Create cache driver dropdown
-    $cache_list = array();
+    $ch_list = array();
 
     foreach ($cache_drivers AS $driver => $name) {
 
