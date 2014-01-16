@@ -1,20 +1,34 @@
+# Mac specific directory
 .DS_Store
+
+# Patches
 *.patch
+
+# IDE specific directories and files
 /.buildpath
-/.htaccess
 /.idea
 /.project
 /.settings
-/.sonar
-/.sonartmp
+
+# Webserver specific configuration
+/.htaccess
 /lighttpd.conf
 /nginx.conf
 /web.config
-/csphere/config/*.php
-/csphere/storage/cache/*.tmp
-/csphere/storage/database/*.sqlite
+
+# Sonar directories
+/.sonar
+/.sonartmp
+
+# Tools
+/tools/tmp/*
+!/tools/tmp/info.txt
+
+# CMS
+/csphere/config/*
+!/csphere/config/info.txt
+/csphere/storage/cache/*
+!/csphere/storage/cache/info.txt
+/csphere/storage/database/*
+!/csphere/storage/database/info.txt
 /csphere/storage/logs/*/*.log
-/tools/tmp/api
-/tools/tmp/*.html
-/tools/tmp/*.svg
-/tools/tmp/*.xml
