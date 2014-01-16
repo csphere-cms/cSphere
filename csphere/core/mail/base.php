@@ -138,14 +138,20 @@ abstract class Base extends \csphere\core\service\Drivers
     }
 
     /**
-     * Returns a formatted array with prepared mail headers
+     * Returns a formatted array with configuration and headers
      *
      * @return array
      **/
 
     public function info()
     {
-        return $this->headers;
+        $result = $this->config;
+
+        unset($result['smtp_username'], $result['smtp_password']);
+
+        $result['headers'] = implode("\n" . $this->headers);
+
+        return $result;
     }
 
     /**
