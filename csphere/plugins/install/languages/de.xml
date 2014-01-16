@@ -31,7 +31,7 @@
         <define name="database">Datenbank</define>
         <define name="database_ok">Die Datenbank-Einstellungen sind korrekt</define>
         <define name="db_file">Dateiname</define>
-        <define name="db_file_info">Nur bei SQLite benötigt, keine Pfadangaben</define>
+        <define name="db_file_info">Pflicht bei SQLite, optional bei LocalDB, ohne Pfadangabe</define>
         <define name="db_host">Hostname</define>
         <define name="db_host_info">Valide IP oder DNS, z.B. localhost oder 127.0.0.1</define>
         <define name="db_prefix">Prefix</define>

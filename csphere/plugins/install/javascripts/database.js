@@ -1,16 +1,30 @@
 // Wait for the document to be ready
 jQuery(document).ready(function() {
 
-    // hide the sqlite part
-    $(".sqlite").hide();
+    // Hide filename by default
+    $(".sql_filename").hide();
 
-    $(window).on("load change", function(){
-        if($("#inputDatabaseDriver").val() == "pdo_sqlite"){
-            $(".others").hide();
-            $(".sqlite").show();
+    // Change visible input fields depending on selected driver
+    $(window).on("load change", function() {
+
+        var type = $("#inputDatabaseDriver").val();
+
+        if (type == "pdo_sqlite") {
+
+            // SQLite only needs a few inputs
+            $(".sql_others").hide();
+            $(".sql_filename").show();
+
+        } else if (type == "pdo_sqlsrv") {
+
+            // MS SQL Server can use up to all inputs
+            $(".sql_others").show();
+            $(".sql_filename").show();
+
         } else {
-            $(".others").show();
-            $(".sqlite").hide();
+
+            $(".sql_others").show();
+            $(".sql_filename").hide();
         }
     });
 });

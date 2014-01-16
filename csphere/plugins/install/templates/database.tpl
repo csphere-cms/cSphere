@@ -30,20 +30,21 @@
                 </div>
             </div><!--END form form-group inputDatabaseDriver-->
 
-            <div class="others">
+            <div class="sql_others">
             {* tpl default/com_input_adv name=database_host label=db_host value=database.host type=text holder=db_host_info *}
 
             {* tpl default/com_input_adv name=database_user label=db_user value=database.username type=text holder=db_user *}
 
             {* tpl default/com_input_pwd name=database_pass label=password holder=password *}
             </div>
+
             {* tpl default/com_input_adv name=database_prefix label=db_prefix value=database.prefix type=text holder=db_prefix_info *}
 
-            <div class="others">
+            <div class="sql_others">
             {* tpl default/com_input_adv name=database_schema label=db_schema value=database.schema type=text holder=db_schema_info *}
             </div>
 
-            <div class="sqlite">
+            <div class="sql_filename">
             {* tpl default/com_input_adv name=database_file label=db_file value=database.file type=text holder=db_file_info *}
             </div>
 
