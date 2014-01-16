@@ -33,7 +33,7 @@ Escaping and variables:
 
 {* url target *}
 
-Escapes the data variable named target to use it as an URL
+Escapes the target variable so that it can e.g. be used as an URL parameter
 For creating internal links see the link and share placeholder
 
 {* var target *}
@@ -57,7 +57,18 @@ Therefore actions can't be used as boxes and vice versa
 
 Adds the tpl "login" of the "users" plugin as a string at the given place
 Make sure to ship all data requested by that template or use a box instead
+It is a good idea to prefix templates for boxes with "box_" in their filename
 
+{* tpl default/com_header plugin=users action=login *}
+
+Some often found things like a header are accesible with COM placeholders
+The variable name of the COM placeholder is provided as in the above example
+
+{* com lang plugin *}
+
+This is an example on how to define own COM placeholders for subtemplates
+The filename of templates using a COM placeholder should start with "com_"
+This indicates that it can only be used as a subtemplate containing all parameters
 
 Internal links:
 
@@ -85,10 +96,10 @@ Do something else if no article content is found
 Place it between the foreach and endforeach tag to work
 
 {* foreach categories *}
-{* categories.name *} ...
-{* foreach categories.articles *}
-{* articles.headline *} ...
-{* endforeach categories.articles *}
+    {* categories.name *} ...
+    {* foreach categories.articles *}
+        {* articles.headline *} ...
+    {* endforeach categories.articles *}
 {* endforeach articles *}
 
 Loops can be nested without limits as long as the array index name stays unique
@@ -101,6 +112,12 @@ Translation:
 
 Gets the content of the target string from the current language file
 Language XML strings support nested variables that work like those for links
+
+{* lang default.target *}
+
+Gets the target translation from the default plugin instead of the active one
+Remember that this requires the used plugin to always exist for your plugin
+This functionality does also work for themes, but switches the plugin name, too
 
 
 Development:
