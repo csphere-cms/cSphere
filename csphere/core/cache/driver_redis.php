@@ -55,9 +55,14 @@ class Driver_Redis extends Base
         // Create redis object and connect to server
         $this->_redis = new \Redis();
 
-        $this->_redis->connect(
+        $check = $this->_redis->connect(
             $config['host'], $config['port'], $config['timeout']
         );
+
+        if ($check === false) {
+
+            throw new \Exception('Connection to "redis" failed');
+        }
 
         // Authenticate connection if password is given
         if (!empty($config['password'])) {
