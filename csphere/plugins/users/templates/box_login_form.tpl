@@ -6,11 +6,7 @@
 
     <form name="form_login" method="POST" role="form">
 
-        {* if login_error == 'yes' *}
-        <div class="alert alert-danger text-center">
-            <strong>{* lang login_failed *}</strong>
-        </div>
-        {* endif login_error *}
+        {* tpl default/msg_error *}
 
         {* tpl default/com_box_input type=text name=login_name holder=user_name value=login_name *}
 

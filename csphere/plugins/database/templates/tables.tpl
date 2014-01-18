@@ -10,13 +10,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        {* if error != '' *}
-        <div class="alert alert-danger text-center">
-            <strong>{* var error *}</strong>
-        </div>
-
-        <br />
-        {* endif error *}
+        {* tpl default/msg_error *}
 
         <ul class="nav nav-tabs nav-justified">
             <li><a href="{* link database/control *}">{* lang default.control *}</a></li>

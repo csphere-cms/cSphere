@@ -5,13 +5,7 @@
 
         <br />
 
-        {* if error != '' *}
-        <div class="alert alert-danger text-center">
-            <strong>{* var error *}</strong>
-        </div>
-
-        <br />
-        {* endif error *}
+        {* tpl default/msg_error *}
 
         <form class="form-horizontal" role="form" action="{* link install/database *}" method="POST">
 

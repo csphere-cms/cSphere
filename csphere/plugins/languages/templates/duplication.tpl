@@ -14,13 +14,7 @@
 
         <br />
 
-        {* if error != '' *}
-        <div class="alert alert-danger text-center">
-            <strong>{* var error *}</strong>
-        </div>
-
-        <br />
-        {* endif error *}
+        {* tpl default/msg_error *}
 
         <dl class="dl-horizontal">
 

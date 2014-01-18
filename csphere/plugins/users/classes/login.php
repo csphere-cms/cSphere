@@ -154,7 +154,7 @@ abstract class Login
         // Always set a tpl to not cause errors
         $data = array('tpl'         => 'form',
                       'login_name'  => '',
-                      'login_error' => '');
+                      'error'       => '');
 
         // Get data if filled in at form
         $post = \csphere\core\http\Input::getAll('post');
@@ -177,10 +177,12 @@ abstract class Login
 
             } else {
 
+                $data['login_name'] = $name;
+
                 // Show message for wrong login details
-                $data = array('tpl'         => 'form',
-                              'login_name'  => $name,
-                              'login_error' => 'yes');
+                $data['error'] = \csphere\core\translation\Fetch::key(
+                    'users', 'login_failed'
+                );
             }
 
         }

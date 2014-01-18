@@ -8,7 +8,7 @@
         {* lang welcome_info *}<br /><br />
 
         <a href="{* link install/language *}">{* lang default.continue *}</a>
-        
+
         <br /><br />
 
     </div><!--END panel-body-->
