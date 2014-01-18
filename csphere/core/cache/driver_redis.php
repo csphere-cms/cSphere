@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Provides caching functionality for WinCache
+ * Provides caching functionality for Redis
  *
  * PHP Version 5
  *
@@ -16,7 +16,7 @@
 namespace csphere\core\cache;
 
 /**
- * Provides caching functionality for WinCache
+ * Provides caching functionality for Redis
  *
  * @category  Core
  * @package   Cache
@@ -26,8 +26,13 @@ namespace csphere\core\cache;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_Wincache extends Base
+class Driver_Redis extends Base
 {
+    /**
+     * Redis object
+     **/
+    private $_redis = null;
+
     /**
      * Creates the cache handler object
      *
@@ -35,16 +40,34 @@ class Driver_Wincache extends Base
      *
      * @throws \Exception
      *
-     * @return \csphere\core\cache\Driver_WinCache
+     * @return \csphere\core\cache\Driver_Redis
      **/
 
     public function __construct(array $config)
     {
         parent::__construct($config);
 
-        if (!extension_loaded('wincache')) {
+        if (!extension_loaded('redis')) {
 
-            throw new \Exception('Extension "wincache" not found');
+            throw new \Exception('Extension "redis" not found');
+        }
+
+        // Create redis object and connect to server
+        $this->_redis = new \Redis();
+
+        $this->_redis->connect($config['host'],
+                               $config['port'],
+                               $config['timeout']);
+
+        // Authenticate connection if password is given
+        if (!empty($config['password'])) {
+
+            $auth = $this->_redis->auth($config['password']);
+
+            if ($auth === false) {
+
+                throw new \Exception('Authentication for "redis" failed');
+            }
         }
     }
 
@@ -56,7 +79,7 @@ class Driver_Wincache extends Base
 
     public function clear()
     {
-        wincache_ucache_clear();
+        $this->_redis->flushDB();
 
         return true;
     }
@@ -74,9 +97,9 @@ class Driver_Wincache extends Base
     {
         $token = empty($ttl) ? $key : 'ttl_' . $key;
 
-        if (wincache_ucache_exists($token)) {
+        if ($this->_redis->exists($token)) {
 
-            wincache_ucache_delete($token);
+            $this->_redis->delete($token);
         }
     }
 
@@ -90,16 +113,29 @@ class Driver_Wincache extends Base
     {
         $form = array();
 
-        $info = wincache_ucache_info();
+        // Time request may not work in all cases
+        $time = $this->_redis->time();
 
-        foreach ($info['ucache_entries'] AS $num => $data) {
+        if (is_array($time) AND isset($time[0])) {
 
-            $handle = $data['key_name'] . ' (' . $num . ')';
+            $time = $time[0];
 
-            $age = time() - $data['age_seconds'];
+        } else {
 
-            $form[$handle] = array('name' => $handle, 'time' => $age,
-                                   'size' => $data['value_size']);
+            $time = (int)$time;
+        }
+
+        // Wildcard to get all keys
+        $keys = $this->_redis->keys('*');
+
+        foreach ($keys AS $key) {
+
+            // Size hopes that storage uses UTF-8
+            $size = $this->_redis->strlen($key);
+
+            $form[$key] = array('name' => $key,
+                                'time' => $time,
+                                'size' => $size);
         }
 
         ksort($form);
@@ -120,9 +156,9 @@ class Driver_Wincache extends Base
     {
         $token = empty($ttl) ? $key : 'ttl_' . $key;
 
-        if (wincache_ucache_exists($token)) {
+        if ($this->_redis->exists($token)) {
 
-            return wincache_ucache_get($token);
+            return unserialize($this->_redis->get($token));
         }
 
         return false;
@@ -142,7 +178,12 @@ class Driver_Wincache extends Base
     {
         $token = empty($ttl) ? $key : 'ttl_' . $key;
 
-        wincache_ucache_set($token, $value, $ttl);
+        $this->_redis->set($token, serialize($value));
+
+        if (!empty($ttl)) {
+
+            $redis->setTimeout($token, $ttl);
+        }
 
         $this->log($key);
 

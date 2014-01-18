@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Provides caching functionality on the filesystem
+ * Provides caching functionality for XCache
  *
  * PHP Version 5
  *
@@ -16,7 +16,7 @@
 namespace csphere\core\cache;
 
 /**
- * Provides caching functionality on the filesystem
+ * Provides caching functionality for XCache
  *
  * @category  Core
  * @package   Cache
