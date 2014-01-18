@@ -182,7 +182,7 @@ class Driver_Redis extends Base
 
         if (!empty($ttl)) {
 
-            $redis->setTimeout($token, $ttl);
+            $this->_redis->setTimeout($token, $ttl);
         }
 
         $this->log($key);
