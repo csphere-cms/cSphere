@@ -121,7 +121,7 @@ if (isset($post['csphere_form'])) {
 
             $gen = array('db'     => $db_config,
                          'mail'   => $mail_config,
-                         'cache'  => $cache,
+                         'cache'  => array('driver' => $cache),
                          'logs'   => $logs,
                          'config' => $config);
 
