@@ -20,7 +20,7 @@
                     </button>
 
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownOptions">
-                        <li role="presentation"><a href="{* link plugins/market *}" role="menuitem" tabindex="-1">{* lang manuel_install *}</a></li>
+                        <li role="presentation"><a href="{* link plugins/market *}" role="menuitem" tabindex="-1">{* lang manual_install *}</a></li>
                     </ul>
                 </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
