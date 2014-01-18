@@ -44,6 +44,6 @@ class Driver_None extends Base
 
         $this->clear($clear);
 
-        return false;
+        return true;
     }
 }

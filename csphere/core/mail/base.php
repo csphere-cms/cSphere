@@ -129,7 +129,7 @@ abstract class Base extends \csphere\core\service\Drivers
         $this->content['subject_log'] = $subject;
 
         // Append subject prefix set in configuration
-        $subject = $this->config['subject_prefix'] . ' - ' . $subject;
+        $subject = $this->config['subject'] . ' - ' . $subject;
 
         $this->content['subject_raw'] = $subject;
 

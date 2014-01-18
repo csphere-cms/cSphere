@@ -19,6 +19,7 @@ $loader = \csphere\core\service\Locator::get();
 $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('language');
+$bread->add('mail');
 $bread->add('database');
 $bread->add('admin');
 $bread->trace();

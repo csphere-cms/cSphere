@@ -10,7 +10,7 @@
         <form class="form-horizontal" role="form" action="{* link install/database *}" method="POST">
 
             <div class="form-group">
-                <label for="inputDatabaseDriver" class="col-sm-2 control-label">{* lang db_server *}</label>
+                <label for="inputDatabaseDriver" class="col-sm-2 control-label">{* lang server *}</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="inputDatabaseDriver" name="database_driver">
                     {* foreach database.drivers *}
@@ -25,9 +25,9 @@
             </div><!--END form form-group inputDatabaseDriver-->
 
             <div class="sql_others">
-            {* tpl default/com_input_adv name=database_host label=db_host value=database.host type=text holder=db_host_info *}
+            {* tpl default/com_input_adv name=database_host label=host value=database.host type=text holder=host_info *}
 
-            {* tpl default/com_input_adv name=database_user label=db_user value=database.username type=text holder=db_user *}
+            {* tpl default/com_input_adv name=database_user label=name value=database.username type=text holder=name *}
 
             {* tpl default/com_input_pwd name=database_pass label=password holder=password *}
             </div>

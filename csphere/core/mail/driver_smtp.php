@@ -72,8 +72,8 @@ class Driver_SMTP extends Base
         // Create command list
         $commands = array('helo' => 'HELO ' . $this->_server,
                           'login' => 'AUTH LOGIN',
-                          'user' => base64_encode($this->config['smtp_username']),
-                          'pw' => base64_encode($this->config['smtp_password']),
+                          'user' => base64_encode($this->config['username']),
+                          'pw' => base64_encode($this->config['password']),
                           'from' => 'MAIL FROM:' . $this->config['from'],
                           'to' => 'RCPT TO:' . $email,
                           'data' => 'DATA',
@@ -98,13 +98,13 @@ class Driver_SMTP extends Base
         $log = array();
 
         // Open connection to smtp server
-        $remote = fsockopen($this->config['smtp_host'], $this->config['smtp_port']);
+        $remote = fsockopen($this->config['host'], (int)$this->config['port']);
 
         // On success proceed
         if (is_resource($remote)) {
 
             // Set timeout
-            stream_set_timeout($remote, $this->config['timeout']);
+            stream_set_timeout($remote, (int)$this->config['timeout']);
 
             foreach ($commands AS $com_name => $com_exec) {
 
@@ -133,6 +133,7 @@ class Driver_SMTP extends Base
             fclose($remote);
 
             $result = true;
+
         }
 
         return $result;

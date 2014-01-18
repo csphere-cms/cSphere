@@ -26,14 +26,14 @@ namespace csphere\core\mail;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_Mail extends Base
+class Driver_Sendmail extends Base
 {
     /**
      * Creates the mail handler object
      *
      * @param array $config Configuration details as an array
      *
-     * @return \csphere\core\mail\Driver_Mail
+     * @return \csphere\core\mail\Driver_Sendmail
      **/
 
     public function __construct(array $config)

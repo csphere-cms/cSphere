@@ -19,6 +19,7 @@ $loader = \csphere\core\service\Locator::get();
 $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('language');
+$bread->add('mail');
 $bread->add('database');
 $bread->add('admin');
 $bread->add('config');
@@ -33,11 +34,12 @@ $error = '';
 $data  = array();
 
 // List of cache drivers
-$cache_drivers = array('none' => 'None',
-                       'file' => 'File',
-                       'apc'  => 'APC / APCu',
-                       'wincache'  => 'WinCache',
-                       'xcache' => 'XCache');
+$cache_drivers = array('none'     => 'None',
+                       'apc'      => 'APC / APCu',
+                       'file'     => 'File',
+                       'redis'    => 'Redis',
+                       'wincache' => 'WinCache',
+                       'xcache'   => 'XCache');
 
 // Get post data
 $post  = \csphere\core\http\Input::getAll('post');
@@ -59,9 +61,20 @@ if (isset($post['csphere_form'])) {
     // Check for database connection and admin
     try {
 
-        // Get database connection data
+        // Get session for configuration data contents
         $session = new \csphere\core\session\Session();
 
+        // Get mail data
+        $mail_config = array();
+        $mail_data   = array('driver', 'host', 'username', 'password', 'port',
+                             'timeout', 'newline', 'from', 'subject');
+
+        foreach ($mail_data AS $key) {
+
+            $mail_config[$key] = $session->get('mail_' . $key);
+        }
+
+        // Get database connection data
         $db_config = array();
         $db_data   = array('driver', 'host', 'username', 'password',
                            'prefix', 'schema', 'file');
@@ -107,6 +120,7 @@ if (isset($post['csphere_form'])) {
             $logs = $config['logs'] == '1' ? 'file' : 'none';
 
             $gen = array('db'     => $db_config,
+                         'mail'   => $mail_config,
                          'cache'  => $cache,
                          'logs'   => $logs,
                          'config' => $config);
