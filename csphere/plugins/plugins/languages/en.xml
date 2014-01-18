@@ -42,5 +42,10 @@
         <define name="until">until</define>
         <define name="vendor">Vendor</define>
         <define name="version">Version</define>
+        <define name="options">Options</define>
+        <define name="delete">Delete</define>
+        <define name="count">Count</define>
+        <define name="plugin_market">Plugin Market</define>
+        <define name="manuel_install">Manuel install</define>
     </definitions>
 </language>

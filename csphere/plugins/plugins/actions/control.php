@@ -26,8 +26,11 @@ $meta = new \csphere\core\plugins\Metadata();
 
 $plugins = $meta->details();
 
+// Count of installed plugins
+$count  = count($plugins);
+
 // Create link for every plugin
-$data = array('plugins' => $plugins);
+$data = array('count' => $count, 'plugins' => $plugins);
 
 // Output results
 $view = $loader->load('view');
