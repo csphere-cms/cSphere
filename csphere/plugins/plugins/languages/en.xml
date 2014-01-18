@@ -46,6 +46,6 @@
         <define name="delete">Delete</define>
         <define name="count">Count</define>
         <define name="plugin_market">Plugin Market</define>
-        <define name="manual_install">Manuel install</define>
+        <define name="manual_install">Install manually</define>
     </definitions>
 </language>
