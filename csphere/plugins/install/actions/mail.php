@@ -139,7 +139,9 @@ if ($test === true AND $mail_error === null) {
 
         $active = $mail['driver'] == $driver ? 'yes' : 'no';
 
-        $mail_list[] = array('short' => $driver, 'name' => $name, 'active' => $active);
+        $mail_list[] = array('short'  => $driver,
+                             'name'   => $name,
+                             'active' => $active);
     }
 
     $data['mail']['drivers'] = $mail_list;
