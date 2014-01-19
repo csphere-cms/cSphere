@@ -12,31 +12,31 @@
         <br />
 
         <dl class="dl-horizontal">
-            <dt>{* lang vendor *}:</dt>
+            <dt>{* lang xml.vendor *}:</dt>
             <dd>{* var vendor *}</dd>
 
-            <dt>{* lang version *}:</dt>
+            <dt>{* lang xml.version *}:</dt>
             <dd>{* var version *}</dd>
 
-            <dt>{* lang published *}:</dt>
+            <dt>{* lang xml.published *}:</dt>
             <dd>{* var published *}</dd>
 
-            <dt>{* lang copyright *}:</dt>
+            <dt>{* lang xml.copyright *}:</dt>
             <dd>{* var copyright *}</dd>
 
-            <dt>{* lang license *}:</dt>
+            <dt>{* lang xml.license *}:</dt>
             <dd>{* var license *}</dd>
 
-            <dt>{* lang info *}:</dt>
+            <dt>{* lang xml.info *}:</dt>
             <dd>{* var info *}</dd>
         </dl><!--END dl-horizontal theme_id-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang engine *}:</dt>
+            <dt>{* lang xml.engine *}:</dt>
             <dd>
                 {* var engine.name *} {* var engine.version_min *}{* if engine.version_max != '' *} up to {* var engine.version_max *}{* endif engine.version_max *}
             </dd>
-            <dt>{* lang icon *}:</dt>
+            <dt>{* lang xml.icon *}:</dt>
             <dd>
                 {* if icon.type == 'fontawesome' *} <i class="fa fa-2x fa-fw {* var icon.value *}"></i>{* endif icon.type *} {* var icon.value *}
             </dd>
@@ -44,29 +44,29 @@
 
         <dl class="dl-horizontal">
             <dt>{* lang contains_designs *}:</dt>
-            <dd>{* lang admin *}: <strong>{* var contains.admin *}</strong></dd>
+            <dd>{* lang admin.admin *}: <strong>{* var contains.admin *}</strong></dd>
             <dd>{* lang install *}: <strong>{* var contains.install *}</strong></dd>
             <dd>{* lang layout *}: <strong>{* var contains.layout *}</strong></dd>
             <dd>{* lang mobile *}: <strong>{* var contains.mobile *}</strong></dd>
         </dl><!--END dl-horizontal contains_designs-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang authors_current *}:</dt>
+            <dt>{* lang xml.authors_current *}:</dt>
             {* foreach authors.current *}
             <dd>{* var current.value *}</dd>
             {* endforeach authors.current *}
 
-            <dt>{* lang authors_past *}:</dt>
+            <dt>{* lang xml.authors_past *}:</dt>
             {* foreach authors.past *}
             <dd>{* var past.value *}</dd>
             {* endforeach authors.past *}
 
-            <dt>{* lang contact_email *}:</dt>
+            <dt>{* lang xml.contact_email *}:</dt>
             {* foreach contact.email *}
             <dd>{* var email.adress *}</dd>
             {* endforeach contact.email *}
 
-            <dt>{* lang contact_web *}:</dt>
+            <dt>{* lang xml.contact_web *}:</dt>
             {* foreach contact.web *}
             <dd><a href="{* var web.url *}">{* var web.url *}</a></dd>
             {* endforeach contact.web *}
@@ -85,19 +85,19 @@
 
         {* foreach environment *}
         <dl class="dl-horizontal">
-            <dt>{* lang environment_needed *}:</dt>
+            <dt>{* lang xml.environment_needed *}:</dt>
             {* foreach environment.needed *}
             <dd>
-                <strong>{* lang plugin *}:</strong> {* var needed.plugin *} - <strong>{* lang version *}:</strong> {* var needed.version_min *}{* if needed.version_max != '' *} {* lang until *} {* var needed.version_max *}{* endif needed.version_max *}
+                <strong>{* lang xml.plugin *}:</strong> {* var needed.plugin *} - <strong>{* lang xml.version *}:</strong> {* var needed.version_min *}{* if needed.version_max != '' *} {* lang xml.until *} {* var needed.version_max *}{* endif needed.version_max *}
             </dd>
             {* endforeach environment.needed *}
         </dl><!--END dl-horizontal environment_needed-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang environment_extends *}:</dt>
+            <dt>{* lang xml.environment_extends *}:</dt>
             {* foreach environment.extend *}
             <dd>
-                {* lang plugin *} {* var extend.plugin *} {* lang version *} {* var extend.version_min *}{* if extend.version_max != '' *} {* lang until *} {* var extend.version_max *}{* endif extend.version_max *}
+                {* lang xml.plugin *} {* var extend.plugin *} {* lang xml.version *} {* var extend.version_min *}{* if extend.version_max != '' *} {* lang xml.until *} {* var extend.version_max *}{* endif extend.version_max *}
             </dd>
             {* endforeach environment.extend *}
         </dl><!--END dl-horizontal environment_extends-->

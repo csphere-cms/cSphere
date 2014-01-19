@@ -24,7 +24,6 @@
         <define name="data">Data</define>
         <define name="database">Database</define>
         <define name="deletes">Deletes</define>
-        <define name="details">Details</define>
         <define name="driver">Driver</define>
         <define name="encoding">Encoding</define>
         <define name="foreigns">Foreigns</define>

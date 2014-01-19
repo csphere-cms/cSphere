@@ -20,32 +20,10 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="action">Aktion</define>
-        <define name="authors_current">Derzeitige Autoren</define>
-        <define name="authors_past">Vorherige Autoren</define>
-        <define name="contact_email">E-Mail</define>
-        <define name="contact_web">Webseite</define>
-        <define name="copyright">Copyright</define>
-        <define name="count">Anzahl</define>
         <define name="delete">Entfernen</define>
-        <define name="details">Details</define>
-        <define name="engine">Engine</define>
-        <define name="entries">Einträge</define>
-        <define name="environment_needed">Benötigte Umgebung</define>
-        <define name="environment_extends">Erweiterte Umgebungen</define>
-        <define name="icon">Icon</define>
-        <define name="info">Info</define>
-        <define name="license">Lizenz</define>
         <define name="manual_install">Manuell Installieren</define>
-        <define name="options">Optionen</define>
-        <define name="php_required">Benötigte PHP Version</define>
         <define name="php_extensions">Benötigte PHP Erweiterungen</define>
-        <define name="plugin">Plugin</define>
         <define name="plugin_market">Plugin Markt</define>
         <define name="plugins">Plugins</define>
-        <define name="published">Veröffentlich am</define>
-        <define name="until">bis</define>
-        <define name="vendor">Hersteller</define>
-        <define name="version">Version</define>
     </definitions>
 </language>

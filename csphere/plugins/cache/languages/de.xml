@@ -21,7 +21,6 @@
     </contact>
     <definitions>
         <define name="cache">Cache</define>
-        <define name="count">Anzahl</define>
         <define name="clear">Cache leeren</define>
         <define name="clear_ok">Cache mit Erfolg geleert</define>
         <define name="driver">Treiber</define>

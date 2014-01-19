@@ -6,7 +6,7 @@
                 <h3 class="pull-left">
                     {* lang cache *} - {* lang default.control *}
                     <small>
-                        - {* lang count *}: {* raw count *} - {* lang driver *}: {* raw driver *}
+                        - {* lang default.count *}: {* raw count *} - {* lang driver *}: {* raw driver *}
                     </small>
                 </h3><!--END header page-header headline-->
 

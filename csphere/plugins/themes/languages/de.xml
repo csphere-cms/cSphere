@@ -20,34 +20,14 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="action">Aktion</define>
-        <define name="admin">Administration</define>
-        <define name="authors_current">Derzeitige Autoren</define>
-        <define name="authors_past">Vorherige Autoren</define>
-        <define name="contact_email">E-Mail</define>
-        <define name="contact_web">Webseite</define>
         <define name="contains_designs">Beinhaltet das Aussehen für</define>
-        <define name="copyright">Copyright</define>
-        <define name="details">Details</define>
-        <define name="engine">Engine</define>
-        <define name="entries">Einträge</define>
-        <define name="environment_needed">Benötigte Umgebung</define>
-        <define name="environment_extends">Erweiterte Umgebungen</define>
-        <define name="icon">Icon</define>
-        <define name="info">Info</define>
         <define name="install">Installation</define>
         <define name="layout">Layout</define>
-        <define name="license">Lizenz</define>
         <define name="media">Medien</define>
         <define name="mobile">Mobil</define>
         <define name="theme">Thema</define>
         <define name="themes">Themen</define>
         <define name="thumb">Vorschau (klein)</define>
         <define name="preview">Vorschau</define>
-        <define name="plugin">Plugin</define>
-        <define name="published">Veröffentlich am</define>
-        <define name="until">bis</define>
-        <define name="vendor">Vendor</define>
-        <define name="version">Version</define>
     </definitions>
 </language>

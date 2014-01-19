@@ -6,7 +6,7 @@
                 <h3 class="pull-left">
                     {* lang errors *} - {* lang file *}
                     <small>
-                         - {* lang date *}: {* raw date *} - {* lang count *}: {* raw count *}
+                         - {* lang date *}: {* raw date *} - {* lang default.count *}: {* raw count *}
                     </small>
                 </h3><!--END header page-header headline-->
 

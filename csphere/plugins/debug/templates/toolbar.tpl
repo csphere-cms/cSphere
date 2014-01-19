@@ -15,12 +15,12 @@
             <nav>
                 <ul class="nav navbar-nav">
                     <li><a id="debug_logs_nav" onClick="csphere_debug_display('logs')">{* lang logs *}: {* raw count.logs *}</a></li>
-                    <li><a id="debug_database_nav" onClick="csphere_debug_display('database')">{* lang database *}: {* raw count.database *}</a></li>
+                    <li><a id="debug_database_nav" onClick="csphere_debug_display('database')">{* lang database.database *}: {* raw count.database *}</a></li>
                     <li>
                         {* if count.errors > '0' *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="text-danger">{* lang errors *}: {* raw count.errors *}</a>
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="text-danger">{* lang errors.errors *}: {* raw count.errors *}</a>
                         {* else count.errors *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')">{* lang errors *}: {* raw count.errors *}</a>
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')">{* lang errors.errors *}: {* raw count.errors *}</a>
                         {* endif count.errors *}
                     </li>
                     <li><a id="debug_includes_nav" onClick="csphere_debug_display('includes')">{* lang includes *}: {* raw count.includes *}</a></li>
@@ -59,7 +59,7 @@
     {* endforeach logs *}
 
     <section id="debug_database" class="debug_content container">
-        {* lang database *}:
+        {* lang database.database *}:
         <br /><br />
         <ol>
             {* foreach database *}
@@ -69,7 +69,7 @@
     </section><!--END csphere-debug debug_database-->
 
     <section id="debug_errors" class="debug_content container">
-        {* lang errors *}:
+        {* lang errors.errors *}:
         <br /><br />
         <ol>
             {* foreach errors *}

@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th>{* lang duplication *}</th>
-                    <th>{* lang plugins *}</th>
+                    <th>{* lang plugins.plugins *}</th>
                 </tr>
             </thead><!--END table thead-->
 

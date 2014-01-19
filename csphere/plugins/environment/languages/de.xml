@@ -47,7 +47,6 @@
         <define name="space_free">Freier Speicher</define>
         <define name="upload_max_filesize">Dateigrößenlimit beim Hochladen</define>
         <define name="value">Wert</define>
-        <define name="version">Version</define>
         <define name="webserver">Web-Server</define>
     </definitions>
 </language>

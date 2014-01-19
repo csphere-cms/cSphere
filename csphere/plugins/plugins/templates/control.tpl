@@ -6,7 +6,7 @@
                 <h3 class="pull-left">
                     {* lang plugins *} - {* lang default.control *}
                     <small>
-                        - {* lang count *}: {* var count *}
+                        - {* lang default.count *}: {* var count *}
                     </small>
                 </h3><!--END header page-header headline-->
 
@@ -29,10 +29,10 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang plugin *}</th>
-                    <th class="text-center">{* lang version *}</th>
-                    <th class="text-center">{* lang published *}</th>
-                    <th class="text-center">{* lang options *}</th>
+                    <th>{* lang xml.plugin *}</th>
+                    <th class="text-center">{* lang xml.version *}</th>
+                    <th class="text-center">{* lang xml.published *}</th>
+                    <th class="text-center">{* lang default.options *}</th>
                 </tr>
             </thead><!--END table thead-->
 

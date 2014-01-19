@@ -25,9 +25,7 @@
         <define name="config">Config</define>
         <define name="config_missing">Config file not found</define>
         <define name="config_corrupt">Config file is corrupted</define>
-        <define name="count">Count</define>
         <define name="date">Date</define>
-        <define name="details">Details</define>
         <define name="entry">Entry</define>
         <define name="errors">Errors</define>
         <define name="file">File</define>

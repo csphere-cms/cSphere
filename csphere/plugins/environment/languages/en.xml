@@ -47,7 +47,6 @@
         <define name="space_free">Free space</define>
         <define name="upload_max_filesize">Upload limit per file</define>
         <define name="value">Value</define>
-        <define name="version">Version</define>
         <define name="webserver">Webserver</define>
     </definitions>
 </language>

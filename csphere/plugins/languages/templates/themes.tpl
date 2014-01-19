@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages *} - {* lang themes *}
+                    {* lang languages *} - {* lang themes.themes *}
                     <small>
                         {* lang language *}: {* var short *}
                     </small>
@@ -15,7 +15,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang theme *}</th>
+                    <th>{* lang themes.theme *}</th>
                     <th class="text-center">{* lang translated *}</th>
                 </tr>
             </thead><!--END table thead-->

@@ -8,7 +8,7 @@
                 <tr>
                     <th>{* lang short *}</th>
                     <th class="text-center">{* lang language *}</th>
-                    <th class="text-center" colspan="2">{* lang details *}</th>
+                    <th class="text-center" colspan="2">{* lang default.details *}</th>
                 </tr>
             </thead><!--END table thead-->
 
@@ -21,10 +21,10 @@
                     </td>
                     <td class="text-center">{* var languages.name *}</td>
                     <td class="text-center">
-                        <a href="{* link languages/plugins/short/$languages.short$ *}">{* lang plugins *}</a>
+                        <a href="{* link languages/plugins/short/$languages.short$ *}">{* lang plugins.plugins *}</a>
                     </td>
                     <td class="text-center">
-                        <a href="{* link languages/themes/short/$languages.short$ *}">{* lang themes *}</a>
+                        <a href="{* link languages/themes/short/$languages.short$ *}">{* lang themes.themes *}</a>
                     </td>
                 </tr>
                 {* endforeach languages *}

@@ -21,20 +21,13 @@
     </contact>
     <definitions>
         <define name="backtrace">Backtrace</define>
-        <define name="call">Call</define>
-        <define name="code">Code</define>
         <define name="component">Component</define>
-        <define name="database">Database</define>
+        <define name="database_queries">Database</define>
         <define name="debug">Debug</define>
-        <define name="errors">Errors</define>
-        <define name="file">File</define>
         <define name="includes">Includes</define>
-        <define name="line">Line</define>
         <define name="logs">Logs</define>
         <define name="memory">Memory</define>
-        <define name="message">Message</define>
         <define name="ms">ms</define>
         <define name="parsetime">Parsetime</define>
-        <define name="step">Step</define>
     </definitions>
 </language>

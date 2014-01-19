@@ -20,32 +20,11 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="action">Aktion</define>
-        <define name="admin">Administration</define>
-        <define name="authors_current">Derzeitige Autoren</define>
-        <define name="authors_past">Vorherige Autoren</define>
-        <define name="contact_email">E-Mail</define>
-        <define name="contact_web">Webseite</define>
-        <define name="copyright">Copyright</define>
-        <define name="details">Details</define>
         <define name="duplication">Duplizierungen</define>
-        <define name="engine">Engine</define>
-        <define name="icon">Icon</define>
-        <define name="info">Info</define>
-        <define name="install">Installation</define>
         <define name="language">Sprache</define>
         <define name="languages">Sprachen</define>
-        <define name="license">Lizenz</define>
         <define name="short">Kurz</define>
-        <define name="plugin">Plugin</define>
-        <define name="plugins">Plugins</define>
-        <define name="published">Veröffentlich am</define>
-        <define name="theme">Theme</define>
-        <define name="themes">Themes</define>
         <define name="translated">Übersetzung</define>
-        <define name="until">bis</define>
-        <define name="vendor">Hersteller</define>
-        <define name="version">Version</define>
         <define name="warn_missing">Fehlende Übersetzungen</define>
         <define name="warn_noname">Der Name muss übersetzt sein</define>
         <define name="warn_difference">Zusätzliche Übersetzung</define>

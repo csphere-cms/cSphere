@@ -23,16 +23,21 @@
         <define name="back">Zurück</define>
         <define name="continue">Weiter</define>
         <define name="control">Steuerung</define>
+        <define name="count">Anzahl</define>
         <define name="create">Erstellen</define>
         <define name="default">Standard</define>
+        <define name="details">Details</define>
         <define name="edit">Bearbeiten</define>
         <define name="hits">Treffer</define>
         <define name="list">Liste</define>
         <define name="manage">Verwaltung</define>
         <define name="no">Nein</define>
         <define name="no_record_found">Kein Datensatz gefunden</define>
+        <define name="options">Optionen</define>
+        <define name="options_success">Optionen mit Erfolg bearbeitet</define>
         <define name="or">oder</define>
         <define name="page">Seite</define>
+        <define name="plugins">Plugins</define>
         <define name="record_cancel">Datensatz unverändert belassen</define>
         <define name="record_deleted">Datensatz mit Erfolg entfernt</define>
         <define name="record_success">Datensatz mit Erfolg bearbeitet</define>
@@ -42,9 +47,8 @@
         <define name="save">Speichern</define>
         <define name="search">Suchen</define>
         <define name="scriptinfo">Scriptinfo</define>
+        <define name="themes">Themes</define>
         <define name="view">Ansicht</define>
         <define name="yes">Ja</define>
-        <define name="options">Optionen</define>
-        <define name="options_success">Optionen mit Erfolg bearbeitet</define>
     </definitions>
 </language>
