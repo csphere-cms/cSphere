@@ -59,7 +59,7 @@ class Breadcrumb
 
         if ($link != '') {
 
-            $this->url = \csphere\core\url\Link::params($plugin . '/' . $link);
+            $this->_url = \csphere\core\url\Link::params($plugin . '/' . $link);
         }
     }
 

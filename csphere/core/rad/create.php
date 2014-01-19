@@ -58,6 +58,9 @@ class Create extends \csphere\core\rad\Base
         $dm_table = new \csphere\core\datamapper\Model($this->plugin, $this->table);
         $table    = $dm_table->create();
 
+        // Data array
+        $data = array();
+
         // Handle save requests
         if (isset($post['csphere_form'])) {
 
@@ -70,9 +73,6 @@ class Create extends \csphere\core\rad\Base
             $this->message('record_success', 0, 'green');
 
         } else {
-
-            // Data array
-            $data = array();
 
             $data[$this->schema] = $table;
 
