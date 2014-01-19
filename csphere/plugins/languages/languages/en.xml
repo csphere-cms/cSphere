@@ -46,8 +46,9 @@
         <define name="until">until</define>
         <define name="vendor">Vendor</define>
         <define name="version">Version</define>
+        <define name="warn_missing">Missing keys</define>
         <define name="warn_noname">Name must be translated</define>
-        <define name="warn_difference">Difference to a main language</define>
+        <define name="warn_difference">Different keys</define>
         <define name="warn_override">Definition of default plugin overriden</define>
     </definitions>
 </language>

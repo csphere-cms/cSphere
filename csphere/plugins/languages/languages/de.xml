@@ -46,8 +46,9 @@
         <define name="until">bis</define>
         <define name="vendor">Hersteller</define>
         <define name="version">Version</define>
+        <define name="warn_missing">Fehlende Übersetzungen</define>
         <define name="warn_noname">Der Name muss übersetzt sein</define>
-        <define name="warn_difference">Unterschied zu anderer Hauptsprache</define>
+        <define name="warn_difference">Zusätzliche Übersetzung</define>
         <define name="warn_override">Definition des Plugins default überschrieben</define>
     </definitions>
 </language>

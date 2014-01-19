@@ -57,6 +57,7 @@ $dir_exists = $target->exists($dir);
 $src_exists = false;
 $xml        = null;
 $data       = array();
+$cur_lang   = array();
 
 // Only proceed if target was found and translation exists
 if ($exists === true AND $dir_exists === true) {
@@ -91,7 +92,6 @@ if ($src_exists === true) {
 
         $default  = $xml->source('plugin', 'default');
         $def_lang = array();
-        $cur_lang = array();
 
         foreach ($default['definitions'] AS $def) {
 
@@ -115,7 +115,7 @@ if ($src_exists === true) {
     }
 
     // Compare this language information with another main language
-    $use_lang = $short == 'en' ? 'de' : 'en';
+    $use_lang = $short != 'en' ? 'en' : 'de';
     $alt_lang = $xml->source($type, $dir, $use_lang);
     $top_lang = array();
 
@@ -126,9 +126,19 @@ if ($src_exists === true) {
 
     $test = array_diff_key($cur_lang, $top_lang);
 
-    foreach ($test AS $key => $name) {
+    if ($test != array()) {
 
-        $error .= $lang['warn_difference'] . ': ' . $key . "\n";
+        $test   = array_keys($test);
+        $error .= $lang['warn_difference'] . ': ' . implode(' ', $test) . "\n";
+    }
+
+    // Get undefined keys
+    $test = array_diff_key($top_lang, $cur_lang);
+
+    if ($test != array()) {
+
+        $test   = array_keys($test);
+        $error .= $lang['warn_missing'] . ': ' . implode(' ', $test) . "\n";
     }
 
     // Define vars for template
