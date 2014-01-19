@@ -31,7 +31,7 @@ abstract class Input
     /**
      * Array with aliased input names
      **/
-    private static $_input_names = array(
+    private static $_inputNames = array(
         'get' => INPUT_GET,
         'post' => INPUT_POST,
         'cookie' => INPUT_COOKIE,
@@ -42,7 +42,7 @@ abstract class Input
     /**
      * Array with registered GET data
      **/
-    private static $_input_get = array();
+    private static $_inputGet = array();
 
     /**
      * Prepares the input data for usage
@@ -52,12 +52,12 @@ abstract class Input
 
     public static function prepare()
     {
-        if (self::$_input_get == array()) {
+        if (self::$_inputGet == array()) {
 
             // Get http-request data to merge it with GET var
             $request = \csphere\core\http\Request::get();
 
-            self::$_input_get = array_merge($_GET, $request['data']);
+            self::$_inputGet = array_merge($_GET, $request['data']);
 
             // Remove REQUEST vars (be carefull with jit options)
             unset($_REQUEST);
@@ -80,19 +80,19 @@ abstract class Input
         $data = '';
 
         // Special case 'get' should use its own filter
-        if (isset(self::$_input_names[$type]) AND $type == 'get') {
+        if (isset(self::$_inputNames[$type]) AND $type == 'get') {
 
-            if (isset(self::$_input_get[$key])) {
+            if (isset(self::$_inputGet[$key])) {
 
-                $data = filter_var(self::$_input_get[$key]);
+                $data = filter_var(self::$_inputGet[$key]);
                 $data = rawurldecode($data);
             }
 
-        } elseif (isset(self::$_input_names[$type])) {
+        } elseif (isset(self::$_inputNames[$type])) {
 
-            if (filter_has_var(self::$_input_names[$type], $key)) {
+            if (filter_has_var(self::$_inputNames[$type], $key)) {
 
-                $data = filter_input(self::$_input_names[$type], $key);
+                $data = filter_input(self::$_inputNames[$type], $key);
             }
         }
 
@@ -112,13 +112,13 @@ abstract class Input
         $data = array();
 
         // Special case 'get' should use its own filter
-        if (isset(self::$_input_names[$type]) AND $type == 'get') {
+        if (isset(self::$_inputNames[$type]) AND $type == 'get') {
 
-            $data = filter_var_array(self::$_input_get);
+            $data = filter_var_array(self::$_inputGet);
 
-        } elseif (isset(self::$_input_names[$type])) {
+        } elseif (isset(self::$_inputNames[$type])) {
 
-            $data = filter_input_array(self::$_input_names[$type]);
+            $data = filter_input_array(self::$_inputNames[$type]);
         }
 
         return $data;

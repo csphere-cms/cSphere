@@ -56,13 +56,13 @@ if ($type == 'plugin') {
 $dir_exists = $target->exists($dir);
 $src_exists = false;
 $xml        = null;
+$error      = '';
 $data       = array();
 $cur_lang   = array();
 
 // Only proceed if target was found and translation exists
 if ($exists === true AND $dir_exists === true) {
 
-    $error = '';
     $xml   = $loader->load('xml', 'language');
     $data  = $xml->source($type, $dir, $short, true);
 
