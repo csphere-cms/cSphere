@@ -60,6 +60,7 @@ class Driver_SMTP extends Base
     private function _commands($email)
     {
         // Prepare header data
+        $headers   = array();
         $headers[] = 'To: ' . $email;
         $headers[] = 'Subject: ' . $this->content['subject_b64'];
 

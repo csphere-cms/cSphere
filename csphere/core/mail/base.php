@@ -154,7 +154,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
         unset($result['smtp_username'], $result['smtp_password']);
 
-        $result['headers'] = implode("\n" . $this->headers);
+        $result['headers'] = implode("\n", $this->headers);
 
         return $result;
     }
