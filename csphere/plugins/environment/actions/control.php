@@ -6,7 +6,7 @@
  * PHP Version 5
  *
  * @category  Plugins
- * @package   Debug
+ * @package   Environment
  * @author    Hans-Joachim Piepereit <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
@@ -16,7 +16,7 @@
 $loader = \csphere\core\service\Locator::get();
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('debug');
+$bread = new \csphere\core\template\Breadcrumb('environment');
 
 $bread->add('control');
 $bread->trace();
@@ -42,4 +42,4 @@ if (function_exists('apache_get_version')) {
 // Output results
 $view = $loader->load('view');
 
-$view->template('debug', 'control', $data);
+$view->template('environment', 'control', $data);

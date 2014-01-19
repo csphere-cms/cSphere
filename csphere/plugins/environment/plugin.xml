@@ -5,10 +5,10 @@
     <published>2013-12-24</published>
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
-    <name>Debug</name>
-    <info>Contains debug tools and information</info>
+    <name>Environment</name>
+    <info>Contains software details and other information</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-flask</icon>
+    <icon type="fontawesome">fa-building-o</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>
@@ -23,5 +23,6 @@
         <needed vendor="csphere" plugin="default" version_min="0.1" />
     </environment>
     <entries>
+        <target vendor="csphere" plugin="admin" action="system" />
     </entries>
 </plugin>
