@@ -93,7 +93,8 @@ if (isset($post['csphere_form'])) {
 
         } else {
 
-            $db_test = $loader->load('database', $driver, $db_config, true);
+            // Init database and set as default
+            $loader->load('database', $driver, $db_config, true);
 
             // Get admin from database
             $dm_users = new \csphere\core\datamapper\Model('users');

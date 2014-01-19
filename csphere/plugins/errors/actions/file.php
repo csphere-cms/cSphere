@@ -34,8 +34,6 @@ $bread->trace();
 if (file_exists($path . $name)) {
 
     // Get contents of error log file and format them
-    $file = file_get_contents($path . $name);
-
     $content = file_get_contents($path . $name);
     $entries = explode("--------\n", $content);
     $amount  = count($entries) - 1;

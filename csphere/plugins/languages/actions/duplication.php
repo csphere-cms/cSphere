@@ -40,8 +40,6 @@ if ($exists === true) {
     // Get duplicated entries out of plugins
     foreach ($plugins AS $plugin) {
 
-        $source = array();
-
         // Check if plugin translation is missing
         $source = $xml->source('plugin', $plugin['short'], $short, true);
         $source = isset($source['definitions']) ? $source['definitions'] : array();

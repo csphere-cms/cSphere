@@ -66,8 +66,6 @@ if (isset($post['csphere_form'])) {
         $mail_test = $loader->load('mail', $mail['driver'], $mail, true);
 
         // Try to send a mail
-        $msg = 'If you can read this the email settings are fine';
-
         $mail_test->prepare($lang['mail_test_subject'], $lang['mail_test_text']);
 
         $test = $mail_test->send($mail['from']);

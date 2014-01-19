@@ -57,8 +57,8 @@ if (isset($post['csphere_form'])) {
 
     try {
 
-        // Establish connection
-        $db_test = $loader->load('database', $db['driver'], $db, true);
+        // Init database and set as default
+        $loader->load('database', $db['driver'], $db, true);
 
         // Get plugin metadata
         $meta = new \csphere\core\plugins\Metadata();

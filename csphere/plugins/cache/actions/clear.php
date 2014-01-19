@@ -26,8 +26,8 @@ $bread->trace();
 $lang = \csphere\core\translation\Fetch::keys('cache');
 
 // Clear cache
-$cache  = $loader->load('cache');
-$driver = $cache->clear();
+$cache = $loader->load('cache');
+$cache->clear();
 
 $previous = \csphere\core\url\Link::href('cache', 'control');
 

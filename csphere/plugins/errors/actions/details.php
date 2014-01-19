@@ -40,8 +40,6 @@ $special = array('{' => 0, '[' => 1);
 if (file_exists($path_error . $name)) {
 
     // Get contents of error log file and format them
-    $file = file_get_contents($path_error . $name);
-
     $content = file_get_contents($path_error . $name);
     $entries = explode("--------\n", $content);
 

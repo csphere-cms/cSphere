@@ -74,7 +74,8 @@ if (isset($post['csphere_form'])) {
 
             } else {
 
-                $db_test = $loader->load('database', $driver, $db_config, true);
+                // Init database and set as default
+                $loader->load('database', $driver, $db_config, true);
 
                 // Save user to database
                 $dm_users = new \csphere\core\datamapper\Model('users');
