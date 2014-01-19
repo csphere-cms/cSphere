@@ -7,7 +7,10 @@ The current version is available under the terms of the 'Simplified BSD License'
 
 Website: http://www.csphere.eu
 
-Travis CI: [![Build Status](https://travis-ci.org/csphere-cms/csphere.png?branch=dev)](https://travis-ci.org/csphere-cms/csphere)
+[![Build Status](https://travis-ci.org/csphere-cms/csphere.png?branch=dev)](https://travis-ci.org/csphere-cms/csphere)
+
+[![Quality Score](https://scrutinizer-ci.com/g/csphere-cms/csphere/badges/quality-score.png?s=8d1d858ac3fffceb2cfb030c67d64c0380c4e44c)](https://scrutinizer-ci.com/g/csphere-cms/csphere/)
+
 
 Table of contents
 =================
@@ -15,6 +18,7 @@ Table of contents
 2. Requirements
 3. Installation
 4. Documentation
+
 
 Features
 ========
@@ -40,6 +44,7 @@ If you (mainly) need the following functionality you might NOT want to use cSphe
 - cSphere does NOT support any kind of PHP annotations or alike magic behavior
 - cSphere does NOT use advanced autoloading techniques, we use namespaces instead
 
+
 Requirements
 ============
 
@@ -57,6 +62,7 @@ One of the following database servers (with PDO extension in PHP):
 - SQLite 3.0+ (pdo_sqlite)
 
 Legend: + means that the given version or any newer one will work
+
 
 Installation
 ============
@@ -80,6 +86,7 @@ Installation
 - Start your database server when not using SQLite, since SQLite is already builtin in PHP
 
 Now open your website and follow the installation instructions
+
 
 Documentation
 =============
