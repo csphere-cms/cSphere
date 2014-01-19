@@ -99,19 +99,20 @@ if ($src_exists === true) {
         }
 
         $test = array_diff_key($cur_lang, $def_lang);
-        $bad  = array_diff_key($cur_lang, $test);
+        $test = array_diff_key($cur_lang, $test);
 
     } else {
 
-        $bad = array();
+        $test = array();
     }
 
     // Remove plugin name since that setting is required
-    unset($bad[$dir]);
+    unset($test[$dir]);
 
-    foreach ($bad AS $key => $name) {
+    if ($test != array()) {
 
-        $error .= $lang['warn_override'] . ': ' . $key . "\n";
+        $test   = array_keys($test);
+        $error .= $lang['warn_override'] . ': ' . implode(' ', $test) . "\n";
     }
 
     // Compare this language information with another main language
