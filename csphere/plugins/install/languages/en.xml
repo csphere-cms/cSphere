@@ -57,7 +57,7 @@
         <define name="mail_test_text">If you can read this your mail settings are fine</define>
         <define name="name">Username</define>
         <define name="no_cache">Selected cache mode is not available</define>
-        <define name="no_cfg">Directory /vendor/csphere/config must be writable</define>
+        <define name="no_cfg">Directory /csphere/config must be writable</define>
         <define name="no_db">Database configuration error</define>
         <define name="password">Password</define>
         <define name="port">Port</define>
