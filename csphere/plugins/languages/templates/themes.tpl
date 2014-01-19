@@ -16,7 +16,7 @@
             <thead>
                 <tr>
                     <th>{* lang theme *}</th>
-                    <th>{* lang translated *}</th>
+                    <th class="text-center">{* lang translated *}</th>
                 </tr>
             </thead><!--END table thead-->
 
@@ -34,11 +34,11 @@
                         &nbsp; {* var themes.short *}
                         {* endif themes.exists *}
                     </td>
-                    <td>
+                    <td class="text-center">
                         {* if themes.exists == 'yes' *}
-                        <i class="fa fa-fw fa-check"></i>
+                        <i class="fa fa-fw fa-check text-success"></i>
                         {* else themes.exists *}
-                        <i class="fa fa-fw fa-times"></i>
+                        <i class="fa fa-fw fa-times text-danger"></i>
                         {* endif themes.exists *}
                     </td>
                 </tr>

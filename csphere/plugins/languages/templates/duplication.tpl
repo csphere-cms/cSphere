@@ -12,19 +12,29 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        <br />
-
         {* tpl default/msg_error *}
 
-        <dl class="dl-horizontal">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>{* lang duplication *}</th>
+                    <th>{* lang plugins *}</th>
+                </tr>
+            </thead><!--END table thead-->
 
-            {* foreach duplicate *}
-            <dt>{* var duplicate.key *}:</dt>
-            <dd>{* var duplicate.plugins *}</dd>
-            {* endforeach duplicate *}
-        </dl>
-
-        <br /><br />
+            <tbody>
+                {* foreach duplicate *}
+                <tr>
+                    <th>
+                        {* var duplicate.key *}
+                    </th>
+                    <td>
+                        {* var duplicate.plugins *}
+                    </td>
+                </tr>
+                {* endforeach duplicate *}
+            </tbody><!--END table tbody-->
+        </table><!--END table-->
 
     </div><!--END panel-body-->
 </div><!--END panel-->

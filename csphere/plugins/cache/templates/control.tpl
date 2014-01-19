@@ -36,7 +36,9 @@
                 </tr>
                 {* else entries *}
                 <tr>
-                    <td colspan="3" class="text-center">{* lang no_entry *}</td>
+                    <th colspan="3" class="text-center">
+                        {* lang no_entry *}
+                    </th>
                 </tr>
                 {* endforeach entries *}
             </tbody><!--END table tbody-->

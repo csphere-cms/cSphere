@@ -2,25 +2,27 @@
     <div class="panel-body">
 
         <header>
-            <section class="page-header">
-                <h3>
+            <section class="page-header clearfix">
+                <h3 class="pull-left">
                     {* lang languages *} - {* lang plugins *}
                     <small>
-                        {* lang language *}: {* var short *}
+                        - {* lang language *}: {* var short *}
                     </small>
                 </h3><!--END header page-header headline-->
+
+                <div class="btn-group pull-right">
+                    <a href="{* link languages/duplication/short/$short$ *}" class="btn btn-danger">
+                        {* lang duplication *}
+                    </a>
+                </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
         </header><!--END header-->
-
-        <a href="{* link languages/duplication/short/$short$ *}">{* lang duplication *}</a>
-
-        <br /><br />
 
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>{* lang plugin *}</th>
-                    <th>{* lang translated *}</th>
+                    <th class="text-center">{* lang translated *}</th>
                 </tr>
             </thead><!--END table thead-->
 
@@ -38,11 +40,11 @@
                         &nbsp; {* var plugins.short *}
                         {* endif plugins.exists *}
                     </td>
-                    <td>
+                    <td class="text-center">
                         {* if plugins.exists == 'yes' *}
-                        <i class="fa fa-fw fa-check"></i>
+                        <i class="fa fa-fw fa-check text-success"></i>
                         {* else plugins.exists *}
-                        <i class="fa fa-fw fa-times"></i>
+                        <i class="fa fa-fw fa-times text-danger"></i>
                         {* endif plugins.exists *}
                     </td>
                 </tr>
