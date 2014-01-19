@@ -20,49 +20,21 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="allow_url_fopen">Von URLs lesen</define>
-        <define name="allow_url_include">Von URLs ausführen</define>
         <define name="backtrace">Ablaufverfolgung</define>
         <define name="call">Aufruf</define>
         <define name="code">Code</define>
         <define name="component">Komponente</define>
         <define name="database">Datenbank</define>
         <define name="debug">Debug</define>
-        <define name="disk_space">Speicherplatz</define>
         <define name="errors">Fehler</define>
-        <define name="extensions">Erweiterungen</define>
         <define name="file">Datei</define>
-        <define name="file_uploads">Dateien hochladen</define>
-        <define name="hostname">Hostname</define>
         <define name="includes">Includes</define>
         <define name="line">Zeile</define>
         <define name="logs">Logs</define>
-        <define name="max_input_time">Zeitlimit für Formulardaten</define>
-        <define name="max_execution_time">Zeitlimit für die Ausführung</define>
         <define name="memory">Speicher</define>
-        <define name="memory_limit">Maximaler Speicherverbrauch</define>
         <define name="message">Meldung</define>
         <define name="ms">ms</define>
-        <define name="name">Name</define>
-        <define name="open_basedir">Abgesicherter Pfad</define>
-        <define name="operating_system">Betriebssystem</define>
         <define name="parsetime">Ladezeit</define>
-        <define name="php">PHP</define>
-        <define name="php_details">PHP Details</define>
-        <define name="php_extensions">PHP Erweiterungen</define>
-        <define name="php_handler">PHP Anbindung</define>
-        <define name="php_setting">PHP Einstellungen</define>
-        <define name="php_version">PHP Version</define>
-        <define name="post_max_size">Limit für Formulardatengröße</define>
-        <define name="short_open_tag">PHP wie XML öffnen</define>
-        <define name="space">Speicherplatz</define>
-        <define name="space_total">Gesamter Speicher</define>
-        <define name="space_used">Belegter Speicher</define>
-        <define name="space_free">Freier Speicher</define>
         <define name="step">Schritt</define>
-        <define name="upload_max_filesize">Dateigrößenlimit beim Hochladen</define>
-        <define name="value">Wert</define>
-        <define name="version">Version</define>
-        <define name="webserver">Web-Server</define>
     </definitions>
 </language>
