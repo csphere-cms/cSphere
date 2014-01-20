@@ -56,7 +56,7 @@ class Driver_Redis extends Base
         $this->_redis = new \Redis();
 
         $check = $this->_redis->connect(
-            $config['host'], $config['port'], $config['timeout']
+            $config['host'], (int)$config['port'], (int)$config['timeout']
         );
 
         if ($check === false) {
