@@ -25,7 +25,6 @@
         <define name="config">Konfiguration</define>
         <define name="config_missing">Die Konfigurationsdatei fehlt</define>
         <define name="config_corrupt">Die Konfigurationsdatei ist beschädigt</define>
-        <define name="date">Datum</define>
         <define name="entry">Eintrag</define>
         <define name="errors">Fehler</define>
         <define name="file">Datei</define>
@@ -40,6 +39,5 @@
         <define name="refresh">Aktualisieren</define>
         <define name="remove_ok">Datei erfolgreich gelöscht</define>
         <define name="step">Schritt</define>
-        <define name="time">Zeit</define>
     </definitions>
 </language>

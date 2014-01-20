@@ -27,6 +27,5 @@
         <define name="key">Key</define>
         <define name="no_entry">No entry found</define>
         <define name="size">Size</define>
-        <define name="time">Time</define>
     </definitions>
 </language>

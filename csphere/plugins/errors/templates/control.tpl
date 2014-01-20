@@ -13,7 +13,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang date *}</th>
+                    <th>{* lang default.date *}</th>
                     <th>{* lang default.options *}</th>
                 </tr>
             </thead><!--END table thead-->

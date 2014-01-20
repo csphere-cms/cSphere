@@ -25,7 +25,6 @@
         <define name="config">Config</define>
         <define name="config_missing">Config file not found</define>
         <define name="config_corrupt">Config file is corrupted</define>
-        <define name="date">Date</define>
         <define name="entry">Entry</define>
         <define name="errors">Errors</define>
         <define name="file">File</define>
@@ -40,6 +39,5 @@
         <define name="refresh">Refresh</define>
         <define name="remove_ok">File removed with success</define>
         <define name="step">Step</define>
-        <define name="time">Time</define>
     </definitions>
 </language>

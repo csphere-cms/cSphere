@@ -22,7 +22,7 @@
             <thead>
                 <tr>
                     <th>{* lang key *}</th>
-                    <th>{* lang time *}</th>
+                    <th>{* lang default.time *}</th>
                     <th class="text-center">{* lang size *}</th>
                 </tr>
             </thead><!--END table thead-->

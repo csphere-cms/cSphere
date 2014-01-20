@@ -27,6 +27,5 @@
         <define name="key">Schlüssel</define>
         <define name="no_entry">Kein Eintrag gefunden</define>
         <define name="size">Größe</define>
-        <define name="time">Zeit</define>
     </definitions>
 </language>

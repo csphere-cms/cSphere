@@ -25,6 +25,7 @@
         <define name="control">Steuerung</define>
         <define name="count">Anzahl</define>
         <define name="create">Erstellen</define>
+        <define name="date">Datum</define>
         <define name="default">Standard</define>
         <define name="details">Details</define>
         <define name="edit">Bearbeiten</define>
@@ -50,6 +51,7 @@
         <define name="search">Suchen</define>
         <define name="scriptinfo">Scriptinfo</define>
         <define name="themes">Themes</define>
+        <define name="time">Zeit</define>
         <define name="view">Ansicht</define>
         <define name="yes">Ja</define>
     </definitions>

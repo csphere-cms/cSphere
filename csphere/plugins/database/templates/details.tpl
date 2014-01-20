@@ -4,7 +4,7 @@
 - <a href="{* link database/uninstall/dir/$dir$ *}">{* lang uninstall *}</a>
 <br /><br />
 
-{* lang plugin *}: {* var plugin *}
+{* lang xml.plugin *}: {* var plugin *}
 <br /><br />
 {* lang tables *}:
 <br /><br />
