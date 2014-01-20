@@ -4,9 +4,9 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang errors *} - {* lang details *}
+                    {* lang errors *} - {* lang default.details *}
                     <small>
-                        {* lang default.date *}: {* raw date *} - {* lang default.time *}: {* raw error.time *} - {* lang entry *}: {* raw entry *}
+                        - {* lang default.date *}: {* raw date *} - {* lang default.time *}: {* raw error.time *} - {* lang entry *}: {* raw entry *}
                     </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->

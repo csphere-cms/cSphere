@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=tags action=default.list search=name *}
+        {* tpl default/com_headsearch plugin=tags action=default.list search=default.name *}
 
         <br />
 

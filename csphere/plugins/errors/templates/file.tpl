@@ -6,7 +6,7 @@
                 <h3 class="pull-left">
                     {* lang errors *} - {* lang file *}
                     <small>
-                         - {* lang date *}: {* raw date *} - {* lang default.count *}: {* raw count *}
+                         - {* lang default.date *}: {* raw date *} - {* lang default.count *}: {* raw count *}
                     </small>
                 </h3><!--END header page-header headline-->
 
@@ -20,7 +20,7 @@
 
         <table class="table table-striped table-hover">
             <tr>
-                <th class="text-center">{* lang time *}</th>
+                <th class="text-center">{* lang default.time *}</th>
                 <th>{* lang message *}</th>
             </tr>
             {* foreach entries *}
