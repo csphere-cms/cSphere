@@ -15,7 +15,7 @@
         <form class="form-horizontal" role="form" action="{* link groups/edit/id/$groups.group_id *}" method="POST">
         {* endif action *}
 
-            {* tpl default/com_input name=group_name label=users.user_name value=groups.group_name *}
+            {* tpl default/com_input name=group_name label=default.name value=groups.group_name *}
 
             {* tpl default/com_input name=group_url label=url value=groups.group_url *}
 
