@@ -19,7 +19,7 @@
 
             {* tpl default/com_input name=group_url label=url value=groups.group_url *}
 
-            {* tpl default/com_textarea name=group_info label=info rows=3 value=groups.group_info *}
+            {* tpl default/com_textarea name=group_info label=default.info rows=3 value=groups.group_info *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

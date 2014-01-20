@@ -27,7 +27,7 @@
             <dt>{* lang xml.license *}:</dt>
             <dd>{* var license *}</dd>
 
-            <dt>{* lang xml.info *}:</dt>
+            <dt>{* lang default.info *}:</dt>
             <dd>{* var info *}</dd>
         </dl><!--END dl-horizontal theme_id-->
 

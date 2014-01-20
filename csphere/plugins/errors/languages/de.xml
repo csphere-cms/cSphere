@@ -28,7 +28,6 @@
         <define name="entry">Eintrag</define>
         <define name="errors">Fehler</define>
         <define name="file">Datei</define>
-        <define name="info">Info</define>
         <define name="info_text">Details sind in einem Bericht gesichert. Bitte kontaktiere den Webmaster für Hilfe.</define>
         <define name="install_info">Dieser Fehler tritt oft auf, wenn die Installation fehlt oder fehlerhaft war, unten geht es weiter.</define>
         <define name="latest_errors">Letzte Fehler</define>

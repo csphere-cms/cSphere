@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang info *}
+                    {* lang default.info *}
                 </th>
                 <td>
                     {* var groups.group_info *}

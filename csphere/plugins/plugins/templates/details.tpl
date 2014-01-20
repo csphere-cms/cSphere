@@ -13,7 +13,7 @@
 <li>{* lang xml.published *}: {* var published *}</li>
 <li>{* lang xml.copyright *}: {* var copyright *}</li>
 <li>{* lang xml.license *}: {* var license *}</li>
-<li>{* lang xml.info *}: {* var info *}</li>
+<li>{* lang default.info *}: {* var info *}</li>
 <li>{* lang xml.authors_current *}:
 {* foreach authors.current *}
 <ul>

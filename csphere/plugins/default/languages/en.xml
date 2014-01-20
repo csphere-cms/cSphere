@@ -31,6 +31,7 @@
         <define name="edit">Edit</define>
         <define name="email">Email</define>
         <define name="hits">Hits</define>
+        <define name="info">Info</define>
         <define name="install">Install</define>
         <define name="list">List</define>
         <define name="manage">Manage</define>

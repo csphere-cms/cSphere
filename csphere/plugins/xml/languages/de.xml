@@ -31,7 +31,6 @@
         <define name="environment_needed">Benötigte Umgebung</define>
         <define name="environment_extends">Erweiterte Umgebungen</define>
         <define name="icon">Icon</define>
-        <define name="info">Info</define>
         <define name="license">Lizenz</define>
         <define name="php_required">Benötigte PHP Version</define>
         <define name="php_extensions">Benötigte PHP Erweiterungen</define>

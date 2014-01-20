@@ -28,7 +28,6 @@
         <define name="entry">Entry</define>
         <define name="errors">Errors</define>
         <define name="file">File</define>
-        <define name="info">Info</define>
         <define name="info_text">Details are saved in an error report. Please contact the webmaster for support.</define>
         <define name="install_info">This error often indicates that installation is missing or failed, so go ahead.</define>
         <define name="latest_errors">Latest Errors</define>
