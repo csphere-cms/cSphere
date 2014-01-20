@@ -28,7 +28,7 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 $meta = new \csphere\core\translation\Metadata();
 
 // Check for language changes
-$get_lang = \csphere\core\http\Input::get('get', 'lang');
+$get_lang = \csphere\core\http\Input::get('get', 'short');
 $exists   = $meta->exists($get_lang);
 
 if ($exists === true) {

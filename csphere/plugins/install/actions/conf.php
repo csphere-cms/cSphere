@@ -153,7 +153,8 @@ if (isset($post['csphere_form'])) {
 if ($test === true AND $error == '') {
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('users', 'login');
+    $dirname  = \csphere\core\http\Request::get('dirname');
+    $previous = $dirname;
     $plugin   = $lang['install'];
     $action   = $lang['conf'];
     $message  = $lang['config_ok'];

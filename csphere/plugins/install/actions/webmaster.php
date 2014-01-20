@@ -105,7 +105,7 @@ if (isset($post['csphere_form'])) {
 if ($test === true AND $error == '') {
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('install', 'config');
+    $previous = \csphere\core\url\Link::href('install', 'conf');
     $plugin   = $lang['install'];
     $action   = $lang['webmaster'];
     $message  = $lang['admin_ok'];

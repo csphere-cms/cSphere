@@ -94,7 +94,7 @@ if ($test === true AND $mail_error === null) {
     }
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('install', 'database');
+    $previous = \csphere\core\url\Link::href('install', 'db');
     $plugin   = $lang['install'];
     $action   = $lang['mail'];
     $message  = $lang['mail_ok'];

@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/admin *}" method="POST">
+        <form class="form-horizontal" role="form" action="{* link install/webmaster *}" method="POST">
 
             {* tpl default/com_input_adv name=user_name label=users.user_name value=user_name type=text holder=users.user_name *}
 

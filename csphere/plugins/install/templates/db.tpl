@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/database *}" method="POST">
+        <form class="form-horizontal" role="form" action="{* link install/db *}" method="POST">
 
             <div class="form-group">
                 <label for="inputDatabaseDriver" class="col-sm-2 control-label">{* lang server *}</label>

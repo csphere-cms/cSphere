@@ -109,7 +109,7 @@ if ($test === true AND $db_error === null) {
     }
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('install', 'admin');
+    $previous = \csphere\core\url\Link::href('install', 'webmaster');
     $plugin   = $lang['install'];
     $action   = $lang['db'];
     $message  = $lang['database_ok'];

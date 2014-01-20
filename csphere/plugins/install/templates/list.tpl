@@ -7,7 +7,7 @@
 
         {* lang welcome_info *}<br /><br />
 
-        <a href="{* link install/language *}">{* lang default.continue *}</a>
+        <a href="{* link install/lang *}">{* lang default.continue *}</a>
 
         <br /><br />
 

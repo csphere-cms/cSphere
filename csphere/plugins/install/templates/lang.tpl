@@ -9,7 +9,7 @@
             {* foreach languages *}
             <li>
                 <img src="{* raw languages.icon_url *}" alt="{* var languages.icon *}" /> &nbsp;
-                <a href="{* link install/language/lang/$languages.short$ *}">{* var languages.name *}</a>
+                <a href="{* link install/lang/short/$languages.short$ *}">{* var languages.name *}</a>
             </li>
             {* endforeach languages *}
         </ul>

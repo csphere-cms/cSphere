@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/config *}" method="POST">
+        <form class="form-horizontal" role="form" action="{* link install/conf *}" method="POST">
 
             <div class="form-group">
                 <label for="inputCacheDriver" class="col-sm-2 control-label">{* lang cache_type *}</label>
