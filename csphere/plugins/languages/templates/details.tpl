@@ -34,7 +34,7 @@
 
             <dt>{* lang default.info *}:</dt>
             <dd>{* var info *}</dd>
-        </dl><!--END dl-horizontal theme_id-->
+        </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
             <dt>{* lang xml.engine *}:</dt>
@@ -45,7 +45,7 @@
             <dd>
                 {* if icon.type == 'famfamfam' *} <img src="{* raw icon.url *}" alt="{* var icon.value *}" />{* endif icon.type *} {* var icon.value *}
             </dd>
-        </dl><!--END dl-horizontal engine-->
+        </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
             <dt>{* lang xml.authors_current *}:</dt>
@@ -67,7 +67,7 @@
             {* foreach contact.web *}
             <dd><a href="{* var web.url *}">{* var web.url *}</a></dd>
             {* endforeach contact.web *}
-        </dl><!--END dl-horizontal authors_current-->
+        </dl><!--END dl-horizontal-->
 
         <br /><br />
 
