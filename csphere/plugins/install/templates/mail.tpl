@@ -52,7 +52,7 @@
 
             {* tpl default/com_input_adv name=mail_port label=port value=mail.port type=text holder=port_info *}
 
-            {* tpl default/com_input_adv name=mail_user label=name value=mail.username type=text holder=name *}
+            {* tpl default/com_input_adv name=mail_user label=users.user_name value=mail.username type=text holder=users.user_name *}
 
             {* tpl default/com_input_pwd name=mail_pass label=default.password holder=default.password *}
 

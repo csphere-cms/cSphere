@@ -15,7 +15,7 @@
         <form class="form-horizontal" role="form" action="{* link tags/edit/id/$tags.tag_id *}" method="POST">
         {* endif action *}
 
-            {* tpl default/com_input name=tag_name label=name value=tags.tag_name *}
+            {* tpl default/com_input name=tag_name label=users.user_name value=tags.tag_name *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

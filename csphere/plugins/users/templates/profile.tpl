@@ -7,7 +7,7 @@
 
         <form class="form-horizontal" role="form" action="{* link users/profile *}" method="POST">
 
-            {* tpl default/com_input name=user_name label=name value=users.user_name *}
+            {* tpl default/com_input name=user_name label=users.user_name value=users.user_name *}
 
             {* tpl default/com_input_adv name=user_email label=email value=users.user_email type=email holder=email *}
 

@@ -27,7 +27,7 @@
             <div class="sql_others">
             {* tpl default/com_input_adv name=database_host label=host value=database.host type=text holder=host_info *}
 
-            {* tpl default/com_input_adv name=database_user label=name value=database.username type=text holder=name *}
+            {* tpl default/com_input_adv name=database_user label=users.user_name value=database.username type=text holder=users.user_name *}
 
             {* tpl default/com_input_pwd name=database_pass label=default.password holder=default.password *}
             </div>

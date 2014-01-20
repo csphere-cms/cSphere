@@ -33,7 +33,6 @@
         <define name="login_browser">Browser</define>
         <define name="logout">Logout</define>
         <define name="logout_true">Successfully logged out, please come back soon!</define>
-        <define name="name">Name</define>
         <define name="settings">Settings</define>
         <define name="password_confirm">Confirm Password</define>
         <define name="password_new">New Password</define>

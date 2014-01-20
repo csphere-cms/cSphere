@@ -6,7 +6,7 @@
         <table class="table table-striped table-hover">
             <tr>
                 <th>
-                    {* lang name *}
+                    {* lang users.user_name *}
                 </th>
                 <td>
                     {* var users.user_name *}

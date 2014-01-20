@@ -33,7 +33,6 @@
         <define name="login_since">Anmeldezeitpunkt</define>
         <define name="logout">Abmelden</define>
         <define name="logout_true">Abmeldung erfolgreich, komm bitte bald wieder!</define>
-        <define name="name">Name</define>
         <define name="settings">Einstellungen</define>
         <define name="password_confirm">Passwort bestätigen</define>
         <define name="password_new">Neues Password</define>

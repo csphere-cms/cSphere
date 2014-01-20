@@ -53,7 +53,6 @@
         <define name="mail_test_fail">Mit den gegebenen Einstellungen ist kein Versand möglich</define>
         <define name="mail_test_subject">Testmail</define>
         <define name="mail_test_text">Das Betrachten dieser Nachricht bedeutet, dass der E-Mailversand klappt.</define>
-        <define name="name">Benutzername</define>
         <define name="no_cache">Der verwendete Cache-Modus ist nicht verfügbar</define>
         <define name="no_cfg">Das Verzeichnis /csphere/config muss beschreibbar sein</define>
         <define name="no_db">Fehler in der Datenbankkonfiguration</define>

@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.user_name *}">{* lang name *}</a> {* raw arrow.user_name *}
+                        <a href="{* raw order.user_name *}">{* lang users.user_name *}</a> {* raw arrow.user_name *}
                     </th>
                     <th>
                         <a href="{* raw order.user_since *}">{* lang default.since *}</a> {* raw arrow.user_since *}

@@ -8,7 +8,7 @@
         <table class="table table-striped table-hover">
             <tr>
                 <th>
-                    {* lang name *}
+                    {* lang default.name *}
                 </th>
                 <td>
                     {* var tags.tag_name *}
