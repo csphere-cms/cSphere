@@ -31,6 +31,7 @@
         <define name="edit">Bearbeiten</define>
         <define name="email">E-Mail</define>
         <define name="hits">Treffer</define>
+        <define name="install">Installation</define>
         <define name="list">Liste</define>
         <define name="manage">Verwaltung</define>
         <define name="name">Name</define>
@@ -54,6 +55,7 @@
         <define name="since">Erstellt</define>
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
+        <define name="uninstall">Deinstallieren</define>
         <define name="view">Ansicht</define>
         <define name="yes">Ja</define>
     </definitions>

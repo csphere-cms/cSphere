@@ -30,7 +30,7 @@
         <define name="host">Host</define>
         <define name="indexes">Indexes</define>
         <define name="inserts">Inserts</define>
-        <define name="install">Install</define>
+        <define name="install_it">Installieren</define>
         <define name="install_ok">Tables and data created with success</define>
         <define name="no_data">No data found</define>
         <define name="no_table_found">No table found</define>
@@ -41,7 +41,7 @@
         <define name="table">Table</define>
         <define name="table_name_error">Table name is not valid</define>
         <define name="tables">Tables</define>
-        <define name="uninstall">Uninstall</define>
+        <define name="uninstall_it">Deinstallieren</define>
         <define name="uninstall_ok">Tables and options removed with success</define>
         <define name="uniques">Uniques</define>
         <define name="updates">Updates</define>

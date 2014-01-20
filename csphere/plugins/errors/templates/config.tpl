@@ -10,4 +10,4 @@
 
 <hr />
 
-<a href="{* link install *}">{* lang install *}</a>
+<a href="{* link install *}">{* lang default.install *}</a>

@@ -63,7 +63,8 @@ if ($exists === true) {
     ksort($match);
 
     // Exceptions due to name conventions
-    unset($match['options'], $match['plugins'], $match['themes']);
+    unset($match['install'], $match['options']);
+    unset($match['plugins'], $match['themes']);
 
     // Kick out every key that only appeared once and format data
     $dup = array();
