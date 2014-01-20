@@ -38,10 +38,16 @@ class Startup
 
     public static function rescue(array $error)
     {
+        // Get service loader
+        $loader = \csphere\core\service\Locator::get();
+
         // Check if installation is going on
         $plugin = \csphere\core\http\Input::get('get', 'plugin');
 
         if ($plugin == 'install') {
+
+            // Deactivate driver fallbacks (only) here
+            $loader->rescue(false);
 
             $router = new \csphere\core\router\Controller(true);
 
@@ -52,12 +58,12 @@ class Startup
             // Inform template engine about the target
             \csphere\core\template\Hooks::route('errors', 'config');
 
-            // Get loader and view
-            $loader = \csphere\core\service\Locator::get();
-            $view   = $loader->load('view');
+            // Get view object
+            $view = $loader->load('view');
 
             // Format data for template usage
-            $data          = array('file' => $error['file']);
+            $data = array('file' => $error['file']);
+
             $data['error'] = \csphere\core\translation\Fetch::key(
                 'errors', $error['error']
             );
@@ -66,7 +72,6 @@ class Startup
             $view->template('errors', 'config', $data);
 
             $router = new \csphere\core\router\Controller();
-
             $router->execute(true);
         }
     }
