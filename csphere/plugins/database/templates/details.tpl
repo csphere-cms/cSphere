@@ -10,7 +10,7 @@
 <br /><br />
 {* foreach tables *}
 <ul>
-<li>{* lang name *}: {* var tables.name *}</li>
+<li>{* lang default.name *}: {* var tables.name *}</li>
 <li>{* lang columns *}:
 <ul>
 {* foreach tables.columns *}
@@ -33,7 +33,7 @@
 <li>{* lang uniques *}:
 <ul>
 {* foreach tables.uniques *}
-<li>{* lang name *}: {* var uniques.name *}</li>
+<li>{* lang default.name *}: {* var uniques.name *}</li>
 <ul>
 {* foreach uniques.column *}
 <li>{* var column.name *}</li>
@@ -46,7 +46,7 @@
 <li>{* lang indexes *}:
 <ul>
 {* foreach tables.indexes *}
-<li>{* lang name *}: {* var indexes.name *}</li>
+<li>{* lang default.name *}: {* var indexes.name *}</li>
 <ul>
 {* foreach indexes.column *}
 <li>{* var column.name *}</li>
@@ -59,7 +59,7 @@
 <li>{* lang foreigns *}:
 <ul>
 {* foreach tables.foreigns *}
-<li>{* lang name *}: {* var foreigns.table *}</li>
+<li>{* lang default.name *}: {* var foreigns.table *}</li>
 <ul>
 {* foreach foreigns.column *}
 <li>{* var column.name *} -&gt; {* var column.target *}</li>

@@ -12,7 +12,7 @@
                         <a href="{* raw order.user_name *}">{* lang name *}</a> {* raw arrow.user_name *}
                     </th>
                     <th>
-                        <a href="{* raw order.user_since *}">{* lang since *}</a> {* raw arrow.user_since *}
+                        <a href="{* raw order.user_since *}">{* lang default.since *}</a> {* raw arrow.user_since *}
                     </th>
                     <th colspan="3">
                         {* lang default.options *}

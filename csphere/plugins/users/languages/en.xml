@@ -39,7 +39,6 @@
         <define name="password_new">New Password</define>
         <define name="password_old">Old Password</define>
         <define name="profile">Profile</define>
-        <define name="since">First login</define>
         <define name="submit">Submit</define>
         <define name="users">Users</define>
         <define name="user_name">Username</define>

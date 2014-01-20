@@ -32,7 +32,6 @@
         <define name="inserts">Eingefügt</define>
         <define name="install">Installieren</define>
         <define name="install_ok">Tabellen und Daten mit Erfolg angelegt</define>
-        <define name="name">Name</define>
         <define name="no_data">Keine Daten gefunden</define>
         <define name="no_table_found">Keine Tabelle gefunden</define>
         <define name="primary">Primärschlüssel</define>

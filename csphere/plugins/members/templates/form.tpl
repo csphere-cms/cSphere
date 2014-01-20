@@ -17,7 +17,7 @@
 
             {* tpl default/com_input name=group_name label=group_name value=members.group_name *}
 
-            {* tpl default/com_input name=user_name label=user_name value=members.user_name *}
+            {* tpl default/com_input name=user_name label=users.user_name value=members.user_name *}
 
             {* if members.member_admin == '1' *}
             {* tpl default/com_input_yesno name=member_admin label=group_admin *}

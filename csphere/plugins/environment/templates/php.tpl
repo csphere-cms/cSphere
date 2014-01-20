@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th>{* lang php_setting *}</th>
-                    <th>{* lang name *}</th>
+                    <th>{* lang default.name *}</th>
                     <th class="text-center">{* lang value *}</th>
                 </tr>
             </thead><!--END table thead-->

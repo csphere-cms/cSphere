@@ -12,7 +12,7 @@
                         <a href="{* raw order.tag_name *}">{* lang name *}</a> {* raw arrow.tag_name *}
                     </th>
                     <th>
-                        <a href="{* raw order.tag_since *}">{* lang since *}</a> {* raw arrow.tag_since *}
+                        <a href="{* raw order.tag_since *}">{* lang default.since *}</a> {* raw arrow.tag_since *}
                     </th>
                 </tr>
             </thead><!--END table thead-->

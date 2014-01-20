@@ -30,7 +30,6 @@
         <define name="max_input_time">Form data time limit</define>
         <define name="max_execution_time">Execution time limit</define>
         <define name="memory_limit">Memory limit</define>
-        <define name="name">Name</define>
         <define name="open_basedir">Secured path</define>
         <define name="operating_system">Operating system</define>
         <define name="php">PHP</define>

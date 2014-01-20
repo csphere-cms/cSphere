@@ -23,7 +23,6 @@
         <define name="groups">Groups</define>
         <define name="info">Info</define>
         <define name="name">Name</define>
-        <define name="since">Since</define>
         <define name="main_id">Team page</define>
         <define name="main_name">Group name of team</define>
         <define name="team">Team</define>

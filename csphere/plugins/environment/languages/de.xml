@@ -30,7 +30,6 @@
         <define name="max_input_time">Zeitlimit für Formulardaten</define>
         <define name="max_execution_time">Zeitlimit für die Ausführung</define>
         <define name="memory_limit">Maximaler Speicherverbrauch</define>
-        <define name="name">Name</define>
         <define name="open_basedir">Abgesicherter Pfad</define>
         <define name="operating_system">Betriebssystem</define>
         <define name="php">PHP</define>

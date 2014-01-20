@@ -32,7 +32,6 @@
         <define name="inserts">Inserts</define>
         <define name="install">Install</define>
         <define name="install_ok">Tables and data created with success</define>
-        <define name="name">Name</define>
         <define name="no_data">No data found</define>
         <define name="no_table_found">No table found</define>
         <define name="primary">Primary</define>

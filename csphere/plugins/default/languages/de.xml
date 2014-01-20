@@ -33,6 +33,7 @@
         <define name="hits">Treffer</define>
         <define name="list">Liste</define>
         <define name="manage">Verwaltung</define>
+        <define name="name">Name</define>
         <define name="no">Nein</define>
         <define name="no_record_found">Kein Datensatz gefunden</define>
         <define name="options">Optionen</define>
@@ -50,6 +51,7 @@
         <define name="save">Speichern</define>
         <define name="search">Suchen</define>
         <define name="scriptinfo">Scriptinfo</define>
+        <define name="since">Erstellt</define>
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
         <define name="view">Ansicht</define>

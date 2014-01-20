@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang since *}
+                    {* lang default.since *}
                 </th>
                 <td>
                     {* date groups.group_since *}

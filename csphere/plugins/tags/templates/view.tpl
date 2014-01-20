@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang since *}
+                    {* lang default.since *}
                 </th>
                 <td>
                     {* date tags.tag_since *}

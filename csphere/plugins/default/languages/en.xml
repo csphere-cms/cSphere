@@ -33,6 +33,7 @@
         <define name="hits">Hits</define>
         <define name="list">List</define>
         <define name="manage">Manage</define>
+        <define name="name">Name</define>
         <define name="no">No</define>
         <define name="no_record_found">No record found</define>
         <define name="options">Options</define>
@@ -50,6 +51,7 @@
         <define name="save">Save</define>
         <define name="search">Search</define>
         <define name="scriptinfo">Scriptinfo</define>
+        <define name="since">Since</define>
         <define name="themes">Themes</define>
         <define name="time">Time</define>
         <define name="view">View</define>

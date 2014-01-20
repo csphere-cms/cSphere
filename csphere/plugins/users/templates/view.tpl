@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang since *}
+                    {* lang default.since *}
                 </th>
                 <td>
                     {* date users.user_since *}

@@ -25,7 +25,5 @@
         <define name="group_or_user">Gruppe oder Benutzer</define>
         <define name="members">Mitglieder</define>
         <define name="memberships">Mitgliedschaften</define>
-        <define name="since">Erstellt am</define>
-        <define name="user_name">Benutzername</define>
     </definitions>
 </language>
