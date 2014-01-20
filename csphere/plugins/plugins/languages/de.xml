@@ -22,7 +22,6 @@
     <definitions>
         <define name="delete">Entfernen</define>
         <define name="manual_install">Manuell Installieren</define>
-        <define name="php_extensions">Benötigte PHP Erweiterungen</define>
         <define name="plugin_market">Plugin Markt</define>
         <define name="plugins">Plugins</define>
     </definitions>

@@ -26,7 +26,6 @@
         <define name="home">Startseite</define>
         <define name="https_required">Logins sind nur per HTTPS erlaubt. Klicke zum Fortfahren auf den folgenden Link.</define>
         <define name="invisible">Unsichtbar</define>
-        <define name="language">Sprache</define>
         <define name="laston">Letzter Login</define>
         <define name="login">Anmelden</define>
         <define name="login_browser">Web-Browser</define>

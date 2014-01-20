@@ -35,7 +35,6 @@
         <define name="operating_system">Betriebssystem</define>
         <define name="php">PHP</define>
         <define name="php_details">PHP Details</define>
-        <define name="php_extensions">PHP Erweiterungen</define>
         <define name="php_handler">PHP Anbindung</define>
         <define name="php_setting">PHP Einstellungen</define>
         <define name="php_version">PHP Version</define>

@@ -26,7 +26,6 @@
         <define name="home">Home</define>
         <define name="https_required">Logins are only allowed with HTTPS. Click the following link to go on.</define>
         <define name="invisible">Invisible</define>
-        <define name="language">Language</define>
         <define name="laston">Last login</define>
         <define name="login">Login</define>
         <define name="login_since">Login time</define>

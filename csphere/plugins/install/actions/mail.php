@@ -18,7 +18,7 @@ $loader = \csphere\core\service\Locator::get();
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('install');
 
-$bread->add('language');
+$bread->add('lang');
 $bread->add('mail');
 $bread->trace();
 

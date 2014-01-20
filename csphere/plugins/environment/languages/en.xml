@@ -35,7 +35,6 @@
         <define name="operating_system">Operating system</define>
         <define name="php">PHP</define>
         <define name="php_details">PHP Details</define>
-        <define name="php_extensions">PHP extensions</define>
         <define name="php_handler">PHP handler</define>
         <define name="php_setting">PHP setting</define>
         <define name="php_version">PHP version</define>

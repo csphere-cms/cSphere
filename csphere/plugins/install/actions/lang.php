@@ -18,7 +18,7 @@ $loader = \csphere\core\service\Locator::get();
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('install');
 
-$bread->add('language');
+$bread->add('lang');
 $bread->trace();
 
 // Get language data
@@ -40,7 +40,7 @@ if ($exists === true) {
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'mail');
     $plugin   = $lang['install'];
-    $action   = $lang['language'];
+    $action   = $lang['lang'];
     $message  = $lang['language_ok'];
 
     $data = array('previous'    => $previous,

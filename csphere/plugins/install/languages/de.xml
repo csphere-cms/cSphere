@@ -42,7 +42,7 @@
         <define name="host">Hostname</define>
         <define name="host_info">Valide IP oder DNS, z.B. localhost oder 127.0.0.1</define>
         <define name="install">Installation</define>
-        <define name="language">Sprache</define>
+        <define name="lang">Sprache</define>
         <define name="language_ok">Die folgende Seite ist wie gewünscht übersetzt</define>
         <define name="logs_info">Speichere auftretende Fehler zur späteren Ansicht</define>
         <define name="mail">E-Mail</define>

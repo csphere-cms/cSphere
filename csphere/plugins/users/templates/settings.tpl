@@ -14,7 +14,7 @@
             {* endif users.user_invisible *}
 
             <div class="form-group">
-                <label for="inputUserLang" class="col-sm-2 control-label">{* lang language *}</label>
+                <label for="inputUserLang" class="col-sm-2 control-label">{* lang languages.language *}</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="inputUserLang" name="user_lang">
                     {* foreach users.languages *}
