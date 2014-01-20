@@ -29,7 +29,7 @@
 
             {* tpl default/com_input_adv name=database_user label=name value=database.username type=text holder=name *}
 
-            {* tpl default/com_input_pwd name=database_pass label=password holder=password *}
+            {* tpl default/com_input_pwd name=database_pass label=default.password holder=default.password *}
             </div>
 
             {* tpl default/com_input_adv name=database_prefix label=db_prefix value=database.prefix type=text holder=db_prefix_info *}

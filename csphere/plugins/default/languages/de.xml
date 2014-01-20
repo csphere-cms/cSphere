@@ -28,6 +28,7 @@
         <define name="default">Standard</define>
         <define name="details">Details</define>
         <define name="edit">Bearbeiten</define>
+        <define name="email">E-Mail</define>
         <define name="hits">Treffer</define>
         <define name="list">Liste</define>
         <define name="manage">Verwaltung</define>
@@ -37,6 +38,7 @@
         <define name="options_success">Optionen mit Erfolg bearbeitet</define>
         <define name="or">oder</define>
         <define name="page">Seite</define>
+        <define name="password">Passwort</define>
         <define name="plugins">Plugins</define>
         <define name="record_cancel">Datensatz unverändert belassen</define>
         <define name="record_deleted">Datensatz mit Erfolg entfernt</define>

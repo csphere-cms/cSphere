@@ -22,7 +22,6 @@
     <definitions>
         <define name="account">Account</define>
         <define name="active">Active</define>
-        <define name="email">Email</define>
         <define name="force_https">Force HTTPS for logins</define>
         <define name="home">Home</define>
         <define name="https_required">Logins are only allowed with HTTPS. Click the following link to go on.</define>
@@ -37,7 +36,6 @@
         <define name="logout_true">Successfully logged out, please come back soon!</define>
         <define name="name">Name</define>
         <define name="settings">Settings</define>
-        <define name="password">Password</define>
         <define name="password_confirm">Confirm Password</define>
         <define name="password_new">New Password</define>
         <define name="password_old">Old Password</define>

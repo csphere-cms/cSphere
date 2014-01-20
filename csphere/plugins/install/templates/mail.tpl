@@ -45,7 +45,7 @@
 
             {* tpl default/com_input_adv name=mail_subject label=mail_subject value=mail.subject type=text holder=mail_subject_info *}
 
-            {* tpl default/com_input_adv name=mail_from label=email value=mail.from type=email holder=email *}
+            {* tpl default/com_input_adv name=mail_from label=default.email value=mail.from type=email holder=default.email *}
 
             <div class="mail_smtp">
             {* tpl default/com_input_adv name=mail_host label=host value=mail.host type=text holder=host_info *}
@@ -54,7 +54,7 @@
 
             {* tpl default/com_input_adv name=mail_user label=name value=mail.username type=text holder=name *}
 
-            {* tpl default/com_input_pwd name=mail_pass label=password holder=password *}
+            {* tpl default/com_input_pwd name=mail_pass label=default.password holder=default.password *}
 
             {* tpl default/com_input_adv name=mail_timeout label=timeout value=mail.timeout type=text holder=timeout_info *}
             </div>

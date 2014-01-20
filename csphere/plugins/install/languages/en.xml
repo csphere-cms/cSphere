@@ -38,7 +38,6 @@
         <define name="db_schema_info">Name of database on specified server</define>
         <define name="debug_mode">Debug mode</define>
         <define name="debug_info">Shows additional information for developers</define>
-        <define name="email">Email</define>
         <define name="error_logs">Log errors</define>
         <define name="host">Hostname</define>
         <define name="host_info">Valid IP or DNS, e.g. localhost or 127.0.0.1</define>
@@ -59,7 +58,6 @@
         <define name="no_cache">Selected cache mode is not available</define>
         <define name="no_cfg">Directory /csphere/config must be writable</define>
         <define name="no_db">Database configuration error</define>
-        <define name="password">Password</define>
         <define name="port">Port</define>
         <define name="port_info">The port that service is running on</define>
         <define name="pretty_urls">Pretty URLs</define>

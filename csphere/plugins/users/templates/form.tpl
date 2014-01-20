@@ -26,7 +26,7 @@
             {* tpl default/com_input_adv name=user_email label=email value=users.user_email type=email holder=email *}
 
             {* if action == 'create' *}
-            {* tpl default/com_input_pwd name=user_password label=password holder=password *}
+            {* tpl default/com_input_pwd name=user_password label=default.password holder=default.password *}
             {* endif action *}
 
             {* tpl default/com_submit_btn caption=default.save *}
