@@ -6,7 +6,7 @@
                 <h3 class="pull-left">
                     {* lang cache *} - {* lang default.control *}
                     <small>
-                        - {* lang default.count *}: {* raw count *} - {* lang driver *}: {* raw driver *}
+                        - {* lang default.count *}: {* raw count *} - {* lang default.driver *}: {* raw driver *}
                     </small>
                 </h3><!--END header page-header headline-->
 
@@ -23,7 +23,7 @@
                 <tr>
                     <th>{* lang key *}</th>
                     <th>{* lang default.time *}</th>
-                    <th class="text-center">{* lang size *}</th>
+                    <th class="text-center">{* lang default.size *}</th>
                 </tr>
             </thead><!--END table thead-->
 

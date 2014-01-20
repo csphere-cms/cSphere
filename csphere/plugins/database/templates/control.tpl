@@ -10,7 +10,7 @@
 
         <table class="table table-striped table-hover">
             <tr>
-                <th>{* lang driver *}</th>
+                <th>{* lang default.driver *}</th>
                 <td>{* var driver *}</td>
             </tr>
             <tr>
@@ -30,7 +30,7 @@
                 <td>{* var encoding *}</td>
             </tr>
             <tr>
-                <th>{* lang host *}</th>
+                <th>{* lang default.host *}</th>
                 <td>{* var host *}</td>
             </tr>
             <tr>
@@ -42,7 +42,7 @@
                 <td>{* var tables *}</td>
             </tr>
             <tr>
-                <th>{* lang size *}</th>
+                <th>{* lang default.size *}</th>
                 <td>{* var size *}</td>
             </tr>
         </table><!--END table-->

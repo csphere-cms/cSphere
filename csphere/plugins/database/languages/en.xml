@@ -24,10 +24,8 @@
         <define name="data">Data</define>
         <define name="database">Database</define>
         <define name="deletes">Deletes</define>
-        <define name="driver">Driver</define>
         <define name="encoding">Encoding</define>
         <define name="foreigns">Foreigns</define>
-        <define name="host">Host</define>
         <define name="indexes">Indexes</define>
         <define name="inserts">Inserts</define>
         <define name="install_it">Installieren</define>
@@ -37,7 +35,6 @@
         <define name="primary">Primary</define>
         <define name="reload">Reload</define>
         <define name="schema">Schema</define>
-        <define name="size">Size</define>
         <define name="table">Table</define>
         <define name="table_name_error">Table name is not valid</define>
         <define name="tables">Tables</define>

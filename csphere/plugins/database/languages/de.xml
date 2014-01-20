@@ -24,10 +24,8 @@
         <define name="data">Daten</define>
         <define name="database">Datenbank</define>
         <define name="deletes">Entfernen</define>
-        <define name="driver">Treiber</define>
         <define name="encoding">Zeichensatz</define>
         <define name="foreigns">Fremdschlüssel</define>
-        <define name="host">Host</define>
         <define name="indexes">Indexe</define>
         <define name="inserts">Eingefügt</define>
         <define name="install_it">Installieren</define>
@@ -37,7 +35,6 @@
         <define name="primary">Primärschlüssel</define>
         <define name="reload">Nachladen</define>
         <define name="schema">Schema</define>
-        <define name="size">Größe</define>
         <define name="table">Tabelle</define>
         <define name="table_name_error">Der Tabellenname ist nicht valide</define>
         <define name="tables">Tabellen</define>

@@ -38,7 +38,6 @@
         <define name="debug_mode">Debug mode</define>
         <define name="debug_info">Shows additional information for developers</define>
         <define name="error_logs">Log errors</define>
-        <define name="host">Hostname</define>
         <define name="host_info">Valid IP or DNS, e.g. localhost or 127.0.0.1</define>
         <define name="install">Install</define>
         <define name="lang">Language</define>

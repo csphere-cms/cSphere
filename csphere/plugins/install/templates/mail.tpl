@@ -48,7 +48,7 @@
             {* tpl default/com_input_adv name=mail_from label=default.email value=mail.from type=email holder=default.email *}
 
             <div class="mail_smtp">
-            {* tpl default/com_input_adv name=mail_host label=host value=mail.host type=text holder=host_info *}
+            {* tpl default/com_input_adv name=mail_host label=default.host value=mail.host type=text holder=host_info *}
 
             {* tpl default/com_input_adv name=mail_port label=port value=mail.port type=text holder=port_info *}
 

@@ -23,9 +23,7 @@
         <define name="cache">Cache</define>
         <define name="clear">Clear cache</define>
         <define name="clear_ok">Cache cleared with success</define>
-        <define name="driver">Driver</define>
         <define name="key">Key</define>
         <define name="no_entry">No entry found</define>
-        <define name="size">Size</define>
     </definitions>
 </language>

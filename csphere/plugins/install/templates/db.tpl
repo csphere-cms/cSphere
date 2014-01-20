@@ -25,7 +25,7 @@
             </div><!--END form form-group inputDatabaseDriver-->
 
             <div class="sql_others">
-            {* tpl default/com_input_adv name=database_host label=host value=database.host type=text holder=host_info *}
+            {* tpl default/com_input_adv name=database_host label=default.host value=database.host type=text holder=host_info *}
 
             {* tpl default/com_input_adv name=database_user label=users.user_name value=database.username type=text holder=users.user_name *}
 

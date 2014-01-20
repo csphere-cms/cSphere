@@ -38,7 +38,6 @@
         <define name="debug_mode">Debug Modus</define>
         <define name="debug_info">Aktiviert zusätzliche Anzeigen für Entwickler</define>
         <define name="error_logs">Fehlerlogs anlegen</define>
-        <define name="host">Hostname</define>
         <define name="host_info">Valide IP oder DNS, z.B. localhost oder 127.0.0.1</define>
         <define name="install">Installation</define>
         <define name="lang">Sprache</define>

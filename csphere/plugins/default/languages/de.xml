@@ -28,9 +28,11 @@
         <define name="date">Datum</define>
         <define name="default">Standard</define>
         <define name="details">Details</define>
+        <define name="driver">Treiber</define>
         <define name="edit">Bearbeiten</define>
         <define name="email">E-Mail</define>
         <define name="hits">Treffer</define>
+        <define name="host">Host</define>
         <define name="info">Info</define>
         <define name="install">Installation</define>
         <define name="list">Liste</define>
@@ -54,6 +56,7 @@
         <define name="search">Suchen</define>
         <define name="scriptinfo">Scriptinfo</define>
         <define name="since">Erstellt</define>
+        <define name="size">Größe</define>
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
         <define name="uninstall">Deinstallieren</define>

@@ -23,9 +23,7 @@
         <define name="cache">Cache</define>
         <define name="clear">Cache leeren</define>
         <define name="clear_ok">Cache mit Erfolg geleert</define>
-        <define name="driver">Treiber</define>
         <define name="key">Schlüssel</define>
         <define name="no_entry">Kein Eintrag gefunden</define>
-        <define name="size">Größe</define>
     </definitions>
 </language>
