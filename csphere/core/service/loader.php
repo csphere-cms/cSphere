@@ -195,9 +195,9 @@ class Loader
     /**
      * Handle config content of components
      *
-     * @param string  $component Name of the core component with driver support
-     * @param string  $driver    Driver name without any prefixes
-     * @param array   $config    Configuration options for the driver
+     * @param string $component Name of the core component with driver support
+     * @param string $driver    Driver name without any prefixes
+     * @param array  $config    Configuration options for the driver
      *
      * @return array
      **/
