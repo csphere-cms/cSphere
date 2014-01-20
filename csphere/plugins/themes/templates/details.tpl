@@ -45,7 +45,7 @@
         <dl class="dl-horizontal">
             <dt>{* lang contains_designs *}:</dt>
             <dd>{* lang admin.admin *}: <strong>{* var contains.admin *}</strong></dd>
-            <dd>{* lang install *}: <strong>{* var contains.install *}</strong></dd>
+            <dd>{* lang install.install *}: <strong>{* var contains.install *}</strong></dd>
             <dd>{* lang layout *}: <strong>{* var contains.layout *}</strong></dd>
             <dd>{* lang mobile *}: <strong>{* var contains.mobile *}</strong></dd>
         </dl><!--END dl-horizontal contains_designs-->

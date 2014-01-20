@@ -20,7 +20,6 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="admin">Administrator</define>
         <define name="admin_ok">Administrator erfolgreich gespeichert</define>
         <define name="ajax_full">Erweitertes AJAX</define>
         <define name="ajax_info">Der Hauptinhalt wird damit unabhängig vom Rest der Seite erneuert</define>
@@ -68,6 +67,7 @@
         <define name="timeout_info">Timeout in Sekunden</define>
         <define name="too_short">Benutzername und Passwort müssen mindestens vier Zeichen lang sein</define>
         <define name="uninstall">Deinstallation</define>
+        <define name="webmaster">Seitenverwalter</define>
         <define name="welcome">Willkommen</define>
         <define name="welcome_info">Dies installiert das cSphere CMS, zum Fortfahren unten klicken</define>
         <define name="zlib_compression">ZLIB Komprimierung</define>

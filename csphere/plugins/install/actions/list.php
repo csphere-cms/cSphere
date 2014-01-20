@@ -23,4 +23,4 @@ $bread->trace();
 // Send data to view
 $view = $loader->load('view');
 
-$view->template('install', 'welcome');
+$view->template('install', 'list');

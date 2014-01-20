@@ -64,5 +64,5 @@ if ($exists === true) {
     // Send data to view
     $view = $loader->load('view');
 
-    $view->template('install', 'language', $data);
+    $view->template('install', 'lang', $data);
 }

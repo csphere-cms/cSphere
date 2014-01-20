@@ -21,7 +21,7 @@ $bread = new \csphere\core\template\Breadcrumb('install');
 $bread->add('lang');
 $bread->add('mail');
 $bread->add('db');
-$bread->add('admin');
+$bread->add('webmaster');
 $bread->add('conf');
 $bread->trace();
 
@@ -193,5 +193,5 @@ if ($test === true AND $error == '') {
     // Send data to view
     $view = $loader->load('view');
 
-    $view->template('install', 'config', $data);
+    $view->template('install', 'conf', $data);
 }

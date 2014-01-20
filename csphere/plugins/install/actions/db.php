@@ -163,5 +163,5 @@ if ($test === true AND $db_error === null) {
     // Load a Javascript to hide some fields at sqlite
     \csphere\core\template\Hooks::javascript('install', 'database.js');
 
-    $view->template('install', 'database', $data);
+    $view->template('install', 'db', $data);
 }
