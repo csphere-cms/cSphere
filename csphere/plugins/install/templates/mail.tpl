@@ -24,8 +24,6 @@
                 </div>
             </div><!--END form form-group inputMailDriver-->
 
-        <form class="form-horizontal" role="form" action="{* link install/mail *}" method="POST">
-
             <div class="form-group">
                 <label for="inputMailnewline" class="col-sm-2 control-label">{* lang mail_newline *}</label>
                 <div class="col-sm-10">

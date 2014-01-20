@@ -19,9 +19,10 @@ $loader = \csphere\core\service\Locator::get();
 $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('lang');
-$bread->add('mail');
 $bread->add('db');
 $bread->add('webmaster');
+$bread->add('mail');
+$bread->add('memory');
 $bread->add('conf');
 $bread->trace();
 
@@ -33,18 +34,8 @@ $test  = false;
 $error = '';
 $data  = array();
 
-// List of cache drivers
-$cache_drivers = array('none'     => 'None',
-                       'apc'      => 'APC / APCu',
-                       'file'     => 'File',
-                       'redis'    => 'Redis',
-                       'wincache' => 'WinCache',
-                       'xcache'   => 'XCache');
-
 // Get post data
 $post  = \csphere\core\http\Input::getAll('post');
-$cache = isset($post['cache_driver']) ? $post['cache_driver'] : 'file';
-$cache = isset($cache_drivers[$cache]) ? $cache : '';
 
 $config            = array();
 $config['logs']    = empty($post['logs']) ? '0' : '1';
@@ -63,6 +54,15 @@ if (isset($post['csphere_form'])) {
 
         // Get session for configuration data contents
         $session = new \csphere\core\session\Session();
+
+        // Get cache data
+        $cache_config = array();
+        $cache_data   = array('driver', 'host', 'password', 'port', 'timeout');
+
+        foreach ($cache_data AS $key) {
+
+            $cache_config[$key] = $session->get('cache_' . $key);
+        }
 
         // Get mail data
         $mail_config = array();
@@ -107,10 +107,10 @@ if (isset($post['csphere_form'])) {
         }
 
         // Check if cache driver is working
-        $ch_test = $loader->load('cache', $cache);
+        $ch_test = $loader->load('cache', $cache_config['driver'], $cache_config);
         $result  = $ch_test->driver();
 
-        if ($result != $cache) {
+        if ($result != $cache_config['driver']) {
 
             $error = $lang['no_cache'];
         }
@@ -122,7 +122,7 @@ if (isset($post['csphere_form'])) {
 
             $gen = array('db'     => $db_config,
                          'mail'   => $mail_config,
-                         'cache'  => array('driver' => $cache),
+                         'cache'  => $cache_config,
                          'logs'   => $logs,
                          'config' => $config);
 
@@ -178,18 +178,6 @@ if ($test === true AND $error == '') {
 
     $data['error']  = $error;
     $data['config'] = $config;
-
-    // Create cache driver dropdown
-    $ch_list = array();
-
-    foreach ($cache_drivers AS $driver => $name) {
-
-        $active = $cache == $driver ? 'yes' : 'no';
-
-        $ch_list[] = array('short' => $driver, 'name' => $name, 'active' => $active);
-    }
-
-    $data['cache']['drivers'] = $ch_list;
 
     // Send data to view
     $view = $loader->load('view');

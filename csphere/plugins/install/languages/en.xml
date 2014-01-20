@@ -24,6 +24,7 @@
         <define name="ajax_full">Enhanced AJAX</define>
         <define name="ajax_info">Loads main content independent of other website parts</define>
         <define name="cache_info">None is for developers only. File should only be used if nothing else works.</define>
+        <define name="cache_ok">Memory cache settings are fine</define>
         <define name="cache_type">Cache type</define>
         <define name="conf">Configuration</define>
         <define name="config_ok">Configuration created with success</define>
@@ -52,7 +53,8 @@
         <define name="mail_test_fail">Failed to send mail with given settings</define>
         <define name="mail_test_subject">Testmail</define>
         <define name="mail_test_text">If you can read this your mail settings are fine</define>
-        <define name="no_cache">Selected cache mode is not available</define>
+        <define name="memory">Memory</define>
+        <define name="no_cache">Cache settings contain errors</define>
         <define name="no_cfg">Directory /csphere/config must be writable</define>
         <define name="no_db">Database configuration error</define>
         <define name="port">Port</define>

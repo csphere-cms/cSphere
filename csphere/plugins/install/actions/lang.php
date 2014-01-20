@@ -38,7 +38,7 @@ if ($exists === true) {
     $session->set('user_lang', $get_lang);
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('install', 'mail');
+    $previous = \csphere\core\url\Link::href('install', 'db');
     $plugin   = $lang['install'];
     $action   = $lang['lang'];
     $message  = $lang['language_ok'];

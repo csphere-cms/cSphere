@@ -9,23 +9,6 @@
 
         <form class="form-horizontal" role="form" action="{* link install/conf *}" method="POST">
 
-            <div class="form-group">
-                <label for="inputCacheDriver" class="col-sm-2 control-label">{* lang cache_type *}</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="inputCacheDriver" name="cache_driver">
-                    {* foreach cache.drivers *}
-                    {* if drivers.active == 'yes' *}
-                        <option value="{* var drivers.short *}" selected="selected">{* var drivers.name *}</option>
-                    {* else drivers.active *}
-                        <option value="{* var drivers.short *}">{* var drivers.name *}</option>
-                    {* endif drivers.active *}
-                    {* endforeach cache.drivers *}
-                    </select>
-                </div>
-            </div><!--END form form-group inputCacheDriver-->
-
-            <span class="help-block">{* lang cache_info *}</span>
-
             {* if config.logs == '1' *}
             {* tpl default/com_input_yesno name=logs label=error_logs *}
             {* else config.logs *}

@@ -19,7 +19,6 @@ $loader = \csphere\core\service\Locator::get();
 $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('lang');
-$bread->add('mail');
 $bread->add('db');
 $bread->add('webmaster');
 $bread->trace();
@@ -105,7 +104,7 @@ if (isset($post['csphere_form'])) {
 if ($test === true AND $error == '') {
 
     // Show message to continue
-    $previous = \csphere\core\url\Link::href('install', 'conf');
+    $previous = \csphere\core\url\Link::href('install', 'mail');
     $plugin   = $lang['install'];
     $action   = $lang['webmaster'];
     $message  = $lang['admin_ok'];
