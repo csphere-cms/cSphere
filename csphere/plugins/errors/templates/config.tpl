@@ -6,7 +6,7 @@
 
 <hr />
 
-{* lang install_info *}
+{* lang errors.install_info *}
 
 <hr />
 

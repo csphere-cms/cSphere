@@ -4,9 +4,9 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages *} - {* lang themes.themes *}
+                    {* lang languages.languages *} - {* lang themes.themes *}
                     <small>
-                        {* lang language *}: {* var short *}
+                        {* lang languages.language *}: {* var short *}
                     </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
@@ -16,7 +16,7 @@
             <thead>
                 <tr>
                     <th>{* lang themes.theme *}</th>
-                    <th class="text-center">{* lang translated *}</th>
+                    <th class="text-center">{* lang languages.translated *}</th>
                 </tr>
             </thead><!--END table thead-->
 

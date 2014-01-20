@@ -4,9 +4,9 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages *} - {* lang default.details *}
+                    {* lang languages.languages *} - {* lang default.details *}
                     <small>
-                        {* lang language *}: {* var short *} - {* if type == 'theme' *}{* lang themes.theme *}{* else type *}{* lang xml.plugin *}{* endif type *}: {* var dir *}
+                        {* lang languages.language *}: {* var short *} - {* if type == 'theme' *}{* lang themes.theme *}{* else type *}{* lang xml.plugin *}{* endif type *}: {* var dir *}
                     </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->

@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=tags action=default.view *}
+        {* tpl default/com_header plugin=tags.tags action=default.view *}
 
         <br />
 

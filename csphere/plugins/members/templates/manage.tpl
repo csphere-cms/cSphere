@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=members action=default.manage search=group_or_user *}
+        {* tpl default/com_headsearch plugin=members.members action=default.manage search=members.group_or_user *}
 
         <br />
 
@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.group_name *}">{* lang group_name *}</a> {* raw arrow.group_name *}
+                        <a href="{* raw order.group_name *}">{* lang members.group_name *}</a> {* raw arrow.group_name *}
                     </th>
                     <th>
                         <a href="{* raw order.user_name *}">{* lang users.user_name *}</a> {* raw arrow.user_name *}

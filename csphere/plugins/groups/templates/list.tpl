@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=groups action=default.list search=default.name *}
+        {* tpl default/com_headsearch plugin=groups.groups action=default.list search=default.name *}
 
         <br />
 
@@ -15,7 +15,7 @@
                         <a href="{* raw order.group_since *}">{* lang default.since *}</a> {* raw arrow.group_since *}
                     </th>
                     <th>
-                        {* lang url *}
+                        {* lang groups.url *}
                     </th>
                 </tr>
             </thead><!--END table thead-->

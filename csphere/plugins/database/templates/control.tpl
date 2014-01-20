@@ -1,11 +1,11 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=database action=default.control *}
+        {* tpl default/com_header plugin=database.database action=default.control *}
 
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a href="{* link database/control *}">{* lang default.control *}</a></li>
-            <li><a href="{* link database/tables *}">{* lang tables *}</a></li>
+            <li><a href="{* link database/tables *}">{* lang database.tables *}</a></li>
         </ul><!--END nav-tabs-->
 
         <table class="table table-striped table-hover">
@@ -14,19 +14,19 @@
                 <td>{* var driver *}</td>
             </tr>
             <tr>
-                <th>{* lang version_driver *}</th>
+                <th>{* lang database.version_driver *}</th>
                 <td>{* var version *}</td>
             </tr>
             <tr>
-                <th>{* lang version_client *}</th>
+                <th>{* lang database.version_client *}</th>
                 <td>{* var client *}</td>
             </tr>
             <tr>
-                <th>{* lang version_server *}</th>
+                <th>{* lang database.version_server *}</th>
                 <td>{* var server *}</td>
             </tr>
             <tr>
-                <th>{* lang encoding *}</th>
+                <th>{* lang database.encoding *}</th>
                 <td>{* var encoding *}</td>
             </tr>
             <tr>
@@ -34,11 +34,11 @@
                 <td>{* var host *}</td>
             </tr>
             <tr>
-                <th>{* lang schema *}</th>
+                <th>{* lang database.schema *}</th>
                 <td>{* var schema *}</td>
             </tr>
             <tr>
-                <th>{* lang tables *}</th>
+                <th>{* lang database.tables *}</th>
                 <td>{* var tables *}</td>
             </tr>
             <tr>

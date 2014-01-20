@@ -1,7 +1,7 @@
 <div id="errors-latest-box">
 
     <div class="page-header">
-        <h4>{* lang latest_errors *}</h4>
+        <h4>{* lang errors.latest_errors *}</h4>
     </div><!--END errors-latest-box page-header-->
 
     <div class="list-group">
@@ -11,10 +11,10 @@
             {* var files.date *}
         </a>
         {* else files *}
-        {* lang no_file *}
+        {* lang errors.no_file *}
         {* endforeach files *}
     </div><!--END lerrors-latest-box ist-group-->
 
-    {* tpl default/com_box_get caption=refresh plugin=errors box=latest *}
+    {* tpl default/com_box_get caption=errors.refresh plugin=errors box=latest *}
 
 </div><!--END errors-latest-box-->

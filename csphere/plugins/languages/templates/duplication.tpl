@@ -4,9 +4,9 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages *} - {* lang duplication *}
+                    {* lang languages.languages *} - {* lang languages.duplication *}
                     <small>
-                        {* lang language *}: {* var short *}
+                        {* lang languages.language *}: {* var short *}
                     </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
@@ -17,7 +17,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang duplication *}</th>
+                    <th>{* lang languages.duplication *}</th>
                     <th>{* lang plugins.plugins *}</th>
                 </tr>
             </thead><!--END table thead-->
@@ -35,7 +35,7 @@
                 {* else duplicate *}
                 <tr>
                     <th colspan="2" class="text-center">
-                        {* lang no_duplicate *}
+                        {* lang languages.no_duplicate *}
                     </th>
                 </tr>
                 {* endforeach duplicate *}

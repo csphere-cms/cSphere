@@ -14,7 +14,7 @@
 
             <nav>
                 <ul class="nav navbar-nav">
-                    <li><a id="debug_logs_nav" onClick="csphere_debug_display('logs')">{* lang logs *}: {* raw count.logs *}</a></li>
+                    <li><a id="debug_logs_nav" onClick="csphere_debug_display('logs')">{* lang debug.logs *}: {* raw count.logs *}</a></li>
                     <li><a id="debug_database_nav" onClick="csphere_debug_display('database')">{* lang database.database *}: {* raw count.database *}</a></li>
                     <li>
                         {* if count.errors > '0' *}
@@ -23,12 +23,12 @@
                         <a id="debug_errors_nav" onClick="csphere_debug_display('errors')">{* lang errors.errors *}: {* raw count.errors *}</a>
                         {* endif count.errors *}
                     </li>
-                    <li><a id="debug_includes_nav" onClick="csphere_debug_display('includes')">{* lang includes *}: {* raw count.includes *}</a></li>
+                    <li><a id="debug_includes_nav" onClick="csphere_debug_display('includes')">{* lang debug.includes *}: {* raw count.includes *}</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-debug navbar-right">
                     <li class="navbar-text">PHP {* raw php_short *}</li>
-                    <li class="navbar-text">{* lang parsetime *}: {* raw parsetime *} {* lang ms *}</li>
-                    <li class="navbar-text">{* lang memory *}: {* raw memory *}</li>
+                    <li class="navbar-text">{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}</li>
+                    <li class="navbar-text">{* lang debug.memory *}: {* raw memory *}</li>
                 </ul><!--END csphere-debug navigation navbar-nav-->
             </nav><!--END csphere-debug navigation-->
 
@@ -37,7 +37,7 @@
     </div><!--END csphere-debug container-->
 
     <section id="debug_logs" class="debug_content container">
-        {* lang logs *}:
+        {* lang debug.logs *}:
 
         {* foreach logbar *}
          | <a id="debug_logs-{* raw logbar.component *}_nav" onClick="csphere_debug_display('logs-{* raw logbar.component *}')">
@@ -48,7 +48,7 @@
 
     {* foreach logs *}
     <section id="debug_logs-{* raw logs.name *}" class="debug_content container">
-        {* lang component *} "{* raw logs.name *}":
+        {* lang debug.component *} "{* raw logs.name *}":
         <br /><br />
         <ol>
             {* foreach logs.entries *}
@@ -79,7 +79,7 @@
     </section><!--END csphere-debug debug_errors-->
 
     <section id="debug_includes" class="debug_content container">
-        {* lang includes *}:
+        {* lang debug.includes *}:
         <br /><br />
         <ol>
             {* foreach includes *}

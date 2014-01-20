@@ -4,15 +4,15 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang languages *} - {* lang plugins.plugins *}
+                    {* lang languages.languages *} - {* lang plugins.plugins *}
                     <small>
-                        - {* lang language *}: {* var short *}
+                        - {* lang languages.language *}: {* var short *}
                     </small>
                 </h3><!--END header page-header headline-->
 
                 <div class="btn-group pull-right">
                     <a href="{* link languages/duplication/short/$short$ *}" class="btn btn-danger">
-                        {* lang duplication *}
+                        {* lang languages.duplication *}
                     </a>
                 </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
@@ -22,7 +22,7 @@
             <thead>
                 <tr>
                     <th>{* lang xml.plugin *}</th>
-                    <th class="text-center">{* lang translated *}</th>
+                    <th class="text-center">{* lang languages.translated *}</th>
                 </tr>
             </thead><!--END table thead-->
 

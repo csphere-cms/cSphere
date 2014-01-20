@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang cache *} - {* lang default.control *}
+                    {* lang cache.cache *} - {* lang default.control *}
                     <small>
                         - {* lang default.count *}: {* raw count *} - {* lang default.driver *}: {* raw driver *}
                     </small>
@@ -12,7 +12,7 @@
 
                 <div class="btn-group pull-right">
                     <a href="{* link cache/clear *}" class="btn btn-danger">
-                        {* lang clear *}
+                        {* lang cache.clear *}
                     </a>
                 </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
@@ -21,7 +21,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang key *}</th>
+                    <th>{* lang cache.key *}</th>
                     <th>{* lang default.time *}</th>
                     <th class="text-center">{* lang default.size *}</th>
                 </tr>
@@ -37,7 +37,7 @@
                 {* else entries *}
                 <tr>
                     <th colspan="3" class="text-center">
-                        {* lang no_entry *}
+                        {* lang cache.no_entry *}
                     </th>
                 </tr>
                 {* endforeach entries *}

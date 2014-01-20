@@ -2,9 +2,9 @@
     <div class="panel-body">
 
         {* if action == 'create' *}
-        {* tpl default/com_header plugin=users action=default.create *}
+        {* tpl default/com_header plugin=users.users action=default.create *}
         {* else action *}
-        {* tpl default/com_header plugin=users action=default.edit *}
+        {* tpl default/com_header plugin=users.users action=default.edit *}
         {* endif action *}
 
         <br />
@@ -18,9 +18,9 @@
             {* tpl default/com_input name=user_name label=users.user_name value=users.user_name *}
 
             {* if users.user_active == '1' *}
-            {* tpl default/com_input_yesno name=user_active label=active *}
+            {* tpl default/com_input_yesno name=user_active label=users.active *}
             {* else users.user_active *}
-            {* tpl default/com_input_noyes name=user_active label=active *}
+            {* tpl default/com_input_noyes name=user_active label=users.active *}
             {* endif users.user_active *}
 
             {* tpl default/com_input_adv name=user_email label=default.email value=users.user_email type=email holder=default.email *}

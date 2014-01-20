@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=users action=default.view *}
+        {* tpl default/com_header plugin=users.users action=default.view *}
 
         <table class="table table-striped table-hover">
             <tr>
@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang laston *}
+                    {* lang users.laston *}
                 </th>
                 <td>
                     {* date users.user_laston *}

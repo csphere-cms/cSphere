@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=install action=webmaster *}
+        {* tpl default/com_header plugin=install.install action=install.webmaster *}
 
         <br />
 

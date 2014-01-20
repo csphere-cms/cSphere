@@ -2,9 +2,9 @@
     <div class="panel-body">
 
         {* if action == 'create' *}
-        {* tpl default/com_header plugin=tags action=default.create *}
+        {* tpl default/com_header plugin=tags.tags action=default.create *}
         {* else action *}
-        {* tpl default/com_header plugin=tags action=default.edit *}
+        {* tpl default/com_header plugin=tags.tags action=default.edit *}
         {* endif action *}
 
         <br />

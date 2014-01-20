@@ -1,14 +1,14 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=users action=default.options *}
+        {* tpl default/com_header plugin=users.users action=default.options *}
 
         <br />
 
         <form class="form-horizontal" role="form" action="{* link users/options *}" method="POST">
 
             <div class="form-group">
-                <label for="inputForceHTTPS" class="col-sm-2 control-label">{* lang force_https *}</label>
+                <label for="force_https" class="col-sm-2 control-label">{* lang users.force_https *}</label>
                 <div class="col-sm-10">
 
                     <label class="checkbox-inline">
@@ -28,7 +28,7 @@
                     </label>
 
                 </div>
-            </div><!--END form form-group inputForceHTTPS-->
+            </div><!--END form form-group force_https-->
 
             {* tpl default/com_submit_btn caption=default.save *}
 

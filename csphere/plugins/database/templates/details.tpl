@@ -1,17 +1,17 @@
 <div class="main_content_div">
 
-<a href="{* link database/install/dir/$dir$ *}">{* lang install_it *}</a>
-- <a href="{* link database/uninstall/dir/$dir$ *}">{* lang uninstall_it *}</a>
+<a href="{* link database/install/dir/$dir$ *}">{* lang database.install_it *}</a>
+- <a href="{* link database/uninstall/dir/$dir$ *}">{* lang database.uninstall_it *}</a>
 <br /><br />
 
 {* lang xml.plugin *}: {* var plugin *}
 <br /><br />
-{* lang tables *}:
+{* lang database.tables *}:
 <br /><br />
 {* foreach tables *}
 <ul>
 <li>{* lang default.name *}: {* var tables.name *}</li>
-<li>{* lang columns *}:
+<li>{* lang database.columns *}:
 <ul>
 {* foreach tables.columns *}
 <li>{* var columns.name *} - {* var columns.datatype *}
@@ -22,7 +22,7 @@
 </ul>
 </li>
 
-<li>{* lang primary *}:
+<li>{* lang database.primary *}:
 <ul>
 {* foreach tables.primary *}
 <li>{* var primary.name *}</li>
@@ -30,7 +30,7 @@
 </ul>
 </li>
 
-<li>{* lang uniques *}:
+<li>{* lang database.uniques *}:
 <ul>
 {* foreach tables.uniques *}
 <li>{* lang default.name *}: {* var uniques.name *}</li>
@@ -43,7 +43,7 @@
 </ul>
 </li>
 
-<li>{* lang indexes *}:
+<li>{* lang database.indexes *}:
 <ul>
 {* foreach tables.indexes *}
 <li>{* lang default.name *}: {* var indexes.name *}</li>
@@ -56,7 +56,7 @@
 </ul>
 </li>
 
-<li>{* lang foreigns *}:
+<li>{* lang database.foreigns *}:
 <ul>
 {* foreach tables.foreigns *}
 <li>{* lang default.name *}: {* var foreigns.table *}</li>
@@ -71,16 +71,16 @@
 </ul>
 <br /><br />
 {* else tables *}
-{* lang no_table_found *}
+{* lang database.no_table_found *}
 {* endforeach tables *}
-{* lang data *}:
+{* lang database.data *}:
 <br /><br />
 
 <ul>
-<li>{* lang inserts *}:
+<li>{* lang database.inserts *}:
 <ul>
 {* foreach data.insert *}
-<li>{* lang table *}: {* var insert.table *}</li>
+<li>{* lang database.table *}: {* var insert.table *}</li>
 <ul>
 {* foreach insert.column *}
 <li>{* var column.name *} = {* var column.value *}</li>
@@ -91,16 +91,16 @@
 </li>
 </ul>
 <ul>
-<li>{* lang updates *}:
+<li>{* lang database.updates *}:
 <ul>
 {* foreach data.update *}
-<li>{* lang table *}: {* var update.table *}</li>
+<li>{* lang database.table *}: {* var update.table *}</li>
 <ul>
 {* foreach update.column *}
 <li>{* var column.name *} = {* var column.value *}</li>
 {* endforeach update.column *}
 </ul>
-<li>{* lang where *}:</li>
+<li>{* lang database.where *}:</li>
 <ul>
 {* foreach update.where *}
 <li>{* var where.column *} == {* var where.value *}</li>
@@ -111,10 +111,10 @@
 </li>
 </ul>
 <ul>
-<li>{* lang deletes *}:
+<li>{* lang database.deletes *}:
 <ul>
 {* foreach data.delete *}
-<li>{* lang table *}: {* var delete.table *}</li>
+<li>{* lang database.table *}: {* var delete.table *}</li>
 <ul>
 {* foreach delete.where *}
 <li>{* var where.column *} == {* var where.value *}</li>

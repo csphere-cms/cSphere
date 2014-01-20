@@ -1,13 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=languages action=default.control *}
+        {* tpl default/com_header plugin=languages.languages action=default.control *}
 
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang short *}</th>
-                    <th class="text-center">{* lang language *}</th>
+                    <th>{* lang languages.short *}</th>
+                    <th class="text-center">{* lang languages.language *}</th>
                     <th class="text-center" colspan="2">{* lang default.details *}</th>
                 </tr>
             </thead><!--END table thead-->

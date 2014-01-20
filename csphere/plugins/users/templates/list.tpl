@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=users action=default.list search=users.user_name *}
+        {* tpl default/com_headsearch plugin=users.users action=default.list search=users.user_name *}
 
         <br />
 
@@ -15,7 +15,7 @@
                         <a href="{* raw order.user_since *}">{* lang default.since *}</a> {* raw arrow.user_since *}
                     </th>
                     <th>
-                        <a href="{* raw order.user_laston *}">{* lang laston *}</a> {* raw arrow.user_laston *}
+                        <a href="{* raw order.user_laston *}">{* lang users.laston *}</a> {* raw arrow.user_laston *}
                     </th>
                 </tr>
             </thead><!--END table thead-->

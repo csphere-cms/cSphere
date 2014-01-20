@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=users action=profile *}
+        {* tpl default/com_header plugin=users.users action=profile *}
 
         <br />
 

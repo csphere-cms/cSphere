@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang scriptinfo *} - cSphere CMS
+                    {* lang default.scriptinfo *} - cSphere CMS
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
         </header><!--END header-->

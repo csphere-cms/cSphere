@@ -1,12 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=themes action=default.control *}
+        {* tpl default/com_header plugin=themes.themes action=default.control *}
 
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang theme *}</th>
+                    <th>{* lang themes.theme *}</th>
                     <th class="text-center">{* lang xml.version *}</th>
                     <th class="text-center">{* lang xml.published *}</th>
                 </tr>

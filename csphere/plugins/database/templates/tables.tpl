@@ -4,8 +4,8 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang database *} - {* lang tables *}
-                    <small> - {* lang tables *}: {* var count *}</small>
+                    {* lang database.database *} - {* lang database.tables *}
+                    <small> - {* lang database.tables *}: {* var count *}</small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
         </header><!--END header-->
@@ -14,14 +14,14 @@
 
         <ul class="nav nav-tabs nav-justified">
             <li><a href="{* link database/control *}">{* lang default.control *}</a></li>
-            <li class="active"><a href="{* link database/tables *}">{* lang tables *}</a></li>
+            <li class="active"><a href="{* link database/tables *}">{* lang database.tables *}</a></li>
         </ul><!--END nav-tabs-->
 
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>{* lang xml.plugin *}</th>
-                    <th>{* lang table *}</th>
+                    <th>{* lang database.table *}</th>
                     <th class="text-center">{* lang default.records *}</th>
                 </tr>
             </thead><!--END table thead-->

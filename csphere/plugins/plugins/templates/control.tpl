@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang plugins *} - {* lang default.control *}
+                    {* lang plugins.plugins *} - {* lang default.control *}
                     <small>
                         - {* lang default.count *}: {* var count *}
                     </small>
@@ -12,7 +12,7 @@
 
                 <div class="btn-group pull-right">
                     <a href="{* link plugins/market *}" class="btn btn-primary">
-                        {* lang plugin_market *}
+                        {* lang plugins.plugin_market *}
                     </a>
                     <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownOptions" data-toggle="dropdown">
                         <span class="caret"></span>
@@ -48,7 +48,7 @@
                     <td class="text-center">{* var plugins.version *}</td>
                     <td class="text-center">{* var plugins.pub *}</td>
                     <td class="text-center">
-                        <a href="{* link plugins/delete/name/# *}">{* lang delete *}</a>
+                        <a href="{* link plugins/delete/name/# *}">{* lang plugins.delete *}</a>
                     </td>
                 </tr>
                 {* endforeach plugins *}

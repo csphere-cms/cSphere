@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang themes *} - {* lang theme *}: {* var name *}
+                    {* lang themes.themes *} - {* lang themes.theme *}: {* var name *}
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
         </header><!--END header-->
@@ -43,11 +43,11 @@
         </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang contains_designs *}:</dt>
+            <dt>{* lang themes.contains_designs *}:</dt>
             <dd>{* lang admin.admin *}: <strong>{* var contains.admin *}</strong></dd>
             <dd>{* lang install.install *}: <strong>{* var contains.install *}</strong></dd>
-            <dd>{* lang layout *}: <strong>{* var contains.layout *}</strong></dd>
-            <dd>{* lang mobile *}: <strong>{* var contains.mobile *}</strong></dd>
+            <dd>{* lang themes.layout *}: <strong>{* var contains.layout *}</strong></dd>
+            <dd>{* lang themes.mobile *}: <strong>{* var contains.mobile *}</strong></dd>
         </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
@@ -73,13 +73,13 @@
         </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang media *}:</dt>
+            <dt>{* lang themes.media *}:</dt>
             {* foreach media.preview *}
-            <dd>{* lang preview *}: <strong>{* var preview.value *}</strong></dd>
+            <dd>{* lang themes.preview *}: <strong>{* var preview.value *}</strong></dd>
             {* endforeach media.preview *}
 
             {* foreach media.thumb *}
-            <dd>{* lang thumb *}: <strong>{* var thumb.value *}</strong></dd>
+            <dd>{* lang themes.thumb *}: <strong>{* var thumb.value *}</strong></dd>
             {* endforeach media.thumb *}
         </dl><!--END dl-horizontal-->
 

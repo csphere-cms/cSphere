@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=debug action=backtrace *}
+        {* tpl default/com_header plugin=debug.debug action=debug.backtrace *}
 
         {* tpl errors/exception *}
 

@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang groups *} - {* if action == 'team' *}{* lang team *}{* else action *}{* lang default.view *}{* endif action *}
+                    {* lang groups.groups *} - {* if action == 'team' *}{* lang groups.team *}{* else action *}{* lang default.view *}{* endif action *}
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
         </header><!--END header-->
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang url *}
+                    {* lang groups.url *}
                 </th>
                 <td>
                     {* if groups.group_url == '' *}

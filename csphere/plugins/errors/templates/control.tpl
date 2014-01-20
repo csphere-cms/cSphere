@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang errors *} - {* lang default.control *}
+                    {* lang errors.errors *} - {* lang default.control *}
                     <small> - {* lang default.count *}: {* raw count *}</small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
@@ -27,7 +27,7 @@
                 {* else files *}
                 <tr>
                     <th colspan="2" class="text-center">
-                        {* lang no_file *}
+                        {* lang errors.no_file *}
                     </th>
                 </tr>
                 {* endforeach files *}
