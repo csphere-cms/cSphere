@@ -32,6 +32,12 @@
                         {* var duplicate.plugins *}
                     </td>
                 </tr>
+                {* else duplicate *}
+                <tr>
+                    <th colspan="2" class="text-center">
+                        {* lang no_duplicate *}
+                    </th>
+                </tr>
                 {* endforeach duplicate *}
             </tbody><!--END table tbody-->
         </table><!--END table-->

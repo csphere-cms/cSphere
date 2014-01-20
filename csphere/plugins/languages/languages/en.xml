@@ -23,6 +23,7 @@
         <define name="duplication">Duplication</define>
         <define name="language">Language</define>
         <define name="languages">Languages</define>
+        <define name="no_duplicate">No duplicate found</define>
         <define name="short">Short</define>
         <define name="translated">Translation</define>
         <define name="warn_missing">Missing keys</define>
