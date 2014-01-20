@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=install action=database *}
+        {* tpl default/com_header plugin=install action=db *}
 
         <br />
 

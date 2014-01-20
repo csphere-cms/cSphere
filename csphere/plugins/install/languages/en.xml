@@ -26,10 +26,10 @@
         <define name="ajax_info">Loads main content independent of other website parts</define>
         <define name="cache_info">None is for developers only. File should only be used if nothing else works.</define>
         <define name="cache_type">Cache type</define>
-        <define name="config">Configuration</define>
+        <define name="conf">Configuration</define>
         <define name="config_ok">Configuration created with success</define>
-        <define name="database">Database</define>
         <define name="database_ok">Database settings are fine</define>
+        <define name="db">Database</define>
         <define name="db_file">Filename</define>
         <define name="db_file_info">Required at SQLite, optional at LocalDB, prepend no path</define>
         <define name="db_prefix">Prefix</define>

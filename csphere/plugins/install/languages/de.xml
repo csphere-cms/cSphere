@@ -26,9 +26,9 @@
         <define name="ajax_info">Der Hauptinhalt wird damit unabhängig vom Rest der Seite erneuert</define>
         <define name="cache_info">None ist nur für Entwickler gedacht. File nur verwenden, wenn sonst nichts verfügbar ist.</define>
         <define name="cache_type">Zwischenspeicher</define>
-        <define name="config">Konfiguration</define>
+        <define name="conf">Konfiguration</define>
         <define name="config_ok">Konfiguration erfolgreich erstellt</define>
-        <define name="database">Datenbank</define>
+        <define name="db">Datenbank</define>
         <define name="database_ok">Die Datenbank-Einstellungen sind korrekt</define>
         <define name="db_file">Dateiname</define>
         <define name="db_file_info">Pflicht bei SQLite, optional bei LocalDB, ohne Pfadangabe</define>

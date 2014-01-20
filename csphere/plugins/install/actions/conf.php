@@ -20,9 +20,9 @@ $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('lang');
 $bread->add('mail');
-$bread->add('database');
+$bread->add('db');
 $bread->add('admin');
-$bread->add('config');
+$bread->add('conf');
 $bread->trace();
 
 // Get language data
@@ -155,7 +155,7 @@ if ($test === true AND $error == '') {
     // Show message to continue
     $previous = \csphere\core\url\Link::href('users', 'login');
     $plugin   = $lang['install'];
-    $action   = $lang['config'];
+    $action   = $lang['conf'];
     $message  = $lang['config_ok'];
 
     $data = array('previous'    => $previous,

@@ -20,7 +20,7 @@ $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('lang');
 $bread->add('mail');
-$bread->add('database');
+$bread->add('db');
 $bread->add('admin');
 $bread->trace();
 

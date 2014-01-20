@@ -20,7 +20,7 @@ $bread = new \csphere\core\template\Breadcrumb('install');
 
 $bread->add('lang');
 $bread->add('mail');
-$bread->add('database');
+$bread->add('db');
 $bread->trace();
 
 // Get language data
@@ -111,7 +111,7 @@ if ($test === true AND $db_error === null) {
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'admin');
     $plugin   = $lang['install'];
-    $action   = $lang['database'];
+    $action   = $lang['db'];
     $message  = $lang['database_ok'];
 
     $data = array('previous'    => $previous,
