@@ -23,7 +23,7 @@
             {* tpl default/com_input_noyes name=user_active label=active *}
             {* endif users.user_active *}
 
-            {* tpl default/com_input_adv name=user_email label=email value=users.user_email type=email holder=email *}
+            {* tpl default/com_input_adv name=user_email label=default.email value=users.user_email type=email holder=default.email *}
 
             {* if action == 'create' *}
             {* tpl default/com_input_pwd name=user_password label=default.password holder=default.password *}
