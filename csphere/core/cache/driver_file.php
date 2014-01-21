@@ -34,6 +34,11 @@ class Driver_File extends Base
     private $_dir = '';
 
     /**
+     * Files to exclude for stats
+     **/
+    private $_exclude = array('info.txt');
+
+    /**
      * Creates the cache handler object
      *
      * @param array $config Configuration details as an array
@@ -62,9 +67,9 @@ class Driver_File extends Base
      **/
     public function clear()
     {
-        $bad = array('info.txt');
-
-        $content = \csphere\core\files\File::search($this->_dir, false, $bad);
+        $content = \csphere\core\files\File::search(
+            $this->_dir, false, $this->_exclude
+        );
 
         foreach ($content AS $file) {
 
@@ -103,9 +108,31 @@ class Driver_File extends Base
 
     public function info()
     {
-        $bad = array('info.txt');
+        $info = parent::info();
 
-        $info = \csphere\core\files\File::search($this->_dir, false, $bad);
+        $files = \csphere\core\files\File::search(
+            $this->_dir, false, $this->_exclude
+        );
+
+        $info['version'] = '';
+        $info['client']  = '';
+        $info['server']  = '';
+        $info['keys']    = count($files);
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
+        $info = \csphere\core\files\File::search(
+            $this->_dir, false, $this->_exclude
+        );
 
         $form = array();
 

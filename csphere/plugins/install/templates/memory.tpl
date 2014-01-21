@@ -29,7 +29,7 @@
             <div class="cache_redis">
             {* tpl default/com_input_adv name=cache_host label=default.host value=cache.host type=text holder=install.host_info *}
 
-            {* tpl default/com_input_adv name=cache_port label=install.port value=cache.port type=text holder=install.port_info *}
+            {* tpl default/com_input_adv name=cache_port label=default.port value=cache.port type=text holder=install.port_info *}
 
             {* tpl default/com_input_pwd name=cache_pass label=default.password holder=default.password *}
 

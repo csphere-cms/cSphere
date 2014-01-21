@@ -90,6 +90,32 @@ class Driver_APC extends Base
 
     public function info()
     {
+        $info = parent::info();
+
+        $stats = apc_cache_info('user');
+
+        $info['version'] = phpversion('apc');
+        $info['client']  = '';
+        $info['server']  = '';
+        $info['keys']    = count($stats['cache_list']);
+
+        // Check for apcu
+        if (extension_loaded('apcu')) {
+
+            $info['client'] = 'apcu ' . phpversion('apcu');
+        }
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
         $form = array();
 
         $info = apc_cache_info('user');

@@ -93,6 +93,24 @@ class Driver_Xcache extends Base
 
     public function info()
     {
+        $info = parent::info();
+
+        $info['version'] = phpversion('xcache');
+        $info['client']  = '';
+        $info['server']  = '';
+        $info['keys']    = xcache_count(XC_TYPE_VAR);
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
         $form = array();
 
         $cache_count = xcache_count(XC_TYPE_VAR);

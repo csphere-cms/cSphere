@@ -58,7 +58,22 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return array
      **/
 
-    abstract public function info();
+    public function info()
+    {
+        $info = $this->config;
+
+        unset($info['password'], $info['timeout']);
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    abstract public function keys();
 
     /**
      * Fetches the desired key

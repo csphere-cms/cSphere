@@ -70,6 +70,24 @@ class Driver_None extends Base
 
     public function info()
     {
+        $info = parent::info();
+
+        $info['version'] = '';
+        $info['client']  = '';
+        $info['server']  = '';
+        $info['keys']    = count($this->_history);
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
         $time = time();
         $info = array();
 

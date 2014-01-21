@@ -116,6 +116,26 @@ class Driver_Redis extends Base
 
     public function info()
     {
+        $info = parent::info();
+
+        $redis_info = $this->_redis->info();
+
+        $info['version'] = phpversion('redis');
+        $info['client']  = $info['version'];
+        $info['server']  = $redis_info['redis_version'];
+        $info['keys']    = $this->_redis->dbSize();
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
         $form = array();
 
         // Time request may not work in all cases

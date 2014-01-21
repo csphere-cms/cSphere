@@ -14,15 +14,15 @@
                 <td>{* var driver *}</td>
             </tr>
             <tr>
-                <th>{* lang database.version_driver *}</th>
+                <th>{* lang default.version_driver *}</th>
                 <td>{* var version *}</td>
             </tr>
             <tr>
-                <th>{* lang database.version_client *}</th>
+                <th>{* lang default.version_client *}</th>
                 <td>{* var client *}</td>
             </tr>
             <tr>
-                <th>{* lang database.version_server *}</th>
+                <th>{* lang default.version_server *}</th>
                 <td>{* var server *}</td>
             </tr>
             <tr>

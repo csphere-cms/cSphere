@@ -42,9 +42,6 @@
         <define name="uninstall_ok">Tables and options removed with success</define>
         <define name="uniques">Uniques</define>
         <define name="updates">Updates</define>
-        <define name="version_client">Client version</define>
-        <define name="version_driver">Driver version</define>
-        <define name="version_server">Server version</define>
         <define name="where">Where</define>
     </definitions>
 </language>

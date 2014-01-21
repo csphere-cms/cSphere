@@ -88,6 +88,26 @@ class Driver_Wincache extends Base
 
     public function info()
     {
+        $info = parent::info();
+
+        $stats = wincache_ucache_info();
+
+        $info['version'] = phpversion('wincache');
+        $info['client']  = '';
+        $info['server']  = '';
+        $info['keys']    = $stats['total_item_count'];
+
+        return $info;
+    }
+
+    /**
+     * Returns a formatted array with all keys and additional information
+     *
+     * @return array
+     **/
+
+    public function keys()
+    {
         $form = array();
 
         $info = wincache_ucache_info();

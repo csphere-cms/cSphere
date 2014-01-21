@@ -46,6 +46,7 @@
         <define name="page">Seite</define>
         <define name="password">Passwort</define>
         <define name="plugins">Plugins</define>
+        <define name="port">Port</define>
         <define name="record_cancel">Datensatz unverändert belassen</define>
         <define name="record_deleted">Datensatz mit Erfolg entfernt</define>
         <define name="record_success">Datensatz mit Erfolg bearbeitet</define>
@@ -60,6 +61,9 @@
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
         <define name="uninstall">Deinstallieren</define>
+        <define name="version_client">Client Version</define>
+        <define name="version_driver">Treiber Version</define>
+        <define name="version_server">Server Version</define>
         <define name="view">Ansicht</define>
         <define name="yes">Ja</define>
     </definitions>

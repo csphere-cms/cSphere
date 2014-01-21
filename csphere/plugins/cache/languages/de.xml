@@ -24,6 +24,7 @@
         <define name="clear">Cache leeren</define>
         <define name="clear_ok">Cache mit Erfolg geleert</define>
         <define name="key">Schlüssel</define>
+        <define name="keys">Keys</define>
         <define name="no_entry">Kein Eintrag gefunden</define>
     </definitions>
 </language>

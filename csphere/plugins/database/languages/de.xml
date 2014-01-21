@@ -42,9 +42,6 @@
         <define name="uninstall_ok">Tabellen und Optionen mit Erfolg entfernt</define>
         <define name="uniques">Einzigartig</define>
         <define name="updates">Änderungen</define>
-        <define name="version_client">Client Version</define>
-        <define name="version_driver">Treiber Version</define>
-        <define name="version_server">Server Version</define>
         <define name="where">Bedingung</define>
     </definitions>
 </language>
