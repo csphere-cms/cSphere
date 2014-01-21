@@ -22,9 +22,8 @@ $bread->add('control');
 $bread->trace();
 
 // Collect server information
-$database       = $loader->load('database');
-$data           = $database->info();
-$data['driver'] = $database->driver();
+$database = $loader->load('database');
+$data     = $database->info();
 
 // Format size if it is an iteger
 if (is_integer($data['size'])) {
