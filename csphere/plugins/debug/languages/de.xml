@@ -26,7 +26,7 @@
         <define name="debug">Debug</define>
         <define name="includes">Includes</define>
         <define name="logs">Logs</define>
-        <define name="memory">Speicher</define>
+        <define name="memory_usage">Speicher</define>
         <define name="ms">ms</define>
         <define name="parsetime">Ladezeit</define>
     </definitions>

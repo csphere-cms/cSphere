@@ -28,7 +28,7 @@
                 <ul class="nav navbar-nav navbar-debug navbar-right">
                     <li class="navbar-text">PHP {* raw php_short *}</li>
                     <li class="navbar-text">{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}</li>
-                    <li class="navbar-text">{* lang debug.memory *}: {* raw memory *}</li>
+                    <li class="navbar-text">{* lang debug.memory_usage *}: {* raw memory *}</li>
                 </ul><!--END csphere-debug navigation navbar-nav-->
             </nav><!--END csphere-debug navigation-->
 
