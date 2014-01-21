@@ -24,6 +24,6 @@
         <needed vendor="csphere" plugin="users" version_min="0.1" />
     </environment>
     <entries>
-        <target vendor="csphere" plugin="admin" action="system" />
+        <target vendor="csphere" plugin="admin" action="content" />
     </entries>
 </plugin>
