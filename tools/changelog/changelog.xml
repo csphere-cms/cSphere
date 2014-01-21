@@ -3,6 +3,28 @@
     xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/changelog.xsd">
     <history type="system" name="csphere" />
     <updates>
+        <update version="2013.0-beta9" published="2014-01-21" compatible="">
+            <information>Github name changed from csphere-dev to csphere-cms</information>
+            <instructions>Scrutinizer is now linked inside the readme file</instructions>
+            <added>
+                <item author="hajo" source="">Added environment plugin that replaces stats of debug plugin</item>
+                <item author="hajo" source="">Added important config flags to mail core info method</item>
+                <item author="hajo" source="">Added install plugin support for mail and cache configuration</item>
+                <item author="alci" source="">Added link to plugin market at plugins overview</item>
+                <item author="hajo" source="">Added jQuery 2.1.0-rc1 and removed old version</item>
+                <item author="hajo" source="">Added redis support to core cache drivers</item>
+            </added>
+            <reworked>
+                <item author="hajo" source="">Reworked cache core and plugin for more details and separated keylist</item>
+                <item author="hajo" source="">Reworked error messages to use the same tpl file everywhere</item>
+                <item author="hajo" source="">Reworked git config files to ignore and exclude more files</item>
+                <item author="hajo" source="">Reworked install plugin for less duplicated code</item>
+                <item author="hajo" source="">Reworked language file problem detections in languages plugin</item>
+                <item author="hajo" source="">Reworked service loader to contain a fallback switch</item>
+                <item author="equal" source="">Reworked theme and plugin template files</item>
+                <item author="hajo" source="">Reworked translation files for much less duplicated content</item>
+            </reworked>
+        </update>
         <update version="2013.0-beta8" published="2014-01-14" compatible="">
             <information>Improved quality assurence possibilities</information>
             <instructions>PHP code and language XML files can now easily be checked in many ways</instructions>
