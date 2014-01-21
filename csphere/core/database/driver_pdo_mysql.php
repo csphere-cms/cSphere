@@ -159,6 +159,9 @@ class Driver_PDO_MYSQL extends Base
             $info['size'] += $table['Data_length'];
         }
 
+        // Shorten mysqlnd client version
+        $info['client'] = explode('$Id', $info['client'])[0];
+
         return $info;
     }
 }

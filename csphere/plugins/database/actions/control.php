@@ -32,9 +32,6 @@ if (is_integer($data['size'])) {
     $data['size'] = \csphere\core\files\File::size($data['size']);
 }
 
-// Shorten client version
-$data['client'] = explode('$Id', $data['client'])[0];
-
 // Output results
 $view = $loader->load('view');
 
