@@ -33,7 +33,7 @@
         <define name="icon">Icon</define>
         <define name="license">Lizenz</define>
         <define name="php_required">Benötigte PHP Version</define>
-        <define name="php_extensions">Benötigte PHP Erweiterungen</define>
+        <define name="php_extensions">PHP Erweiterungen</define>
         <define name="plugin">Plugin</define>
         <define name="published">Veröffentlich am</define>
         <define name="until">bis</define>
