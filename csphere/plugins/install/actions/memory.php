@@ -82,10 +82,7 @@ if ($test === true AND $cache_error === null) {
     // Save cache settings to session
     $session = new \csphere\core\session\Session();
 
-    foreach ($cache AS $key => $value) {
-
-        $session->set('cache_' . $key, $value);
-    }
+    $session->set('cache_config', serialize($cache));
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'conf');

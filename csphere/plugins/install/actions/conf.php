@@ -56,36 +56,22 @@ if (isset($post['csphere_form'])) {
         $session = new \csphere\core\session\Session();
 
         // Get cache data
-        $cache_config = array();
-        $cache_data   = array('driver', 'host', 'password', 'port', 'timeout');
-
-        foreach ($cache_data AS $key) {
-
-            $cache_config[$key] = $session->get('cache_' . $key);
-        }
+        $cache_config = $session->get('cache_config');
+        $length       = strlen($cache_config);
+        $cache_config = ($length > 2) ? unserialize($cache_config) : array();
 
         // Get mail data
-        $mail_config = array();
-        $mail_data   = array('driver', 'host', 'username', 'password', 'port',
-                             'timeout', 'newline', 'from', 'subject');
+        $mail_config = $session->get('mail_config');
+        $length      = strlen($mail_config);
+        $mail_config = ($length > 2) ? unserialize($mail_config) : array();
 
-        foreach ($mail_data AS $key) {
+        // Get db data
+        $db_config = $session->get('db_config');
+        $length    = strlen($db_config);
+        $db_config = ($length > 2) ? unserialize($db_config) : array();
 
-            $mail_config[$key] = $session->get('mail_' . $key);
-        }
-
-        // Get database connection data
-        $db_config = array();
-        $db_data   = array('driver', 'host', 'username', 'password',
-                           'prefix', 'schema', 'file');
-
-        foreach ($db_data AS $key) {
-
-            $db_config[$key] = $session->get('db_' . $key);
-        }
-
-        // Establish connection
-        $driver = $db_config['driver'];
+        // Get db driver
+        $driver = isset($db_config['driver']) ? $db_config['driver'] : '';
 
         if (empty($driver)) {
 
@@ -106,8 +92,11 @@ if (isset($post['csphere_form'])) {
             }
         }
 
+        // Get cache driver
+        $driver = isset($cache_config['driver']) ? $cache_config['driver'] : '';
+
         // Check if cache driver is working
-        $ch_test = $loader->load('cache', $cache_config['driver'], $cache_config);
+        $ch_test = $loader->load('cache', $driver, $cache_config);
         $result  = $ch_test->driver();
 
         if ($result != $cache_config['driver']) {

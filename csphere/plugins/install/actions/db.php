@@ -102,10 +102,7 @@ if ($test === true AND $db_error === null) {
     // Save database settings to session
     $session = new \csphere\core\session\Session();
 
-    foreach ($db AS $key => $value) {
-
-        $session->set('db_' . $key, $value);
-    }
+    $session->set('db_config', serialize($db));
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'webmaster');

@@ -52,20 +52,16 @@ if (isset($post['csphere_form'])) {
         // Store admin user inside database
         try {
 
-            // Get database connection data
+            // Get session for configuration data contents
             $session = new \csphere\core\session\Session();
 
-            $db_config = array();
-            $db_data   = array('driver', 'host', 'username', 'password',
-                               'prefix', 'schema', 'file');
-
-            foreach ($db_data AS $key) {
-
-                $db_config[$key] = $session->get('db_' . $key);
-            }
+            // Get database connection data
+            $db_config = $session->get('db_config');
+            $length    = strlen($db_config);
+            $db_config = ($length > 2) ? unserialize($db_config) : array();
 
             // Establish connection
-            $driver = $db_config['driver'];
+            $driver = isset($db_config['driver']) ? $db_config['driver'] : '';
 
             if (empty($driver)) {
 

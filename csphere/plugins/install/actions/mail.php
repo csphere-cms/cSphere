@@ -90,10 +90,7 @@ if ($test === true AND $mail_error === null) {
     // Save mail settings to session
     $session = new \csphere\core\session\Session();
 
-    foreach ($mail AS $key => $value) {
-
-        $session->set('mail_' . $key, $value);
-    }
+    $session->set('mail_config', serialize($mail));
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'memory');
