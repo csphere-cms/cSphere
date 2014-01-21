@@ -229,10 +229,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
         $info['client']  = $this->con->getAttribute(\PDO::ATTR_CLIENT_VERSION);
         $info['server']  = $this->con->getAttribute(\PDO::ATTR_SERVER_VERSION);
-        $info['version'] = phpversion($this->config['driver']);
-
-        $info['host']   = isset($config['host']) ? $config['host']: '';
-        $info['schema'] = isset($config['schema']) ? $config['schema']: '';
+        $info['version'] = phpversion($info['driver']);
 
         return $info;
     }
