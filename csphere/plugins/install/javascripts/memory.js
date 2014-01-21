@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
     // Change visible input fields depending on selected driver
     $(window).on("load change", function() {
 
-        var type = $("#inputCacheDriver").val();
+        var type = $("#cache_driver").val();
 
         if (type == "redis") {
 

@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
     // Change visible input fields depending on selected driver
     $(window).on("load change", function() {
 
-        var type = $("#inputDatabaseDriver").val();
+        var type = $("#database_driver").val();
 
         if (type == "pdo_sqlite") {
 
