@@ -39,6 +39,11 @@ abstract class Prepare
     private static $_plugin = array('com' => 0, 'lang' => 1, 'tpl' => 2);
 
     /**
+     * List of commands that can be skipped at hooks
+     **/
+    private static $_skip = array('page' => 0, 'debug' => 1,);
+
+    /**
      * Prepares nested array targets
      *
      * @param array $part Placeholder cmd and key, maybe even more
@@ -224,14 +229,12 @@ abstract class Prepare
      * @param string $plugin Name of the plugin for tpl files
      * @param array  $coms   Array of commands to replace with others
      *
-     * @throws \Exception
-     *
      * @return array
      **/
 
     public static function hooks($cmd, $key, $plugin, array $coms)
     {
-        // Combine array and add plugin to lang and help
+        // Combine array and add plugin if required by placeholder
         $next = array('cmd' => $cmd, 'key' => $key);
 
         if (isset(self::$_plugin[$cmd])) {
@@ -239,16 +242,12 @@ abstract class Prepare
             $next['plugin'] = $plugin;
         }
 
-        // Report a problem or run sub array for vars or run cmd prepare
-        if ($cmd == 'if' OR $cmd == 'foreach') {
-
-            throw new \Exception('Command "' . $cmd . '" damaged: ' . $key);
-
-        } elseif (isset(self::$_var[$cmd])) {
+        // Run sub array for vars or run cmd prepare
+        if (isset(self::$_var[$cmd])) {
 
             $next = self::sub($next);
 
-        } elseif ($cmd != 'page' AND $cmd != 'debug') {
+        } elseif (!isset(self::$_skip[$cmd])) {
 
             $next = \csphere\core\template\CMD_Prepare::$cmd($next, $coms);
         }

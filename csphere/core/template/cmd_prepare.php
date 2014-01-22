@@ -43,7 +43,7 @@ abstract class CMD_Prepare
     {
         unset($arguments);
 
-        throw new \Exception('Command unknown: ' . $name);
+        throw new \Exception('Command unknown or damaged: ' . $name);
     }
 
     /**
