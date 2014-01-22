@@ -26,7 +26,7 @@ namespace csphere\core\database;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_PDO_SQLSRV extends Base
+class Driver_PDO_SQLSRV extends Base_PDO
 {
     /**
      * Creates the database handler object
@@ -47,31 +47,19 @@ class Driver_PDO_SQLSRV extends Base
             throw new \Exception('Extension "pdo_sqlsrv" not found');
         }
 
-        // Set prefix for tables
-        $this->prefix = $this->config['prefix'];
-    }
-
-    /**
-     * Establishes the connection with the database
-     *
-     * @return void
-     **/
-
-    protected function connect()
-    {
-        $dsn = empty($this->config['host']) ? '' :
-               'server=' . $this->config['host'] . '; ';
+        $dsn = empty($config['host']) ? '' :
+               'server=' . $config['host'] . '; ';
 
         // This adds support for passing the db file thats used
-        if (!empty($this->config['file'])) {
+        if (!empty($config['file'])) {
 
             $file = \csphere\core\init\path()
-                  . 'csphere/database/' . $this->config['file'];
+                  . 'csphere/database/' . $config['file'];
 
             $dsn .= 'AttachDBFileName=' . $file . '; ';
         }
 
-        $dsn .= 'Database=' . $this->config['schema'];
+        $dsn .= 'Database=' . $config['schema'];
 
         $options = array();
 
@@ -79,8 +67,8 @@ class Driver_PDO_SQLSRV extends Base
         try {
 
             $this->con = new \PDO(
-                'sqlsrv:' . $dsn, $this->config['username'],
-                $this->config['password'], $options
+                'sqlsrv:' . $dsn, $config['username'],
+                $config['password'], $options
             );
 
             $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

@@ -31,17 +31,31 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Stores the logger object
      **/
-    private $_logger = null;
-
-    /**
-     * Stores the database connection
-     **/
-    protected $con = null;
+    protected $logger = null;
 
     /**
      * Stores the database prefix
      **/
     protected $prefix = '';
+
+    /**
+     * Creates the database handler object
+     *
+     * @param array $config Configuration details as an array
+     *
+     * @return \csphere\core\database\Base
+     **/
+
+    public function __construct(array $config)
+    {
+        parent::__construct($config);
+
+        // Set prefix for tables
+        $this->prefix = $this->config['prefix'];
+
+        // Set logger object
+        $this->logger = $this->loader->load('logs');
+    }
 
     /**
      * Logs database queries
@@ -53,56 +67,19 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return void
      **/
 
-    private function _log($query, array $assoc, $log = true)
+    protected function log($query, array $assoc, $log = true)
     {
         // Replace assoc data to make queries readable
         if ($assoc != array()) {
 
             foreach ($assoc AS $key => $value) {
 
-                $query = str_replace(':' . $key, '\'' . $value . '\'', $query);
+                $query = str_replace($key, '\'' . $value . '\'', $query);
             }
         }
 
-        $this->_logger->log('database', $query, $log);
+        $this->logger->log('database', $query, $log);
     }
-
-    /**
-     * Check connection and transform data
-     *
-     * @param array $assoc Array with columns and values
-     *
-     * @return array
-     **/
-
-    private function _start(array $assoc = array())
-    {
-        // Establish lazy connection if not done already
-        if (!is_object($this->con)) {
-
-            $this->connect();
-
-            $this->_logger = $this->loader->load('logs');
-        }
-
-        // Rewrite assoc array to use named placeholders
-        $data = array();
-
-        foreach ($assoc AS $key => $value) {
-
-            $data[':' . $key] = $value;
-        }
-
-        return $data;
-    }
-
-    /**
-     * Establishes the connection with the database
-     *
-     * @return void
-     **/
-
-    abstract protected function connect();
 
     /**
      * Handles errors for the database connection
@@ -120,13 +97,6 @@ abstract class Base extends \csphere\core\service\Drivers
     protected function error($query, array $assoc, $msg = '', $more = true)
     {
         // Check for error message if not provided
-        if (empty($msg)) {
-
-            $info = $this->con->errorInfo();
-
-            $msg = isset($info[2]) ? $info[2] : $info;
-        }
-
         $error = empty($msg) ? 'Unknown' : $msg;
 
         if ($more === true) {
@@ -152,6 +122,37 @@ abstract class Base extends \csphere\core\service\Drivers
     }
 
     /**
+     * Returns a formatted array with statistics
+     *
+     * @return array
+     **/
+
+    public function info()
+    {
+        // Build array with information to return
+        $info = $this->config;
+
+        unset($info['password'], $info['file']);
+
+        $more = array('version' => '', 'client' => '', 'server' => '',
+                      'size' => '', 'encoding' => '', 'tables' => '');
+
+        $info = array_merge($info, $more);
+
+        return $info;
+    }
+
+    /**
+     * Handle database driver specific transactions
+     *
+     * @param string $command One of these strings: begin, commit, rollback
+     *
+     * @return boolean
+     **/
+
+    abstract public function transaction($command);
+
+    /**
      * Sends a command to the database and gets the affected rows
      *
      * @param string  $prepare  Prepared query string with placeholders
@@ -163,120 +164,9 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return integer
      **/
 
-    public function exec(
+    abstract public function exec(
         $prepare, array $assoc, $replace = false, $insertid = false, $log = true
-    ) {
-        // Check connection and transform data array
-        $data = $this->_start($assoc);
-
-        // Apply replaces if required
-        if (!empty($replace)) {
-
-            $prepare = $this->replace($prepare);
-        }
-
-        $prepare = str_replace('{pre}', $this->prefix . '_', $prepare);
-
-        // Prepare and execute the statement
-        $result = 0;
-
-        $sth = $this->con->prepare($prepare);
-
-        if (is_object($sth)) {
-
-            try {
-
-                $sth->execute($data);
-            }
-            catch (\PDOException $pdo_error) {
-
-                $this->error($prepare, $assoc, $pdo_error->getMessage());
-            }
-
-            // Determine what to return
-            if (empty($insertid)) {
-
-                $result = $sth->rowCount();
-            } else {
-
-                $result = $this->con->lastInsertId();
-            }
-        } else {
-
-            $this->error($prepare, $assoc);
-        }
-
-        $this->_log($prepare, $assoc, $log);
-
-        return $result;
-    }
-
-    /**
-     * Returns a formatted array with statistics
-     *
-     * @return array
-     **/
-
-    public function info()
-    {
-        // Check connection
-        $this->_start();
-
-        // Build array with information to return
-        $info = $this->config;
-
-        unset($info['password'], $info['file']);
-
-        $info['client']  = $this->con->getAttribute(\PDO::ATTR_CLIENT_VERSION);
-        $info['server']  = $this->con->getAttribute(\PDO::ATTR_SERVER_VERSION);
-        $info['version'] = phpversion($info['driver']);
-
-        return $info;
-    }
-
-    /**
-     * Handle PDO based transactions
-     *
-     * @param string $command One of these strings: begin, commit, rollback
-     *
-     * @return boolean
-     **/
-
-    public function transaction($command)
-    {
-        // Establish lazy connection if not done already
-        if (!is_object($this->con)) {
-
-            $this->connect();
-        }
-
-        // Execute requested command
-        if ($command == 'commit') {
-
-            $result = $this->con->commit();
-
-        } elseif ($command == 'rollback') {
-
-            $result = $this->con->rollBack();
-
-        } else {
-
-            $result = $this->con->beginTransaction();
-        }
-
-        return $result;
-    }
-
-    /**
-     * Builds the query string part for limit and offset
-     *
-     * @param integer $first Number of the first dataset to show
-     * @param integer $max   Number of datasets to show from first on
-     *
-     * @return string
-     **/
-
-    abstract protected function limits($first, $max);
+    );
 
     /**
      * Sends a query to the database and fetches the result
@@ -289,66 +179,5 @@ abstract class Base extends \csphere\core\service\Drivers
      * @return array
      **/
 
-    public function query($prepare, array $assoc, $first = 0, $max = 1)
-    {
-        // Check connection and transform data array
-        $data = $this->_start($assoc);
-
-        // Attach limit vars first and max
-        if ($first != 0 OR $max != 0) {
-
-            $prepare .= ' ' . $this->limits($first, $max);
-        }
-
-        $prepare = str_replace('{pre}', $this->prefix . '_', $prepare);
-
-        // Prepare and execute the statement
-        $result = array();
-
-        $sth = $this->con->prepare($prepare);
-
-        if (is_object($sth)) {
-
-            try {
-
-                $sth->execute($data);
-            }
-            catch (\PDOException $pdo_error) {
-
-                $this->error($prepare, $assoc, $pdo_error->getMessage());
-            }
-
-            // Determine what to return
-            if ($max == 1) {
-
-                $result = $sth->fetch(\PDO::FETCH_ASSOC);
-
-                if (!is_array($result)) {
-
-                    $result = ($result === false) ? array() : array($result);
-                }
-
-            } else {
-
-                $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
-            }
-        } else {
-
-            $this->error($prepare, $assoc);
-        }
-
-        $this->_log($prepare, $assoc, false);
-
-        return $result;
-    }
-
-    /**
-     * Replaces driver specific query placeholders
-     *
-     * @param string $replace The string to use for replaces
-     *
-     * @return string
-     **/
-
-    abstract protected function replace($replace);
+    abstract public function query($prepare, array $assoc, $first = 0, $max = 1);
 }

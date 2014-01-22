@@ -26,7 +26,7 @@ namespace csphere\core\database;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_PDO_SQLITE extends Base
+class Driver_PDO_SQLITE extends Base_PDO
 {
     /**
      * Creates the database handler object
@@ -47,20 +47,8 @@ class Driver_PDO_SQLITE extends Base
             throw new \Exception('Extension "pdo_sqlite" not found');
         }
 
-        // Set prefix for tables
-        $this->prefix = $this->config['prefix'];
-    }
-
-    /**
-     * Establishes the connection with the database
-     *
-     * @return void
-     **/
-
-    protected function connect()
-    {
         $file = \csphere\core\init\path()
-              . 'csphere/storage/database/' . $this->config['file'];
+              . 'csphere/storage/database/' . $config['file'];
 
         $options = array();
 

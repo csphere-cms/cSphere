@@ -26,7 +26,7 @@ namespace csphere\core\database;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_PDO_PGSQL extends Base
+class Driver_PDO_PGSQL extends Base_PDO
 {
     /**
      * Creates the database handler object
@@ -47,22 +47,10 @@ class Driver_PDO_PGSQL extends Base
             throw new \Exception('Extension "pdo_pgsql" not found');
         }
 
-        // Set prefix for tables
-        $this->prefix = $this->config['prefix'];
-    }
+        $dsn = empty($config['host']) ? '' :
+               'host=' . $config['host'] . ';';
 
-    /**
-     * Establishes the connection with the database
-     *
-     * @return void
-     **/
-
-    protected function connect()
-    {
-        $dsn = empty($this->config['host']) ? '' :
-               'host=' . $this->config['host'] . ';';
-
-        $dsn .= 'dbname=' . $this->config['schema'];
+        $dsn .= 'dbname=' . $config['schema'];
 
         $options = array();
 
@@ -70,8 +58,7 @@ class Driver_PDO_PGSQL extends Base
         try {
 
             $this->con = new \PDO(
-                'pgsql:' . $dsn, $this->config['username'],
-                $this->config['password'], $options
+                'pgsql:' . $dsn, $config['username'], $config['password'], $options
             );
 
             $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -90,14 +77,8 @@ class Driver_PDO_PGSQL extends Base
      * @return integer
      **/
 
-    public function insertId()
+    protected function insertId()
     {
-        // Establish lazy connection if not done already
-        if (!is_object($this->con)) {
-
-            $this->connect();
-        }
-
         // PDO method lastinsertid is not working for PGSQL
         $sth = $this->con->query('SELECT LASTVAL()');
 

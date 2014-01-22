@@ -26,7 +26,7 @@ namespace csphere\core\database;
  * @link      http://www.csphere.eu
  **/
 
-class Driver_PDO_MYSQL extends Base
+class Driver_PDO_MYSQL extends Base_PDO
 {
     /**
      * Creates the database handler object
@@ -47,22 +47,10 @@ class Driver_PDO_MYSQL extends Base
             throw new \Exception('Extension "pdo_mysql" not found');
         }
 
-        // Set prefix for tables
-        $this->prefix = $this->config['prefix'];
-    }
+        $dsn = empty($config['host']) ? '' :
+               'host=' . $config['host'] . ';';
 
-    /**
-     * Establishes the connection with the database
-     *
-     * @return void
-     **/
-
-    protected function connect()
-    {
-        $dsn = empty($this->config['host']) ? '' :
-               'host=' . $this->config['host'] . ';';
-
-        $dsn .= 'dbname=' . $this->config['schema'];
+        $dsn .= 'dbname=' . $config['schema'];
 
         $options = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
 
@@ -70,8 +58,7 @@ class Driver_PDO_MYSQL extends Base
         try {
 
             $this->con = new \PDO(
-                'mysql:' . $dsn, $this->config['username'],
-                $this->config['password'], $options
+                'mysql:' . $dsn, $config['username'], $config['password'], $options
             );
 
             $this->con->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

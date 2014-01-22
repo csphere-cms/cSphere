@@ -29,71 +29,55 @@ namespace csphere\core\database;
 class Driver_None extends Base
 {
     /**
-     * Establishes the connection with the database
+     * Handle database driver specific transactions
      *
-     * @return void
+     * @param string $command One of these strings: begin, commit, rollback
+     *
+     * @return boolean
      **/
 
-    protected function connect()
+    public function transaction($command)
     {
-        $this->con = new \csphere\core\database\Mockup();
+        unset($command);
+
+        return false;
     }
 
     /**
-     * Builds the query string part for limit and offset
+     * Sends a command to the database and gets the affected rows
      *
-     * @param integer $first Number of the first dataset to show
-     * @param integer $max   Number of datasets to show from first on
+     * @param string  $prepare  Prepared query string with placeholders
+     * @param array   $assoc    Array with columns and values
+     * @param boolean $replace  If more than {pre} needs to be replaced
+     * @param boolean $insertid Return the last insert id instead of a rowcount
+     * @param boolean $log      Defaults to true which enables log files if used
      *
-     * @return string
+     * @return integer
      **/
 
-    protected function limits($first, $max)
-    {
-        $string = 'LIMIT ' . (int)$max . ' OFFSET ' . (int)$first;
+    public function exec(
+        $prepare, array $assoc, $replace = false, $insertid = false, $log = true
+    ) {
+        unset($prepare, $assoc, $replace, $insertid, $log);
 
-        return $string;
+        return 0;
     }
 
     /**
-     * Replaces driver specific query placeholders
+     * Sends a query to the database and fetches the result
      *
-     * @param string $replace The string to use for replaces
+     * @param string  $prepare Prepared query string with placeholders
+     * @param array   $assoc   Array with columns and values
+     * @param integer $first   Number of the first dataset to show
+     * @param integer $max     Number of datasets to show from first on
      *
-     * @return string
+     * @return array
      **/
 
-    protected function replace($replace)
+    public function query($prepare, array $assoc, $first = 0, $max = 1)
     {
-        $change_none = array('{engine}' => '',
-                             '{integer}' => 'integer',
-                             '{optimize}' => 'OPTIMIZE',
-                             '{serial}' => 'serial',
-                             '{text}' => 'text',
-                             '{varchar}' => 'varchar'
-        );
+        unset($prepare, $assoc, $first, $max);
 
-        foreach ($change_none AS $key => $none) {
-
-            $replace = str_replace($key, $none, $replace);
-        }
-
-        return $replace;
-    }
-
-    /**
-     * Handles errors for the database connection
-     *
-     * @param string  $query The database query for this case
-     * @param array   $assoc Array with columns and values
-     * @param string  $msg   The error message if already known
-     * @param boolean $more  Append query and and data to message
-     *
-     * @return void
-     **/
-
-    protected function error($query, array $assoc, $msg = '', $more = true)
-    {
-        unset($query, $assoc, $msg, $more);
+        return array();
     }
 }
