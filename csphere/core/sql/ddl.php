@@ -88,42 +88,56 @@ abstract class DDL
 
         foreach ($columns AS $column) {
 
-            // Some column types may have a limit in length
-            $max  = '';
-            $type = $column['datatype'];
-
-            if ($type == 'serial') {
+            // Count serials since one is required
+            if ($column['datatype'] == 'serial') {
 
                 $serial++;
             }
 
-            if (!empty($column['max'])
-                AND ($type == 'integer' OR $type == 'varchar')
-            ) {
-
-                $max = '(' . (int)$column['max'] . ')';
-            }
-
-            // Some columns might provide a default value
-            $default = ' NOT NULL';
-
-            if (isset($column['default']) AND $column['default'] != '') {
-
-                $default .= ' DEFAULT \'' . $column['default'] . '\'';
-            }
-
-            $query .= $column['name']
-                    . ' {' . $type . '}'
-                    . $max . $default . ', ';
+            $query .= self::_createColumnPart($column) . ', ';
         }
 
-        // Every table needs exactly one serial
+        // Check if there is exactly one serial
         if ($serial != 1) {
 
             $msg = 'Need exactly one serial column, but found: ' . $serial;
 
             throw new \Exception($msg);
         }
+
+        return $query;
+    }
+
+    /**
+     * Creates the part of a single column
+     *
+     * @param array $column Array with column details
+     *
+     * @return string
+     **/
+
+    private static function _createColumnPart(array $column)
+    {
+        // Some column types may have a limit in length
+        $max  = '';
+
+        if (!empty($column['max']) AND $column['datatype'] == 'varchar') {
+
+            $max = '(' . (int)$column['max'] . ')';
+        }
+
+        // Some columns might provide a default value
+        $default = ' NOT NULL';
+
+        if (isset($column['default']) AND $column['default'] != '') {
+
+            $default .= ' DEFAULT \'' . $column['default'] . '\'';
+        }
+
+        // Generate query part
+        $query = $column['name']
+               . ' {' . $column['datatype'] . '}' . $max
+               . $default;
 
         return $query;
     }
