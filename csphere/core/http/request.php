@@ -49,17 +49,9 @@ abstract class Request
         $request['dirname'] = str_replace('\\', '/', $request['dirname']);
         $request['dirname'] = rtrim($request['dirname'], '/') . '/';
 
-        // Get current dns with protocol and port
-        $request['protocol'] = 'http';
+        $request['protocol'] = self::_protocol($server);
 
-        if (isset($server['HTTPS'])
-            AND $server['HTTPS'] == 'on'
-            OR isset($server['HTTP_X_FORWARDED_PROTO'])
-            AND $server['HTTP_X_FORWARDED_PROTO'] == 'https'
-        ) {
-            $request['protocol'] .= 's';
-        }
-
+        // Get current dns and port
         $request['dns'] = $server['HTTP_HOST'];
         $request['port'] = '';
 
@@ -80,6 +72,30 @@ abstract class Request
         }
 
         return $request;
+    }
+
+    /**
+     * Determine request protocol
+     *
+     * @param array $server Content of predefined server data
+     *
+     * @return array
+     **/
+
+    private static function _protocol(array $server)
+    {
+        $protocol = 'http';
+
+        // Protocol could be forwarded by one webserver
+        if (isset($server['HTTPS'])
+            AND $server['HTTPS'] == 'on'
+            OR isset($server['HTTP_X_FORWARDED_PROTO'])
+            AND $server['HTTP_X_FORWARDED_PROTO'] == 'https'
+        ) {
+            $protocol .= 's';
+        }
+
+        return $protocol;
     }
 
     /**
