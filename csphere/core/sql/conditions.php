@@ -36,8 +36,8 @@ abstract class Conditions
     /**
      * Generate conditional parts of queries
      *
-     * @param array  $conditions Conditions with column, operation and value
-     * @param string $having     This defines if having or where parts are parsed
+     * @param array   $conditions Conditions with column, operation and value
+     * @param boolean $having     This defines if having or where parts are parsed
      *
      * @return array
      **/
