@@ -187,14 +187,14 @@ class Backtrace
             $args = $this->_formatCall($args);
         }
 
-        if (empty($trace[$back]['class'])) {
+        if (isset($trace[$back]['class'])) {
 
-            $trace[$back]['class'] = '';
+            $call .= $trace[$back]['class'];
         }
 
-        if (isset($trace[$back]['class']) AND isset($trace[$back]['type'])) {
+        if (isset($trace[$back]['type'])) {
 
-            $call = $trace[$back]['class'] . $trace[$back]['type'];
+            $call .= $trace[$back]['type'];
         }
 
         // Some rare cases have no file and line details
@@ -204,22 +204,39 @@ class Backtrace
             $trace[$back]['line'] = '';
         }
 
-        // Shorten and style file names
-        $trace[$back]['file'] = str_replace('\\', '/', $trace[$back]['file']);
-
-        if (substr($trace[$back]['file'], 0, $this->_cut) == $this->_path) {
-
-            $trace[$back]['file'] = substr($trace[$back]['file'], $this->_cut);
-        }
+        $file = $this->_formatFile($trace[$back]['file']);
 
         // Build array with details
         $call = $call . $trace[$back]['function'] . '(' . $args . ')';
 
         $out = array('step' => $back,
-                     'file' => $trace[$back]['file'],
+                     'file' => $file,
                      'line' => $trace[$back]['line'],
                      'call' => $call);
 
         return $out;
+    }
+
+    /**
+     * Format filename
+     *
+     * @param string $filename Filename
+     *
+     * @return string
+     **/
+
+    private function _formatFile($filename)
+    {
+        // Shorten and style file names
+        $filename = str_replace('\\', '/', $filename);
+
+        $filepath = substr($filename, 0, $this->_cut);
+
+        if ($filepath == $this->_path) {
+
+            $filename = substr($filename, $this->_cut);
+        }
+
+        return $filename;
     }
 }
