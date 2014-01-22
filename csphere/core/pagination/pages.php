@@ -97,6 +97,8 @@ class Pages
 
     public function navigation($light = false, $arrows = true)
     {
+        $data = array();
+    
         // Set amount of pages and build page navigation
         $pages = ceil($this->_total / $this->_limit);
 
@@ -359,7 +361,7 @@ class Pages
         // Add links for arrows if requested
         if ($arrows == true) {
 
-            $data['arrow'] = $this->_arrows($data['pages']);
+            $data['arrow'] = $this->_arrows((int)$data['pages']);
 
             $data['arrow']['show'] = 'yes';
         }
