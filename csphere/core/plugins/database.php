@@ -135,25 +135,7 @@ class Database
         // Go on with data afterwards
         if ($data == true AND isset($this->_structure['data'])) {
 
-            $data = $this->_structure['data'];
-
-            // Make sure all parts are set
-            if (!isset($data['insert'])) {
-
-                $data['insert'] = array();
-            }
-
-            if (!isset($data['update'])) {
-
-                $data['insert'] = array();
-            }
-
-            if (!isset($data['delete'])) {
-
-                $data['insert'] = array();
-            }
-
-            $this->_data($data);
+            $this->_data($this->_structure['data']);
         }
 
         return true;
@@ -271,6 +253,8 @@ class Database
 
     private function _data(array $data)
     {
+        $data = $this->_dataCheck($data);
+
         // Insert queries
         foreach ($data['insert'] AS $insert) {
 
@@ -308,6 +292,37 @@ class Database
 
             $this->_database->exec($sql['statement'], $sql['input']);
         }
+    }
+
+    /**
+     * Install plugin database data
+     *
+     * @param array $data Data structure as an array
+     *
+     * @throws \Exception
+     *
+     * @return void
+    **/
+
+    private function _dataCheck(array $data)
+    {
+        // Make sure all parts are set
+        if (!isset($data['insert'])) {
+
+            $data['insert'] = array();
+        }
+
+        if (!isset($data['update'])) {
+
+            $data['insert'] = array();
+        }
+
+        if (!isset($data['delete'])) {
+
+            $data['insert'] = array();
+        }
+
+        return $data;
     }
 
     /**
