@@ -179,6 +179,36 @@ abstract class Base
     protected function view(array $data, $rid = 0, $skip = false)
     {
         // Set breadcrumb
+        $this->breadcrumb($rid);
+
+        // Set plugin and action
+        $data['plugin'] = $this->plugin;
+        $data['action'] = $this->action;
+
+        // Apply registered closure
+        if ($skip != true AND is_callable($this->_data)) {
+
+            $func = call_user_func($this->_data, $data[$this->schema]);
+
+            $data[$this->schema] = $func;
+        }
+
+        $plugin = $this->tpl == 'message' ? 'default' : $this->plugin;
+
+        // Pass data to template
+        $this->view->template($plugin, $this->tpl, $data);
+    }
+
+    /**
+     * Generate breadcrumb navigation
+     *
+     * @param integer $rid Record ID if important for URL
+     *
+     * @return void
+     **/
+
+    protected function breadcrumb($rid = 0)
+    {
         $bread = new \csphere\core\template\Breadcrumb($this->plugin);
 
         if ($this->_text != '') {
@@ -201,23 +231,6 @@ abstract class Base
         // Add current action and build trace list
         $bread->add($this->action, $url);
         $bread->trace();
-
-        // Set plugin and action
-        $data['plugin'] = $this->plugin;
-        $data['action'] = $this->action;
-
-        // Apply registered closure
-        if ($skip != true AND is_callable($this->_data)) {
-
-            $func = call_user_func($this->_data, $data[$this->schema]);
-
-            $data[$this->schema] = $func;
-        }
-
-        $plugin = $this->tpl == 'message' ? 'default' : $this->plugin;
-
-        // Pass data to template
-        $this->view->template($plugin, $this->tpl, $data);
     }
 
     /**

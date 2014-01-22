@@ -299,9 +299,7 @@ class Database
      *
      * @param array $data Data structure as an array
      *
-     * @throws \Exception
-     *
-     * @return void
+     * @return array
     **/
 
     private function _dataCheck(array $data)
