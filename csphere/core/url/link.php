@@ -250,4 +250,31 @@ abstract class Link
 
         return $link;
     }
+
+    /**
+     * Transforms a slash-separated string to an key value array
+     *
+     * @param string $url The internal url that is used in slash syntax
+     *
+     * @return array
+     **/
+
+    public static function transform($url)
+    {
+        $params = array();
+        $split  = explode('/', $url);
+        $splits = count($split);
+
+        // Just use every second entry due to key value structure
+        for ($i = 0; $i < $splits; $i+=2) {
+
+            // Not every value might contain data
+            $params[$split[$i]] = isset($split[($i+1)]) ? $split[($i+1)] : '';
+        }
+
+        // Clear empty keys
+        unset($params['']);
+
+        return $params;
+    }
 }

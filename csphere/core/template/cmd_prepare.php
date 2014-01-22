@@ -88,18 +88,7 @@ abstract class CMD_Prepare
         // Handle additional parameters
         if (isset($target[2])) {
 
-            $params = array();
-            $split  = explode('/', $target[2]);
-            $splits = count($split);
-
-            for ($i = 0; $i < $splits; $i++) {
-
-                $params[$split[$i]] = isset($split[($i+1)]) ? $split[($i+1)] : '';
-
-                $i++;
-            }
-
-            $part['params'] = $params;
+            $part['params'] = \csphere\core\url\Link::transform($target[2]);
         }
 
         return $part;

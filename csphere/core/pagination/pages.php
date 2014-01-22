@@ -98,7 +98,7 @@ class Pages
     public function navigation($light = false, $arrows = true)
     {
         $data = array();
-    
+
         // Set amount of pages and build page navigation
         $pages = ceil($this->_total / $this->_limit);
 
