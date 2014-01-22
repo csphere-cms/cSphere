@@ -98,7 +98,7 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $prepare = $this->replace($prepare);
         }
 
-        $statement = $this->_execute($prepare, $assoc);
+        $statement = $this->_execute($prepare, $assoc, $log);
 
         // Determine what to return
         if (empty($insertid)) {
@@ -109,8 +109,6 @@ abstract class Base_PDO extends \csphere\core\database\Base
 
             $result = $this->insertID();
         }
-
-        $this->log($prepare, $assoc, $log);
 
         return (int)$result;
     }
@@ -145,7 +143,7 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $prepare .= ' ' . $this->limits($first, $max);
         }
 
-        $statement = $this->_execute($prepare, $assoc);
+        $statement = $this->_execute($prepare, $assoc, false);
 
         // Determine what to return
         if ($max == 1) {
@@ -169,21 +167,20 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         }
 
-        $this->log($prepare, $assoc, false);
-
         return (array)$result;
     }
 
     /**
      * Executes a query
      *
-     * @param string $prepare Prepared query string with placeholders
-     * @param array  $assoc   Array with columns and values
+     * @param string  $prepare Prepared query string with placeholders
+     * @param array   $assoc   Array with columns and values
+     * @param boolean $log     Save query info to log files
      *
      * @return \PDOStatement
      **/
 
-    private function _execute($prepare, array $assoc)
+    private function _execute($prepare, array $assoc, $log)
     {
         // Rewrite assoc array to use named placeholders
         $data = array();
@@ -193,9 +190,12 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $data[':' . $key] = $value;
         }
 
-        // Prepare and execute the statement
         $prepare = str_replace('{pre}', $this->prefix . '_', $prepare);
 
+        // Log executed query
+        $this->log($prepare, $data, $log);
+
+        // Prepare and execute the statement
         $statement = $this->con->prepare($prepare);
 
         if (is_object($statement)) {
