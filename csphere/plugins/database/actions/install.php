@@ -29,6 +29,8 @@ $bread->trace();
 // Get translation details
 $lang = \csphere\core\translation\Fetch::keys('database');
 
+$install = \csphere\core\translation\Fetch::key('default', 'install');
+
 // Get plugin database details if it exists
 $meta = new \csphere\core\plugins\Database($dir);
 
@@ -46,7 +48,7 @@ if ($exists === true) {
     $data = array('previous' => $previous, 'type' => 'green');
 
     $data['plugin_name'] = $lang['database'];
-    $data['action_name'] = $lang['install'];
+    $data['action_name'] = $install;
     $data['message']     = $lang['install_ok'];
 
     // Send data to view

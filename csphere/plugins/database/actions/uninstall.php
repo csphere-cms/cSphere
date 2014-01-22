@@ -29,6 +29,8 @@ $bread->trace();
 // Get translation details
 $lang = \csphere\core\translation\Fetch::keys('database');
 
+$uninstall = \csphere\core\translation\Fetch::key('default', 'uninstall');
+
 // Get plugin database details if it exists
 $meta = new \csphere\core\plugins\Database($dir);
 
@@ -46,7 +48,7 @@ if ($exists === true) {
     $data = array('previous' => $previous, 'type' => 'green');
 
     $data['plugin_name'] = $lang['database'];
-    $data['action_name'] = $lang['uninstall'];
+    $data['action_name'] = $uninstall;
     $data['message']     = $lang['uninstall_ok'];
 
     // Send data to view
