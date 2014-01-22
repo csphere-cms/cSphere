@@ -135,15 +135,11 @@ abstract class Link
         }
 
         // Add params
+        unset($params['plugin'], $params['action'], $params['']);
+
         foreach ($params AS $key => $value) {
 
-            if ($key != 'plugin' AND $key != 'action' AND $value != '') {
-
-                $link .= self::$_key
-                       . $key
-                       . self::$_value
-                       . $value;
-            }
+            $link .= self::$_key . $key . self::$_value . $value;
         }
 
         return $link;
