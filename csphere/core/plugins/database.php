@@ -135,7 +135,25 @@ class Database
         // Go on with data afterwards
         if ($data == true AND isset($this->_structure['data'])) {
 
-            $this->_data($this->_structure['data']);
+            $data = $this->_structure['data'];
+
+            // Make sure all parts are set
+            if (!isset($data['insert'])) {
+
+                $data['insert'] = array();
+            }
+
+            if (!isset($data['update'])) {
+
+                $data['insert'] = array();
+            }
+
+            if (!isset($data['delete'])) {
+
+                $data['insert'] = array();
+            }
+
+            $this->_data($data);
         }
 
         return true;
@@ -254,50 +272,41 @@ class Database
     private function _data(array $data)
     {
         // Insert queries
-        if (isset($data['insert'])) {
+        foreach ($data['insert'] AS $insert) {
 
-            foreach ($data['insert'] AS $insert) {
+            $columns = $this->_columns($insert['column']);
 
-                $columns = $this->_columns($insert['column']);
+            $sql = \csphere\core\sql\DML::insert($insert['table'], $columns);
 
-                $sql = \csphere\core\sql\DML::insert($insert['table'], $columns);
-
-                $this->_database->exec($sql['statement'], $sql['input']);
-            }
+            $this->_database->exec($sql['statement'], $sql['input']);
         }
 
         // Update queries
-        if (isset($data['update'])) {
+        foreach ($data['update'] AS $update) {
 
-            foreach ($data['update'] AS $update) {
+            $columns = $this->_columns($update['column']);
 
-                $columns = $this->_columns($update['column']);
+            $where = $update['where'][0]['column'];
+            $value = $update['where'][0]['value'];
 
-                $where = $update['where'][0]['column'];
-                $value = $update['where'][0]['value'];
+            $sql = \csphere\core\sql\DML::update(
+                $update['table'], $columns, $where, $value
+            );
 
-                $sql = \csphere\core\sql\DML::update(
-                    $update['table'], $columns, $where, $value
-                );
-
-                $this->_database->exec($sql['statement'], $sql['input']);
-            }
+            $this->_database->exec($sql['statement'], $sql['input']);
         }
 
         // Delete queries
-        if (isset($data['delete'])) {
+        foreach ($data['delete'] AS $delete) {
 
-            foreach ($data['delete'] AS $delete) {
+            $where = $delete['where'][0]['column'];
+            $value = $delete['where'][0]['value'];
 
-                $where = $delete['where'][0]['column'];
-                $value = $delete['where'][0]['value'];
+            $sql = \csphere\core\sql\DML::delete(
+                $delete['table'], $where, $value
+            );
 
-                $sql = \csphere\core\sql\DML::delete(
-                    $delete['table'], $where, $value
-                );
-
-                $this->_database->exec($sql['statement'], $sql['input']);
-            }
+            $this->_database->exec($sql['statement'], $sql['input']);
         }
     }
 
