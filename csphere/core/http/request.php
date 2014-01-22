@@ -110,23 +110,9 @@ abstract class Request
         }
 
         // Creates a key value array out of the request map
-        $data = array();
-
         $parts = explode('/', $map);
 
-        $parts_count = count($parts);
-
-        // Additional key value pairs
-        for ($i = $run; $i < $parts_count; $i++) {
-
-            if (!empty($parts[$i])) {
-
-                $data[$parts[$i]] = isset($parts[($i+1)]) ?
-                    $parts[($i+1)] : null;
-            }
-
-            $i++;
-        }
+        $data = self::_dataParts($run, $parts);
 
         // Plugin is always in front
         $data['plugin'] = $parts[0];
@@ -135,6 +121,36 @@ abstract class Request
         if ($run == 2) {
 
             $data['action'] = isset($parts[1]) ? $parts[1] : '';
+        }
+
+        return $data;
+    }
+
+    /**
+     * Generate an array of all data parts
+     *
+     * @param integer $start First part that should be used
+     * @param array   $parts Parameters as an array
+     *
+     * @return array
+     **/
+
+    private static function _dataParts($start, array $parts)
+    {
+        $data = array();
+
+        $parts_count = count($parts);
+
+        // Additional key value pairs
+        for ($i = $start; $i < $parts_count; $i++) {
+
+            if (!empty($parts[$i])) {
+
+                $data[$parts[$i]] = isset($parts[($i+1)]) ?
+                    $parts[($i+1)] : null;
+            }
+
+            $i++;
         }
 
         return $data;
