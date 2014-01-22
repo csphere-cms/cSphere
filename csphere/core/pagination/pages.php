@@ -100,8 +100,6 @@ class Pages
         // Set amount of pages and build page navigation
         $pages = ceil($this->_total / $this->_limit);
 
-        $data = array('arrow' => array('show' => 'no'));
-
         // Use full or light mode
         if ($light == true) {
 
@@ -109,19 +107,25 @@ class Pages
 
         } else {
 
-            $data['groups'] = $this->_full($pages);
-        }
+            $end = 3;
 
-        // Add links for arrows and enable show setting
-        if ($arrows == true) {
+            // If there are very few pages end earlier or skip groups
+            if ($end > $pages OR $pages < 10) {
 
-            $data['arrow'] = $this->_arrows($pages);
+                $end = $pages;
 
-            $data['arrow']['show'] = 'yes';
+            } elseif ($this->_start > 2 AND $this->_start < 6) {
+
+                $end = $this->_start + 1;
+            }
+
+            $data['groups'] = $this->_full($pages, $end);
         }
 
         // Generate template output
-        $result = $this->_build($data);
+        $data['pages'] = $pages;
+
+        $result = $this->_build($data, $arrows);
 
         return $result;
     }
@@ -170,26 +174,16 @@ class Pages
      * Generate full layout
      *
      * @param integer $pages Amount of pages
+     * @param integer $end   End of first group
      *
      * @return array
      **/
 
-    private function _full($pages)
+    private function _full($pages, $end)
     {
         $groups = array();
 
         // Generate first group of links
-        $end = 3;
-
-        if ($end > $pages OR $pages < 10) {
-
-            $end = $pages;
-
-        } elseif ($this->_start > 2 AND $this->_start < 6) {
-
-            $end = $this->_start + 1;
-        }
-
         $first    = $this->_group(1, $end);
         $groups[] = array('links' => $first, 'space' => 'no');
 
@@ -352,13 +346,25 @@ class Pages
     /**
      * Create content from template file
      *
-     * @param array $data Data array for template
+     * @param array   $data   Data array for template
+     * @param boolean $arrows Wether or not to attach arrows for page turns
      *
      * @return string
      **/
 
-    private function _build(array $data)
+    private function _build(array $data, $arrows)
     {
+        $data['arrow'] = array('show' => 'no');
+
+        // Add links for arrows if requested
+        if ($arrows == true) {
+
+            $data['arrow'] = $this->_arrows($data['pages']);
+
+            $data['arrow']['show'] = 'yes';
+        }
+
+
         // Get view driver object
         $loader = \csphere\core\service\Locator::get();
         $view = $loader->load('view');
