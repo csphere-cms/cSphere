@@ -92,7 +92,7 @@ abstract class Parse
         }
 
         // Check if required data exists
-        if ($part['data'] != array()) {
+        if (is_array($part['data']) AND $part['data'] != array()) {
 
             // Loop threw data array
             foreach ($part['data'] AS $set) {
