@@ -98,22 +98,16 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $prepare = $this->replace($prepare);
         }
 
-        try {
-            $statement = $this->_execute($prepare, $assoc);
+        $statement = $this->_execute($prepare, $assoc);
 
-            // Determine what to return
-            if (empty($insertid)) {
+        // Determine what to return
+        if (empty($insertid)) {
 
-                $result = $statement->rowCount();
+            $result = $statement->rowCount();
 
-            } else {
+        } else {
 
-                $result = $this->insertID();
-            }
-
-        } catch (\PDOException $pdo_error) {
-
-            $this->error($prepare, $assoc, $pdo_error->getMessage());
+            $result = $this->insertID();
         }
 
         $this->log($prepare, $assoc, $log);
@@ -151,34 +145,28 @@ abstract class Base_PDO extends \csphere\core\database\Base
             $prepare .= ' ' . $this->limits($first, $max);
         }
 
-        try {
-            $statement = $this->_execute($prepare, $assoc);
+        $statement = $this->_execute($prepare, $assoc);
 
-            // Determine what to return
-            if ($max == 1) {
+        // Determine what to return
+        if ($max == 1) {
 
-                $result = $statement->fetch(\PDO::FETCH_ASSOC);
+            $result = $statement->fetch(\PDO::FETCH_ASSOC);
 
-                if (!is_array($result)) {
+            if (!is_array($result)) {
 
-                    if ($result === false) {
+                if ($result === false) {
 
-                        $result = array();
+                    $result = array();
 
-                    } else {
+                } else {
 
-                        $result = array($result);
-                    }
+                    $result = array($result);
                 }
-
-            } else {
-
-                $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
             }
 
-        } catch (\PDOException $pdo_error) {
+        } else {
 
-            $this->error($prepare, $assoc, $pdo_error->getMessage());
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         }
 
         $this->log($prepare, $assoc, false);
