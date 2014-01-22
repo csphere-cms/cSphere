@@ -284,35 +284,4 @@ abstract class Parse
 
         return $data;
     }
-
-    /**
-     * Include a target file
-     *
-     * @param string $file File name with full path
-     *
-     * @return boolean
-     **/
-
-    public static function sandbox($file)
-    {
-        // Use output buffer to not get verbose
-        ob_start();
-
-        // Try to include and execute the target file
-        try {
-
-            include $file;
-
-        } catch (\Exception $exception) {
-
-            $controller = new \csphere\core\errors\Controller($exception, true);
-
-            unset($controller);
-        }
-
-        // Clean output buffer
-        ob_end_clean();
-
-        return true;
-    }
 }

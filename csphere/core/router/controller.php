@@ -86,7 +86,7 @@ class Controller
             // If skip is true the view was already filled with content
             if ($skip === false) {
 
-                \csphere\core\template\Parse::sandbox($this->_target);
+                \csphere\core\router\Sandbox::run($this->_target);
             }
 
             // Get content from view
