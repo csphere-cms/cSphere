@@ -77,12 +77,22 @@ abstract class Parse
     private static function _loops(array $part, array $data)
     {
         $part  = self::sub($part, $data);
-        $nest  = ($part['sub'] == '') ? $part['key'] : $part['sub'];
-        $value = is_array($part['value']) ? $part['value'] : array();
+        $nest  = $part['sub'];
+        $value = array();
         $all   = '<!-- foreach ' . $part['hub'] . ' -->';
 
+        if ($part['sub'] == '') {
+
+            $nest = $part['key'];
+        }
+
+        if (is_array($part['value'])) {
+
+            $value = $part['value'];
+        }
+
         // Check if required data exists
-        if (is_array($part['data']) AND $part['data'] != array()) {
+        if ($part['data'] != array()) {
 
             // Loop threw data array
             foreach ($part['data'] AS $set) {
@@ -91,6 +101,7 @@ abstract class Parse
 
                 $all .= self::template($value, $set);
             }
+
         } elseif ($part['else'] != array()) {
 
             $all .= '<!-- else ' . $part['hub'] . ' -->';
