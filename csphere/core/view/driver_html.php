@@ -160,7 +160,7 @@ class Driver_HTML extends Base
             // If cache loading fails prepare template file
             if ($tpl == false) {
 
-                $tpl = \csphere\core\template\Prepare::load($plugin, $template);
+                $tpl = \csphere\core\template\Engine::source($plugin, $template);
 
                 // Save result for later requests
                 $this->_cache->save($key, $tpl);
@@ -191,21 +191,8 @@ class Driver_HTML extends Base
 
                 $tpl = $this->_files[$part['key']];
 
-                // Fill templates with their data
-                try {
-                    $use = $part['data'];
-                    $add = \csphere\core\template\Parse::template($tpl, $use);
-                }
-                catch (\Exception $exception) {
+                $add = \csphere\core\template\Engine::parse($tpl, $part['data']);
 
-                    // Variable add must be a string
-                    $add = '';
-
-                    // Continue to not cause further problems
-                    $cont = new \csphere\core\Errors\Controller($exception, true);
-
-                    unset($cont);
-                }
             } else {
 
                 $add = (string)$part;
@@ -248,7 +235,7 @@ class Driver_HTML extends Base
             // Only use boxes from theme
             $boxes = $this->_cache(true);
 
-            $response = \csphere\core\template\Parse::boxes($boxes, $result);
+            $response = \csphere\core\template\Engine::boxes($boxes, $result);
         }
 
         return $response;

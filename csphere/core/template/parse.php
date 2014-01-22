@@ -253,35 +253,4 @@ abstract class Parse
 
         return $string;
     }
-
-    /**
-     * Parses only boxes in an array
-     *
-     * @param array  $boxes   Boxes as an array
-     * @param string $content The content to put into the theme file
-     *
-     * @return array
-     **/
-
-    public static function boxes(array $boxes, $content)
-    {
-        $add   = array();
-        $nodiv = array('nodiv' => true);
-
-        //  Skip all parts except boxes
-        foreach ($boxes AS $part) {
-
-            $box       = $part['name'];
-            $add[$box] = \csphere\core\template\CMD_Parse::box($part, $nodiv);
-        }
-
-        // Get page placeholders from hooks and append content
-        $data             = \csphere\core\template\Hooks::export();
-        $data['content'] .= $content;
-
-        // Add boxes to data
-        $data['boxes'] = $add;
-
-        return $data;
-    }
 }

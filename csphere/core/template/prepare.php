@@ -39,11 +39,6 @@ abstract class Prepare
     private static $_plugin = array('com' => 0, 'lang' => 1, 'tpl' => 2);
 
     /**
-     * Name of active theme
-     **/
-    private static $_theme = '';
-
-    /**
      * Prepares nested array targets
      *
      * @param array $part Placeholder cmd and key, maybe even more
@@ -259,47 +254,5 @@ abstract class Prepare
         }
 
         return $next;
-    }
-
-    /**
-     * Search for template files in theme and plugin
-     *
-     * @param string $plugin   Name of the plugin
-     * @param string $template Template file name without file ending
-     *
-     * @return array
-     **/
-
-    public static function load($plugin, $template)
-    {
-        // Get theme if it is not known yet
-        if (self::$_theme == '') {
-
-            $locator      = \csphere\core\service\Locator::get();
-            $view         = $locator->load('view');
-            self::$_theme = $view->getOption('theme');
-        }
-
-        // Check if theme overwrites the template file
-        $target = new \csphere\core\themes\Checks(self::$_theme);
-        $target->setTemplate($template, $plugin);
-
-        $check = $target->existance();
-
-        // Get template from plugin otherwise
-        if ($check === false) {
-
-            $target = new \csphere\core\plugins\Checks($plugin);
-            $target->setTemplate($template);
-        }
-
-        // Load template file and fetch file content
-        $file = $target->result();
-        $file = file_get_contents($file);
-
-        // Split template file content
-        $tpl = \csphere\core\template\Prepare::template($file, $plugin);
-
-        return $tpl;
     }
 }
