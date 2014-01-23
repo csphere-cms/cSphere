@@ -50,7 +50,8 @@
             <ul class="nav navbar-nav navbar-right">
                <li>
                     <a class="popover-nav" data-content="PHP {* raw php_full *}">
-                        PHP {* raw php_short *}
+                        <i class="fa fa-usd fa-lg"></i> 
+                        PHP
                     </a>
                 <li>
                 <li>

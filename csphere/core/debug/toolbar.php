@@ -135,7 +135,6 @@ class Toolbar
         $data = $this->_formatDetails($logs);
 
         // Constant PHP_RELEASE_VERSION adds patch release number
-        $data['php_short'] = PHP_MAJOR_VERSION;
         $data['php_full']  = phpversion();
 
         // Move parsetime and memory usage to data array
