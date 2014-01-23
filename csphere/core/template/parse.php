@@ -34,11 +34,6 @@ abstract class Parse
     private static $_var = array('var' => 0, 'url' => 1, 'raw' => 2);
 
     /**
-     * List of commands that need further actions
-     **/
-    private static $_adv = array('if' => 0, 'foreach' => 1, 'multi' => 2);
-
-    /**
      * Adds requested data as a key to the part array after some checks
      *
      * @param array $part Template file part as an array
