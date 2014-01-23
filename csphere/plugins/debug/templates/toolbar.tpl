@@ -50,11 +50,11 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="navbar-text">PHP {* raw php_short *}</li>
                 <li>
-                    <a href="#" class="popover-nav" data-content="{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}">
+                    <a class="popover-nav" data-content="{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}">
                         <i class="fa fa-clock-o fa-lg"></i>
                     </a>
                 <li>
-                    <a href="#" class="popover-nav" data-content="{* lang debug.memory_usage *}: {* raw memory *}">
+                    <a class="popover-nav" data-content="{* lang debug.memory_usage *}: {* raw memory *}">
                         <i class="fa fa-hdd-o fa-lg"></i>
                     </a>
                 </li>
