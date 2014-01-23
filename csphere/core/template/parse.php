@@ -226,7 +226,7 @@ abstract class Parse
     }
 
     /**
-     * Add advanced placeholder functionality
+     * Processes a single placeholder
      *
      * @param array $part Template file part as an array
      * @param array $data Array with data to use in the template
@@ -236,19 +236,33 @@ abstract class Parse
 
     private static function _advanced(array $part, array $data)
     {
-        $string = '';
+        $cmd = $part['cmd'];
 
-        if ($part['cmd'] == 'if') {
+        // Logic parts first
+        if ($cmd == 'if') {
 
             $string = self::_conditions($part, $data);
 
-        } elseif ($part['cmd'] == 'foreach') {
+        } elseif ($cmd == 'foreach') {
 
             $string = self::_loops($part, $data);
 
-        } elseif ($part['cmd'] == 'multi') {
+        } elseif ($cmd == 'multi') {
 
             $string = self::template($part['value'], $data);
+
+        } elseif ($cmd == 'text') {
+
+            $string = $part['text'];
+
+        } elseif (isset(self::$_var[$cmd])) {
+
+            $string = self::_vars($part, $data);
+
+        } else {
+
+            // Transform remaining CMD calls
+            $string = \csphere\core\template\CMD_Parse::$cmd($part, $data);
         }
 
         return $string;
@@ -270,26 +284,7 @@ abstract class Parse
 
         foreach ($array AS $part) {
 
-            $cmd = $part['cmd'];
-
-            // Logic parts first
-            if (isset(self::$_adv[$cmd])) {
-
-                $string .= self::_advanced($part, $data);
-
-            } elseif ($cmd == 'text') {
-
-                $string .= $part['text'];
-
-            } elseif (isset(self::$_var[$cmd])) {
-
-                $string .= self::_vars($part, $data);
-
-            } else {
-
-                // Transform remaining CMD calls
-                $string .= \csphere\core\template\CMD_Parse::$cmd($part, $data);
-            }
+            $string .= self::_advanced($part, $data);
         }
 
         return $string;
