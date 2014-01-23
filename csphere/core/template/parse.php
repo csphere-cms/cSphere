@@ -157,8 +157,13 @@ abstract class Parse
     {
         $part  = self::sub($part, $data);
         $check = self::_math($part);
-        $value = is_array($part['value']) ? $part['value'] : array();
+        $value = array();
         $all   = '<!-- if ' . $part['hub'] . ' -->';
+
+        if (is_array($part['value'])) {
+
+            $value = $part['value'];
+        }
 
         // Only parse sub content if check is true
         if ($check == true) {
@@ -192,16 +197,15 @@ abstract class Parse
 
         if (is_array($part['data'])) {
 
-            $part['data'] = '';
+            $escape = '';
 
             // Throwing an exception does not make sense here
             $msg = 'CMD "' . $part['cmd'] . '" is an array: ' . $part['hub'];
             trigger_error($msg, E_USER_WARNING);
-        }
 
-        // CMD url needs to be rawurlencoded
-        if ($part['cmd'] == 'url') {
+        } elseif ($part['cmd'] == 'url') {
 
+            // CMD url needs to be rawurlencoded
             $escape = rawurlencode($part['data']);
 
         } elseif ($part['cmd'] == 'var') {
