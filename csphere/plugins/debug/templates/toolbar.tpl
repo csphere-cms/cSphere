@@ -14,54 +14,67 @@
             <nav>
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a id="debug_logs_nav" onClick="csphere_debug_display('logs')" class="popover-nav" data-content="{* raw count.logs *} {* lang debug.logs *}">
-                            <i class="fa fa-book fa-lg"></i> 
+                        <a id="debug_logs_nav" onClick="csphere_debug_display('logs')" class="popover-nav" data-content="{* lang debug.logs *}">
+                            <i class="fa fa-list-alt fa-lg"></i>
                             <strong>{* raw count.logs *}</strong>
                         </a>
                     </li>
                     <li>
-                        <a id="debug_database_nav" onClick="csphere_debug_display('database')" class="popover-nav" data-content="{* raw count.database *} {* lang database.database *}">
-                            <i class="fa fa-archive fa-lg"></i> 
+                        <a id="debug_database_nav" onClick="csphere_debug_display('database')" class="popover-nav" data-content="{* lang database.database *}">
+                            <i class="fa fa-archive fa-lg"></i>
                             <strong>{* raw count.database *}</strong>
                         </a>
                     </li>
                     <li>
                         {* if count.errors > '0' *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav text-danger" data-content="{* raw count.errors *} {* lang errors.errors *}">
-                            <i class="fa fa-exclamation-triangle fa-lg"></i> 
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav text-danger" data-content="{* lang errors.errors *}">
+                            <i class="fa fa-exclamation-triangle fa-lg"></i>
                             <strong>{* raw count.errors *}</strong>
                         </a>
                         {* else count.errors *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav" data-content="{* raw count.errors *} {* lang errors.errors *}">
-                            <i class="fa fa-exclamation-triangle fa-lg"></i> 
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav" data-content="{* lang errors.errors *}">
+                            <i class="fa fa-exclamation-triangle fa-lg"></i>
                             <strong>{* raw count.errors *}</strong>
                         </a>
                         {* endif count.errors *}
                     </li>
                     <li>
-                        <a id="debug_includes_nav" onClick="csphere_debug_display('includes')" class="popover-nav" data-content="{* raw count.includes *} {* lang debug.includes *}">
-                            <i class="fa fa-clipboard fa-lg"></i> 
+                        <a id="debug_includes_nav" onClick="csphere_debug_display('includes')" class="popover-nav" data-content="{* lang debug.includes *}">
+                            <i class="fa fa-files-o fa-lg"></i>
                             <strong>{* raw count.includes *}</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="debug_request_selector" class="popover-nav" data-content="{* lang debug.request_type *}">
+                            <i class="fa fa-refresh fa-lg"></i>
+                            <strong id="debug_request_type">HTTP</strong>
                         </a>
                     </li>
                 </ul>
             </nav><!--END debug-navigation navigation-->
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="navbar-text">PHP {* raw php_short *}</li>
-                <li>
-                    <a class="popover-nav" data-content="{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}">
-                        <i class="fa fa-clock-o fa-lg"></i>
+               <li>
+                    <a class="popover-nav" data-content="PHP {* raw php_full *}">
+                        <i class="fa fa-usd fa-lg"></i>
+                        <strong>PHP {* raw php_short *}</strong>
                     </a>
                 <li>
-                    <a class="popover-nav" data-content="{* lang debug.memory_usage *}: {* raw memory *}">
+                <li>
+                    <a class="popover-nav" data-content="{* lang debug.parsetime *}">
+                        <i class="fa fa-clock-o fa-lg"></i>
+                        <strong>{* raw parsetime *} {* lang debug.ms *}</strong>
+                    </a>
+                <li>
+                    <a class="popover-nav" data-content="{* lang debug.memory_usage *}">
                         <i class="fa fa-hdd-o fa-lg"></i>
+                        <strong>{* raw memory *}</strong>
                     </a>
                 </li>
             </ul><!--END debug-navigation navigation navbar-nav-->
 
         </div><!--END debug-navigation debug-collapse-->
-        
+
     </div><!--END debug-navigation container-->
 </div><!--END debug-navigation-->
 
@@ -119,5 +132,5 @@
             {* endforeach includes *}
         </ol>
     </section><!--END csphere-debug debug_includes-->
-        
+
 </div><!--END debug-content-->

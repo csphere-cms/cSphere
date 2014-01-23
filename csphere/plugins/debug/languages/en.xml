@@ -29,5 +29,6 @@
         <define name="memory_usage">Memory</define>
         <define name="ms">ms</define>
         <define name="parsetime">Parsetime</define>
+        <define name="request_type">Request type</define>
     </definitions>
 </language>

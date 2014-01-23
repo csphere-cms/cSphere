@@ -4,6 +4,17 @@ function csphere_ajax_loading(place) {
     $(place).html('<i class="fa fa-spinner fa-spin"></i>');
 }
 
+function csphere_ajax_debug(place) {
+
+    $('#debug_request_selector').attr('data-content', place);
+    $('#debug_request_selector').popover({
+        trigger: 'hover',
+        placement: 'top',
+        container: 'body'
+    });
+    $('#debug_request_type').html('AJAX');
+}
+
 function csphere_ajax_highlight(place, html) {
 
     // Apply a smooth fade-in effect
@@ -109,11 +120,7 @@ function csphere_ajax_update(result, place) {
     // Update debug
     csphere_ajax_highlight('div#debug-navigation', result.debug);
 
-    var append = '<li class="navbar-text">'
-               + 'AJAX: ' + place
-               + '</li>';
-
-    $('.navbar-nav.navbar-right').eq(0).append(append);
+    csphere_ajax_debug(place);
 
     // Check for box only mode
     if (result.hasOwnProperty('box')) {

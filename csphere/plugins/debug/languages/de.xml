@@ -29,5 +29,6 @@
         <define name="memory_usage">Speicher</define>
         <define name="ms">ms</define>
         <define name="parsetime">Ladezeit</define>
+        <define name="request_type">Anfragetyp</define>
     </definitions>
 </language>
