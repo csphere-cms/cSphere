@@ -10,6 +10,11 @@
                     </small>
                 </h3><!--END header page-header headline-->
 
+                <div class="btn-group pull-right">
+                    <a href="{* link cache/clear *}" class="btn btn-danger">
+                        {* lang cache.clear *}
+                    </a>
+                </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
         </header><!--END header-->
 
