@@ -34,6 +34,11 @@ abstract class Parse
     private static $_var = array('var' => 0, 'url' => 1, 'raw' => 2);
 
     /**
+     * List of commands that need further actions
+     **/
+    private static $_adv = array('if' => 0, 'foreach' => 1, 'multi' => 2);
+
+    /**
      * Adds requested data as a key to the part array after some checks
      *
      * @param array $part Template file part as an array
@@ -217,6 +222,35 @@ abstract class Parse
     }
 
     /**
+     * Add advanced placeholder functionality
+     *
+     * @param array $part Template file part as an array
+     * @param array $data Array with data to use in the template
+     *
+     * @return string
+     **/
+
+    private static function _advanced(array $part, array $data)
+    {
+        $string = '';
+
+        if ($part['cmd'] == 'if') {
+
+            $string = self::_conditions($part, $data);
+
+        } elseif ($part['cmd'] == 'foreach') {
+
+            $string = self::_loops($part, $data);
+
+        } elseif ($part['cmd'] == 'multi') {
+
+            $string = self::template($part['value'], $data);
+        }
+
+        return $string;
+    }
+
+    /**
      * Combine template file content for usage
      *
      * @param array $array Template file (part) as an array
@@ -235,17 +269,9 @@ abstract class Parse
             $cmd = $part['cmd'];
 
             // Logic parts first
-            if ($cmd == 'if') {
+            if (isset(self::$_adv[$cmd])) {
 
-                $string .= self::_conditions($part, $data);
-
-            } elseif ($cmd == 'foreach') {
-
-                $string .= self::_loops($part, $data);
-
-            } elseif ($cmd == 'multi') {
-
-                $string .= self::template($part['value'], $data);
+                $string .= self::_advanced($part, $data);
 
             } elseif ($cmd == 'text') {
 
