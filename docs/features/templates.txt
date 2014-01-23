@@ -53,6 +53,11 @@ Includes the box "login" of the "users" plugin at the given place
 Boxes contain sub-content while actions are for full content pages
 Therefore actions can't be used as boxes and vice versa
 
+{* box errors/latest/limit/5 *}
+
+Boxes can use parameters like limit=5 in this case
+Only the box that will be set within the placeholder can view its parameters
+
 {* tpl users/login *}
 
 Adds the tpl "login" of the "users" plugin as a string at the given place

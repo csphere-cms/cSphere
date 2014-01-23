@@ -69,6 +69,9 @@ abstract class CMD_Parse
             self::$_view = $loader->load('view');
         }
 
+        // Set box params for this box
+        \csphere\core\http\Input::setBox($part['params']);
+
         // Clear current box to not end in a loop
         self::$_view->box(true);
 

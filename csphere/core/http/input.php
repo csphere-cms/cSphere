@@ -32,17 +32,22 @@ abstract class Input
      * Array with aliased input names
      **/
     private static $_inputNames = array(
-        'get' => INPUT_GET,
-        'post' => INPUT_POST,
+        'get'    => INPUT_GET,
         'cookie' => INPUT_COOKIE,
-        'server' => INPUT_SERVER,
-        'env' => INPUT_ENV
+        'env'    => INPUT_ENV,
+        'post'   => INPUT_POST,
+        'server' => INPUT_SERVER
     );
 
     /**
      * Array with registered GET data
      **/
     private static $_inputGet = array();
+
+    /**
+     * Array containing parameters for the active box
+     **/
+    private static $_inputBox = array();
 
     /**
      * Prepares the input data for usage
@@ -122,5 +127,31 @@ abstract class Input
         }
 
         return $data;
+    }
+
+    /**
+     * Set the key value array for the next box that will be parsed
+     *
+     * @param array $array Array containing keys with their value
+     *
+     * @return boolean
+     **/
+
+    public static function setBox(array $array)
+    {
+        self::$_inputBox = $array;
+
+        return true;
+    }
+
+    /**
+     * Get the key value array of the current box
+     *
+     * @return array
+     **/
+
+    public static function getBox()
+    {
+        return self::$_inputBox;
     }
 }

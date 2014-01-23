@@ -15,17 +15,23 @@
 
 $loader = \csphere\core\service\Locator::get();
 
-$data = array();
+// Get box parameters
+$params = \csphere\core\http\Input::getBox();
 
+$limit = empty($params['limit']) ? 5 : (int)$params['limit'];
+
+// Get files that contain error logs
 $path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
 $files = \csphere\core\files\File::search($path, true, array('info.txt'));
 
+// Data array for view
+$data = array();
 $data['params'] = 'refresh/1';
 $data['files']  = array();
 
 $count = count($files);
-$stop  = ($count > 5) ? 5 : $count;
+$stop  = ($count > $limit) ? $limit : $count;
 
 for ($i = 0; $i < $stop; $i++) {
 

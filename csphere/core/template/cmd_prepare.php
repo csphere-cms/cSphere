@@ -86,6 +86,8 @@ abstract class CMD_Prepare
         }
 
         // Handle additional parameters
+        $part['params'] = array();
+
         if (isset($target[2])) {
 
             $part['params'] = \csphere\core\url\Link::transform($target[2]);
