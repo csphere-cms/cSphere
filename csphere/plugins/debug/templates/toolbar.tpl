@@ -1,4 +1,4 @@
-<div id="csphere-debug" class="navbar navbar-default navbar-fixed-top">
+<div id="csphere-debug" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <div class="container">
 
         <div class="navbar-header">
@@ -7,28 +7,57 @@
                 <i class="fa fa-bars"></i>
             </button><!--END csphere-debug navbar-header navbar-toogle-->
 
-            <a class="navbar-brand">cSphere</a><!--END csphere-debug navbar-header navbar-brand-->
+            <a href="#" class="navbar-brand">cSphere</a><!--END csphere-debug navbar-header navbar-brand-->
         </div><!--END csphere-debug navbar-header-->
 
         <div id="debug-collapse" class="collapse navbar-collapse">
 
             <nav>
                 <ul class="nav navbar-nav">
-                    <li><a id="debug_logs_nav" onClick="csphere_debug_display('logs')">{* lang debug.logs *}: {* raw count.logs *}</a></li>
-                    <li><a id="debug_database_nav" onClick="csphere_debug_display('database')">{* lang database.database *}: {* raw count.database *}</a></li>
+                    <li>
+                        <a id="debug_logs_nav" onClick="csphere_debug_display('logs')" class="popover-nav" data-container="body" data-content="{* raw count.logs *} {* lang debug.logs *}">
+                            <i class="fa fa-book fa-lg"></i> 
+                            <strong>{* raw count.logs *}</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="debug_database_nav" onClick="csphere_debug_display('database')" class="popover-nav" data-container="body" data-content="{* raw count.database *} {* lang database.database *}">
+                            <i class="fa fa-archive fa-lg"></i> 
+                            <strong>{* raw count.database *}</strong>
+                        </a>
+                    </li>
                     <li>
                         {* if count.errors > '0' *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="text-danger">{* lang errors.errors *}: {* raw count.errors *}</a>
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav text-danger" data-container="body" data-content="{* raw count.errors *} {* lang errors.errors *}">
+                            <i class="fa fa-exclamation-triangle fa-lg"></i> 
+                            <strong>{* raw count.errors *}</strong>
+                        </a>
                         {* else count.errors *}
-                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')">{* lang errors.errors *}: {* raw count.errors *}</a>
+                        <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav" data-container="body" data-content="{* raw count.errors *} {* lang errors.errors *}">
+                            <i class="fa fa-exclamation-triangle fa-lg"></i> 
+                            <strong>{* raw count.errors *}</strong>
+                        </a>
                         {* endif count.errors *}
                     </li>
-                    <li><a id="debug_includes_nav" onClick="csphere_debug_display('includes')">{* lang debug.includes *}: {* raw count.includes *}</a></li>
+                    <li>
+                        <a id="debug_includes_nav" onClick="csphere_debug_display('includes')" class="popover-nav" data-container="body" data-content="{* raw count.includes *} {* lang debug.includes *}">
+                            <i class="fa fa-clipboard fa-lg"></i> 
+                            <strong>{* raw count.includes *}</strong>
+                        </a>
+                    </li>
                 </ul>
+
                 <ul class="nav navbar-nav navbar-debug navbar-right">
                     <li class="navbar-text">PHP {* raw php_short *}</li>
-                    <li class="navbar-text">{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}</li>
-                    <li class="navbar-text">{* lang debug.memory_usage *}: {* raw memory *}</li>
+                    <li>
+                        <a href="#" class="popover-nav" data-container="body" data-content="{* lang debug.parsetime *}: {* raw parsetime *} {* lang debug.ms *}">
+                            <i class="fa fa-clock-o fa-lg"></i>
+                        </a>
+                    <li>
+                        <a href="#" class="popover-nav" data-container="body" data-content="{* lang debug.memory_usage *}: {* raw memory *}">
+                            <i class="fa fa-hdd-o fa-lg"></i>
+                        </a>
+                    </li>
                 </ul><!--END csphere-debug navigation navbar-nav-->
             </nav><!--END csphere-debug navigation-->
 

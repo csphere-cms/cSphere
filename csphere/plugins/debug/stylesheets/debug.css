@@ -9,17 +9,15 @@
 ------------------------------------------------------------*/
 
 
-body { padding-top: 126px !important; }
-
-
-/*  __HEADER
-------------------------------------------------------------*/
-#header { top: 51px; }
+body { padding-bottom: 60px; }
 
 
 /*  __CSPHERE-DEBUG
 ------------------------------------------------------------*/
-#csphere-debug { max-height: 750px; overflow: auto; z-index: 6000; }
+#csphere-debug { max-height: 750px; overflow: auto; z-index: 1100; }
+
+/* ----- __CSPHERE-DEBUG POPOVER ----- */
+.popover { z-index: 1110; }
 
 /* ----- __CSPHERE-DEBUG NAVBAR-TOGGLE ----- */
 #csphere-debug .navbar-toggle {
@@ -29,10 +27,13 @@ body { padding-top: 126px !important; }
     width: 38px;
 }
 
+/* ----- __CSPHERE-DEBUG NAVBAR-NAV ICONS ----- */
+#csphere-debug .navbar-nav:first-of-type a i { margin-right: 5px; }
+
 /* ----- __DEBUG LINKS ----- */
 #csphere-debug a { cursor: pointer; }
-#csphere-debug .nav li a:hover, .debug_toggle { background-color: #e7e7e7; color: #000 !important; }
+.debug_toggle { background-color: #e7e7e7; color: #000 !important; }
 #csphere-debug .nav li a.text-danger { color: #a94442 !important; }
 
 /* ----- __DEBUG CONTENT ----- */
-#csphere-debug .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; }
+#csphere-debug .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; 3

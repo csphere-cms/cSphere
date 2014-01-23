@@ -13,3 +13,10 @@ function csphere_debug_display(name) {
 
     document.getElementById(nav).className = active;
 }
+
+$(function() {
+    $('.popover-nav').popover({
+        trigger: 'hover',
+        placement: 'top'
+    })
+});
