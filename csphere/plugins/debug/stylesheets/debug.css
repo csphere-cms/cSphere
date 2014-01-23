@@ -26,11 +26,11 @@ body { padding-bottom: 60px; }
 }
 
 /* ----- __DEBUG-NAVIGATION NAVBAR-NAV LINKS ----- */
-#debug-navigation .navbar-nav a { cursor: pointer; }
+#debug-navigation .navbar-nav a { cursor: pointer; font-weight: bold; }
 #debug-navigation .navbar-nav a.text-danger { color: #a94442 !important; }
 
 /* ----- __DEBUG-NAVIGATION NAVBAR-NAV ICONS ----- */
-#debug-navigation .navbar-nav.navbar-left a i { margin-right: 5px; }
+#debug-navigation .navbar-nav i { margin-right: 5px; }
 
 
 /*  __DEBUG-CONTENT

@@ -16,38 +16,32 @@
                     <li>
                         <a id="debug_logs_nav" onClick="csphere_debug_display('logs')" class="popover-nav" data-content="{* lang debug.logs *}">
                             <i class="fa fa-list-alt fa-lg"></i>
-                            <strong>{* raw count.logs *}</strong>
+                            {* raw count.logs *}
                         </a>
                     </li>
                     <li>
                         <a id="debug_database_nav" onClick="csphere_debug_display('database')" class="popover-nav" data-content="{* lang database.database *}">
                             <i class="fa fa-archive fa-lg"></i>
-                            <strong>{* raw count.database *}</strong>
+                            {* raw count.database *}
                         </a>
                     </li>
                     <li>
                         {* if count.errors > '0' *}
                         <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav text-danger" data-content="{* lang errors.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
-                            <strong>{* raw count.errors *}</strong>
+                            {* raw count.errors *}
                         </a>
                         {* else count.errors *}
                         <a id="debug_errors_nav" onClick="csphere_debug_display('errors')" class="popover-nav" data-content="{* lang errors.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
-                            <strong>{* raw count.errors *}</strong>
+                            {* raw count.errors *}
                         </a>
                         {* endif count.errors *}
                     </li>
                     <li>
                         <a id="debug_includes_nav" onClick="csphere_debug_display('includes')" class="popover-nav" data-content="{* lang debug.includes *}">
                             <i class="fa fa-files-o fa-lg"></i>
-                            <strong>{* raw count.includes *}</strong>
-                        </a>
-                    </li>
-                    <li>
-                        <a id="debug_request_selector" class="popover-nav" data-content="{* lang debug.request_type *}">
-                            <i class="fa fa-refresh fa-lg"></i>
-                            <strong id="debug_request_type">HTTP</strong>
+                            {* raw count.includes *}
                         </a>
                     </li>
                 </ul>
@@ -56,19 +50,24 @@
             <ul class="nav navbar-nav navbar-right">
                <li>
                     <a class="popover-nav" data-content="PHP {* raw php_full *}">
-                        <i class="fa fa-usd fa-lg"></i>
-                        <strong>PHP {* raw php_short *}</strong>
+                        PHP {* raw php_short *}
                     </a>
                 <li>
                 <li>
+                    <a id="debug_request_selector" class="popover-nav" data-content="{* lang debug.request_type *}">
+                        <i class="fa fa-refresh fa-lg"></i>
+                        <strong id="debug_request_type">HTTP</strong>
+                    </a>
+                </li>
+                <li>
                     <a class="popover-nav" data-content="{* lang debug.parsetime *}">
                         <i class="fa fa-clock-o fa-lg"></i>
-                        <strong>{* raw parsetime *} {* lang debug.ms *}</strong>
+                        {* raw parsetime *} {* lang debug.ms *}
                     </a>
                 <li>
                     <a class="popover-nav" data-content="{* lang debug.memory_usage *}">
                         <i class="fa fa-hdd-o fa-lg"></i>
-                        <strong>{* raw memory *}</strong>
+                        {* raw memory *}
                     </a>
                 </li>
             </ul><!--END debug-navigation navigation navbar-nav-->
