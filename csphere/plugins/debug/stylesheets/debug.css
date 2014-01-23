@@ -1,8 +1,8 @@
 /*------------------------------------------------------------
 
-  *Filename             csphere-debug.css
-  *Description          CSPHERE-DEBUG TEMPLATE STYLES
-  *Version              0.1 (2013-12-11)
+  *Filename             debug.css
+  *Description          DEBUG TEMPLATE STYLES
+  *Version              0.2 (2014-01-23)
   *Website              http://www.csphere.eu
   *Author               Stefan Gräwe <sgrwe>
 
@@ -10,30 +10,31 @@
 
 
 body { padding-bottom: 60px; }
+.popover { z-index: 1200; }
 
 
-/*  __CSPHERE-DEBUG
+/*  __DEBUG-NAVIGATION
 ------------------------------------------------------------*/
-#csphere-debug { max-height: 750px; overflow: auto; z-index: 1100; }
+#debug-navigation { z-index: 1100; }
 
-/* ----- __CSPHERE-DEBUG POPOVER ----- */
-.popover { z-index: 1110; }
-
-/* ----- __CSPHERE-DEBUG NAVBAR-TOGGLE ----- */
-#csphere-debug .navbar-toggle {
+/* ----- __DEBUG-NAVIGATION NAVBAR-TOGGLE ----- */
+#debug-navigation .navbar-toggle {
     line-height: 34px;
     max-height: 34px;
     padding: 0;
     width: 38px;
 }
 
-/* ----- __CSPHERE-DEBUG NAVBAR-NAV ICONS ----- */
-#csphere-debug .navbar-nav:first-of-type a i { margin-right: 5px; }
+/* ----- __DEBUG-NAVIGATION NAVBAR-NAV LINKS ----- */
+#debug-navigation .navbar-nav a { cursor: pointer; }
 
-/* ----- __DEBUG LINKS ----- */
-#csphere-debug a { cursor: pointer; }
-.debug_toggle { background-color: #e7e7e7; color: #000 !important; }
-#csphere-debug .nav li a.text-danger { color: #a94442 !important; }
+/* ----- __DEBUG-NAVIGATION NAVBAR-NAV ICONS ----- */
+#debug-navigation .navbar-nav.navbar-left a i { margin-right: 5px; }
 
-/* ----- __DEBUG CONTENT ----- */
-#csphere-debug .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; 3
+
+/*  __DEBUG-CONTENT
+------------------------------------------------------------*/
+#debug-content { bottom: 51px; max-height: 600px; min-height: 0; overflow: auto; z-index: 1150; }
+
+/* ----- __DEBUG-CONTENT CONTENT ----- */
+#debug-content .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; }

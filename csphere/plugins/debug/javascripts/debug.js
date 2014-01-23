@@ -17,6 +17,7 @@ function csphere_debug_display(name) {
 $(function() {
     $('.popover-nav').popover({
         trigger: 'hover',
-        placement: 'top'
+        placement: 'top',
+        container: 'body'
     })
 });

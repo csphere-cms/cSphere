@@ -107,13 +107,13 @@ function csphere_ajax_get(hash, place) {
 function csphere_ajax_update(result, place) {
 
     // Update debug
-    csphere_ajax_highlight('div#csphere-debug', result.debug);
+    csphere_ajax_highlight('div#debug-navigation', result.debug);
 
     var append = '<li class="navbar-text">'
                + 'AJAX: ' + place
                + '</li>';
 
-    $('.navbar-debug').eq(0).append(append);
+    $('.navbar-nav.navbar-right').eq(0).append(append);
 
     // Check for box only mode
     if (result.hasOwnProperty('box')) {
