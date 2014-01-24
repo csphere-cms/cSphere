@@ -24,7 +24,6 @@
         <extension>json</extension>
         <extension>mcrypt</extension>
         <extension>pcre</extension>
-        <extension>pdo</extension>
         <extension>session</extension>
         <extension>xml</extension>
     </required>

@@ -5,9 +5,12 @@
 
         <br />
 
-        {* lang install.welcome_info *}<br /><br />
+        {* tpl default/msg_error *}
 
+        {* if continue == 'yes' *}
+        {* lang install.welcome_info *}<br /><br />
         <a href="{* link install/lang *}">{* lang default.continue *}</a>
+        {* endif continue *}
 
         <br /><br />
 
