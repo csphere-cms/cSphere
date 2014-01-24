@@ -93,7 +93,7 @@ class Driver_HTML extends Base
      * @return array
      **/
 
-    private function _cache($boxes = false)
+    private function _theme($boxes = false)
     {
         // Try to load theme details from cache
         $key_boxes = 'theme_boxes_' . $this->_theme . '_' . $this->_language;
@@ -233,7 +233,7 @@ class Driver_HTML extends Base
             $result = $this->_parse($this->content);
 
             // Only use boxes from theme
-            $boxes = $this->_cache(true);
+            $boxes = $this->_theme(true);
 
             $response = \csphere\core\template\Engine::boxes($boxes, $result);
         }
@@ -262,7 +262,7 @@ class Driver_HTML extends Base
             $result = $this->_parse($this->content);
 
             // Use full theme file
-            $theme = $this->_cache();
+            $theme = $this->_theme();
 
             $response = \csphere\core\template\Theme::parse($theme, $result);
         }
