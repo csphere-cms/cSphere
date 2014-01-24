@@ -1,0 +1,27 @@
+filter:
+
+    paths:
+        - 'csphere/*'
+
+tools:
+
+    php_analyzer: true
+
+    php_code_sniffer:
+        config:
+            encoding: utf8
+            standard: PEAR
+
+    php_cpd: true
+
+    php_loc: true
+
+    php_mess_detector:
+        config:
+            rulesets:
+                - codesize
+                - design
+                - naming
+                - unusedcode
+
+    php_pdepend: true
