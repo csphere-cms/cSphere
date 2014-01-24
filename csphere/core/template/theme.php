@@ -220,7 +220,7 @@ abstract class Theme
         $string = preg_replace($search, $change, $string);
 
         // Placeholder detection
-        $result = \csphere\core\template\Prepare::placeholders($string, '');
+        $result = \csphere\core\template\Prepare::placeholders((string)$string, '');
 
         return $result;
     }
