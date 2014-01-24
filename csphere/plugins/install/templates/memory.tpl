@@ -9,20 +9,7 @@
 
         <form class="form-horizontal" role="form" action="{* link install/memory *}" method="POST">
 
-            <div class="form-group">
-                <label for="cache_driver" class="col-sm-2 control-label">{* lang install.cache_type *}</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="cache_driver" name="cache_driver">
-                    {* foreach cache.drivers *}
-                    {* if drivers.active == 'yes' *}
-                        <option value="{* var drivers.short *}" selected="selected">{* var drivers.name *}</option>
-                    {* else drivers.active *}
-                        <option value="{* var drivers.short *}">{* var drivers.name *}</option>
-                    {* endif drivers.active *}
-                    {* endforeach cache.drivers *}
-                    </select>
-                </div>
-            </div><!--END form form-group cache_driver-->
+            {* tpl default/com_select name=cache_driver label=install.cache_type options=cache.drivers *}
 
             <span class="help-block">{* lang install.cache_info *}</span>
 

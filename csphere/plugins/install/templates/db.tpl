@@ -9,20 +9,7 @@
 
         <form class="form-horizontal" role="form" action="{* link install/db *}" method="POST">
 
-            <div class="form-group">
-                <label for="database_driver" class="col-sm-2 control-label">{* lang install.server *}</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="database_driver" name="database_driver">
-                    {* foreach database.drivers *}
-                    {* if drivers.active == 'yes' *}
-                        <option value="{* var drivers.short *}" selected="selected">{* var drivers.name *}</option>
-                    {* else drivers.active *}
-                        <option value="{* var drivers.short *}">{* var drivers.name *}</option>
-                    {* endif drivers.active *}
-                    {* endforeach database.drivers *}
-                    </select>
-                </div>
-            </div><!--END form form-group database_driver-->
+            {* tpl default/com_select name=database_driver label=install.server options=database.drivers *}
 
             <div class="sql_others">
             {* tpl default/com_input_adv name=database_host label=default.host value=database.host type=text holder=install.host_info *}

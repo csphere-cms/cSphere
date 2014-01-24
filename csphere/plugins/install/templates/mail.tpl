@@ -9,36 +9,9 @@
 
         <form class="form-horizontal" role="form" action="{* link install/mail *}" method="POST">
 
-            <div class="form-group">
-                <label for="mail_driver" class="col-sm-2 control-label">{* lang install.server *}</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="mail_driver" name="mail_driver">
-                    {* foreach mail.drivers *}
-                    {* if drivers.active == 'yes' *}
-                        <option value="{* var drivers.short *}" selected="selected">{* var drivers.name *}</option>
-                    {* else drivers.active *}
-                        <option value="{* var drivers.short *}">{* var drivers.name *}</option>
-                    {* endif drivers.active *}
-                    {* endforeach mail.drivers *}
-                    </select>
-                </div>
-            </div><!--END form form-group mail_driver-->
+            {* tpl default/com_select name=mail_driver label=install.server options=mail.drivers *}
 
-            <div class="form-group">
-                <label for="mail_newline" class="col-sm-2 control-label">{* lang install.mail_newline *}</label>
-                <div class="col-sm-10">
-                    <select class="form-control" id="mail_newline" name="mail_newline">
-                    {* foreach mail.newlines *}
-                    {* if newlines.active == 'yes' *}
-                        <option value="{* var newlines.short *}" selected="selected">{* var newlines.name *}</option>
-                    {* else newlines.active *}
-                        <option value="{* var newlines.short *}">{* var newlines.name *}</option>
-                    {* endif newlines.active *}
-                    {* endforeach mail.newlines *}
-                    </select>
-                </div>
-            </div><!--END form form-group mail_newline-->
-
+            {* tpl default/com_select name=mail_newline label=install.mail_newline options=mail.newlines *}
             <span class="help-block">{* lang install.mail_newline_info *}</span>
 
             {* tpl default/com_input_adv name=mail_subject label=install.mail_subject value=mail.subject type=text holder=install.mail_subject_info *}

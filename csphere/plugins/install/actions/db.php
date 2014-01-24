@@ -146,12 +146,12 @@ if ($test === true AND $db_error === null) {
 
     foreach ($db_driverlist AS $driver => $name) {
 
-        $active = $db['driver'] == $driver ? 'yes' : 'no';
-
-        $db_list[] = array('short' => $driver, 'name' => $name, 'active' => $active);
+        $db_list[] = array('short' => $driver, 'name' => $name);
     }
 
-    $data['database']['drivers'] = $db_list;
+    $data['database']['drivers'] = \csphere\core\template\Form::options(
+        $db_list, 'short', 'name', $db['driver']
+    );
 
     // Send data to view
     $view = $loader->load('view');

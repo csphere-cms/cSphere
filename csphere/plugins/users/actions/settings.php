@@ -44,17 +44,12 @@ $data = function ($array) use ($meta) {
     unset($array['user_password']);
 
     // Set active language
-    $langs    = array();
-    $userlang = $meta->exists($array['user_lang']) ? $array['user_lang'] : 'en';
-    $names    = $meta->names();
+    $def   = $meta->exists($array['user_lang']) ? $array['user_lang'] : 'en';
+    $names = $meta->names();
 
-    foreach ($names AS $lang) {
+    $opt = \csphere\core\template\Form::options($names, 'short', 'name', $def);
 
-        $active  = ($lang['short'] == $userlang) ? 'yes' : '';
-        $langs[] = array_merge($lang, array('active' => $active));
-    }
-
-    $array['languages'] = $langs;
+    $array['languages'] = $opt;
 
     return $array;
 };

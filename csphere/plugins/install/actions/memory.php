@@ -126,12 +126,12 @@ if ($test === true AND $cache_error === null) {
 
     foreach ($cache_drivers AS $driver => $name) {
 
-        $active = $cache['driver'] == $driver ? 'yes' : 'no';
-
-        $ch_list[] = array('short' => $driver, 'name' => $name, 'active' => $active);
+        $ch_list[] = array('short' => $driver, 'name' => $name);
     }
 
-    $data['cache']['drivers'] = $ch_list;
+    $data['cache']['drivers'] = \csphere\core\template\Form::options(
+        $ch_list, 'short', 'name', $cache['driver']
+    );
 
     // Send data to view
     $view = $loader->load('view');

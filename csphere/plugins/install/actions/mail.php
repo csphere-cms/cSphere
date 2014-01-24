@@ -134,26 +134,24 @@ if ($test === true AND $mail_error === null) {
 
     foreach ($mail_driverlist AS $driver => $name) {
 
-        $active = $mail['driver'] == $driver ? 'yes' : 'no';
-
-        $mail_list[] = array('short'  => $driver,
-                             'name'   => $name,
-                             'active' => $active);
+        $mail_list[] = array('short' => $driver, 'name' => $name);
     }
 
-    $data['mail']['drivers'] = $mail_list;
+    $data['mail']['drivers'] = \csphere\core\template\Form::options(
+        $mail_list, 'short', 'name', $mail['driver']
+    );
 
     // Create mail newline dropdown
     $mail_line = array();
 
     foreach ($mail_newlines AS $line => $name) {
 
-        $active = $mail['newline'] == $line ? 'yes' : 'no';
-
-        $mail_line[] = array('short' => $line, 'name' => $name, 'active' => $active);
+        $mail_line[] = array('short' => $line, 'name' => $name);
     }
 
-    $data['mail']['newlines'] = $mail_line;
+    $data['mail']['newlines'] = \csphere\core\template\Form::options(
+        $mail_line, 'short', 'name', $mail['newline']
+    );
 
     // Send data to view
     $view = $loader->load('view');
