@@ -72,8 +72,8 @@ abstract class CMD_Parse
         // Set box params for this box
         \csphere\core\http\Input::setBox($part['params']);
 
-        // Clear current box to not end in a loop
-        self::$_view->box(true);
+        // Clear current box to not end in an infinite loop
+        self::$_view->clear();
 
         \csphere\core\router\Sandbox::run($part['key']);
 

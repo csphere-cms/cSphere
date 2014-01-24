@@ -273,23 +273,29 @@ class Driver_HTML extends Base
     /**
      * Parse content of active box
      *
-     * @param boolean $clear Just clear boxes that are listed so far
-     *
      * @return string
      **/
 
-    public function box($clear = false)
+    public function box()
     {
-        $result = '';
-
-        if ($clear === false) {
-
-            $result = $this->_parse($this->_boxes);
-        }
+        $result = $this->_parse($this->_boxes);
 
         $this->_boxes = array();
 
         return $result;
+    }
+
+    /**
+     * Clear boxes for template box parser
+     *
+     * @return boolean
+     **/
+
+    public function clear()
+    {
+        $this->_boxes = array();
+
+        return true;
     }
 
     /**
