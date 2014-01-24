@@ -121,7 +121,8 @@ abstract class Prepare
         // Split string into an array of foreach and if parts
         $pattern  = "'\{\* (?P<cmd>foreach|if)"
                   . " (?P<key>[\S]+?)"
-                  . "(?: (?P<equal>\=\=|\!\=|\<|\>) \'(?P<cond>[\S]*?)\'){0,1} \*\}"
+                  . "(?: (?P<equal>\=\=|\!\=|\<|\>)"
+                  . " \'(?P<cond>[\S]*?)\'){0,1} \*\}"
                   . "(?P<value>.*?)[\s]*"
                   . "(?:\{\* else (?P=key) \*\}(?P<else>.*?)[\s]*){0,1}"
                   . "\{\* (end)(?P=cmd) (?P=key) \*\}"

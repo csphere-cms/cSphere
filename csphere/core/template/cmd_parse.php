@@ -147,7 +147,7 @@ abstract class CMD_Parse
         }
 
         $info   = 'Debug info for "' . $part['key'] . '":<br />' . "\n";
-        $result = $info . $content;
+        $result = $info . '<pre>' . $content . '</pre>';
 
         return $result;
     }

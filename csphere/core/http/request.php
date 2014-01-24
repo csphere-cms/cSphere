@@ -158,15 +158,13 @@ abstract class Request
         $parts_count = count($parts);
 
         // Additional key value pairs
-        for ($i = $start; $i < $parts_count; $i++) {
+        for ($i = $start; $i < $parts_count; $i+=2) {
 
             if (!empty($parts[$i])) {
 
                 $data[$parts[$i]] = isset($parts[($i+1)]) ?
                     $parts[($i+1)] : null;
             }
-
-            $i++;
         }
 
         return $data;
