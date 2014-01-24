@@ -92,6 +92,18 @@ if (isset($post['csphere_form'])) {
             }
         }
 
+        // Get mail driver
+        $driver = isset($mail_config['driver']) ? $mail_config['driver'] : '';
+
+        // Check if mail driver is working
+        $mail_test = $loader->load('mail', $driver, $mail_config);
+        $result    = $mail_test->driver();
+
+        if ($result != $driver) {
+
+            $error = $lang['no_mail'];
+        }
+
         // Get cache driver
         $driver = isset($cache_config['driver']) ? $cache_config['driver'] : '';
 
@@ -99,7 +111,7 @@ if (isset($post['csphere_form'])) {
         $ch_test = $loader->load('cache', $driver, $cache_config);
         $result  = $ch_test->driver();
 
-        if ($result != $cache_config['driver']) {
+        if ($result != $driver) {
 
             $error = $lang['no_cache'];
         }

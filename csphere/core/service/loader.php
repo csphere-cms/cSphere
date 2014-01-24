@@ -139,6 +139,12 @@ class Loader
 
     private function _container($component, array $config)
     {
+        // Check for empty driver
+        if ($config['driver'] == '') {
+
+            $config['driver'] = 'none';
+        }
+
         // Create the destination object and return it
         $class = '\csphere\core\\' . $component . '\\driver_' . $config['driver'];
 

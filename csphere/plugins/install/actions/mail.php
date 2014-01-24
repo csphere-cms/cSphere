@@ -65,12 +65,20 @@ if (isset($post['csphere_form'])) {
     try {
 
         // Establish connection
-        $mail_test = $loader->load('mail', $mail['driver'], $mail, true);
+        $mail_load = $loader->load('mail', $mail['driver'], $mail, true);
+
+        // Check if driver is working
+        $mail_test = $mail_load->driver();
+
+        if ($mail_test != $mail['driver']) {
+
+            throw new \Exception($lang['no_mail']);
+        }
 
         // Try to send a mail
-        $mail_test->prepare($lang['mail_test_subject'], $lang['mail_test_text']);
+        $mail_load->prepare($lang['mail_test_subject'], $lang['mail_test_text']);
 
-        $test = $mail_test->send($mail['from']);
+        $test = $mail_load->send($mail['from']);
 
         if ($test === false) {
 

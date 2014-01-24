@@ -57,7 +57,9 @@
         <define name="no_cache">Cache settings contain errors</define>
         <define name="no_cfg">Directory /csphere/config must be writable</define>
         <define name="no_db">Database configuration error</define>
+        <define name="no_mail">Mail configuration error</define>
         <define name="no_php_ext">Required PHP extensions not loaded</define>
+        <define name="no_user">No webmaster user was created</define>
         <define name="port_info">The port that service is running on</define>
         <define name="pretty_urls">Pretty URLs</define>
         <define name="rewrite_info">Attention: Requires webserver specific URL rewrites, read the docs</define>

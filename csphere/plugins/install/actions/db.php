@@ -57,7 +57,15 @@ if (isset($post['csphere_form'])) {
     try {
 
         // Init database and set as default
-        $loader->load('database', $db['driver'], $db, true);
+        $db_load = $loader->load('database', $db['driver'], $db, true);
+
+        // Check if driver is working
+        $db_test = $db_load->driver();
+
+        if ($db_test != $db['driver']) {
+
+            throw new \Exception($lang['no_db']);
+        }
 
         // Get plugin metadata
         $meta = new \csphere\core\plugins\Metadata();
