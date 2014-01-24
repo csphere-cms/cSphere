@@ -24,6 +24,6 @@
     <entries>
     </entries>
     <startup>
-        <file type="javascript" top="true" name="jquery-2.1.0-rc1.min.js" />
+        <file type="javascript" top="true" name="jquery-2.1.0.min.js" />
     </startup>
 </plugin>
