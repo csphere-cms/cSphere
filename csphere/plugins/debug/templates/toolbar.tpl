@@ -113,10 +113,6 @@
                 <div class="col-md-10 tab-content">
                     {* foreach logs *}
                     <div class="tab-pane fade in active" id="logs-{* raw logbar.component *}">
-                            <h5>{* lang debug.component *} "{* raw logs.name *}":</h5>
-
-                            <br />
-
                             <ol>
                                 {* foreach logs.entries *}
                                 <li>{* var entries.text *}</li>
