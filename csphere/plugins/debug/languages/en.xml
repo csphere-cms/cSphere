@@ -30,5 +30,6 @@
         <define name="ms">ms</define>
         <define name="parsetime">Parsetime</define>
         <define name="request_type">Request type</define>
+        <define name="close_toolbar">Close toolbar</define>
     </definitions>
 </language>

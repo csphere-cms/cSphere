@@ -7,7 +7,7 @@ function csphere_ajax_loading(place) {
 function csphere_ajax_debug(place) {
 
     $('#debug_request_selector').attr('data-content', place);
-    $('.popover-nav').popover({
+    $('.navbar-nav a').popover({
         trigger: 'hover',
         placement: 'top',
         container: 'body'

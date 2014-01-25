@@ -31,11 +31,22 @@ body { padding-bottom: 60px; }
 
 /* ----- __DEBUG-NAVIGATION NAVBAR-NAV ICONS ----- */
 #debug-navigation .navbar-nav i { margin-right: 5px; }
+#debug-navigation .navbar-nav.navbar-left li:last-child i { margin-right: 0; }
 
 
 /*  __DEBUG-CONTENT
 ------------------------------------------------------------*/
-#debug-content { bottom: 51px; max-height: 600px; min-height: 0; overflow: auto; z-index: 1150; }
+#debug-content {
+    bottom: 51px;
+    max-height: 700px;
+    min-height: 0;
+    overflow: auto;
+    z-index: 1150;
+}
 
-/* ----- __DEBUG-CONTENT CONTENT ----- */
-#debug-content .debug_content { display: none; padding-bottom: 20px; padding-top: 20px; }
+/* ----- __DEBUG-CONTENT TAB-PANE ----- */
+#debug-content .container > .tab-pane { padding: 0 0 20px; }
+#debug-content .container > .tab-pane:first-of-type { padding: 0; }
+
+/* ----- __DEBUG-CONTENT TAB-PANE PAGE-HEADER ----- */
+#debug-content .tab-pane .page-header { margin-top: 0; padding-top: 0; }
