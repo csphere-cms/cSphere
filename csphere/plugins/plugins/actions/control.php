@@ -33,13 +33,16 @@ $count  = count($plugins);
 $data = array('count' => $count, 'plugins' => $plugins);
 
 // Manipulate data array
-foreach($data['plugins'] as $plugin) {
+foreach ($data['plugins'] as $plugin) {
+    
     $short = $plugin['short'];
     
-    $removeable = \csphere\plugins\plugins\classes\Check::uninstall($short, false);
+    $removeable = \csphere\plugins\plugins\classes\Check::uninstall($short);
     
     $data['plugins'][$short]['removeable'] = $removeable;
 }
+
+$data['test'] = $data['plugins']['access'];
 
 // Output results
 $view = $loader->load('view');

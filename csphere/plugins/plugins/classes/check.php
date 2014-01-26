@@ -26,31 +26,43 @@ namespace csphere\plugins\plugins\classes;
  * @link      http://www.csphere.eu
  **/
 
-class Check {
+class Check 
+{
     /**
      * Content of a directory as an array
      *
-     * @param string  $plugin Plugin to check possibilty to uninstall
+     * @param string  $plugin      Plugin to check possibilty to uninstall
      *
      * @param string  $short_check Faster plugin check in some cases
      *
      * @return boolean
      **/
 
-    public static function uninstall($plugin, $short_check = false) {   
-             
-        // Check if plugin is avaible
-        $path = "\csphere\plugins".$plugin;
+    public static function uninstall($plugin, $short_check = false) 
+    {               
+        // Check if plugin is avaible (temporally code maybe better as core component)
         
-        $target = $path."\plugin.xml";
-        
-        if(!$short_check) {
+        if (!$short_check) {
             
-            if(!is_dir($path) OR !file_exists($target)) {
+            $path = \csphere\core\init\path();
+            
+            $target = $path . 'csphere/plugins/' . $plugin;
+            
+            $file = $target . '/' . 'plugin.xml';
+            
+            if (!is_dir($target)) {
                 
                 return false;
             }
-        }       
+            
+            if (!file_exists($file)) {
+                
+                return false;
+            }
+        }
+        
+        //Check plugin dependencies
+               
         return true;
     }
     
@@ -62,8 +74,21 @@ class Check {
      * @return boolean
      **/
 
-    public static function install($target) {
-        
+    public static function install($target) 
+    {     
         return $target;
+    }
+    
+    /**
+     * Content of a directory as an array
+     *
+     * @param string  $plugin Plugin to check possibilty to update it
+     *
+     * @return boolean
+     **/
+
+    public static function update($plugin) 
+    {     
+        return $plugin;
     }
 }
