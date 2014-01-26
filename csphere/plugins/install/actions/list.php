@@ -48,8 +48,30 @@ foreach ($extensions AS $ext) {
 
 if ($missing != '') {
 
-    $error    = $lang['no_php_ext'] . ': ' . $missing;
-    $continue = '';
+    $error    .= $lang['no_php_ext'] . ': ' . $missing . "\n";
+    $continue  = '';
+}
+
+// Check if directories are writable
+$path  = \csphere\core\init\path();
+$write = '';
+$dirs  = array('config', 'storage', 'storage/cache', 'storage/database',
+               'storage/logs', 'storage/logs/errors', 'storage/uploads');
+
+foreach ($dirs AS $dir) {
+
+    $check = $path . 'csphere/' . $dir;
+
+    if (!is_writable($check)) {
+
+        $write .= 'csphere/' . $dir;
+    }
+}
+
+if ($write != '') {
+
+    $error    .= $lang['no_write'] . ': ' . $write . "\n";
+    $continue  = '';
 }
 
 $data = array('error' => $error, 'continue' => $continue);
