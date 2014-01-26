@@ -42,7 +42,7 @@ foreach ($extensions AS $ext) {
 
     if (!extension_loaded($ext['value'])) {
 
-        $missing .= $ext['value'] . ' ';
+        $missing .= "\n" . $ext['value'];
     }
 }
 
@@ -64,7 +64,7 @@ foreach ($dirs AS $dir) {
 
     if (!is_writable($check)) {
 
-        $write .= 'csphere/' . $dir;
+        $write .= "\n" . 'csphere/' . $dir;
     }
 }
 
