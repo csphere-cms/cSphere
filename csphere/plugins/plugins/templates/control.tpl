@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-body">
-		{* debug test *}
+        {* debug test *}
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">

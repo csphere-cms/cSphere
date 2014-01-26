@@ -26,7 +26,7 @@ namespace csphere\plugins\plugins\classes;
  * @link      http://www.csphere.eu
  **/
 
-class Check 
+class Check
 {
     /**
      * Content of a directory as an array
@@ -38,49 +38,31 @@ class Check
      * @return boolean
      **/
 
-<<<<<<< HEAD
-    public static function uninstall($plugin, $short_check = false) 
-    {               
+    public static function uninstall($plugin, $short_check = false)
+    {
         // Check if plugin is avaible (temporally code maybe better as core component)
-        
+
         if (!$short_check) {
-            
+
             $path = \csphere\core\init\path();
-            
+
             $target = $path . 'csphere/plugins/' . $plugin;
-            
+
             $file = $target . '/' . 'plugin.xml';
-            
+
             if (!is_dir($target)) {
-                
+
                 return false;
             }
-            
+
             if (!file_exists($file)) {
-                
+
                 return false;
             }
         }
-        
+
         //Check plugin dependencies
-               
-=======
-    public static function uninstall($plugin, $short_check = false) {
 
-        // Check if plugin is avaible
-        $path = "\csphere\plugins".$plugin;
-
-        $target = $path."\plugin.xml";
-
-        if(!$short_check) {
-
-            if(!is_dir($path) OR !file_exists($target)) {
-
-                return false;
-            }
-        }
->>>>>>> 8bd09d786ebfef98bda9ed65f18ee97af55464fe
-        return true;
     }
 
     /**
@@ -91,16 +73,11 @@ class Check
      * @return boolean
      **/
 
-<<<<<<< HEAD
-    public static function install($target) 
-    {     
-=======
-    public static function install($target) {
-
->>>>>>> 8bd09d786ebfef98bda9ed65f18ee97af55464fe
+    public static function install($target)
+    {
         return $target;
     }
-    
+
     /**
      * Content of a directory as an array
      *
@@ -109,8 +86,8 @@ class Check
      * @return boolean
      **/
 
-    public static function update($plugin) 
-    {     
+    public static function update($plugin)
+    {
         return $plugin;
     }
 }
