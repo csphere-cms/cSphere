@@ -93,11 +93,17 @@ class Driver_APC extends Base
         $info = parent::info();
 
         $stats = apc_cache_info('user');
+        $keys  = isset($stats['nentries']) ? $stats['nentries'] : '';
+
+        if (empty($keys) AND isset ($stats['cache_list'])) {
+
+            $keys = count($stats['cache_list']);
+        }
 
         $info['version'] = phpversion('apc');
         $info['client']  = '';
         $info['server']  = '';
-        $info['keys']    = count($stats['cache_list']);
+        $info['keys']    = $keys;
 
         // Check for apcu
         if (extension_loaded('apcu')) {
