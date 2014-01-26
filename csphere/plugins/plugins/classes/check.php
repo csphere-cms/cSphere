@@ -31,9 +31,8 @@ class Check
     /**
      * Content of a directory as an array
      *
-     * @param string  $plugin      Plugin to check possibilty to uninstall
-     *
-     * @param string  $short_check Faster plugin check in some cases
+     * @param string $plugin      Plugin to check possibilty to uninstall
+     * @param string $short_check Faster plugin check in some cases
      *
      * @return boolean
      **/
@@ -69,7 +68,7 @@ class Check
     /**
      * Content of a directory as an array
      *
-     * @param string  $target Target to plugin xml-file
+     * @param string $target Target to plugin xml-file
      *
      * @return boolean
      **/
@@ -82,7 +81,7 @@ class Check
     /**
      * Content of a directory as an array
      *
-     * @param string  $plugin Plugin to check possibilty to update it
+     * @param string $plugin Plugin to check possibilty to update it
      *
      * @return boolean
      **/
