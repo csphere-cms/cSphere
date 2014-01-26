@@ -37,23 +37,23 @@ class Check {
      * @return boolean
      **/
 
-    public static function uninstall($plugin, $short_check = false) {   
-             
+    public static function uninstall($plugin, $short_check = false) {
+
         // Check if plugin is avaible
         $path = "\csphere\plugins".$plugin;
-        
+
         $target = $path."\plugin.xml";
-        
+
         if(!$short_check) {
-            
+
             if(!is_dir($path) OR !file_exists($target)) {
-                
+
                 return false;
             }
-        }       
+        }
         return true;
     }
-    
+
     /**
      * Content of a directory as an array
      *
@@ -63,7 +63,7 @@ class Check {
      **/
 
     public static function install($target) {
-        
+
         return $target;
     }
 }
