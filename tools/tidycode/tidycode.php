@@ -29,10 +29,10 @@ function tidycodeFile ($file)
         'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
 
     // File extensions that are known as forbidden
-    $forbidden = array('bat', 'buildpath', 'eot', 'gif', 'gitattributes',
-        'gitignore', 'ico', 'iml', 'jpg', 'log', 'name', 'otf', 'phar', 'png',
-        'prefs', 'project', 'properties', 'rb', 'scss', 'sh', 'sqlite', 'svg',
-        'svgz', 'tmp', 'ttf', 'woff');
+    $forbidden = array('DS_STORE', 'bat', 'buildpath', 'eot', 'gif',
+        'gitattributes', 'gitignore', 'ico', 'iml', 'jpg', 'log', 'name',
+        'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb', 'scss',
+        'sh', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff');
 
     // Get file data and try to tidy it
     $data = pathinfo($file);
