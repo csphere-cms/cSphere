@@ -26,31 +26,31 @@ namespace csphere\plugins\plugins\classes;
  * @link      http://www.csphere.eu
  **/
 
-class Check 
-{
+class Check {
     /**
      * Content of a directory as an array
      *
      * @param string  $plugin Plugin to check possibilty to uninstall
      *
+     * @param string  $short_check Faster plugin check in some cases
+     *
      * @return boolean
      **/
 
-    public static function uninstall($plugin, $short_check = false)
-    {        
+    public static function uninstall($plugin, $short_check = false) {   
+             
         // Check if plugin is avaible
         $path = "\csphere\plugins".$plugin;
         
         $target = $path."\plugin.xml";
         
-        if(!$short_check)
-        {
-            if(!is_dir($path) OR !file_exists($target))
-            {
+        if(!$short_check) {
+            
+            if(!is_dir($path) OR !file_exists($target)) {
+                
                 return false;
             }
-        }
-        
+        }       
         return true;
     }
     
@@ -62,8 +62,8 @@ class Check
      * @return boolean
      **/
 
-    public static function install($target)
-    {
-        return true;
+    public static function install($target) {
+        
+        return $target;
     }
 }
