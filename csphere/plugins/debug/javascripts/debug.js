@@ -1,5 +1,5 @@
 $(function() {
-    $('.navbar-nav a').popover({
+    $('#debug-navigation a').popover({
         trigger: 'hover',
         placement: 'top',
         container: 'body'

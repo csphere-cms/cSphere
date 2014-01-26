@@ -38,6 +38,7 @@ class Check
      * @return boolean
      **/
 
+<<<<<<< HEAD
     public static function uninstall($plugin, $short_check = false) 
     {               
         // Check if plugin is avaible (temporally code maybe better as core component)
@@ -63,9 +64,25 @@ class Check
         
         //Check plugin dependencies
                
+=======
+    public static function uninstall($plugin, $short_check = false) {
+
+        // Check if plugin is avaible
+        $path = "\csphere\plugins".$plugin;
+
+        $target = $path."\plugin.xml";
+
+        if(!$short_check) {
+
+            if(!is_dir($path) OR !file_exists($target)) {
+
+                return false;
+            }
+        }
+>>>>>>> 8bd09d786ebfef98bda9ed65f18ee97af55464fe
         return true;
     }
-    
+
     /**
      * Content of a directory as an array
      *
@@ -74,8 +91,13 @@ class Check
      * @return boolean
      **/
 
+<<<<<<< HEAD
     public static function install($target) 
     {     
+=======
+    public static function install($target) {
+
+>>>>>>> 8bd09d786ebfef98bda9ed65f18ee97af55464fe
         return $target;
     }
     

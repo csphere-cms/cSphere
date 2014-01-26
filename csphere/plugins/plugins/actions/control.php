@@ -36,9 +36,15 @@ $data = array('count' => $count, 'plugins' => $plugins);
 foreach ($data['plugins'] as $plugin) {
     
     $short = $plugin['short'];
+<<<<<<< HEAD
     
     $removeable = \csphere\plugins\plugins\classes\Check::uninstall($short);
     
+=======
+
+    $removeable = \csphere\plugins\plugins\classes\Check::uninstall($short, false);
+
+>>>>>>> 8bd09d786ebfef98bda9ed65f18ee97af55464fe
     $data['plugins'][$short]['removeable'] = $removeable;
 }
 

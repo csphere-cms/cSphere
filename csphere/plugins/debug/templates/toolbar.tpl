@@ -1,4 +1,4 @@
-<div id="debug-navigation" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<div id="debug-navigation" class="navbar navbar-default navbar-fixed-bottom hidden-xs" role="navigation">
     <div class="container">
 
         <div class="navbar-header">
@@ -6,7 +6,7 @@
                 <i class="fa fa-bars"></i>
             </button><!--END debug-navigation navbar-header navbar-toogle-->
 
-            <a class="navbar-brand">cSphere</a><!--END debug-navigation navbar-header navbar-brand-->
+            <a class="navbar-brand" data-content="cSphere"></a><!--END debug-navigation navbar-header navbar-brand-->
         </div><!--END debug-navigation navbar-header-->
 
         <div id="debug-collapse" class="collapse navbar-collapse">
@@ -84,7 +84,7 @@
 </div><!--END debug-navigation-->
 
 
-<div id="debug-content" class="navbar navbar-default navbar-fixed-bottom">
+<div id="debug-content" class="navbar navbar-default navbar-fixed-bottom hidden-xs">
     <div class="container tab-content">
 
         <section id="tab-empty" class="tab-pane fade in active">
@@ -112,7 +112,7 @@
 
                 <div class="col-md-10 tab-content">
                     {* foreach logs *}
-                    <div class="tab-pane fade in active" id="logs-{* raw logbar.component *}">
+                    <div class="tab-pane fade in active" id="logs-{* raw logs.name *}">
                             <ol>
                                 {* foreach logs.entries *}
                                 <li>{* var entries.text *}</li>

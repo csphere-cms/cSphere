@@ -17,12 +17,12 @@ body { padding-bottom: 60px; }
 ------------------------------------------------------------*/
 #debug-navigation { z-index: 1100; }
 
-/* ----- __DEBUG-NAVIGATION NAVBAR-TOGGLE ----- */
-#debug-navigation .navbar-toggle {
-    line-height: 34px;
-    max-height: 34px;
+/* ----- __DEBUG-NAVIGATION NAVBAR-BRAND ----- */
+#debug-navigation .navbar-brand {
+    background: url(../images/debug-logo.png) center center no-repeat;
+    height: 50px;
     padding: 0;
-    width: 38px;
+    width: 50px;
 }
 
 /* ----- __DEBUG-NAVIGATION NAVBAR-NAV LINKS ----- */
@@ -38,15 +38,15 @@ body { padding-bottom: 60px; }
 ------------------------------------------------------------*/
 #debug-content {
     bottom: 51px;
-    max-height: 700px;
+    max-height: 50%;
     min-height: 0;
     overflow: auto;
     z-index: 1150;
 }
 
 /* ----- __DEBUG-CONTENT TAB-PANE ----- */
-#debug-content .container > .tab-pane { padding: 0 0 20px; }
-#debug-content .container > .tab-pane:first-of-type { padding: 0; }
+#debug-content .container > .tab-pane { min-height: 800px; padding: 0 0 20px; }
+#debug-content .container > .tab-pane:first-of-type { display: none; }
 
 /* ----- __DEBUG-CONTENT TAB-PANE PAGE-HEADER ----- */
-#debug-content .tab-pane .page-header { margin-top: 0; padding-top: 0; }
+#debug-content .tab-pane .page-header { margin-top: 0; }
