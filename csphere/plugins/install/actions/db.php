@@ -31,10 +31,19 @@ $db_error = null;
 $data     = array();
 
 // List of database drivers
-$db_driverlist = array('pdo_sqlsrv' => 'Microsoft SQL Server / Microsoft LocalDB',
+$db_driverlist = array('none'       => 'None');
+$db_existance  = array('pdo_sqlsrv' => 'Microsoft SQL Server / Microsoft LocalDB',
                        'pdo_mysql'  => 'MySQL / MariaDB',
                        'pdo_pgsql'  => 'PostgreSQL',
                        'pdo_sqlite' => 'SQLite');
+
+foreach ($db_existance AS $short => $name) {
+
+    if (extension_loaded($short)) {
+
+        $db_driverlist[$short] = $name;
+    }
+}
 
 // Get and format post data
 $post           = \csphere\core\http\Input::getAll('post');

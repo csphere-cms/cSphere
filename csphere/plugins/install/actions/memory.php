@@ -34,12 +34,20 @@ $cache_error = null;
 $data        = array();
 
 // List of cache drivers
-$cache_drivers = array('none'     => 'None',
-                       'apc'      => 'APC / APCu',
+$cache_drivers = array('none'     => 'None');
+$cache_exists  = array('apc'      => 'APC / APCu',
                        'file'     => 'File',
                        'redis'    => 'Redis',
                        'wincache' => 'WinCache',
                        'xcache'   => 'XCache');
+
+foreach ($cache_exists AS $short => $name) {
+
+    if (extension_loaded($short)) {
+
+        $cache_drivers[$short] = $name;
+    }
+}
 
 // Get and format post data
 $post             = \csphere\core\http\Input::getAll('post');

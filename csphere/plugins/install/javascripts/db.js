@@ -9,7 +9,13 @@ jQuery(document).ready(function() {
 
         var type = $("#database_driver").val();
 
-        if (type == "pdo_sqlite") {
+        if (type == "none") {
+
+            // No additional inputs
+            $(".sql_others").hide();
+            $(".sql_filename").hide();
+
+        } else if (type == "pdo_sqlite") {
 
             // SQLite only needs a few inputs
             $(".sql_others").hide();
@@ -23,6 +29,7 @@ jQuery(document).ready(function() {
 
         } else {
 
+            // Default inputs
             $(".sql_others").show();
             $(".sql_filename").hide();
         }
