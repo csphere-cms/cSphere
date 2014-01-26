@@ -29,7 +29,7 @@ function tidycodeFile ($file)
         'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
 
     // File extensions that are known as forbidden
-    $forbidden = array('DS_STORE', 'bat', 'buildpath', 'eot', 'gif',
+    $forbidden = array('DS_Store', 'bat', 'buildpath', 'eot', 'gif',
         'gitattributes', 'gitignore', 'ico', 'iml', 'jpg', 'log', 'name',
         'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb', 'scss',
         'sh', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff');
