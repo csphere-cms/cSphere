@@ -125,7 +125,7 @@ class Driver_APC extends Base
         $form = array();
 
         $info = apc_cache_info('user');
-        $list = isset($stats['cache_list']) ? $stats['cache_list'] : array();
+        $list = isset($info['cache_list']) ? $info['cache_list'] : array();
 
         foreach ($list AS $num => $data) {
 
