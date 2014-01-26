@@ -45,8 +45,8 @@ body { padding-bottom: 60px; }
 }
 
 /* ----- __DEBUG-CONTENT TAB-PANE ----- */
-#debug-content .container > .tab-pane { min-height: 100%; padding: 0 0 20px; }
+#debug-content .container > .tab-pane { min-height: 800px; padding: 0 0 20px; }
 #debug-content .container > .tab-pane:first-of-type { display: none; }
 
 /* ----- __DEBUG-CONTENT TAB-PANE PAGE-HEADER ----- */
-#debug-content .tab-pane .page-header { margin-top: 0; padding-top: 0; }
+#debug-content .tab-pane .page-header { margin-top: 0; }
