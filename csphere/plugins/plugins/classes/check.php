@@ -63,6 +63,7 @@ class Check
 
         //Check plugin dependencies
 
+        return true;
     }
 
     /**
