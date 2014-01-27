@@ -56,11 +56,11 @@ class Driver_APC extends Base
 
     public function clear()
     {
-        // Get number of paramters since APCu does not support one
+        // Workaround for APCu version below 4.0.2
         $reflection = new \ReflectionFunction('apc_clear_cache');
-        $parameters = $reflection->getNumberOfParameters();
+        $parameters = $reflection->getParameters();
 
-        if (empty($parameters)) {
+        if ($parameters[0]['name'] == 'info') {
 
             apc_clear_cache();
 
