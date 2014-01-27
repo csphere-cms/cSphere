@@ -66,7 +66,7 @@ class Check
 
         if (!$_check) {
 
-            if (!Check::_existsPlugin($_plugin)) {
+            if (!self::_existsPlugin($_plugin)) {
 
                 return false;
             }
