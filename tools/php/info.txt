@@ -1,0 +1,7 @@
+What is this?
+-------------
+
+PHP configuration suggestions and examples
+
+The following settings might be useful for running cSphere.
+Some of them might need additional PHP extensions or newer versions.
