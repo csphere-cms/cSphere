@@ -60,7 +60,7 @@ class Driver_APC extends Base
         $reflection = new \ReflectionFunction('apc_clear_cache');
         $parameters = $reflection->getParameters();
 
-        if ($parameters[0]['name'] == 'info') {
+        if ($parameters[0]->getName() == 'info') {
 
             apc_clear_cache();
 
