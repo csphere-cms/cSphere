@@ -52,5 +52,6 @@
     <startup>
         <file type="stylesheet" top="false" name="csphere.css" />
         <file type="javascript" top="false" name="ajax.js" />
+        <file type="javascript" top="false" name="misc.js" />
     </startup>
 </plugin>

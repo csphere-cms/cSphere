@@ -57,3 +57,13 @@
     -moz-hyphens: auto;
     hyphens: auto;
 }
+
+
+/*  __HELP-BUBBLE
+------------------------------------------------------------*/
+.help-bubble {
+    color: #ccc;
+    cursor: help;
+    font-size: 1.6em;
+    line-height: 36px;
+}
