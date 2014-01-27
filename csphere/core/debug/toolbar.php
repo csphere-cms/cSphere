@@ -131,11 +131,19 @@ class Toolbar
 
     private function _format(array $stats, array $logs)
     {
+        // Check for PHP settings that are problematic for developers
+        $error = $this->_settings();
+
+        if ($error != '') {
+
+            $logs['errors'][] = $error;
+        }
+
         // Details first to not overwrite something
         $data = $this->_formatDetails($logs);
 
         // Constant PHP_RELEASE_VERSION adds patch release number
-        $data['php_full']  = phpversion();
+        $data['php_full'] = phpversion();
 
         // Move parsetime and memory usage to data array
         $data['memory'] = \csphere\core\files\File::size($stats['memory']);
@@ -214,5 +222,41 @@ class Toolbar
         $data['count']['logs'] = count($data['logs']);
 
         return $data;
+    }
+
+    /**
+     * Check for development specific settings
+     *
+     * @return string
+     **/
+
+    private function _settings()
+    {
+        $error = '';
+
+        // Check for OPcache validation
+        if (extension_loaded('Zend OPcache')) {
+
+            $val = ini_get('opcache.validate_timestamps');
+            $frq = ini_get('opcache.revalidate_freq');
+
+            if (empty($val)) {
+
+                $error .= 'opcache.validate_timestamps=1' . "\n";
+            }
+
+            if (!empty($frq)) {
+
+                $error .= 'opcache.revalidate_freq=0' . "\n";
+            }
+        }
+
+        if ($error != '') {
+
+            $lang  = \csphere\core\translation\Fetch::key('debug', 'php_ini_dev');
+            $error = $lang . ':' . "\n" . $error;
+        }
+
+        return $error;
     }
 }

@@ -21,6 +21,7 @@
     </contact>
     <definitions>
         <define name="backtrace">Ablaufverfolgung</define>
+        <define name="close_toolbar">Toolbar schließen</define>
         <define name="component">Komponente</define>
         <define name="database_queries">Datenbank</define>
         <define name="debug">Debug</define>
@@ -29,7 +30,7 @@
         <define name="memory_usage">Speicher</define>
         <define name="ms">ms</define>
         <define name="parsetime">Ladezeit</define>
+        <define name="php_ini_dev">Beim Entwickeln die PHP Einstellungen wie folgt anpassen</define>
         <define name="request_type">Anfragetyp</define>
-        <define name="close_toolbar">Toolbar schließen</define>
     </definitions>
 </language>

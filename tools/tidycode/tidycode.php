@@ -25,8 +25,8 @@ function tidycodeFile ($file)
 {
     // File extensions where the encoding will be converted
     $allowed = array(
-        'conf', 'config', 'css', 'editorconfig', 'htaccess', 'htm', 'html', 'js',
-        'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
+        'conf', 'config', 'css', 'editorconfig', 'htaccess', 'htm', 'html', 'ini',
+        'js', 'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
 
     // File extensions that are known as forbidden
     $forbidden = array('DS_Store', 'bat', 'buildpath', 'eot', 'gif',

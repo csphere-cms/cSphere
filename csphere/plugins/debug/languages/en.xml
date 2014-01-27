@@ -21,6 +21,7 @@
     </contact>
     <definitions>
         <define name="backtrace">Backtrace</define>
+        <define name="close_toolbar">Close toolbar</define>
         <define name="component">Component</define>
         <define name="database_queries">Database</define>
         <define name="debug">Debug</define>
@@ -29,7 +30,7 @@
         <define name="memory_usage">Memory</define>
         <define name="ms">ms</define>
         <define name="parsetime">Parsetime</define>
+        <define name="php_ini_dev">For development change PHP settings as follows</define>
         <define name="request_type">Request type</define>
-        <define name="close_toolbar">Close toolbar</define>
     </definitions>
 </language>
