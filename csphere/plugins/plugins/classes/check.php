@@ -28,6 +28,29 @@ namespace csphere\plugins\plugins\classes;
 
 class Check
 {
+
+    /**
+     * Content of a directory as an array
+     *
+     * @param string $_plugin Plugin to check avaibility
+     *
+     * @return boolean
+     **/
+
+    private static function existsPlugin($_plugin)
+    {
+        // Check for plugin XML file
+        $path = \csphere\core\init\path();
+        $file = $path . 'csphere/plugins/' . $_plugin . '/plugin.xml';
+
+        if (!file_exists($file)) {
+
+            return false;
+        }
+
+        return true;
+    }
+
     /**
      * Content of a directory as an array
      *
@@ -43,11 +66,7 @@ class Check
 
         if (!$_check) {
 
-            // Check for plugin XML file
-            $path = \csphere\core\init\path();
-            $file = $path . 'csphere/plugins/' . $_plugin . '/plugin.xml';
-
-            if (!file_exists($file)) {
+            if (!Check::existsPlugin($_plugin)) {
 
                 return false;
             }
@@ -80,11 +99,8 @@ class Check
                 if ($control_plugin == $check_plugin) {
 
                     return false;
-
                 }
-
             }
-
         }
 
         return true;
