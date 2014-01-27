@@ -67,7 +67,6 @@ class Check
 
         $plugins = $meta->details();
         
-        // Check other plugins
         foreach ($plugins as $plugin) {
 
             $xml = $loader->load('xml', 'plugin');
