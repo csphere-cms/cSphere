@@ -31,21 +31,20 @@ class Check
     /**
      * Content of a directory as an array
      *
-     * @param string $_plugin      Plugin to check possibilty to uninstall
-     * @param string $_check       Faster plugin check in some cases
+     * @param string $_plugin Plugin to check possibilty to uninstall
+     * @param string $_check  Faster plugin check in some cases
      *
      * @return boolean
      **/
 
     public static function uninstall($_plugin, $_check = false)
     {
-        // Check if plugin is avaible (temporally code maybe better as core component)
+        // Check if plugin is avaible
 
         if (!$_check) {
 
             // Check for plugin XML file
             $path = \csphere\core\init\path();
-
             $file = $path . 'csphere/plugins/' . $_plugin . '/plugin.xml';
 
             if (!file_exists($file)) {
@@ -56,21 +55,19 @@ class Check
 
         // Check plugin dependencies
         $loader = \csphere\core\service\Locator::get();
-
         $xml = $loader->load('xml', 'plugin');
-
         $data = $xml->source('plugin', $_plugin);
 
         $vendor = $data['vendor'];
 
+        // Load plugin list
         $meta = new \csphere\core\plugins\Metadata();
-
         $plugins = $meta->details();
-        
+
         foreach ($plugins as $plugin) {
 
+            // Load plugin xml infos
             $xml = $loader->load('xml', 'plugin');
-
             $data = $xml->source('plugin', $plugin['short']);
 
             $dependencies = $data['environment'][0]['needed'];
@@ -78,7 +75,6 @@ class Check
             foreach ($dependencies as $dependency) {
 
                 $control_plugin = $vendor . '.' . $_plugin;
-
                 $check_plugin = $dependency['vendor'] . '.' . $dependency['plugin'];
 
                 if ($control_plugin == $check_plugin) {
