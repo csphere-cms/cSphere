@@ -26,5 +26,14 @@
         <define name="key">Schlüssel</define>
         <define name="keys">Keys</define>
         <define name="no_entry">Kein Eintrag gefunden</define>
+        <define name="op_enable">Aktiv</define>
+        <define name="op_enable_cli">Aktiv beim CLI Modus</define>
+        <define name="op_load_com">Lade Kommentarblöcke</define>
+        <define name="op_loaded">OPcache PHP-Erweiterung geladen</define>
+        <define name="op_memory_con">Zugeteilter Speicher in Megabytes</define>
+        <define name="op_save_com">Speichere Kommentarblöcke</define>
+        <define name="op_revalid_freq">Sekunden zwischen diesen Prüfungen</define>
+        <define name="op_valid_time">Prüfe Dateien auf Änderungen</define>
+        <define name="opcache">OPcache</define>
     </definitions>
 </language>

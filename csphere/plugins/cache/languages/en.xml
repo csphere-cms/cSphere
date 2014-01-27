@@ -26,5 +26,14 @@
         <define name="key">Key</define>
         <define name="keys">Keys</define>
         <define name="no_entry">No entry found</define>
+        <define name="op_enable">Enabled</define>
+        <define name="op_enable_cli">Enabled for CLI Mode</define>
+        <define name="op_load_com">Load comment blocks</define>
+        <define name="op_loaded">OPcache PHP extension found</define>
+        <define name="op_memory_con">Shared memory in Megabytes</define>
+        <define name="op_save_com">Save comment blocks</define>
+        <define name="op_revalid_freq">Seconds between those checks</define>
+        <define name="op_valid_time">Check files for changes</define>
+        <define name="opcache">OPcache</define>
     </definitions>
 </language>

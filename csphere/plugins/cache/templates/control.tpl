@@ -18,6 +18,7 @@
         <ul class="nav nav-tabs nav-justified">
             <li class="active"><a href="{* link cache/control *}">{* lang default.control *}</a></li>
             <li><a href="{* link cache/keys *}">{* lang cache.keys *}</a></li>
+            <li><a href="{* link cache/opcache *}">{* lang cache.opcache *}</a></li>
         </ul><!--END nav-tabs-->
 
         <table class="table table-striped table-hover">

@@ -25,6 +25,12 @@ $bread->trace();
 // Get language data
 $lang = \csphere\core\translation\Fetch::keys('cache');
 
+// Clear OPcache
+if (function_exists('opcache_reset')) {
+
+    opcache_reset();
+}
+
 // Clear cache
 $cache = $loader->load('cache');
 $cache->clear();
