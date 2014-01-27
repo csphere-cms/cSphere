@@ -37,7 +37,7 @@ class Check
      * @return boolean
      **/
 
-    private static function existsPlugin($_plugin)
+    private static function _existsPlugin($_plugin)
     {
         // Check for plugin XML file
         $path = \csphere\core\init\path();
@@ -66,7 +66,7 @@ class Check
 
         if (!$_check) {
 
-            if (!Check::existsPlugin($_plugin)) {
+            if (!Check::_existsPlugin($_plugin)) {
 
                 return false;
             }
