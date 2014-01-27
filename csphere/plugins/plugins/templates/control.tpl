@@ -49,7 +49,7 @@
                     <td class="text-center">{* var plugins.pub *}</td>
                     <td class="text-center">
                         {* if plugins.removeable == 'yes' *}
-                        <a href="{* link plugins/delete/name/# *}">{* lang plugins.delete *}</a>
+                        <a href="{* link plugins/delete/short/$plugins.short$ *}">{* lang plugins.delete *}</a>
                         {* endif plugins.removeable *}
                     </td>
                 </tr>

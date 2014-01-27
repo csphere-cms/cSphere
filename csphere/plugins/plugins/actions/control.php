@@ -42,7 +42,9 @@ foreach ($data['plugins'] as $plugin) {
     $data['plugins'][$short]['removeable'] = $removeable;
 }
 
-$data['test'] = $data['plugins']['access'];
+// Default plugin not able to uninstall
+
+$data['plugins']['default']['removeable'] = false;
 
 // Output results
 $view = $loader->load('view');

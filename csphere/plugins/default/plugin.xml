@@ -28,6 +28,26 @@
         <extension>xml</extension>
     </required>
     <environment>
+        <needed vendor="csphere" plugin="access" version_min="0.1" />
+        <needed vendor="csphere" plugin="admin" version_min="0.1" />
+        <needed vendor="csphere" plugin="bootstrap" version_min="0.1" />
+        <needed vendor="csphere" plugin="cache" version_min="0.1" />
+        <needed vendor="csphere" plugin="database" version_min="0.1" />
+        <needed vendor="csphere" plugin="debug" version_min="0.1" />
+        <needed vendor="csphere" plugin="environment" version_min="0.1" />
+        <needed vendor="csphere" plugin="errors" version_min="0.1" />
+        <needed vendor="csphere" plugin="famfamfam" version_min="0.1" />
+        <needed vendor="csphere" plugin="fontawesome" version_min="0.1" />
+        <needed vendor="csphere" plugin="groups" version_min="0.1" />
+        <needed vendor="csphere" plugin="jquery" version_min="0.1" />
+        <needed vendor="csphere" plugin="languages" version_min="0.1" />
+        <needed vendor="csphere" plugin="members" version_min="0.1" />
+        <needed vendor="csphere" plugin="options" version_min="0.1" />
+        <needed vendor="csphere" plugin="plugins" version_min="0.1" />
+        <needed vendor="csphere" plugin="tags" version_min="0.1" />
+        <needed vendor="csphere" plugin="themes" version_min="0.1" />
+        <needed vendor="csphere" plugin="users" version_min="0.1" />
+        <needed vendor="csphere" plugin="xml" version_min="0.1" />
     </environment>
     <startup>
         <file type="stylesheet" top="false" name="csphere.css" />
