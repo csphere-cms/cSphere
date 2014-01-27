@@ -66,7 +66,8 @@ class Check
         $meta = new \csphere\core\plugins\Metadata();
 
         $plugins = $meta->details();
-
+        
+        // Check other plugins
         foreach ($plugins as $plugin) {
 
             $xml = $loader->load('xml', 'plugin');
