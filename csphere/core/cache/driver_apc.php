@@ -140,7 +140,7 @@ class Driver_APC extends Base
 
         foreach ($list AS $num => $data) {
 
-            $handle = $data['info'] . ' (' . $num . ')';
+            $handle = $data['key'] . ' (' . $num . ')';
 
             $form[$handle] = array('name' => $handle, 'time' => $data['mtime'],
                                    'size' => $data['mem_size']);
