@@ -14,38 +14,38 @@
             <nav>
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a href="#tab-logs" data-toggle="tab" data-content="{* lang debug.logs *}">
+                        <a href="#tab-logs" class="csphere_popover" data-toggle="tab" data-content="{* lang debug.logs *}">
                             <i class="fa fa-list-alt fa-lg"></i>
                             {* raw count.logs *}
                         </a>
                     </li>
                     <li>
-                        <a href="#tab-database" data-toggle="tab" data-content="{* lang database.database *}">
+                        <a href="#tab-database" class="csphere_popover" data-toggle="tab" data-content="{* lang database.database *}">
                             <i class="fa fa-archive fa-lg"></i>
                             {* raw count.database *}
                         </a>
                     </li>
                     <li>
                         {* if count.errors > '0' *}
-                        <a href="#tab-errors" class="text-danger" data-toggle="tab" data-content="{* lang errors.errors *}">
+                        <a href="#tab-errors" class="csphere_popover text-danger" data-toggle="tab" data-content="{* lang errors.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
                             {* raw count.errors *}
                         </a>
                         {* else count.errors *}
-                        <a href="#tab-errors" data-toggle="tab" data-content="{* lang errors.errors *}">
+                        <a href="#tab-errors" class="csphere_popover" data-toggle="tab" data-content="{* lang errors.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
                             {* raw count.errors *}
                         </a>
                         {* endif count.errors *}
                     </li>
                     <li>
-                        <a href="#tab-includes" data-toggle="tab" data-content="{* lang debug.includes *}">
+                        <a href="#tab-includes" class="csphere_popover" data-toggle="tab" data-content="{* lang debug.includes *}">
                             <i class="fa fa-files-o fa-lg"></i>
                             {* raw count.includes *}
                         </a>
                     </li>
                     <li class="active">
-                        <a href="#tab-empty" data-toggle="tab" data-content="{* lang debug.close_toolbar *}">
+                        <a href="#tab-empty" class="csphere_popover" data-toggle="tab" data-content="{* lang debug.close_toolbar *}">
                             <i class="fa fa-times"></i>
                         </a>
                     </li>
@@ -54,24 +54,24 @@
 
             <ul class="nav navbar-nav navbar-right">
                <li>
-                    <a data-content="PHP {* raw php_full *}">
+                    <a class="csphere_popover" data-content="PHP {* raw php_full *}">
                         <i class="fa fa-usd fa-lg"></i>
                         PHP
                     </a>
                 <li>
                 <li>
-                    <a id="debug_request_selector" data-content="{* lang debug.request_type *}">
+                    <a id="debug_request_selector" class="csphere_popover" data-content="{* lang debug.request_type *}">
                         <i class="fa fa-refresh fa-lg"></i>
                         <strong id="debug_request_type">HTTP</strong>
                     </a>
                 </li>
                 <li>
-                    <a data-content="{* lang debug.parsetime *}">
+                    <a class="csphere_popover" data-content="{* lang debug.parsetime *}">
                         <i class="fa fa-clock-o fa-lg"></i>
                         {* raw parsetime *} {* lang debug.ms *}
                     </a>
                 <li>
-                    <a data-content="{* lang debug.memory_usage *}">
+                    <a class="csphere_popover" data-content="{* lang debug.memory_usage *}">
                         <i class="fa fa-hdd-o fa-lg"></i>
                         {* raw memory *}
                     </a>

@@ -1,6 +1,6 @@
 <div class="form-group">
     <label class="col-sm-2 control-label">{* com lang label *}</label>
-    <div class="col-sm-10">
+    <div class="col-sm-9">
 
         <label class="checkbox-inline">
             <input type="radio" name="{* com text name *}" value="0" checked="checked" /> {* lang default.no *}
@@ -9,7 +9,10 @@
         <label class="checkbox-inline">
             <input type="radio" name="{* com text name *}" value="1" /> {* lang default.yes *}
         </label>
-
-        <i class="fa fa-fw fa-question-circle">{* com lang help *}</i>
+    </div>
+    <div class="col-sm-1">
+        <a class="help-bubble csphere_popover" data-content="{* com lang help *}">
+            <i class="fa fa-question-circle"></i>
+        </a>
     </div>
 </div><!--END form form-group {* com text name *}-->
