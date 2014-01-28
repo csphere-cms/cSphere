@@ -44,7 +44,7 @@
         <define name="lang">Language</define>
         <define name="language_ok">Next page is translated as requested</define>
         <define name="logs_info">Saves errors that occur for later evaluation</define>
-        <define name="mail">Mail</define>
+        <define name="mail">Emailing</define>
         <define name="mail_newline">Newlines</define>
         <define name="mail_newline_info">Use default unless the mail deamon can't handle it</define>
         <define name="mail_ok">Mail settings stored with success</define>

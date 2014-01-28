@@ -44,7 +44,7 @@
         <define name="lang">Sprache</define>
         <define name="language_ok">Die folgende Seite ist wie gewünscht übersetzt</define>
         <define name="logs_info">Speichere auftretende Fehler zur späteren Ansicht</define>
-        <define name="mail">E-Mail</define>
+        <define name="mail">E-Mail-Versand</define>
         <define name="mail_newline">Zeilenumbruch</define>
         <define name="mail_newline_info">Default verwenden, solange der Dienst keine Abweichung benötigt</define>
         <define name="mail_ok">E-Mail-Einstellungen erfolgreich gespeichert</define>

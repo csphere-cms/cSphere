@@ -9,9 +9,7 @@
 
         <form class="form-horizontal" role="form" action="{* link install/memory *}" method="POST">
 
-            {* tpl default/com_select name=cache_driver label=install.cache_type options=cache.drivers *}
-
-            <span class="help-block">{* lang install.cache_info *}</span>
+            {* tpl default/com_select_help name=cache_driver label=install.cache_type options=cache.drivers help=install.cache_info *}
 
             <div class="cache_redis">
             {* tpl default/com_input_adv name=cache_host label=default.host value=cache.host type=text holder=install.host_info *}
