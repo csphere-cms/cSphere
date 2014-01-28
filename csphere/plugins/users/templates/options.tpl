@@ -11,7 +11,7 @@
                 <label for="force_https" class="col-sm-3 control-label">{* lang users.force_https *}</label>
                 <div class="col-sm-9">
 
-                    <label class="checkbox-inline">
+                    <label class="radio-inline">
                         {* if options.force_https != '1' *}
                         <input type="radio" name="force_https" value="0" checked="checked" /> {* lang default.no *}
                         {* else options.force_https *}
@@ -19,7 +19,7 @@
                         {* endif options.force_https *}
                     </label>
 
-                    <label class="checkbox-inline">
+                    <label class="radio-inline">
                         {* if options.force_https == '1' *}
                         <input type="radio" name="force_https" value="1" checked="checked" /> {* lang default.yes *}
                         {* else options.force_https *}
