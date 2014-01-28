@@ -6,12 +6,8 @@ function csphere_ajax_loading(place) {
 
 function csphere_ajax_debug(place) {
 
+    // Update debug toolbar request type and request place
     $('#debug_request_selector').attr('data-content', place);
-    $('#debug-navigation a').popover({
-        trigger: 'hover',
-        placement: 'top',
-        container: 'body'
-    });
     $('#debug_request_type').html('AJAX');
 }
 
@@ -113,6 +109,9 @@ function csphere_ajax_get(hash, place) {
 
         csphere_ajax_error(target, status, error);
     });
+
+    // Init javascript functions that need to be refreshed
+    csphere_ajax_ready();
 }
 
 function csphere_ajax_update(result, place) {
@@ -256,6 +255,9 @@ function csphere_ajax_post(hash, formdata, place) {
 
         csphere_ajax_error(target, status, error);
     });
+
+    // Init javascript functions that need to be refreshed
+    csphere_ajax_ready();
 }
 
 function csphere_ajax_box_get(plugin, box, params) {
@@ -322,6 +324,16 @@ function csphere_ajax_full() {
     });
 }
 
+function csphere_ajax_ready() {
+
+    // Reload all popover elements
+    $('.csphere_popover').popover({
+        trigger: 'hover',
+        placement: 'top',
+        container: 'body'
+    });
+}
+
 // Wait for the document to be ready
 jQuery(document).ready(function() {
 
@@ -334,6 +346,9 @@ jQuery(document).ready(function() {
 
         console.log('AJAX stop');
     });
+
+    // Init javascript functions that need to be refreshed
+    csphere_ajax_ready();
 
     // Disable form submit if action is empty
     $(document).on('submit', 'form:not([action])', function(event) {
