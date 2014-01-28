@@ -1,6 +1,6 @@
 <div class="form-group">
-    <label class="col-sm-2 control-label">{* com lang label *}</label>
-    <div class="col-sm-9">
+    <label class="col-sm-3 control-label">{* com lang label *}</label>
+    <div class="col-sm-8">
 
         <label class="checkbox-inline">
             <input type="radio" name="{* com text name *}" value="0" checked="checked" /> {* lang default.no *}
