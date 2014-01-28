@@ -18,9 +18,9 @@ $loader = \csphere\core\service\Locator::get();
 $dir = \csphere\core\http\Input::get('get', 'dir');
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('themes');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('themes', 'control');
 $bread->add('details', 'themes/details/dir/' . $dir);
 $bread->trace();
 

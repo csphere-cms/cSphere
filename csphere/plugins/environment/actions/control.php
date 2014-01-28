@@ -16,9 +16,9 @@
 $loader = \csphere\core\service\Locator::get();
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('environment');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('environment', 'control');
 $bread->trace();
 
 // Collect server information

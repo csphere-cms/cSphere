@@ -17,7 +17,6 @@ $loader = \csphere\core\service\Locator::get();
 
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('users');
-
 $bread->add('logout');
 $bread->trace();
 

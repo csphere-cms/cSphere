@@ -25,9 +25,9 @@ $date    = str_replace($replace, '', $date);
 $name    = $date . '.log';
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('errors');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('errors', 'control');
 $bread->add('file', 'errors/file/date/' . $date);
 $bread->trace();
 

@@ -24,9 +24,9 @@ $typed = $type . 's';
 $lang = \csphere\core\translation\Fetch::keys('languages');
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('languages');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('languages', 'control');
 $bread->add($typed, 'languages/' . $typed . '/short/' . $short);
 
 $details = 'languages/details/short/' . $short . '/dir/' . $dir;

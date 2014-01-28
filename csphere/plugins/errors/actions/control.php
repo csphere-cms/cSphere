@@ -16,9 +16,9 @@
 $loader = \csphere\core\service\Locator::get();
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('errors');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('errors', 'control');
 $bread->trace();
 
 // Add data of errors

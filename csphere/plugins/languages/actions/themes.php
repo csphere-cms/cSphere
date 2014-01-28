@@ -18,9 +18,9 @@ $loader = \csphere\core\service\Locator::get();
 $short = \csphere\core\http\Input::get('get', 'short');
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('languages');
-
-$bread->add('control');
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('system');
+$bread->plugin('languages', 'control');
 $bread->add('themes', 'languages/themes/short/' . $short);
 $bread->trace();
 
