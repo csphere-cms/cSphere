@@ -207,10 +207,10 @@ function csphere_ajax_update(result, place) {
 
         // Update content
         csphere_ajax_highlight(place, result.content);
-
-        // Init javascript functions that need to be refreshed
-        csphere_ajax_ready();
     }
+
+    // Init javascript functions that need to be refreshed
+    csphere_ajax_ready();
 }
 
 function csphere_ajax_refresh() {
@@ -324,7 +324,7 @@ function csphere_ajax_full() {
 function csphere_ajax_ready() {
 
     // Reload all popover elements
-    $('.csphere_popover').popover({
+    $('.csphere-popover').popover({
         trigger: 'hover',
         placement: 'top',
         container: 'body'
