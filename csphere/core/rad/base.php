@@ -66,7 +66,7 @@ abstract class Base
     /**
      * Previous action
      **/
-    protected $previous = '';
+    protected $previous = 'list';
 
     /**
      * Previous text
@@ -124,7 +124,7 @@ abstract class Base
     {
         $this->action   = $action;
         $this->tpl      = $tpl;
-        $this->previous = $previous;
+        $this->previous = ($previous == '') ? 'list' : $previous;
         $this->_text    = $text;
     }
 
@@ -209,15 +209,17 @@ abstract class Base
 
     protected function breadcrumb($rid = 0)
     {
-        $bread = new \csphere\core\template\Breadcrumb($this->plugin);
+        // Manage origin is admin content
+        if ($this->previous == 'manage' OR $this->action == 'manage') {
 
-        if ($this->_text != '') {
+            $bread = new \csphere\core\template\Breadcrumb('admin');
+            $bread->add('content');
+            $bread->plugin($this->plugin, 'manage');
 
+        } else {
+
+            $bread = new \csphere\core\template\Breadcrumb($this->plugin);
             $bread->add($this->previous, $this->_text);
-
-        } elseif ($this->previous != '') {
-
-            $bread->add($this->previous);
         }
 
         $url = $this->plugin . '/' . $this->action;
