@@ -34,11 +34,6 @@ class Breadcrumb
     private $_plugin = '';
 
     /**
-     * Optional link on plugin name
-     **/
-    private $_url = '';
-
-    /**
      * Road from second to last entry
      **/
     private $_road = array();
@@ -52,15 +47,32 @@ class Breadcrumb
      * @return \csphere\core\template\Breadcrumb
      **/
 
-    public function __construct($plugin, $link = '')
+    public function __construct($plugin)
     {
-        // Set plugin and plugin url
+        // Set plugin
+        $this->_plugin = $plugin;
+    }
+
+    /**
+     * Change the plugin and add a link with plugin name text to the action
+     *
+     * @param string $plugin Plugin name
+     * @param string $action Action name
+     *
+     * @return boolean
+     **/
+
+    public function plugin($plugin, $action)
+    {
+        // Switch plugin
         $this->_plugin = $plugin;
 
-        if ($link != '') {
+        // Get plugin translation
+        $text = \csphere\core\translation\Fetch::key($plugin, $plugin);
 
-            $this->_url = \csphere\core\url\Link::params($plugin . '/' . $link);
-        }
+        $this->add($action, '', $text);
+
+        return true;
     }
 
     /**
@@ -120,10 +132,7 @@ class Breadcrumb
         $view   = $loader->load('view');
 
         // Format data for template usage
-        $plugin = $this->_plugin;
-        $text   = \csphere\core\translation\Fetch::key($plugin, $plugin);
-        $plugin = array('url' => $this->_url, 'text' => $text);
-        $data   = array('plugin' => $plugin, 'breadcrumb' => $this->_road);
+        $data = array('breadcrumb' => $this->_road);
 
         // Send data to view and fetch box result
         $view->template('default', 'breadcrumb', $data, true);
