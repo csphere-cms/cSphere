@@ -139,7 +139,11 @@ abstract class Link
 
         foreach ($params AS $key => $value) {
 
-            $link .= self::$_key . $key . self::$_value . $value;
+            // Only add params that are not empty
+            if ($value != '') {
+
+                $link .= self::$_key . $key . self::$_value . $value;
+            }
         }
 
         return $link;
