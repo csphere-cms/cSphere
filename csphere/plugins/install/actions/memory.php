@@ -34,9 +34,9 @@ $cache_error = null;
 $data        = array();
 
 // List of cache drivers
-$cache_drivers = array('none'     => 'None');
+$cache_drivers = array('none'     => 'None',
+                       'file'     => 'File');
 $cache_exists  = array('apc'      => 'APC / APCu',
-                       'file'     => 'File',
                        'redis'    => 'Redis',
                        'wincache' => 'WinCache',
                        'xcache'   => 'XCache');
