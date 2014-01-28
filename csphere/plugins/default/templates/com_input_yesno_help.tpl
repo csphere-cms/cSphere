@@ -11,7 +11,7 @@
         </label>
     </div>
     <div class="col-sm-1">
-        <a class="help-bubble csphere_popover" data-content="{* com lang help *}">
+        <a class="help-bubble csphere-popover" data-content="{* com lang help *}">
             <i class="fa fa-question-circle"></i>
         </a>
     </div>

@@ -109,9 +109,31 @@ function csphere_ajax_get(hash, place) {
 
         csphere_ajax_error(target, status, error);
     });
+}
 
-    // Init javascript functions that need to be refreshed
-    csphere_ajax_ready();
+function csphere_ajax_post(hash, formdata, place) {
+
+    // Set loading indicator
+    csphere_ajax_loading(place);
+
+    // Append xhr param and improve target string
+    var target = csphere_ajax_target(hash);
+
+    // Send form
+    $.ajax({
+        url:  target,
+        type: 'post',
+        data: formdata
+    })
+    .done(function(result) {
+
+        // Update html content parts
+        csphere_ajax_update(result, place);
+    })
+    .fail(function(jqXHR, status, error) {
+
+        csphere_ajax_error(target, status, error);
+    });
 }
 
 function csphere_ajax_update(result, place) {
@@ -185,13 +207,16 @@ function csphere_ajax_update(result, place) {
 
         // Update content
         csphere_ajax_highlight(place, result.content);
+
+        // Init javascript functions that need to be refreshed
+        csphere_ajax_ready();
     }
 }
 
 function csphere_ajax_refresh() {
 
     // Get target url
-    var target  = $(location).attr('hash').replace('#', '');
+    var target = $(location).attr('hash').replace('#', '');
 
     // Check for empty request and skip
     if (target != '' && csphere_ajax_refresh.skip != true) {
@@ -230,34 +255,6 @@ function csphere_ajax_link(href) {
         // Update browser url to trigger hashchange event
         $(location).attr('hash', target);
     }
-}
-
-function csphere_ajax_post(hash, formdata, place) {
-
-    // Set loading indicator
-    csphere_ajax_loading(place);
-
-    // Append xhr param and improve target string
-    var target = csphere_ajax_target(hash);
-
-    // Send form
-    $.ajax({
-        url:  target,
-        type: 'post',
-        data: formdata
-    })
-    .done(function(result) {
-
-        // Update html content parts
-        csphere_ajax_update(result, place);
-    })
-    .fail(function(jqXHR, status, error) {
-
-        csphere_ajax_error(target, status, error);
-    });
-
-    // Init javascript functions that need to be refreshed
-    csphere_ajax_ready();
 }
 
 function csphere_ajax_box_get(plugin, box, params) {
