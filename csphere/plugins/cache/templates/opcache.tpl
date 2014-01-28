@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang cache.cache *} - {* lang default.control *}
+                    {* lang cache.cache *} - {* lang cache.opcache *}
                 </h3><!--END header page-header headline-->
 
                 <div class="btn-group pull-right">
