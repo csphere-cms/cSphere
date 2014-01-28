@@ -8,8 +8,8 @@
         <form class="form-horizontal" role="form" action="{* link users/options *}" method="POST">
 
             <div class="form-group">
-                <label for="force_https" class="col-sm-2 control-label">{* lang users.force_https *}</label>
-                <div class="col-sm-10">
+                <label for="force_https" class="col-sm-3 control-label">{* lang users.force_https *}</label>
+                <div class="col-sm-9">
 
                     <label class="checkbox-inline">
                         {* if options.force_https != '1' *}
