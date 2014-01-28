@@ -3,6 +3,31 @@
     xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/changelog.xsd">
     <history type="system" name="csphere" />
     <updates>
+        <update version="2013.0-beta10" published="2014-01-28" compatible="">
+            <information>Improved installation and debug toolbar</information>
+            <instructions>PHP config examples can now be found in tools/php</instructions>
+            <added>
+                <item author="alci" source="">Added checks class to plugins plugin and delete plugin links</item>
+                <item author="hajo" source="">Added form class to template core for easier form element creation</item>
+                <item author="equal" source="">Added help text via popovers</item>
+                <item author="hajo" source="">Added install plugin checks for php extensions and writable dirs</item>
+                <item author="hajo" source="">Added jQuery 2.1.0 and removed old version</item>
+                <item author="hajo" source="">Added opcache details to cache plugin and an opcache debug warning</item>
+                <item author="hajo" source="">Added parameter support for boxes</item>
+            </added>
+            <reworked>
+                <item author="hajo" source="">Reworked database core to decouple it from PDO</item>
+                <item author="equal" source="">Reworked debug toolbar design</item>
+                <item author="hajo" source="">Reworked debug toolbar functionality</item>
+                <item author="hajo" source="">Reworked sandbox mode to be an own class in router core</item>
+                <item author="hajo" source="">Reworked SQL core DML conditions to be an own class</item>
+                <item author="equal" source="">Reworked theme and plugin template files</item>
+            </reworked>
+            <fixed>
+                <item author="hajo" source="">Fixed apc cache core problems with some apcu versions</item>
+                <item author="alci" source="">Fixed tidycode problems with .DS_Store directories</item>
+            </fixed>
+        </update>
         <update version="2013.0-beta9" published="2014-01-21" compatible="">
             <information>Github name changed from csphere-dev to csphere-cms</information>
             <instructions>Scrutinizer is now linked inside the readme file</instructions>
