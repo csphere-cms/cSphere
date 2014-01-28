@@ -42,7 +42,6 @@ class Breadcrumb
      * Plugin is important for links and language
      *
      * @param string $plugin Plugin name
-     * @param string $link   Link on plugin name that targets the given action
      *
      * @return \csphere\core\template\Breadcrumb
      **/
