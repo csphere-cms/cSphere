@@ -69,11 +69,6 @@ abstract class Base
     protected $previous = 'list';
 
     /**
-     * Previous text
-     **/
-    private $_text = '';
-
-    /**
      * Data closure
      **/
     private $_data = null;
@@ -115,17 +110,21 @@ abstract class Base
      * @param string $action   Action name if it differs from method name
      * @param string $tpl      Template file name
      * @param string $previous Adds the previous action to breadcrumb
-     * @param string $text     Text for previous if it differs from language key
      *
      * @return boolean
      **/
 
-    public function map($action = '', $tpl = '', $previous = '', $text = '')
+    public function map($action = '', $tpl = '', $previous = '')
     {
         $this->action   = $action;
         $this->tpl      = $tpl;
         $this->previous = ($previous == '') ? 'list' : $previous;
-        $this->_text    = $text;
+
+        // Manage should be handled like list
+        if ($action == 'manage') {
+
+            $this->previous = 'manage';
+        }
     }
 
     /**
@@ -209,8 +208,8 @@ abstract class Base
 
     protected function breadcrumb($rid = 0)
     {
-        // Manage origin is admin content
-        if ($this->previous == 'manage' OR $this->action == 'manage') {
+        // All actions that depend on manage get an admin link
+        if ($this->previous == 'manage') {
 
             $bread = new \csphere\core\template\Breadcrumb('admin');
             $bread->add('content');
@@ -219,19 +218,24 @@ abstract class Base
         } else {
 
             $bread = new \csphere\core\template\Breadcrumb($this->plugin);
-            $bread->add($this->previous, $this->_text);
+            $bread->plugin($this->plugin, $this->previous);
         }
 
-        $url = $this->plugin . '/' . $this->action;
+        // Just add an additional link if action and previous action differ
+        if ($this->previous != $this->action) {
 
-        // Requests for a specific ID must contain it here
-        if (!empty($rid)) {
+            $url = $this->plugin . '/' . $this->action;
 
-            $url .= '/id/' . (int)$rid;
+            // Requests for a specific ID must contain it here
+            if (!empty($rid)) {
+
+                $url .= '/id/' . (int)$rid;
+            }
+
+            // Add current action
+            $bread->add($this->action, $url);
         }
 
-        // Add current action and build trace list
-        $bread->add($this->action, $url);
         $bread->trace();
     }
 
