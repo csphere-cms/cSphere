@@ -61,10 +61,10 @@ class Tools
     /**
      * Get plugin for install / update / delete it
      *
-     * @throws \Exception
-     *
      * @param string $short Name of plugin or theme
      * @param string $type  Type of input data
+     *
+     * @throws \Exception
      *
      * @return \csphere\core\market\Tools
      **/
