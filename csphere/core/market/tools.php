@@ -63,8 +63,8 @@ class Tools
      *
      * @throws \Exception
      *
-     * @param string $plugin Name of plugin
-     * @param string $type Type, plugin or theme
+     * @param string $short Name of plugin or theme
+     * @param string $type  Type of input data
      *
      * @return \csphere\core\market\Tools
      **/
@@ -116,6 +116,8 @@ class Tools
     public function uninstall($action = false)
     {
         if (!$this->_existance) {
+
+            array_push($this->_error, 'Sample Error');
 
             return false;
         }
