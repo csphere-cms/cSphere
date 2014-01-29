@@ -37,9 +37,9 @@ foreach ($data['plugins'] as $plugin) {
 
     $short = $plugin['short'];
 
-    $removeable = \csphere\plugins\plugins\classes\Check::uninstall($short);
+    $marketTool = new \csphere\core\market\Tools($short, 'plugin');
 
-    $data['plugins'][$short]['removeable'] = $removeable;
+    $data['plugins'][$short]['removeable'] = $marketTool->uninstall();
 }
 
 // Default plugin not able to uninstall
