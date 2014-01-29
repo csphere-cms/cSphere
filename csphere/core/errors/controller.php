@@ -94,7 +94,7 @@ class Controller
         $data = array();
 
         // Send data to view and fetch box result
-        $view->template('errors', 'info', $data, true);
+        $view->template('errors', 'core_info', $data, true);
 
         $result = $view->box();
 

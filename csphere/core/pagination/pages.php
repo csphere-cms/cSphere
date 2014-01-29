@@ -372,7 +372,7 @@ class Pages
         $view = $loader->load('view');
 
         // Send data to view and fetch box result
-        $view->template('default', 'pages', $data, true);
+        $view->template('default', 'core_pages', $data, true);
         $result = $view->box();
 
         return $result;

@@ -78,7 +78,7 @@ class Backtrace
         $data = $this->_content;
 
         // Send data to view and fetch box result
-        $view->template('debug', 'backtrace', $data, true);
+        $view->template('debug', 'core_backtrace', $data, true);
 
         $result = $view->box();
 

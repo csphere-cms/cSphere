@@ -69,7 +69,7 @@ class Startup
             );
 
             // Send data to view and fetch result
-            $view->template('errors', 'config', $data);
+            $view->template('errors', 'core_config', $data);
 
             $router = new \csphere\core\router\Controller();
             $router->execute(true);

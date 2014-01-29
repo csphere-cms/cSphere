@@ -134,7 +134,7 @@ class Breadcrumb
         $data = array('breadcrumb' => $this->_road);
 
         // Send data to view and fetch box result
-        $view->template('default', 'breadcrumb', $data, true);
+        $view->template('default', 'core_breadcrumb', $data, true);
 
         $string = $view->box();
 

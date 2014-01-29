@@ -238,9 +238,9 @@ class Order
             $view = $loader->load('view');
 
             // Send data to view and fetch box result
-            $view->template('default', 'order', array('sort' => 'up'), true);
+            $view->template('default', 'core_order', array('sort' => 'up'), true);
             $this->_arrowUp = $view->box();
-            $view->template('default', 'order', array('sort' => 'down'), true);
+            $view->template('default', 'core_order', array('sort' => 'down'), true);
             $this->_arrowDown = $view->box();
 
             // Save arrows to cache

@@ -156,7 +156,7 @@ class Toolbar
         $data['logbar'] = $this->_formatLogbar($logs);
 
         // Send data to view and fetch box result
-        $this->_view->template('debug', 'toolbar', $data, true);
+        $this->_view->template('debug', 'core_toolbar', $data, true);
         $result = $this->_view->box();
 
         return $result;
