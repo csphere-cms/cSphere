@@ -5,8 +5,8 @@
  *
  * PHP Version 5
  *
- * @category  Plugins
- * @package   Plugins
+ * @category  Core
+ * @package   Market
  * @author    Micha Schultz <contact@csphere.eu>
  * @copyright 2014 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
@@ -18,8 +18,8 @@ namespace csphere\core\market;
 /**
  * Provides a layer for checkups to install and uninstall plugins
  *
- * @category  Plugins
- * @package   Plugins
+ * @category  Core
+ * @package   Market
  * @author    Micha Schultz <contact@csphere.eu>
  * @copyright 2014 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
