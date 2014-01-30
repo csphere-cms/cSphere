@@ -1,6 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Change diff layout for PHP files
+*.php diff=php
+
 # Ignore development specific files on export
 .editorconfig export-ignore
 .gitattributes export-ignore
