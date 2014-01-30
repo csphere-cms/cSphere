@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=groups.groups action=default.options *}
 
-        <br />
+        <br>
 
         <form class="form-horizontal" role="form" action="{* link groups/options *}" method="POST">
 

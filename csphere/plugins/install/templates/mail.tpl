@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=install.install action=install.mail *}
 
-        <br />
+        <br>
 
         {* tpl default/msg_error *}
 

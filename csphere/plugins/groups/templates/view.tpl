@@ -9,7 +9,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <tr>

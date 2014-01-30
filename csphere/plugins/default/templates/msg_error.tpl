@@ -3,5 +3,5 @@
     <strong>{* var error *}</strong>
 </div>
 
-<br />
+<br>
 {* endif error *}

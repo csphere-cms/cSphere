@@ -13,15 +13,17 @@
             <h4>{* var message *}</h4>
 
             {* if type == 'red' *}
-            <br />
+            <br>
             <a href="{* raw previous *}" class="btn btn-danger btn-lg btn-block">{* lang default.continue *}</a>
             {* endif type *}
+
             {* if type == 'green' *}
-            <br />
+            <br>
             <a href="{* raw previous *}" class="btn btn-success btn-lg btn-block">{* lang default.continue *}</a>
             {* endif type *}
+
             {* if type == 'default' *}
-            <br />
+            <br>
             <a href="{* raw previous *}" class="btn btn-default btn-lg btn-block">{* lang default.continue *}</a>
             {* endif type *}
         </div><!--END well-->

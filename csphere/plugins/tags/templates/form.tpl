@@ -7,7 +7,7 @@
         {* tpl default/com_header plugin=tags.tags action=default.edit *}
         {* endif action *}
 
-        <br />
+        <br>
 
         {* if action == 'create' *}
         <form class="form-horizontal" role="form" action="{* link tags/create *}" method="POST">

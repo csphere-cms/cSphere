@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=tags.tags action=default.view *}
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <tr>

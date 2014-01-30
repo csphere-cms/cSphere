@@ -11,14 +11,12 @@
             {* if buttons.options == 'yes' *}
             <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownOptions" data-toggle="dropdown">
                 <span class="caret"></span>
-                <span class="sr-only">Toggle Dropdown</span>
             </button>
 
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownOptions">
                 <li role="presentation"><a href="{* link $plugin$/options *}" role="menuitem" tabindex="-1">{* lang default.options *}</a></li>
             </ul>
             {* endif buttons.options *}
-
         </div><!--END header page-header btn-group-->
         {* endif buttons.create *}
     </section><!--END header page-header-->
@@ -31,7 +29,7 @@
         <div class="col-md-5 row pull-right">
             <form class="form-inline" role="form" action="{* link $plugin$/$action$ *}" method="POST">
                 <div class="input-group">
-                    <input type="search" class="form-control" name="search" maxlength="80" size="20" value="{* var search *}" placeholder="{* com lang search *}" />
+                    <input type="search" class="form-control" name="search" maxlength="80" size="20" value="{* var search *}" placeholder="{* com lang search *}">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">{* lang default.search *}</button>
                     </span>

@@ -10,13 +10,13 @@
         </header><!--END header-->
 
         <p>
-            cSphere CMS<br />
+            cSphere CMS<br>
             Copyright (c) 2003 - {* raw this_year *},
-            <a href="http://www.csphere.eu" target="_blank">cSphere Project</a>.<br />
+            <a href="http://www.csphere.eu" target="_blank">cSphere Project</a>.<br>
             All rights reserved.
         </p>
 
-        <hr />
+        <hr>
 
         <p>
             <strong>Redistribution and use in source and binary forms, with or without modification,
@@ -35,7 +35,7 @@
             </li>
         </ol>
 
-        <hr />
+        <hr>
 
         <p>
             THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"

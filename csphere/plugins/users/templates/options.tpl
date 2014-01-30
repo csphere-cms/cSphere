@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=users.users action=default.options *}
 
-        <br />
+        <br>
 
         <form class="form-horizontal" role="form" action="{* link users/options *}" method="POST">
 

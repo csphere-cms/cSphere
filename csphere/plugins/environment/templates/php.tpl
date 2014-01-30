@@ -75,7 +75,7 @@
         <div class="well text-center">
             <h4>{* lang xml.php_extensions *}:</h4>
 
-            <br />
+            <br>
 
             {* foreach extensions *}
                 {* raw extensions.name *} &nbsp;&nbsp;

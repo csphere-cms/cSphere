@@ -3,7 +3,7 @@
 
         {* tpl default/com_headsearch plugin=tags.tags action=default.manage search=default.name *}
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <thead>

@@ -2,12 +2,12 @@
 
 <a href="{* link database/install/dir/$dir$ *}">{* lang database.install_it *}</a>
 - <a href="{* link database/uninstall/dir/$dir$ *}">{* lang database.uninstall_it *}</a>
-<br /><br />
+<br><br>
 
 {* lang xml.plugin *}: {* var plugin *}
-<br /><br />
+<br><br>
 {* lang database.tables *}:
-<br /><br />
+<br><br>
 {* foreach tables *}
 <ul>
 <li>{* lang default.name *}: {* var tables.name *}</li>
@@ -69,12 +69,12 @@
 </ul>
 </li>
 </ul>
-<br /><br />
+<br><br>
 {* else tables *}
 {* lang database.no_table_found *}
 {* endforeach tables *}
 {* lang database.data *}:
-<br /><br />
+<br><br>
 
 <ul>
 <li>{* lang database.inserts *}:
@@ -124,6 +124,6 @@
 </ul>
 </li>
 </ul>
-<br /><br />
+<br><br>
 
 </div>

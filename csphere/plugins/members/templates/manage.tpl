@@ -3,7 +3,7 @@
 
         {* tpl default/com_headsearch plugin=members.members action=default.manage search=members.group_or_user *}
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <thead>

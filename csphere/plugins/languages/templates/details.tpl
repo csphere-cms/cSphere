@@ -12,7 +12,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        <br />
+        <br>
 
         {* tpl default/msg_error *}
 
@@ -69,7 +69,7 @@
             {* endforeach contact.web *}
         </dl><!--END dl-horizontal-->
 
-        <br /><br />
+        <br><br>
 
     </div><!--END panel-body-->
 </div><!--END panel-->

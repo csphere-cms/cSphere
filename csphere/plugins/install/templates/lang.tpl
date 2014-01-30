@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=install.install action=install.lang *}
 
-        <br />
+        <br>
 
         <ul>
             {* foreach languages *}

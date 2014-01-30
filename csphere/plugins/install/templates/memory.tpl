@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=install.install action=install.memory *}
 
-        <br />
+        <br>
 
         {* tpl default/msg_error *}
 

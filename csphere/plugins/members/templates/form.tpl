@@ -7,7 +7,7 @@
         {* tpl default/com_header plugin=members.members action=default.edit *}
         {* endif action *}
 
-        <br />
+        <br>
 
         {* if action == 'create' *}
         <form class="form-horizontal" role="form" action="{* link members/create *}" method="POST">

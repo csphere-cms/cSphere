@@ -3,7 +3,7 @@
 
         {* tpl default/com_headsearch plugin=users.users action=users.visits search=users.login_browser *}
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <thead>

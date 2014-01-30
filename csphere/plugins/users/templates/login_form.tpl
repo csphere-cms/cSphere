@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=users.users action=users.login *}
 
-        <br />
+        <br>
 
         <form action="{* link users/login *}" name="form_login" method="POST" class="form-horizontal" role="form">
 

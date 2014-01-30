@@ -1,13 +1,13 @@
 {* raw error *}:
 
-<br /><br />
+<br><br>
 
 {* var file *}
 
-<hr />
+<hr>
 
 {* lang errors.install_info *}
 
-<hr />
+<hr>
 
 <a href="{* link install *}">{* lang default.install *}</a>

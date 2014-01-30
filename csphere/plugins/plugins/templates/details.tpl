@@ -9,7 +9,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        <br />
+        <br>
 
         <dl class="dl-horizontal">
             <dt>{* lang xml.vendor *}:</dt>
@@ -109,7 +109,7 @@
             {* endforeach required.extension *}
         </dl><!--END dl-horizontal-->
 
-        <br /><br />
+        <br><br>
 
     </div><!--END panel-body-->
 </div><!--END panel-->
