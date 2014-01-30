@@ -56,9 +56,8 @@ class Toolbar
 
     public function __construct()
     {
-        // Add javascript and stylesheet for debug
-        \csphere\core\template\Hooks::javascript('debug', 'debug.js');
-        \csphere\core\template\Hooks::stylesheet('debug', 'debug.css');
+        // Add stylesheet for debug
+        \csphere\core\template\Hooks::stylesheet('debug', 'core_debug.css');
 
         // Create loader and view object
         $this->_loader = \csphere\core\service\Locator::get();
