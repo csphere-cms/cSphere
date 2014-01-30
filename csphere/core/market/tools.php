@@ -78,7 +78,8 @@ class Tools
 
         $this->_short = $short;
 
-        $this->_file = $this->_path . 'csphere/' . $this->_type . 's' . '/' . $this->_short . '/' . $this->_type . '.xml';
+        $this->_file = $this->_path . 'csphere/' . $this->_type . 's'
+                     . '/' . $this->_short . '/' . $this->_type . '.xml';
 
         //Check correct type
         if ($this->_type != 'plugin' && $this->_type != 'theme') {
