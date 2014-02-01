@@ -13,17 +13,17 @@
 
                     <label class="radio-inline">
                         {* if options.force_https != '1' *}
-                        <input type="radio" name="force_https" value="0" checked="checked" /> {* lang default.no *}
+                        <input type="radio" name="force_https" value="0" checked="checked"> {* lang default.no *}
                         {* else options.force_https *}
-                        <input type="radio" name="force_https" value="0" /> {* lang default.no *}
+                        <input type="radio" name="force_https" value="0"> {* lang default.no *}
                         {* endif options.force_https *}
                     </label>
 
                     <label class="radio-inline">
                         {* if options.force_https == '1' *}
-                        <input type="radio" name="force_https" value="1" checked="checked" /> {* lang default.yes *}
+                        <input type="radio" name="force_https" value="1" checked="checked"> {* lang default.yes *}
                         {* else options.force_https *}
-                        <input type="radio" name="force_https" value="1" /> {* lang default.yes *}
+                        <input type="radio" name="force_https" value="1"> {* lang default.yes *}
                         {* endif options.force_https *}
                     </label>
 

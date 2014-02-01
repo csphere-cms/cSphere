@@ -45,7 +45,7 @@ abstract class Theme
         if ($type == 'stylesheets') {
 
             $tag1 = '<link href="';
-            $tag2 = '" rel="stylesheet" type="text/css" />';
+            $tag2 = '" rel="stylesheet" type="text/css">';
 
         } else {
 
@@ -188,7 +188,7 @@ abstract class Theme
             $string = str_ireplace('</head>', $change, $string);
         }
 
-        $generator = '<meta name="generator" content="cSphere" />'
+        $generator = '<meta name="generator" content="cSphere">'
                    . "\n" . '</head>';
         $string    = str_ireplace('</head>', $generator, $string);
 

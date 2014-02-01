@@ -7,7 +7,7 @@
         {* tpl default/com_header plugin=users.users action=default.edit *}
         {* endif action *}
 
-        <br />
+        <br>
 
         {* if action == 'create' *}
         <form class="form-horizontal" role="form" action="{* link users/create *}" method="POST">

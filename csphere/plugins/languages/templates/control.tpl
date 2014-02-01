@@ -16,7 +16,7 @@
                 {* foreach languages *}
                 <tr>
                     <td>
-                        <img src="{* raw languages.icon_url *}" alt="{* var languages.icon *}" />
+                        <img src="{* raw languages.icon_url *}" alt="{* var languages.icon *}">
                         &nbsp; {* var languages.short *}
                     </td>
                     <td class="text-center">{* var languages.name *}</td>

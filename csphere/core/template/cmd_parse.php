@@ -146,7 +146,7 @@ abstract class CMD_Parse
             $content = 'Error: No data found';
         }
 
-        $info   = 'Debug info for "' . $part['key'] . '":<br />' . "\n";
+        $info   = 'Debug info for "' . $part['key'] . '":<br>' . "\n";
         $result = $info . '<pre>' . $content . '</pre>';
 
         return $result;
@@ -166,7 +166,7 @@ abstract class CMD_Parse
         unset($part, $data);
 
         // Add hidden input to catch form submit
-        $result = '<input type="hidden" name="csphere_form" value="1" />';
+        $result = '<input type="hidden" name="csphere_form" value="1">';
 
         return $result;
     }

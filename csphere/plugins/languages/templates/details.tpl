@@ -43,7 +43,7 @@
             </dd>
             <dt>{* lang xml.icon *}:</dt>
             <dd>
-                {* if icon.type == 'famfamfam' *} <img src="{* raw icon.url *}" alt="{* var icon.value *}" />{* endif icon.type *} {* var icon.value *}
+                {* if icon.type == 'famfamfam' *} <img src="{* raw icon.url *}" alt="{* var icon.value *}">{* endif icon.type *} {* var icon.value *}
             </dd>
         </dl><!--END dl-horizontal-->
 
