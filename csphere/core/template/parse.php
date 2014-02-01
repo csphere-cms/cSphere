@@ -209,7 +209,7 @@ abstract class Parse
                 $part['data'], ENT_QUOTES | ENT_HTML5, 'UTF-8', false
             );
 
-            $escape = nl2br($escape);
+            $escape = nl2br($escape, false);
 
         } else {
 

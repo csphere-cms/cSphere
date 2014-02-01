@@ -139,7 +139,7 @@ abstract class CMD_Parse
             ob_start();
             var_dump($data);
             $content = ob_get_clean();
-            $content = nl2br($content);
+            $content = nl2br($content, false);
 
         } else {
 
