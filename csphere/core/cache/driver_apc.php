@@ -140,7 +140,9 @@ class Driver_APC extends Base
 
         foreach ($list AS $num => $data) {
 
-            $handle = $data['key'] . ' (' . $num . ')';
+            // Key is named "key" in APCu, but "info" in APC
+            $key    = isset($data['key']) ? $data['key'] : $data['info'];
+            $handle = $key . ' (' . $num . ')';
 
             $form[$handle] = array('name' => $handle, 'time' => $data['mtime'],
                                    'size' => $data['mem_size']);
