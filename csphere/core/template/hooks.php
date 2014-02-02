@@ -31,13 +31,14 @@ abstract class Hooks
     /**
      * List of handled page placeholders
      **/
-    private static $_data = array('action' => '',
-                                  'breadcrumb' => '',
-                                  'debug' => '',
+
+    private static $_data = array('action'      => '',
+                                  'breadcrumb'  => '',
+                                  'debug'       => '',
                                   'javascripts' => array(),
-                                  'plugin' => '',
+                                  'plugin'      => '',
                                   'stylesheets' => array(),
-                                  'title' => 'cSphere');
+                                  'title'       => 'cSphere');
 
     /**
      * Generate website title
@@ -217,6 +218,8 @@ abstract class Hooks
     public static function breadcrumb($string)
     {
         self::$_data['breadcrumb'] = $string;
+        
+        return true;
     }
 
     /**
@@ -247,7 +250,7 @@ abstract class Hooks
     /**
      * Export debug data only
      *
-     * @return array
+     * @return string
      **/
 
     public static function debug()

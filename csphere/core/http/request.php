@@ -79,7 +79,7 @@ abstract class Request
      *
      * @param array $server Content of predefined server data
      *
-     * @return array
+     * @return string
      **/
 
     private static function _protocol(array $server)

@@ -50,7 +50,7 @@ abstract class Locator
     /**
      * Provides the class loader object
      *
-     * @return object
+     * @return \csphere\core\service\Loader
      **/
 
     public static function get()

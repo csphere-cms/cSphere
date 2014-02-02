@@ -208,7 +208,7 @@ abstract class Fetch
     /**
      * Sets options to work with translation files
      *
-     * @return boolean
+     * @return void
      **/
 
     private static function _settings()
