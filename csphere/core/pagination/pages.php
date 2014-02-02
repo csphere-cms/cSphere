@@ -246,7 +246,7 @@ class Pages
         // Build array for group method
         $result = array('next' => $next, 'end' => $end);
 
-        return $result;
+        return (array)$result;
     }
 
     /**

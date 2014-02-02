@@ -124,7 +124,7 @@ class Driver_SMTP extends Base
 
                     fclose($remote);
 
-                    $this->_errorlog($code, $log);
+                    $this->_errorlog($code, (array)$log);
 
                     return false;
                 }
