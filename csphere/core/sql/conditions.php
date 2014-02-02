@@ -57,10 +57,10 @@ abstract class Conditions
         foreach ($conditions AS $num => $con) {
 
             // Process condition parts
-            $sub = self::_parts($short, $num, $con);
+            $sub = self::_parts($short, $num, (array)$con);
 
             // Append operator and add part to result
-            $query .= self::_append($sub['query'], $num, $con);
+            $query .= self::_append($sub['query'], $num, (array)$con);
 
             $assoc = array_merge($assoc, $sub['assoc']);
         }
