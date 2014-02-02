@@ -125,7 +125,7 @@ abstract class Base
 
             $this->previous = 'manage';
         }
-        
+
         return true;
     }
 

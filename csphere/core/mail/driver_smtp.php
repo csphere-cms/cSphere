@@ -188,7 +188,7 @@ class Driver_SMTP extends Base
 
         // Create encoded subject and content strings
         $this->encode();
-        
+
         return true;
     }
 

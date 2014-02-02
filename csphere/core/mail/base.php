@@ -140,7 +140,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
         // Set content type
         $this->content['message_type'] = $type;
-        
+
         return true;
     }
 

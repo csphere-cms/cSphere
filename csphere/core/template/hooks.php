@@ -218,7 +218,7 @@ abstract class Hooks
     public static function breadcrumb($string)
     {
         self::$_data['breadcrumb'] = $string;
-        
+
         return true;
     }
 

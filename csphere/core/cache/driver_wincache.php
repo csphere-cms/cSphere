@@ -78,7 +78,7 @@ class Driver_Wincache extends Base
 
             wincache_ucache_delete($token);
         }
-        
+
         return true;
     }
 
