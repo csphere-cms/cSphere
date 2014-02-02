@@ -88,16 +88,16 @@ class Tools
         }
 
         // Check plugin / theme existence
-        $this->_existance();
+        $this->_checkExistance();
     }
 
     /**
      * Content of a directory as an array
      *
-     * @return boolean
+     * @return void
      **/
 
-    private function _existance()
+    private function _checkExistance()
     {
         // Check for xml file
         if (file_exists($this->_file)) {
