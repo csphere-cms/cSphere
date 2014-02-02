@@ -96,6 +96,8 @@ class Session
 
         // Get a new id to kill the old one for sure
         session_regenerate_id(true);
+        
+        return true;
     }
 
     /**

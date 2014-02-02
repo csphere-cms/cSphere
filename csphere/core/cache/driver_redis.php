@@ -106,6 +106,8 @@ class Driver_Redis extends Base
 
             $this->_redis->delete($token);
         }
+        
+        return true;
     }
 
     /**

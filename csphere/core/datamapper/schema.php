@@ -92,7 +92,7 @@ abstract class Schema
     /**
      * Sets options to work with database files
      *
-     * @return boolean
+     * @return void
      **/
 
     private static function _settings()

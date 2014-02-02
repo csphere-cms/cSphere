@@ -121,7 +121,7 @@ abstract class Base_PDO extends \csphere\core\database\Base
 
     protected function insertId()
     {
-        return $this->con->lastInsertId();
+        return (int)$this->con->lastInsertId();
     }
 
     /**

@@ -83,6 +83,8 @@ class Driver_Xcache extends Base
 
             xcache_unset($token);
         }
+        
+        return true;
     }
 
     /**

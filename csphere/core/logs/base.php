@@ -39,7 +39,7 @@ abstract class Base extends \csphere\core\service\Drivers
      * @param string $component Name of the core component
      * @param string $content   Content to log in this case
      *
-     * @return boolean
+     * @return void
      **/
 
     private function _mail($component, $content)

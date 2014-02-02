@@ -70,6 +70,8 @@ class Driver_Sendmail extends Base
 
         // Create encoded subject and content strings
         $this->encode();
+        
+        return true;
     }
 
     /**
