@@ -142,13 +142,13 @@ class Toolbar
         $data = $this->_formatDetails($logs);
 
         // Add PHP version and engine
-        $data['php_full'] = phpversion();
-        $data['engine']   = 'PHP';
-        $sapi             = strtolower(php_sapi_name());
+        $data['php_full']   = phpversion();
+        $data['php_engine'] = 'PHP';
+        $sapi               = strtolower(php_sapi_name());
 
         if ($sapi == 'srv') {
 
-            $data['engine'] = 'HHVM';
+            $data['php_engine'] = 'HHVM';
         }
 
         // Move parsetime and memory usage to data array

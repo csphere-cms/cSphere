@@ -54,9 +54,9 @@
 
             <ul class="nav navbar-nav navbar-right">
                <li>
-                    <a class="csphere-popover" data-content="PHP {* raw php_full *}">
+                    <a class="csphere-popover" data-content="{* raw php_full *}">
                         <i class="fa fa-usd fa-lg"></i>
-                        PHP
+                        {* raw php_engine *}
                     </a>
                 <li>
                 <li>
