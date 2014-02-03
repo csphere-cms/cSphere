@@ -66,7 +66,7 @@ function handlerErrors($errno, $errstr, $errfile, $errline)
 function handlerAutoloads($class)
 {
     // Class var comes with namespace which makes it easy
-    $class = str_replace('\\', '/', $class);
+    $class = strtolower(str_replace('\\', '/', $class));
 
     include \csphere\core\init\path() . $class . '.php';
 }
@@ -139,7 +139,7 @@ function start()
     spl_autoload_extensions('.php');
 
     $sapi = strtolower(php_sapi_name());
-    $need = array('cli', 'cli-server');
+    $need = array('cli', 'cli-server', 'srv');
 
     if (in_array($sapi, $need)) {
 
