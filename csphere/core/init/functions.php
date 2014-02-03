@@ -135,9 +135,10 @@ function start()
     // Get current microtime for performance measurement
     $start = microtime(true);
 
-    // Handle autoloading of classes
+    // File extensions for autoloads
     spl_autoload_extensions('.php');
 
+    // Console, built-in-webserver and HHVM need some assistance
     $sapi = strtolower(php_sapi_name());
     $need = array('cli', 'cli-server', 'srv');
 
