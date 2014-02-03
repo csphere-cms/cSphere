@@ -119,11 +119,11 @@ abstract class Input
         // Special case 'get' should use its own filter
         if (isset(self::$_inputNames[$type]) AND $type == 'get') {
 
-            $data = filter_var_array(self::$_inputGet);
+            $data = filter_var_array(self::$_inputGet, null, true);
 
         } elseif (isset(self::$_inputNames[$type])) {
 
-            $data = filter_input_array(self::$_inputNames[$type]);
+            $data = filter_input_array(self::$_inputNames[$type], null, true);
         }
 
         return $data;
