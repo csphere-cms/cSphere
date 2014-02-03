@@ -54,13 +54,13 @@ abstract class Form
                 $active = ' selected="selected"';
             }
 
-            // Escape value and text
+            // HHVM does not support ENT_SUBSTITUTE and ENT_HTML5 yet
             $option[$value] = htmlspecialchars(
-                $option[$value], ENT_QUOTES | ENT_HTML5, 'UTF-8', false
+                $option[$value], ENT_QUOTES, 'UTF-8', false
             );
 
             $option[$text] = htmlspecialchars(
-                $option[$text], ENT_QUOTES | ENT_HTML5, 'UTF-8', false
+                $option[$text], ENT_QUOTES, 'UTF-8', false
             );
 
             // Build HTML string

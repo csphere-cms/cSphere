@@ -114,16 +114,19 @@ abstract class Input
 
     public static function getAll($type)
     {
+        // @TODO: This method needs a rework later on
         $data = array();
 
         // Special case 'get' should use its own filter
         if (isset(self::$_inputNames[$type]) AND $type == 'get') {
 
-            $data = filter_var_array(self::$_inputGet);
+            $data = filter_var_array(self::$_inputGet, FILTER_UNSAFE_RAW, true);
 
         } elseif (isset(self::$_inputNames[$type])) {
 
-            $data = filter_input_array(self::$_inputNames[$type]);
+            $data = filter_input_array(
+                self::$_inputNames[$type], FILTER_UNSAFE_RAW, true
+            );
         }
 
         return $data;

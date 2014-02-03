@@ -71,7 +71,8 @@ abstract class Response
         // Enable zlib output compression if enabled
         if (!empty(self::$_zlib) AND extension_loaded('zlib')) {
 
-            ob_start('ob_gzhandler');
+            // This is preferred over using ob_gzhandler
+            ini_set('zlib.output_compression', true);
         }
 
         // Content should follow for completion

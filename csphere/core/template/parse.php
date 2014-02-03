@@ -205,9 +205,8 @@ abstract class Parse
 
         } elseif ($part['cmd'] == 'var') {
 
-            $escape = htmlspecialchars(
-                $part['data'], ENT_QUOTES | ENT_HTML5, 'UTF-8', false
-            );
+            // HHVM does not support ENT_SUBSTITUTE and ENT_HTML5 yet
+            $escape = htmlspecialchars($part['data'], ENT_QUOTES, 'UTF-8', false);
 
             $escape = nl2br($escape, false);
 

@@ -141,8 +141,15 @@ class Toolbar
         // Details first to not overwrite something
         $data = $this->_formatDetails($logs);
 
-        // Constant PHP_RELEASE_VERSION adds patch release number
-        $data['php_full'] = phpversion();
+        // Add PHP version and engine
+        $data['php_full']   = phpversion();
+        $data['php_engine'] = 'PHP';
+        $sapi               = strtolower(php_sapi_name());
+
+        if ($sapi == 'srv') {
+
+            $data['php_engine'] = 'HHVM';
+        }
 
         // Move parsetime and memory usage to data array
         $data['memory'] = \csphere\core\files\File::size($stats['memory']);
