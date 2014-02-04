@@ -30,7 +30,7 @@ function tidycodeFile ($file)
 
     // File extensions that are known as forbidden
     $forbidden = array('DS_Store', 'bat', 'buildpath', 'eot', 'gif',
-        'gitattributes', 'gitignore', 'ico', 'iml', 'jpg', 'log', 'name',
+        'gitattributes', 'gitignore', 'hdf', 'ico', 'iml', 'jpg', 'log', 'name',
         'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb', 'scss',
         'sh', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff');
 

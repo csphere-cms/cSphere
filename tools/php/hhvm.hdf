@@ -1,0 +1,32 @@
+# More details can be found in the official wiki:
+# https://github.com/facebook/hhvm/wiki/runtime-options
+
+Debug {
+    FullBacktrace      = true
+    ServerErrorMessage = true
+    ServerStackTrace   = true
+    TranslateSource    = true
+}
+
+Server {
+    DefaultCharsetName = UTF-8
+    DefaultDocument    = index.php
+    EnableKeepAlive    = false
+    Port               = 80
+    SourceRoot         = /var/www/localhost    
+    
+    APC {
+      EnableApc = true
+    }
+}
+
+StaticFile {
+    Extensions {
+        css = text/css
+        gif = image/gif
+        jpg = image/jpeg
+        js  = application/javascript
+        png = image/png
+        txt = text/plain
+    }
+}
