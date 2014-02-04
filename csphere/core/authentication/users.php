@@ -143,8 +143,7 @@ class Users
         $dm_logins->insert($login);
 
         // Update date of last login
-        $update = array('user_id' => $user['user_id'],
-                        'user_laston' => $time);
+        $update = ['user_id' => $user['user_id'], 'user_laston' => $time];
 
         $this->_mapper->update($update);
     }
