@@ -36,13 +36,12 @@ abstract class Login
     /**
      * Show form for login or handle post request
      *
-     * @param boolean $box    If view target area is a box
-     * @param string  $layout Template layout to use
+     * @param boolean $box If view target area is a box
      *
      * @return void
      **/
 
-    public static function form($box = false, $layout = '')
+    public static function form($box = false)
     {
         // Get view object
         $loader = \csphere\core\service\Locator::get();
@@ -63,13 +62,13 @@ abstract class Login
         // Determine plugin and layout
         $plugin = 'users';
 
-        if ($layout == '' && $data['tpl'] == 'message') {
+        if ($data['tpl'] == 'message' && $box == false) {
 
             $plugin = 'default';
 
         } else {
 
-            $data['tpl'] = 'login' . $layout . '_' . $data['tpl'];
+            $data['tpl'] = 'login_' . $data['tpl'];
         }
 
         // Pass data to template
