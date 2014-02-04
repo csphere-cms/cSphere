@@ -4,7 +4,10 @@ function csphere_ajax_loading(place) {
     $(place).html('<i class="fa fa-spinner fa-spin"></i>');
 }
 
-function csphere_ajax_debug(place) {
+function csphere_ajax_debug(place, content) {
+
+    // Update debug toolbar content
+    $('div#debug-navigation').html(content);
 
     // Update debug toolbar request type and request place
     $('#debug_request_selector').attr('data-content', place);
@@ -139,9 +142,7 @@ function csphere_ajax_post(hash, formdata, place) {
 function csphere_ajax_update(result, place) {
 
     // Update debug
-    csphere_ajax_highlight('div#debug-navigation', result.debug);
-
-    csphere_ajax_debug(place);
+    csphere_ajax_debug(place, result.debug);
 
     // Check for box only mode
     if (result.hasOwnProperty('box')) {
