@@ -192,7 +192,7 @@ class Pages
         // Generate second group of links
         if ($pages > $end AND $end < 4) {
 
-            $middle = (array)$this->_middle($pages);
+            $middle = $this->_middle($pages);
             $end    = $middle['end'];
 
             $second   = $this->_group($middle['next'], $end);

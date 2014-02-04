@@ -172,7 +172,7 @@ abstract class Base extends \csphere\core\service\Drivers
         // Format result set for later usage
         self::$_count = array();
         $end          = (count($values) - 2);
-        $result       = $this->_format($values, $index, 1, $end);
+        $result       = $this->_format($values, (array)$index, 1, $end);
 
         return $result;
     }
