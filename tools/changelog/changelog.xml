@@ -3,6 +3,27 @@
     xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/changelog.xsd">
     <history type="system" name="csphere" />
     <updates>
+        <update version="2013.0-beta11" published="2014-02-04" compatible="">
+            <information>First version that runs on HHVM</information>
+            <instructions>HHVM config example can be found in tools/php</instructions>
+            <added>
+                <item author="equal" source="">Added Bootstrap 3.1.0 and removed older version</item>
+                <item author="hajo" source="">Added support for HHVM 2.4.0 and newer versions</item>
+            </added>
+            <reworked>
+                <item author="hajo" source="">Reworked breadcrumb plugin handling for more flexibility</item>
+                <item author="alci" source="">Reworked market classes and moved them to the core</item>
+            </reworked>
+            <fixed>
+                <item author="hajo" source="">Fixed HTTPS login info using the wrong template</item>
+                <item author="hajo" source="">Fixed many missing or wrong documented return values</item>
+                <item author="hajo" source="">Fixed some cache issues with APC and APCu extension</item>
+                <item author="tom08" source="">Fixed whitespace at textarea template</item>
+            </fixed>
+            <removed>
+                <item author="equal" source="">Removed all self-closing-tags from HTML content</item>
+            </removed>
+        </update>
         <update version="2013.0-beta10" published="2014-01-28" compatible="">
             <information>Improved installation and debug toolbar</information>
             <instructions>PHP config examples can now be found in tools/php</instructions>

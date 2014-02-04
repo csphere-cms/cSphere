@@ -42,13 +42,13 @@ If you (mainly) need the following functionality you might NOT want to use cSphe
 - cSphere does NOT and won't ever provide any console tools to tamper with
 - cSphere does NOT provide anything to assist with the creation of rich web APIs
 - cSphere does NOT support any kind of PHP annotations or alike magic behavior
-- cSphere does NOT use advanced autoloading techniques, we use namespaces instead
+- cSphere does NOT use old autoloading techniques, it depends on namespaces instead
 
 
 Requirements
 ============
 
-PHP 5.4.0 or newer on any webserver (PHP builtin webserver works, too)
+At least PHP 5.4.0 or HHVM 2.4.0 on any webserver (PHP builtin webserver works, too)
 
 The following PHP extensions must be available:
 
@@ -79,7 +79,7 @@ Installation
 
 6. Grant the csphere/storage directory and all subdirectories write access on filesystem
 
-7. Do the following when running it on your own server:
+7. Do the following when running it on a self-managed webserver:
 
 - Start your webserver, e.g. the PHP builtin webserver in tools/server directory
 
