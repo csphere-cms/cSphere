@@ -117,7 +117,7 @@ class Listed extends \csphere\core\rad\Base
             $finder = call_user_func($this->_findercall, $finder);
         }
 
-        // Add where conditions and concat them with || instead of AND
+        // Add where conditions and concat them with OR instead of AND
         if ($search != '') {
 
             foreach ($this->_like AS $col) {
