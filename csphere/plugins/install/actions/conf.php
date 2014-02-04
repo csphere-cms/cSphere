@@ -151,7 +151,7 @@ if (isset($post['csphere_form'])) {
 }
 
 // Check if test was run with success
-if ($test === true AND $error == '') {
+if ($test === true && $error == '') {
 
     // Show message to continue
     $dirname  = \csphere\core\http\Request::get('dirname');

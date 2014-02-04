@@ -98,7 +98,7 @@ class Users
         $verify = false;
 
         // Verify password if both vars are not empty
-        if (isset($user['user_password']) AND !empty($password)) {
+        if (isset($user['user_password']) && !empty($password)) {
 
             $verify = \csphere\core\authentication\Password::compare(
                 $password, $user['user_password']

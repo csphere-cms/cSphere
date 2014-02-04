@@ -61,7 +61,7 @@ $data       = array();
 $cur_lang   = array();
 
 // Only proceed if target was found and translation exists
-if ($exists === true AND $dir_exists === true) {
+if ($exists === true && $dir_exists === true) {
 
     $xml   = $loader->load('xml', 'language');
     $data  = $xml->source($type, $dir, $short, true);
@@ -88,7 +88,7 @@ if ($src_exists === true) {
     }
 
     // Compare definitions with the one in default plugin
-    if ($type == 'theme' OR $dir != 'default') {
+    if ($type == 'theme' || $dir != 'default') {
 
         $default  = $xml->source('plugin', 'default');
         $def_lang = array();

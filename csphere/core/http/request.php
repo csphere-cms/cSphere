@@ -88,9 +88,9 @@ abstract class Request
 
         // Protocol could be forwarded by one webserver
         if (isset($server['HTTPS'])
-            AND $server['HTTPS'] == 'on'
-            OR isset($server['HTTP_X_FORWARDED_PROTO'])
-            AND $server['HTTP_X_FORWARDED_PROTO'] == 'https'
+            && $server['HTTPS'] == 'on'
+            || isset($server['HTTP_X_FORWARDED_PROTO'])
+            && $server['HTTP_X_FORWARDED_PROTO'] == 'https'
         ) {
             $protocol .= 's';
         }
@@ -117,7 +117,7 @@ abstract class Request
         $slash = strpos($map, '/');
         $run   = 2;
 
-        if ($qmark !== false AND ($slash === false OR $qmark < $slash)) {
+        if ($qmark !== false && ($slash === false || $qmark < $slash)) {
 
             $run = 1;
             $map = substr($map, $qmark);

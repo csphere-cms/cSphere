@@ -85,7 +85,7 @@ abstract class Input
         $data = '';
 
         // Special case 'get' should use its own filter
-        if (isset(self::$_inputNames[$type]) AND $type == 'get') {
+        if (isset(self::$_inputNames[$type]) && $type == 'get') {
 
             if (isset(self::$_inputGet[$key])) {
 
@@ -118,7 +118,7 @@ abstract class Input
         $data = array();
 
         // Special case 'get' should use its own filter
-        if (isset(self::$_inputNames[$type]) AND $type == 'get') {
+        if (isset(self::$_inputNames[$type]) && $type == 'get') {
 
             $data = filter_var_array(self::$_inputGet, FILTER_UNSAFE_RAW, true);
 

@@ -93,7 +93,7 @@ if (isset($post['csphere_form'])) {
 }
 
 // Check if test was run with success
-if ($test === true AND $mail_error === null) {
+if ($test === true && $mail_error === null) {
 
     // Save mail settings to session
     $session = new \csphere\core\session\Session();

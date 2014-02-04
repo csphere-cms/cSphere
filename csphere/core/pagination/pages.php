@@ -112,11 +112,11 @@ class Pages
             $end = 3;
 
             // If there are very few pages end earlier or skip groups
-            if ($end > $pages OR $pages < 10) {
+            if ($end > $pages || $pages < 10) {
 
                 $end = $pages;
 
-            } elseif ($this->_start > 2 AND $this->_start < 6) {
+            } elseif ($this->_start > 2 && $this->_start < 6) {
 
                 $end = $this->_start + 1;
             }
@@ -190,7 +190,7 @@ class Pages
         $groups[] = array('links' => $first, 'space' => 'no');
 
         // Generate second group of links
-        if ($pages > $end AND $end < 4) {
+        if ($pages > $end && $end < 4) {
 
             $middle = $this->_middle($pages);
             $end    = $middle['end'];
@@ -226,7 +226,7 @@ class Pages
         $end  = $next + 2;
 
         // Handle special cases
-        if ($this->_start > 5 AND $this->_start < ($pages - 1)) {
+        if ($this->_start > 5 && $this->_start < ($pages - 1)) {
 
             $next = $this->_start - 1;
             $end  = $next + 2;
@@ -262,7 +262,7 @@ class Pages
         $links  = array();
 
         // Display at least one page on start
-        if ($start == 1 AND $end < 1) {
+        if ($start == 1 && $end < 1) {
 
             $end = 1;
         }

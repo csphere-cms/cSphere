@@ -78,7 +78,7 @@ if (file_exists($path_error . $name)) {
         $step   = $i - $start - 1;
         $string = explode(' ', $parts[$i], 3);
 
-        if (isset($string[1]) AND isset($special[$string[1][0]])) {
+        if (isset($string[1]) && isset($special[$string[1][0]])) {
 
             // Special case for curly braces
             $nostep          = explode(' ', $parts[$i], 2)[1];

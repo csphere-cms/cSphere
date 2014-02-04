@@ -114,7 +114,7 @@ if (isset($post['csphere_form'])) {
 }
 
 // Check if test was run with success
-if ($test === true AND $db_error === null) {
+if ($test === true && $db_error === null) {
 
     // Save database settings to session
     $session = new \csphere\core\session\Session();

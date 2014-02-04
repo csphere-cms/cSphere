@@ -79,7 +79,7 @@ abstract class Theme
         foreach ($array AS $part) {
 
             // Leave text and page placeholders untouched
-            if ($part['cmd'] == 'text' OR $part['cmd'] == 'page') {
+            if ($part['cmd'] == 'text' || $part['cmd'] == 'page') {
 
                 $result[] = $part;
 

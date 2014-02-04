@@ -66,7 +66,7 @@ abstract class Cookies
         $domain = $request['dns'];
 
         // Check if secure is enabled and valid for usage
-        if (empty($secure) OR $request['protocol'] == 'https') {
+        if (empty($secure) || $request['protocol'] == 'https') {
 
             setcookie($name, $value, $expire, $path, $domain, $secure, true);
 

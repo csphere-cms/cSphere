@@ -73,7 +73,7 @@ class Config
         }
 
         // Check for config array to be correct
-        if (!isset($config) OR !is_array($config)) {
+        if (!isset($config) || !is_array($config)) {
 
             $this->_error = array('error' => 'config_corrupt', 'file' => $file);
         }

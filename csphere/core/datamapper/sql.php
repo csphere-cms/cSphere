@@ -64,7 +64,7 @@ class SQL
         $result = $this->_database->query($prepare, $assoc, $first, $max);
 
         // Handle array dimension for max=1 since db layer uses fetch for that case
-        if ($max == 1 AND $result != array()) {
+        if ($max == 1 && $result != array()) {
 
             $result = array($result);
         }

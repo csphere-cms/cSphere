@@ -52,7 +52,7 @@ function tidycodeFile ($file)
         $content     = $content_old;
 
         // Directories starting with '.' are ignored
-        if (isset($data['dirname'][6]) AND $data['dirname'][6] != '.') {
+        if (isset($data['dirname'][6]) && $data['dirname'][6] != '.') {
 
             // Replace line endings to unix
             $content = str_replace("\r\n", "\n", $content);
@@ -104,7 +104,7 @@ function tidycodeSave ($file, $content, $content_old)
     $result   = false;
     $file_low = strtolower($file);
 
-    if ($content != $content_old OR $file_low != $file) {
+    if ($content != $content_old || $file_low != $file) {
 
         unlink($file);
 

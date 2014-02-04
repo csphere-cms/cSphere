@@ -180,7 +180,7 @@ class Model extends \csphere\core\datamapper\Base
     {
 
         // Check if serial does exist or is below one
-        if (empty($record[$this->serial]) OR $record[$this->serial] < 1) {
+        if (empty($record[$this->serial]) || $record[$this->serial] < 1) {
 
             $msg = 'Invalid serial for record of table "' . $this->schema . '"';
 

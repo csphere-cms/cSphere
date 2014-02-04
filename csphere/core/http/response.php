@@ -69,7 +69,7 @@ abstract class Response
         header(':', true, 200);
 
         // Enable zlib output compression if enabled
-        if (!empty(self::$_zlib) AND extension_loaded('zlib')) {
+        if (!empty(self::$_zlib) && extension_loaded('zlib')) {
 
             // This is preferred over using ob_gzhandler
             ini_set('zlib.output_compression', 1);
@@ -94,7 +94,7 @@ abstract class Response
     public static function header($name, $content, $replace = false)
     {
         // Check if the header is already stored
-        if (!isset(self::$_headers[$name]) OR $replace == true) {
+        if (!isset(self::$_headers[$name]) || $replace == true) {
 
             self::$_headers[$name] = $content;
         } else {

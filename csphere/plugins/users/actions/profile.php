@@ -29,8 +29,8 @@ $record = function ($array) {
     $pwd = false;
 
     if (!empty($array['password_old'])
-        AND !empty($array['password_new'])
-        AND ($array['password_new'] === $array['password_confirm'])
+        && !empty($array['password_new'])
+        && ($array['password_new'] === $array['password_confirm'])
     ) {
         // Old password must pass verification
         $pwd = \csphere\core\authentication\Password::compare(

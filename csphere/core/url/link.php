@@ -88,7 +88,7 @@ abstract class Link
         self::$_pretty = $view->getOption('links_pretty');
 
         // Set flags
-        if (empty(self::$_pretty) AND empty(self::$_ajax)) {
+        if (empty(self::$_pretty) && empty(self::$_ajax)) {
 
             self::$_plugin = '?plugin=';
             self::$_action = '&amp;action=';

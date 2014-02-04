@@ -55,7 +55,7 @@ function transform ($xml_file, $xsl_file, $dir, $target)
 }
 
 // Check for argv to contain xml, xsl and target htm parameters
-if (!isset($argv[4]) OR isset($argv[5])) {
+if (!isset($argv[4]) || isset($argv[5])) {
 
     echo 'Error: Please specify 4 params: xml, xsl, dir, file';
 

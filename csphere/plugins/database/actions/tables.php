@@ -51,7 +51,7 @@ foreach ($plugins AS $plugin) {
 
             $split = explode('_', $table, 2);
 
-            if (isset($split[1]) AND $split[0] == $plugin['short']) {
+            if (isset($split[1]) && $split[0] == $plugin['short']) {
 
                 $name = $split[1];
 

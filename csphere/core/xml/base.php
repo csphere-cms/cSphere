@@ -162,7 +162,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
         xml_parser_free($parser);
 
-        if ($struct == 0 OR $code != 0) {
+        if ($struct == 0 || $code != 0) {
 
             $error = xml_error_string($code);
 

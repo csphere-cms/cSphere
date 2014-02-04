@@ -43,7 +43,7 @@ if (isset($post['csphere_form'])) {
     $user_len = strlen($post['user_name']);
     $pass_len = strlen($post['user_password']);
 
-    if ($user_len < 4 OR $pass_len < 4) {
+    if ($user_len < 4 || $pass_len < 4) {
 
         $error = $lang['too_short'];
 
@@ -97,7 +97,7 @@ if (isset($post['csphere_form'])) {
 }
 
 // Check if test was run with success
-if ($test === true AND $error == '') {
+if ($test === true && $error == '') {
 
     // Show message to continue
     $previous = \csphere\core\url\Link::href('install', 'mail');

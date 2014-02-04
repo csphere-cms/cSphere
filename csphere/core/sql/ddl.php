@@ -121,7 +121,7 @@ abstract class DDL
         // Some column types may have a limit in length
         $max  = '';
 
-        if (!empty($column['max']) AND $column['datatype'] == 'varchar') {
+        if (!empty($column['max']) && $column['datatype'] == 'varchar') {
 
             $max = '(' . (int)$column['max'] . ')';
         }
@@ -129,7 +129,7 @@ abstract class DDL
         // Some columns might provide a default value
         $default = ' NOT NULL';
 
-        if (isset($column['default']) AND $column['default'] != '') {
+        if (isset($column['default']) && $column['default'] != '') {
 
             $default .= ' DEFAULT \'' . $column['default'] . '\'';
         }

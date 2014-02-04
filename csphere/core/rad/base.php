@@ -187,7 +187,7 @@ abstract class Base
         $data['action'] = $this->action;
 
         // Apply registered closure
-        if ($skip != true AND is_callable($this->_data)) {
+        if ($skip != true && is_callable($this->_data)) {
 
             $func = call_user_func($this->_data, $data[$this->schema]);
 

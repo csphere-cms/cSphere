@@ -166,7 +166,7 @@ abstract class CMD_Prepare
         $split = explode(' ', $part['key']);
 
         // Check for com details and data
-        if (isset($split[1]) AND isset($coms[$split[1]])) {
+        if (isset($split[1]) && isset($coms[$split[1]])) {
 
             // Text is a special case
             if ($split[0] == 'text') {

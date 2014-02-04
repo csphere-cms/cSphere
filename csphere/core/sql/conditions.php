@@ -49,7 +49,7 @@ abstract class Conditions
         $query = '';
 
         // Check if array dimensions are fine
-        if (isset($conditions[0]) AND !is_array($conditions[0])) {
+        if (isset($conditions[0]) && !is_array($conditions[0])) {
 
             $conditions = array($conditions);
         }
@@ -148,7 +148,7 @@ abstract class Conditions
     private static function _append($query, $num, array $con)
     {
         // Prepend with NOT if set
-        if (isset($con[3]) AND $con[3] == true) {
+        if (isset($con[3]) && $con[3] == true) {
 
             $query = 'NOT ' . $query;
         }
@@ -158,7 +158,7 @@ abstract class Conditions
 
             $pre = ' AND ';
 
-            if (isset($con[4]) AND $con[4] == true) {
+            if (isset($con[4]) && $con[4] == true) {
 
                 $pre = ' OR ';
             }

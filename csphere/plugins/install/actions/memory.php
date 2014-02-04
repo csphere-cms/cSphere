@@ -85,7 +85,7 @@ if (isset($post['csphere_form'])) {
 }
 
 // Check if test was run with success
-if ($test === true AND $cache_error === null) {
+if ($test === true && $cache_error === null) {
 
     // Save cache settings to session
     $session = new \csphere\core\session\Session();

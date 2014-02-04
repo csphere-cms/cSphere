@@ -175,7 +175,7 @@ class Loader
     private function _fallback($component, array $config, $exception)
     {
         // Try to use a fallback to keep the process alive
-        if ($config['driver'] != 'none' AND $this->_rescue === true) {
+        if ($config['driver'] != 'none' && $this->_rescue === true) {
 
             $old_driver       = $config['driver'];
             $config['driver'] = 'none';

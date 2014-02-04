@@ -85,7 +85,7 @@ class File
         $digits = 0;
 
         // Determine the best size name
-        while ($size >= 1024 AND $digits < 4) {
+        while ($size >= 1024 && $digits < 4) {
 
             $size = $size / 1024;
 
@@ -93,7 +93,7 @@ class File
         }
 
         // Size above 100 should not be a float
-        if (!empty($short) AND $size > 100) {
+        if (!empty($short) && $size > 100) {
 
             $result = round($size);
         } else {

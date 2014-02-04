@@ -63,7 +63,7 @@ class Metadata extends \csphere\core\xml\Metadata
             foreach ($entries AS $entry) {
 
                 if ($plugin == $entry['plugin']
-                    AND $action == $entry['action']
+                    && $action == $entry['action']
                 ) {
                     // Fetch plugin name from language file
                     $name = \csphere\core\translation\Fetch::key($dir, $dir);

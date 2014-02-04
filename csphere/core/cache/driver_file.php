@@ -164,7 +164,7 @@ class Driver_File extends Base
         if (file_exists($this->_dir . $token . '.tmp')) {
 
             if (empty($ttl)
-                OR filemtime($this->_dir . $token . '.tmp') >= (time() - $ttl)
+                || filemtime($this->_dir . $token . '.tmp') >= (time() - $ttl)
             ) {
 
                 $string = file_get_contents($this->_dir . $token . '.tmp');

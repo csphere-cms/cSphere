@@ -89,7 +89,7 @@ abstract class Base extends \csphere\core\service\Drivers
         $this->channels[$component][] = $content;
 
         // Store entry if enabled and true
-        if ($store == true AND isset($this->config['save'][$component])) {
+        if ($store == true && isset($this->config['save'][$component])) {
 
             $this->store($component, $content . $append);
         }

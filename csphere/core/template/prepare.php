@@ -137,7 +137,7 @@ abstract class Prepare
         for ($i = 1; $i < $parts; $i++) {
 
             // Nesting of foreach and if tags
-            if ($template[$i] == 'foreach' OR $template[$i] == 'if') {
+            if ($template[$i] == 'foreach' || $template[$i] == 'if') {
 
                 $split = self::template($template[($i + 4)], $plugin, $coms);
                 $else  = self::template($template[($i + 5)], $plugin, $coms);

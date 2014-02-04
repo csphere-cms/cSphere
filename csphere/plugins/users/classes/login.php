@@ -63,7 +63,7 @@ abstract class Login
         // Determine plugin and layout
         $plugin = 'users';
 
-        if ($layout == '' AND $data['tpl'] == 'message') {
+        if ($layout == '' && $data['tpl'] == 'message') {
 
             $plugin = 'default';
 
@@ -101,7 +101,7 @@ abstract class Login
         $protocol   = \csphere\core\http\Request::get('protocol');
         $https      = true;
 
-        if (!empty($options['force_https']) AND $protocol != 'https') {
+        if (!empty($options['force_https']) && $protocol != 'https') {
 
             $https = false;
         }
@@ -160,7 +160,7 @@ abstract class Login
         $post = \csphere\core\http\Input::getAll('post');
 
         // Check for login name and password
-        if (isset($post['login_name']) AND isset($post['login_password'])) {
+        if (isset($post['login_name']) && isset($post['login_password'])) {
 
             $name = (string)$post['login_name'];
             $pwd  = (string)$post['login_password'];

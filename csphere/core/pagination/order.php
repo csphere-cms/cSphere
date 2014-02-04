@@ -127,7 +127,7 @@ class Order
             $params['order'] = $col;
             $params['desc'] = '';
 
-            if ($col == $this->_active AND $this->_desc == false) {
+            if ($col == $this->_active && $this->_desc == false) {
 
                 $params['desc'] = 1;
             }

@@ -40,7 +40,7 @@ abstract class Password
     public static function hash($string, $cost = 10)
     {
         // Check if cost is within limits
-        if ($cost < 4 OR $cost > 31) {
+        if ($cost < 4 || $cost > 31) {
 
             $cost = 10;
         }

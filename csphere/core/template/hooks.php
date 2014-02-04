@@ -61,7 +61,7 @@ abstract class Hooks
             $title .= ' - ' . $add;
 
             // Dispatcher should handle everything by itself
-            if (!empty($action) AND $action != 'dispatch') {
+            if (!empty($action) && $action != 'dispatch') {
 
                 // Check if action is translated somewhere
                 $fallback = \csphere\core\translation\Fetch::fallback(

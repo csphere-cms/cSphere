@@ -45,7 +45,7 @@ abstract class Parse
     public static function sub(array $part, array $data)
     {
         // Set requested data as new array element
-        if ($part['sub'] == '' AND isset($data[$part['key']])) {
+        if ($part['sub'] == '' && isset($data[$part['key']])) {
 
             $part['data'] = $data[$part['key']];
 
@@ -127,10 +127,10 @@ abstract class Parse
         $result = false;
 
         // Check condition against data array
-        if (($part['equal'] == '==' AND $part['cond'] == $part['data'])
-            OR ($part['equal'] == '!=' AND $part['cond'] != $part['data'])
-            OR ($part['equal'] == '>' AND (int)$part['cond'] < $part['data'])
-            OR ($part['equal'] == '<' AND (int)$part['cond'] > $part['data'])
+        if (($part['equal'] == '==' && $part['cond'] == $part['data'])
+            || ($part['equal'] == '!=' && $part['cond'] != $part['data'])
+            || ($part['equal'] == '>' && (int)$part['cond'] < $part['data'])
+            || ($part['equal'] == '<' && (int)$part['cond'] > $part['data'])
         ) {
 
             $result = true;

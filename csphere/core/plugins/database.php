@@ -124,7 +124,7 @@ class Database
     public function install($tables, $data)
     {
         // Start with table creation
-        if ($tables == true AND isset($this->_structure['tables'])) {
+        if ($tables == true && isset($this->_structure['tables'])) {
 
             foreach ($this->_structure['tables'] AS $table) {
 
@@ -133,7 +133,7 @@ class Database
         }
 
         // Go on with data afterwards
-        if ($data == true AND isset($this->_structure['data'])) {
+        if ($data == true && isset($this->_structure['data'])) {
 
             $this->_data($this->_structure['data']);
         }

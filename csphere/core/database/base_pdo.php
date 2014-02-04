@@ -138,7 +138,7 @@ abstract class Base_PDO extends \csphere\core\database\Base
     public function query($prepare, array $assoc, $first = 0, $max = 1)
     {
         // Attach limit vars first and max
-        if ($first != 0 OR $max != 0) {
+        if ($first != 0 || $max != 0) {
 
             $prepare .= ' ' . $this->limits($first, $max);
         }

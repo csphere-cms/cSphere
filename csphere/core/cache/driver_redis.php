@@ -143,7 +143,7 @@ class Driver_Redis extends Base
         // Time request may not work in all cases
         $time = $this->_redis->time();
 
-        if (is_array($time) AND isset($time[0])) {
+        if (is_array($time) && isset($time[0])) {
 
             $time = $time[0];
 

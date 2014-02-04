@@ -41,7 +41,7 @@ abstract class DML
         $query = ' ORDER BY ';
 
         // Check if array dimensions are fine
-        if (isset($sort[0]) AND !is_array($sort[0])) {
+        if (isset($sort[0]) && !is_array($sort[0])) {
 
             $sort = array($sort);
         }
@@ -77,7 +77,7 @@ abstract class DML
         $query = '';
 
         // Check if array dimensions are fine
-        if (isset($joins[0]) AND !is_array($joins[0])) {
+        if (isset($joins[0]) && !is_array($joins[0])) {
 
             $joins = array($joins);
         }
@@ -86,7 +86,7 @@ abstract class DML
 
             // Empty fourth parameter means its same as third
             // Join 0=table, 1=foreign-table, 2=serial, 3=foreign-id
-            if (!isset($join[3]) OR $join[3] == '') {
+            if (!isset($join[3]) || $join[3] == '') {
 
                 $join[3] = $join[2];
             }

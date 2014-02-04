@@ -106,7 +106,7 @@ class Driver_APC extends Base
         $stats = apc_cache_info('user');
         $keys  = isset($stats['nentries']) ? $stats['nentries'] : '';
 
-        if (empty($keys) AND isset ($stats['cache_list'])) {
+        if (empty($keys) && isset ($stats['cache_list'])) {
 
             $keys = count($stats['cache_list']);
         }
