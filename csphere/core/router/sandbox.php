@@ -41,6 +41,10 @@ class Sandbox
         // Use output buffer to not get verbose
         ob_start();
 
+        // Hide error messages at this part
+        $errors = ini_get('display_errors');
+        ini_set('display_errors', 0);
+
         // Try to include and execute the target file
         try {
 
@@ -52,6 +56,9 @@ class Sandbox
 
             unset($controller);
         }
+
+        // Change error messages back to default setting
+        ini_set('display_errors', $errors);
 
         // Clean output buffer
         ob_end_clean();
