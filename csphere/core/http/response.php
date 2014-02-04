@@ -72,7 +72,7 @@ abstract class Response
         if (!empty(self::$_zlib) AND extension_loaded('zlib')) {
 
             // This is preferred over using ob_gzhandler
-            ini_set('zlib.output_compression', true);
+            ini_set('zlib.output_compression', 1);
         }
 
         // Content should follow for completion
