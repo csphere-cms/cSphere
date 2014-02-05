@@ -45,7 +45,7 @@
         <dl class="dl-horizontal">
             <dt>{* lang themes.contains_designs *}:</dt>
             <dd>{* lang themes.admin *}: <strong>{* var contains.admin *}</strong></dd>
-            <dd>{* lang themes.install *}: <strong>{* var contains.install *}</strong></dd>
+            <dd>{* lang default.install *}: <strong>{* var contains.install *}</strong></dd>
             <dd>{* lang themes.layout *}: <strong>{* var contains.layout *}</strong></dd>
             <dd>{* lang themes.mobile *}: <strong>{* var contains.mobile *}</strong></dd>
         </dl><!--END dl-horizontal-->

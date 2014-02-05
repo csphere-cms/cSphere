@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th>{* lang languages.duplication *}</th>
-                    <th>{* lang languages.plugins *}</th>
+                    <th>{* lang default.plugins *}</th>
                 </tr>
             </thead><!--END table thead-->
 

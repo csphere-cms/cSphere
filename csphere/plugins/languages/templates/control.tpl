@@ -21,10 +21,10 @@
                     </td>
                     <td class="text-center">{* var languages.name *}</td>
                     <td class="text-center">
-                        <a href="{* link languages/plugins/short/$languages.short$ *}">{* lang languages.plugins *}</a>
+                        <a href="{* link languages/plugins/short/$languages.short$ *}">{* lang default.plugins *}</a>
                     </td>
                     <td class="text-center">
-                        <a href="{* link languages/themes/short/$languages.short$ *}">{* lang languages.themes *}</a>
+                        <a href="{* link languages/themes/short/$languages.short$ *}">{* lang default.themes *}</a>
                     </td>
                 </tr>
                 {* endforeach languages *}

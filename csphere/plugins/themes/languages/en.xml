@@ -22,7 +22,6 @@
     <definitions>
         <define name="admin">Administration</define>
         <define name="contains_designs">Contains designs for</define>
-        <define name="install">Install</define>
         <define name="layout">Layout</define>
         <define name="media">Media</define>
         <define name="mobile">Mobile</define>
