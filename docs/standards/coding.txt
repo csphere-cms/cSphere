@@ -26,6 +26,7 @@ Extras for PHP:
 - No use of "goto" statement and no labels for it
 - No use of echo and other verbose commands unless there is no alternative
 - No use of the use statement for imports due to bugs with some PHP handlers
+- Short array syntax when defining arrays
 - Only one command per line and reduce nesting of commands as good as possible
 - No code that is within comments, link to e.g. tasks and tickets instead
 - No use of AND and OR because && and || do the same and are more common

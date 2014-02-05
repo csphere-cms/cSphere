@@ -60,11 +60,11 @@ class Driver_Sendmail extends Base
         parent::prepare($subject, $message, $type);
 
         // Set header data
-        $headers = ["MIME-Version: 1.0",
-                    "Content-Type: " . $type . "; charset=UTF-8",
-                    "Content-Transfer-Encoding: base64",
-                    "X-Mailer: cSphere",
-                    "From: " . $this->config['from']];
+        $headers = ['MIME-Version: 1.0',
+                    'Content-Type: ' . $type . '; charset=UTF-8',
+                    'Content-Transfer-Encoding: base64',
+                    'X-Mailer: cSphere',
+                    'From: ' . $this->config['from']];
 
         $this->headers = array_merge($this->headers, $headers);
 
