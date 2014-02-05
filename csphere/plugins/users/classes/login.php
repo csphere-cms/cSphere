@@ -131,13 +131,13 @@ abstract class Login
         $link .= \csphere\core\url\Link::href('users', 'login');
 
         // Set data for template
-        $data = array('tpl'         => 'message',
-                      'type'        => 'default',
-                      'action_name' => $lang['login'],
-                      'plugin_name' => $lang['users'],
-                      'box_name'    => $lang['login'],
-                      'message'     => $lang['https_required'],
-                      'previous'    => $link);
+        $data = ['tpl'         => 'message',
+                 'type'        => 'default',
+                 'action_name' => $lang['login'],
+                 'plugin_name' => $lang['users'],
+                 'box_name'    => $lang['login'],
+                 'message'     => $lang['https_required'],
+                 'previous'    => $link];
 
         return $data;
     }
@@ -151,9 +151,9 @@ abstract class Login
     private static function _check()
     {
         // Always set a tpl to not cause errors
-        $data = array('tpl'         => 'form',
-                      'login_name'  => '',
-                      'error'       => '');
+        $data = ['tpl'         => 'form',
+                 'login_name'  => '',
+                 'error'       => ''];
 
         // Get data if filled in at form
         $post = \csphere\core\http\Input::getAll('post');

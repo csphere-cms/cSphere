@@ -109,7 +109,7 @@ class Finder extends \csphere\core\datamapper\Base
 
         // Handle array dimension for max=1 since db layer uses fetch for that case
         if ($max == 1 && $result != []) {
-            $result = array($result);
+            $result = [$result];
         }
 
         // Reset parts array

@@ -47,8 +47,8 @@ abstract class Menu
         $session = new \csphere\core\session\Session();
 
         // Set template content
-        $data = array('user_name' => $session->get('user_name'),
-                      'user_id'   => $session->get('user_id'));
+        $data = ['user_name' => $session->get('user_name'),
+                 'user_id'   => $session->get('user_id')];
 
         // Set template layout
         $tpl    = 'login' . $layout . '_menu';

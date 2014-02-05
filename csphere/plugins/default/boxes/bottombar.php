@@ -15,7 +15,7 @@
 
 $loader = \csphere\core\service\Locator::get();
 
-$data = array('now' => -1);
+$data = ['now' => -1];
 
 // Get time zone of user
 $zone = \csphere\core\date\Unixtime::userTimeZone();

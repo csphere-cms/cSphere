@@ -23,12 +23,12 @@ $limit = empty($params['limit']) ? 5 : (int)$params['limit'];
 // Get files that contain error logs
 $path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
-$files = \csphere\core\files\File::search($path, true, array('info.txt'));
+$files = \csphere\core\files\File::search($path, true, ['info.txt']);
 
 // Data array for view
-$data = array();
+$data = [];
 $data['params'] = 'refresh/1';
-$data['files']  = array();
+$data['files']  = [];
 
 $count = count($files);
 $stop  = ($count > $limit) ? $limit : $count;
@@ -39,8 +39,8 @@ for ($i = 0; $i < $stop; $i++) {
     $content = file_get_contents($path . $files[$i]);
     $entries = substr_count($content, "--------\n");
 
-    $data['files'][] = array('date'    => $name[0],
-                             'entries' => $entries);
+    $data['files'][] = ['date'    => $name[0],
+                        'entries' => $entries];
 }
 
 $view = $loader->load('view');
