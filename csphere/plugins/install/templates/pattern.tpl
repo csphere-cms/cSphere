@@ -11,7 +11,7 @@
  * @link      http://www.csphere.eu
  **/
 
-$config = array();
+$config = [];
 
 $config['cache']['driver']      = '{* raw cache.driver *}';
 $config['cache']['host']        = '{* raw cache.host *}';
@@ -28,8 +28,8 @@ $config['database']['schema']   = '{* raw db.schema *}';
 $config['database']['file']     = '{* raw db.file *}';
 
 $config['logs']['driver']       = '{* raw logs *}';
-$config['logs']['save']         = array('errors' => true);
-$config['logs']['mail']         = array('errors' => true);
+$config['logs']['save']         = ['errors' => true];
+$config['logs']['mail']         = ['errors' => true];
 $config['logs']['mail_to']      = '';
 
 $config['mail']['driver']       = '{* raw mail.driver *}';
