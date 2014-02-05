@@ -34,12 +34,12 @@ $logout  = $lang['logout'];
 $message = $lang['logout_true'];
 
 // Set data for template
-$data = array('tpl'         => 'message',
-              'type'        => 'green',
-              'action_name' => $logout,
-              'plugin_name' => $plugin,
-              'message'     => $message,
-              'previous'    => $dirname);
+$data = ['tpl'         => 'message',
+         'type'        => 'green',
+         'action_name' => $logout,
+         'plugin_name' => $plugin,
+         'message'     => $message,
+         'previous'    => $dirname];
 
 $view = $loader->load('view');
 

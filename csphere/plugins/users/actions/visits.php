@@ -34,7 +34,7 @@ $rad->callFinder($finder);
 // Define closure to execute before data is send to template
 $data = function ($array) {
 
-    $new = array();
+    $new = [];
 
     // Scan for browser and system info
     foreach ($array AS $login) {
@@ -47,7 +47,7 @@ $data = function ($array) {
         );
 
         // Add scan result to data array
-        $scan  = array('scan_browser' => $browser . ' - ' . $system);
+        $scan  = ['scan_browser' => $browser . ' - ' . $system];
         $new[] = array_merge($login, $scan);
     }
 
@@ -57,7 +57,7 @@ $data = function ($array) {
 $rad->callData($data);
 
 // Define order columns
-$order = array('login_browser', 'login_since');
+$order = ['login_browser', 'login_since'];
 
-$rad->search(array('login_browser'));
+$rad->search(['login_browser']);
 $rad->delegate('login_since', $order, true);

@@ -19,7 +19,7 @@ $rad = new \csphere\core\rad\Listed('users');
 $rad->map('manage', 'manage');
 
 // Define order columns
-$order = array('user_name', 'user_since');
+$order = ['user_name', 'user_since'];
 
-$rad->search(array('user_name'), true, true);
+$rad->search(['user_name'], true, true);
 $rad->delegate('user_name', $order);
