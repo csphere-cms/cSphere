@@ -125,8 +125,8 @@ class Driver_Xcache extends Base
 
                 $handle = $data['name'] . ' (' . $i . '.' . $num . ')';
 
-                $form[$handle] = ['name' => $handle, 
-								  'time' => $data['ctime'],
+                $form[$handle] = ['name' => $handle,
+                                  'time' => $data['ctime'],
                                   'size' => $data['size']];
             }
         }

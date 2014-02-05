@@ -32,10 +32,10 @@ abstract class Input
      * Array with aliased input names
      **/
     private static $_inputNames = ['get'    => INPUT_GET,
-								   'cookie' => INPUT_COOKIE,
-								   'env'    => INPUT_ENV,
-								   'post'   => INPUT_POST,
-								   'server' => INPUT_SERVER];
+                                   'cookie' => INPUT_COOKIE,
+                                   'env'    => INPUT_ENV,
+                                   'post'   => INPUT_POST,
+                                   'server' => INPUT_SERVER];
 
     /**
      * Array with registered GET data

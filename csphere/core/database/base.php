@@ -134,12 +134,12 @@ abstract class Base extends \csphere\core\service\Drivers
 
         unset($info['password'], $info['file']);
 
-        $more = ['version' => '', 
-				 'client' => '',
-				 'server' => '',
+        $more = ['version' => '',
+                 'client' => '',
+                 'server' => '',
                  'size' => '',
-				 'encoding' => '',
-				 'tables' => ''];
+                 'encoding' => '',
+                 'tables' => ''];
 
         $info = array_merge($info, $more);
 
