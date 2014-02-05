@@ -31,12 +31,12 @@ class Config
     /**
      * Array with config settings
      **/
-    private $_config = array();
+    private $_config = [];
 
     /**
      * Error details as an array
      **/
-    private $_error = array();
+    private $_error = [];
 
     /**
      * Prepare configuration
@@ -58,7 +58,7 @@ class Config
 
     private function _configFile()
     {
-        $config = array();
+        $config = [];
 
         // Try to load the config file
         $file = \csphere\core\init\path() . 'csphere/config/config.php';
@@ -69,13 +69,13 @@ class Config
 
         } else {
 
-            $this->_error = array('error' => 'config_missing', 'file' => $file);
+            $this->_error = ['error' => 'config_missing', 'file' => $file];
         }
 
         // Check for config array to be correct
         if (!isset($config) || !is_array($config)) {
 
-            $this->_error = array('error' => 'config_corrupt', 'file' => $file);
+            $this->_error = ['error' => 'config_corrupt', 'file' => $file];
         }
 
         $this->_config = $config;

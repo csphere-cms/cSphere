@@ -56,7 +56,7 @@ class Order
     /**
      * Additional parameters for url
      **/
-    private $_params = array();
+    private $_params = [];
 
     /**
      * Arrow down content
@@ -119,7 +119,7 @@ class Order
     {
         $params = $this->_params;
 
-        $urls = array();
+        $urls = [];
 
         // Create list of usable urls
         foreach ($this->_columns AS $col) {
@@ -154,7 +154,7 @@ class Order
             $this->_getArrows();
         }
 
-        $arrows = array();
+        $arrows = [];
 
         // Create list of arrows
         foreach ($this->_columns AS $col) {
@@ -238,9 +238,9 @@ class Order
             $view = $loader->load('view');
 
             // Send data to view and fetch box result
-            $view->template('default', 'core_order', array('sort' => 'up'), true);
+            $view->template('default', 'core_order', ['sort' => 'up'], true);
             $this->_arrowUp = $view->box();
-            $view->template('default', 'core_order', array('sort' => 'down'), true);
+            $view->template('default', 'core_order', ['sort' => 'down'], true);
             $this->_arrowDown = $view->box();
 
             // Save arrows to cache

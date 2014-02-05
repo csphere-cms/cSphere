@@ -96,7 +96,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
     public function loadArray(array $keys)
     {
-        $result = array();
+        $result = [];
 
         // Run through all keys
         foreach ($keys AS $key) {

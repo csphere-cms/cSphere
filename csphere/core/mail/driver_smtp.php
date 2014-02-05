@@ -60,7 +60,7 @@ class Driver_SMTP extends Base
     private function _commands($email)
     {
         // Prepare header data
-        $headers   = array();
+        $headers   = [];
         $headers[] = 'To: ' . $email;
         $headers[] = 'Subject: ' . $this->content['subject_b64'];
 
@@ -71,15 +71,15 @@ class Driver_SMTP extends Base
               . $this->content['message_b64'] . $this->config['eol'] . '.';
 
         // Create command list
-        $commands = array('helo' => 'HELO ' . $this->_server,
-                          'login' => 'AUTH LOGIN',
-                          'user' => base64_encode($this->config['username']),
-                          'pw' => base64_encode($this->config['password']),
-                          'from' => 'MAIL FROM:' . $this->config['from'],
-                          'to' => 'RCPT TO:' . $email,
-                          'data' => 'DATA',
-                          'response' => $data,
-                          'quit' => 'QUIT');
+        $commands = ['helo' => 'HELO ' . $this->_server,
+                     'login' => 'AUTH LOGIN',
+                     'user' => base64_encode($this->config['username']),
+                     'pw' => base64_encode($this->config['password']),
+                     'from' => 'MAIL FROM:' . $this->config['from'],
+                     'to' => 'RCPT TO:' . $email,
+                     'data' => 'DATA',
+                     'response' => $data,
+                     'quit' => 'QUIT'];
 
         return $commands;
     }
@@ -96,7 +96,7 @@ class Driver_SMTP extends Base
     {
         $result = false;
 
-        $log = array();
+        $log = [];
 
         // Open connection to smtp server
         $remote = fsockopen($this->config['host'], (int)$this->config['port']);
@@ -178,11 +178,11 @@ class Driver_SMTP extends Base
         parent::prepare($subject, $message, $type);
 
         // Set header data
-        $headers = array("MIME-Version: 1.0",
-                         "Content-Type: " . $type . "; charset=UTF-8",
-                         "Content-Transfer-Encoding: base64",
-                         "X-Mailer: cSphere",
-                         "From: " . $this->config['from']);
+        $headers = ["MIME-Version: 1.0",
+                    "Content-Type: " . $type . "; charset=UTF-8",
+                    "Content-Transfer-Encoding: base64",
+                    "X-Mailer: cSphere",
+                    "From: " . $this->config['from']];
 
         $this->headers = array_merge($this->headers, $headers);
 

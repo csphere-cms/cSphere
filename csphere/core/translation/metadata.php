@@ -54,7 +54,7 @@ class Metadata extends \csphere\core\xml\Metadata
 
             // Load xml content into an array
             $xml = $this->loader->load('xml', 'language');
-            $reg = array();
+            $reg = [];
 
             foreach ($files AS $file) {
 
@@ -83,13 +83,13 @@ class Metadata extends \csphere\core\xml\Metadata
     {
         // Create a list of languages
         $reg   = $this->generate();
-        $names = array();
+        $names = [];
 
         foreach ($reg AS $short => $info) {
 
-            $names[$info['name']] = array('name'     => $info['name'],
-                                          'short'    => $short,
-                                          'icon_url' => $info['icon']['url']);
+            $names[$info['name']] = ['name'     => $info['name'],
+                                     'short'    => $short,
+                                     'icon_url' => $info['icon']['url']];
         }
 
         ksort($names);
@@ -115,7 +115,7 @@ class Metadata extends \csphere\core\xml\Metadata
         $plugins = $meta->details();
 
         // Add translation status to each entry
-        $result = array();
+        $result = [];
 
         foreach ($plugins AS $plugin) {
 
@@ -147,7 +147,7 @@ class Metadata extends \csphere\core\xml\Metadata
         $themes = $meta->details();
 
         // Add translation status to each entry
-        $result = array();
+        $result = [];
 
         foreach ($themes AS $theme) {
 

@@ -56,7 +56,7 @@ class Pages
     /**
      * Additional parameters for url
      **/
-    private $_params = array();
+    private $_params = [];
 
     /**
      * Start a new page generator
@@ -97,7 +97,7 @@ class Pages
 
     public function navigation($light = false, $arrows = true)
     {
-        $data = array();
+        $data = [];
 
         // Set amount of pages and build page navigation
         $pages = ceil($this->_total / $this->_limit);
@@ -142,7 +142,7 @@ class Pages
 
     private function _light($pages)
     {
-        $groups = array();
+        $groups = [];
 
         // Use current page as default
         $next = $this->_start - 1;
@@ -167,7 +167,7 @@ class Pages
         }
 
         $first    = $this->_group($next, $end);
-        $groups[] = array('links' => $first, 'space' => 'no');
+        $groups[] = ['links' => $first, 'space' => 'no'];
 
         return $groups;
     }
@@ -183,11 +183,11 @@ class Pages
 
     private function _full($pages, $end)
     {
-        $groups = array();
+        $groups = [];
 
         // Generate first group of links
         $first    = $this->_group(1, $end);
-        $groups[] = array('links' => $first, 'space' => 'no');
+        $groups[] = ['links' => $first, 'space' => 'no'];
 
         // Generate second group of links
         if ($pages > $end && $end < 4) {
@@ -196,7 +196,7 @@ class Pages
             $end    = $middle['end'];
 
             $second   = $this->_group($middle['next'], $end);
-            $groups[] = array('links' => $second, 'space' => 'yes');
+            $groups[] = ['links' => $second, 'space' => 'yes'];
         }
 
         // Generate third group of links
@@ -205,7 +205,7 @@ class Pages
             $next = $pages - 2;
 
             $third    = $this->_group($next, $pages);
-            $groups[] = array('links' => $third, 'space' => 'yes');
+            $groups[] = ['links' => $third, 'space' => 'yes'];
         }
 
         return $groups;
@@ -244,7 +244,7 @@ class Pages
         }
 
         // Build array for group method
-        return array('next' => $next, 'end' => $end);
+        return ['next' => $next, 'end' => $end];
     }
 
     /**
@@ -259,7 +259,7 @@ class Pages
     private function _group($start, $end)
     {
         $params = $this->_params;
-        $links  = array();
+        $links  = [];
 
         // Display at least one page on start
         if ($start == 1 && $end < 1) {
@@ -273,7 +273,7 @@ class Pages
             // Check if link is to current page
             if ($i == $this->_start) {
 
-                $links[] = array('page' => $i, 'href' => '', 'active' => 'yes');
+                $links[] = ['page' => $i, 'href' => '', 'active' => 'yes'];
 
             } else {
 
@@ -284,7 +284,7 @@ class Pages
                     $this->_plugin, $this->_action, $params
                 );
 
-                $links[] = array('page' => $i, 'href' => $href, 'active' => 'no');
+                $links[] = ['page' => $i, 'href' => $href, 'active' => 'no'];
             }
         }
 
@@ -302,7 +302,7 @@ class Pages
     private function _arrows($pages)
     {
         $params = $this->_params;
-        $arrows = array();
+        $arrows = [];
 
         // Add << and < arrows
         $arrows['first'] = 1;
@@ -354,7 +354,7 @@ class Pages
 
     private function _build(array $data, $arrows)
     {
-        $data['arrow'] = array('show' => 'no');
+        $data['arrow'] = ['show' => 'no'];
 
         // Add links for arrows if requested
         if ($arrows == true) {

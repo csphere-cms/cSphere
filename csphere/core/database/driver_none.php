@@ -78,6 +78,6 @@ class Driver_None extends Base
     {
         unset($prepare, $assoc, $first, $max);
 
-        return array();
+        return [];
     }
 }

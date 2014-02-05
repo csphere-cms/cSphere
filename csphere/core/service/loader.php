@@ -31,12 +31,12 @@ class Loader
     /**
      * Array with config variables that is fetched later on
      **/
-    private $_config = array();
+    private $_config = [];
 
     /**
      * Array with drivers that have already been configured
      **/
-    private $_driver = array();
+    private $_driver = [];
 
     /**
      * Determines if fallbacks are tried on problems
@@ -84,7 +84,7 @@ class Loader
      **/
 
     public function load(
-        $component, $driver = '', array $config = array(), $default = false
+        $component, $driver = '', array $config = [], $default = false
     ) {
         // Determine configuration details
         $config = $this->_merge($component, $driver, $config);

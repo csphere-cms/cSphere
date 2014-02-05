@@ -82,9 +82,9 @@ class Driver_Database extends Base
         // Check for data array
         if (empty($array['data'])) {
 
-            $array['data'] = array('insert' => array(),
-                                   'update' => array(),
-                                   'delete' => array());
+            $array['data'] = ['insert' => [],
+                              'update' => [],
+                              'delete' => []];
 
         } else {
 
@@ -116,7 +116,7 @@ class Driver_Database extends Base
             $table['uniques'] = $this->loopattr($table['uniques'][0]['unique']);
         } else {
 
-            $table['uniques'] = array();
+            $table['uniques'] = [];
         }
 
         // Shorten indexes as good as possible
@@ -125,26 +125,26 @@ class Driver_Database extends Base
             $table['indexes'] = $this->loopattr($table['indexes'][0]['index']);
         } else {
 
-            $table['indexes'] = array();
+            $table['indexes'] = [];
         }
 
         // Shorten foreigns as good as possible
         if (isset($table['foreigns'])) {
 
-            $new               = array();
+            $new               = [];
             $table['foreigns'] = $table['foreigns'][0]['foreign'];
 
             foreach ($table['foreigns'] AS $foreign) {
 
-                $new[] = array('table'  => $foreign['attr'][0]['table'],
-                               'column' => $foreign['column']);
+                $new[] = ['table'  => $foreign['attr'][0]['table'],
+                          'column' => $foreign['column']];
             }
 
             $table['foreigns'] = $new;
 
         } else {
 
-            $table['foreigns'] = array();
+            $table['foreigns'] = [];
         }
 
         return $table;
@@ -167,7 +167,7 @@ class Driver_Database extends Base
 
         } else {
 
-            $data['insert'] = array();
+            $data['insert'] = [];
         }
 
         // Shorten update as good as possible
@@ -177,7 +177,7 @@ class Driver_Database extends Base
 
         } else {
 
-            $data['update'] = array();
+            $data['update'] = [];
         }
 
         // Shorten delete as good as possible
@@ -187,7 +187,7 @@ class Driver_Database extends Base
 
         } else {
 
-            $data['delete'] = array();
+            $data['delete'] = [];
         }
 
         return $data;

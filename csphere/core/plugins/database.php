@@ -41,7 +41,7 @@ class Database
     /**
      * Database XML content of plugin
      **/
-    private $_structure = array();
+    private $_structure = [];
 
     /**
      * Store wether a database XML was found
@@ -99,7 +99,7 @@ class Database
     public function tables()
     {
         // Check if plugin contains tables
-        $tables = array();
+        $tables = [];
 
         if (isset($this->_structure['tables'])) {
 
@@ -307,17 +307,17 @@ class Database
         // Make sure all parts are set
         if (!isset($data['insert'])) {
 
-            $data['insert'] = array();
+            $data['insert'] = [];
         }
 
         if (!isset($data['update'])) {
 
-            $data['insert'] = array();
+            $data['insert'] = [];
         }
 
         if (!isset($data['delete'])) {
 
-            $data['insert'] = array();
+            $data['insert'] = [];
         }
 
         return $data;
@@ -333,7 +333,7 @@ class Database
 
     private function _columns(array $columns)
     {
-        $result = array();
+        $result = [];
 
         foreach ($columns AS $col) {
 

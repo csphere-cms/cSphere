@@ -61,7 +61,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
 
         $dsn .= 'Database=' . $config['schema'];
 
-        $options = array();
+        $options = [];
 
         // Use try catch to hide connection details
         try {
@@ -75,7 +75,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
         }
         catch(\PDOException $pdo_error) {
 
-            $this->error('Connect', array(), $pdo_error->getMessage(), false);
+            $this->error('Connect', [], $pdo_error->getMessage(), false);
         }
     }
 
@@ -113,12 +113,11 @@ class Driver_PDO_SQLSRV extends Base_PDO
 
     protected function replace($replace)
     {
-        $change_sqlsrv = array('{engine}' => '',
-                               '{integer}' => 'int',
-                               '{serial}' => 'int IDENTITY(1,1)',
-                               '{text}' => 'text',
-                               '{varchar}' => 'varchar'
-        );
+        $change_sqlsrv = ['{engine}' => '',
+                          '{integer}' => 'int',
+                          '{serial}' => 'int IDENTITY(1,1)',
+                          '{text}' => 'text',
+                          '{varchar}' => 'varchar'];
 
         foreach ($change_sqlsrv AS $key => $sqlsrv) {
 
@@ -160,7 +159,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
         $query = 'SELECT collation_name AS encoding FROM sys.databases '
                . 'WHERE database_id = DB_ID()';
 
-        $encoding = $this->query($query, array(), 0, 0);
+        $encoding = $this->query($query, [], 0, 0);
 
         $info['encoding'] = 'Collation ' . $encoding[0]['encoding'];
 
@@ -168,7 +167,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
         $query = 'SELECT SUM(size) AS size FROM sys.master_files '
                . 'WHERE type = 0 AND database_id = DB_ID() GROUP BY database_id';
 
-        $size = $this->query($query, array(), 0, 0);
+        $size = $this->query($query, [], 0, 0);
 
         $info['size'] = $size[0]['size'] * 8192;
 
@@ -176,7 +175,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
         $query = 'SELECT COUNT(*) AS tables FROM information_schema.tables '
                . 'WHERE table_type = \'base table\'';
 
-        $tables = $this->query($query, array(), 0, 0);
+        $tables = $this->query($query, [], 0, 0);
 
         $info['tables'] = $tables[0]['tables'];
 

@@ -154,11 +154,11 @@ abstract class Base_PDO extends \csphere\core\database\Base
 
                 if ($result === false) {
 
-                    $result = array();
+                    $result = [];
 
                 } else {
 
-                    $result = array($result);
+                    $result = [$result];
                 }
             }
 
@@ -183,7 +183,7 @@ abstract class Base_PDO extends \csphere\core\database\Base
     private function _execute($prepare, array $assoc, $log)
     {
         // Rewrite assoc array to use named placeholders
-        $data = array();
+        $data = [];
 
         foreach ($assoc AS $key => $value) {
 

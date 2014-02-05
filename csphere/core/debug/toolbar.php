@@ -41,7 +41,7 @@ class Toolbar
     /**
      * These components are separated from logs
      **/
-    private $_specials = array('database', 'errors', 'includes');
+    private $_specials = ['database', 'errors', 'includes'];
 
     /**
      * Holds the most current data
@@ -68,7 +68,7 @@ class Toolbar
         $memory    = memory_get_peak_usage();
 
         // Start and fill stats array
-        $stats = array('parsetime' => $parsetime, 'memory' => $memory);
+        $stats = ['parsetime' => $parsetime, 'memory' => $memory];
 
         // Prepare logs and specials
         $logs = $this->_logs();
@@ -101,8 +101,8 @@ class Toolbar
         $info = $logs->info();
 
         // Make sure that all needed log keys are set
-        $info['database'] = empty($info['database']) ? array() : $info['database'];
-        $info['errors']   = empty($info['errors']) ? array() : $info['errors'];
+        $info['database'] = empty($info['database']) ? [] : $info['database'];
+        $info['errors']   = empty($info['errors']) ? [] : $info['errors'];
 
         ksort($info);
 
@@ -178,13 +178,13 @@ class Toolbar
 
     private function _formatLogbar(array $logs)
     {
-        $data = array();
+        $data = [];
 
         foreach ($logs AS $name => $entries) {
 
             if (!in_array($name, $this->_specials)) {
 
-                $data[] = array('component' => $name, 'count' => count($entries));
+                $data[] = ['component' => $name, 'count' => count($entries)];
             }
         }
 
@@ -201,16 +201,16 @@ class Toolbar
 
     private function _formatDetails(array $logs)
     {
-        $data = array('count' => array(), 'logs' => array());
+        $data = ['count' => [], 'logs' => []];
 
         // Format log information for output
         foreach ($logs AS $name => $entries) {
 
-            $sub = array();
+            $sub = [];
 
             foreach ($entries AS $part) {
 
-                $sub[] = array('text' => $part);
+                $sub[] = ['text' => $part];
             }
 
             // Append to logs except for specials
@@ -221,7 +221,7 @@ class Toolbar
 
             } else {
 
-                $data['logs'][] = array('name' => $name, 'entries' => $sub);
+                $data['logs'][] = ['name' => $name, 'entries' => $sub];
             }
         }
 

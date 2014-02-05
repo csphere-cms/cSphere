@@ -75,7 +75,7 @@ class Options extends \csphere\core\rad\Base
         } else {
 
             // Data array
-            $data = array();
+            $data = [];
 
             $data['options'] = $options;
 

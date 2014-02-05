@@ -31,7 +31,7 @@ abstract class Response
     /**
      * Array with headers to be send
      **/
-    private static $_headers = array();
+    private static $_headers = [];
 
     /**
      * Store if send was already called

@@ -59,7 +59,7 @@ abstract class CMD_Prepare
     public static function box(array $part)
     {
         // Check for valid placeholder key data
-        $target = isset($part['key']) ? explode('/', $part['key'], 3) : array();
+        $target = isset($part['key']) ? explode('/', $part['key'], 3) : [];
 
         if (isset($target[1])) {
 
@@ -86,7 +86,7 @@ abstract class CMD_Prepare
         }
 
         // Handle additional parameters
-        $part['params'] = array();
+        $part['params'] = [];
 
         if (isset($target[2])) {
 
@@ -109,15 +109,15 @@ abstract class CMD_Prepare
     public static function tpl(array $part)
     {
         // Check for valid placeholder key data
-        $replace = isset($part['key']) ? explode(' ', $part['key']) : array();
+        $replace = isset($part['key']) ? explode(' ', $part['key']) : [];
         $target  = explode('/', $replace[0], 2);
 
         // Prepare commands if there are any
-        $cmds = array();
+        $cmds = [];
 
         if (isset($replace[1])) {
 
-            $cmds   = array();
+            $cmds   = [];
             $splits = count($replace);
 
             for ($i = 1; $i < $splits; $i++) {
@@ -140,7 +140,7 @@ abstract class CMD_Prepare
                 $string, $part['plugin'], $cmds
             );
 
-            $part = array('cmd' => 'multi', 'value' => $parts);
+            $part = ['cmd' => 'multi', 'value' => $parts];
 
         } else {
 
@@ -171,12 +171,12 @@ abstract class CMD_Prepare
             // Text is a special case
             if ($split[0] == 'text') {
 
-                $part = array('cmd' => 'text', 'text' => $coms[$split[1]]);
+                $part = ['cmd' => 'text', 'text' => $coms[$split[1]]];
 
             } else {
 
                 $part = \csphere\core\template\Prepare::hooks(
-                    $split[0], $coms[$split[1]], $part['plugin'], array()
+                    $split[0], $coms[$split[1]], $part['plugin'], []
                 );
             }
 

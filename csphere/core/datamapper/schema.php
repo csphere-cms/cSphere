@@ -46,7 +46,7 @@ abstract class Schema
      /**
      * Store database files that are already opened
      **/
-    private static $_loaded = array();
+    private static $_loaded = [];
 
     /**
      * Load schema for database table
@@ -154,7 +154,7 @@ abstract class Schema
         $data = self::$_xml->source('plugin', $plugin);
 
         // Convert table data for later usage
-        $schema = array();
+        $schema = [];
 
         foreach ($data['tables'] AS $table) {
 
@@ -170,7 +170,7 @@ abstract class Schema
             }
 
             // Build schema array for caching
-            $add = array('serial' => $serial);
+            $add = ['serial' => $serial];
 
             $schema[$table['name']] = array_merge($table, $add);
         }

@@ -31,17 +31,17 @@ abstract class Prepare
     /**
      * List of commands that can pass to parse mode
      **/
-    private static $_var = array('var' => 0, 'url' => 1, 'raw' => 2, 'form' => 3);
+    private static $_var = ['var' => 0, 'url' => 1, 'raw' => 2, 'form' => 3];
 
     /**
      * List of commands that need the plugin name
      **/
-    private static $_plugin = array('com' => 0, 'lang' => 1, 'tpl' => 2);
+    private static $_plugin = ['com' => 0, 'lang' => 1, 'tpl' => 2];
 
     /**
      * List of commands that can be skipped at hooks
      **/
-    private static $_skip = array('page' => 0, 'debug' => 1,);
+    private static $_skip = ['page' => 0, 'debug' => 1];
 
     /**
      * Prepares nested array targets
@@ -73,7 +73,7 @@ abstract class Prepare
     public static function multi($string, $cmd = 'var')
     {
         $tokens = explode('$', $string);
-        $parts  = array();
+        $parts  = [];
 
         // Every second array index should be a var element
         $tokens_c = count($tokens);
@@ -83,20 +83,20 @@ abstract class Prepare
             // Skip text placeholders with empty string
             if ($tokens[$i] != '') {
 
-                $parts[] = array('cmd' => 'text', 'text' => $tokens[$i]);
+                $parts[] = ['cmd' => 'text', 'text' => $tokens[$i]];
             }
 
             // Check if there is another var element
             if (isset($tokens[($i + 1)])) {
 
-                $add = array('cmd' => $cmd, 'key' => $tokens[($i + 1)]);
+                $add = ['cmd' => $cmd, 'key' => $tokens[($i + 1)]];
 
                 // Var element is maybe targeting an array key
                 $parts[] = self::sub($add);
             }
         }
 
-        $part = array('cmd' => 'multi', 'value' => $parts);
+        $part = ['cmd' => 'multi', 'value' => $parts];
 
         return $part;
     }
@@ -111,7 +111,7 @@ abstract class Prepare
      * @return array
      **/
 
-    public static function template($string, $plugin = '', array $coms = array())
+    public static function template($string, $plugin = '', array $coms = [])
     {
         // Add form end placeholder to form closing tags
         $pattern = "'((?:\{\* form end \*\}[\s]*)*\<\/form\>)'sS";
@@ -142,12 +142,12 @@ abstract class Prepare
                 $split = self::template($template[($i + 4)], $plugin, $coms);
                 $else  = self::template($template[($i + 5)], $plugin, $coms);
 
-                $next = array('cmd'   => $template[$i],
-                              'key'   => $template[($i + 1)],
-                              'equal' => $template[($i + 2)],
-                              'cond'  => $template[($i + 3)],
-                              'value' => $split,
-                              'else'  => $else);
+                $next = ['cmd'   => $template[$i],
+                         'key'   => $template[($i + 1)],
+                         'equal' => $template[($i + 2)],
+                         'cond'  => $template[($i + 3)],
+                         'value' => $split,
+                         'else'  => $else];
 
                 $new[] = self::sub($next);
 
@@ -174,7 +174,7 @@ abstract class Prepare
      * @return array
      **/
 
-    public static function placeholders($string, $plugin, array $coms = array())
+    public static function placeholders($string, $plugin, array $coms = [])
     {
         // Split string into an array of placeholders and content
         $search   = "'\{\* (?P<cmd>[\S]+?)"
@@ -182,12 +182,12 @@ abstract class Prepare
                   . "'S";
         $template = preg_split($search, $string, -1, PREG_SPLIT_DELIM_CAPTURE);
 
-        $new = array();
+        $new = [];
 
         // Skip text placeholders with empty string
         if ($template[0] != '') {
 
-            $new[] = array('cmd' => 'text', 'text' => $template[0]);
+            $new[] = ['cmd' => 'text', 'text' => $template[0]];
         }
 
         $traps = count($template);
@@ -212,7 +212,7 @@ abstract class Prepare
             // Skip text placeholders with empty string
             if ($template[($j + 2)] != '') {
 
-                $new[] = array('cmd' => 'text', 'text' => $template[($j + 2)]);
+                $new[] = ['cmd' => 'text', 'text' => $template[($j + 2)]];
             }
 
             // Skip end of placeholder
@@ -236,7 +236,7 @@ abstract class Prepare
     public static function hooks($cmd, $key, $plugin, array $coms)
     {
         // Combine array and add plugin if required by placeholder
-        $next = array('cmd' => $cmd, 'key' => $key);
+        $next = ['cmd' => $cmd, 'key' => $key];
 
         if (isset(self::$_plugin[$cmd])) {
 

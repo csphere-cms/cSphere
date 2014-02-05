@@ -62,7 +62,7 @@ class Startup
             $view = $loader->load('view');
 
             // Format data for template usage
-            $data = array('file' => $error['file']);
+            $data = ['file' => $error['file']];
 
             $data['error'] = \csphere\core\translation\Fetch::key(
                 'errors', $error['error']

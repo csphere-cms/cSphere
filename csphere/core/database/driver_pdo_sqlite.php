@@ -50,7 +50,7 @@ class Driver_PDO_SQLITE extends Base_PDO
         $file = \csphere\core\init\path()
               . 'csphere/storage/database/' . $config['file'];
 
-        $options = array();
+        $options = [];
 
         // Use try catch to hide connection details
         try {
@@ -61,7 +61,7 @@ class Driver_PDO_SQLITE extends Base_PDO
         }
         catch(\PDOException $pdo_error) {
 
-            $this->error('Connect', array(), $pdo_error->getMessage(), false);
+            $this->error('Connect', [], $pdo_error->getMessage(), false);
         }
     }
 
@@ -91,13 +91,12 @@ class Driver_PDO_SQLITE extends Base_PDO
 
     protected function replace($replace)
     {
-        $change_sqlite = array('{engine}' => '',
-                               '{integer}' => 'integer',
-                               '{optimize}' => 'VACUUM',
-                               '{serial}' => 'integer',
-                               '{text}' => 'text',
-                               '{varchar}' => 'varchar'
-        );
+        $change_sqlite = ['{engine}' => '',
+                          '{integer}' => 'integer',
+                          '{optimize}' => 'VACUUM',
+                          '{serial}' => 'integer',
+                          '{text}' => 'text',
+                          '{varchar}' => 'varchar'];
 
         foreach ($change_sqlite AS $key => $sqlite) {
 
@@ -119,7 +118,7 @@ class Driver_PDO_SQLITE extends Base_PDO
         $info = parent::info();
 
         // Get encoding of database
-        $encoding = $this->query('PRAGMA encoding', array(), 0, 0);
+        $encoding = $this->query('PRAGMA encoding', [], 0, 0);
 
         $info['encoding'] = $encoding[0]['encoding'];
 
@@ -134,7 +133,7 @@ class Driver_PDO_SQLITE extends Base_PDO
                . 'WHERE type = \'table\' AND name LIKE \''
                . $this->config['prefix'] . '%\'';
 
-        $tables = $this->query($query, array(), 0, 0);
+        $tables = $this->query($query, [], 0, 0);
 
         $info['tables'] = $tables[0]['tables'];
 

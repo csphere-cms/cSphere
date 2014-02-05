@@ -31,22 +31,22 @@ class Finder extends \csphere\core\datamapper\Base
     /**
      * Parts for a query
      **/
-    private $_parts = array('joins' => '',
-                            'columns' => '*',
-                            'where' => array(),
-                            'order' => array(),
-                            'group' => array(),
-                            'having' => array());
+    private $_parts = ['joins' => '',
+                       'columns' => '*',
+                       'where' => [],
+                       'order' => [],
+                       'group' => [],
+                       'having' => []];
 
      /**
      * Reset layout for parts of a query
      **/
-     private $_reset = array('joins' => '',
-                             'columns' => '*',
-                             'where' => array(),
-                             'order' => array(),
-                             'group' => array(),
-                             'having' => array());
+     private $_reset = ['joins' => '',
+                        'columns' => '*',
+                        'where' => [],
+                        'order' => [],
+                        'group' => [],
+                        'having' => []];
 
     /**
      * Get first record matching filters
@@ -87,9 +87,9 @@ class Finder extends \csphere\core\datamapper\Base
     public function find($first, $max)
     {
         // Sort by serial ascending if nothing else is specified
-        if ($this->_parts['order'] == array()) {
+        if ($this->_parts['order'] == []) {
 
-            $this->_parts['order'] = array($this->serial, 'ASC');
+            $this->_parts['order'] = [$this->serial, 'ASC'];
         }
 
         // Construct query and fetch result
@@ -108,7 +108,7 @@ class Finder extends \csphere\core\datamapper\Base
         );
 
         // Handle array dimension for max=1 since db layer uses fetch for that case
-        if ($max == 1 && $result != array()) {
+        if ($max == 1 && $result != []) {
             $result = array($result);
         }
 
@@ -132,7 +132,7 @@ class Finder extends \csphere\core\datamapper\Base
             $this->_parts['joins'],
             'COUNT(*) AS count',
             $this->_parts['where'],
-            array(),
+            [],
             $this->_parts['group'],
             $this->_parts['having']
         );
@@ -160,7 +160,7 @@ class Finder extends \csphere\core\datamapper\Base
 
     public function join($plugin, $table, $serial, $foreign = '')
     {
-        $this->_parts['joins'][] = array($plugin, $table, $serial, $foreign);
+        $this->_parts['joins'][] = [$plugin, $table, $serial, $foreign];
 
         return $this;
     }
@@ -179,7 +179,7 @@ class Finder extends \csphere\core\datamapper\Base
 
     public function where($column, $operation, $value, $not = false, $xor = false)
     {
-        $this->_parts['where'][] = array($column, $operation, $value, $not, $xor);
+        $this->_parts['where'][] = [$column, $operation, $value, $not, $xor];
 
         return $this;
     }
@@ -210,7 +210,7 @@ class Finder extends \csphere\core\datamapper\Base
 
     public function orderBy($column, $desc = false)
     {
-        $this->_parts['order'][] = array($column, $desc);
+        $this->_parts['order'][] = [$column, $desc];
 
         return $this;
     }
@@ -227,7 +227,7 @@ class Finder extends \csphere\core\datamapper\Base
     {
         if (!is_array($list)) {
 
-            $list = array($list);
+            $list = [$list];
         }
 
         $this->_parts['group'] = $list;
@@ -249,7 +249,7 @@ class Finder extends \csphere\core\datamapper\Base
 
     public function having($column, $operation, $value, $not = false, $xor = false)
     {
-        $this->_parts['having'][] = array($column, $operation, $value, $not, $xor);
+        $this->_parts['having'][] = [$column, $operation, $value, $not, $xor];
 
         return $this;
     }

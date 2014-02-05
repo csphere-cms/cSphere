@@ -88,7 +88,7 @@ abstract class Metadata
 
             // Load XML content into an array
             $xml = $this->loader->load('xml', $this->driver);
-            $reg = array();
+            $reg = [];
 
             foreach ($files AS $name) {
 
@@ -135,17 +135,17 @@ abstract class Metadata
 
             // Get registered entries from cache
             $reg = $this->generate();
-            $ent = array();
+            $ent = [];
 
             // Create a list of entries with some important details
             foreach ($reg AS $short => $info) {
 
-                $ent[$short] = array('short'    => $short,
-                                     'version'  => $info['version'],
-                                     'pub'      => $info['published'],
-                                     'name'     => $info['name'],
-                                     'icon'     => $info['icon']['value'],
-                                     'icon_url' => $info['icon']['url']);
+                $ent[$short] = ['short'    => $short,
+                                'version'  => $info['version'],
+                                'pub'      => $info['published'],
+                                'name'     => $info['name'],
+                                'icon'     => $info['icon']['value'],
+                                'icon_url' => $info['icon']['url']];
             }
 
             $this->cache->save($key, $ent);

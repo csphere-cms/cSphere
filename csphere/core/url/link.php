@@ -116,7 +116,7 @@ abstract class Link
      * @return string
      **/
 
-    public static function href($plugin, $action, array $params = array())
+    public static function href($plugin, $action, array $params = [])
     {
         // Check and set options if init is not done yet
         if (self::$_init == false) {
@@ -214,7 +214,7 @@ abstract class Link
         } else {
 
             // Sort link parameters
-            $params = array();
+            $params = [];
 
             if (empty($target[1])) {
 
@@ -261,7 +261,7 @@ abstract class Link
 
     public static function transform($url)
     {
-        $params = array();
+        $params = [];
         $split  = explode('/', $url);
         $splits = count($split);
 

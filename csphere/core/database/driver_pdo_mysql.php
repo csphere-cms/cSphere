@@ -52,7 +52,7 @@ class Driver_PDO_MYSQL extends Base_PDO
 
         $dsn .= 'dbname=' . $config['schema'];
 
-        $options = array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+        $options = [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
 
         // Use try catch to hide connection details
         try {
@@ -65,7 +65,7 @@ class Driver_PDO_MYSQL extends Base_PDO
         }
         catch(\PDOException $pdo_error) {
 
-            $this->error('Connect', array(), $pdo_error->getMessage(), false);
+            $this->error('Connect', [], $pdo_error->getMessage(), false);
         }
     }
 
@@ -98,13 +98,12 @@ class Driver_PDO_MYSQL extends Base_PDO
         // Use InnoDB as default storage engine
         $engine = ' ENGINE=innodb DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci';
 
-        $change_mysql = array('{engine}' => $engine,
-                              '{integer}' => 'integer',
-                              '{optimize}' => 'OPTIMIZE TABLE',
-                              '{serial}' => 'integer NOT NULL auto_increment',
-                              '{text}' => 'text',
-                              '{varchar}' => 'varchar'
-        );
+        $change_mysql = ['{engine}' => $engine,
+                         '{integer}' => 'integer',
+                         '{optimize}' => 'OPTIMIZE TABLE',
+                         '{serial}' => 'integer NOT NULL auto_increment',
+                         '{text}' => 'text',
+                         '{varchar}' => 'varchar'];
 
         foreach ($change_mysql AS $key => $mysql) {
 
@@ -128,7 +127,7 @@ class Driver_PDO_MYSQL extends Base_PDO
         // Get encoding of database
         $query = 'SHOW VARIABLES WHERE Variable_name = \'character_set_server\'';
 
-        $encoding = $this->query($query, array(), 0, 0);
+        $encoding = $this->query($query, [], 0, 0);
 
         $info['encoding'] = $encoding[0]['Value'];
 
@@ -136,7 +135,7 @@ class Driver_PDO_MYSQL extends Base_PDO
         $query = 'SHOW TABLE STATUS LIKE \''
                . $this->config['prefix'] . '%\'';
 
-        $tables = $this->query($query, array(), 0, 0);
+        $tables = $this->query($query, [], 0, 0);
 
         $info['tables'] = count($tables);
         $info['size']   = 0;

@@ -43,7 +43,7 @@ abstract class DML
         // Check if array dimensions are fine
         if (isset($sort[0]) && !is_array($sort[0])) {
 
-            $sort = array($sort);
+            $sort = [$sort];
         }
 
         foreach ($sort AS $order) {
@@ -79,7 +79,7 @@ abstract class DML
         // Check if array dimensions are fine
         if (isset($joins[0]) && !is_array($joins[0])) {
 
-            $joins = array($joins);
+            $joins = [$joins];
         }
 
         foreach ($joins AS $join) {
@@ -117,12 +117,12 @@ abstract class DML
         $table,
         $joins = '',
         $columns = '*',
-        array $conditions = array(),
-        array $sort = array(),
-        array $group = array(),
-        array $having = array()
+        array $conditions = [],
+        array $sort = [],
+        array $group = [],
+        array $having = []
     ) {
-        $assoc  = array();
+        $assoc  = [];
 
         // Add columns to query
         if (is_array($columns)) {
@@ -140,7 +140,7 @@ abstract class DML
         $query = 'SELECT ' . $columns . ' FROM {pre}' . $table . $joins;
 
         // Add conditions to query
-        if ($conditions != array()) {
+        if ($conditions != []) {
 
             $con = \csphere\core\sql\conditions::parse($conditions);
 
@@ -149,13 +149,13 @@ abstract class DML
         }
 
         // Add group to query
-        if ($group != array()) {
+        if ($group != []) {
 
             $query .= ' GROUP BY ' . implode(', ', $group);
         }
 
         // Add having to query
-        if ($having != array()) {
+        if ($having != []) {
 
             $hav = \csphere\core\sql\conditions::parse($conditions, true);
 
@@ -164,12 +164,12 @@ abstract class DML
         }
 
         // Add sorting to query
-        if ($sort != array()) {
+        if ($sort != []) {
 
             $query .= self::_sort($sort);
         }
 
-        return array('statement' => $query, 'input' => $assoc);
+        return ['statement' => $query, 'input' => $assoc];
     }
 
     /**
@@ -188,9 +188,9 @@ abstract class DML
         $query = 'DELETE FROM {pre}' . $table
                . ' WHERE ' . $where_column . ' = :where_column';
 
-        $assoc = array('where_column' => $where_value);
+        $assoc = ['where_column' => $where_value];
 
-        return array('statement' => $query, 'input' => $assoc);
+        return ['statement' => $query, 'input' => $assoc];
     }
 
     /**
@@ -219,7 +219,7 @@ abstract class DML
 
         $query = substr($insert, 0, -2) . substr($append, 0, -2) . ')';
 
-        return array('statement' => $query, 'input' => $assoc);
+        return ['statement' => $query, 'input' => $assoc];
     }
 
     /**
@@ -251,6 +251,6 @@ abstract class DML
 
         $assoc['where_column'] = $where_value;
 
-        return array('statement' => $query, 'input' => $assoc);
+        return ['statement' => $query, 'input' => $assoc];
     }
 }

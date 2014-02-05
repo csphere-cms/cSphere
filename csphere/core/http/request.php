@@ -31,7 +31,7 @@ abstract class Request
     /**
      * Get request data and store it
      **/
-    private static $_request = array();
+    private static $_request = [];
 
     /**
      * Check request content and prepare data for later usage
@@ -121,8 +121,8 @@ abstract class Request
 
             $run = 1;
             $map = substr($map, $qmark);
-            $map = str_replace(array('?plugin='), '', $map);
-            $map = str_replace(array('&','='), '/', $map);
+            $map = str_replace(['?plugin='], '', $map);
+            $map = str_replace(['&','='], '/', $map);
         }
 
         // Creates a key value array out of the request map
@@ -153,7 +153,7 @@ abstract class Request
 
     private static function _dataParts($start, array $parts)
     {
-        $data = array();
+        $data = [];
 
         $parts_count = count($parts);
 
@@ -181,7 +181,7 @@ abstract class Request
     public static function get($key = '')
     {
         // Check if request data is already prepared
-        if (self::$_request == array()) {
+        if (self::$_request == []) {
 
             // Fetch server data
             $server = \csphere\core\http\Input::getAll('server');

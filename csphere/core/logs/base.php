@@ -31,7 +31,7 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Stores the logging content
      **/
-    protected $channels = array();
+    protected $channels = [];
 
     /**
      * Mails the log content
@@ -82,7 +82,7 @@ abstract class Base extends \csphere\core\service\Drivers
         // Create array element for component if not done so far
         if (empty($this->channels[$component])) {
 
-            $this->channels[$component] = array();
+            $this->channels[$component] = [];
         }
 
         // Add entry to live log

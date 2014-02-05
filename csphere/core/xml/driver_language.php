@@ -77,7 +77,7 @@ class Driver_Language extends Base
             $array['definitions'] = $array['definitions'][0]['define'];
         } else {
 
-            $array['definitions'] = array();
+            $array['definitions'] = [];
         }
 
         // Set icon URL

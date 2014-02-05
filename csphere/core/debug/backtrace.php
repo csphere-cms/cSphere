@@ -41,7 +41,7 @@ class Backtrace
     /**
      * Holds the most current content
      **/
-    private $_content = array();
+    private $_content = [];
 
     /**
      * Create traceback for the exception
@@ -131,10 +131,10 @@ class Backtrace
 
     private function _formatError(\Exception $exception)
     {
-        $msg = array('message' => $exception->getMessage(),
-                     'code'    => $exception->getCode(),
-                     'file'    => $exception->getFile(),
-                     'line'    => $exception->getLine());
+        $msg = ['message' => $exception->getMessage(),
+                'code'    => $exception->getCode(),
+                'file'    => $exception->getFile(),
+                'line'    => $exception->getLine()];
 
         return $msg;
     }
@@ -150,7 +150,7 @@ class Backtrace
     private function _formatTrace(\Exception $exception)
     {
         $trace = $exception->getTrace();
-        $out   = array();
+        $out   = [];
         $count = count($trace);
 
         // All steps starting with the last one as zero
@@ -209,10 +209,10 @@ class Backtrace
         // Build array with details
         $call = $call . $trace[$back]['function'] . '(' . $args . ')';
 
-        $out = array('step' => $back,
-                     'file' => $file,
-                     'line' => $trace[$back]['line'],
-                     'call' => $call);
+        $out = ['step' => $back,
+                'file' => $file,
+                'line' => $trace[$back]['line'],
+                'call' => $call];
 
         return $out;
     }

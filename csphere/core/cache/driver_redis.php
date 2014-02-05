@@ -138,7 +138,7 @@ class Driver_Redis extends Base
 
     public function keys()
     {
-        $form = array();
+        $form = [];
 
         // Time request may not work in all cases
         $time = $this->_redis->time();
@@ -160,9 +160,9 @@ class Driver_Redis extends Base
             // Size hopes that storage uses UTF-8
             $size = $this->_redis->strlen($key);
 
-            $form[$key] = array('name' => $key,
-                                'time' => $time,
-                                'size' => $size);
+            $form[$key] = ['name' => $key,
+                           'time' => $time,
+                           'size' => $size];
         }
 
         ksort($form);

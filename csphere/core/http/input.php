@@ -31,23 +31,21 @@ abstract class Input
     /**
      * Array with aliased input names
      **/
-    private static $_inputNames = array(
-        'get'    => INPUT_GET,
-        'cookie' => INPUT_COOKIE,
-        'env'    => INPUT_ENV,
-        'post'   => INPUT_POST,
-        'server' => INPUT_SERVER
-    );
+    private static $_inputNames = ['get'    => INPUT_GET,
+								   'cookie' => INPUT_COOKIE,
+								   'env'    => INPUT_ENV,
+								   'post'   => INPUT_POST,
+								   'server' => INPUT_SERVER];
 
     /**
      * Array with registered GET data
      **/
-    private static $_inputGet = array();
+    private static $_inputGet = [];
 
     /**
      * Array containing parameters for the active box
      **/
-    private static $_inputBox = array();
+    private static $_inputBox = [];
 
     /**
      * Prepares the input data for usage
@@ -57,7 +55,7 @@ abstract class Input
 
     public static function prepare()
     {
-        if (self::$_inputGet == array()) {
+        if (self::$_inputGet == []) {
 
             // Get http-request data to merge it with GET var
             $request = \csphere\core\http\Request::get();
@@ -115,7 +113,7 @@ abstract class Input
     public static function getAll($type)
     {
         // @TODO: This method needs a rework later on
-        $data = array();
+        $data = [];
 
         // Special case 'get' should use its own filter
         if (isset(self::$_inputNames[$type]) && $type == 'get') {

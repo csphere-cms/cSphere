@@ -36,7 +36,7 @@ class Model extends \csphere\core\datamapper\Base
 
     public function create()
     {
-        $columns = array();
+        $columns = [];
 
         // Get columns out of structure
         foreach ($this->structure['columns'] AS $col) {
@@ -64,7 +64,7 @@ class Model extends \csphere\core\datamapper\Base
             $column = $this->serial;
         }
 
-        $conditions = array(array($column, '=', $value));
+        $conditions = [[$column, '=', $value]];
 
         $sql = \csphere\core\sql\DML::select($this->schema, '', '*', $conditions);
 

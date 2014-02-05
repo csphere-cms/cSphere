@@ -31,7 +31,7 @@ abstract class Parse
     /**
      * List of commands that can contain a variable
      **/
-    private static $_var = array('var' => 0, 'url' => 1, 'raw' => 2);
+    private static $_var = ['var' => 0, 'url' => 1, 'raw' => 2];
 
     /**
      * Adds requested data as a key to the part array after some checks
@@ -78,7 +78,7 @@ abstract class Parse
     {
         $part  = self::sub($part, $data);
         $nest  = $part['sub'];
-        $value = array();
+        $value = [];
         $all   = '<!-- foreach ' . $part['hub'] . ' -->';
 
         if ($part['sub'] == '') {
@@ -92,17 +92,17 @@ abstract class Parse
         }
 
         // Check if required data exists
-        if ($part['data'] != array()) {
+        if ($part['data'] != []) {
 
             // Loop threw data array
             foreach ($part['data'] AS $set) {
 
-                $set = array_merge($data, array($nest => $set));
+                $set = array_merge($data, [$nest => $set]);
 
                 $all .= self::template($value, $set);
             }
 
-        } elseif ($part['else'] != array()) {
+        } elseif ($part['else'] != []) {
 
             $all .= '<!-- else ' . $part['hub'] . ' -->';
 
@@ -152,7 +152,7 @@ abstract class Parse
     {
         $part  = self::sub($part, $data);
         $check = self::_math($part);
-        $value = array();
+        $value = [];
         $all   = '<!-- if ' . $part['hub'] . ' -->';
 
         if (is_array($part['value'])) {
@@ -165,7 +165,7 @@ abstract class Parse
 
             $all .= self::template($value, $data);
 
-        } elseif ($part['else'] != array()) {
+        } elseif ($part['else'] != []) {
 
             $all .= '<!-- else ' . $part['hub'] . ' -->';
 

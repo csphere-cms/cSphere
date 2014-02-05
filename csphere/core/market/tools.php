@@ -56,7 +56,7 @@ class Tools
     /**
      * Array of possible errors
      **/
-    private $_error = array();
+    private $_error = [];
 
     /**
      * Get plugin for install / update / delete it

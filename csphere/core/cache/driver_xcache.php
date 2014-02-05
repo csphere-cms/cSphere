@@ -113,7 +113,7 @@ class Driver_Xcache extends Base
 
     public function keys()
     {
-        $form = array();
+        $form = [];
 
         $cache_count = xcache_count(XC_TYPE_VAR);
 
@@ -125,8 +125,9 @@ class Driver_Xcache extends Base
 
                 $handle = $data['name'] . ' (' . $i . '.' . $num . ')';
 
-                $form[$handle] = array('name' => $handle, 'time' => $data['ctime'],
-                                       'size' => $data['size']);
+                $form[$handle] = ['name' => $handle, 
+								  'time' => $data['ctime'],
+                                  'size' => $data['size']];
             }
         }
 

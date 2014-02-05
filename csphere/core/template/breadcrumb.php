@@ -36,7 +36,7 @@ class Breadcrumb
     /**
      * Road from second to last entry
      **/
-    private $_road = array();
+    private $_road = [];
 
     /**
      * Plugin is important for links and language
@@ -113,7 +113,7 @@ class Breadcrumb
 
         $url = \csphere\core\url\Link::params($link);
 
-        $this->_road[] = array('key' => $key, 'text' => $text, 'url' => $url);
+        $this->_road[] = ['key' => $key, 'text' => $text, 'url' => $url];
 
         return true;
     }
@@ -131,7 +131,7 @@ class Breadcrumb
         $view   = $loader->load('view');
 
         // Format data for template usage
-        $data = array('breadcrumb' => $this->_road);
+        $data = ['breadcrumb' => $this->_road];
 
         // Send data to view and fetch box result
         $view->template('default', 'core_breadcrumb', $data, true);

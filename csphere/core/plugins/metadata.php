@@ -46,13 +46,13 @@ class Metadata extends \csphere\core\xml\Metadata
     {
         // Get registered plugins from cache
         $reg   = $this->generate();
-        $names = array();
+        $names = [];
 
         // Create a list of plugins with name, dir and icon per element
         foreach ($reg AS $dir => $info) {
 
             // Not every plugin might contain entries
-            $entries = array();
+            $entries = [];
 
             if (isset($info['entries']['target'])) {
 
@@ -68,9 +68,9 @@ class Metadata extends \csphere\core\xml\Metadata
                     // Fetch plugin name from language file
                     $name = \csphere\core\translation\Fetch::key($dir, $dir);
 
-                    $names[$name] = array('name' => $name,
-                                          'dir'  => $dir,
-                                          'icon' => $info['icon']['value']);
+                    $names[$name] = ['name' => $name,
+                                     'dir'  => $dir,
+                                     'icon' => $info['icon']['value']];
                 }
             }
         }
@@ -116,7 +116,7 @@ class Metadata extends \csphere\core\xml\Metadata
     {
         // Create a list for each startup type
         $reg     = $this->generate();
-        $startup = array('javascript' => array(), 'stylesheet' => array());
+        $startup = ['javascript' => [], 'stylesheet' => []];
 
         foreach ($reg AS $dir => $plugin) {
 
@@ -129,9 +129,9 @@ class Metadata extends \csphere\core\xml\Metadata
                     $type = $file['type'];
                     $top  = ($file['top'] == 'true') ? true : false;
 
-                    $startup[$type][] = array('plugin' => $dir,
-                                              'top'    => $top,
-                                              'file'   => $file['name']);
+                    $startup[$type][] = ['plugin' => $dir,
+                                         'top'    => $top,
+                                         'file'   => $file['name']];
                 }
             }
         }

@@ -36,12 +36,12 @@ class Driver_HTML extends Base
     /**
      * Boxes with key and a value containing their data
      **/
-    private $_boxes = array();
+    private $_boxes = [];
 
     /**
      * List of template files with their cache key attached
      **/
-    private $_files = array();
+    private $_files = [];
 
     /**
      * Theme name
@@ -218,9 +218,9 @@ class Driver_HTML extends Base
 
             $response = $this->_parse($this->_boxes);
 
-            $this->_boxes = array();
+            $this->_boxes = [];
 
-            $response = array('box' => $response);
+            $response = ['box' => $response];
 
             // Load debug toolbar only if debug option is true
             if ($this->config['debug'] == true) {
@@ -255,7 +255,7 @@ class Driver_HTML extends Base
 
             $response = $this->_parse($this->_boxes);
 
-            $this->_boxes = array();
+            $this->_boxes = [];
 
         } else {
 
@@ -280,7 +280,7 @@ class Driver_HTML extends Base
     {
         $result = $this->_parse($this->_boxes);
 
-        $this->_boxes = array();
+        $this->_boxes = [];
 
         return $result;
     }
@@ -293,7 +293,7 @@ class Driver_HTML extends Base
 
     public function clear()
     {
-        $this->_boxes = array();
+        $this->_boxes = [];
 
         return true;
     }
@@ -310,7 +310,7 @@ class Driver_HTML extends Base
      **/
 
     public function template(
-        $plugin, $template, array $data = array(), $box = false
+        $plugin, $template, array $data = [], $box = false
     ) {
         // Get template key and file content
         $key = $this->_load($plugin, $template);
@@ -318,11 +318,11 @@ class Driver_HTML extends Base
         // Add key with data to content or boxes
         if ($box == true) {
 
-            $this->_boxes[] = array('key' => $key, 'data' => $data);
+            $this->_boxes[] = ['key' => $key, 'data' => $data];
 
         } else {
 
-            $this->content[] = array('key' => $key, 'data' => $data);
+            $this->content[] = ['key' => $key, 'data' => $data];
         }
 
         return true;

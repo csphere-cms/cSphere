@@ -38,13 +38,13 @@ class File
      * @return array
      **/
 
-    public static function search($path, $desc = false, array $remove = array())
+    public static function search($path, $desc = false, array $remove = [])
     {
         // Directories should always end with a slash
         $dir = rtrim($path, '\/') . '/';
 
         // If it is not a directory use an empty array
-        $scandir = is_dir($dir) ? scandir($dir) : array();
+        $scandir = is_dir($dir) ? scandir($dir) : [];
 
         $scandir = array_flip($scandir);
 
@@ -80,7 +80,7 @@ class File
     public static function size($size, $float = 3, $short = true)
     {
         // Appended to the reduced float to make it more readable
-        $size_names = array('Byte', 'KiB', 'MiB', 'GiB', 'TiB');
+        $size_names = ['Byte', 'KiB', 'MiB', 'GiB', 'TiB'];
 
         $digits = 0;
 

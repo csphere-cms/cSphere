@@ -31,7 +31,7 @@ abstract class Conditions
     /**
      * Supported operators for conditions
      **/
-    private static $_operators = array('=', '!=', '>', '<', '<>', '>=', '<=');
+    private static $_operators = ['=', '!=', '>', '<', '<>', '>=', '<='];
 
     /**
      * Generate conditional parts of queries
@@ -44,14 +44,14 @@ abstract class Conditions
 
     public static function parse(array $conditions, $having = false)
     {
-        $assoc = array();
+        $assoc = [];
         $short = ($having === true) ? 'hav' : 'con';
         $query = '';
 
         // Check if array dimensions are fine
         if (isset($conditions[0]) && !is_array($conditions[0])) {
 
-            $conditions = array($conditions);
+            $conditions = [$conditions];
         }
 
         foreach ($conditions AS $num => $con) {
@@ -65,7 +65,7 @@ abstract class Conditions
             $assoc = array_merge($assoc, $sub['assoc']);
         }
 
-        $result = array('query' => $query, 'assoc' => $assoc);
+        $result = ['query' => $query, 'assoc' => $assoc];
 
         return $result;
     }
@@ -83,7 +83,7 @@ abstract class Conditions
     private static function _parts($short, $num, array $con)
     {
         $key   = 0;
-        $assoc = array();
+        $assoc = [];
         $query = '';
 
         // Bind must be unique per query condition
@@ -130,7 +130,7 @@ abstract class Conditions
         }
 
         // Create result array
-        $result = array('query' => $query, 'assoc' => $assoc);
+        $result = ['query' => $query, 'assoc' => $assoc];
 
         return $result;
     }

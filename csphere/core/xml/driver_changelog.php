@@ -110,7 +110,7 @@ class Driver_Changelog extends Base
             $update['added'] = $update['added'][0]['item'];
         } else {
 
-            $update['added'] = array();
+            $update['added'] = [];
         }
 
         if (isset($update['reworked'][0]['item'])) {
@@ -118,7 +118,7 @@ class Driver_Changelog extends Base
             $update['reworked'] = $update['reworked'][0]['item'];
         } else {
 
-            $update['reworked'] = array();
+            $update['reworked'] = [];
         }
 
         if (isset($update['fixed'][0]['item'])) {
@@ -126,7 +126,7 @@ class Driver_Changelog extends Base
             $update['fixed'] = $update['fixed'][0]['item'];
         } else {
 
-            $update['fixed'] = array();
+            $update['fixed'] = [];
         }
 
         if (isset($update['removed'][0]['item'])) {
@@ -134,7 +134,7 @@ class Driver_Changelog extends Base
             $update['removed'] = $update['removed'][0]['item'];
         } else {
 
-            $update['removed'] = array();
+            $update['removed'] = [];
         }
 
         return $update;

@@ -31,7 +31,7 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Stores the content parts
      **/
-    protected $content = array();
+    protected $content = [];
 
     /**
      * Content type header
@@ -108,7 +108,7 @@ abstract class Base extends \csphere\core\service\Drivers
     protected function format($box)
     {
         // Just use combine method as content by default
-        $result            = array();
+        $result            = [];
         $result['content'] = $this->combine($box);
 
         return $result;

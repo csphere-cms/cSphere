@@ -64,14 +64,14 @@ class View extends \csphere\core\rad\Base
         }
 
         // Data array
-        $data = array();
+        $data = [];
 
         // Get record
         $dm_table = new \csphere\core\datamapper\Model($this->plugin, $this->table);
 
         $data[$this->schema] = $dm_table->read($record);
 
-        if ($data[$this->schema] == array()) {
+        if ($data[$this->schema] == []) {
 
             $this->message('no_record_found', $use_rid, '');
 

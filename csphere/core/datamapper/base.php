@@ -61,7 +61,7 @@ abstract class Base
     /**
      * Construction details of schema
      **/
-    protected $joins = array();
+    protected $joins = [];
 
     /**
      * Prepare values that are needed for later usage

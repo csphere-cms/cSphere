@@ -36,7 +36,7 @@ abstract class Drivers
     /**
      * Stores the driver configuration
      **/
-    protected $config = array();
+    protected $config = [];
 
     /**
      * Creates the driver handler object

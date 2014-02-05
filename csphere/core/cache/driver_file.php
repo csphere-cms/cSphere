@@ -36,7 +36,7 @@ class Driver_File extends Base
     /**
      * Files to exclude for stats
      **/
-    private $_exclude = array('info.txt');
+    private $_exclude = ['info.txt'];
 
     /**
      * Creates the cache handler object
@@ -134,13 +134,13 @@ class Driver_File extends Base
             $this->_dir, false, $this->_exclude
         );
 
-        $form = array();
+        $form = [];
 
         foreach ($info AS $filename) {
 
-            $form[$filename] = array('name' => $filename,
-                'time' => filemtime($this->_dir . $filename),
-                'size' => filesize($this->_dir . $filename));
+            $form[$filename] = ['name' => $filename,
+                                'time' => filemtime($this->_dir . $filename),
+                                'size' => filesize($this->_dir . $filename)];
         }
 
         $form = array_values($form);

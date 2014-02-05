@@ -70,7 +70,7 @@ class Edit extends \csphere\core\rad\Base
         $table    = $dm_table->read($record);
 
         // Check if record exists
-        if ($table == array()) {
+        if ($table == []) {
 
             $this->message('no_record_found', $use_rid, 'red');
 
@@ -93,7 +93,7 @@ class Edit extends \csphere\core\rad\Base
             } else {
 
                 // Data array
-                $data = array();
+                $data = [];
 
                 $data[$this->schema] = $table;
 

@@ -71,11 +71,11 @@ class Driver_Theme extends Base
         // Shorten optional content if found
         if (!isset($array['environment'][0]['needed'])) {
 
-            $array['environment'][0]['needed'] = array();
+            $array['environment'][0]['needed'] = [];
 
         } else {
 
-            $env = array();
+            $env = [];
 
             foreach ($array['environment'][0]['needed'] AS $needed) {
 
@@ -92,7 +92,7 @@ class Driver_Theme extends Base
 
         if (!isset($array['environment'][0]['extend'])) {
 
-            $array['environment'][0]['extend'] = array();
+            $array['environment'][0]['extend'] = [];
         }
 
         if (isset($array['media'])) {

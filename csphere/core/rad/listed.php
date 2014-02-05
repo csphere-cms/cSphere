@@ -41,7 +41,7 @@ class Listed extends \csphere\core\rad\Base
     /**
      * Search columns
      **/
-    private $_like = array();
+    private $_like = [];
 
     /**
      * Link to create
@@ -139,7 +139,7 @@ class Listed extends \csphere\core\rad\Base
      * @return void
      **/
 
-    public function delegate($sort, array $columns = array(), $desc = false)
+    public function delegate($sort, array $columns = [], $desc = false)
     {
         // Set page limit
         $limit = 10;
@@ -153,13 +153,13 @@ class Listed extends \csphere\core\rad\Base
         }
 
         // Set columns if array is empty
-        if ($columns == array()) {
+        if ($columns == []) {
 
-            $columns = array($sort);
+            $columns = [$sort];
         }
 
         // Data array
-        $data = array('search' => $search);
+        $data = ['search' => $search];
 
         // Count amount of entries
         $fn_table = new \csphere\core\datamapper\Finder($this->plugin, $this->table);
@@ -174,7 +174,7 @@ class Listed extends \csphere\core\rad\Base
             $this->plugin, $this->action, $columns, $sort, $desc
         );
 
-        $order->params(array('search' => $search));
+        $order->params(['search' => $search]);
 
         $data['order'] = $order->urls();
         $data['arrow'] = $order->arrows();
@@ -185,9 +185,9 @@ class Listed extends \csphere\core\rad\Base
             $this->plugin, $this->action, $hits, $limit
         );
 
-        $params = array('search' => $search,
-                        'order'  => $order->active(),
-                        'desc'   => $order->desc());
+        $params = ['search' => $search,
+                   'order'  => $order->active(),
+                   'desc'   => $order->desc()];
 
         $pages->params($params);
 
@@ -203,7 +203,7 @@ class Listed extends \csphere\core\rad\Base
         // Set buttons for create and options
         $create          = $this->_create === false ? '' : 'yes';
         $options         = $this->_options === false ? '' : 'yes';
-        $data['buttons'] = array('options' => $options, 'create' => $create);
+        $data['buttons'] = ['options' => $options, 'create' => $create];
 
         // Send data to view
         $this->view($data);

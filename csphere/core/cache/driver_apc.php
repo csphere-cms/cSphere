@@ -133,10 +133,10 @@ class Driver_APC extends Base
 
     public function keys()
     {
-        $form = array();
+        $form = [];
 
         $info = apc_cache_info('user');
-        $list = isset($info['cache_list']) ? $info['cache_list'] : array();
+        $list = isset($info['cache_list']) ? $info['cache_list'] : [];
 
         foreach ($list AS $num => $data) {
 
@@ -144,8 +144,8 @@ class Driver_APC extends Base
             $key    = isset($data['key']) ? $data['key'] : $data['info'];
             $handle = $key . ' (' . $num . ')';
 
-            $form[$handle] = array('name' => $handle, 'time' => $data['mtime'],
-                                   'size' => $data['mem_size']);
+            $form[$handle] = ['name' => $handle, 'time' => $data['mtime'],
+                                   'size' => $data['mem_size']];
         }
 
         ksort($form);

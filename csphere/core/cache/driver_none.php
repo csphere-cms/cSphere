@@ -31,7 +31,7 @@ class Driver_None extends Base
     /**
      * Keep cache content for current request
      **/
-     private $_history = array();
+     private $_history = [];
 
     /**
      * Clears the cache content
@@ -41,7 +41,7 @@ class Driver_None extends Base
 
     public function clear()
     {
-        $this->_history = array();
+        $this->_history = [];
 
         return true;
     }
@@ -89,13 +89,13 @@ class Driver_None extends Base
     public function keys()
     {
         $time = time();
-        $info = array();
+        $info = [];
 
         ksort($this->_history);
 
         foreach ($this->_history AS $key => $value) {
 
-            $info[] = array('name' => $key, 'time' => $time, 'size' => '');
+            $info[] = ['name' => $key, 'time' => $time, 'size' => ''];
 
             unset($value);
         }

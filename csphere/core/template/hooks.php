@@ -32,13 +32,13 @@ abstract class Hooks
      * List of handled page placeholders
      **/
 
-    private static $_data = array('action'      => '',
-                                  'breadcrumb'  => '',
-                                  'debug'       => '',
-                                  'javascripts' => array(),
-                                  'plugin'      => '',
-                                  'stylesheets' => array(),
-                                  'title'       => 'cSphere');
+    private static $_data = ['action'      => '',
+                             'breadcrumb'  => '',
+                             'debug'       => '',
+                             'javascripts' => [],
+                             'plugin'      => '',
+                             'stylesheets' => [],
+                             'title'       => 'cSphere'];
 
     /**
      * Generate website title
@@ -143,11 +143,11 @@ abstract class Hooks
         // Check for top param
         if ($top === false) {
 
-            self::$_data[$type] = array_merge(self::$_data[$type], array($target));
+            self::$_data[$type] = array_merge(self::$_data[$type], [$target]);
 
         } else {
 
-            self::$_data[$type] = array_merge(array($target), self::$_data[$type]);
+            self::$_data[$type] = array_merge([$target], self::$_data[$type]);
         }
 
         return true;
@@ -179,11 +179,11 @@ abstract class Hooks
         // Check for top param
         if ($top === false) {
 
-            self::$_data[$type] = array_merge(self::$_data[$type], array($target));
+            self::$_data[$type] = array_merge(self::$_data[$type], [$target]);
 
         } else {
 
-            self::$_data[$type] = array_merge(array($target), self::$_data[$type]);
+            self::$_data[$type] = array_merge([$target], self::$_data[$type]);
         }
 
         return true;

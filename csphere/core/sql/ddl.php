@@ -42,7 +42,7 @@ abstract class DDL
      **/
 
     public static function create(
-        $table, array $columns, array $primary, array $foreigns = array()
+        $table, array $columns, array $primary, array $foreigns = []
     ) {
         // Build a matching create query
         $query = 'CREATE TABLE {pre}' . $table . ' (';
@@ -61,14 +61,14 @@ abstract class DDL
         $query = substr($query, 0, -2) . ')';
 
         // Add foreign keys
-        if ($foreigns != array()) {
+        if ($foreigns != []) {
 
             $query .= ', ' . self::_createForeigns($foreigns);
         }
 
         $query .= '){engine}';
 
-        return array('statement' => $query, 'input' => array());
+        return ['statement' => $query, 'input' => []];
     }
 
     /**
@@ -197,7 +197,7 @@ abstract class DDL
 
         $query .= '{pre}' . $table;
 
-        return array('statement' => $query, 'input' => array());
+        return ['statement' => $query, 'input' => []];
     }
 
     /**
@@ -231,7 +231,7 @@ abstract class DDL
 
         $query = substr($query, 0, -2) . ')';
 
-        return array('statement' => $query, 'input' => array());
+        return ['statement' => $query, 'input' => []];
     }
 
     /**
@@ -252,6 +252,6 @@ abstract class DDL
             $query .= '{optimize} {pre}' . $table . ';' . "\n";
         }
 
-        return array('statement' => $query, 'input' => array());
+        return ['statement' => $query, 'input' => []];
     }
 }

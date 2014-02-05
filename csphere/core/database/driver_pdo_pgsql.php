@@ -52,7 +52,7 @@ class Driver_PDO_PGSQL extends Base_PDO
 
         $dsn .= 'dbname=' . $config['schema'];
 
-        $options = array();
+        $options = [];
 
         // Use try catch to hide connection details
         try {
@@ -67,7 +67,7 @@ class Driver_PDO_PGSQL extends Base_PDO
         }
         catch(\PDOException $pdo_error) {
 
-            $this->error('Connect', array(), $pdo_error->getMessage(), false);
+            $this->error('Connect', [], $pdo_error->getMessage(), false);
         }
     }
 
@@ -115,13 +115,12 @@ class Driver_PDO_PGSQL extends Base_PDO
 
     protected function replace($replace)
     {
-        $change_pgsql = array('{engine}' => '',
-                              '{integer}' => 'integer',
-                              '{optimize}' => 'VACUUM',
-                              '{serial}' => 'serial',
-                              '{text}' => 'text',
-                              '{varchar}' => 'varchar'
-        );
+        $change_pgsql = ['{engine}' => '',
+                         '{integer}' => 'integer',
+                         '{optimize}' => 'VACUUM',
+                         '{serial}' => 'serial',
+                         '{text}' => 'text',
+                         '{varchar}' => 'varchar'];
 
         foreach ($change_pgsql AS $key => $pgsql) {
 
@@ -144,7 +143,7 @@ class Driver_PDO_PGSQL extends Base_PDO
 
         // Get encoding of database
         $query    = 'SHOW SERVER_ENCODING';
-        $encoding = $this->query($query, array(), 0, 0);
+        $encoding = $this->query($query, [], 0, 0);
 
         $info['encoding'] = $encoding[0]['server_encoding'];
 
@@ -152,7 +151,7 @@ class Driver_PDO_PGSQL extends Base_PDO
         $query = 'SELECT pg_database_size(\'' . $this->config['schema']
                . '\') AS size';
 
-        $size = $this->query($query, array(), 0, 0);
+        $size = $this->query($query, [], 0, 0);
 
         $info['size'] = (int)$size[0]['size'];
 
@@ -160,7 +159,7 @@ class Driver_PDO_PGSQL extends Base_PDO
         $query = 'SELECT COUNT(*) AS tables FROM information_schema.tables '
                . 'WHERE table_name LIKE \'' . $this->config['schema'] . '%\'';
 
-        $tables = $this->query($query, array(), 0, 0);
+        $tables = $this->query($query, [], 0, 0);
 
         $info['tables'] = $tables[0]['tables'];
 

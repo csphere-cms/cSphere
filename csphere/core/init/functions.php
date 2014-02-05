@@ -140,7 +140,7 @@ function start()
 
     // Console, built-in-webserver and HHVM need some assistance
     $sapi = strtolower(php_sapi_name());
-    $need = array('cli', 'cli-server', 'srv');
+    $need = ['cli', 'cli-server', 'srv'];
 
     if (in_array($sapi, $need)) {
 
@@ -184,7 +184,7 @@ function start()
     \csphere\core\http\Input::prepare();
 
     // Execute request if no config error was found
-    if ($error == array()) {
+    if ($error == []) {
 
         $router = new \csphere\core\router\Controller(true);
 

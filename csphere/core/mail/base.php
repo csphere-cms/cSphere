@@ -31,12 +31,12 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Stores the mail headers
      **/
-    protected $headers = array();
+    protected $headers = [];
 
     /**
      * Stores the mail subject and message for all use cases
      **/
-    protected $content = array();
+    protected $content = [];
 
     /**
      * Stores the logger object
@@ -80,8 +80,8 @@ abstract class Base extends \csphere\core\service\Drivers
         if ($sure == true) {
 
             // Clear headers and content
-            $this->headers = array();
-            $this->content = array();
+            $this->headers = [];
+            $this->content = [];
         }
 
         return $sure;

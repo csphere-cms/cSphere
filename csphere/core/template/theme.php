@@ -74,7 +74,7 @@ abstract class Theme
     private static function _light(array $array)
     {
         // Combine array of parts
-        $result = array();
+        $result = [];
 
         foreach ($array AS $part) {
 
@@ -88,9 +88,9 @@ abstract class Theme
                 // Everything else can be transformed
                 $cmd = $part['cmd'];
 
-                $string = \csphere\core\template\CMD_Parse::$cmd($part, array());
+                $string = \csphere\core\template\CMD_Parse::$cmd($part, []);
 
-                $result[] = array('cmd' => 'text', 'text' => $string);
+                $result[] = ['cmd' => 'text', 'text' => $string];
             }
         }
 
@@ -107,7 +107,7 @@ abstract class Theme
 
     public static function boxes(array $theme)
     {
-        $add = array();
+        $add = [];
 
         //  Skip all parts except boxes
         foreach ($theme AS $part) {

@@ -44,8 +44,8 @@ abstract class Engine
 
     public static function boxes(array $boxes, $content)
     {
-        $add   = array();
-        $nodiv = array('nodiv' => true);
+        $add   = [];
+        $nodiv = ['nodiv' => true];
 
         //  Skip all parts except boxes
         foreach ($boxes AS $part) {

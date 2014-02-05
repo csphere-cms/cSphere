@@ -59,7 +59,7 @@ class Create extends \csphere\core\rad\Base
         $table    = $dm_table->create();
 
         // Data array
-        $data = array();
+        $data = [];
 
         // Handle save requests
         if (isset($post['csphere_form'])) {

@@ -41,7 +41,7 @@ abstract class Base extends \csphere\core\service\Drivers
     /**
      * Stores the local path
      **/
-    private static $_count = array();
+    private static $_count = [];
 
     /**
      * Creates the XML handler object
@@ -102,7 +102,7 @@ abstract class Base extends \csphere\core\service\Drivers
             } elseif ($empty === true) {
 
                 // In some cases it is not relevant if the file exists
-                $string = array();
+                $string = [];
 
             } else {
 
@@ -170,7 +170,7 @@ abstract class Base extends \csphere\core\service\Drivers
         }
 
         // Format result set for later usage
-        self::$_count = array();
+        self::$_count = [];
         $end          = (count($values) - 2);
         $result       = $this->_format($values, (array)$index, 1, $end);
 
@@ -190,7 +190,7 @@ abstract class Base extends \csphere\core\service\Drivers
 
     private function _format(array $values, array $index, $start, $end)
     {
-        $result = array();
+        $result = [];
 
         // Loop threw every values array entry from start to end
         for ($i = $start; $i < $end; $i++) {
@@ -199,7 +199,7 @@ abstract class Base extends \csphere\core\service\Drivers
             $tag = $values[$i]['tag'];
 
             // Add attributes if there are any
-            $attr = array();
+            $attr = [];
 
             if (isset($values[$i]['attributes'])) {
 
@@ -234,9 +234,9 @@ abstract class Base extends \csphere\core\service\Drivers
                 // Add nested elements to result array
                 $open = $this->_format($values, $index, ($i + 1), $stop);
 
-                if ($attr != array()) {
+                if ($attr != []) {
 
-                    $attr = array('attr' => array($attr));
+                    $attr = ['attr' => [$attr]];
                     $open = array_merge($attr, $open);
                 }
 
@@ -260,11 +260,11 @@ abstract class Base extends \csphere\core\service\Drivers
 
     protected function loopattr(array $array)
     {
-        $new = array();
+        $new = [];
 
         foreach ($array AS $row) {
 
-            $attr = isset($row['attr'][0]) ? $row['attr'][0] : array();
+            $attr = isset($row['attr'][0]) ? $row['attr'][0] : [];
 
             unset($row['attr']);
 

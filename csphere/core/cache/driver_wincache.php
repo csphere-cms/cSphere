@@ -110,7 +110,7 @@ class Driver_Wincache extends Base
 
     public function keys()
     {
-        $form = array();
+        $form = [];
 
         $info = wincache_ucache_info();
 
@@ -120,8 +120,8 @@ class Driver_Wincache extends Base
 
             $age = time() - $data['age_seconds'];
 
-            $form[$handle] = array('name' => $handle, 'time' => $age,
-                                   'size' => $data['value_size']);
+            $form[$handle] = ['name' => $handle, 'time' => $age,
+                              'size' => $data['value_size']];
         }
 
         ksort($form);

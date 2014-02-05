@@ -59,7 +59,7 @@ class Remove extends \csphere\core\rad\Base
         $dm_table = new \csphere\core\datamapper\Model($this->plugin, $this->table);
         $table    = $dm_table->read($record);
 
-        if ($table == array()) {
+        if ($table == []) {
 
             $this->message('no_record_found', $record, 'red');
 
@@ -79,7 +79,7 @@ class Remove extends \csphere\core\rad\Base
         } else {
 
             // Data array
-            $data  = array('rid' => $record);
+            $data  = ['rid' => $record];
 
             // Send data to view
             $this->view($data, $record);

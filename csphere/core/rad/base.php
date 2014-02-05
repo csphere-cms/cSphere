@@ -155,11 +155,11 @@ abstract class Base
         );
 
         // Data array
-        $data = array('action_name' => $act,
-                      'plugin_name' => $plg,
-                      'message'     => $msg,
-                      'previous'    => $previous,
-                      'type'        => $type);
+        $data = ['action_name' => $act,
+                 'plugin_name' => $plg,
+                 'message'     => $msg,
+                 'previous'    => $previous,
+                 'type'        => $type];
 
         // Change template file and send to view method
         $this->tpl = 'message';

@@ -91,7 +91,7 @@ class Controller
         $view = $this->_loader->load('view');
 
         // Format data for template usage
-        $data = array();
+        $data = [];
 
         // Send data to view and fetch box result
         $view->template('errors', 'core_info', $data, true);

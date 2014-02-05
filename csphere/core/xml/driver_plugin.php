@@ -76,17 +76,17 @@ class Driver_Plugin extends Base
         // Check for required extensions
         if (empty($array['required']['extension'])) {
 
-            $array['required']['extension'] = array();
+            $array['required']['extension'] = [];
         }
 
         // Shorten optional content if found
         if (!isset($array['environment'][0]['needed'])) {
 
-            $array['environment'][0]['needed'] = array();
+            $array['environment'][0]['needed'] = [];
 
         } else {
 
-            $env = array();
+            $env = [];
 
             foreach ($array['environment'][0]['needed'] AS $needed) {
 
@@ -103,13 +103,13 @@ class Driver_Plugin extends Base
 
         if (!isset($array['environment'][0]['extend'])) {
 
-            $array['environment'][0]['extend'] = array();
+            $array['environment'][0]['extend'] = [];
         }
 
         // Handle special case for entries
         if (!isset($array['entries'][0]['target'])) {
 
-            $array['entries'][0]['target'] = array();
+            $array['entries'][0]['target'] = [];
         }
 
         $array['entries'] = $array['entries'][0];

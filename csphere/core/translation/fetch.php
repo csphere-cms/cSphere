@@ -58,7 +58,7 @@ abstract class Fetch
     /**
      * Store language files that are already opened
      **/
-    private static $_loaded = array();
+    private static $_loaded = [];
 
     /**
      * Fetches the whole translation table
@@ -293,7 +293,7 @@ abstract class Fetch
         }
 
         // Array should be a list of names with their value
-        $lang = array();
+        $lang = [];
         $data = $data['definitions'];
 
         foreach ($data AS $def) {

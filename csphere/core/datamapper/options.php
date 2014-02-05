@@ -67,14 +67,14 @@ class Options
     {
         // Construct query and fetch result
         $columns = 'option_name, option_value';
-        $where   = array('option_plugin', '=', $this->_plugin);
+        $where   = ['option_plugin', '=', $this->_plugin];
 
         $sql = \csphere\core\sql\DML::select('options', '', $columns, $where);
 
         $all = $this->_database->query($sql['statement'], $sql['input'], 0, 0);
 
         // Format array for easier usage
-        $options = array();
+        $options = [];
 
         foreach ($all AS $one) {
 
@@ -96,7 +96,7 @@ class Options
     {
         // Construct query and fetch serials
         $columns = 'option_id, option_name';
-        $where   = array('option_plugin', '=', $this->_plugin);
+        $where   = ['option_plugin', '=', $this->_plugin];
 
         $sql = \csphere\core\sql\DML::select('options', '', $columns, $where);
 
@@ -110,7 +110,7 @@ class Options
             // Check if option was given
             if (isset($options[$name])) {
 
-                $assoc = array('option_value' => $options[$name]);
+                $assoc = ['option_value' => $options[$name]];
 
                 $sql = \csphere\core\sql\DML::update(
                     'options', $assoc, 'option_id', $one['option_id']
