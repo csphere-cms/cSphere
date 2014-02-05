@@ -37,47 +37,49 @@ if ($exists === true) {
     $xml     = $loader->load('xml', 'language');
     $match   = [];
 
-    // Get duplicated entries out of plugins
+    // Prepare data of default plugin
+    $default = $xml->source('plugin', 'default', $short, true);
+    $default = isset($default['definitions']) ? $default['definitions'] : [];
+    $def     = [];
+
+    foreach ($default AS $part) {
+
+        $def[$part['name']] = $part['value'];
+    }
+
+    // Get entries already translated by default plugin
     foreach ($plugins AS $plugin) {
 
-        // Check if plugin translation is missing
-        $source = $xml->source('plugin', $plugin['short'], $short, true);
-        $source = isset($source['definitions']) ? $source['definitions'] : [];
+        // Skip default plugin
+        if ($plugin['short'] != 'default') {
 
-        // Add definitions to super array
-        foreach ($source AS $part) {
+            // Check if plugin translation is missing
+            $source = $xml->source('plugin', $plugin['short'], $short, true);
+            $source = isset($source['definitions']) ? $source['definitions'] : [];
 
-            $key = $part['name'];
+            // Add matches to array if it is not the plugin name
+            foreach ($source AS $part) {
 
-            if (isset($match[$key])) {
+                $key = $part['name'];
 
-                $match[$key] = array_merge($match[$key], [$plugin['short']]);
+                if (isset($def[$key]) && $key != $plugin['short']) {
 
-            } else {
+                    $match[$key][] = $plugin['short'];
 
-                $match[$key] = [$plugin['short']];
+                }
             }
         }
     }
 
     ksort($match);
 
-    // Exceptions due to name conventions
-    unset($match['install'], $match['options']);
-    unset($match['plugins'], $match['themes']);
-
-    // Kick out every key that only appeared once and format data
+    // Format data
     $dup = [];
 
     foreach ($match AS $key => $plugins) {
 
-        $count = count($plugins);
-
-        if ($count > 1) {
-
-            $names = implode(', ', $plugins);
-            $dup[] = ['key' => $key, 'plugins' => $names];
-        }
+        $names = implode(', ', $plugins);
+        $dup[] = ['key' => $key, 'plugins' => $names];
     }
 
     // Create link for every plugin
