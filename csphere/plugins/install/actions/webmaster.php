@@ -46,7 +46,9 @@ if (isset($post['csphere_form'])) {
     if ($user_len < 4 || $pass_len < 4) {
 
         $error = $lang['too_short'];
+    } else if($post['user_password'] != $post['user_password2']){
 
+        $error = $lang['password_no_match'];
     } else {
 
         // Store admin user inside database

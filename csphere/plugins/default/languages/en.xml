@@ -57,6 +57,7 @@
         <define name="or">or</define>
         <define name="page">Page</define>
         <define name="password">Password</define>
+        <define name="password2">Password (Repetition)</define>
         <define name="php_required">Required PHP Version</define>
         <define name="php_extensions">PHP Extensions</define>
         <define name="plugin">Plugin</define>

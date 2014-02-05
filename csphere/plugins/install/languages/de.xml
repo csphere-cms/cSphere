@@ -61,6 +61,7 @@
         <define name="no_php_ext">Required PHP extensions not loaded</define>
         <define name="no_user">Es ist kein Benutzer als Seitenverwalter angelegt</define>
         <define name="no_write">Verzeichnis ist nicht beschreibbar</define>
+        <define name="password_no_match">Die eingegebenen Passwörter sind nicht identisch</define>
         <define name="port_info">Port, auf dem der Service läuft</define>
         <define name="pretty_urls">Hübsche URLs</define>
         <define name="rewrite_info">Achtung: Benötigt Webserver-spezifische Regeln, siehe Dokumentation</define>
