@@ -28,14 +28,14 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Define basic stuff
 $test     = false;
 $db_error = null;
-$data     = array();
+$data     = [];
 
 // List of database drivers
-$db_driverlist = array('none'       => 'None');
-$db_existance  = array('pdo_sqlsrv' => 'Microsoft SQL Server / Microsoft LocalDB',
-                       'pdo_mysql'  => 'MySQL / MariaDB',
-                       'pdo_pgsql'  => 'PostgreSQL',
-                       'pdo_sqlite' => 'SQLite');
+$db_driverlist = ['none'       => 'None'];
+$db_existance  = ['pdo_sqlsrv' => 'Microsoft SQL Server / Microsoft LocalDB',
+                  'pdo_mysql'  => 'MySQL / MariaDB',
+                  'pdo_pgsql'  => 'PostgreSQL',
+                  'pdo_sqlite' => 'SQLite'];
 
 foreach ($db_existance AS $short => $name) {
 
@@ -47,7 +47,7 @@ foreach ($db_existance AS $short => $name) {
 
 // Get and format post data
 $post           = \csphere\core\http\Input::getAll('post');
-$db             = array();
+$db             = [];
 $db_driver      = isset($post['database_driver']) ? $post['database_driver'] : '';
 $db_driver      = isset($db_driverlist[$db_driver]) ? $db_driver : '';
 $db['driver']   = empty($db_driver) ? 'pdo_mysql' : $db_driver;
@@ -127,11 +127,11 @@ if ($test === true && $db_error === null) {
     $action   = $lang['db'];
     $message  = $lang['database_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Send data to view
     $view = $loader->load('view');
@@ -159,11 +159,11 @@ if ($test === true && $db_error === null) {
     $data['database'] = $db;
 
     // Create database driver dropdown
-    $db_list = array();
+    $db_list = [];
 
     foreach ($db_driverlist AS $driver => $name) {
 
-        $db_list[] = array('short' => $driver, 'name' => $name);
+        $db_list[] = ['short' => $driver, 'name' => $name];
     }
 
     $data['database']['drivers'] = \csphere\core\template\Form::options(

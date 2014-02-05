@@ -57,8 +57,8 @@ $dir_exists = $target->exists($dir);
 $src_exists = false;
 $xml        = null;
 $error      = '';
-$data       = array();
-$cur_lang   = array();
+$data       = [];
+$cur_lang   = [];
 
 // Only proceed if target was found and translation exists
 if ($exists === true && $dir_exists === true) {
@@ -66,7 +66,7 @@ if ($exists === true && $dir_exists === true) {
     $xml   = $loader->load('xml', 'language');
     $data  = $xml->source($type, $dir, $short, true);
 
-    if ($data != array()) {
+    if ($data != []) {
 
         // This is the one and only valid case
         $src_exists = true;
@@ -91,7 +91,7 @@ if ($src_exists === true) {
     if ($type == 'theme' || $dir != 'default') {
 
         $default  = $xml->source('plugin', 'default');
-        $def_lang = array();
+        $def_lang = [];
 
         foreach ($default['definitions'] AS $def) {
 
@@ -103,13 +103,13 @@ if ($src_exists === true) {
 
     } else {
 
-        $test = array();
+        $test = [];
     }
 
     // Remove plugin name since that setting is required
     unset($test[$dir]);
 
-    if ($test != array()) {
+    if ($test != []) {
 
         $test   = array_keys($test);
         $error .= $lang['warn_override'] . ': ' . implode(' ', $test) . "\n";
@@ -118,7 +118,7 @@ if ($src_exists === true) {
     // Compare this language information with another main language
     $use_lang = $short != 'en' ? 'en' : 'de';
     $alt_lang = $xml->source($type, $dir, $use_lang);
-    $top_lang = array();
+    $top_lang = [];
 
     foreach ($alt_lang['definitions'] AS $def) {
 
@@ -127,7 +127,7 @@ if ($src_exists === true) {
 
     $test = array_diff_key($cur_lang, $top_lang);
 
-    if ($test != array()) {
+    if ($test != []) {
 
         $test   = array_keys($test);
         $error .= $lang['warn_difference'] . ': ' . implode(' ', $test) . "\n";
@@ -136,7 +136,7 @@ if ($src_exists === true) {
     // Get undefined keys
     $test = array_diff_key($top_lang, $cur_lang);
 
-    if ($test != array()) {
+    if ($test != []) {
 
         $test   = array_keys($test);
         $error .= $lang['warn_missing'] . ': ' . implode(' ', $test) . "\n";

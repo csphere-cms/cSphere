@@ -31,15 +31,15 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Define basic stuff
 $test        = false;
 $cache_error = null;
-$data        = array();
+$data        = [];
 
 // List of cache drivers
-$cache_drivers = array('none'     => 'None',
-                       'file'     => 'File');
-$cache_exists  = array('apc'      => 'APC / APCu',
-                       'redis'    => 'Redis',
-                       'wincache' => 'WinCache',
-                       'xcache'   => 'XCache');
+$cache_drivers = ['none'     => 'None',
+                  'file'     => 'File'];
+$cache_exists  = ['apc'      => 'APC / APCu',
+                  'redis'    => 'Redis',
+                  'wincache' => 'WinCache',
+                  'xcache'   => 'XCache'];
 
 foreach ($cache_exists AS $short => $name) {
 
@@ -52,7 +52,7 @@ foreach ($cache_exists AS $short => $name) {
 // Get and format post data
 $post             = \csphere\core\http\Input::getAll('post');
 
-$cache             = array();
+$cache             = [];
 $cache_driver      = isset($post['cache_driver']) ? $post['cache_driver'] : '';
 $cache_driver      = isset($cache_drivers[$cache_driver]) ? $cache_driver : '';
 $cache['driver']   = empty($cache_driver) ? 'file' : $cache_driver;
@@ -98,11 +98,11 @@ if ($test === true && $cache_error === null) {
     $action   = $lang['memory'];
     $message  = $lang['cache_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Send data to view
     $view = $loader->load('view');
@@ -130,11 +130,11 @@ if ($test === true && $cache_error === null) {
     $data['cache'] = $cache;
 
     // Create cache driver dropdown
-    $ch_list = array();
+    $ch_list = [];
 
     foreach ($cache_drivers AS $driver => $name) {
 
-        $ch_list[] = array('short' => $driver, 'name' => $name);
+        $ch_list[] = ['short' => $driver, 'name' => $name];
     }
 
     $data['cache']['drivers'] = \csphere\core\template\Form::options(

@@ -17,7 +17,7 @@ $loader = \csphere\core\service\Locator::get();
 
 $year = date('Y');
 
-$data = array('this_year' => $year);
+$data = ['this_year' => $year];
 
 // Start template engine and add content
 $view = $loader->load('view');

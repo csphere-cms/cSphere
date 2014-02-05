@@ -23,9 +23,9 @@ $bread->add('opcache');
 $bread->trace();
 
 // Get OPcache information
-$data     = array('opcache' => array());
-$settings = array('enable', 'enable_cli', 'memory_consumption', 'save_comments',
-                  'load_comments', 'validate_timestamps', 'revalidate_freq');
+$data     = ['opcache' => []];
+$settings = ['enable', 'enable_cli', 'memory_consumption', 'save_comments',
+             'load_comments', 'validate_timestamps', 'revalidate_freq'];
 
 foreach ($settings AS $ini) {
 

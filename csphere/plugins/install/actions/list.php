@@ -26,7 +26,7 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Get list of required PHP extensions
 $xml        = $loader->load('xml', 'plugin');
 $default    = $xml->source('plugin', 'default');
-$extensions = array();
+$extensions = [];
 
 if (isset($default['required']['extension'])) {
 
@@ -55,8 +55,8 @@ if ($missing != '') {
 // Check if directories are writable
 $path  = \csphere\core\init\path();
 $write = '';
-$dirs  = array('config', 'storage', 'storage/cache', 'storage/database',
-               'storage/logs', 'storage/logs/errors', 'storage/uploads');
+$dirs  = ['config', 'storage', 'storage/cache', 'storage/database',
+          'storage/logs', 'storage/logs/errors', 'storage/uploads'];
 
 foreach ($dirs AS $dir) {
 
@@ -74,7 +74,7 @@ if ($write != '') {
     $continue  = '';
 }
 
-$data = array('error' => $error, 'continue' => $continue);
+$data = ['error' => $error, 'continue' => $continue];
 
 // Send data to view
 $view = $loader->load('view');

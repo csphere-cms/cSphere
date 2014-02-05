@@ -29,7 +29,7 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Define basic stuff
 $test  = false;
 $error = '';
-$data  = array();
+$data  = [];
 
 // Get post data
 $post = \csphere\core\http\Input::getAll('post');
@@ -58,7 +58,7 @@ if (isset($post['csphere_form'])) {
             // Get database connection data
             $db_config = $session->get('db_config');
             $length    = strlen($db_config);
-            $db_config = ($length > 2) ? unserialize($db_config) : array();
+            $db_config = ($length > 2) ? unserialize($db_config) : [];
 
             // Establish connection
             $driver = isset($db_config['driver']) ? $db_config['driver'] : '';
@@ -105,11 +105,11 @@ if ($test === true && $error == '') {
     $action   = $lang['webmaster'];
     $message  = $lang['admin_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Send data to view
     $view = $loader->load('view');

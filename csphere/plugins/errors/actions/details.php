@@ -22,7 +22,7 @@ $path_error =  $path . 'csphere/storage/logs/errors/';
 $date  = \csphere\core\http\Input::get('get', 'date');
 $entry = (int)\csphere\core\http\Input::get('get', 'entry');
 
-$replace = array('.', '/', '\\');
+$replace = ['.', '/', '\\'];
 $date    = str_replace($replace, '', $date);
 $name    = $date . '.log';
 
@@ -35,7 +35,7 @@ $bread->add('entry', 'errors/file/date/' . $date . '/entry/' . $entry);
 $bread->trace();
 
 // List of special chars in error logs
-$special = array('{' => 0, '[' => 1);
+$special = ['{' => 0, '[' => 1];
 
 if (file_exists($path_error . $name)) {
 
@@ -45,7 +45,7 @@ if (file_exists($path_error . $name)) {
 
     $backtrace = isset($entries[$entry]) ? $entries[$entry] : '';
 
-    $data = array('date' => $date, 'entry' => $entry, 'trace' => array());
+    $data = ['date' => $date, 'entry' => $entry, 'trace' => []];
 
     // Get information out of string parts
     $parts = explode("\n", $backtrace);
@@ -63,7 +63,7 @@ if (file_exists($path_error . $name)) {
     }
 
     // Time, Message, Code, File and Line are before Trace
-    $error = array('time' => $parts[0]);
+    $error = ['time' => $parts[0]];
 
     $error['message'] = ltrim(substr($parts[1], 8));
     $error['code']    = ltrim(substr($parts[$start - 3], 5));
@@ -84,18 +84,18 @@ if (file_exists($path_error . $name)) {
             $nostep          = explode(' ', $parts[$i], 2)[1];
             $split           = explode(':', $nostep, 2);
             $call            = isset($split[1]) ? $split[1] : '';
-            $data['trace'][] = array('step' => $step,
-                                     'file' => $split[0],
-                                     'line' => '',
-                                     'call' => $call);
+            $data['trace'][] = ['step' => $step,
+                                'file' => $split[0],
+                                'line' => '',
+                                'call' => $call];
 
         } elseif (isset($string[1])) {
 
             // This is the default case
-            $trace = array('step' => $step);
+            $trace = ['step' => $step];
 
             $file = explode('(', $string[1]);
-            $line = isset($file[1]) ? explode(')', $file[1]) : array();
+            $line = isset($file[1]) ? explode(')', $file[1]) : [];
 
             // Shorten file names
             if (isset($file[0])) {

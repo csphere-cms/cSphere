@@ -27,7 +27,7 @@ $cache  = $loader->load('cache');
 $keys   = $cache->keys();
 $count  = count($keys);
 
-$entries = array();
+$entries = [];
 
 foreach ($keys AS $entry) {
 
@@ -44,7 +44,7 @@ foreach ($keys AS $entry) {
     $entries[] = $entry;
 }
 
-$data = array('count' => $count, 'entries' => $entries);
+$data = ['count' => $count, 'entries' => $entries];
 
 // Send data to view
 $view = $loader->load('view');

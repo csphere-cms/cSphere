@@ -27,7 +27,7 @@ $meta = new \csphere\core\themes\Metadata();
 $themes = $meta->details();
 
 // Create link for every theme
-$data = array('themes' => $themes);
+$data = ['themes' => $themes];
 
 // Output results
 $view = $loader->load('view');

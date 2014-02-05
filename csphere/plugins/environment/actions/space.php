@@ -23,7 +23,7 @@ $bread->add('space');
 $bread->trace();
 
 // Collect disk space information
-$data          = array();
+$data          = [];
 $path          = \csphere\core\init\path();
 $free          = disk_free_space($path);
 $data['free']  = \csphere\core\files\File::size($free, 0);

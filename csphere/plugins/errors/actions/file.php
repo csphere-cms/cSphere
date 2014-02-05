@@ -20,7 +20,7 @@ $path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
 $date = \csphere\core\http\Input::get('get', 'date');
 
-$replace = array('.', '/', '\\');
+$replace = ['.', '/', '\\'];
 $date    = str_replace($replace, '', $date);
 $name    = $date . '.log';
 
@@ -38,7 +38,7 @@ if (file_exists($path . $name)) {
     $entries = explode("--------\n", $content);
     $amount  = count($entries) - 1;
 
-    $data = array('date' => $date, 'count' => $amount, 'entries' => array());
+    $data = ['date' => $date, 'count' => $amount, 'entries' => []];
 
     // Each error entry should be an array element
     for ($i = 1; $i <= $amount; $i++) {
@@ -48,9 +48,9 @@ if (file_exists($path . $name)) {
         $second  = explode("\n", $first[1], 2);
         $message = ltrim(substr($second[0], 8));
 
-        $data['entries'][] = array('message' => $message,
-                                   'time'    => $time,
-                                   'entry'   => $i);
+        $data['entries'][] = ['message' => $message,
+                              'time'    => $time,
+                              'entry'   => $i];
     }
 
     // Newest entry on top

@@ -32,12 +32,12 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Define basic stuff
 $test  = false;
 $error = '';
-$data  = array();
+$data  = [];
 
 // Get post data
 $post  = \csphere\core\http\Input::getAll('post');
 
-$config            = array();
+$config            = [];
 $config['logs']    = empty($post['logs']) ? '0' : '1';
 $config['zlib']    = empty($post['zlib']) ? '0' : '1';
 $config['debug']   = empty($post['debug']) ? '0' : '1';
@@ -58,17 +58,17 @@ if (isset($post['csphere_form'])) {
         // Get cache data
         $cache_config = $session->get('cache_config');
         $length       = strlen($cache_config);
-        $cache_config = ($length > 2) ? unserialize($cache_config) : array();
+        $cache_config = ($length > 2) ? unserialize($cache_config) : [];
 
         // Get mail data
         $mail_config = $session->get('mail_config');
         $length      = strlen($mail_config);
-        $mail_config = ($length > 2) ? unserialize($mail_config) : array();
+        $mail_config = ($length > 2) ? unserialize($mail_config) : [];
 
         // Get db data
         $db_config = $session->get('db_config');
         $length    = strlen($db_config);
-        $db_config = ($length > 2) ? unserialize($db_config) : array();
+        $db_config = ($length > 2) ? unserialize($db_config) : [];
 
         // Get db driver
         $driver = isset($db_config['driver']) ? $db_config['driver'] : '';
@@ -121,11 +121,11 @@ if (isset($post['csphere_form'])) {
 
             $logs = $config['logs'] == '1' ? 'file' : 'none';
 
-            $gen = array('db'     => $db_config,
-                         'mail'   => $mail_config,
-                         'cache'  => $cache_config,
-                         'logs'   => $logs,
-                         'config' => $config);
+            $gen = ['db'     => $db_config,
+                    'mail'   => $mail_config,
+                    'cache'  => $cache_config,
+                    'logs'   => $logs,
+                    'config' => $config];
 
             $view = $loader->load('view');
 
@@ -160,11 +160,11 @@ if ($test === true && $error == '') {
     $action   = $lang['conf'];
     $message  = $lang['config_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Destroy session to clear install data
     $session = new \csphere\core\session\Session();

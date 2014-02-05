@@ -26,7 +26,7 @@ $bread->trace();
 $lang = \csphere\core\translation\Fetch::keys('database');
 
 // Collect table information
-$data = array('tables' => array(), 'count' => 0, 'error' => '');
+$data = ['tables' => [], 'count' => 0, 'error' => ''];
 
 $meta = new \csphere\core\plugins\Metadata();
 
@@ -81,9 +81,9 @@ foreach ($plugins AS $plugin) {
             }
         }
 
-        $data['tables'][] = array('table'   => $table,
-                                  'plugin'  => $plugin['short'],
-                                  'records' => $records);
+        $data['tables'][] = ['table'   => $table,
+                             'plugin'  => $plugin['short'],
+                             'records' => $records];
     }
 }
 

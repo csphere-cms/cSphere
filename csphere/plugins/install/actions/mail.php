@@ -30,20 +30,20 @@ $lang = \csphere\core\translation\Fetch::keys('install');
 // Define basic stuff
 $test       = false;
 $mail_error = null;
-$data       = array();
+$data       = [];
 
 // List of mail drivers
-$mail_driverlist = array('none'     => 'None',
-                         'sendmail' => 'Sendmail',
-                         'smtp'     => 'SMTP');
+$mail_driverlist = ['none'     => 'None',
+                    'sendmail' => 'Sendmail',
+                    'smtp'     => 'SMTP'];
 
-$mail_newlines = array(''        => 'Default (PHP_EOL)',
-                       'linux'   => 'Linux / Apple Mac OS',
-                       'windows' => 'Microsoft Windows');
+$mail_newlines = [''        => 'Default (PHP_EOL)',
+                  'linux'   => 'Linux / Apple Mac OS',
+                  'windows' => 'Microsoft Windows'];
 
 // Get and format post data
 $post             = \csphere\core\http\Input::getAll('post');
-$mail             = array();
+$mail             = [];
 $mail_driver      = isset($post['mail_driver']) ? $post['mail_driver'] : '';
 $mail_driver      = isset($mail_driverlist[$mail_driver]) ? $mail_driver : '';
 $mail['driver']   = empty($mail_driver) ? 'sendmail' : $mail_driver;
@@ -106,11 +106,11 @@ if ($test === true && $mail_error === null) {
     $action   = $lang['mail'];
     $message  = $lang['mail_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Send data to view
     $view = $loader->load('view');
@@ -138,11 +138,11 @@ if ($test === true && $mail_error === null) {
     $data['mail'] = $mail;
 
     // Create mail driver dropdown
-    $mail_list = array();
+    $mail_list = [];
 
     foreach ($mail_driverlist AS $driver => $name) {
 
-        $mail_list[] = array('short' => $driver, 'name' => $name);
+        $mail_list[] = ['short' => $driver, 'name' => $name];
     }
 
     $data['mail']['drivers'] = \csphere\core\template\Form::options(
@@ -150,11 +150,11 @@ if ($test === true && $mail_error === null) {
     );
 
     // Create mail newline dropdown
-    $mail_line = array();
+    $mail_line = [];
 
     foreach ($mail_newlines AS $line => $name) {
 
-        $mail_line[] = array('short' => $line, 'name' => $name);
+        $mail_line[] = ['short' => $line, 'name' => $name];
     }
 
     $data['mail']['newlines'] = \csphere\core\template\Form::options(

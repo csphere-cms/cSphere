@@ -34,7 +34,7 @@ if ($exists === true) {
     $themes = $meta->themes($short);
 
     // Create link for every plugin
-    $data = array('short' => $short, 'themes' => $themes);
+    $data = ['short' => $short, 'themes' => $themes];
 
     // Output results
     $view = $loader->load('view');

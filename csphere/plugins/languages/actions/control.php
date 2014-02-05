@@ -27,7 +27,7 @@ $meta = new \csphere\core\translation\Metadata();
 $languages = $meta->details();
 
 // Create link for every theme
-$data = array('languages' => $languages);
+$data = ['languages' => $languages];
 
 // Output results
 $view = $loader->load('view');

@@ -23,15 +23,15 @@ $bread->add('php');
 $bread->trace();
 
 // Collect PHP extension information
-$data               = array();
-$data['extensions'] = array();
+$data               = [];
+$data['extensions'] = [];
 $extensions         = get_loaded_extensions();
 
 natcasesort($extensions);
 
 foreach ($extensions AS $ext) {
 
-    $data['extensions'][] = array('name' => $ext);
+    $data['extensions'][] = ['name' => $ext];
 }
 
 // Collect PHP settings information

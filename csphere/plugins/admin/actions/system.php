@@ -27,7 +27,7 @@ $meta = new \csphere\core\plugins\Metadata();
 $plugins = $meta->entries('admin', 'system');
 
 // Create link for every plugin
-$data = array('action' => 'control', 'plugins' => $plugins);
+$data = ['action' => 'control', 'plugins' => $plugins];
 
 // Output results
 $view = $loader->load('view');

@@ -34,7 +34,7 @@ if ($exists === true) {
     $plugins = $meta->plugins($short);
 
     // Create link for every plugin
-    $data = array('short' => $short, 'plugins' => $plugins);
+    $data = ['short' => $short, 'plugins' => $plugins];
 
     // Output results
     $view = $loader->load('view');

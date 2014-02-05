@@ -30,7 +30,7 @@ $plugins = $meta->details();
 $count  = count($plugins);
 
 // Create link for every plugin
-$data = array('count' => $count, 'plugins' => $plugins);
+$data = ['count' => $count, 'plugins' => $plugins];
 
 // Manipulate data array
 foreach ($data['plugins'] as $plugin) {

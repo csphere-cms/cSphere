@@ -22,7 +22,7 @@ $bread->plugin('environment', 'control');
 $bread->trace();
 
 // Collect server information
-$data = array();
+$data = [];
 
 $data['operating_system'] = php_uname('s') . ' ' . php_uname('r');
 $data['hostname']         = php_uname('n');

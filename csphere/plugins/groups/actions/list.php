@@ -17,7 +17,7 @@
 $rad = new \csphere\core\rad\Listed('groups');
 
 // Define order columns
-$order = array('group_name', 'group_since');
+$order = ['group_name', 'group_since'];
 
-$rad->search(array('group_name'));
+$rad->search(['group_name']);
 $rad->delegate('group_name', $order);

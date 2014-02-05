@@ -30,7 +30,7 @@ $finder = function ($object) {
 $rad->callFinder($finder);
 
 // Define order columns
-$order = array('group_name', 'user_name');
+$order = ['group_name', 'user_name'];
 
 $rad->search($order, true);
 $rad->delegate('group_name', $order);

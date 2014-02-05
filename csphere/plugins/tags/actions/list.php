@@ -17,7 +17,7 @@
 $rad = new \csphere\core\rad\Listed('tags');
 
 // Define order columns
-$order = array('tag_name', 'tag_since');
+$order = ['tag_name', 'tag_since'];
 
-$rad->search(array('tag_name'));
+$rad->search(['tag_name']);
 $rad->delegate('tag_name', $order);

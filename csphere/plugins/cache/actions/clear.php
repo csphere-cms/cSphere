@@ -37,7 +37,7 @@ $cache->clear();
 
 $previous = \csphere\core\url\Link::href('cache', 'control');
 
-$data = array('previous' => $previous, 'type' => 'green');
+$data = ['previous' => $previous, 'type' => 'green'];
 
 $data['plugin_name'] = $lang['cache'];
 $data['action_name'] = $lang['clear'];

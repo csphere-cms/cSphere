@@ -23,7 +23,7 @@ $path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
 $date = \csphere\core\http\Input::get('get', 'date');
 
-$replace = array('.', '/', '\\');
+$replace = ['.', '/', '\\'];
 $date    = str_replace($replace, '', $date);
 $name    = $date . '.log';
 
@@ -41,7 +41,7 @@ if (file_exists($path . $name)) {
 
 $previous = \csphere\core\url\Link::href('errors', 'control');
 
-$data = array('previous' => $previous, 'type' => 'green');
+$data = ['previous' => $previous, 'type' => 'green'];
 
 $data['plugin_name'] = $lang['errors'];
 $data['action_name'] = \csphere\core\translation\Fetch::key('default', 'remove');

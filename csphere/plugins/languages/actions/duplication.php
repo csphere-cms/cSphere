@@ -35,14 +35,14 @@ if ($exists === true) {
     $error   = '';
     $plugins = $meta->plugins($short);
     $xml     = $loader->load('xml', 'language');
-    $match   = array();
+    $match   = [];
 
     // Get duplicated entries out of plugins
     foreach ($plugins AS $plugin) {
 
         // Check if plugin translation is missing
         $source = $xml->source('plugin', $plugin['short'], $short, true);
-        $source = isset($source['definitions']) ? $source['definitions'] : array();
+        $source = isset($source['definitions']) ? $source['definitions'] : [];
 
         // Add definitions to super array
         foreach ($source AS $part) {
@@ -51,11 +51,11 @@ if ($exists === true) {
 
             if (isset($match[$key])) {
 
-                $match[$key] = array_merge($match[$key], array($plugin['short']));
+                $match[$key] = array_merge($match[$key], [$plugin['short']]);
 
             } else {
 
-                $match[$key] = array($plugin['short']);
+                $match[$key] = [$plugin['short']];
             }
         }
     }
@@ -67,7 +67,7 @@ if ($exists === true) {
     unset($match['plugins'], $match['themes']);
 
     // Kick out every key that only appeared once and format data
-    $dup = array();
+    $dup = [];
 
     foreach ($match AS $key => $plugins) {
 
@@ -76,12 +76,12 @@ if ($exists === true) {
         if ($count > 1) {
 
             $names = implode(', ', $plugins);
-            $dup[] = array('key' => $key, 'plugins' => $names);
+            $dup[] = ['key' => $key, 'plugins' => $names];
         }
     }
 
     // Create link for every plugin
-    $data = array('short' => $short, 'duplicate' => $dup, 'error' => $error);
+    $data = ['short' => $short, 'duplicate' => $dup, 'error' => $error];
 
     // Output results
     $view = $loader->load('view');

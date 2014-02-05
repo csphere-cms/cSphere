@@ -24,17 +24,17 @@ $bread->trace();
 // Add data of errors
 $path = \csphere\core\init\path() . 'csphere/storage/logs/errors/';
 
-$files = \csphere\core\files\File::search($path, true, array('info.txt'));
+$files = \csphere\core\files\File::search($path, true, ['info.txt']);
 
 $count = count($files);
 
-$data = array('count' => $count, 'files' => array());
+$data = ['count' => $count, 'files' => []];
 
 for ($i = 0; $i < $count; $i++) {
 
     $name = explode('.log', $files[$i], 2);
 
-    $data['files'][] = array('date' => $name[0]);
+    $data['files'][] = ['date' => $name[0]];
 }
 
 $view = $loader->load('view');

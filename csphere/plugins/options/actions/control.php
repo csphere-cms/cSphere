@@ -27,7 +27,7 @@ $meta = new \csphere\core\plugins\Metadata();
 $plugins = $meta->entries('options', 'control');
 
 // Create link for every plugin
-$data = array('action' => 'options', 'plugins' => $plugins);
+$data = ['action' => 'options', 'plugins' => $plugins];
 
 // Output results
 $view = $loader->load('view');

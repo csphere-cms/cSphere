@@ -43,11 +43,11 @@ if ($exists === true) {
     $action   = $lang['lang'];
     $message  = $lang['language_ok'];
 
-    $data = array('previous'    => $previous,
-                  'type'        => 'green',
-                  'plugin_name' => $plugin,
-                  'action_name' => $action,
-                  'message'     => $message);
+    $data = ['previous'    => $previous,
+             'type'        => 'green',
+             'plugin_name' => $plugin,
+             'action_name' => $action,
+             'message'     => $message];
 
     // Send data to view
     $view = $loader->load('view');
@@ -59,7 +59,7 @@ if ($exists === true) {
     // Create link for every language
     $languages = $meta->details();
 
-    $data = array('languages' => $languages);
+    $data = ['languages' => $languages];
 
     // Send data to view
     $view = $loader->load('view');

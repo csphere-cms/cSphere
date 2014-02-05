@@ -42,10 +42,10 @@ if ($exists === true) {
     $meta->install(true, true);
 
     // Generate message content
-    $params   = array('dir' => $dir);
+    $params   = ['dir' => $dir];
     $previous = \csphere\core\url\Link::href('database', 'details', $params);
 
-    $data = array('previous' => $previous, 'type' => 'green');
+    $data = ['previous' => $previous, 'type' => 'green'];
 
     $data['plugin_name'] = $lang['database'];
     $data['action_name'] = $install;
