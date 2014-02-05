@@ -122,7 +122,7 @@ abstract class Request
             $run = 1;
             $map = substr($map, $qmark);
             $map = str_replace('?plugin=', '', $map);
-            $map = str_replace(['&','='], '/', $map);
+            $map = str_replace(['&', '='], '/', $map);
         }
 
         // Creates a key value array out of the request map
