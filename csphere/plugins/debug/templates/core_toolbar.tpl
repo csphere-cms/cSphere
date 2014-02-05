@@ -20,19 +20,19 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#tab-database" class="csphere-popover" data-toggle="tab" data-content="{* lang database.database *}">
+                        <a href="#tab-database" class="csphere-popover" data-toggle="tab" data-content="{* lang debug.database *}">
                             <i class="fa fa-archive fa-lg"></i>
                             {* raw count.database *}
                         </a>
                     </li>
                     <li>
                         {* if count.errors > '0' *}
-                        <a href="#tab-errors" class="csphere-popover text-danger" data-toggle="tab" data-content="{* lang errors.errors *}">
+                        <a href="#tab-errors" class="csphere-popover text-danger" data-toggle="tab" data-content="{* lang debug.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
                             {* raw count.errors *}
                         </a>
                         {* else count.errors *}
-                        <a href="#tab-errors" class="csphere-popover" data-toggle="tab" data-content="{* lang errors.errors *}">
+                        <a href="#tab-errors" class="csphere-popover" data-toggle="tab" data-content="{* lang debug.errors *}">
                             <i class="fa fa-exclamation-triangle fa-lg"></i>
                             {* raw count.errors *}
                         </a>
@@ -128,7 +128,7 @@
         <section id="tab-database" class="tab-pane fade">
 
             <header class="page-header">
-                <h3>{* lang database.database *}</h3>
+                <h3>{* lang debug.database *}</h3>
             </header><!--END debug-content tab-database header-->
 
             <ol>
@@ -141,7 +141,7 @@
         <section id="tab-errors" class="tab-pane fade">
 
             <header class="page-header">
-                <h3>{* lang errors.errors *}</h3>
+                <h3>{* lang debug.errors *}</h3>
             </header><!--END debug-content tab-errors header-->
 
             <ol>

@@ -23,8 +23,9 @@
         <define name="backtrace">Ablaufverfolgung</define>
         <define name="close_toolbar">Toolbar schließen</define>
         <define name="component">Komponente</define>
-        <define name="database_queries">Datenbank</define>
+        <define name="database">Datenbank</define>
         <define name="debug">Debug</define>
+        <define name="errors">Fehler</define>
         <define name="includes">Includes</define>
         <define name="logs">Logs</define>
         <define name="memory_usage">Speicher</define>

@@ -26,6 +26,7 @@
         <define name="home">Home</define>
         <define name="https_required">Logins are only allowed with HTTPS. Click the following link to go on.</define>
         <define name="invisible">Invisible</define>
+        <define name="language">Language</define>
         <define name="laston">Last login</define>
         <define name="login">Login</define>
         <define name="login_since">Login time</define>
@@ -33,6 +34,7 @@
         <define name="login_browser">Browser</define>
         <define name="logout">Logout</define>
         <define name="logout_true">Successfully logged out, please come back soon!</define>
+        <define name="memberships">Memberships</define>
         <define name="settings">Settings</define>
         <define name="password_confirm">Confirm Password</define>
         <define name="password_new">New Password</define>

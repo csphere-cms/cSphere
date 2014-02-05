@@ -69,6 +69,7 @@
         <define name="timeout">Timeout</define>
         <define name="timeout_info">Timeout in Sekunden</define>
         <define name="too_short">Benutzername und Passwort müssen mindestens vier Zeichen lang sein</define>
+        <define name="user_name">Benutzername</define>
         <define name="webmaster">Seitenverwalter</define>
         <define name="welcome">Willkommen</define>
         <define name="welcome_info">Dies installiert das cSphere CMS, zum Fortfahren unten klicken</define>

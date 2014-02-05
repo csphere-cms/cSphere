@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang languages.languages *} - {* lang plugins.plugins *}
+                    {* lang languages.languages *} - {* lang languages.plugins *}
                     <small>
                         - {* lang languages.language *}: {* var short *}
                     </small>
@@ -21,7 +21,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang xml.plugin *}</th>
+                    <th>{* lang default.plugin *}</th>
                     <th class="text-center">{* lang languages.translated *}</th>
                 </tr>
             </thead><!--END table thead-->

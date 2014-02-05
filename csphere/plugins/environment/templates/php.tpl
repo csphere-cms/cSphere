@@ -73,7 +73,7 @@
         </table><!--END table-->
 
         <div class="well text-center">
-            <h4>{* lang xml.php_extensions *}:</h4>
+            <h4>{* lang default.php_extensions *}:</h4>
 
             <br>
 

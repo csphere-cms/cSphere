@@ -20,7 +20,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang xml.plugin *}</th>
+                    <th>{* lang default.plugin *}</th>
                     <th>{* lang database.table *}</th>
                     <th class="text-center">{* lang default.records *}</th>
                 </tr>

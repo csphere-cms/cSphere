@@ -23,7 +23,9 @@
         <define name="groups">Gruppen</define>
         <define name="main_id">Team Seite</define>
         <define name="main_name">Gruppenname des Teams</define>
+        <define name="members">Mitglieder</define>
         <define name="team">Team</define>
         <define name="url">Website</define>
+        <define name="user_name">Benutzername</define>
     </definitions>
 </language>

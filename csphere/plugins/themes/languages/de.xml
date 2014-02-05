@@ -20,7 +20,9 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="admin">Administration</define>
         <define name="contains_designs">Beinhaltet das Aussehen für</define>
+        <define name="install">Installation</define>
         <define name="layout">Layout</define>
         <define name="media">Medien</define>
         <define name="mobile">Mobil</define>

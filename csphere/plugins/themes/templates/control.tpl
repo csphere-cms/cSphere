@@ -7,8 +7,8 @@
             <thead>
                 <tr>
                     <th>{* lang themes.theme *}</th>
-                    <th class="text-center">{* lang xml.version *}</th>
-                    <th class="text-center">{* lang xml.published *}</th>
+                    <th class="text-center">{* lang default.version *}</th>
+                    <th class="text-center">{* lang default.published *}</th>
                 </tr>
             </thead><!--END table thead-->
 

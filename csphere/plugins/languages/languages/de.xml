@@ -24,7 +24,10 @@
         <define name="language">Sprache</define>
         <define name="languages">Sprachen</define>
         <define name="no_duplicate">Keine Duplikate gefunden</define>
+        <define name="plugins">Plugins</define>
         <define name="short">Kurz</define>
+        <define name="theme">Thema</define>
+        <define name="themes">Themen</define>
         <define name="translated">Übersetzung</define>
         <define name="warn_missing">Fehlende Übersetzungen</define>
         <define name="warn_noname">Der Name muss übersetzt sein</define>

@@ -20,9 +20,15 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="action">Aktion</define>
+        <define name="authors_current">Derzeitige Autoren</define>
+        <define name="authors_past">Vorherige Autoren</define>
         <define name="back">Zurück</define>
+        <define name="contact_email">E-Mail</define>
+        <define name="contact_web">Webseite</define>
         <define name="continue">Weiter</define>
         <define name="control">Steuerung</define>
+        <define name="copyright">Copyright</define>
         <define name="count">Anzahl</define>
         <define name="create">Erstellen</define>
         <define name="date">Datum</define>
@@ -31,10 +37,16 @@
         <define name="driver">Treiber</define>
         <define name="edit">Bearbeiten</define>
         <define name="email">E-Mail</define>
+        <define name="engine">Engine</define>
+        <define name="entries">Einträge</define>
+        <define name="environment_needed">Benötigte Umgebung</define>
+        <define name="environment_extends">Erweiterte Umgebungen</define>
         <define name="hits">Treffer</define>
         <define name="host">Host</define>
+        <define name="icon">Icon</define>
         <define name="info">Info</define>
         <define name="install">Installation</define>
+        <define name="license">Lizenz</define>
         <define name="list">Liste</define>
         <define name="manage">Verwaltung</define>
         <define name="name">Name</define>
@@ -45,8 +57,12 @@
         <define name="or">oder</define>
         <define name="page">Seite</define>
         <define name="password">Passwort</define>
+        <define name="php_required">Benötigte PHP Version</define>
+        <define name="php_extensions">PHP Erweiterungen</define>
+        <define name="plugin">Plugin</define>
         <define name="plugins">Plugins</define>
         <define name="port">Port</define>
+        <define name="published">Veröffentlich am</define>
         <define name="record_cancel">Datensatz unverändert belassen</define>
         <define name="record_deleted">Datensatz mit Erfolg entfernt</define>
         <define name="record_success">Datensatz mit Erfolg bearbeitet</define>
@@ -61,9 +77,12 @@
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
         <define name="uninstall">Deinstallieren</define>
+        <define name="until">bis</define>
         <define name="version_client">Client Version</define>
         <define name="version_driver">Treiber Version</define>
         <define name="version_server">Server Version</define>
+        <define name="vendor">Hersteller</define>
+        <define name="version">Version</define>
         <define name="view">Ansicht</define>
         <define name="yes">Ja</define>
     </definitions>

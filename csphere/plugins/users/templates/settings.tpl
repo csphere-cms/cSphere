@@ -13,7 +13,7 @@
             {* tpl default/com_input_noyes name=user_invisible label=users.invisible *}
             {* endif users.user_invisible *}
 
-            {* tpl default/com_select name=user_lang label=languages.language options=users.languages *}
+            {* tpl default/com_select name=user_lang label=users.language options=users.languages *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

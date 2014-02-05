@@ -30,7 +30,7 @@
                         {* date users.user_since *}
                     </td>
                     <td>
-                        <a href="{* link members/manage/search/$users.user_name *}">{* lang members.memberships *}</a>
+                        <a href="{* link members/manage/search/$users.user_name *}">{* lang users.memberships *}</a>
                     </td>
                     <td>
                         <a href="{* link users/edit/id/$users.user_id *}">{* lang default.edit *}</a>

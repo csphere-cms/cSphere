@@ -30,7 +30,7 @@
                         {* date groups.group_since *}
                     </td>
                     <td>
-                        <a href="{* link members/manage/search/$groups.group_name *}">{* lang members.members *}</a>
+                        <a href="{* link members/manage/search/$groups.group_name *}">{* lang groups.members *}</a>
                     </td>
                     <td>
                         <a href="{* link groups/edit/id/$groups.group_id *}">{* lang default.edit *}</a>

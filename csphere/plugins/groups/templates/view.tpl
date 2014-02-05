@@ -14,7 +14,7 @@
         <table class="table table-striped table-hover">
             <tr>
                 <th>
-                    {* lang users.user_name *}
+                    {* lang groups.user_name *}
                 </th>
                 <td>
                     {* var groups.group_name *}

@@ -6,7 +6,7 @@
                 <h3>
                     {* lang languages.languages *} - {* lang default.details *}
                     <small>
-                        {* lang languages.language *}: {* var short *} - {* if type == 'theme' *}{* lang themes.theme *}{* else type *}{* lang xml.plugin *}{* endif type *}: {* var dir *}
+                        {* lang languages.language *}: {* var short *} - {* if type == 'theme' *}{* lang languages.theme *}{* else type *}{* lang default.plugin *}{* endif type *}: {* var dir *}
                     </small>
                 </h3><!--END header page-header headline-->
             </section><!--END header page-header-->
@@ -17,19 +17,19 @@
         {* tpl default/msg_error *}
 
         <dl class="dl-horizontal">
-            <dt>{* lang xml.vendor *}:</dt>
+            <dt>{* lang default.vendor *}:</dt>
             <dd>{* var vendor *}</dd>
 
-            <dt>{* lang xml.version *}:</dt>
+            <dt>{* lang default.version *}:</dt>
             <dd>{* var version *}</dd>
 
-            <dt>{* lang xml.published *}:</dt>
+            <dt>{* lang default.published *}:</dt>
             <dd>{* var published *}</dd>
 
-            <dt>{* lang xml.copyright *}:</dt>
+            <dt>{* lang default.copyright *}:</dt>
             <dd>{* var copyright *}</dd>
 
-            <dt>{* lang xml.license *}:</dt>
+            <dt>{* lang default.license *}:</dt>
             <dd>{* var license *}</dd>
 
             <dt>{* lang default.info *}:</dt>
@@ -37,33 +37,33 @@
         </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang xml.engine *}:</dt>
+            <dt>{* lang default.engine *}:</dt>
             <dd>
                 {* var engine.name *} {* var engine.version_min *}{* if engine.version_max != '' *} up to {* var engine.version_max *}{* endif engine.version_max *}
             </dd>
-            <dt>{* lang xml.icon *}:</dt>
+            <dt>{* lang default.icon *}:</dt>
             <dd>
                 {* if icon.type == 'famfamfam' *} <img src="{* raw icon.url *}" alt="{* var icon.value *}">{* endif icon.type *} {* var icon.value *}
             </dd>
         </dl><!--END dl-horizontal-->
 
         <dl class="dl-horizontal">
-            <dt>{* lang xml.authors_current *}:</dt>
+            <dt>{* lang default.authors_current *}:</dt>
             {* foreach authors.current *}
             <dd>{* var current.value *}</dd>
             {* endforeach authors.current *}
 
-            <dt>{* lang xml.authors_past *}:</dt>
+            <dt>{* lang default.authors_past *}:</dt>
             {* foreach authors.past *}
             <dd>{* var past.value *}</dd>
             {* endforeach authors.past *}
 
-            <dt>{* lang xml.contact_email *}:</dt>
+            <dt>{* lang default.contact_email *}:</dt>
             {* foreach contact.email *}
             <dd>{* var email.adress *}</dd>
             {* endforeach contact.email *}
 
-            <dt>{* lang xml.contact_web *}:</dt>
+            <dt>{* lang default.contact_web *}:</dt>
             {* foreach contact.web *}
             <dd><a href="{* var web.url *}">{* var web.url *}</a></dd>
             {* endforeach contact.web *}

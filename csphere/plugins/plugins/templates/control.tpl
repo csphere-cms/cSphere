@@ -19,7 +19,7 @@
                     </button>
 
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownOptions">
-                        <li role="presentation"><a href="{* link plugins/market *}" role="menuitem" tabindex="-1">{* lang manual_install *}</a></li>
+                        <li role="presentation"><a href="{* link plugins/market *}" role="menuitem" tabindex="-1">{* lang plugins.manual_install *}</a></li>
                     </ul>
                 </div><!--END header page-header btn-group-->
             </section><!--END header page-header-->
@@ -28,9 +28,9 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang xml.plugin *}</th>
-                    <th class="text-center">{* lang xml.version *}</th>
-                    <th class="text-center">{* lang xml.published *}</th>
+                    <th>{* lang default.plugin *}</th>
+                    <th class="text-center">{* lang default.version *}</th>
+                    <th class="text-center">{* lang default.published *}</th>
                     <th class="text-center">{* lang default.options *}</th>
                 </tr>
             </thead><!--END table thead-->

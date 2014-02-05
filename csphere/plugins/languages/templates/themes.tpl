@@ -15,7 +15,7 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>{* lang themes.theme *}</th>
+                    <th>{* lang languages.theme *}</th>
                     <th class="text-center">{* lang languages.translated *}</th>
                 </tr>
             </thead><!--END table thead-->

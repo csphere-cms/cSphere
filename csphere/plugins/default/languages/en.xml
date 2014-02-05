@@ -20,9 +20,15 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
+        <define name="action">Action</define>
+        <define name="authors_current">Current authors</define>
+        <define name="authors_past">Past authors</define>
         <define name="back">Back</define>
+        <define name="contact_email">Email</define>
+        <define name="contact_web">Website</define>
         <define name="continue">Continue</define>
         <define name="control">Control</define>
+        <define name="copyright">Copyright</define>
         <define name="count">Count</define>
         <define name="create">Create</define>
         <define name="date">Date</define>
@@ -31,10 +37,16 @@
         <define name="driver">Driver</define>
         <define name="edit">Edit</define>
         <define name="email">Email</define>
+        <define name="engine">Engine</define>
+        <define name="entries">Entries</define>
+        <define name="environment_needed">Needed environment</define>
+        <define name="environment_extends">Environment it extends</define>
         <define name="hits">Hits</define>
         <define name="host">Host</define>
+        <define name="icon">Icon</define>
         <define name="info">Info</define>
         <define name="install">Install</define>
+        <define name="license">License</define>
         <define name="list">List</define>
         <define name="manage">Manage</define>
         <define name="name">Name</define>
@@ -45,8 +57,12 @@
         <define name="or">or</define>
         <define name="page">Page</define>
         <define name="password">Password</define>
+        <define name="php_required">Required PHP Version</define>
+        <define name="php_extensions">PHP Extensions</define>
+        <define name="plugin">Plugin</define>
         <define name="plugins">Plugins</define>
         <define name="port">Port</define>
+        <define name="published">Published</define>
         <define name="record_cancel">Record left untouched</define>
         <define name="record_deleted">Record deleted with success</define>
         <define name="record_success">Record saved with success</define>
@@ -61,9 +77,12 @@
         <define name="themes">Themes</define>
         <define name="time">Time</define>
         <define name="uninstall">Uninstall</define>
+        <define name="until">until</define>
         <define name="version_client">Client version</define>
         <define name="version_driver">Driver version</define>
         <define name="version_server">Server version</define>
+        <define name="vendor">Vendor</define>
+        <define name="version">Version</define>
         <define name="view">View</define>
         <define name="yes">Yes</define>
     </definitions>
