@@ -176,7 +176,7 @@ abstract class Base extends \csphere\core\service\Drivers
      * Logs send mails
      *
      * @param string  $email  Email target
-     * @param boolean $status Wether or not the mail was successfully send
+     * @param boolean $status Whether or not the mail was successfully send
      *
      * @return void
      **/

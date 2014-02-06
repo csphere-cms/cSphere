@@ -52,7 +52,7 @@ class Users
     }
 
     /**
-     * Wether someone is logged in at the moment
+     * Whether someone is logged in at the moment
      *
      * @return boolean
      **/

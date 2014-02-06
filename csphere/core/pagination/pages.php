@@ -90,7 +90,7 @@ class Pages
      * Generate page turn links
      *
      * @param boolean $light  Light version with only last, current and next page
-     * @param boolean $arrows Wether or not to attach arrows for page turns
+     * @param boolean $arrows Whether or not to attach arrows for page turns
      *
      * @return string
      **/
@@ -347,7 +347,7 @@ class Pages
      * Create content from template file
      *
      * @param array   $data   Data array for template
-     * @param boolean $arrows Wether or not to attach arrows for page turns
+     * @param boolean $arrows Whether or not to attach arrows for page turns
      *
      * @return string
      **/

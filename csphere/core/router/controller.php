@@ -71,7 +71,7 @@ class Controller
     /**
      * Execute the target plugin target
      *
-     * @param boolean $skip Wether to skip target execution
+     * @param boolean $skip Whether to skip target execution
      *
      * @return void
      **/
@@ -94,7 +94,7 @@ class Controller
             $view    = $loader->load('view');
             $content = $view->assemble($this->_xhr, $this->_box);
 
-            // Tell response wether to use compression
+            // Tell response whether to use compression
             $zlib = false;
 
             if ($skip == false) {

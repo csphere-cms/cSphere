@@ -39,7 +39,7 @@ abstract class Response
     private static $_status = false;
 
     /**
-     * Wether to manually compress the output
+     * Whether to manually compress the output
      **/
     private static $_zlib = false;
 

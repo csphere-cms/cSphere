@@ -172,7 +172,7 @@ abstract class Base
      *
      * @param array   $data Data as an array
      * @param integer $rid  Record ID if important for URL
-     * @param boolean $skip Wether to skip the callback
+     * @param boolean $skip Whether to skip the callback
      *
      * @return void
      **/

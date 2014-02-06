@@ -32,7 +32,7 @@ class File
      * Content of a directory as an array
      *
      * @param string  $path   Target directory with full path
-     * @param boolean $desc   Wether to list files in descending order
+     * @param boolean $desc   Whether to list files in descending order
      * @param array   $remove List of files to remove
      *
      * @return array

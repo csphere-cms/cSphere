@@ -44,7 +44,7 @@ class Database
     private $_structure = [];
 
     /**
-     * Store wether a database XML was found
+     * Store whether a database XML was found
      **/
     private $_exists = false;
 
