@@ -175,20 +175,38 @@ abstract class DML
     /**
      * Removes database entries from a table
      *
-     * @param string $table        Name of the database table
-     * @param string $where_column Name of the target database column
-     * @param string $where_value  Value of the target database column
+     * @param string $table      Name of the database table
+     * @param array  $conditions Conditions with column, operation and value
+     * @param mixed  $joins      Joins to other tables as an array
      *
      * @return array
      **/
-
-    public static function delete($table, $where_column, $where_value)
-    {
+    public static function delete(
+        $table,
+        array $conditions = [],
+        $joins = ''
+    ) {
+        $assoc  = [];
         // Build a matching delete query
-        $query = 'DELETE FROM {pre}' . $table
-               . ' WHERE ' . $where_column . ' = :where_column';
 
-        $assoc = ['where_column' => $where_value];
+        // Add joins to query
+        if (is_array($joins)) {
+
+            $joins = self::_joins($joins);
+        }
+
+
+        // Build a matching select query
+        $query = 'DELETE FROM {pre}' . $table . $joins;
+
+        // Add conditions to query
+        if ($conditions != []) {
+
+            $con = \csphere\core\sql\conditions::parse($conditions);
+
+            $query .= ' WHERE ' . $con['query'];
+            $assoc  = $con['assoc'];
+        }
 
         return ['statement' => $query, 'input' => $assoc];
     }

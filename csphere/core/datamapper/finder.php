@@ -76,6 +76,33 @@ class Finder extends \csphere\core\datamapper\Base
     }
 
     /**
+     * Removes all entries which matches the given parameters. The scope can
+     * be reduced by using where and join. All other options which might be set were
+     * ignored.
+     *
+     * @return array
+     */
+    public function remove()
+    {
+        // Construct query and fetch result
+        $sql = \csphere\core\sql\DML::delete(
+            $this->schema,
+            $this->_parts['joins'],
+            $this->_parts['where']
+        );
+
+        $result = $this->database->query(
+            $sql['statement'], $sql['input'], 0,
+            0
+        );
+
+        // Reset parts array
+        $this->_parts = $this->_reset;
+
+        return $result;
+
+    }
+    /**
      * Find all records matching filters
      *
      * @param integer $first Number of the first dataset to show
@@ -148,19 +175,39 @@ class Finder extends \csphere\core\datamapper\Base
     }
 
     /**
-     * Add a natural (inner) join to the query
+     * Add a natural (inner) join to the query. By default the given foreignPlugin
+     * and foreignTable are joined with the plugin table. To set another plugin and
+     * table you want to join the foreign table, you could use the last two
+     * parameters to set the information about it.
      *
-     * @param string $plugin  Plugin name
-     * @param string $table   Table name
-     * @param string $serial  Serial column name (native table)
-     * @param string $foreign Foreign column name (using table)
+     * The (foreign)table Variable could stay empty if you want to join with the
+     * standard plugin table.
+     *
+     * Serial is the key which is used for the join. If no foreign is given the
+     * serial key is used for both sides of the on-Statement.
+     *
+     * @param string $foreignPlugin Foreign Plugin name (the one we want to
+     * @param string $foreignTable  Foreign Table name
+     * @param string $serial        Serial column name (native table)
+     * @param string $foreign       Foreign column name (using table)
+     * @param string $plugin        Plugin name (the one we already have)
+     * @param string $table         Table name (the one we already have)
      *
      * @return \csphere\core\datamapper\Finder
      **/
+    public function join($foreignPlugin, $foreignTable,
+        $serial, $foreign = '', $plugin = '', $table = ''
+    ) {
+        if ($plugin != '') {
+            $plugin = $this->schema;
+        } else {
+            $plugin .= ($table != '') ? '_' . $table : '';
+        }
 
-    public function join($plugin, $table, $serial, $foreign = '')
-    {
-        $this->_parts['joins'][] = [$plugin, $table, $serial, $foreign];
+        $foreignPlugin .= ($foreignTable != '') ? '_' . $foreignTable : '';
+
+        $this->_parts['joins'][] = [$plugin, $foreignPlugin, $serial,
+            $foreign];
 
         return $this;
     }

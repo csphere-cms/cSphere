@@ -156,7 +156,7 @@ class Model extends \csphere\core\datamapper\Base
 
         // Construct query and fetch result
         $sql = \csphere\core\sql\DML::delete(
-            $this->schema, $this->serial, $rid
+            $this->schema, '', [[$this->serial, '=', $rid, false, false]]
         );
 
         $roa = $this->database->exec($sql['statement'], $sql['input']);
