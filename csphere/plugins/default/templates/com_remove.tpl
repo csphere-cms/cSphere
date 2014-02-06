@@ -3,6 +3,6 @@
 
     <br>
 
-    <a href="{* link $plugin$/$action$/id/$rid$/sure/no *}" class="btn btn-default btn-lg btn-block">{* lang default.no *}</a>
-    <a href="{* link $plugin$/$action$/id/$rid$/sure/yes *}" class="btn btn-danger btn-lg btn-block">{* lang default.yes *}</a>
+    <a href="{* link $plugin$/$action$/id/$rid$/sure/no *}" class="btn btn-default btn-lg btn-block" role="button">{* lang default.no *}</a>
+    <a href="{* link $plugin$/$action$/id/$rid$/sure/yes *}" class="btn btn-danger btn-lg btn-block" role="button">{* lang default.yes *}</a>
 </div><!--END well-->

@@ -9,7 +9,7 @@
             <a class="navbar-brand" data-content="cSphere"></a><!--END debug-navigation navbar-header navbar-brand-->
         </div><!--END debug-navigation navbar-header-->
 
-        <div id="debug-collapse" class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="debug-collapse">
 
             <nav>
                 <ul class="nav navbar-nav navbar-left">
@@ -60,7 +60,7 @@
                     </a>
                 <li>
                 <li>
-                    <a id="debug_request_selector" class="csphere-popover" data-content="{* lang debug.request_type *}">
+                    <a class="csphere-popover" id="debug_request_selector" data-content="{* lang debug.request_type *}">
                         <i class="fa fa-refresh fa-lg"></i>
                         <strong id="debug_request_type">HTTP</strong>
                     </a>
@@ -87,10 +87,10 @@
 <div id="debug-content" class="navbar navbar-default navbar-fixed-bottom hidden-xs">
     <div class="container tab-content">
 
-        <section id="tab-empty" class="tab-pane fade in active">
+        <section class="tab-pane fade in active" id="tab-empty">
         </section><!--END debug-content empty tab-->
 
-        <section id="tab-logs" class="tab-pane fade">
+        <section class="tab-pane fade" id="tab-logs">
 
             <header class="page-header">
                 <h3>{* lang debug.logs *}</h3>
@@ -125,7 +125,7 @@
 
         </section><!--END debug-content tab-logs-->
 
-        <section id="tab-database" class="tab-pane fade">
+        <section class="tab-pane fade" id="tab-database">
 
             <header class="page-header">
                 <h3>{* lang debug.database *}</h3>
@@ -138,7 +138,7 @@
             </ol>
         </section><!--END debug-content tab-database-->
 
-        <section id="tab-errors" class="tab-pane fade">
+        <section class="tab-pane fade" id="tab-errors">
 
             <header class="page-header">
                 <h3>{* lang debug.errors *}</h3>
@@ -151,7 +151,7 @@
             </ol>
         </section><!--END debug-content tab-errors-->
 
-        <section id="tab-includes" class="tab-pane fade">
+        <section class="tab-pane fade" id="tab-includes">
 
             <header class="page-header">
                 <h3>{* lang debug.includes *}</h3>

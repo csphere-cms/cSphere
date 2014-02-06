@@ -36,7 +36,6 @@
         <define name="logout_true">Successfully logged out, please come back soon!</define>
         <define name="memberships">Memberships</define>
         <define name="settings">Settings</define>
-        <define name="password_confirm">Confirm Password</define>
         <define name="password_new">New Password</define>
         <define name="password_old">Old Password</define>
         <define name="profile">Profile</define>

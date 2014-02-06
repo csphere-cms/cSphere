@@ -4,7 +4,7 @@
         <header>
             <section class="page-header">
                 <h3>
-                    {* lang languages.languages *} - {* lang themes.themes *}
+                    {* lang languages.languages *} - {* lang default.themes *}
                     <small>
                         {* lang languages.language *}: {* var short *}
                     </small>

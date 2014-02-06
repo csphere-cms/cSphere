@@ -15,7 +15,7 @@
 
             {* tpl default/com_input_pwd name=password_new label=default.password holder=users.password_new *}
 
-            {* tpl default/com_input_pwd name=password_confirm label=default.password holder=users.password_confirm *}
+            {* tpl default/com_input_pwd name=password_confirm label=default.password holder=default.password_confirm *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

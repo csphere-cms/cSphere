@@ -6,7 +6,7 @@
 
         {* if buttons.create == 'yes' *}
         <div class="btn-group pull-right">
-            <a href="{* link $plugin$/create *}" class="btn btn-primary">{* lang default.create *}</a>
+            <a href="{* link $plugin$/create *}" class="btn btn-primary" role="button">{* lang default.create *}</a>
 
             {* if buttons.options == 'yes' *}
             <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownOptions" data-toggle="dropdown">
