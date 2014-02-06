@@ -4,7 +4,7 @@
         <header>
             <section class="page-header clearfix">
                 <h3 class="pull-left">
-                    {* lang languages.languages *} - {* lang languages.plugins *}
+                    {* lang languages.languages *} - {* lang default.plugins *}
                     <small>
                         - {* lang languages.language *}: {* var short *}
                     </small>
