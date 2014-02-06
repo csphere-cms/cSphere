@@ -115,8 +115,8 @@ class Database
     /**
      * Install plugin database content
      *
-     * @param boolean $tables Wether to install tables
-     * @param boolean $data   Wether to install data
+     * @param boolean $tables Whether to install tables
+     * @param boolean $data   Whether to install data
      *
      * @return boolean
     **/
@@ -178,7 +178,7 @@ class Database
         if ($options == true) {
 
             $sql = \csphere\core\sql\DML::delete(
-                'options', 'option_plugin', $this->_plugin
+                'options', ['option_plugin', "=", $this->_plugin, false, false]
             );
 
             $this->_database->exec($sql['statement'], $sql['input']);
@@ -287,7 +287,7 @@ class Database
             $value = $delete['where'][0]['value'];
 
             $sql = \csphere\core\sql\DML::delete(
-                $delete['table'], $where, $value
+                $delete['table'], [$where, "=", $value, false, false]
             );
 
             $this->_database->exec($sql['statement'], $sql['input']);
