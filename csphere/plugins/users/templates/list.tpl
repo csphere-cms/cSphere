@@ -35,7 +35,7 @@
                 </tr>
                 {* else users *}
                 <tr>
-                    <th colspan="3" class="text-center">
+                    <th class="text-center" colspan="3">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

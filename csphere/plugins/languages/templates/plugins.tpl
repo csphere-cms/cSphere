@@ -11,7 +11,7 @@
                 </h3><!--END header page-header headline-->
 
                 <div class="btn-group pull-right">
-                    <a href="{* link languages/duplication/short/$short$ *}" class="btn btn-danger">
+                    <a href="{* link languages/duplication/short/$short$ *}" class="btn btn-danger" role="button">
                         {* lang languages.duplication *}
                     </a>
                 </div><!--END header page-header btn-group-->

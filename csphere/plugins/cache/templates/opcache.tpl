@@ -8,7 +8,7 @@
                 </h3><!--END header page-header headline-->
 
                 <div class="btn-group pull-right">
-                    <a href="{* link cache/clear *}" class="btn btn-danger">
+                    <a href="{* link cache/clear *}" class="btn btn-danger" role="button">
                         {* lang cache.clear *}
                     </a>
                 </div><!--END header page-header btn-group-->

@@ -38,7 +38,7 @@
                 </tr>
                 {* else members *}
                 <tr>
-                    <th colspan="4" class="text-center">
+                    <th class="text-center" colspan="4">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

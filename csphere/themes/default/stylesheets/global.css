@@ -10,7 +10,7 @@
 
 
 body {
-    background-color: #FFF;
+    background-color: #fff;
     color: #333;
     font-family: Arial, Tahoma, Verdana, "Helvetica Neue", "Neue Helvetica", Helvetica, sans-serif;
     padding: 75px 0 60px;
@@ -20,7 +20,7 @@ body {
 /*  __LINKS
 ------------------------------------------------------------*/
 a:link, a:visited { outline: none; text-decoration: none; }
-a:hover { color: #D72322; }
+a:hover { color: #d72322; }
 
 
 /*  __BUTTONS
@@ -31,12 +31,12 @@ button { outline: none; }
 /*  __SELECTIONS
 ------------------------------------------------------------*/
 ::-moz-selection {
-    background: #2CB4E8;
-    color: #FFF;
+    background: #2cb4e8;
+    color: #fff;
     text-shadow: none;
 }
 ::selection {
-    background: #2CB4E8;
-    color: #FFF;
+    background: #2cb4e8;
+    color: #fff;
     text-shadow: none;
 }

@@ -10,7 +10,7 @@
                 </h3><!--END header page-header headline-->
 
                 <div class="btn-group pull-right">
-                    <a href="{* link plugins/market *}" class="btn btn-primary">
+                    <a href="{* link plugins/market *}" class="btn btn-primary" role="button">
                         {* lang plugins.plugin_market *}
                     </a>
                     <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownOptions" data-toggle="dropdown">
