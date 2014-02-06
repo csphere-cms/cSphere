@@ -286,6 +286,15 @@ abstract class CMD_Prepare
 
         if (isset($target[1])) {
 
+            // Using other plugins then the current one or default is dangerous
+            if ($target[0] != 'default' && $target[0] != $part['plugin']) {
+
+                $msg = 'Plugin "' . $part['plugin'] . '" used a language-key '
+                     . 'of a foreign plugin: ' . $part['key'];
+
+                trigger_error($msg, E_USER_WARNING);
+            }
+
             $part['plugin'] = $target[0];
             $part['key']    = $target[1];
         }
