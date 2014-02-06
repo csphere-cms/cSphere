@@ -21,8 +21,8 @@ $rad->map('manage', 'manage');
 // Define closure to execute before finder fetches results
 $finder = function ($object) {
 
-    $object->join('users', '', 'user_id', '', 'members');
-    $object->join('groups', '', 'group_id', '', 'members');
+    $object->join('users', '', 'user_id');
+    $object->join('groups', '', 'group_id');
 
     return $object;
 };

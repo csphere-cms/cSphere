@@ -198,7 +198,7 @@ class Finder extends \csphere\core\datamapper\Base
     public function join($foreignPlugin, $foreignTable,
         $serial, $foreign = '', $plugin = '', $table = ''
     ) {
-        if ($plugin != '') {
+        if ($plugin == '') {
             $plugin = $this->schema;
         } else {
             $plugin .= ($table != '') ? '_' . $table : '';
