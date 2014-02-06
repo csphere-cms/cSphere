@@ -87,8 +87,8 @@ class Finder extends \csphere\core\datamapper\Base
         // Construct query and fetch result
         $sql = \csphere\core\sql\DML::delete(
             $this->schema,
-            $this->_parts['joins'],
-            $this->_parts['where']
+            $this->_parts['where'],
+            $this->_parts['joins']
         );
 
         $result = $this->database->query(
