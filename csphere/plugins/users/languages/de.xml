@@ -36,7 +36,6 @@
         <define name="logout_true">Abmeldung erfolgreich, komm bitte bald wieder!</define>
         <define name="memberships">Mitgliedschaften</define>
         <define name="settings">Einstellungen</define>
-        <define name="password_confirm">Passwort bestätigen</define>
         <define name="password_new">Neues Password</define>
         <define name="password_old">Altes Password</define>
         <define name="profile">Profil</define>
