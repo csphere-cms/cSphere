@@ -181,13 +181,9 @@ abstract class DML
      *
      * @return array
      **/
-    public static function delete(
-        $table,
-        array $conditions = [],
-        $joins = ''
-    ) {
-        $assoc  = [];
-        // Build a matching delete query
+    public static function delete($table, array $conditions = [], $joins = '')
+    {
+        $assoc = [];
 
         // Add joins to query
         if (is_array($joins)) {
@@ -195,8 +191,7 @@ abstract class DML
             $joins = self::_joins($joins);
         }
 
-
-        // Build a matching select query
+        // Build a matching delete query
         $query = 'DELETE FROM {pre}' . $table . $joins;
 
         // Add conditions to query
