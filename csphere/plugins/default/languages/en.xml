@@ -75,6 +75,8 @@
         <define name="scriptinfo">Scriptinfo</define>
         <define name="since">Since</define>
         <define name="size">Size</define>
+        <define name="tag">Tag</define>
+        <define name="tags">Tags</define>
         <define name="themes">Themes</define>
         <define name="time">Time</define>
         <define name="uninstall">Uninstall</define>
