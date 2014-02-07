@@ -91,7 +91,7 @@ class Finder extends \csphere\core\datamapper\Base
         );
 
         $result = $this->database->query(
-            $sql['statement'], $sql['input'], 0, 0
+            $sql['statement'], $sql['input'], 0, 0, false
         );
 
         // Reset parts array
@@ -214,7 +214,6 @@ class Finder extends \csphere\core\datamapper\Base
 
         // Add foreign table to table name if used
         if ($foreignTable != '') {
-
             $foreignPlugin .= '_' . $foreignTable;
         }
 
