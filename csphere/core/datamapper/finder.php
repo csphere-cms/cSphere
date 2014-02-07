@@ -206,11 +206,17 @@ class Finder extends \csphere\core\datamapper\Base
 
         } else {
 
-            $plugin .= ($table != '') ? '_' . $table : '';
+            if ($table != '') {
+                $plugin .= '_' . $table;
+            }
+
         }
 
         // Add foreign table to table name if used
-        $foreignPlugin .= ($foreignTable != '') ? '_' . $foreignTable : '';
+        if ($foreignTable != '') {
+
+            $foreignPlugin .= '_' . $foreignTable;
+        }
 
         $this->_parts['joins'][] = [
             $plugin, $foreignPlugin, $serial, $foreignColumn
