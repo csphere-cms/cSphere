@@ -166,7 +166,7 @@ class Finder extends \csphere\core\datamapper\Base
         );
 
         $result = $this->database->query(
-            $sql['statement'] . ")", $sql['input'], 0,0
+            $sql['statement'] . ")", $sql['input'], 0, 0
         );
 
         $result = isset($result[0]['count']) ? $result[0]['count'] : 0;
