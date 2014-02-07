@@ -157,16 +157,12 @@ class Finder extends \csphere\core\datamapper\Base
         $sql = \csphere\core\sql\DML::select(
             $this->schema,
             $this->_parts['joins'],
-            // @TODO there might be a better/nice way to do this?
-            'COUNT(*) AS count FROM (SELECT * ',
-            $this->_parts['where'],
-            [],
-            $this->_parts['group'],
-            $this->_parts['having']
+            'COUNT(DISTINCT( ' . $this->serial . ')) AS count',
+            $this->_parts['where']
         );
 
         $result = $this->database->query(
-            $sql['statement'] . ") cTable", $sql['input'], 0, 0
+            $sql['statement'], $sql['input'], 0, 0
         );
 
         $result = isset($result[0]['count']) ? $result[0]['count'] : 0;
