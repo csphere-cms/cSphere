@@ -127,59 +127,47 @@ abstract class Base_PDO extends \csphere\core\database\Base
     /**
      * Sends a query to the database and fetches the result
      *
-     * @param string  $prepare      Prepared query string with placeholders
-     * @param array   $assoc        Array with columns and values
-     * @param integer $first        Number of the first dataset to show
-     * @param integer $max          Number of datasets to show from first on
-     * @param boolean $returnValues Possibility to ignore what PDO returns. If false
-     * query() returns an empty array
+     * @param string  $prepare Prepared query string with placeholders
+     * @param array   $assoc   Array with columns and values
+     * @param integer $first   Number of the first dataset to show
+     * @param integer $max     Number of datasets to show from first on
      *
      * @return array
      **/
 
-    public function query(
-        $prepare, array $assoc, $first = 0, $max = 1, $returnValues = true
-    ) {
+    public function query($prepare, array $assoc, $first = 0, $max = 1)
+    {
         // Attach limit vars first and max
         if ($first != 0 || $max != 0) {
 
             $prepare .= ' ' . $this->limits($first, $max);
         }
 
-
         $statement = $this->_execute($prepare, $assoc, false);
 
-        if ($returnValues) {
-            $max == 1;
+        // Determine what to return
+        if ($max == 1) {
+
+            $result = $statement->fetch(\PDO::FETCH_ASSOC);
+
+            if (!is_array($result)) {
+
+                if ($result === false) {
+
+                    $result = [];
+
+                } else {
+
+                    $result = [$result];
+                }
+            }
+
+        } else {
+
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         }
 
-            // Determine what to return
-            if ($max == 1) {
-
-                $result = $statement->fetch(\PDO::FETCH_ASSOC);
-
-                if (!is_array($result)) {
-
-                    if ($result === false) {
-
-                        $result = [];
-
-                    } else {
-
-                        $result = [$result];
-                    }
-                }
-
-            } else {
-
-                $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
-            }
-            return (array)$result;
-
-        /*} else {
-            return [];
-        }*/
-
+        return (array)$result;
     }
 
     /**
