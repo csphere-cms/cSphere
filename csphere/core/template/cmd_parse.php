@@ -75,7 +75,7 @@ abstract class CMD_Parse
         // Clear current box to not end in an infinite loop
         self::$_view->clear();
 
-        \csphere\core\router\Sandbox::run($part['key']);
+        \csphere\core\router\Sandbox::full($part['key']);
 
         $box = self::$_view->box();
 

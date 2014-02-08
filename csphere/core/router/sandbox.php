@@ -29,21 +29,17 @@ namespace csphere\core\router;
 class Sandbox
 {
     /**
-     * Include a target file
+     * Include a target file and control error handling
      *
      * @param string $file File name with full path
      *
      * @return boolean
      **/
 
-    public static function run($file)
+    public static function full($file)
     {
         // Use output buffer to not get verbose
         ob_start();
-
-        // Hide error messages at this part
-        $errors = ini_get('display_errors');
-        ini_set('display_errors', 0);
 
         // Try to include and execute the target file
         try {
@@ -57,10 +53,33 @@ class Sandbox
             unset($controller);
         }
 
+        ob_end_clean();
+
+        return true;
+    }
+
+    /**
+     * Include a target file without error handling
+     *
+     * @param string $file File name with full path
+     *
+     * @return boolean
+     **/
+
+    public static function light($file)
+    {
+        // Use output buffer to not get verbose
+        ob_start();
+
+        // Hide error messages at this part
+        $errors = ini_get('display_errors');
+        ini_set('display_errors', 0);
+
+        include $file;
+
         // Change error messages back to default setting
         ini_set('display_errors', $errors);
 
-        // Clean output buffer
         ob_end_clean();
 
         return true;
