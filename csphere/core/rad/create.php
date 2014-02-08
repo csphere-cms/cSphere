@@ -43,6 +43,8 @@ class Create extends \csphere\core\rad\Base
      **/
     protected $previous = 'manage';
 
+    private $_afterRecord = null;
+
     /**
      * Delegate action to run this method
      *
@@ -70,6 +72,15 @@ class Create extends \csphere\core\rad\Base
             // Get data with insert ID
             $data[$this->schema] = $dm_table->insert($table);
 
+            // after the creation of the dataset we allow some
+            // more action by the user. now he can use the id of the
+            // just created entry
+            if (is_callable($this->_afterRecord)) {
+
+                call_user_func($this->_afterRecord, $data[$this->schema]);
+
+            }
+
             $this->message('record_success', 0, 'green');
 
         } else {
@@ -80,4 +91,29 @@ class Create extends \csphere\core\rad\Base
             $this->view($data);
         }
     }
+
+    /**
+     * Set closure for after record data
+     * This allows the user to execute code after the record was created. Now
+     * he could also use the id of the record that was just created.
+     *
+     * @param \Closure $closure Closure
+     *
+     * @return boolean
+     **/
+
+    public final function callAfterRecord($closure)
+    {
+        $result = false;
+
+        if ($closure instanceof \Closure) {
+
+            $this->_afterRecord = $closure;
+
+            $result = true;
+        }
+
+        return $result;
+    }
+
 }
