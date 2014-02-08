@@ -193,7 +193,7 @@ class Finder extends \csphere\core\datamapper\Base
         $foreignPlugin,
         $foreignTable,
         $serial,
-        $foreignColumn,
+        $foreignColumn = '',
         $plugin = '',
         $table = ''
     ) {
