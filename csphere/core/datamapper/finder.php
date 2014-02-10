@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Provides a layer for select queries
+ * Provides a layer for advanced queries
  *
  * PHP Version 5
  *
@@ -16,7 +16,7 @@
 namespace csphere\core\datamapper;
 
 /**
- * Provides a layer for select queries
+ * Provides a layer for advanced queries
  *
  * @category  Core
  * @package   Datamapper
@@ -83,7 +83,7 @@ class Finder extends \csphere\core\datamapper\Base
      */
     public function remove()
     {
-        // Construct query and fetch result
+        // Construct query and execute it
         $sql = \csphere\core\sql\DML::delete(
             $this->schema,
             $this->_parts['where'],
@@ -202,16 +202,14 @@ class Finder extends \csphere\core\datamapper\Base
 
             $plugin = $this->schema;
 
-        } else {
+        } elseif ($table != '') {
 
-            if ($table != '') {
-                $plugin .= '_' . $table;
-            }
-
+            $plugin .= '_' . $table;
         }
 
         // Add foreign table to table name if used
         if ($foreignTable != '') {
+
             $foreignPlugin .= '_' . $foreignTable;
         }
 
