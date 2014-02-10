@@ -6,7 +6,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Contact</name>
-    <info>Provides an imprint and a contact form</info>
+    <info>Provides a contact form</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="fontawesome">fa-envelope-o</icon>
     <authors>

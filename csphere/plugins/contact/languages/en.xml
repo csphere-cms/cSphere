@@ -8,7 +8,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Contact</name>
-    <info>Provides an imprint and a contact form</info>
+    <info>Provides a contact form</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="famfamfam">gb</icon>
     <authors>
@@ -21,5 +21,12 @@
     </contact>
     <definitions>
         <define name="contact">Contact</define>
+        <define name="name">name</define>
+        <define name="mail">e-mail</define>
+        <define name="url">website</define>
+        <define name="subject">subject</define>
+        <define name="message">message</define>
+        <define name="date">date</define>
+        <define name="answer">answer</define>
     </definitions>
 </language>

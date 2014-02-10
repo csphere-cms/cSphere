@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>groups</plugin>
+    <tables>
+        <table name="contact">
+            <columns>
+                <column name="contact_id" datatype="serial" max="0" default="" />
+                <column name="contact_name" datatype="varchar" max="80" default="" />
+                <column name="contact_date" datatype="varchar" max="80" default="" />
+                <column name="contact_mail" datatype="varchar" max="80" default="" />
+                <column name="contact_url" datatype="varchar" max="200" default="" />
+                <column name="contact_subject" datatype="varchar" max="80" default="" />
+                <column name="contact_message" datatype="text" max="0" default="" />
+            </columns>
+            <primary>
+                <column name="contact_id" />
+            </primary>
+        </table>
+    </tables>
+    <data>
+        <insert table="options">
+            <column name="option_plugin">contacts</column>
+            <column name="option_name">main_id</column>
+            <column name="option_value">0</column>
+        </insert>
+    </data>
+</database>
