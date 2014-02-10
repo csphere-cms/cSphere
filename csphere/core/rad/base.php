@@ -289,7 +289,7 @@ abstract class Base
     }
 
     /**
-     * Set closure for record data
+     * Set closure for record data before persistency gets involved
      *
      * @param \Closure $closure Closure
      *
