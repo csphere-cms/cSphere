@@ -9,10 +9,10 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.contact_date *}">{* lang contact.date *}</a> {* raw arrow.contact_date *}
+                        <a href="{* raw order.contact_date *}">{* lang default.date *}</a> {* raw arrow.contact_date *}
                     </th>
                     <th>
-                        <a href="{* raw order.contact_date *}">{* lang contact.name *}</a> {* raw arrow.contact_name *}
+                        <a href="{* raw order.contact_date *}">{* lang default.name *}</a> {* raw arrow.contact_name *}
                     </th>
                     <th>
                         <a href="{* raw order.contact_subject *}">{* lang contact.subject *}</a> {* raw arrow.contact_subject *}

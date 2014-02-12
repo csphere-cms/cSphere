@@ -7,11 +7,11 @@
 
         <form class="form-horizontal" role="form" action="{* link contact/create *}" method="POST">
 
-            {* tpl default/com_input name=contact_name label=contact.name value=contact.contact_name *}
+            {* tpl default/com_input name=contact_name label=default.name value=contact.contact_name *}
 
-            {* tpl default/com_input name=contact_mail label=contact.mail value=contact.contact_mail *}
+            {* tpl default/com_input name=contact_mail label=default.contact_email value=contact.contact_mail *}
 
-            {* tpl default/com_input name=contact_url label=contact.url value=contact.contact_url *}
+            {* tpl default/com_input name=contact_url label=default.contact_web value=contact.contact_url *}
 
             {* tpl default/com_input name=contact_subject label=contact.subject value=contact.contact_subject *}
 

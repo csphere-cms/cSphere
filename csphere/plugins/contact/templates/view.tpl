@@ -14,7 +14,7 @@
         <table class="table table-striped table-hover">
             <tr>
                 <th>
-                    {* lang name *}
+                    {* lang default.name *}
                 </th>
                 <td>
                     {* var groups.group_name *}
@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang since *}
+                    {* lang default.since *}
                 </th>
                 <td>
                     {* date groups.group_since *}
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang url *}
+                    {* lang default.url *}
                 </th>
                 <td>
                     {* if groups.group_url == '' *}
@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <th>
-                    {* lang info *}
+                    {* lang default.info *}
                 </th>
                 <td>
                     {* var groups.group_info *}
