@@ -43,29 +43,47 @@ abstract class Request
 
     private static function _meta(array $server)
     {
-        // Get protocol of request
-        $request = ['protocol' => self::_protocol($server)];
+        $request = [];
 
-        // Add dirname with trailing slash and query string
-        $uri                = str_replace('\\', '/', $server['REQUEST_URI']);
-        $uri                = str_replace('index.php', '', $uri);
-        $uri                = parse_url($uri);
-        $request['dirname'] = rtrim($uri['path'], '/') . '/';
-        $request['query']   = isset($uri['query']) ? $uri['query'] : '';
+        // Get dirname and protocol
+        $request['dirname']  = self::_dirname($server['SCRIPT_NAME']);
+        $request['protocol'] = self::_protocol($server);
 
         // Get current dns and port
-        $request['dns'] = $server['HTTP_HOST'];
+        $request['dns']  = $server['HTTP_HOST'];
         $request['port'] = '';
 
         $port_pos = strpos($request['dns'], ':');
 
         if ($port_pos !== false) {
 
-            $request['dns'] = substr($request['dns'], 0, $port_pos);
+            $request['dns']  = substr($request['dns'], 0, $port_pos);
             $request['port'] = strstr($request['dns'], ':');
         }
 
         return $request;
+    }
+
+    /**
+     * Determine request dirname and query string
+     *
+     * @param string $script Script name of URI
+     *
+     * @return string
+     **/
+
+    private static function _dirname($script)
+    {
+        $script = rawurlencode($script);
+        $script = str_replace('%2F', '/', $script);
+
+        // Parse dummy URL and get path
+        $url           = 'http://csphere.eu' . '/' . ltrim($script, '/');
+        $parts         = parse_url($url);
+        $parts['path'] = str_replace('/index.php', '', $parts['path']);
+        $parts['path'] = rtrim($parts['path'], '/') . '/';
+
+        return $parts['path'];
     }
 
     /**
@@ -102,14 +120,28 @@ abstract class Request
 
     private static function _data(array $server)
     {
-        $run = 2;
-        $map = self::$_request['dirname'];
+        $run = 0;
+        $map = $server['REQUEST_URI'];
 
-        // Check if request type is pretty_url based or classic
-        if (self::$_request['query'] != '') {
+        // Check if request type is pretty_url based
+        if (self::$_request['query'] == '') {
 
-            $run = 1;
-            $map = str_replace(['&', '='], '/', self::$_request['query']);
+            $run    = 2;
+            $length = strlen(self::$_request['dirname']);
+            $map    = substr($map, $length);
+            $map    = str_replace('index.php', '', $map);
+
+        } else {
+
+            // Add query string
+            $split = explode('?', $map, 2);
+
+            if (isset($split[1])) {
+
+                $map = $split[1];
+            }
+
+            $map = str_replace(['&', '='], '/', $map);
         }
 
         // Creates a key value array out of the request map
