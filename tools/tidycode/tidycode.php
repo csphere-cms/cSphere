@@ -25,14 +25,17 @@ function tidycodeFile ($file)
 {
     // File extensions where the encoding will be converted
     $allowed = array(
-        'conf', 'config', 'css', 'editorconfig', 'htaccess', 'htm', 'html', 'ini',
-        'js', 'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
+        'bat', 'conf', 'config', 'css', 'editorconfig', 'gitattributes',
+        'gitignore', 'hdf', 'htaccess', 'htm', 'html', 'ini', 'js', 'md', 'php',
+        'sh', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml'
+    );
 
     // File extensions that are known as forbidden
-    $forbidden = array('DS_Store', 'bat', 'buildpath', 'eot', 'gif',
-        'gitattributes', 'gitignore', 'hdf', 'ico', 'iml', 'jpg', 'log', 'name',
-        'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb', 'scss',
-        'sh', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff');
+    $forbidden = array(
+        'DS_Store', 'buildpath', 'eot', 'gif', 'ico', 'iml', 'jpg', 'log',
+        'name', 'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb',
+        'scss', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff'
+    );
 
     // Get file data and try to tidy it
     $data = pathinfo($file);
@@ -111,6 +114,7 @@ function tidycodeSave ($file, $content, $content_old)
         $filehandler = fopen($file_low, 'w');
 
         if (function_exists('stream_encoding')) {
+
             stream_encoding($filehandler, 'UTF-8');
         }
 
@@ -134,7 +138,9 @@ function tidycodeSave ($file, $content, $content_old)
 function tidycodeDir ($dir)
 {
     // File names and directories to skip
-    $ignore = array('.', '..', '.git', '.idea', '.sonar', 'tmp', 'images');
+    $ignore = array(
+        '.', '..', '.git', '.idea', '.sonar', 'DS_Store', 'images', 'tmp'
+    );
 
     static $count_dirs    = 0;
     static $count_files   = 0;
@@ -157,6 +163,7 @@ function tidycodeDir ($dir)
             if (is_dir($nextcheck)) {
 
                 tidycodeDir($nextcheck);
+
             } else {
 
                 $count_files++;
