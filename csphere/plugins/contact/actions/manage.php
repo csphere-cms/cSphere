@@ -21,5 +21,5 @@ $rad->map('manage', 'manage');
 // Define order columns
 $order = array('contact_date', 'contact_name', 'contact_subject');
 
-$rad->search(array('contact_name'), true, true);
-$rad->delegate('contact_name', $order);
+$rad->search(array('contact_name'), true);
+$rad->delegate('contact_date', $order);
