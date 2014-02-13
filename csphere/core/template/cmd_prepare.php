@@ -117,14 +117,7 @@ abstract class CMD_Prepare
 
         if (isset($replace[1])) {
 
-            $cmds   = [];
-            $splits = count($replace);
-
-            for ($i = 1; $i < $splits; $i++) {
-
-                $split           = explode('=', $replace[$i], 2);
-                $cmds[$split[0]] = isset($split[1]) ? $split[1] : '';
-            }
+            $cmds = \csphere\core\template\Prepare::params($replace);
         }
 
         if (isset($target[1])) {
