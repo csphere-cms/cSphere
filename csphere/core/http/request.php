@@ -125,7 +125,7 @@ abstract class Request
         $split = explode('?', $map, 2);
 
         // Check if request type is pretty_url based
-        if (isset($split[1]) {
+        if (isset($split[1])) {
 
             $map = str_replace(['&', '='], '/', $split[1]);
 
