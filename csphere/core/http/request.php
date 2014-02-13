@@ -120,28 +120,21 @@ abstract class Request
 
     private static function _data(array $server)
     {
-        $run = 0;
-        $map = $server['REQUEST_URI'];
+        $run   = 0;
+        $map   = $server['REQUEST_URI'];
+        $split = explode('?', $map, 2);
 
         // Check if request type is pretty_url based
-        if (self::$_request['query'] == '') {
+        if (isset($split[1]) {
+
+            $map = str_replace(['&', '='], '/', $split[1]);
+
+        } else {
 
             $run    = 2;
             $length = strlen(self::$_request['dirname']);
             $map    = substr($map, $length);
             $map    = str_replace('index.php', '', $map);
-
-        } else {
-
-            // Add query string
-            $split = explode('?', $map, 2);
-
-            if (isset($split[1])) {
-
-                $map = $split[1];
-            }
-
-            $map = str_replace(['&', '='], '/', $map);
         }
 
         // Creates a key value array out of the request map
