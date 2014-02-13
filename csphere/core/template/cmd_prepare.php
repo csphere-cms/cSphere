@@ -130,8 +130,7 @@ abstract class CMD_Prepare
         if (isset($target[1])) {
 
             // Get filename of plugin template
-            $plugin = $target[0];
-            $checks = new \csphere\core\plugins\Checks($plugin);
+            $checks = new \csphere\core\plugins\Checks($target[0]);
             $checks->setTemplate($target[1]);
             $file = $checks->result();
 
@@ -139,13 +138,13 @@ abstract class CMD_Prepare
             $string = file_get_contents($file);
 
             // Check plugin for placeholder origin of e.g. translation
-            if ($plugin == 'default') {
+            if ($target[0] == 'default') {
 
-                $plugin = $part['plugin'];
+                $target[0] = $part['plugin'];
             }
 
             $parts  = \csphere\core\template\Prepare::template(
-                $string, $plugin, $cmds
+                $string, $target[0], $cmds
             );
 
             $part = ['cmd' => 'multi', 'value' => $parts];
