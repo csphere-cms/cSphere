@@ -134,10 +134,18 @@ abstract class CMD_Prepare
             $checks->setTemplate($target[1]);
             $file = $checks->result();
 
-            // Get file content and prepare it
+            // Get file content
             $string = file_get_contents($file);
+
+
+            // Check plugin for placeholder origin of e.g. translation
+            if ($target[0] == 'default') {
+
+                $target[0] = $part['plugin'];
+            }
+
             $parts  = \csphere\core\template\Prepare::template(
-                $string, $part['plugin'], $cmds
+                $string, $target[0], $cmds
             );
 
             $part = ['cmd' => 'multi', 'value' => $parts];
