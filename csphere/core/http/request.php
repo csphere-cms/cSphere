@@ -43,13 +43,15 @@ abstract class Request
 
     private static function _meta(array $server)
     {
-        $request = pathinfo($server['SCRIPT_NAME']);
+        // Get protocol of request
+        $request = ['protocol' => self::_protocol($server)];
 
-        // All slashes might go one way and dirname may end with a slash
-        $request['dirname'] = str_replace('\\', '/', $request['dirname']);
-        $request['dirname'] = rtrim($request['dirname'], '/') . '/';
-
-        $request['protocol'] = self::_protocol($server);
+        // Add dirname with trailing slash and query string
+        $uri                = str_replace('\\', '/', $server['REQUEST_URI']);
+        $uri                = str_replace('index.php', '', $uri);
+        $uri                = parse_url($uri);
+        $request['dirname'] = rtrim($uri['path'], '/') . '/';
+        $request['query']   = isset($uri['query']) ? $uri['query'] : '';
 
         // Get current dns and port
         $request['dns'] = $server['HTTP_HOST'];
@@ -61,14 +63,6 @@ abstract class Request
 
             $request['dns'] = substr($request['dns'], 0, $port_pos);
             $request['port'] = strstr($request['dns'], ':');
-        }
-
-        // Add request method
-        $request['method'] = '';
-
-        if (isset($server['REQUEST_METHOD'])) {
-
-            $request['method'] = $server['REQUEST_METHOD'];
         }
 
         return $request;
@@ -101,28 +95,21 @@ abstract class Request
     /**
      * Splits the request content
      *
-     * @param array  $server  Content of predefined server data
-     * @param string $dirname Name of directory
+     * @param array $server Content of predefined server data
      *
      * @return array
      **/
 
-    private static function _data(array $server, $dirname)
+    private static function _data(array $server)
     {
-        // The uri contains important information, but the dirname should be cut
-        $map = substr($server['REQUEST_URI'], strlen($dirname));
+        $run = 2;
+        $map = self::$_request['dirname'];
 
-        // Test if url uses pretty link style or needs some changes
-        $qmark = strpos($map, '?');
-        $slash = strpos($map, '/');
-        $run   = 2;
-
-        if ($qmark !== false && ($slash === false || $qmark < $slash)) {
+        // Check if request type is pretty_url based or classic
+        if (self::$_request['query'] != '') {
 
             $run = 1;
-            $map = substr($map, $qmark);
-            $map = str_replace('?plugin=', '', $map);
-            $map = str_replace(['&', '='], '/', $map);
+            $map = str_replace(['&', '='], '/', self::$_request['query']);
         }
 
         // Creates a key value array out of the request map
@@ -130,12 +117,10 @@ abstract class Request
 
         $data = self::_dataParts($run, $parts);
 
-        // Plugin is always in front
-        $data['plugin'] = $parts[0];
-
-        // Action is second with pretty urls
+        // Set plugin and action for pretty_url
         if ($run == 2) {
 
+            $data['plugin'] = $parts[0];
             $data['action'] = isset($parts[1]) ? $parts[1] : '';
         }
 
@@ -190,18 +175,18 @@ abstract class Request
             self::$_request = self::_meta($server);
 
             // Get request data
-            self::$_request['data'] = self::_data(
-                $server, self::$_request['dirname']
-            );
+            self::$_request['data'] = self::_data($server);
         }
 
         // Check if a key is given
         if (empty($key)) {
 
             return self::$_request;
+
         } elseif (isset(self::$_request[$key])) {
 
             return self::$_request[$key];
+
         } else {
 
             return null;
