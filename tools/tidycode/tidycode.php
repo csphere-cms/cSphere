@@ -27,14 +27,13 @@ function tidycodeFile ($file)
     $allowed = array(
         'bat', 'conf', 'config', 'css', 'editorconfig', 'gitattributes',
         'gitignore', 'hdf', 'htaccess', 'htm', 'html', 'ini', 'js', 'md', 'php',
-        'sh', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml'
+        'properties', 'sh', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml'
     );
 
     // File extensions that are known as forbidden
     $forbidden = array(
-        'DS_Store', 'buildpath', 'eot', 'gif', 'ico', 'iml', 'jpg', 'log',
-        'name', 'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb',
-        'scss', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff'
+        'eot', 'gif', 'ico', 'jpg', 'log', 'otf', 'phar', 'png', 'sqlite',
+        'svg', 'svgz', 'tmp', 'ttf', 'woff'
     );
 
     // Get file data and try to tidy it
@@ -107,7 +106,7 @@ function tidycodeSave ($file, $content, $content_old)
     $result   = false;
     $file_low = strtolower($file);
 
-    if ($content != $content_old || $file_low != $file) {
+    if ($content !== $content_old || $file_low !== $file) {
 
         unlink($file);
 
