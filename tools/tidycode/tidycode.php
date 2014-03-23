@@ -77,6 +77,9 @@ function tidycodeFile ($file)
             $content = implode("\n", $lines);
         }
 
+        // All files should end with one empty newline
+        $content = rtrim($content) . "\n";
+
         // Save updated file content on changes
         $changed = tidycodeSave($file, $content, $content_old);
 
@@ -112,12 +115,6 @@ function tidycodeSave ($file, $content, $content_old)
         unlink($file);
 
         $filehandler = fopen($file_low, 'w');
-
-        if (function_exists('stream_encoding')) {
-
-            stream_encoding($filehandler, 'UTF-8');
-        }
-
         fwrite($filehandler, $content);
         fclose($filehandler);
 
