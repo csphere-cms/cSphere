@@ -15,9 +15,11 @@ See documentation link above for more information
 
 2. Start Sonarqube and login, e.g. at localhost:9000
 
+Executables are located in the bin directory
+The subdirectory should match the java edition (either 32 or 64 bit)
 User and Password are set to "admin" if unchanged
 
-3. Sonarqube PHP Plugin
+3. Sonarqube PHP Plugin Version 2 or later
 
 Can be done at Settings -> Update Center -> Available Plugins
 
