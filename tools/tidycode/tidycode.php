@@ -60,11 +60,8 @@ function tidycodeFile ($file)
             // Replace line endings to unix
             $content = str_replace("\r\n", "\n", $content);
 
-            // Replace tabs to four spaces except for this file
-            if ($data['basename'] != 'tidycode.php') {
-
-                $content = str_replace("	", "    ", $content);
-            }
+            // Replace tabs to four spaces
+            $content = str_replace("\t", "    ", $content);
 
             // Remove whitespace from line endings
             $lines = explode("\n", $content);
