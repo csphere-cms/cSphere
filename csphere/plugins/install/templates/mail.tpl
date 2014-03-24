@@ -9,9 +9,9 @@
 
         <form class="form-horizontal" role="form" action="{* link install/mail *}" method="POST">
 
-            {* tpl default/com_select_help name=mail_driver label=install.server options=mail.drivers help=install.mail_newline_info *}
+            {* tpl default/com_select name=mail_driver label=install.server options=mail.drivers *}
 
-            {* tpl default/com_select name=mail_newline label=install.mail_newline options=mail.newlines *}
+            {* tpl default/com_select_help name=mail_newline label=install.mail_newline options=mail.newlines help=install.mail_newline_info *}
 
             {* tpl default/com_input_adv name=mail_subject label=install.mail_subject value=mail.subject type=text holder=install.mail_subject_info *}
 
