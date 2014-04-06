@@ -94,7 +94,7 @@ abstract class Parse
         // Check if required data exists
         if ($part['data'] != []) {
 
-            // Loop threw data array
+            // Loop through data array
             foreach ($part['data'] AS $set) {
 
                 $set = array_merge($data, [$nest => $set]);

@@ -62,7 +62,7 @@ abstract class Agent
         $all    = count(self::$_browsers);
         $web    = array_keys(self::$_browsers);
 
-        // Run threw possible browsers
+        // Run through possible browsers
         for ($i = 0; $i < $all; $i++) {
 
             $search = strrpos($agent, $web[$i]);
@@ -104,7 +104,7 @@ abstract class Agent
         $all    = count(self::$_systems);
         $ops    = array_keys(self::$_systems);
 
-        // Run threw possible systems
+        // Run through possible systems
         for ($i = 0; $i < $all; $i++) {
 
             $search = strrpos($agent, $ops[$i]);
