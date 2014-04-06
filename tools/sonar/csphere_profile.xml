@@ -51,7 +51,7 @@
 <rule><repositoryKey>php</repositoryKey><key>S1117</key><priority>MAJOR</priority></rule>
 <rule><repositoryKey>php</repositoryKey><key>S125</key><priority>MAJOR</priority></rule>
 <rule><repositoryKey>php</repositoryKey><key>S122</key><priority>MAJOR</priority></rule>
-<rule><repositoryKey>php</repositoryKey><key>S1481</key><priority>MAJOR</priority></rule>
+<!--The following rule is defect in PHP Plugin 2.1 <rule><repositoryKey>php</repositoryKey><key>S1481</key><priority>MAJOR</priority></rule>-->
 <rule><repositoryKey>php</repositoryKey><key>S1068</key><priority>MAJOR</priority></rule>
 </rules>
 </profile>
