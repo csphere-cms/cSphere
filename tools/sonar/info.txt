@@ -9,7 +9,7 @@ http://docs.codehaus.org/display/SONAR
 
 Install:
 
-1. Sonarqube itself
+1. Sonarqube Version 4.2 or later
 
 See documentation link above for more information
 
@@ -19,7 +19,7 @@ Executables are located in the bin directory
 The subdirectory should match the java edition (either 32 or 64 bit)
 User and Password are set to "admin" if unchanged
 
-3. Sonarqube PHP Plugin Version 2 or later
+3. Sonarqube PHP Plugin Version 2.1 or later
 
 Can be done at Settings -> Update Center -> Available Plugins
 

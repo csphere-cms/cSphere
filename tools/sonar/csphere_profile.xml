@@ -46,5 +46,12 @@
 <rule><repositoryKey>php</repositoryKey><key>S105</key><priority>MINOR</priority></rule>
 <rule><repositoryKey>php</repositoryKey><key>S1172</key><priority>MAJOR</priority></rule>
 <rule><repositoryKey>php</repositoryKey><key>S1599</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S881</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S1488</key><priority>MINOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S1117</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S125</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S122</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S1481</key><priority>MAJOR</priority></rule>
+<rule><repositoryKey>php</repositoryKey><key>S1068</key><priority>MAJOR</priority></rule>
 </rules>
 </profile>
