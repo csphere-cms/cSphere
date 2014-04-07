@@ -18,6 +18,24 @@
                 </unique>
             </uniques>
         </table>
+        <table name="tags_plugin">
+            <columns>
+                <column name="tag_plugin_id" datatype="serial" max="0" default="" />
+                <column name="tag_id" datatype="integer" max="0" default="" />
+                <column name="plugin_name" datatype="varchar" max="80" default="" />
+                <column name="plugin_fid" datatype="integer" max="0" default="0" />
+            </columns>
+            <primary>
+                <column name="tag_plugin_id" />
+            </primary>
+            <uniques>
+                <unique name="tag_plugin">
+                    <column name="tag_id" />
+                    <column name="plugin_name" />
+                    <column name="plugin_fid" />
+                </unique>
+            </uniques>
+        </table>
     </tables>
     <data>
     </data>
