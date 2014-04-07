@@ -25,14 +25,16 @@ function tidycodeFile ($file)
 {
     // File extensions where the encoding will be converted
     $allowed = array(
-        'conf', 'config', 'css', 'editorconfig', 'htaccess', 'htm', 'html', 'ini',
-        'js', 'md', 'php', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml');
+        'bat', 'conf', 'config', 'css', 'editorconfig', 'gitattributes',
+        'gitignore', 'hdf', 'htaccess', 'htm', 'html', 'ini', 'js', 'md', 'php',
+        'properties', 'sh', 'txt', 'xml', 'xsd', 'xsl', 'tpl', 'txt', 'yml'
+    );
 
     // File extensions that are known as forbidden
-    $forbidden = array('DS_Store', 'bat', 'buildpath', 'eot', 'gif',
-        'gitattributes', 'gitignore', 'hdf', 'ico', 'iml', 'jpg', 'log', 'name',
-        'otf', 'phar', 'png', 'prefs', 'project', 'properties', 'rb', 'scss',
-        'sh', 'sqlite', 'svg', 'svgz', 'tmp', 'ttf', 'woff');
+    $forbidden = array(
+        'eot', 'gif', 'ico', 'jpg', 'log', 'otf', 'phar', 'png', 'sqlite',
+        'svg', 'svgz', 'tmp', 'ttf', 'woff'
+    );
 
     // Get file data and try to tidy it
     $data = pathinfo($file);
@@ -57,11 +59,8 @@ function tidycodeFile ($file)
             // Replace line endings to unix
             $content = str_replace("\r\n", "\n", $content);
 
-            // Replace tabs to four spaces except for this file
-            if ($data['basename'] != 'tidycode.php') {
-
-                $content = str_replace("	", "    ", $content);
-            }
+            // Replace tabs to four spaces
+            $content = str_replace("\t", "    ", $content);
 
             // Remove whitespace from line endings
             $lines = explode("\n", $content);
@@ -73,6 +72,9 @@ function tidycodeFile ($file)
 
             $content = implode("\n", $lines);
         }
+
+        // All files should end with one empty newline
+        $content = rtrim($content) . "\n";
 
         // Save updated file content on changes
         $changed = tidycodeSave($file, $content, $content_old);
@@ -104,16 +106,11 @@ function tidycodeSave ($file, $content, $content_old)
     $result   = false;
     $file_low = strtolower($file);
 
-    if ($content != $content_old || $file_low != $file) {
+    if ($content !== $content_old || $file_low !== $file) {
 
         unlink($file);
 
         $filehandler = fopen($file_low, 'w');
-
-        if (function_exists('stream_encoding')) {
-            stream_encoding($filehandler, 'UTF-8');
-        }
-
         fwrite($filehandler, $content);
         fclose($filehandler);
 
@@ -134,7 +131,9 @@ function tidycodeSave ($file, $content, $content_old)
 function tidycodeDir ($dir)
 {
     // File names and directories to skip
-    $ignore = array('.', '..', '.git', '.idea', '.sonar', 'tmp', 'images');
+    $ignore = array(
+        '.', '..', '.git', '.idea', '.sonar', 'DS_Store', 'images', 'tmp'
+    );
 
     static $count_dirs    = 0;
     static $count_files   = 0;
@@ -157,6 +156,7 @@ function tidycodeDir ($dir)
             if (is_dir($nextcheck)) {
 
                 tidycodeDir($nextcheck);
+
             } else {
 
                 $count_files++;

@@ -161,16 +161,13 @@ class Driver_File extends Base
     {
         $token = empty($ttl) ? $key : 'ttl_' . $key;
 
-        if (file_exists($this->_dir . $token . '.tmp')) {
+        if (file_exists($this->_dir . $token . '.tmp')
+            && (empty($ttl)
+            || filemtime($this->_dir . $token . '.tmp') >= (time() - $ttl))
+        ) {
+            $string = file_get_contents($this->_dir . $token . '.tmp');
 
-            if (empty($ttl)
-                || filemtime($this->_dir . $token . '.tmp') >= (time() - $ttl)
-            ) {
-
-                $string = file_get_contents($this->_dir . $token . '.tmp');
-
-                return unserialize($string);
-            }
+            return unserialize($string);
         }
 
         return false;

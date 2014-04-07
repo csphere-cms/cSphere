@@ -86,7 +86,8 @@ if (isset($post['csphere_form'])) {
             $dm_users = new \csphere\core\datamapper\Model('users');
             $admin    = $dm_users->read(1);
 
-            if (!isset($admin['user_name'])) {
+            // There is no admin on test installations without a database
+            if ($driver != 'none' && !isset($admin['user_name'])) {
 
                 $error = $lang['no_user'];
             }

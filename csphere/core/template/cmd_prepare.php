@@ -117,14 +117,7 @@ abstract class CMD_Prepare
 
         if (isset($replace[1])) {
 
-            $cmds   = [];
-            $splits = count($replace);
-
-            for ($i = 1; $i < $splits; $i++) {
-
-                $split           = explode('=', $replace[$i], 2);
-                $cmds[$split[0]] = isset($split[1]) ? $split[1] : '';
-            }
+            $cmds = \csphere\core\template\Prepare::params($replace);
         }
 
         if (isset($target[1])) {
@@ -134,10 +127,17 @@ abstract class CMD_Prepare
             $checks->setTemplate($target[1]);
             $file = $checks->result();
 
-            // Get file content and prepare it
+            // Get file content
             $string = file_get_contents($file);
+
+            // Check plugin for placeholder origin of e.g. translation
+            if ($target[0] == 'default') {
+
+                $target[0] = $part['plugin'];
+            }
+
             $parts  = \csphere\core\template\Prepare::template(
-                $string, $part['plugin'], $cmds
+                $string, $target[0], $cmds
             );
 
             $part = ['cmd' => 'multi', 'value' => $parts];

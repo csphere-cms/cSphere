@@ -142,10 +142,10 @@ class Checks
 
     public function dirname()
     {
-        $dirname = \csphere\core\http\Request::get('dirname')
-                 . 'csphere/themes/' . $this->_theme . '/';
+        $target = \csphere\core\http\Request::get('dirname')
+                . 'csphere/themes/' . $this->_theme . '/';
 
-        return $dirname;
+        return $target;
     }
 
     /**
@@ -166,6 +166,7 @@ class Checks
         if ($exists == false) {
 
             throw new \Exception('Theme target not found: "' . $this->_file . '"');
+
         } else {
 
             $place = ($path == true) ? $this->_path . $this->_file :  $this->_file;

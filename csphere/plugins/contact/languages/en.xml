@@ -21,12 +21,8 @@
     </contact>
     <definitions>
         <define name="contact">Contact</define>
-        <define name="name">name</define>
-        <define name="mail">e-mail</define>
-        <define name="url">website</define>
-        <define name="subject">subject</define>
-        <define name="message">message</define>
-        <define name="date">date</define>
-        <define name="answer">answer</define>
+        <define name="subject">Subject</define>
+        <define name="message">Message</define>
+        <define name="answer">Answer</define>
     </definitions>
 </language>

@@ -13,8 +13,8 @@ Server {
     DefaultDocument    = index.php
     EnableKeepAlive    = false
     Port               = 80
-    SourceRoot         = /var/www/localhost    
-    
+    SourceRoot         = /var/www/localhost
+
     APC {
       EnableApc = true
     }

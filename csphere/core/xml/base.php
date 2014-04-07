@@ -192,7 +192,7 @@ abstract class Base extends \csphere\core\service\Drivers
     {
         $result = [];
 
-        // Loop threw every values array entry from start to end
+        // Loop through every values array entry from start to end
         for ($i = $start; $i < $end; $i++) {
 
             // Prepare data for result set content

@@ -255,4 +255,26 @@ abstract class Prepare
 
         return $next;
     }
+
+    /**
+     * Parameters for placeholders
+     *
+     * @param array $array Parameters as an array
+     *
+     * @return array
+     **/
+
+    public static function params(array $array)
+    {
+        $cmds   = [];
+        $splits = count($array);
+
+        for ($i = 1; $i < $splits; $i++) {
+
+            $split           = explode('=', $array[$i], 2);
+            $cmds[$split[0]] = isset($split[1]) ? $split[1] : '';
+        }
+
+        return $cmds;
+    }
 }

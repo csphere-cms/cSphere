@@ -7,3 +7,15 @@
   *Author               Stefan Gräwe <sgrwe>
 
 ------------------------------------------------------------*/
+
+
+/*  __CSPHERE MEDIAQUERIES
+------------------------------------------------------------*/
+/* small devices (desktops, 768px and down) */
+@media (max-width: 768px) {
+
+    /*  __FOOTER
+    ------------------------------------------------------------*/
+    #footer .navbar-text { display: block; text-align: center; }
+
+}
