@@ -6,8 +6,8 @@
  * PHP Version 5
  *
  * @category  Plugins
- * @package   FAQ
- * @author    Daniel Burke <contact@csphere.eu>
+ * @package   Blog
+ * @author    Daniel Schalla <schalla@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
  * @link      http://www.csphere.eu
