@@ -35,7 +35,6 @@ class Upload
      * using the $_FILES Array
      * @param string $plugin     Plugin Name
      * @param string $customName Rename File to $name
-     * @param string $validate   defines which filter to use from the Validation
      * Class
      *
      * @return array
