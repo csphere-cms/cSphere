@@ -26,19 +26,17 @@ namespace csphere\core\files;
  * @link      http://www.csphere.eu
  **/
 
-/**
- * Class Upload
- * @package csphere\core\files
- */
 class Upload
 {
     /**
      * Uploads a file into the storage folder
      *
-     * @param array  $file        Array of the file which should be uploaded, using the $_FILES Array
-     * @param string $plugin      Plugin Name
-     * @param string $customName  Rename File to $name
-     * @param string $validate    Defines which Filter to use from the Validation Class
+     * @param array  $file       Array of the file which should be uploaded,
+     * using the $_FILES Array
+     * @param string $plugin     Plugin Name
+     * @param string $customName Rename File to $name
+     * @param string $validate   defines which filter to use from the Validation
+     * Class
      *
      * @return array
      **/
@@ -46,15 +44,15 @@ class Upload
     public function upload($file,$plugin,$customName="",$validate="none")
     {
         //Determine if the File Array is consistent
-        if($this->controlConsistency($file)){
+        if ($this->_controlConsistency($file)) {
 
             //Try to upload the file in our destination folder
-            if ($this->moveFile($file,$plugin,$customName)){
+            if ($this->moveFile($file, $plugin, $customName)) {
                 $return=true;
             } else {
                 $return=false;
             }
-        }else{
+        } else {
             $return=false;
         }
 
@@ -64,25 +62,25 @@ class Upload
     /**
      * Controls if our $file Array consists all data we require
      *
-     * @param array   $file  The child of the $_FILES
+     * @param array $file The child of the $_FILES
      *
      * @return boolean
      **/
 
-    private function controlConsistency($file)
+    private function _controlConsistency($file)
     {
-        $consistent=1;
+        $consistent = 1;
 
-        if($file['error']!=0){
-            $consistent=0;
+        if ($file['error'] != 0) {
+            $consistent = 0;
         }
 
-        if(empty($file['tmp_name'])){
-            $consistent=0;
+        if (empty($file['tmp_name'])) {
+            $consistent = 0;
         }
 
-        if($file['size']==0){
-            $consistent=0;
+        if ($file['size'] == 0) {
+            $consistent = 0;
         }
 
         return (boolean) $consistent;
@@ -105,16 +103,16 @@ class Upload
 
         $this->createFolder($path);
 
-        if($customName!=""){
-            $filename=$customName;
-        }else{
-            $filename=$file['name'];
+        if ($customName != "") {
+            $filename = $customName;
+        } else {
+            $filename = $file['name'];
         }
 
         if (move_uploaded_file($file['tmp_name'], $path.$filename)) {
-            $filePath=$path.$filename;
-        }else{
-            $filePath="";
+            $filePath = $path.$filename;
+        } else {
+            $filePath = "";
         }
 
         return $filePath;
@@ -123,7 +121,7 @@ class Upload
     /**
      * Create a destination Folder
      *
-     * @param string  $path Filepath of the Folder
+     * @param string $path Filepath of the Folder
      *
      * @return boolean
      **/
@@ -131,10 +129,10 @@ class Upload
     public function createFolder($path)
     {
 
-        if(!is_dir($path)){
-            $res=mkdir($path);
-        }else{
-            $res=false;
+        if (!is_dir($path)) {
+            $res = mkdir($path);
+        } else {
+            $res = false;
         }
 
         return $res;

@@ -19,7 +19,7 @@ $rad = new \csphere\core\rad\Edit('blog');
 $tags = new \csphere\plugins\tags\classes\Tags();
 
 // Define closure to execute before record is send to database
-$record = function ($data) use ($tags){
+$record = function ($data) use ($tags) {
 
     $tags::parseInputTags(
         $data['blog_tags'], 'blog', $data['blog_id']
@@ -33,7 +33,7 @@ $record = function ($data) use ($tags){
 $rad->callRecord($record);
 
 // Define closure to execute before data is send to template
-$data = function ($data) use ($tags){
+$data = function ($data) use ($tags) {
 
     $data['blog_tags']= $tags::usedTagsNamesAsString(
         'blog', $data['blog_id']

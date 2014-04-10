@@ -20,7 +20,7 @@ $t = new stdClass();
 $t->tags = '';
 
 // Define closure to execute before record is send to database
-$record = function ($data) use ($t){
+$record = function ($data) use ($t) {
 
     $t->tags = $data['blog_tags'];
     unset($data['blog_tags']);
@@ -29,7 +29,7 @@ $record = function ($data) use ($t){
 };
 
 // Define closure to execute before record is send to database
-$afterRecord = function ($data) use ($t){
+$afterRecord = function ($data) use ($t) {
 
     \csphere\plugins\tags\classes\Tags::parseInputTags(
         $t->tags, 'blog', $data['blog_id']

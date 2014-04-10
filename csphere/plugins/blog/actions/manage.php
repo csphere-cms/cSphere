@@ -24,11 +24,11 @@ $order = ['blog_date'];
 // Define closure to execute before data is send to template
 $data = function ($data) {
 
-    for($i = 0; $i < count($data); ++$i){
-       $data[$i]['blog_tags'] =
-           \csphere\plugins\tags\classes\Tags::usedTagsNamesAsString(
+    for ($i = 0; $i < count($data); ++$i) {
+        $data[$i]['blog_tags']
+            = \csphere\plugins\tags\classes\Tags::usedTagsNamesAsString(
                 'blog', $data[$i]['blog_id']
-       );
+            );
     }
 
     return $data;
