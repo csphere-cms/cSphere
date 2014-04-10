@@ -41,7 +41,7 @@ class Upload
      * @return array
      **/
 
-    public function upload($file,$plugin,$customName="",$validate="none")
+    public function uploadFile($file,$plugin,$customName = "")
     {
         //Determine if the File Array is consistent
         if ($this->_controlConsistency($file)) {
