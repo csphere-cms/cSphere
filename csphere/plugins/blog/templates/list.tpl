@@ -1,32 +1,26 @@
 <div id="faq-list" class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=faq.faq action=default.list search=faq.questionOrTag *}
+        {* tpl default/com_headsearch plugin=blog.blog action=default.list search=blog.titleOrTag *}
 
         <br>
 
-        {* foreach faq *}
+        {* foreach blog *}
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{* var faq.faq_id *}">
-                            {* var faq.faq_question *}
+                        <a href="{* link blog/view/id/$blog.blog_id *}">
+                            {* var blog.blog_title *}
                         </a>
                     </h4>
-                </div>
-                
-                <div id="collapse{* var faq.faq_id *}" class="panel-collapse collapse">
-                    <div class="panel-body">
-	                   {* var faq.faq_answer *}
-	                </div>
                 </div>
             </div>
         </div>
 
-        {* else faq *}
+        {* else blog *}
             {* lang default.no_record_found *}
-        {* endforeach faq *}
+        {* endforeach blog *}
 
         {* raw pages *}
 

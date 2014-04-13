@@ -14,14 +14,14 @@
  **/
 
  // Get RAD class for this action
-$rad = new \csphere\core\rad\View('faq');
+$rad = new \csphere\core\rad\View('blog');
 
 
 // Define closure to execute before data is send to template
 $data = function ($data) {
 
-    $tags = \csphere\plugins\tags\classes\Tags::usedTags('faq', $data['faq_id']);
-    $data['faq_tags'] = $tags;
+    $tags = \csphere\plugins\tags\classes\Tags::usedTags('blog', $data['blog_id']);
+    $data['blog_tags'] = $tags;
 
     return $data;
 };

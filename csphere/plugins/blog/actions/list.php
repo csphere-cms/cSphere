@@ -24,7 +24,7 @@ $search = function ($object) {
 
     $object->join('tags', 'plugin', 'blog_id', 'plugin_fid');
     $object->join('tags', '', 'tag_id', '', 'tags', 'plugin');
-    $object->groupBy('faq_id');
+    $object->groupBy('blog_id');
 
     return $object;
 };

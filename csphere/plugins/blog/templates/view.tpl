@@ -1,7 +1,7 @@
 <div id="faq-view" class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=faq.faq action=default.view *}
+        {* tpl default/com_header plugin=blog.blog action=default.view *}
 
         <br>
 
@@ -9,18 +9,18 @@
             <tbody>
                 <tr>
                     <th>
-                        {* lang faq.question *}
+                        {* lang blog.title *}
                     </th>
                     <td>
-                        {* var faq.faq_question *}
+                        {* var blog.blog_title *}
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        {* lang faq.answer *}
+                        {* lang blog.content *}
                     </th>
                     <td>
-                        {* var faq.faq_answer *}
+                        {* var blog.blog_content *}
                     </td>
                 </tr>
                 <tr>
@@ -28,9 +28,9 @@
                         {* lang default.tags *}
                     </th>
                     <td>
-                        {* foreach faq.faq_tags *}
-                        <a href="{* link faq/list/search/$faq_tags.tag_name$ *}">{* var faq_tags.tag_name *}</a> &nbsp;
-                        {* endforeach faq.faq_tags *}
+                        {* foreach blog.blog_tags *}
+                        <a href="{* link blog/list/search/$blog_tags.tag_name$ *}">{* var blog_tags.tag_name *}</a> &nbsp;
+                        {* endforeach blog.blog_tags *}
                     </td>
                 </tr>
             </tbody><!--END table tbody-->
