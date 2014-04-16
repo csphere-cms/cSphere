@@ -1,4 +1,4 @@
-<div id="faq-view" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=faq.faq action=default.view *}
@@ -29,7 +29,7 @@
                     </th>
                     <td>
                         {* foreach faq.faq_tags *}
-                        <a href="{* link faq/list/search/$faq_tags.tag_name$ *}">{* var faq_tags.tag_name *}</a> &nbsp;
+                        <a href="{* link faq/list/search/$faq_tags.tag_name$ *}">{* var faq_tags.tag_name *}</a> 
                         {* endforeach faq.faq_tags *}
                     </td>
                 </tr>

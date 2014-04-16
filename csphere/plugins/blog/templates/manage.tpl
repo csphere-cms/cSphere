@@ -1,4 +1,4 @@
-<div id="blog-manage" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_headsearch plugin=blog.blog action=default.manage search=blog.title_or_tag *}

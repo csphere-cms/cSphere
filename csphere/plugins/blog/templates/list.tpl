@@ -1,4 +1,4 @@
-<div id="faq-list" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_headsearch plugin=faq.faq action=default.list search=faq.questionOrTag *}
