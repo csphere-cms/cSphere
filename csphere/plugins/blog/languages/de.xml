@@ -23,7 +23,7 @@
         <define name="blog">Blog</define>
         <define name="title">Überschrift</define>
         <define name="title_or_tags">Überschrift oder Tags</define>
-        <define name="content">Content</define>
+        <define name="content">Inhalt</define>
         <define name="tags">Tags</define>
     </definitions>
 </language>
