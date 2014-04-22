@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/plugin.xsd">
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2013-12-24</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Tags</name>
+    <info>Semantic descriptions for other plugins</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="fontawesome">fa-tags</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <required php="5.4.0">
+    </required>
+    <environment>
+        <needed vendor="csphere" plugin="groups" version_min="0.1" />
+        <needed vendor="csphere" plugin="users" version_min="0.1" />
+    </environment>
+    <entries>
+        <target vendor="csphere" plugin="admin" action="content" />
+    </entries>
+</plugin>
