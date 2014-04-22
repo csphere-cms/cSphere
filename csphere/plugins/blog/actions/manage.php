@@ -39,8 +39,7 @@ $rad->callData($data);
 // Define closure to execute before finder fetches results
 $search = function ($object) {
 
-    $object->join('tags', 'plugin', 'blog_id', 'plugin_fid');
-    $object->join('tags', '', 'tag_id', '', 'tags', 'plugin');
+    \csphere\plugins\tags\classes\Tags::joinTags($object, "blog");
     $object->groupBy('blog_id');
 
     return $object;
