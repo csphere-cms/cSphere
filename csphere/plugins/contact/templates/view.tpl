@@ -1,13 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        <header>
-            <section class="page-header">
-                <h3>
-                    {* lang groups *} - {* lang default.view *}
-                </h3><!--END header page-header headline-->
-            </section><!--END header page-header-->
-        </header><!--END header-->
+        {* tpl default/com_header plugin=contact.contact action=default.view *}
 
         <br />
 
@@ -17,38 +11,44 @@
                     {* lang default.name *}
                 </th>
                 <td>
-                    {* var groups.group_name *}
+                    {* var contact.contact_name *}
                 </td>
             </tr>
             <tr>
                 <th>
-                    {* lang default.since *}
+                    {* lang default.date *}
                 </th>
                 <td>
-                    {* date groups.group_since *}
+                    {* date contact.contact_date *}
                 </td>
             </tr>
             <tr>
                 <th>
-                    {* lang default.url *}
+                    {* lang default.contact_email *}
                 </th>
                 <td>
-                    {* if groups.group_url == '' *}
-                    --
-                    {* else groups.group_url *}
-                    <a href="{* var groups.group_url *}">{* var groups.group_url *}</a>
-                    {* endif groups.group_url *}
+                    {* var contact.contact_mail *}
                 </td>
             </tr>
             <tr>
                 <th>
-                    {* lang default.info *}
+                    {* lang contact.message *}
                 </th>
                 <td>
-                    {* var groups.group_info *}
+                    {* var contact.contact_message *}
                 </td>
             </tr>
         </table><!--END table-->
+
+        <br>
+
+        <form id="reply" class="form-horizontal" role="form" action="{* link contact/reply *}" method="POST">
+
+            {* tpl default/com_textarea rows=4 name=contact_message label=contact.reply value=contact.contact_reply *}
+
+            {* tpl default/com_submit_btn caption=default.send *}
+
+
 
     </div><!--END panel-body-->
 </div><!--END panel-->
