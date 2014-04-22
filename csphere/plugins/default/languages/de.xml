@@ -72,6 +72,7 @@
         <define name="remove_sure">Datensatz mit der ID "$rid$" wirklich entfernen?</define>
         <define name="save">Speichern</define>
         <define name="search">Suchen</define>
+        <define name="send">Senden</define>
         <define name="scriptinfo">Scriptinfo</define>
         <define name="since">Erstellt</define>
         <define name="size">Größe</define>

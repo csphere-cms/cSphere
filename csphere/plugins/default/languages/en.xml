@@ -72,6 +72,7 @@
         <define name="remove_sure">Really delete ID "$rid$" of this table?</define>
         <define name="save">Save</define>
         <define name="search">Search</define>
+        <define name="send">Send</define>
         <define name="scriptinfo">Scriptinfo</define>
         <define name="since">Since</define>
         <define name="size">Size</define>
