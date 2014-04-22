@@ -8,7 +8,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Contact</name>
-    <info>Stellt ein Kontaktvormular bereit</info>
+    <info>Stellt ein Kontaktformular bereit</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="famfamfam">de</icon>
     <authors>

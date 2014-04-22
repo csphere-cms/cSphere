@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=contact.contact action=default.view *}
 
-        <br />
+        <br>
 
         <table class="table table-striped table-hover">
             <tr>
@@ -48,7 +48,7 @@
 
             {* tpl default/com_submit_btn caption=default.send *}
 
-
+        </form>
 
     </div><!--END panel-body-->
 </div><!--END panel-->
