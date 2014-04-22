@@ -194,7 +194,6 @@ class Tags
 
         \csphere\plugins\tags\classes\TagsHelper::removeTagConnection(
             $plugin, $plugin_fid
-
         );
 
         foreach ($input_explode AS $tag) {
