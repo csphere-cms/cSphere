@@ -18,7 +18,7 @@ $rad = new \csphere\core\rad\Edit('tags');
 
 // this closure just for my tests
 // my tests
-$data = function ($array){
+$data = function ($array) {
 
 
     /*

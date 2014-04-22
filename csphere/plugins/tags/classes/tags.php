@@ -29,10 +29,14 @@ namespace csphere\plugins\tags\classes;
 class Tags
 {
 
-
-    public function __construct(){
+    /**
+     * Constructor to create an instance of the tags class.
+     */
+    public function __construct()
+    {
         self::initTagInput();
     }
+
     /**
      * Add another tag to the tag database. This functions previous tests whether
      * the tag already exists. In this case the existing tag is returned.
@@ -41,7 +45,7 @@ class Tags
      *
      * @return mixed tagArray the complete array of the give tag
      */
-    private static function addTag($tag)
+    private static function _addTag($tag)
     {
         $tag = trim($tag);
 
@@ -130,8 +134,8 @@ class Tags
         // get the data, maybe with the filter
         $tags = $tag_plugin_finder
             ->where('plugin_name', '=', $plugin)
-            ->join('tags','', 'tag_id', 'tag_id')
-			// TODO hier die kompletten Tabellennamen wieder entfernen
+            ->join('tags', '', 'tag_id', 'tag_id')
+            // TODO hier die kompletten Tabellennamen wieder entfernen
             ->columns("csphere_tags.tag_id, tag_name, tag_since")
             ->groupBy("csphere_tags.tag_id")
 
@@ -161,7 +165,7 @@ class Tags
             $tagArray = self::existTag($tag);
 
             if (empty($tagArray)) {
-                $tagArray = self::addTag($tag);
+                $tagArray = self::_addTag($tag);
             }
 
             $dm_tag_plugin = new \csphere\core\datamapper\Model('tags', 'plugin');
@@ -193,7 +197,7 @@ class Tags
         $tags = self::usedTags($plugin, $plugin_fid);
 
         $tagsAsString = "";
-        foreach ($tags AS $tag){
+        foreach ($tags AS $tag) {
             $tagsAsString .= $tag['tag_name'];
             $tagsAsString .= ",";
         }
@@ -215,7 +219,7 @@ class Tags
     {
         $input_explode = explode(",", $input);
 
-        self::removeTagConnection($plugin, $plugin_fid);
+        self::_removeTagConnection($plugin, $plugin_fid);
 
         foreach ($input_explode AS $tag) {
             $tag = trim($tag);
@@ -223,11 +227,17 @@ class Tags
         }
     }
 
-    public static function initTagInput(){
+    /**
+     * Initializes the Bootstrap TagsInput Script.
+     *
+     * @return void this function doesn't return anything
+     */
+    public static function initTagInput()
+    {
         \csphere\core\template\Hooks::stylesheet('tags', 'bootstrap-tagsinput.css');
         \csphere\core\template\Hooks::javascript(
             'tags', 'bootstrap-tagsinput.min.js'
-       );
+        );
     }
 
     /**
@@ -238,7 +248,7 @@ class Tags
      *
      * @return void this function doesn't return anything
      */
-    private static function removeTagConnection($plugin, $plugin_fid)
+    private static function _removeTagConnection($plugin, $plugin_fid)
     {
 
         $tag_plugin_finder = new \csphere\core\datamapper\Finder(
@@ -246,7 +256,7 @@ class Tags
         );
 
         // remove the data
-        $tags = $tag_plugin_finder
+        $tag_plugin_finder
             ->where('plugin_name', '=', $plugin)
             ->where('plugin_fid', '=', $plugin_fid)
             ->remove();
@@ -278,8 +288,11 @@ class Tags
      * Makes the join for using the Tags Object in list. To be used in a closure of
      * callFinder().
      *
-     * @param $object The object of the closure
-     * @param $plugin The name of the plugin
+     * @param object $object The object of the closure
+     * @param string $plugin The name of the plugin
+     *
+     * @return void This method doesn't return anything but the given $object is
+     * changed.
      */
     public static function joinTags($object, $plugin)
     {
