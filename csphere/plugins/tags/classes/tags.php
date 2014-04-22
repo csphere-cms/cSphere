@@ -15,7 +15,7 @@
 namespace csphere\plugins\tags\classes;
 
 /**
- * Board Help Functions
+ * Tags Functions
  *
  * PHP Version 5
  *
@@ -35,33 +35,6 @@ class Tags
     public function __construct()
     {
         self::initTagInput();
-    }
-
-    /**
-     * Add another tag to the tag database. This functions previous tests whether
-     * the tag already exists. In this case the existing tag is returned.
-     *
-     * @param string $tag The tag to add to the database.
-     *
-     * @return mixed tagArray the complete array of the give tag
-     */
-    private static function _addTag($tag)
-    {
-        $tag = trim($tag);
-
-        $tagArray = self::existTag($tag);
-
-        if (empty($tagArray)) {
-            $dm_tag = new \csphere\core\datamapper\Model('tags');
-            $tag_plugin = $dm_tag->create();
-
-            $tag_plugin['tag_name'] = $tag;
-            $tag_plugin['tag_since'] = time();
-
-            return $dm_tag->insert($tag_plugin);
-        } else {
-            return $tagArray;
-        }
     }
 
     /**
@@ -165,7 +138,7 @@ class Tags
             $tagArray = self::existTag($tag);
 
             if (empty($tagArray)) {
-                $tagArray = self::_addTag($tag);
+                $tagArray = \csphere\plugins\tags\classes\TagsHelper::addTag($tag);
             }
 
             $dm_tag_plugin = new \csphere\core\datamapper\Model('tags', 'plugin');
@@ -219,7 +192,8 @@ class Tags
     {
         $input_explode = explode(",", $input);
 
-        self::_removeTagConnection($plugin, $plugin_fid);
+        \csphere\plugins\tags\classes\TagsHelper::removeTagConnection(
+            $plugin, $plugin_fid);
 
         foreach ($input_explode AS $tag) {
             $tag = trim($tag);
@@ -238,28 +212,6 @@ class Tags
         \csphere\core\template\Hooks::javascript(
             'tags', 'bootstrap-tagsinput.min.js'
         );
-    }
-
-    /**
-     * Remove the connection between plugin und tags.
-     *
-     * @param string  $plugin     The name of the plugin that uses the tag
-     * @param integer $plugin_fid The ID of the entry in the plugin
-     *
-     * @return void this function doesn't return anything
-     */
-    private static function _removeTagConnection($plugin, $plugin_fid)
-    {
-
-        $tag_plugin_finder = new \csphere\core\datamapper\Finder(
-            'tags', 'plugin'
-        );
-
-        // remove the data
-        $tag_plugin_finder
-            ->where('plugin_name', '=', $plugin)
-            ->where('plugin_fid', '=', $plugin_fid)
-            ->remove();
     }
 
     /**
