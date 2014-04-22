@@ -193,7 +193,9 @@ class Tags
         $input_explode = explode(",", $input);
 
         \csphere\plugins\tags\classes\TagsHelper::removeTagConnection(
-            $plugin, $plugin_fid);
+            $plugin, $plugin_fid
+
+        );
 
         foreach ($input_explode AS $tag) {
             $tag = trim($tag);
