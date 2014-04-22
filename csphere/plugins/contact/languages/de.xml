@@ -23,6 +23,6 @@
         <define name="contact">Kontakt</define>
         <define name="subject">Betreff</define>
         <define name="message">Nachricht</define>
-        <define name="answer">Antwort</define>
+        <define name="reply">Antwort</define>
     </definitions>
 </language>
