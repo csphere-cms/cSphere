@@ -21,5 +21,9 @@
     </contact>
     <definitions>
         <define name="blog">Blog</define>
+        <define name="title">Titel</define>
+        <define name="title_or_tags">Titel oder Tags</define>
+        <define name="content">Inhalt</define>
+        <define name="tags">Tags</define>
     </definitions>
 </language>
