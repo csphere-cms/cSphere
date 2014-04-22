@@ -1,2 +1,2 @@
-phpdoc -d ../../csphere/core -t ../tmp/api
+phpdoc -d ..\..\csphere\core -t ..\tmp\api
 pause
