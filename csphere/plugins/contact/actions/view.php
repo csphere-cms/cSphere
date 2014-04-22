@@ -6,8 +6,8 @@
  * PHP Version 5
  *
  * @category  Plugins
- * @package   Groups
- * @author    Hans-Joachim Piepereit <contact@csphere.eu>
+ * @package   Contact
+ * @author    Mathias Milus <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
  * @link      http://www.csphere.eu

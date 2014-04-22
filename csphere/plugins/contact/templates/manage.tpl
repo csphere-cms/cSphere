@@ -36,7 +36,7 @@
                         <a href="{* link contact/view/id/$contact.contact_id *}">{* var contact.contact_subject *}</a>
                     </td>
                     <td>
-                        <a href="{* link contact/answer/id/$contact.contact_id *}">{* lang contact.answer *}</a>
+                        <a href="{* link contact/view/id/$contact.contact_id$#reply *}">{* lang contact.reply *}</a>
                     </td>
                     <td>
                         <a href="{* link contact/remove/id/$contact.contact_id *}">{* lang default.remove *}</a>
