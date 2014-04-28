@@ -1,7 +1,7 @@
 <?php
 
 /**
- * String Helper
+ * String Format
  *
  * PHP Version 5
  *
@@ -16,7 +16,7 @@
 namespace csphere\core\strings;
 
 /**
- * String Helper
+ * String Format
  *
  * @category  Core
  * @package   Strings
@@ -26,7 +26,7 @@ namespace csphere\core\strings;
  * @link      http://www.csphere.eu
  **/
 
-class Helper
+class Format
 {
 
     /**
@@ -48,7 +48,7 @@ class Helper
      *
      * @return bool
      **/
-    public static function isIp4($string)
+    public static function isIpV4($string)
     {
         return !(filter_var($string, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)
             === false);
@@ -61,7 +61,7 @@ class Helper
      *
      * @return bool
      **/
-    public static function isIp6($string)
+    public static function isIpV6($string)
     {
         return !(filter_var($string, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)
             === false);
@@ -127,37 +127,5 @@ class Helper
         }
         return false;
     } 
-
-    /**
-     * Shortens a string.
-     *
-     * @param string $string      the input string
-     * @param int    $count       the final length of the string
-     * @param string $placeholder the placeholder string
-     *
-     * @return string the short string
-     **/        
-    public static function doStraightShorten($string, $count, $placeholder = '...')
-    {
-        return substr($string, 0, ($count*-1)) . $placeholder;
-    }    
-
-    /**
-     * Shortens a string.
-     *
-     * @param string $string      the input string
-     * @param int    $count       the final length of the string
-     * @param string $placeholder the placeholder string
-     *
-     * @return string the short string without breaking a word
-     **/       
-    public static function doShorten($string, $count, $placeholder = ' ...')
-    {
-        if (strlen($string) > $count) {
-            $string = substr($string, 0, $count);
-            $string = substr($string, 0, strrpos($string, ' ')) . $placeholder;
-        }
-        return $string;
-    }  
     
 }
