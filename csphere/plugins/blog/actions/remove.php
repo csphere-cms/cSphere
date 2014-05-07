@@ -14,7 +14,7 @@
  **/
 
  // Get RAD class for this action
-$rad = new \csphere\core\rad\Remove('faq');
+$rad = new \csphere\core\rad\Remove('blog');
 
 // Delegate action
 $rad->delegate();
