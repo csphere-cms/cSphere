@@ -40,7 +40,10 @@ class Format
      
     public static function doStraightShorten($string, $count, $placeholder = '...')
     {
-        return substr($string, 0, ($count*-1)) . $placeholder;
+        if (strlen($string.$placeholder) >= $count) {
+            $string = substr($string, 0, $count) . $placeholder;
+        }
+        return $string; 
     }    
 
     /**
@@ -55,7 +58,7 @@ class Format
      
     public static function doShorten($string, $count, $placeholder = ' ...')
     {
-        if (strlen($string) > $count) {
+        if (strlen($string.$placeholder) >= $count) {
             $string = substr($string, 0, $count);
             $string = substr($string, 0, strrpos($string, ' ')) . $placeholder;
         }
