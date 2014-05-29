@@ -31,7 +31,7 @@ $bread = new \csphere\core\template\Breadcrumb('admin');
 $bread->add('system');
 $bread->plugin('errors', 'control');
 $bread->add('file', 'errors/file/date/' . $date);
-$bread->add('entry', 'errors/file/date/' . $date . '/entry/' . $entry);
+$bread->add('entry', 'errors/details/date/' . $date . '/entry/' . $entry);
 $bread->trace();
 
 // List of special chars in error logs
