@@ -12,7 +12,7 @@
                         <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
                     </th>
                     <th>
-                        <a href="{* raw order.blog_date *}">{* lang default.since *}</a> {* raw arrow.blog_date *}
+                        <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
                     </th>
                     <th>
                         {* lang default.tags *}

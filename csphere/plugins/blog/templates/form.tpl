@@ -19,6 +19,12 @@
 
             {* tpl default/com_textarea name=blog_content label=blog.content rows=5 value=blog.blog_content *}
 
+            {* if blog.blog_public == '1' *}
+            {* tpl default/com_input_yesno name=blog_public label=blog.public *}
+            {* else blog.blog_public *}
+            {* tpl default/com_input_noyes name=blog_public label=blog.public *}
+            {* endif blog.blog_public *}
+
             {* tpl default/com_input_tags name=blog_tags label=default.tags value=blog.blog_tags *}
 
             {* tpl default/com_submit_btn caption=default.save *}

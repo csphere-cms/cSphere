@@ -8,9 +8,9 @@
                 <column name="blog_id" datatype="serial" max="0" default="" />
                 <column name="user_id" datatype="integer" default="0"/>
                 <column name="blog_title" datatype="varchar" max="200" default="" />
-                <column name="blog_content" datatype="text" max="0" default="" />
+                <column name="blog_content" datatype="text" default="" />
                 <column name="blog_date" datatype="integer" max="14" default="" />
-                <column name="blog_public" datatype="integer" default="0" />
+                <column name="blog_public" datatype="integer" max="2" default="0" />
             </columns>
             <primary>
                 <column name="blog_id" />
@@ -25,8 +25,13 @@
     <data>
         <insert table="options">
             <column name="option_plugin">blog</column>
-            <column name="option_name">titlemaxlength</column>
-            <column name="option_value">0</column>
+            <column name="option_name">title_length_list</column>
+            <column name="option_value">25</column>
+        </insert>
+        <insert table="options">
+            <column name="option_plugin">blog</column>
+            <column name="option_name">default_public</column>
+            <column name="option_value">1</column>
         </insert>
     </data>
 </database>

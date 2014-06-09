@@ -5,22 +5,46 @@
 
         <br>
 
-        {* foreach blog *}
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a href="{* link blog/view/id/$blog.blog_id *}">
-                            {* var blog.blog_title *}
-                        </a>
-                    </h4>
-                </div>
-            </div>
-        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
+                    </th>
+                    <th>
+                        <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
+                    </th>
+                    <th colspan="2">
+                        {* lang default.options *}
+                    </th>
+                </tr>
+            </thead><!--END table thead-->
 
-        {* else blog *}
-            {* lang default.no_record_found *}
-        {* endforeach blog *}
+            <tbody>
+                {* foreach blog *}
+                <tr>
+                    <td>
+                        <a href="{* link blog/view/id/$blog.blog_id *}">{* var blog.blog_title *}</a>
+                    </td>
+                    <td>
+                        {* date blog.blog_date *}
+                    </td>
+                    <td>
+                        <a href="{* link blog/edit/id/$blog.blog_id *}">{* lang default.edit *}</a>
+                    </td>
+                    <td>
+                        <a href="{* link blog/remove/id/$blog.blog_id *}">{* lang default.remove *}</a>
+                    </td>
+                </tr>
+                {* else blog *}
+                <tr>
+                    <th class="text-center" colspan="5">
+                        {* lang default.no_record_found *}
+                    </th>
+                </tr>
+                {* endforeach blog *}
+            </tbody><!--END table tbody-->
+        </table><!--END table-->
 
         {* raw pages *}
 

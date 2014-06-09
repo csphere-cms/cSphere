@@ -8,7 +8,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Blog</name>
-    <info>Verwalte und betrachte deine Blog Einträge</info>
+    <info>Verwalte deine Blog Einträge</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="famfamfam">de</icon>
     <authors>
@@ -22,7 +22,10 @@
     <definitions>
         <define name="blog">Blog</define>
         <define name="content">Inhalt</define>
+        <define name="default_public">Automatisch veröffentlichen</define>
+        <define name="public">Veröffentlichen</define>
         <define name="title">Titel</define>
+        <define name="title_length_list">Titellänge (Liste)</define>
         <define name="title_or_tags">Titel oder Schlagwörter</define>
     </definitions>
 </language>

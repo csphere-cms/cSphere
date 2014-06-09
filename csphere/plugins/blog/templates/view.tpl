@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <th>
-                        {* lang default.since *}
+                        {* lang default.date *}
                     </th>
                     <td>
                         {* date blog.blog_date *}

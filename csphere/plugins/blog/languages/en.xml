@@ -8,7 +8,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Blog</name>
-    <info>Manage your Blog entries</info>
+    <info>Manage your blog entries</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="famfamfam">gb</icon>
     <authors>
@@ -22,7 +22,10 @@
     <definitions>
         <define name="blog">Blog</define>
         <define name="content">Content</define>
+        <define name="default_public">Default public</define>
+        <define name="public">Public</define>
         <define name="title">Title</define>
-        <define name="title_or_tags">Title or Tags</define>
+        <define name="title_length_list">Title Length (List)</define>
+        <define name="title_or_tags">Title or tags</define>
     </definitions>
 </language>

@@ -16,6 +16,25 @@
 // Get RAD class for this action
 $rad = new \csphere\core\rad\Listed('blog');
 
+// Define closure to execute before data is send to template
+$data = function ($data) {
+
+    for($i = 0; $i < count($data); ++$i){
+
+        // Get record option for youtube
+        $dm_options = new \csphere\core\datamapper\Options('blog');
+        $options    = $dm_options->load();
+
+        $data[$i]['blog_title'] = \csphere\core\strings\Format::doStraightShorten(
+            $data[$i]['blog_title'],$options['title_length_list']
+        );
+    }
+
+    return $data;
+};
+
+$rad->callData($data);
+
 // Define order columns
 $order = ['blog_title','blog_date'];
 
