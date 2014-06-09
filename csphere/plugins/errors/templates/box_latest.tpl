@@ -1,4 +1,4 @@
-<div id="errors-latest-box">
+<div class="clearfix" id="errors-latest-box">
 
     <div class="page-header">
         <h4>{* lang errors.latest_errors *}</h4>
