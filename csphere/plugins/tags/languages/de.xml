@@ -20,6 +20,6 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="tags">Tags</define>
+        <define name="tags">Schlagwörter</define>
     </definitions>
 </language>

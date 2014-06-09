@@ -17,5 +17,3 @@ $loader = \csphere\core\service\Locator::get();
 $template = $loader->load('view');
 
 $template->add(\csphere\plugins\tags\classes\Tags::getTagsAsJSON());
-
-

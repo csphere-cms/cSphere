@@ -20,7 +20,6 @@ $rad = new \csphere\core\rad\Edit('tags');
 // my tests
 $data = function ($array) {
 
-
     /*
      $tag = \csphere\plugins\tags\classes\Tags::existTag("test");
      \csphere\plugins\tags\classes\Tags::useTag("test", "board", 1);
