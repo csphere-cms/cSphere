@@ -29,7 +29,7 @@
                     </th>
                     <td>
                         {* foreach blog.blog_tags *}
-                        <a href="{* link blog/list/search/$blog_tags.tag_name$ *}">{* var blog_tags.tag_name *}</a> &nbsp;
+                        <a href="{* link blog/list/search/$blog_tags.tag_name$ *}">{* var blog_tags.tag_name *}</a>
                         {* endforeach blog.blog_tags *}
                     </td>
                 </tr>

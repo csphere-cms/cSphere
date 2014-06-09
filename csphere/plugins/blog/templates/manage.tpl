@@ -1,7 +1,7 @@
 <div id="blog-manage" class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=blog.blog action=default.manage search=blog.title_or_tag *}
+        {* tpl default/com_headsearch plugin=blog.blog action=default.manage search=blog.title_or_tags *}
 
         <br>
 
@@ -12,7 +12,7 @@
                         <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
                     </th>
                     <th>
-                        {* lang blog.tags *}
+                        {* lang default.tags *}
                     </th>
                     <th colspan="2">
                         {* lang default.options *}

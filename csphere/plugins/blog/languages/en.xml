@@ -24,6 +24,5 @@
         <define name="title">Title</define>
         <define name="title_or_tags">Title or Tags</define>
         <define name="content">Content</define>
-        <define name="tags">Tags</define>
     </definitions>
 </language>

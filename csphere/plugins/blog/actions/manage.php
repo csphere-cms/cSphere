@@ -19,7 +19,7 @@ $rad = new \csphere\core\rad\Listed('blog');
 $rad->map('manage', 'manage');
 
 // Define order columns
-$order = ['blog_date'];
+$order = ['blog_title'];
 
 // Define closure to execute before data is send to template
 $data = function ($data) {
