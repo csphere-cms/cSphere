@@ -1,7 +1,7 @@
-<div id="faq-list" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_headsearch plugin=blog.blog action=default.list search=blog.titleOrTag *}
+        {* tpl default/com_headsearch plugin=blog.blog action=default.list search=blog.title_or_tags *}
 
         <br>
 

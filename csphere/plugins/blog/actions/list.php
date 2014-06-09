@@ -17,7 +17,7 @@
 $rad = new \csphere\core\rad\Listed('blog');
 
 // Define order columns
-$order = ['blog_date'];
+$order = ['blog_title','blog_date'];
 
 // Define closure to execute before finder fetches results
 $search = function ($object) {
@@ -32,4 +32,4 @@ $rad->callFinder($search);
 
 $rad->search(['blog_title', 'tag_name']);
 
-$rad->delegate('blog_title', $order);
+$rad->delegate('blog_date', $order);

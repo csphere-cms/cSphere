@@ -19,7 +19,7 @@ $rad = new \csphere\core\rad\Listed('blog');
 $rad->map('manage', 'manage');
 
 // Define order columns
-$order = ['blog_title'];
+$order = ['blog_title', 'blog_date'];
 
 // Define closure to execute before data is send to template
 $data = function ($data) {
@@ -49,4 +49,4 @@ $rad->callFinder($search);
 
 $rad->search(['blog_title', 'tag_name'], true, true);
 
-$rad->delegate('blog_title', $order);
+$rad->delegate('blog_date', $order);

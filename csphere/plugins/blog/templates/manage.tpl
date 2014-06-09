@@ -1,4 +1,4 @@
-<div id="blog-manage" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_headsearch plugin=blog.blog action=default.manage search=blog.title_or_tags *}
@@ -10,6 +10,9 @@
                 <tr>
                     <th>
                         <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
+                    </th>
+                    <th>
+                        <a href="{* raw order.blog_date *}">{* lang default.since *}</a> {* raw arrow.blog_date *}
                     </th>
                     <th>
                         {* lang default.tags *}
@@ -25,6 +28,9 @@
                 <tr>
                     <td>
                         <a href="{* link blog/view/id/$blog.blog_id *}">{* var blog.blog_title *}</a>
+                    </td>
+                    <td>
+                        {* date blog.blog_date *}
                     </td>
                     <td>
                         {* var blog.blog_tags *}

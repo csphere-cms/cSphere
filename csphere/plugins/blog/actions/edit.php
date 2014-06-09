@@ -27,6 +27,8 @@ $record = function ($data) use ($tags) {
 
     unset($data['blog_tags']);
 
+    $data['blog_date'] = time();
+
     return $data;
 };
 

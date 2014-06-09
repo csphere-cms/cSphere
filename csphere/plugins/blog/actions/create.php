@@ -25,6 +25,8 @@ $record = function ($data) use ($t) {
     $t->tags = $data['blog_tags'];
     unset($data['blog_tags']);
 
+    $data['blog_date'] = time();
+
     return $data;
 };
 
@@ -34,8 +36,6 @@ $afterRecord = function ($data) use ($t) {
     \csphere\plugins\tags\classes\Tags::parseInputTags(
         $t->tags, 'blog', $data['blog_id']
     );
-
-    $data['blog_date']=time();
 
     return $data;
 };

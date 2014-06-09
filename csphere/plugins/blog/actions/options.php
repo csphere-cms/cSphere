@@ -14,7 +14,7 @@
  **/
 
  // Get RAD class for this action
-$rad = new \csphere\core\rad\Options('faq');
+$rad = new \csphere\core\rad\Options('blog');
 
 // Delegate action
 $rad->delegate();

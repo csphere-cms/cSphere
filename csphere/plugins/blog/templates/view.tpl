@@ -1,4 +1,4 @@
-<div id="faq-view" class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-body">
 
         {* tpl default/com_header plugin=blog.blog action=default.view *}
@@ -13,6 +13,14 @@
                     </th>
                     <td>
                         {* var blog.blog_title *}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        {* lang default.since *}
+                    </th>
+                    <td>
+                        {* date blog.blog_date *}
                     </td>
                 </tr>
                 <tr>
