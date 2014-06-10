@@ -32,7 +32,9 @@
         <define name="count">Anzahl</define>
         <define name="create">Erstellen</define>
         <define name="date">Datum</define>
-        <define name="date_format">d.m.Y um H:i:s</define>
+        <define name="datetime_format_date">d.m.Y</define>
+        <define name="datetime_format_concat">um</define>
+        <define name="datetime_format_time">H:i</define>
         <define name="default">Standard</define>
         <define name="details">Details</define>
         <define name="driver">Treiber</define>

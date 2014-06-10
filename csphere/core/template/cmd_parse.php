@@ -94,11 +94,13 @@ abstract class CMD_Parse
      *
      * @param array $part Placeholder cmd and key, maybe even more
      * @param array $data Array with data to use in the template
+     * @param bool $dateEnabled Return Date Flag
+     * @param bool $timeEnabled Return Time Flag
      *
      * @return string
      **/
 
-    public static function date(array $part, array $data)
+    public static function date(array $part, array $data, $dateEnabled=true, $timeEnabled=true)
     {
         $part = \csphere\core\template\Parse::sub($part, $data);
 
@@ -107,15 +109,22 @@ abstract class CMD_Parse
 
         $date = \csphere\core\date\Unixtime::userDateTime($unix);
 
-        $format=\csphere\core\translation\fetch::key("default","date_format");
+        $result="";
 
-        // @TODO: Add possibility to split date and time
-
-        if(empty($format)){
-            $format='Y-m-d at H:i:s';
+        if($dateEnabled){
+            $date_format=\csphere\core\translation\fetch::key("default","datetime_format_date");
+            $result .= $date->format($date_format);
         }
 
-        $result = $date->format($format);
+        if($dateEnabled && $timeEnabled){
+            $concat=\csphere\core\translation\fetch::key("default","datetime_format_concat");
+            $result.=" ".$concat." ";
+        }
+
+        if($timeEnabled){
+            $time_format=\csphere\core\translation\fetch::key("default","datetime_format_time");
+            $result .=$date->format($time_format);
+        }
 
         return $result;
     }
