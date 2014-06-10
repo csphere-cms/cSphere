@@ -123,7 +123,8 @@ abstract class CMD_Parse
 
         if($timeEnabled){
             $time_format=\csphere\core\translation\fetch::key("default","datetime_format_time");
-            $result .=$date->format($time_format);
+            $time_appendix=\csphere\core\translation\fetch::key("default","datetime_format_appendix");
+            $result .=$date->format($time_format)." ".$time_appendix;
         }
 
         return $result;

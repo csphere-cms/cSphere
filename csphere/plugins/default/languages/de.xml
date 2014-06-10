@@ -35,7 +35,7 @@
         <define name="datetime_format_date">d.m.Y</define>
         <define name="datetime_format_concat">um</define>
         <define name="datetime_format_time">H:i</define>
-        <define name="datetime_format_timename">Uhr</define>
+        <define name="datetime_format_appendix">Uhr</define>
         <define name="default">Standard</define>
         <define name="details">Details</define>
         <define name="driver">Treiber</define>
