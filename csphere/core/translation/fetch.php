@@ -296,10 +296,17 @@ abstract class Fetch
         $lang = [];
         $data = $data['definitions'];
 
+        //@ToDo: Find out why the XML Parser delete empty values
         foreach ($data AS $def) {
 
-            $lang[$def['name']] = $def['value'];
+            if(empty($def['value'])){
+                $lang[$def['name']]="";
+            }else{
+                $lang[$def['name']] = $def['value'];
+            }
+
         }
+
 
         return $lang;
     }
