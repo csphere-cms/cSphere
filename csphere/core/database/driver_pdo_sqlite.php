@@ -96,6 +96,7 @@ class Driver_PDO_SQLITE extends Base_PDO
                           '{optimize}' => 'VACUUM',
                           '{serial}' => 'integer',
                           '{text}' => 'text',
+                          '{longtext}' => 'text',
                           '{varchar}' => 'varchar'];
 
         foreach ($change_sqlite AS $key => $sqlite) {
