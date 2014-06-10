@@ -120,6 +120,7 @@ class Driver_PDO_PGSQL extends Base_PDO
                          '{optimize}' => 'VACUUM',
                          '{serial}' => 'serial',
                          '{text}' => 'text',
+                         '{longtext}' => 'text',
                          '{varchar}' => 'varchar'];
 
         foreach ($change_pgsql AS $key => $pgsql) {

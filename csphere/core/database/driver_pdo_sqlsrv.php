@@ -117,6 +117,7 @@ class Driver_PDO_SQLSRV extends Base_PDO
                           '{integer}' => 'int',
                           '{serial}' => 'int IDENTITY(1,1)',
                           '{text}' => 'text',
+                          '{longtext}' => 'text',
                           '{varchar}' => 'varchar'];
 
         foreach ($change_sqlsrv AS $key => $sqlsrv) {

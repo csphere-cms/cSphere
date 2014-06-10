@@ -103,6 +103,7 @@ class Driver_PDO_MYSQL extends Base_PDO
                          '{optimize}' => 'OPTIMIZE TABLE',
                          '{serial}' => 'integer NOT NULL auto_increment',
                          '{text}' => 'text',
+                         '{longtext}' => 'longtext',
                          '{varchar}' => 'varchar'];
 
         foreach ($change_mysql AS $key => $mysql) {
