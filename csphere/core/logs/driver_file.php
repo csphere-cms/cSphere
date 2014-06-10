@@ -82,7 +82,11 @@ class Driver_File extends Base
         fwrite($save_log, $store);
         fclose($save_log);
 
-        chmod($filename, 0755);
+        // Check if the process owner is the fileowner, otherwise
+        // chmod won't work proper and give a warning
+        if(get_current_user()==fileowner($filename)){
+            chmod($filename, 0755);
+        }
 
         return true;
     }
