@@ -107,10 +107,15 @@ abstract class CMD_Parse
 
         $date = \csphere\core\date\Unixtime::userDateTime($unix);
 
-        // @TODO: Should be configurable later on
-        $result = $date->format('Y-m-d')
-                . ' at '
-                . $date->format('H:i:s');
+        $format=\csphere\core\translation\fetch::key("default","date_format");
+
+        // @TODO: Add possibility to split date and time
+
+        if(empty($format)){
+            $format='Y-m-d at H:i:s';
+        }
+
+        $result = $date->format($format);
 
         return $result;
     }

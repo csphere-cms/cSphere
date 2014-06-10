@@ -32,6 +32,7 @@
         <define name="count">Count</define>
         <define name="create">Create</define>
         <define name="date">Date</define>
+        <define name="date_format">Y-m-d at H:i:s</define>
         <define name="default">Default</define>
         <define name="details">Details</define>
         <define name="driver">Driver</define>
