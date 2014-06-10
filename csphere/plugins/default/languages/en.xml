@@ -32,9 +32,10 @@
         <define name="count">Count</define>
         <define name="create">Create</define>
         <define name="date">Date</define>
-        <define name="datetime_format_date">Y-m-d</define>
+        <define name="datetime_format_date">m/d/Y</define>
         <define name="datetime_format_concat">at</define>
-        <define name="datetime_format_time">h:iA</define>
+        <define name="datetime_format_time">g:i A</define>
+        <define name="datetime_format_timename"></define>
         <define name="default">Default</define>
         <define name="details">Details</define>
         <define name="driver">Driver</define>
