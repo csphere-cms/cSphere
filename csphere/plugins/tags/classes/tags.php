@@ -138,7 +138,7 @@ class Tags
             $tagArray = self::existTag($tag);
 
             if (empty($tagArray)) {
-                $tagArray = \csphere\plugins\tags\classes\TagsHelper::addTag($tag);
+                $tagArray = TagsHelper::addTag($tag);
             }
 
             $dm_tag_plugin = new \csphere\core\datamapper\Model('tags', 'plugin');
@@ -192,7 +192,7 @@ class Tags
     {
         $input_explode = explode(",", $input);
 
-        \csphere\plugins\tags\classes\TagsHelper::removeTagConnection(
+        TagsHelper::removeTagConnection(
             $plugin, $plugin_fid
         );
 
