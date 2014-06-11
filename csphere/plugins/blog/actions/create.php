@@ -27,7 +27,7 @@ $record = function ($data) use ($t) {
 
     $data['blog_date'] = time();
 
-    //@ToDo: Test Validation Class, doesn't work yet!
+    //@ToDo: Cancel Submit if invalid!
     $upload=new \csphere\core\files\Upload;
     $upload->setFilter('image');
     $upload->uploadFile($_FILES['blog_image'],'blog',$data['blog_title']);

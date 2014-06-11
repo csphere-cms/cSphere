@@ -44,7 +44,7 @@ class Validate
      */
     public function __construct($file){
 
-        if (file_exists($file)) {
+        if (file_exists($file['tmp_name'])) {
             $this->file=$file;
             return true;
         }else{
@@ -60,13 +60,14 @@ class Validate
      * @param string $validationSet
      * @param bool $mime
      * @param bool $fileEnding
+     * @throws \ErrorException
      * @return bool
      */
     public function check($validationSet,$mime=true,$fileEnding=true){
 
-        $validate=false;
+        $validate=true;
 
-        if(!empty(Validate::$fileEnding[$validationSet]) && !empty(Validate::$mime[$validationSet])){
+        if (!empty(Validate::$fileEnding[$validationSet]) && !empty(Validate::$mime[$validationSet])) {
             if($mime){
                 $validate=$this->_mimeCheck($validationSet);
             }
@@ -74,6 +75,8 @@ class Validate
             if($fileEnding && $validate){
                 $validate=$this->_fileEndingCheck($validationSet);
             }
+        }else{
+            throw new \ErrorException('Validation Set does not exist!');
         }
 
         return $validate;
@@ -90,7 +93,7 @@ class Validate
         $whiteList=Validate::$mime[$validationSet];
 
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
-        $mime=$finfo->file($this->file);
+        $mime=$finfo->file($this->file['tmp_name']);
 
         foreach($whiteList as $entry){
             if($mime==$entry){
@@ -112,7 +115,7 @@ class Validate
         $validate=false;
         $whiteList=Validate::$fileEnding[$validationSet];
 
-        $ext = pathinfo($this->file, PATHINFO_EXTENSION);
+        $ext = pathinfo($this->file['name'], PATHINFO_EXTENSION);
 
         foreach($whiteList as $entry){
             if($ext==$entry){
@@ -129,7 +132,7 @@ class Validate
      * @var array
      */
     private static $fileEnding=array(
-        "image"=>array(".jpeg",".jpg",".png",".gif"),
+        "image"=>array("jpeg","jpg","png","gif"),
     );
 
     /**

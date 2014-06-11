@@ -56,9 +56,9 @@ class Upload
     public function uploadFile($file,$plugin,$customName = "")
     {
 
-        $validate=new Validate($file['tmp_name']);
+        $validate=new Validate($file);
 
-        if (!empty($filter) && $validate->check($this->filter)) {
+        if (!empty($this->filter) && !$validate->check($this->filter)) {
             return false;
         }
 
