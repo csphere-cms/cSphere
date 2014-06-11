@@ -16,7 +16,7 @@
 namespace csphere\core\files;
 
     /**
-     * File Validation
+     * File Validate
      *
      * @category  Core
      * @package   Files
@@ -27,11 +27,11 @@ namespace csphere\core\files;
      **/
 
 /**
- * Class Validation
+ * Class Validate
  * @package csphere\core\files
  */
 
-class Validation
+class Validate
 {
     /**
      * @var string File Location
@@ -44,7 +44,7 @@ class Validation
      */
     public function __construct($file){
 
-        if(file_exists($file)){
+        if (file_exists($file)) {
             $this->file=$file;
             return true;
         }else{
@@ -66,7 +66,7 @@ class Validation
 
         $validate=false;
 
-        if(!empty(Validation::$fileEnding[$validationSet]) && !empty(Validation::$mime[$validationSet])){
+        if(!empty(Validate::$fileEnding[$validationSet]) && !empty(Validate::$mime[$validationSet])){
             if($mime){
                 $validate=$this->_mimeCheck($validationSet);
             }
@@ -87,7 +87,7 @@ class Validation
      */
     private function _mimeCheck($validationSet){
         $validate=false;
-        $whiteList=Validation::$mime[$validationSet];
+        $whiteList=Validate::$mime[$validationSet];
 
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
         $mime=$finfo->file($this->file);
@@ -110,7 +110,7 @@ class Validation
      */
     private function _fileEndingCheck($validationSet){
         $validate=false;
-        $whiteList=Validation::$fileEnding[$validationSet];
+        $whiteList=Validate::$fileEnding[$validationSet];
 
         $ext = pathinfo($this->file, PATHINFO_EXTENSION);
 

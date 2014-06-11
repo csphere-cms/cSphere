@@ -29,6 +29,19 @@ namespace csphere\core\files;
 class Upload
 {
     /**
+     * @var String Defines after which ruleset the validation class controls
+     */
+    private $filter="";
+
+    /**
+     * Sets the filter for the validation class
+     * @param string $filter FilterSet (See Validate)
+     */
+    public function setFilter($filter){
+        $this->filter=$filter;
+    }
+
+    /**
      * Uploads a file into the storage folder
      *
      * @param array  $file       Array of the file which should be uploaded,
@@ -42,18 +55,27 @@ class Upload
 
     public function uploadFile($file,$plugin,$customName = "")
     {
-        //Determine if the File Array is consistent
-        if ($this->_controlConsistency($file)) {
 
-            //Try to upload the file in our destination folder
-            if ($this->moveFile($file, $plugin, $customName)) {
-                $return=true;
-            } else {
-                $return=false;
-            }
+        $validate=new Validate($file['tmp_name']);
+
+        if (!empty($filter) && $validate->check($this->filter)) {
+            return false;
+        }
+
+        //Determine if the File Array is consistent
+        if (!$this->_controlConsistency($file)) {
+            return false;
+        }
+
+        $customName=$this->_sanitizeName($customName);
+
+        //Try to upload the file in our destination folder
+        if ($this->_moveFile($file, $plugin, $customName)) {
+            $return=true;
         } else {
             $return=false;
         }
+
 
         return $return;
     }
@@ -95,14 +117,14 @@ class Upload
      * @return string
      **/
 
-    public function moveFile($file,$plugin,$customName)
+    private function _moveFile($file,$plugin,$customName)
     {
 
-        $path="storage/uploads/".$plugin."/";
+        $path="csphere/storage/uploads/".$plugin."/";
 
         $this->createFolder($path);
 
-        if ($customName != "") {
+        if ($customName != '') {
             $filename = $customName;
         } else {
             $filename = $file['name'];
@@ -121,7 +143,7 @@ class Upload
      * Create a destination Folder
      *
      * @param string $path Filepath of the Folder
-     *
+     * @throws \ErrorException
      * @return boolean
      **/
 
@@ -130,11 +152,30 @@ class Upload
 
         if (!is_dir($path)) {
             $res = mkdir($path);
+            if(!$res){
+                throw new \ErrorException("Couldn't create folder: ".$path);
+            }
         } else {
             $res = false;
         }
 
         return $res;
+    }
+
+
+    /**
+     * Filters the name string
+     *
+     * @param $name String
+     * @return String
+     */
+
+    //@ToDo: Filter for invalid characters, only allow [1-9A-Za-z]
+    private function _sanitizeName($name){
+
+        $name=str_replace(" ","-",$name);
+
+        return $name;
     }
 
 }

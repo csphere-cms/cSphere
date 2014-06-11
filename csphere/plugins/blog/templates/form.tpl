@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link blog/create *}" method="POST">
+        <form class="form-horizontal" role="form" action="{* link blog/create *}" method="POST" enctype="multipart/form-data">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST">
+        <form class="form-horizontal" role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
         {* endif action *}
 
             {* tpl default/com_input name=blog_title label=blog.title value=blog.blog_title *}
@@ -26,6 +26,8 @@
             {* endif blog.blog_public *}
 
             {* tpl default/com_input_tags name=blog_tags label=default.tags value=blog.blog_tags *}
+
+            {* tpl default/com_input_file name=blog_image label=blog.image *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

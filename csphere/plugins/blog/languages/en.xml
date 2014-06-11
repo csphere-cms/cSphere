@@ -27,5 +27,6 @@
         <define name="title">Title</define>
         <define name="title_length_list">Title Length (List)</define>
         <define name="title_or_tags">Title or tags</define>
+        <define name="image">Coverimage</define>
     </definitions>
 </language>
