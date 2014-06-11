@@ -31,13 +31,13 @@ class TagsHelper
 
 
     /**
-    * Remove the connection between plugin und tags.
-    *
-    * @param string  $plugin     The name of the plugin that uses the tag
-    * @param integer $plugin_fid The ID of the entry in the plugin
-    *
-    * @return void this function doesn't return anything
-    */
+     * Remove the connection between plugin und tags.
+     *
+     * @param string  $plugin     The name of the plugin that uses the tag
+     * @param integer $plugin_fid The ID of the entry in the plugin
+     *
+     * @return void this function doesn't return anything
+     */
     public static function removeTagConnection($plugin, $plugin_fid)
     {
         $tag_plugin_finder = new \csphere\core\datamapper\Finder(
@@ -52,18 +52,18 @@ class TagsHelper
     }
 
     /**
-    * Add another tag to the tag database. This functions previous tests whether
-    * the tag already exists. In this case the existing tag is returned.
-    *
-    * @param string $tag The tag to add to the database.
-    *
-    * @return mixed tagArray the complete array of the give tag
-    */
+     * Add another tag to the tag database. This functions previous tests whether
+     * the tag already exists. In this case the existing tag is returned.
+     *
+     * @param string $tag The tag to add to the database.
+     *
+     * @return mixed tagArray the complete array of the give tag
+     */
     public static function addTag($tag)
     {
         $tag = trim($tag);
 
-        $tagArray = \csphere\plugins\tags\classes\Tags::existTag($tag);
+        $tagArray = Tags::existTag($tag);
 
         if (empty($tagArray)) {
             $dm_tag = new \csphere\core\datamapper\Model('tags');
