@@ -299,9 +299,9 @@ abstract class Fetch
         //@ToDo: Find out why the XML Parser delete empty values
         foreach ($data AS $def) {
 
-            if(empty($def['value'])){
+            if (empty($def['value'])) {
                 $lang[$def['name']]="";
-            }else{
+            } else {
                 $lang[$def['name']] = $def['value'];
             }
 

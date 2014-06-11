@@ -112,18 +112,30 @@ abstract class CMD_Parse
         $result="";
 
         if ($dateEnabled) {
-            $date_format=\csphere\core\translation\fetch::key("default", "datetime_format_date");
+            $date_format=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_date"
+            );
             $result .= $date->format($date_format);
         }
 
         if ($dateEnabled && $timeEnabled) {
-            $concat=\csphere\core\translation\fetch::key("default", "datetime_format_concat");
+            $concat=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_concat"
+            );
             $result.=" ".$concat." ";
         }
 
         if ($timeEnabled) {
-            $time_format=\csphere\core\translation\fetch::key("default", "datetime_format_time");
-            $time_appendix=\csphere\core\translation\fetch::key("default", "datetime_format_appendix");
+            $time_format=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_time"
+            );
+            $time_appendix=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_appendix"
+            );
             $result .=$date->format($time_format)." ".$time_appendix;
         }
 

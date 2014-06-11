@@ -84,7 +84,7 @@ class Driver_File extends Base
 
         // Check if the process owner is the fileowner, otherwise
         // chmod won't work proper and give a warning
-        if(get_current_user()==fileowner($filename)){
+        if (get_current_user()==fileowner($filename)) {
             chmod($filename, 0755);
         }
 
