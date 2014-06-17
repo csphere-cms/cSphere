@@ -11,12 +11,6 @@
 
             {* tpl default/com_input_adv name=title_length_manage label=blog.title_length_manage value=options.title_length_manage type=text holder=blog.title_length_manage *}
 
-            {* if options.default_public == '1' *}
-            {* tpl default/com_input_yesno name=default_public label=blog.default_public *}
-            {* else options.default_public *}
-            {* tpl default/com_input_noyes name=default_public label=blog.default_public *}
-            {* endif options.default_public *}
-
             {* tpl default/com_submit_btn caption=default.save *}
 
         </form><!--END form-->

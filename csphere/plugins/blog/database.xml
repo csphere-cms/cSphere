@@ -10,7 +10,7 @@
                 <column name="blog_title" datatype="varchar" max="200" default="" />
                 <column name="blog_content" datatype="longtext" default="" />
                 <column name="blog_date" datatype="integer" max="14" default="" />
-                <column name="blog_public" datatype="integer" max="2" default="0" />
+                <column name="blog_publish" datatype="integer" max="2" default="0" />
             </columns>
             <primary>
                 <column name="blog_id" />
@@ -23,11 +23,6 @@
         </table>
     </tables>
     <data>
-       <insert table="options">
-            <column name="option_plugin">blog</column>
-            <column name="option_name">default_public</column>
-            <column name="option_value">1</column>
-        </insert>
         <insert table="options">
             <column name="option_plugin">blog</column>
             <column name="option_name">title_length_list</column>

@@ -22,9 +22,9 @@
     <definitions>
         <define name="blog">Blog</define>
         <define name="content">Inhalt</define>
-        <define name="default_public">Automatisch veröffentlichen</define>
         <define name="image">Coverbild</define>
-        <define name="public">Veröffentlichen</define>
+        <define name="publish">Veröffentlichen</define>
+        <define name="published">Veröffentlicht</define>
         <define name="title">Titel</define>
         <define name="title_length_list">Titellänge (Liste)</define>
         <define name="title_length_manage">Titellänge (Verwaltung)</define>

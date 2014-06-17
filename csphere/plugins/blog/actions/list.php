@@ -56,4 +56,4 @@ $rad->callFinder($search);
 
 $rad->search(['blog_title', 'tag_name']);
 
-$rad->delegate('blog_date', $order);
+$rad->delegate('blog_id', $order);

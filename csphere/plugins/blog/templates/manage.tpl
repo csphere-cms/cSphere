@@ -15,7 +15,7 @@
                         <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
                     </th>
                     <th>
-                        <a href="{* raw order.blog_public *}">{* lang blog.public *}</a> {* raw arrow.blog_public *}
+                        <a href="{* raw order.blog_publish *}">{* lang blog.published *}</a> {* raw arrow.blog_publish *}
                     </th>
                     <th>
                         {* lang default.tags *}
@@ -36,11 +36,11 @@
                         {* date blog.blog_date *}
                     </td>
                     <td>
-                        {* if blog.blog_public == '1' *}
+                        {* if blog.blog_publish == '1' *}
                         {* lang default.yes *}
-                        {* else blog.blog_public *}
+                        {* else blog.blog_publish *}
                         {* lang default.no *}
-                        {* endif blog.blog_public *}
+                        {* endif blog.blog_publish *}
                     </td>
                     <td>
                         {* var blog.blog_tags *}

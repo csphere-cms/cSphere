@@ -23,11 +23,11 @@
 
             {* tpl default/com_input_file name=blog_image label=blog.image *}
 
-            {* if blog.blog_public == '1' *}
-            {* tpl default/com_input_yesno name=blog_public label=blog.public *}
-            {* else blog.blog_public *}
-            {* tpl default/com_input_noyes name=blog_public label=blog.public *}
-            {* endif blog.blog_public *}
+            {* if blog.blog_publish == '1' *}
+            {* tpl default/com_input_yesno name=blog_publish label=blog.publish *}
+            {* else blog.blog_publish *}
+            {* tpl default/com_input_noyes name=blog_publish label=blog.publish *}
+            {* endif blog.blog_publish *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 
