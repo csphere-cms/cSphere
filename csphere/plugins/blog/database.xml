@@ -7,7 +7,7 @@
             <columns>
                 <column name="blog_id" datatype="serial" max="0" default="" />
                 <column name="user_id" datatype="integer" default="0"/>
-                <column name="blog_title" datatype="varchar" max="200" default="" />
+                <column name="blog_title" datatype="varchar" max="120" default="" />
                 <column name="blog_content" datatype="longtext" default="" />
                 <column name="blog_date" datatype="integer" max="14" default="" />
                 <column name="blog_publish" datatype="integer" max="2" default="0" />
