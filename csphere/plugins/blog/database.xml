@@ -23,6 +23,11 @@
         </table>
     </tables>
     <data>
+       <insert table="options">
+            <column name="option_plugin">blog</column>
+            <column name="option_name">default_public</column>
+            <column name="option_value">1</column>
+        </insert>
         <insert table="options">
             <column name="option_plugin">blog</column>
             <column name="option_name">title_length_list</column>
@@ -30,8 +35,8 @@
         </insert>
         <insert table="options">
             <column name="option_plugin">blog</column>
-            <column name="option_name">default_public</column>
-            <column name="option_value">1</column>
+            <column name="option_name">title_length_manage</column>
+            <column name="option_value">25</column>
         </insert>
     </data>
 </database>

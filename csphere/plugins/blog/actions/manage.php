@@ -19,16 +19,25 @@ $rad = new \csphere\core\rad\Listed('blog');
 $rad->map('manage', 'manage');
 
 // Define order columns
-$order = ['blog_title', 'blog_date'];
+$order = ['blog_title', 'blog_date', 'blog_public'];
 
 // Define closure to execute before data is send to template
 $data = function ($data) {
 
     for ($i = 0; $i < count($data); ++$i) {
+        // Get record option for youtube
+        $dm_options = new \csphere\core\datamapper\Options('blog');
+        $options    = $dm_options->load();
+
+        $data[$i]['blog_title'] = \csphere\core\strings\Format::doStraightShorten(
+            $data[$i]['blog_title'], $options['title_length_manage']
+        );
+
         $data[$i]['blog_tags']
             = \csphere\plugins\tags\classes\Tags::usedTagsNamesAsString(
                 'blog', $data[$i]['blog_id']
             );
+
     }
 
     return $data;

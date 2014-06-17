@@ -43,6 +43,7 @@ $data = function ($data) use ($tags) {
 
     return $data;
 };
+
 $rad->callData($data);
 
 // Delegate action

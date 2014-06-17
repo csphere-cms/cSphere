@@ -28,6 +28,11 @@ $data = function ($data) {
         $data[$i]['blog_title'] = \csphere\core\strings\Format::doStraightShorten(
             $data[$i]['blog_title'], $options['title_length_list']
         );
+
+        $data[$i]['blog_tags']
+            = \csphere\plugins\tags\classes\Tags::usedTagsNamesAsString(
+                'blog', $data[$i]['blog_id']
+            );
     }
 
     return $data;

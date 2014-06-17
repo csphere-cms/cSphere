@@ -14,8 +14,8 @@
                     <th>
                         <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
                     </th>
-                    <th colspan="2">
-                        {* lang default.options *}
+                    <th>
+                        {* lang default.tags *}
                     </th>
                 </tr>
             </thead><!--END table thead-->
@@ -30,15 +30,12 @@
                         {* date blog.blog_date *}
                     </td>
                     <td>
-                        <a href="{* link blog/edit/id/$blog.blog_id *}">{* lang default.edit *}</a>
-                    </td>
-                    <td>
-                        <a href="{* link blog/remove/id/$blog.blog_id *}">{* lang default.remove *}</a>
+                        {* var blog.blog_tags *}
                     </td>
                 </tr>
                 {* else blog *}
                 <tr>
-                    <th class="text-center" colspan="5">
+                    <th class="text-center" colspan="3">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

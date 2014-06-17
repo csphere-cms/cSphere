@@ -1,48 +1,34 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-        {* tpl default/com_header plugin=blog.blog action=default.view *}
+        <header>
+            <section class="page-header">
+                <h3>
+                    {* var blog.blog_title *}
+                </h3><!--END header page-header headline-->
+            </section><!--END header page-header-->
+        </header><!--END header-->
+
 
         <br>
 
-        <table class="table table-striped table-hover">
-            <tbody>
-                <tr>
-                    <th>
-                        {* lang blog.title *}
-                    </th>
-                    <td>
-                        {* var blog.blog_title *}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        {* lang default.date *}
-                    </th>
-                    <td>
-                        {* date blog.blog_date *}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        {* lang blog.content *}
-                    </th>
-                    <td>
-                        {* var blog.blog_content *}
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        {* lang default.tags *}
-                    </th>
-                    <td>
-                        {* foreach blog.blog_tags *}
-                        <a href="{* link blog/list/search/$blog_tags.tag_name$ *}">{* var blog_tags.tag_name *}</a>
-                        {* endforeach blog.blog_tags *}
-                    </td>
-                </tr>
-            </tbody><!--END table tbody-->
-        </table><!--END table-->
+        <p>{* var blog.blog_content *}</p>
+
+        <br>
 
     </div><!--END panel panel-body-->
+
+    <div class="panel-footer clearfix">
+        <span class="pull-left">
+            <i class="fa fa-calendar"></i> {* date blog.blog_date *}
+        </span><!--END panel panel-footer date-->
+
+        <span class="pull-right">
+            <i class="fa fa-tags"></i>
+            {* foreach blog.blog_tags *}
+            <a href="{* link blog/list/search/$blog_tags.tag_name$ *}">{* var blog_tags.tag_name *}</a>
+            {* endforeach blog.blog_tags *}
+        </span>
+    </div><!--END panel panel-footer-->
+
 </div><!--END panel-->
