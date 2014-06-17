@@ -15,7 +15,7 @@
         <form class="form-horizontal" role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
         {* endif action *}
 
-            {* tpl default/com_input name=blog_title label=blog.title value=blog.blog_title *}
+            {* tpl default/com_input name=blog_title label=default.title value=blog.blog_title *}
 
             {* tpl default/com_textarea name=blog_content label=blog.content rows=5 value=blog.blog_content *}
 
