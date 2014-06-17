@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
+                        <a href="{* raw order.blog_title *}">{* lang default.title *}</a> {* raw arrow.blog_title *}
                     </th>
                     <th>
                         <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
