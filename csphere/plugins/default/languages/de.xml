@@ -84,6 +84,7 @@
         <define name="tags">Schlagwörter</define>
         <define name="themes">Themes</define>
         <define name="time">Zeit</define>
+        <define name="title">Titel</define>
         <define name="uninstall">Deinstallieren</define>
         <define name="until">bis</define>
         <define name="version_client">Client Version</define>
