@@ -90,54 +90,64 @@ abstract class CMD_Parse
     }
 
     /**
-     * Date and time replaces extendable by zone
+     * Datetime replaces extendable by zone
      *
      * @param array $part Placeholder cmd and key, maybe even more
      * @param array $data Array with data to use in the template
-     * @param bool  $dateEnabled Return Date Flag
-     * @param bool  $timeEnabled Return Time Flag
      *
      * @return string
      **/
 
-    public static function date(array $part, array $data, $dateEnabled=true, $timeEnabled=true)
+    public static function datetime(array $part, array $data)
     {
         $part = \csphere\core\template\Parse::sub($part, $data);
 
         // Data must be an unix timestamp of type integer
         $unix = (int)$part['data'];
 
-        $date = \csphere\core\date\Unixtime::userDateTime($unix);
+        $result=\csphere\core\date\Unixtime::string($unix,true,true);
 
-        $result="";
+        return $result;
+    }
 
-        if ($dateEnabled) {
-            $date_format=\csphere\core\translation\fetch::key(
-                "default",
-                "datetime_format_date"
-            );
-            $result .= $date->format($date_format);
-        }
+    /**
+     * Date replaces extendable by zone
+     *
+     * @param array $part Placeholder cmd and key, maybe even more
+     * @param array $data Array with data to use in the template
+     *
+     * @return string
+     **/
 
-        if ($dateEnabled && $timeEnabled) {
-            $concat=\csphere\core\translation\fetch::key(
-                "default",
-                "datetime_format_concat"
-            );
-            $result.=" ".$concat." ";
-        }
+    public static function date(array $part, array $data)
+    {
+        $part = \csphere\core\template\Parse::sub($part, $data);
 
-        if ($timeEnabled) {
-            $time_format=\csphere\core\translation\fetch::key(
-                "default",
-                "datetime_format_time"
-            );
-            $time_appendix=\csphere\core\translation\fetch::key(
-                "default",
-                "datetime_format_appendix"
-            );
-            $result .=$date->format($time_format)." ".$time_appendix;
-        }
+        // Data must be an unix timestamp of type integer
+        $unix = (int)$part['data'];
+
+        $result=\csphere\core\date\Unixtime::string($unix,true,false);
+
+        return $result;
+    }
+
+    /**
+     * Time replaces extendable by zone
+     *
+     * @param array $part Placeholder cmd and key, maybe even more
+     * @param array $data Array with data to use in the template
+     *
+     * @return string
+     **/
+
+    public static function time(array $part, array $data)
+    {
+        $part = \csphere\core\template\Parse::sub($part, $data);
+
+        // Data must be an unix timestamp of type integer
+        $unix = (int)$part['data'];
+
+        $result=\csphere\core\date\Unixtime::string($unix,false,true);
 
         return $result;
     }

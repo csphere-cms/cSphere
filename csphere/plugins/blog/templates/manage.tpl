@@ -33,7 +33,7 @@
                         <a href="{* link blog/view/id/$blog.blog_id *}">{* var blog.blog_title *}</a>
                     </td>
                     <td>
-                        {* date blog.blog_date *}
+                        {* datetime blog.blog_date *}
                     </td>
                     <td>
                         {* if blog.blog_publish == '1' *}

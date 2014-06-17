@@ -189,6 +189,21 @@ abstract class CMD_Prepare
     }
 
     /**
+     * Datetime needs hub parts
+     *
+     * @param array $part Placeholder cmd and key, maybe even more
+     *
+     * @return array
+     **/
+
+    public static function datetime(array $part)
+    {
+        $part = \csphere\core\template\Prepare::sub($part);
+
+        return $part;
+    }
+
+    /**
      * Date needs hub parts
      *
      * @param array $part Placeholder cmd and key, maybe even more
@@ -197,6 +212,21 @@ abstract class CMD_Prepare
      **/
 
     public static function date(array $part)
+    {
+        $part = \csphere\core\template\Prepare::sub($part);
+
+        return $part;
+    }
+
+    /**
+     * Time needs hub parts
+     *
+     * @param array $part Placeholder cmd and key, maybe even more
+     *
+     * @return array
+     **/
+
+    public static function time(array $part)
     {
         $part = \csphere\core\template\Prepare::sub($part);
 

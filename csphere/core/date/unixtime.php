@@ -16,7 +16,7 @@
 namespace csphere\core\date;
 
 /**
- * Class for microtime operations
+ * Class for unixtime operations
  *
  * @category  Core
  * @package   Date
@@ -102,5 +102,53 @@ class Unixtime
         $date->setTimezone($user_zone);
 
         return $date;
+    }
+
+    /**
+     * Converts a Unixtime to String
+     *
+     * @param int   $unix        Timestamp
+     * @param bool  $dateEnabled Return Date Flag
+     * @param bool  $timeEnabled Return Time Flag
+     *
+     * @return string
+     **/
+
+    public static function string($unix, $dateEnabled=true, $timeEnabled=true)
+    {
+
+        $date = Unixtime::userDateTime($unix);
+
+        $result="";
+
+        if ($dateEnabled) {
+            $date_format=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_date"
+            );
+            $result .= $date->format($date_format);
+        }
+
+        if ($dateEnabled && $timeEnabled) {
+            $concat=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_concat"
+            );
+            $result.=" ".$concat." ";
+        }
+
+        if ($timeEnabled) {
+            $time_format=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_time"
+            );
+            $time_appendix=\csphere\core\translation\fetch::key(
+                "default",
+                "datetime_format_appendix"
+            );
+            $result .=$date->format($time_format)." ".$time_appendix;
+        }
+
+        return $result;
     }
 }
