@@ -13,7 +13,7 @@
  * @link      http://www.csphere.eu
  **/
 
- // Get RAD class for this action
+// Get RAD class for this action
 $rad = new \csphere\core\rad\Edit('blog');
 
 $tags = new \csphere\plugins\tags\classes\Tags();
