@@ -84,6 +84,7 @@
         <define name="tags">Tags</define>
         <define name="themes">Themes</define>
         <define name="time">Time</define>
+        <define name="title">Title</define>
         <define name="uninstall">Uninstall</define>
         <define name="until">until</define>
         <define name="version_client">Client version</define>
