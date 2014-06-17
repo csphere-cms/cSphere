@@ -25,7 +25,8 @@ $order = ['blog_title', 'blog_date', 'blog_public'];
 $data = function ($data) {
 
     for ($i = 0; $i < count($data); ++$i) {
-        // Get record option for youtube
+
+        // Get record option for blog
         $dm_options = new \csphere\core\datamapper\Options('blog');
         $options    = $dm_options->load();
 
