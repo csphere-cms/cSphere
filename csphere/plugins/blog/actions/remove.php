@@ -7,7 +7,7 @@
  *
  * @category  Plugins
  * @package   Blog
- * @author    Daniel Schalla <schalla@csphere.eu>
+ * @author    Daniel Schalla <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
  * @link      http://www.csphere.eu
