@@ -9,7 +9,7 @@
             <thead>
                 <tr>
                     <th>
-                        <a href="{* raw order.blog_title *}">{* lang blog.title *}</a> {* raw arrow.blog_title *}
+                        <a href="{* raw order.blog_title *}">{* lang default.title *}</a> {* raw arrow.blog_title *}
                     </th>
                     <th>
                         <a href="{* raw order.blog_date *}">{* lang default.date *}</a> {* raw arrow.blog_date *}
@@ -33,7 +33,7 @@
                         <a href="{* link blog/view/id/$blog.blog_id *}">{* var blog.blog_title *}</a>
                     </td>
                     <td>
-                        {* datetime blog.blog_date *}
+                        {* date blog.blog_date *}
                     </td>
                     <td>
                         {* if blog.blog_publish == '1' *}
