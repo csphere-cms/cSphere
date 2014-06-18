@@ -28,7 +28,13 @@ namespace csphere\core\files;
 
 /**
  * Class Validate
+ *
+ * @category  Core
  * @package csphere\core\files
+ * @author    Daniel Schalla <contact@csphere.eu>
+ * @copyright 2013 cSphere Team
+ * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
+ * @link      http://www.csphere.eu
  */
 
 class Validate
@@ -36,18 +42,22 @@ class Validate
     /**
      * @var string File Location
      */
-    private $file;
+
+    private $_file;
 
     /**
      * Saves the File which must be validated
+     *
      * @param array $file : File Location
-     */
-    public function __construct($file){
+     **/
+
+    public function __construct($file)
+    {
 
         if (file_exists($file['tmp_name'])) {
-            $this->file=$file;
+            $this->_file=$file;
             return true;
-        }else{
+        } else {
             return false;
         }
 
@@ -57,22 +67,25 @@ class Validate
      * Check the file in dependency on a validationSet
      * on its mime and file extension
      *
-     * @param string $validationSet
-     * @param bool $mime
-     * @param bool $fileEnding
+     * @param string $validationSet Defines the ValidationSet (e.g. image)
+     * @param bool   $mime          Flag for Mime Check
+     * @param bool   $fileEnding    Flag for File EndingCheck
      * @throws \ErrorException
+     *
      * @return bool
-     */
-    public function check($validationSet,$mime=true,$fileEnding=true){
+     **/
+
+    public function check($validationSet,$mime=true,$fileEnding=true)
+    {
 
         $validate=true;
 
-        if (!empty(Validate::$fileEnding[$validationSet]) && !empty(Validate::$mime[$validationSet])) {
-            if($mime){
+        if (!empty(Validate::$_fileEnding[$validationSet]) && !empty(Validate::$_mime[$validationSet])) {
+            if ($mime) {
                 $validate=$this->_mimeCheck($validationSet);
             }
 
-            if($fileEnding && $validate){
+            if ($fileEnding && $validate) {
                 $validate=$this->_fileEndingCheck($validationSet);
             }
         }else{
@@ -88,15 +101,16 @@ class Validate
      * @param string $validationSet
      * @return bool
      */
-    private function _mimeCheck($validationSet){
+    private function _mimeCheck($validationSet)
+    {
         $validate=false;
-        $whiteList=Validate::$mime[$validationSet];
+        $whiteList=Validate::$_mime[$validationSet];
 
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
-        $mime=$finfo->file($this->file['tmp_name']);
+        $mime=$finfo->file($this->_file['tmp_name']);
 
-        foreach($whiteList as $entry){
-            if($mime==$entry){
+        foreach ($whiteList as $entry) {
+            if ($mime==$entry) {
                 $validate=true;
                 break;
             }
@@ -111,14 +125,15 @@ class Validate
      * @param string $validationSet
      * @return bool
      */
-    private function _fileEndingCheck($validationSet){
+    private function _fileEndingCheck($validationSet)
+    {
         $validate=false;
-        $whiteList=Validate::$fileEnding[$validationSet];
+        $whiteList=Validate::$_fileEnding[$validationSet];
 
-        $ext = pathinfo($this->file['name'], PATHINFO_EXTENSION);
+        $ext = pathinfo($this->_file['name'], PATHINFO_EXTENSION);
 
-        foreach($whiteList as $entry){
-            if($ext==$entry){
+        foreach ($whiteList as $entry) {
+            if ($ext==$entry) {
                 $validate=true;
                 break;
             }
@@ -131,15 +146,15 @@ class Validate
      * Defines several set of allowed file endings depending on filter
      * @var array
      */
-    private static $fileEnding=array(
-        "image"=>array("jpeg","jpg","png","gif"),
-    );
+    private static $_fileEnding=[
+        "image"=>["jpeg", "jpg", "png", "gif"],
+    ];
 
     /**
      * Defines several set of allowed mime types depending on filter
      * @var array
      */
-    private static $mime=array(
-        "image"=>array("image/jpeg","image/png","image/gif"),
-    );
+    private static $_mime=[
+        "image"=>["image/jpeg","image/png","image/gif"],
+    ];
 }

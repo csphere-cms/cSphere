@@ -105,7 +105,7 @@ abstract class CMD_Parse
         // Data must be an unix timestamp of type integer
         $unix = (int)$part['data'];
 
-        $result=\csphere\core\date\Unixtime::string($unix,true,true);
+        $result=\csphere\core\date\Unixtime::string($unix, true, true);
 
         return $result;
     }
@@ -126,7 +126,7 @@ abstract class CMD_Parse
         // Data must be an unix timestamp of type integer
         $unix = (int)$part['data'];
 
-        $result=\csphere\core\date\Unixtime::string($unix,true,false);
+        $result=\csphere\core\date\Unixtime::string($unix, true, false);
 
         return $result;
     }
@@ -147,7 +147,7 @@ abstract class CMD_Parse
         // Data must be an unix timestamp of type integer
         $unix = (int)$part['data'];
 
-        $result=\csphere\core\date\Unixtime::string($unix,false,true);
+        $result=\csphere\core\date\Unixtime::string($unix, false, true);
 
         return $result;
     }
