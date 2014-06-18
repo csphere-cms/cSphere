@@ -22,7 +22,7 @@
     <definitions>
         <define name="policies">Rechtliches</define>
         <define name="content">Inhalt</define>
-        <define name="imprint">Impressum</define>	
+        <define name="imprint">Impressum</define>
         <define name="terms_of_use">Nutzungsbedingungen</define>
         <define name="privacy_protection">Datenschutz</define>
     </definitions>

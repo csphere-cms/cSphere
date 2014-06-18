@@ -22,8 +22,8 @@
     <definitions>
         <define name="policies">Policies</define>
         <define name="content">Content</define>
-        <define name="imprint">Imprint</define>	
-        <define name="terms_of_use">Terms of use</define>	
+        <define name="imprint">Imprint</define>
+        <define name="terms_of_use">Terms of use</define>
         <define name="privacy_protection">Privacy protection</define>
     </definitions>
 </language>
