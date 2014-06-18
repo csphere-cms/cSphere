@@ -26,6 +26,6 @@
         <insert table="policies">
             <column name="policie_content">...</column>
             <column name="policie_date">1403096960</column>
-        </insert>		
+        </insert>
     </data>
 </database>

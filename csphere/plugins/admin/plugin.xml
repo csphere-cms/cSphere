@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<plugin xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/plugin.xsd">
+<plugin xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/plugin.xsd">
     <vendor>csphere</vendor>
     <version>0.1</version>
     <published>2013-12-24</published>

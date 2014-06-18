@@ -1,15 +1,15 @@
 <div class="panel panel-default">
     <div class="panel-body">
 
-		<header>
-			<section class="page-header">
-				<h3>
-					{* if policies.policie_id == '1' *}{* lang policies.imprint *}{* endif policies.policie_id *}
-					{* if policies.policie_id == '2' *}{* lang policies.terms_of_use *}{* endif policies.policie_id *}
-					{* if policies.policie_id == '3' *}{* lang policies.privacy_protection *}{* endif policies.policie_id *} - {* lang default.edit *}
-				</h3><!--END header page-header headline-->
-			</section><!--END header page-header-->
-		</header><!--END header-->
+        <header>
+            <section class="page-header">
+                <h3>
+                    {* if policies.policie_id == '1' *}{* lang policies.imprint *}{* endif policies.policie_id *}
+                    {* if policies.policie_id == '2' *}{* lang policies.terms_of_use *}{* endif policies.policie_id *}
+                    {* if policies.policie_id == '3' *}{* lang policies.privacy_protection *}{* endif policies.policie_id *} - {* lang default.edit *}
+                </h3><!--END header page-header headline-->
+            </section><!--END header page-header-->
+        </header><!--END header-->
 
         <br>
 
