@@ -24,11 +24,11 @@
                 {* foreach policies *}
                 <tr>
                     <td>
-						<a href="{* link policies/view/id/$policies.policie_id *}">
-						{* if policies.policie_id == '1' *}{* lang policies.imprint *}{* endif policies.policie_id *}
-						{* if policies.policie_id == '2' *}{* lang policies.terms_of_use *}{* endif policies.policie_id *}
-						{* if policies.policie_id == '3' *}{* lang policies.privacy_protection *}{* endif policies.policie_id *}
-						</a>
+                        <a href="{* link policies/view/id/$policies.policie_id *}">
+                            {* if policies.policie_id == '1' *}{* lang policies.imprint *}{* endif policies.policie_id *}
+                            {* if policies.policie_id == '2' *}{* lang policies.terms_of_use *}{* endif policies.policie_id *}
+                            {* if policies.policie_id == '3' *}{* lang policies.privacy_protection *}{* endif policies.policie_id *}
+                        </a>
                     </td>
                     <td>
                         {* datetime policies.policie_date *}
@@ -39,7 +39,7 @@
                 </tr>
                 {* else policies *}
                 <tr>
-                    <th class="text-center" colspan="5">
+                    <th class="text-center" colspan="3">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>
