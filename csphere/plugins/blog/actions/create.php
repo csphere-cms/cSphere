@@ -28,10 +28,13 @@ $record = function ($data) use ($t) {
     $data['blog_date'] = time();
 
     //@ToDo: Cancel Submit if invalid!
-    $upload=new \csphere\core\files\Upload;
-    $upload->setFilter('image');
-    $upload->uploadFile($_FILES['blog_image'],'blog',$data['blog_title']);
-
+	//@Schalla check this for a class http://www.php.net/manual/de/features.file-upload.errors.php
+	if ($_FILES['blog_image']['error'] === UPLOAD_ERR_OK) {	
+		$upload=new \csphere\core\files\Upload;
+		$upload->setFilter('image');
+		$upload->uploadFile($_FILES['blog_image'], 'blog', $data['blog_title']);
+	}
+	
     return $data;
 };
 
