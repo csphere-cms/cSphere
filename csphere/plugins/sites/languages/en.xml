@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+          xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="staticpages" version_min="0.1" short="en"/>
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2014-01-08</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Static Pages</name>
+    <info>Manage static pages</info>
+    <engine name="csphere" version_min="2013.0"/>
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu"/>
+        <web url="http://www.csphere.eu"/>
+    </contact>
+    <definitions>
+        <define name="content">Content</define>
+        <define name="error403_description">Access to this page denied. If you think this a mistake, please contact the Administrator.</define>
+        <define name="error403_title">Forbidden</define>
+        <define name="publish">Publish</define>
+        <define name="published">Published</define>
+        <define name="sites">Sites</define>
+        <define name="show_layout">Show layout</define>
+        <define name="title">Title</define>
+        <define name="title_length_list">Title Length (List)</define>
+        <define name="title_length_manage">Title Length (Manage)</define>
+        <define name="title_or_tags">Title or tags</define>
+    </definitions>
+</language>

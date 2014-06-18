@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>sites</plugin>
+    <tables>
+        <table name="sites">
+            <columns>
+                <column name="site_id" datatype="serial" max="0" default="" />
+                <column name="user_id" datatype="integer" default="0"/>
+                <column name="site_title" datatype="varchar" max="120" default="" />
+                <column name="site_content" datatype="longtext" max="0" default="" />
+                <column name="site_layout" datatype="integer" max="0" default="0" />
+                <column name="site_publish" datatype="integer" max="2" default="0" />
+            </columns>
+            <primary>
+                <column name="site_id" />
+            </primary>
+            <uniques>
+                <unique name="site_title">
+                    <column name="site_title" />
+                </unique>
+            </uniques>
+        </table>
+    </tables>
+    <data>
+        <insert table="options">
+            <column name="option_plugin">sites</column>
+            <column name="option_name">title_length_list</column>
+            <column name="option_value">25</column>
+        </insert>
+        <insert table="options">
+            <column name="option_plugin">sites</column>
+            <column name="option_name">title_length_manage</column>
+            <column name="option_value">25</column>
+        </insert>
+    </data>
+</database>
