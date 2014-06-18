@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<language xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/language.xsd">
+    <translation type="plugin" name="policies" version_min="0.1" short="en" />
+    <vendor>csphere</vendor>
+    <version>0.1</version>
+    <published>2012-03-01</published>
+    <copyright>cSphere Team</copyright>
+    <license>Simplified BSD License</license>
+    <name>Policies</name>
+    <info>Manage your policies entries</info>
+    <engine name="csphere" version_min="2013.0" />
+    <icon type="famfamfam">gb</icon>
+    <authors>
+        <current>cSphere Team</current>
+        <past>cSphere Team</past>
+    </authors>
+    <contact>
+        <email adress="contact@csphere.eu" />
+        <web url="http://www.csphere.eu" />
+    </contact>
+    <definitions>
+        <define name="policies">Policies</define>
+        <define name="content">Content</define>
+        <define name="imprint">Imprint</define>	
+        <define name="terms_of_use">Terms of use</define>	
+        <define name="privacy_protection">Privacy protection</define>
+    </definitions>
+</language>
