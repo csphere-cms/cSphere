@@ -31,14 +31,18 @@ class Upload
     /**
      * @var String Defines after which ruleset the validation class controls
      */
-    private $filter="";
+
+    private $_filter="";
 
     /**
      * Sets the filter for the validation class
+     *
      * @param string $filter FilterSet (See Validate)
      */
-    public function setFilter($filter){
-        $this->filter=$filter;
+
+    public function setFilter($filter)
+    {
+        $this->_filter=$filter;
     }
 
     /**
@@ -58,7 +62,7 @@ class Upload
 
         $validate=new Validate($file);
 
-        if (!empty($this->filter) && !$validate->check($this->filter)) {
+        if (!empty($this->_filter) && !$validate->check($this->_filter)) {
             return false;
         }
 
@@ -75,7 +79,6 @@ class Upload
         } else {
             $return=false;
         }
-
 
         return $return;
     }
@@ -144,6 +147,7 @@ class Upload
      *
      * @param string $path Filepath of the Folder
      * @throws \ErrorException
+     *
      * @return boolean
      **/
 
@@ -152,7 +156,7 @@ class Upload
 
         if (!is_dir($path)) {
             $res = mkdir($path);
-            if(!$res){
+            if (!$res) {
                 throw new \ErrorException("Couldn't create folder: ".$path);
             }
         } else {
@@ -167,13 +171,14 @@ class Upload
      * Filters the name string
      *
      * @param $name String
+     *
      * @return String
-     */
+     **/
 
     //@ToDo: Filter for invalid characters, only allow [1-9A-Za-z]
     private function _sanitizeName($name){
 
-        $name=str_replace(" ","-",$name);
+        $name=str_replace(" ", "-", $name);
 
         return $name;
     }

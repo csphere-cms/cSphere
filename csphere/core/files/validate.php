@@ -40,7 +40,7 @@ class Validate
 
     /**
      * Saves the File which must be validated
-     * @param string $file : File Location
+     * @param array $file : File Location
      */
     public function __construct($file){
 

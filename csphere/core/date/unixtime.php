@@ -107,9 +107,9 @@ class Unixtime
     /**
      * Converts a Unixtime to String
      *
-     * @param int   $unix        Timestamp
-     * @param bool  $dateEnabled Return Date Flag
-     * @param bool  $timeEnabled Return Time Flag
+     * @param int  $unix        Timestamp
+     * @param bool $dateEnabled Return Date Flag
+     * @param bool $timeEnabled Return Time Flag
      *
      * @return string
      **/
