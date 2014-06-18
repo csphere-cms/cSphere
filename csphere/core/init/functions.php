@@ -120,10 +120,11 @@ function path()
 /**
  * Start up engine next to basic function definitions
  *
+ * @param array $forcedConfig Array to force a Config Value
  * @return void
  **/
 
-function start()
+function start(array $forcedConfig=[])
 {
     // Report all errors
     ini_set('display_errors', 1);
@@ -162,6 +163,13 @@ function start()
     $conf   = new \csphere\core\init\Config();
     $error  = $conf->error();
     $config = $conf->get();
+
+    //Overwrite default config values
+    foreach($forcedConfig as $cat=>$values){
+        foreach($values as $key=>$value){
+            $config[$cat][$key]=$value;
+        }
+    }
 
     // Turn on display_errors if debug is activated
     $debug = (empty($config['view']['debug'])) ? 0 : 1;
