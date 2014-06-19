@@ -38,6 +38,8 @@ class Upload
      * Sets the filter for the validation class
      *
      * @param string $filter FilterSet (See Validate)
+     *
+     * @return void
      */
 
     public function setFilter($filter)
@@ -118,7 +120,7 @@ class Upload
      * @param string $customName Customname for the final file
      *
      * @return string
-     **/
+     */
 
     private function _moveFile($file,$plugin,$customName)
     {
@@ -169,14 +171,15 @@ class Upload
 
     /**
      * Filters the name string
+     * @ToDo: Filter for invalid characters, only allow [1-9A-Za-z]
      *
      * @param $name String
      *
      * @return String
      **/
 
-    //@ToDo: Filter for invalid characters, only allow [1-9A-Za-z]
-    private function _sanitizeName($name){
+    private function _sanitizeName($name)
+    {
 
         $name=str_replace(" ", "-", $name);
 

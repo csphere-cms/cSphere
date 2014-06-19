@@ -30,7 +30,7 @@ namespace csphere\core\files;
  * Class Validate
  *
  * @category  Core
- * @package csphere\core\files
+ * @package   Files
  * @author    Daniel Schalla <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
@@ -40,7 +40,7 @@ namespace csphere\core\files;
 class Validate
 {
     /**
-     * @var string File Location
+     * @var array File Location
      */
 
     private $_file;
@@ -49,6 +49,7 @@ class Validate
      * Saves the File which must be validated
      *
      * @param array $file : File Location
+     *
      **/
 
     public function __construct($file)
@@ -88,7 +89,7 @@ class Validate
             if ($fileEnding && $validate) {
                 $validate=$this->_fileEndingCheck($validationSet);
             }
-        }else{
+        } else {
             throw new \ErrorException('Validation Set does not exist!');
         }
 
@@ -99,8 +100,10 @@ class Validate
      * Compares file mime with filter set
      *
      * @param string $validationSet
+     *
      * @return bool
      */
+
     private function _mimeCheck($validationSet)
     {
         $validate=false;
@@ -123,6 +126,7 @@ class Validate
      * Compares file extension with filter set
      *
      * @param string $validationSet
+     *
      * @return bool
      */
     private function _fileEndingCheck($validationSet)

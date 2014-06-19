@@ -180,21 +180,10 @@ class Controller
     }
 
     /**
-     * Get default plugin and action from options
+     * Get the current requested plugin, action and box
      *
-     * @return string
-     **/
-
-    private function _defaults()
-    {
-            // @TODO: Use options for start page here
-            $plugin = 'default';
-            $action = 'list';
-
-            $target = $this->target($plugin, $action);
-
-            return $target;
-    }
+     * @return array
+     */
 
     public static function parseRequestAction(){
         $box    = \csphere\core\http\Input::get('get', 'box');
@@ -218,30 +207,27 @@ class Controller
 
         if (empty($plugin)) {
 
-            if (!empty($config['default']['plugin'])) {
-                $request['plugin']=$config['default']['plugin'];
-            }else{
-                $request['plugin']="default";
+            if (empty($config['default']['plugin'])) {
+                $config['default']['plugin']="default";
             }
 
-            if (!empty($config['default']['action'])) {
-                $request['action']=$config['default']['action'];
-            }else{
-                $request['action']="list";
+            $request['plugin']=$config['default']['plugin'];
+
+            if (empty($config['default']['action'])) {
+                $config['default']['action']="list";
             }
 
-        }elseif (!empty($box)) {
+            $request['action']=$config['default']['action'];
+
+
+        } elseif (!empty($box)) {
             $request['box']=$box;
         } else {
 
             $request['plugin']=$plugin;
 
             if (empty($action)) {
-                if (!empty($config['default']['action'])) {
-                    $request['action']=$config['default']['action'];
-                } else {
-                    $request['action']='list';
-                }
+                $request['action']=$config['default']['action'];
             } else {
                 $request['action']=$action;
             }

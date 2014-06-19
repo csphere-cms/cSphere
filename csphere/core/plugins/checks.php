@@ -127,7 +127,6 @@ class Checks
      * Set target for requests
      *
      * @param string  $target Name of target
-     * @param boolean $box    Set this to true for box only requests
      *
      * @throws \Exception
      *
@@ -143,7 +142,7 @@ class Checks
         }
 
         $metadata=new metadata();
-        $type=$metadata->templateType($this->_plugin,$target);
+        $type=$metadata->templateType($this->_plugin, $target);
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
                      . '/actions/' . $type. '/' . $target . '.php';
@@ -166,11 +165,7 @@ class Checks
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
                      . '/templates/' . $type. '/' . $target . '.tpl';
-        if(substr_count($this->_file,"box_latest.tpl")>0){
-            echo'<pre>';
-            debug_print_backtrace();
-            die();
-        }
+
     }
 
     /**
