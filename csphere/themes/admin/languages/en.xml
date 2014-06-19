@@ -21,5 +21,7 @@
     </contact>
     <definitions>
         <define name="admin">Admin</define>
+        <define name="content">Content</define>
+        <define name="system">System</define>
     </definitions>
 </language>

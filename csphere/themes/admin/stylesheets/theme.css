@@ -7,3 +7,17 @@
   *Author               Stefan Gräwe <sgrwe>
 
 ------------------------------------------------------------*/
+
+
+/*  __HEADER
+------------------------------------------------------------*/
+#header {}
+
+/* ----- __HEADER NAVBAR-TOGGLE ----- */
+#header .navbar-toggle {
+    color: #fff;
+    line-height: 34px;
+    max-height: 34px;
+    padding: 0;
+    width: 38px;
+}
