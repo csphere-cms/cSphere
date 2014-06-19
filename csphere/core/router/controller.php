@@ -221,6 +221,7 @@ class Controller
 
 
         } elseif (!empty($box)) {
+            $request['plugin']=$plugin;
             $request['box']=$box;
         } else {
 

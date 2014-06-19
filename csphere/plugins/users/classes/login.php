@@ -82,7 +82,7 @@ abstract class Login
 
         } else {
 
-            $view->template($plugin, 'box_' . $data['tpl'], $data, true);
+            $view->template($plugin, $data['tpl'], $data, true);
         }
     }
 
