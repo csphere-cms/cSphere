@@ -217,8 +217,19 @@ class Controller
         }
 
         if (empty($plugin)) {
-            $request['plugin']=$config['default']['plugin'];
-            $request['action']=$config['default']['action'];
+
+            if (!empty($config['default']['plugin'])) {
+                $request['plugin']=$config['default']['plugin'];
+            }else{
+                $request['plugin']="default";
+            }
+
+            if (!empty($config['default']['action'])) {
+                $request['action']=$config['default']['action'];
+            }else{
+                $request['action']="list";
+            }
+
         }elseif (!empty($box)) {
             $request['box']=$box;
         } else {
