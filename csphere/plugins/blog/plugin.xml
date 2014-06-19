@@ -27,4 +27,9 @@
     <entries>
         <target vendor="csphere" plugin="admin" action="content" />
     </entries>
-</plugin>
+    <routes>
+        <define type="frontend">list</define>
+        <define type="boxes">login</define>
+        <define type="backend">manage</define>
+    </routes>
+</plugin>  

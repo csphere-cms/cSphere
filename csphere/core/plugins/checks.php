@@ -134,7 +134,7 @@ class Checks
      * @return void
      **/
 
-    public function setRoute($target, $box = false)
+    public function setRoute($target)
     {
         // Route should not contain other chars
         if (!preg_match("=^[_a-z0-9-]+$=i", $target)) {
@@ -142,10 +142,12 @@ class Checks
             throw new \Exception('Name of plugin target contains unallowed chars');
         }
 
-        $directory = ($box == false) ? 'actions' : 'boxes';
+        $metadata=new metadata();
+        $type=$metadata->templateType($this->_plugin,$target);
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
-                     . '/' . $directory . '/' . $target . '.php';
+                     . '/actions/' . $type. '/' . $target . '.php';
+
     }
 
     /**
@@ -158,8 +160,17 @@ class Checks
 
     public function setTemplate($target)
     {
+
+        $metadata=new metadata();
+        $type=$metadata->templateType($this->_plugin,$target);
+
         $this->_file = 'csphere/plugins/' . $this->_plugin
-                     . '/templates/' . $target . '.tpl';
+                     . '/templates/' . $type. '/' . $target . '.tpl';
+        if(substr_count($this->_file,"box_latest.tpl")>0){
+            echo'<pre>';
+            debug_print_backtrace();
+            die();
+        }
     }
 
     /**

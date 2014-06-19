@@ -165,8 +165,8 @@ function start(array $forcedConfig=[])
     $config = $conf->get();
 
     //Overwrite default config values
-    foreach($forcedConfig as $cat=>$values){
-        foreach($values as $key=>$value){
+    foreach ($forcedConfig as $cat=>$values) {
+        foreach ($values as $key=>$value) {
             $config[$cat][$key]=$value;
         }
     }

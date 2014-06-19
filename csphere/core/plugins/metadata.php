@@ -138,4 +138,26 @@ class Metadata extends \csphere\core\xml\Metadata
 
         return $startup;
     }
+
+    /**
+     * Gets the Type of the current Template
+     *
+     * @param string $plugin Requested Plugin
+     * @param string $action Requested Action
+     *
+     * @return string
+     */
+
+    public function templateType($plugin, $action)
+    {
+        $reg = $this->generate();
+
+        if (isset($reg[$plugin]['routes'][$action])) {
+            $type=$reg[$plugin]['routes'][$action];
+        } else {
+            $type="frontend";
+        }
+
+        return $type;
+    }
 }

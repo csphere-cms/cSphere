@@ -76,6 +76,16 @@ class Driver_HTML extends Base
             $this->config['theme'] = 'default';
         }
 
+        $request=\csphere\core\router\Controller::parseRequestAction();
+
+        $pluginMetadata=new \csphere\core\plugins\metadata();
+        $result=$pluginMetadata->templateType($request['plugin'],$request['action']);
+
+        if ($result=="backend") {
+
+            $this->config['theme'] = 'admin';
+        }
+
         $this->_theme = $this->config['theme'];
 
         // Set cache object

@@ -114,6 +114,22 @@ class Driver_Plugin extends Base
 
         $array['entries'] = $array['entries'][0];
 
+        // Handle access rules
+        if (!isset($array['routes'][0])) {
+
+            $array['routes']=[];
+
+        } else {
+
+            $env=[];
+
+            foreach ($array['routes'][0]['define'] AS $action) {
+                $env[$action['value']]=$action['type'];
+            }
+
+            $array['routes']=$env;
+        }
+
         // Set icon URL
         $array['icon']['url'] = '';
 

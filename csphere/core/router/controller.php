@@ -156,23 +156,15 @@ class Controller
 
     private function _search()
     {
-        // Fetch important url parameters
-        $box    = \csphere\core\http\Input::get('get', 'box');
-        $plugin = \csphere\core\http\Input::get('get', 'plugin');
-        $action = \csphere\core\http\Input::get('get', 'action');
 
-        // Check for favicon requests
-        if ($plugin == 'favicon.ico') {
+        $request=self::parseRequestAction();
 
-            $plugin = '';
-        }
+        $plugin=$request['plugin'];
+        $action=$request['action'];
+        $box=$request['box'];
 
         // Fetch defaults if no plugin is given
-        if (empty($plugin)) {
-
-            $this->_target = $this->_defaults();
-
-        } elseif (!empty($box)) {
+        if (!empty($box)) {
 
             $this->_box = true;
 
@@ -182,12 +174,6 @@ class Controller
             $this->_target = $checks->result();
 
         } else {
-
-            // Set action to list if it is empty
-            if (empty($action)) {
-
-                $action = 'list';
-            }
 
             $this->_target = $this->target($plugin, $action);
         }
@@ -208,5 +194,44 @@ class Controller
             $target = $this->target($plugin, $action);
 
             return $target;
+    }
+
+    public static function parseRequestAction(){
+        $box    = \csphere\core\http\Input::get('get', 'box');
+        $plugin = \csphere\core\http\Input::get('get', 'plugin');
+        $action = \csphere\core\http\Input::get('get', 'action');
+
+        $request=[
+            'plugin'=>'',
+            'action'=>'',
+            'box'=>''
+        ];
+
+        // Read config file
+        $conf   = new \csphere\core\init\Config();
+        $config = $conf->get();
+
+        // Check for favicon requests
+        if ($plugin == 'favicon.ico') {
+            $plugin = '';
+        }
+
+        if (empty($plugin)) {
+            $request['plugin']=$config['default']['plugin'];
+            $request['action']=$config['default']['action'];
+        }elseif (!empty($box)) {
+            $request['box']=$box;
+        } else {
+
+            $request['plugin']=$plugin;
+
+            if (empty($action)) {
+                $request['action']=$request['action']=$config['default']['action'];
+            } else {
+                $request['action']=$action;
+            }
+        }
+
+        return $request;
     }
 }

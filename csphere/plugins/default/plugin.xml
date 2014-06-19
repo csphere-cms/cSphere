@@ -54,4 +54,7 @@
         <file type="stylesheet" top="false" name="csphere.css" />
         <file type="javascript" top="false" name="ajax.js" />
     </startup>
+    <routes>
+        <define type="boxes">bottombar</define>
+    </routes>
 </plugin>
