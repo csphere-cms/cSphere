@@ -237,7 +237,11 @@ class Controller
             $request['plugin']=$plugin;
 
             if (empty($action)) {
-                $request['action']=$request['action']=$config['default']['action'];
+                if (!empty($config['default']['action'])) {
+                    $request['action']=$config['default']['action'];
+                } else {
+                    $request['action']='list';
+                }
             } else {
                 $request['action']=$action;
             }
