@@ -22,5 +22,8 @@
     </required>
     <entries>
     </entries>
-
+    <routes>
+        <define type="backend">content</define>
+        <define type="backend">system</define>
+    </routes>
 </plugin>

@@ -26,4 +26,9 @@
     <entries>
         <target vendor="csphere" plugin="admin" action="system" />
     </entries>
+    <routes>
+        <define type="backend">control</define>
+        <define type="backend">php</define>
+        <define type="backend">space</define>
+    </routes>
 </plugin>

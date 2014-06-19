@@ -26,4 +26,10 @@
     </environment>
     <entries>
     </entries>
+    <routes>
+        <define type="backend">create</define>
+        <define type="backend">edit</define>
+        <define type="backend">manage</define>
+        <define type="backend">remove</define>
+    </routes>
 </plugin>

@@ -14,7 +14,7 @@
         <current>cSphere Team</current>
         <past>cSphere Team</past>
     </authors>
-    <contact> 
+    <contact>
         <email adress="contact@csphere.eu" />
         <web url="http://www.csphere.eu" />
     </contact>
@@ -24,6 +24,10 @@
         <target vendor="csphere" plugin="admin" action="system" />
     </entries>
     <routes>
+        <define type="backend">control</define>
+        <define type="backend">details</define>
+        <define type="backend">files</define>
+        <define type="backend">remove</define>
         <define type="boxes">latest</define>
     </routes>
 </plugin>

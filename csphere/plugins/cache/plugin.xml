@@ -25,4 +25,10 @@
     <entries>
         <target vendor="csphere" plugin="admin" action="system" />
     </entries>
+    <routes>
+        <define type="backend">clear</define>
+        <define type="backend">control</define>
+        <define type="backend">keys</define>
+        <define type="backend">opcache</define>
+    </routes>
 </plugin>

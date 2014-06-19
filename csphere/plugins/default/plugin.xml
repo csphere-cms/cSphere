@@ -56,5 +56,7 @@
     </startup>
     <routes>
         <define type="boxes">bottombar</define>
+        <define type="frontend">list</define>
+        <define type="frontend">scriptinfo</define>
     </routes>
 </plugin>

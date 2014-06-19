@@ -23,4 +23,8 @@
     <entries>
         <target vendor="csphere" plugin="admin" action="system" />
     </entries>
+    <routes>
+        <define type="backend">control</define>
+        <define type="backend">details</define>
+    </routes>
 </plugin>
