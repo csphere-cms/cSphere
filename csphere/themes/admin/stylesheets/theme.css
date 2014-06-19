@@ -2,8 +2,22 @@
 
   *Filename             theme.css
   *Description          ADMIN THEME STYLES
-  *Version              0.1 (2014-02-13)
+  *Version              0.1 (2014-06-19)
   *Website              http://www.csphere.eu
   *Author               Stefan Gräwe <sgrwe>
 
 ------------------------------------------------------------*/
+
+
+/*  __HEADER
+------------------------------------------------------------*/
+#header {}
+
+/* ----- __HEADER NAVBAR-TOGGLE ----- */
+#header .navbar-toggle {
+    color: #fff;
+    line-height: 34px;
+    max-height: 34px;
+    padding: 0;
+    width: 38px;
+}
