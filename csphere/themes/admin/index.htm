@@ -12,14 +12,52 @@
         <link rel="stylesheet" href="stylesheets/theme.css" media="screen">
         <link rel="stylesheet" href="stylesheets/templates.css" media="screen">
         <link rel="stylesheet" href="stylesheets/bootstrap.css" media="screen">
-
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600">
     </head>
 
     <body>
 
+        <header id="header" class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars"></i>
+                    </button><!--END header navbar-header navbar-toogle-->
 
+                    <a class="navbar-brand" href="{* link default *}">cSphere 2013</a><!--END header navbar-header navbar-brand-->
+                </div><!--END header navbar-header-->
 
+                <div id="header-collapse" class="collapse navbar-collapse">
+                    <nav>
+                        <ul class="nav navbar-nav">
+                            <li><a href="{* link admin/content *}">{* lang content *}</a></li>
+                            <li><a href="{* link admin/system *}">{* lang system *}</a></li>
+                        </ul><!--END header navigation navbar-nav-->
+                    </nav><!--END header navigation-->
+
+                    {* box users/login *}
+                </div><!--END header navbar-collapse-->
+            </div><!--END header container-->
+        </header><!--END header-->
+
+        <div class="container">
+            <div class="row">
+
+                <div id="content" class="col-md-12">
+
+                    {* page content *}
+
+                </div><!--END content-->
+
+            </div><!--END main container row-->
+        </div><!--END main container-->
+
+        <footer id="footer" class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+                <p class="navbar-text navbar-left">&copy; cSphere 2013</p>
+                <div class="navbar-text navbar-right hidden-xs">{* box default/bottombar *}</div>
+            </div><!--END footer container-->
+        </footer><!--END footer-->
 
         <!-- JAVASCRIPTS
         ================================================== -->
