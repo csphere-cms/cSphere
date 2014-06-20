@@ -60,7 +60,8 @@ abstract class Menu
 
         } else {
 
-            $view->template('users', 'box_' . $tpl, $data, true);
+            $view->template('users', "side".$tpl, $data, true);
+
         }
     }
 }

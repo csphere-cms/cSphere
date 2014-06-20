@@ -101,8 +101,13 @@ class Checks
 
     public function setTemplate($target, $plugin)
     {
+
+        $metadata=new \csphere\core\plugins\metadata();
+        $type=$metadata->templateType($plugin, $target);
+
         $this->_file = 'csphere/themes/' . $this->_theme
-                     . '/templates/' . $plugin . '/' . $target . '.tpl';
+                     . '/templates/' . $plugin . '/' . $type. '/' . $target . '.tpl';
+
     }
 
     /**

@@ -65,7 +65,7 @@ abstract class CMD_Prepare
 
             // Get filename of plugin box
             $checks = new \csphere\core\plugins\Checks($target[0]);
-            $checks->setRoute($target[1], true);
+            $checks->setRoute($target[1]);
             $part['key'] = $checks->result();
 
             // Fallback if problems occur
@@ -78,7 +78,7 @@ abstract class CMD_Prepare
             } else {
 
                 // Set name for identification
-                $part['name'] = 'box_' . $target[0] . '_' . $target[1];
+                $part['name'] = $target[0] . '_' . $target[1];
             }
         } else {
 

@@ -185,7 +185,8 @@ class Controller
      * @return array
      */
 
-    public static function parseRequestAction(){
+    public static function parseRequestAction()
+    {
         $box    = \csphere\core\http\Input::get('get', 'box');
         $plugin = \csphere\core\http\Input::get('get', 'plugin');
         $action = \csphere\core\http\Input::get('get', 'action');
