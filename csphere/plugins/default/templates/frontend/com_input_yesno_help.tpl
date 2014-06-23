@@ -3,11 +3,11 @@
 
     <div class="col-sm-8">
         <label class="radio-inline">
-            <input type="radio" name="{* com text name *}" value="0"> {* lang default.no *}
+            <input type="radio" name="{* com text name *}" value="1" checked="checked"> {* lang default.yes *}
         </label>
 
         <label class="radio-inline">
-            <input type="radio" name="{* com text name *}" value="1" checked="checked"> {* lang default.yes *}
+            <input type="radio" name="{* com text name *}" value="0"> {* lang default.no *}
         </label>
     </div>
 
