@@ -27,7 +27,8 @@
     </entries>
     <routes>
         <define type="backend">edit</define>
+        <define type="backend">form</define>
         <define type="backend">manage</define>
-        <define type="backend">view</define>
+        <define type="frontend">view</define>
     </routes>
 </plugin>
