@@ -26,9 +26,10 @@
         <target vendor="csphere" plugin="admin" action="content" />
     </entries>
     <routes>
-        <define type="backend">create</define>
         <define type="backend">manage</define>
         <define type="backend">remove</define>
+        <define type="frontend">create</define>
+        <define type="frontend">form</define>
         <define type="frontend">view</define>
     </routes>
 </plugin>
