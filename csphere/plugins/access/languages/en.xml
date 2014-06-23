@@ -21,5 +21,9 @@
     </contact>
     <definitions>
         <define name="access">Access</define>
+        <define name="reset">Reset</define>
+        <define name="details">Details</define>
+
+        <define name="permission_groupread">Grouprights</define>
     </definitions>
 </language>

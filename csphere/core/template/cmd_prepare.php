@@ -317,7 +317,7 @@ abstract class CMD_Prepare
         if (isset($target[1])) {
 
             // Using other plugins then the current one or default is dangerous
-            if ($target[0] != 'default' && $target[0] != $part['plugin']) {
+            if ($target[0] != 'default' && $target[0] != $part['plugin'] && $part['plugin']!="access") {
 
                 $msg = 'Plugin "' . $part['plugin'] . '" used a language-key '
                      . 'of a foreign plugin: ' . $part['key'];

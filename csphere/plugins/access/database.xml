@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<database xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+    xs:noNamespaceSchemaLocation="http://www.csphere.eu/xml/schemas/database.xsd">
+    <plugin>access</plugin>
+    <tables>
+        <table name="access_group">
+            <columns>
+                <column name="access_group_id" datatype="serial" max="0" default="" />
+                <column name="group_id" datatype="integer" default="0"/>
+                <column name="access_group_permission" datatype="varchar" max="220" default="" />
+                <column name="access_group_value" datatype="varchar" max="10" default="0" />
+            </columns>
+            <primary>
+                <column name="access_group_id" />
+            </primary>
+        </table>
+        <table name="access_user">
+            <columns>
+                <column name="access_user_id" datatype="serial" max="0" default="" />
+                <column name="group_id" datatype="integer" default="0"/>
+                <column name="access_user_permission" datatype="varchar" max="220" default="" />
+                <column name="access_user_value" datatype="varchar" max="10" default="0" />
+            </columns>
+            <primary>
+                <column name="access_user_id" />
+            </primary>
+        </table>
+    </tables>
+</database>

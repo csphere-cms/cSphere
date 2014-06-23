@@ -13,7 +13,7 @@
  * @link      http://www.csphere.eu
  **/
 
- // Get RAD class for this action
+// Get RAD class for this action
 $rad = new \csphere\core\rad\Create('groups');
 
 // Define closure to execute before record is send to database
@@ -25,6 +25,17 @@ $record = function ($array) {
 };
 
 $rad->callRecord($record);
+
+// Define closure to execute before data is send to template
+$data = function ($array) {
+
+    $access = new \csphere\plugins\access\classes\Handler();
+    $access->initiateGroup($array['group_id']);
+
+    return $array;
+};
+
+$rad->callAfterRecord($data);
 
 // Delegate action
 $rad->delegate();

@@ -33,6 +33,7 @@
         <define type="backend">manage</define>
         <define type="backend">options</define>
         <define type="backend">remove</define>
+        <define type="backend">form</define>
         <define type="frontend">list</define>
         <define type="frontend">view</define>
     </routes>
