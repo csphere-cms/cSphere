@@ -67,7 +67,9 @@ class Session
 
         $dns = ($request['dns'] == 'localhost') ? '' : $request['dns'];
 
-        $name = 'csphere_' . md5($request['dns'] . $request['dirname']);
+        $salt = mcrypt_create_iv(40, MCRYPT_DEV_URANDOM);
+
+        $name = 'csphere_' . md5($request['dns'] . $request['dirname'] . $salt);
 
         session_name($name);
 
