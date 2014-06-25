@@ -34,19 +34,19 @@ if ($access->check("groupread")) {
 
     $path = \csphere\core\init\path();
 
-    $tmpPlugins=[];
-    $count=0;
+    $tmpPlugins = [];
+    $count = 0;
 
-    foreach($plugins as $plugin){
+    foreach ($plugins as $plugin) {
         $file = $path . 'csphere/plugins/' . $plugin['short'] . '/access.xml';
 
-        if(file_exists($file)){
-            $tmpPlugins[]=$plugin;
+        if (file_exists($file)) {
+            $tmpPlugins[] = $plugin;
             $count++;
         }
     }
 
-    $plugins=$tmpPlugins;
+    $plugins = $tmpPlugins;
 
     $data = ['count' => $count, 'plugins' => $plugins];
 

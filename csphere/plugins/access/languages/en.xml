@@ -24,6 +24,8 @@
         <define name="reset">Reset</define>
         <define name="details">Details</define>
 
-        <define name="permission_groupread">Grouprights</define>
+        <define name="permission_groupread">Can see Group permissions?</define>
+        <define name="permission_groupedit">Can edit Group permissions?</define>
+        <define name="permission_reset">Can reset plugin permissions?</define>
     </definitions>
 </language>

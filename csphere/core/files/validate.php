@@ -56,7 +56,7 @@ class Validate
     {
 
         if (file_exists($file['tmp_name'])) {
-            $this->_file=$file;
+            $this->_file = $file;
             return true;
         } else {
             return false;
@@ -69,25 +69,25 @@ class Validate
      * on its mime and file extension
      *
      * @param string $validationSet Defines the ValidationSet (e.g. image)
-     * @param bool   $mime          Flag for Mime Check
-     * @param bool   $fileEnding    Flag for File EndingCheck
+     * @param bool $mime Flag for Mime Check
+     * @param bool $fileEnding Flag for File EndingCheck
      * @throws \ErrorException
      *
      * @return bool
      **/
 
-    public function check($validationSet,$mime=true,$fileEnding=true)
+    public function check($validationSet, $mime = true, $fileEnding = true)
     {
 
-        $validate=true;
+        $validate = true;
 
         if (!empty(Validate::$_fileEnding[$validationSet]) && !empty(Validate::$_mime[$validationSet])) {
             if ($mime) {
-                $validate=$this->_mimeCheck($validationSet);
+                $validate = $this->_mimeCheck($validationSet);
             }
 
             if ($fileEnding && $validate) {
-                $validate=$this->_fileEndingCheck($validationSet);
+                $validate = $this->_fileEndingCheck($validationSet);
             }
         } else {
             throw new \ErrorException('Validation Set does not exist!');
@@ -106,15 +106,15 @@ class Validate
 
     private function _mimeCheck($validationSet)
     {
-        $validate=false;
-        $whiteList=Validate::$_mime[$validationSet];
+        $validate = false;
+        $whiteList = Validate::$_mime[$validationSet];
 
         $finfo = new \finfo(FILEINFO_MIME_TYPE);
-        $mime=$finfo->file($this->_file['tmp_name']);
+        $mime = $finfo->file($this->_file['tmp_name']);
 
         foreach ($whiteList as $entry) {
-            if ($mime==$entry) {
-                $validate=true;
+            if ($mime == $entry) {
+                $validate = true;
                 break;
             }
         }
@@ -131,14 +131,14 @@ class Validate
      */
     private function _fileEndingCheck($validationSet)
     {
-        $validate=false;
-        $whiteList=Validate::$_fileEnding[$validationSet];
+        $validate = false;
+        $whiteList = Validate::$_fileEnding[$validationSet];
 
         $ext = pathinfo($this->_file['name'], PATHINFO_EXTENSION);
 
         foreach ($whiteList as $entry) {
-            if ($ext==$entry) {
-                $validate=true;
+            if ($ext == $entry) {
+                $validate = true;
                 break;
             }
         }
@@ -150,15 +150,15 @@ class Validate
      * Defines several set of allowed file endings depending on filter
      * @var array
      */
-    private static $_fileEnding=[
-        "image"=>["jpeg", "jpg", "png", "gif"],
+    private static $_fileEnding = [
+        "image" => ["jpeg", "jpg", "png", "gif"],
     ];
 
     /**
      * Defines several set of allowed mime types depending on filter
      * @var array
      */
-    private static $_mime=[
-        "image"=>["image/jpeg","image/png","image/gif"],
+    private static $_mime = [
+        "image" => ["image/jpeg", "image/png", "image/gif"],
     ];
 }

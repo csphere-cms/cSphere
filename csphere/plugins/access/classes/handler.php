@@ -56,25 +56,63 @@ class Handler
 
     /**
      * @param $plugin
-     * @param $permission
-     * @param $group
-     * @return mixed
      */
-    public function setValueGroup($plugin, $permission, $group)
+    public function updatePlugin($plugin)
+    {
+        $groupFinder = new \csphere\core\datamapper\Finder("groups");
+        $groups = $groupFinder->find(0, $groupFinder->count());
+
+        foreach ($groups as $group) {
+            $id = $group['group_id'];;
+            $name = $group['group_name'];
+            if (!empty($_POST[$name])) {
+                foreach ($_POST[$name] as $permission => $value) {
+                    $this->_setValueGroup($plugin, $permission, $value, $id);
+                }
+            }
+        }
+    }
+
+
+    /**
+     * @param $plugin
+     * @param $permission
+     * @param $value
+     * @param $groupID
+     * @return bool
+     */
+
+    private function _setValueGroup($plugin, $permission, $value, $groupID)
     {
         $table = new \csphere\core\datamapper\Finder("access", "group");
+        $table->columns("access_group_id");
         $table->where("access_group_permission", "=", $plugin . "." . $permission);
-        $table->where("group_id", "=", $group);
+        $table->where("group_id", "=", $groupID);
         $res = $table->first();
 
-        return $res['access_group_value'];
+        if (!empty($res)) {
+
+            $data['access_group_id'] = $res['access_group_id'];
+            $data['group_id'] = $groupID;
+            $data['access_group_permission'] = $plugin . "." . $permission;
+            $data['access_group_value'] = intval($value);
+
+            $model = new \csphere\core\datamapper\Model("access", "group");
+            $model->update($data);
+
+            $result = true;
+        } else {
+            $result = false;
+        }
+
+        return $result;
     }
 
     /**
      * @param $permission
      * @param $userID
      */
-    public function setValueUser($permission, $userID)
+    public function _setValueUser($permission, $userID)
     {
 
     }
@@ -85,18 +123,8 @@ class Handler
      */
     public function initiateDefault($plugin, $groups = [])
     {
-        $loader = \csphere\core\service\Locator::get();
 
-        // Check for database XML file
-        $path = \csphere\core\init\path();
-        $file = $path . 'csphere/plugins/' . $plugin . '/access.xml';
-
-        if (file_exists($file)) {
-
-            // Get access content of plugin
-            $xml = $loader->load('xml', 'access');
-
-            $permissions = $xml->source('plugin', $plugin);
+        if ($permissions = $this->loadPermissions($plugin)) {
 
             $finder = new \csphere\core\datamapper\Finder("access", "group");
             $model = new \csphere\core\datamapper\Model("access", "group");
@@ -140,5 +168,26 @@ class Handler
         foreach ($plugins as $plugin) {
             $this->initiateDefault($plugin['short'], [$groupID]);
         }
+    }
+
+    public function loadPermissions($plugin)
+    {
+
+        $loader = \csphere\core\service\Locator::get();
+        // Check for database XML file
+        $path = \csphere\core\init\path();
+        $file = $path . 'csphere/plugins/' . $plugin . '/access.xml';
+
+        if (file_exists($file)) {
+
+            // Get access content of plugin
+            $xml = $loader->load('xml', 'access');
+            $permissions = $xml->source('plugin', $plugin);
+
+        } else {
+            $permissions = [];
+        }
+
+        return $permissions;
     }
 }

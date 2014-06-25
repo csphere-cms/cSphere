@@ -31,5 +31,7 @@
         <define type="backend">reset</define>
         <define type="backend">manage</define> 
         <define type="backend">details</define>
+        <define type="backend">input_yesno</define>
+        <define type="backend">input_noyes</define>
     </routes>
 </plugin>

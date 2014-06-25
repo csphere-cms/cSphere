@@ -32,7 +32,7 @@ class Upload
      * @var String Defines after which ruleset the validation class controls
      */
 
-    private $_filter="";
+    private $_filter = "";
 
     /**
      * Sets the filter for the validation class
@@ -44,25 +44,25 @@ class Upload
 
     public function setFilter($filter)
     {
-        $this->_filter=$filter;
+        $this->_filter = $filter;
     }
 
     /**
      * Uploads a file into the storage folder
      *
-     * @param array  $file       Array of the file which should be uploaded,
+     * @param array $file Array of the file which should be uploaded,
      * using the $_FILES Array
-     * @param string $plugin     Plugin Name
+     * @param string $plugin Plugin Name
      * @param string $customName Rename File to $name
      * Class
      *
      * @return array
      **/
 
-    public function uploadFile($file,$plugin,$customName = "")
+    public function uploadFile($file, $plugin, $customName = "")
     {
 
-        $validate=new Validate($file);
+        $validate = new Validate($file);
 
         if (!empty($this->_filter) && !$validate->check($this->_filter)) {
             return false;
@@ -73,13 +73,13 @@ class Upload
             return false;
         }
 
-        $customName=$this->_sanitizeName($customName);
+        $customName = $this->_sanitizeName($customName);
 
         //Try to upload the file in our destination folder
         if ($this->_moveFile($file, $plugin, $customName)) {
-            $return=true;
+            $return = true;
         } else {
-            $return=false;
+            $return = false;
         }
 
         return $return;
@@ -109,23 +109,23 @@ class Upload
             $consistent = 0;
         }
 
-        return (boolean) $consistent;
+        return (boolean)$consistent;
     }
 
     /**
      * Move the uploaded file
      *
-     * @param array  $file       File Array
-     * @param string $plugin     Plugin Name
+     * @param array $file File Array
+     * @param string $plugin Plugin Name
      * @param string $customName Customname for the final file
      *
      * @return string
      */
 
-    private function _moveFile($file,$plugin,$customName)
+    private function _moveFile($file, $plugin, $customName)
     {
 
-        $path="csphere/storage/uploads/".$plugin."/";
+        $path = "csphere/storage/uploads/" . $plugin . "/";
 
         $this->createFolder($path);
 
@@ -135,8 +135,8 @@ class Upload
             $filename = $file['name'];
         }
 
-        if (move_uploaded_file($file['tmp_name'], $path.$filename)) {
-            $filePath = $path.$filename;
+        if (move_uploaded_file($file['tmp_name'], $path . $filename)) {
+            $filePath = $path . $filename;
         } else {
             $filePath = "";
         }
@@ -159,7 +159,7 @@ class Upload
         if (!is_dir($path)) {
             $res = mkdir($path);
             if (!$res) {
-                throw new \ErrorException("Couldn't create folder: ".$path);
+                throw new \ErrorException("Couldn't create folder: " . $path);
             }
         } else {
             $res = false;
@@ -181,7 +181,7 @@ class Upload
     private function _sanitizeName($name)
     {
 
-        $name=str_replace(" ", "-", $name);
+        $name = str_replace(" ", "-", $name);
 
         return $name;
     }

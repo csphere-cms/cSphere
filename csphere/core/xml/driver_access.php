@@ -20,7 +20,7 @@ namespace csphere\core\xml;
  *
  * @category  Core
  * @package   XML
- * @author    Hans-Joachim Piepereit <contact@csphere.eu>
+ * @author    Daniel Schalla <contact@csphere.eu>
  * @copyright 2013 cSphere Team
  * @license   http://opensource.org/licenses/bsd-license Simplified BSD License
  * @link      http://www.csphere.eu

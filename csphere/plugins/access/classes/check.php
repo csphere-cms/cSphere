@@ -32,44 +32,44 @@ class Check
     private $_plugin;
     private $_userID;
 
-    public function __construct($plugin,$userID=0)
+    public function __construct($plugin, $userID = 0)
     {
-        $this->_handler=new Handler();
+        $this->_handler = new Handler();
         $this->setPlugin($plugin);
         $this->setUser($userID);
     }
 
     public function setPlugin($plugin)
     {
-        $this->_plugin=$plugin;
+        $this->_plugin = $plugin;
     }
 
     public function setUser($userID)
     {
         if (empty($userID)) {
             $session = new \csphere\core\session\Session();
-            $userID=1;//$session->get("user_id");
+            $userID = 1; //$session->get("user_id");
 
         }
-        $this->_userID=$userID;
+        $this->_userID = $userID;
     }
 
     public function check($permission)
     {
-        $access=false;
+        $access = false;
 
-        $groups=$this->checkGroups($this->_userID, $permission);
-        $user=$this->checkUser($this->_userID, $permission);
+        $groups = $this->checkGroups($this->_userID, $permission);
+        $user = $this->checkUser($this->_userID, $permission);
 
-        foreach($groups as $group){
-            if($group){
-                $access=true;
+        foreach ($groups as $group) {
+            if ($group) {
+                $access = true;
                 break;
             }
         }
 
-        if(!$access && $user){
-            $access=true;
+        if (!$access && $user) {
+            $access = true;
         }
 
         return $access;
@@ -78,20 +78,21 @@ class Check
     private function checkGroups($userID, $permission)
     {
 
-        $groups=\csphere\plugins\members\classes\Data::getUserGroups($userID);
+        $groups = \csphere\plugins\members\classes\Data::getUserGroups($userID);
 
-        $list=[];
+        $list = [];
 
         foreach ($groups as $group) {
-            $id=$group['group_id'];
-            $name=$group['group_name'];
-            $list[$name]=$this->_handler->getValueGroup($this->_plugin, $permission, $id);
+            $id = $group['group_id'];
+            $name = $group['group_name'];
+            $list[$name] = $this->_handler->getValueGroup($this->_plugin, $permission, $id);
         }
 
         return $list;
     }
 
-    private function checkUser($userID, $permission){
+    private function checkUser($userID, $permission)
+    {
         return false;
     }
 }
