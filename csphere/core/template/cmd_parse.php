@@ -82,8 +82,8 @@ abstract class CMD_Parse
         // Add box name as div if not declined
         if (!isset($data['nodiv'])) {
 
-            $div = '<div class="' . $part['name'] . '">';
-            $box = $div . $box . '</div>';
+            //$div = '<div class="' . $part['name'] . '">';
+            //$box = $div . $box . '</div>';
         }
 
         return $box;

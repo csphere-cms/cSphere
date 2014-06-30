@@ -178,7 +178,7 @@ abstract class Base
      * @return void
      **/
 
-    protected function view(array $data, $rid = 0, $skip = false, $breadcrumb=false)
+    protected function view(array $data, $rid = 0, $skip = false, $breadcrumb = false)
     {
 
         if($breadcrumb){
