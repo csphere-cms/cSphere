@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=database.database action=default.control *}
 
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <li class="active"><a href="{* link database/control *}">{* lang default.control *}</a></li>
             <li><a href="{* link database/tables *}">{* lang database.tables *}</a></li>
         </ul><!--END nav-tabs-->

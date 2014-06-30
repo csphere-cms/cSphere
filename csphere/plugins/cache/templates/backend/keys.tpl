@@ -18,7 +18,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
 
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <li><a href="{* link cache/control *}">{* lang default.control *}</a></li>
             <li class="active"><a href="{* link cache/keys *}">{* lang cache.keys *}</a></li>
             <li><a href="{* link cache/opcache *}">{* lang cache.opcache *}</a></li>
@@ -42,7 +42,7 @@
                 </tr>
                 {* else entries *}
                 <tr>
-                    <th colspan="3" class="text-center">
+                    <th class="text-center" colspan="3">
                         {* lang cache.no_entry *}
                     </th>
                 </tr>

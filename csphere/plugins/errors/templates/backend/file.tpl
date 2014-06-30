@@ -27,7 +27,7 @@
             <tr>
                 <td class="text-center">{* raw entries.time *}</td>
                 <td><a href="{* link errors/details/date/$date$/entry/$entries.entry *}">{* var entries.message *}</a></td>
-                </tr>
+            </tr>
             {* endforeach entries *}
         </table><!--END table-->
 

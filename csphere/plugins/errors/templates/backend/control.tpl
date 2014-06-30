@@ -26,7 +26,7 @@
                 </tr>
                 {* else files *}
                 <tr>
-                    <th colspan="2" class="text-center">
+                    <th class="text-center" colspan="2">
                         {* lang errors.no_file *}
                     </th>
                 </tr>

@@ -17,7 +17,7 @@
                     <th>
                         {* lang default.tags *}
                     </th>
-                    <th colspan="3">
+                    <th colspan="2">
                         {* lang default.options *}
                     </th>
                 </tr>
@@ -48,7 +48,7 @@
                 </tr>
                 {* else sites *}
                 <tr>
-                    <th colspan="5" class="text-center">
+                    <th class="text-center" colspan="5">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

@@ -41,7 +41,7 @@
                 </tr>
                 {* else groups *}
                 <tr>
-                    <th colspan="5" class="text-center">
+                    <th class="text-center" colspan="5">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

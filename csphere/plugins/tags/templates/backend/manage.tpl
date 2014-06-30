@@ -38,7 +38,7 @@
                 </tr>
                 {* else tags *}
                 <tr>
-                    <th class="text-center" colspan="5">
+                    <th class="text-center" colspan="4">
                         {* lang default.no_record_found *}
                     </th>
                 </tr>

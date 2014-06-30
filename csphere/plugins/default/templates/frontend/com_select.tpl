@@ -3,7 +3,7 @@
 
     <div class="col-sm-9">
         <select class="form-control" id="{* com text name *}" name="{* com text name *}">
-        {* com raw options *}
+            {* com raw options *}
         </select>
     </div>
 </div><!--END form form-group {* com text name *}-->

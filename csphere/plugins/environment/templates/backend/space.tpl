@@ -3,7 +3,7 @@
 
         {* tpl default/com_header plugin=environment.environment action=environment.disk_space *}
 
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <li><a href="{* link environment/control *}">{* lang default.control *}</a></li>
             <li><a href="{* link environment/php *}">{* lang environment.php_details *}</a></li>
             <li class="active"><a href="{* link environment/space *}">{* lang environment.disk_space *}</a></li>

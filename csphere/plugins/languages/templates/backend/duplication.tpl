@@ -34,7 +34,7 @@
                 </tr>
                 {* else duplicate *}
                 <tr>
-                    <th colspan="2" class="text-center">
+                    <th class="text-center" colspan="2">
                         {* lang languages.no_duplicate *}
                     </th>
                 </tr>

@@ -12,7 +12,7 @@
 
         {* tpl default/msg_error *}
 
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <li><a href="{* link database/control *}">{* lang default.control *}</a></li>
             <li class="active"><a href="{* link database/tables *}">{* lang database.tables *}</a></li>
         </ul><!--END nav-tabs-->

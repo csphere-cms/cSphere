@@ -17,7 +17,7 @@
                     <th>
                         <a href="{* raw order.contact_subject *}">{* lang contact.subject *}</a> {* raw arrow.contact_subject *}
                     </th>
-                    <th colspan="3">
+                    <th colspan="">
                         {* lang default.options *}
                     </th>
                 </tr>
