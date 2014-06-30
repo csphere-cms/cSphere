@@ -170,17 +170,21 @@ abstract class Base
     /**
      * Send data array to template file
      *
-     * @param array   $data Data as an array
-     * @param integer $rid  Record ID if important for URL
-     * @param boolean $skip Whether to skip the callback
+     * @param array   $data         Data as an array
+     * @param integer $rid          Record ID if important for URL
+     * @param boolean $skip         Whether to skip the callback
+     * @param boolean $breadcrumb   Activate Breadcrumb
      *
      * @return void
      **/
 
-    protected function view(array $data, $rid = 0, $skip = false)
+    protected function view(array $data, $rid = 0, $skip = false, $breadcrumb=false)
     {
-        // Set breadcrumb
-        $this->breadcrumb($rid);
+
+        if($breadcrumb){
+            // Set breadcrumb
+            $this->breadcrumb($rid);
+        }
 
         // Set plugin and action
         $data['plugin'] = $this->plugin;
