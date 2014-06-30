@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link sites/create *}" method="POST">
+        <form role="form" action="{* link sites/create *}" method="POST">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link sites/edit/id/$sites.site_id *}" method="POST">
+        <form role="form" action="{* link sites/edit/id/$sites.site_id *}" method="POST">
         {* endif action *}
 
             {* tpl default/com_input name=site_title label=sites.title value=sites.site_title *}

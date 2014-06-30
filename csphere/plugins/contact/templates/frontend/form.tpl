@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link contact/create *}" method="POST">
+        <form role="form" action="{* link contact/create *}" method="POST">
 
             {* tpl default/com_input name=contact_name label=default.name value=contact.contact_name *}
 

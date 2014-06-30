@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link groups/create *}" method="POST">
+        <form role="form" action="{* link groups/create *}" method="POST">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link groups/edit/id/$groups.group_id *}" method="POST">
+        <form role="form" action="{* link groups/edit/id/$groups.group_id *}" method="POST">
         {* endif action *}
 
             {* tpl default/com_input name=group_name label=default.name value=groups.group_name *}

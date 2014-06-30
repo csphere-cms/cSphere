@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link users/options *}" method="POST">
+        <form role="form" action="{* link users/options *}" method="POST">
 
             {* if options.force_https == '1' *}
             {* tpl default/com_input_yesno name=force_https label=users.force_https *}

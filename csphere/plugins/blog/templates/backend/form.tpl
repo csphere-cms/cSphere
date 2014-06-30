@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link blog/create *}" method="POST" enctype="multipart/form-data">
+        <form role="form" action="{* link blog/create *}" method="POST" enctype="multipart/form-data">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
+        <form role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
         {* endif action *}
 
             {* tpl default/com_input name=blog_title label=default.title value=blog.blog_title *}

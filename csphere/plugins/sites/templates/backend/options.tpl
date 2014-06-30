@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link sites/options *}" method="POST">
+        <form role="form" action="{* link sites/options *}" method="POST">
 
             {* tpl default/com_input_adv name=title_length_list label=sites.title_length_list value=options.title_length_list type=text holder=sites.title_length_list *}
 

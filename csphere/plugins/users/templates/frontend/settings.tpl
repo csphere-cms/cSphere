@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link users/settings *}" method="POST">
+        <form role="form" action="{* link users/settings *}" method="POST">
 
             {* if users.user_invisible == '1' *}
             {* tpl default/com_input_yesno name=user_invisible label=users.invisible *}

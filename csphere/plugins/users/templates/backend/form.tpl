@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link users/create *}" method="POST">
+        <form role="form" action="{* link users/create *}" method="POST">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link users/edit/id/$users.user_id *}" method="POST">
+        <form role="form" action="{* link users/edit/id/$users.user_id *}" method="POST">
         {* endif action *}
 
             {* tpl default/com_input name=user_name label=users.user_name value=users.user_name *}

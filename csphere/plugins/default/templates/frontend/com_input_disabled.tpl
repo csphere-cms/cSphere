@@ -1,7 +1,5 @@
 <div class="form-group">
-    <label for="{* com text name *}" class="col-sm-3 control-label">{* com lang label *}</label>
+    <label for="{* com text name *}" class="control-label">{* com lang label *}</label>
 
-    <div class="col-sm-9">
-        <p class="form-control-static">{* com var value *}</p>
-    </div>
+    <input class="form-control" id="{* com text name *}" type="text" placeholder="{* com var value *}" disabled>
 </div><!--END form form-group {* com text name *}-->

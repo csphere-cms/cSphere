@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/db *}" method="POST">
+        <form role="form" action="{* link install/db *}" method="POST">
 
             {* tpl default/com_select name=database_driver label=install.server options=database.drivers *}
 

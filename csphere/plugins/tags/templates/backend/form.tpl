@@ -10,9 +10,9 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link tags/create *}" method="POST">
+        <form role="form" action="{* link tags/create *}" method="POST">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link tags/edit/id/$tags.tag_id *}" method="POST">
+        <form role="form" action="{* link tags/edit/id/$tags.tag_id *}" method="POST">
         {* endif action *}
 
             {* tpl default/com_input name=tag_name label=default.name value=tags.tag_name *}
