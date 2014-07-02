@@ -15,9 +15,9 @@
         <form role="form" action="{* link members/edit/id/$members.member_id *}" method="POST">
         {* endif action *}
 
-            {* tpl default/com_input name=group_name label=members.group_name value=members.group_name *}
+            {* tpl default/com_input name=group_name label=members.group_name value=members.group_name holder=members.group_name *}
 
-            {* tpl default/com_input name=user_name label=members.user_name value=members.user_name *}
+            {* tpl default/com_input name=user_name label=members.user_name value=members.user_name holder=members.user_name *}
 
             {* if members.member_admin == '1' *}
             {* tpl default/com_input_yesno name=member_admin label=members.group_admin *}

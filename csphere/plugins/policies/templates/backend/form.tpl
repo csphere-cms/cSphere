@@ -15,7 +15,7 @@
 
         <form role="form" action="{* link policies/edit/id/$policies.policie_id *}" method="POST">
 
-            {* tpl default/com_textarea name=policie_content label=policies.content rows=5 value=policies.policie_content *}
+            {* tpl default/com_textarea name=policie_content label=policies.content rows=5 value=policies.policie_content holder=policies.content *}
 
             {* tpl default/com_submit_btn caption=default.save *}
 

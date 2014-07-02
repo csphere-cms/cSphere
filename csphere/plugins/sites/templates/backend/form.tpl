@@ -15,11 +15,11 @@
         <form role="form" action="{* link sites/edit/id/$sites.site_id *}" method="POST">
         {* endif action *}
 
-            {* tpl default/com_input name=site_title label=sites.title value=sites.site_title *}
+            {* tpl default/com_input name=site_title label=sites.title value=sites.site_title holder=sites.title *}
 
-            {* tpl default/com_textarea name=site_content label=sites.content rows=5 value=sites.site_content *}
+            {* tpl default/com_textarea name=site_content label=sites.content rows=5 value=sites.site_content holder=sites.content *}
 
-            {* tpl default/com_input_tags name=site_tags label=default.tags value=sites.site_tags *}
+            {* tpl default/com_input_tags name=site_tags label=default.tags value=sites.site_tags holder=default.tags *}
 
             {* if sites.site_layout == '1' *}
             {* tpl default/com_input_yesno name=site_layout label=sites.show_layout *}

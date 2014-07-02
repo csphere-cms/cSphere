@@ -9,7 +9,7 @@
 
             {* tpl default/msg_error *}
 
-            {* tpl default/com_input name=login_name label=users.user_name value=login_name *}
+            {* tpl default/com_input name=login_name label=users.user_name value=login_name holder=users.user_name  *}
 
             {* tpl default/com_input_pwd name=login_password label=users.user_password holder=users.user_password *}
 
