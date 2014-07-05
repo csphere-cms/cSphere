@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/memory *}" method="POST">
+        <form role="form" action="{* link install/memory *}" method="POST">
 
             {* tpl default/com_select_help name=cache_driver label=install.cache_type options=cache.drivers help=install.cache_info *}
 

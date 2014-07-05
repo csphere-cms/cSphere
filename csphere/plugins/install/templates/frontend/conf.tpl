@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/conf *}" method="POST">
+        <form role="form" action="{* link install/conf *}" method="POST">
 
             {* if config.logs == '1' *}
             {* tpl default/com_input_yesno_help name=logs label=install.error_logs help=install.logs_info *}

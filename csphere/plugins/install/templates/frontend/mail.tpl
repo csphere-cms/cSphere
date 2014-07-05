@@ -7,7 +7,7 @@
 
         {* tpl default/msg_error *}
 
-        <form class="form-horizontal" role="form" action="{* link install/mail *}" method="POST">
+        <form role="form" action="{* link install/mail *}" method="POST">
 
             {* tpl default/com_select name=mail_driver label=install.server options=mail.drivers *}
 

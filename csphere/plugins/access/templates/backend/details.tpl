@@ -8,7 +8,7 @@
             </section><!--END header page-header-->
         </header><!--END header-->
         <br>
-        <form class="form-horizontal" role="form" action="{* link access/details/name/$plugin.name *}" method="POST" enctype="multipart/form-data">
+        <form role="form" action="{* link access/details/name/$plugin.name *}" method="POST" enctype="multipart/form-data">
             <div class="panel-group" id="accordion">
                 {* foreach groups *}
                 <div class="panel panel-default">

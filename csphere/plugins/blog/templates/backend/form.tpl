@@ -10,16 +10,16 @@
         <br>
 
         {* if action == 'create' *}
-        <form class="form-horizontal" role="form" action="{* link blog/create *}" method="POST" enctype="multipart/form-data">
+        <form role="form" action="{* link blog/create *}" method="POST" enctype="multipart/form-data">
         {* else action *}
-        <form class="form-horizontal" role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
+        <form role="form" action="{* link blog/edit/id/$blog.blog_id *}" method="POST" enctype="multipart/form-data">
         {* endif action *}
 
-            {* tpl default/com_input name=blog_title label=default.title value=blog.blog_title *}
+            {* tpl default/com_input name=blog_title label=default.title value=blog.blog_title holder=default.title *}
 
-            {* tpl default/com_textarea name=blog_content label=blog.content rows=5 value=blog.blog_content *}
+            {* tpl default/com_textarea name=blog_content label=blog.content rows=5 value=blog.blog_content holder=blog.content *}
 
-            {* tpl default/com_input_tags name=blog_tags label=default.tags value=blog.blog_tags *}
+            {* tpl default/com_input_tags name=blog_tags label=default.tags value=blog.blog_tags holder=default.tags *}
 
             {* tpl default/com_input_file name=blog_image label=blog.image *}
 

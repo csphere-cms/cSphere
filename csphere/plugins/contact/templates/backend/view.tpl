@@ -44,7 +44,7 @@
 
         <form class="form-horizontal" id="reply" role="form" action="{* link contact/reply *}" method="POST">
 
-            {* tpl default/com_textarea rows=4 name=contact_message label=contact.reply value=contact.contact_reply *}
+            {* tpl default/com_textarea rows=4 name=contact_message label=contact.reply value=contact.contact_reply holder=contact.reply *}
 
             {* tpl default/com_submit_btn caption=default.send *}
 

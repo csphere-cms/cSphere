@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link groups/options *}" method="POST">
+        <form role="form" action="{* link groups/options *}" method="POST">
 
             {* tpl default/com_input_adv name=main_name label=groups.main_id value=options.main_name type=text holder=groups.main_name *}
 
