@@ -108,9 +108,8 @@ class Tags
         $tags = $tag_plugin_finder
             ->where('plugin_name', '=', $plugin)
             ->join('tags', '', 'tag_id', 'tag_id')
-            // TODO hier die kompletten Tabellennamen wieder entfernen
-            ->columns("csphere_tags.tag_id, tag_name, tag_since")
-            ->groupBy("csphere_tags.tag_id")
+            ->columns("{pre}tags.tag_id, tag_name, tag_since")
+            ->groupBy("{pre}tags.tag_id")
 
             ->find(0, 0);
 
