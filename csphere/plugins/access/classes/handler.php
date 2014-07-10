@@ -110,6 +110,7 @@ class Handler
 
         if (!empty($res)) {
 
+            $data = [];
             $data['access_group_id'] = $res['access_group_id'];
             $data['group_id'] = $groupID;
             $data['access_group_permission'] = $plugin . "." . $permission;
@@ -168,11 +169,12 @@ class Handler
                 }
             }
 
-            foreach ($permissions as $permission => $permissionInfo) {
+            foreach (array_keys($permissions) as $permission) {
                 $databasePerm = $plugin . "." . $permission;
                 $finder->where("access_group_permission", "=", $databasePerm);
                 $finder->remove();
 
+                $data = [];
                 $data['access_group_permission'] = $databasePerm;
                 $data['access_group_value'] = 0;
 

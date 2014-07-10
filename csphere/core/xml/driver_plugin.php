@@ -96,9 +96,9 @@ class Driver_Plugin extends Base
                 }
 
                 $env[] = $needed;
-
-                $array['environment'][0]['needed'] = $env;
             }
+
+            $array['environment'][0]['needed'] = $env;
         }
 
         if (!isset($array['environment'][0]['extend'])) {
@@ -114,24 +114,38 @@ class Driver_Plugin extends Base
 
         $array['entries'] = $array['entries'][0];
 
-        // Handle access rules
-        if (!isset($array['routes'][0])) {
-
-            $array['routes']=[];
-
-        } else {
-
-            $env=[];
-
-            foreach ($array['routes'][0]['define'] AS $action) {
-                $env[$action['value']]=$action['type'];
-            }
-
-            $array['routes']=$env;
-        }
+        $array = $this->_changeAccess($array);
 
         // Set icon URL
         $array['icon']['url'] = '';
+
+        return $array;
+    }
+
+    /**
+     * Change data array for easier usage, special part for changing the access part
+     *
+     * @param array $array Formated array generated earlier
+     *
+     * @return array
+     **/
+    private function _changeAccess($array)
+    {
+        // Handle access rules
+        if (!isset($array['routes'][0])) {
+
+            $array['routes'] = [];
+
+        } else {
+
+            $env = [];
+
+            foreach ($array['routes'][0]['define'] AS $action) {
+                $env[$action['value']] = $action['type'];
+            }
+
+            $array['routes'] = $env;
+        }
 
         return $array;
     }

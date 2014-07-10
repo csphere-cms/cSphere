@@ -82,7 +82,7 @@ class Check
      *
      * @return bool true if the user has the access.
      */
-    public function check($permission)
+    public function checkAccess($permission)
     {
         $access = false;
 

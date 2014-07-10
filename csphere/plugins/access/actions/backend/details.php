@@ -32,7 +32,7 @@ $data['plugin']['name'] = htmlspecialchars($_GET['name']);
 $handler = new \csphere\plugins\access\classes\Handler();
 
 if (!empty($_POST)) {
-    if ($check->check("groupedit")) {
+    if ($check->checkAccess("groupedit")) {
         $handler->updatePlugin($data['plugin']['name']);
     } else {
         die("Sorry, you are not allowed to edit Group Permissions.");

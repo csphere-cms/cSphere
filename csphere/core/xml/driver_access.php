@@ -64,7 +64,7 @@ class Driver_Access extends Base
 
     protected function change(array $array)
     {
-        $ret=[];
+        $ret = [];
 
         foreach ($array['permission'] as $permission) {
 
@@ -72,12 +72,12 @@ class Driver_Access extends Base
                 || !isset($permission['type'][0]['value'])
             ) {
                 throw new \ErrorException(
-                    "Malformed Access File of Plugin: ".$this->path
+                    "Malformed Access File of Plugin: " . $this->path
                 );
             }
 
-            $tmp=[];
-            $tmp['type']=$permission['type'][0]['value'];
+            $tmp = [];
+            $tmp['type'] = $permission['type'][0]['value'];
 
             $ret[$permission['attr'][0]['name']] = $tmp;
         }
