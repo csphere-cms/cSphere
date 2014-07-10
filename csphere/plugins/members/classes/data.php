@@ -28,17 +28,20 @@ namespace csphere\plugins\members\classes;
 
 class Data
 {
-    public static function getUserGroups($userID){
+    /**
+     * Get all user groups the user is member of.
+     *
+     * @param int $userID the ID of a user
+     *
+     * @return array an array
+     */
+    public static function getUserGroups($userID)
+    {
 
         $table = new \csphere\core\datamapper\Finder("members");
 
         $table->where("user_id", "=", $userID);
-        $count=$table->count();
-
-        $table->where("user_id", "=", $userID);
         $table->join("groups", "", "group_id");
-        $res=$table->find(0, $count);
-
-        return $res;
+        return $table->find(0, 0);
     }
 }

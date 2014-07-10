@@ -79,7 +79,9 @@ class Driver_HTML extends Base
         $request=\csphere\core\router\Controller::parseRequestAction();
 
         $pluginMetadata=new \csphere\core\plugins\metadata();
-        $result=$pluginMetadata->templateType($request['plugin'],$request['action']);
+        $result=$pluginMetadata->templateType(
+            $request['plugin'], $request['action']
+        );
 
         if ($result=="backend") {
 

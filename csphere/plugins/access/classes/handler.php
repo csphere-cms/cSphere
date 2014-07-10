@@ -30,10 +30,13 @@ class Handler
 {
 
     /**
-     * @param $plugin
-     * @param $permission
-     * @param $group
-     * @return mixed
+     * ...
+     *
+     * @param string $plugin     ...
+     * @param mixed  $permission ...
+     * @param mixed  $group      ...
+     *
+     * @return mixed ...
      */
     public function getValueGroup($plugin, $permission, $group)
     {
@@ -46,8 +49,12 @@ class Handler
     }
 
     /**
-     * @param $permission
-     * @param $userID
+     * ...
+     *
+     * @param mixed $permission ...
+     * @param int   $userID     ...
+     *
+     * @return mixed ...
      */
     public function getValueUser($permission, $userID)
     {
@@ -55,15 +62,19 @@ class Handler
     }
 
     /**
-     * @param $plugin
+     * Updates the plugin
+     *
+     * @param string $plugin the name of the plugin
+     *
+     * @return void
      */
     public function updatePlugin($plugin)
     {
         $groupFinder = new \csphere\core\datamapper\Finder("groups");
-        $groups = $groupFinder->find(0, $groupFinder->count());
+        $groups = $groupFinder->find(0, 0);
 
         foreach ($groups as $group) {
-            $id = $group['group_id'];;
+            $id = $group['group_id'];
             $name = $group['group_name'];
             if (!empty($_POST[$name])) {
                 foreach ($_POST[$name] as $permission => $value) {
@@ -75,11 +86,14 @@ class Handler
 
 
     /**
-     * @param $plugin
-     * @param $permission
-     * @param $value
-     * @param $groupID
-     * @return bool
+     * Sets the data of a value group. The value group must exist.
+     *
+     * @param string $plugin     the name of the plugin
+     * @param string $permission ...
+     * @param mixed  $value      ...
+     * @param int    $groupID    ...
+     *
+     * @return bool true if the group exists and was successfully set
      */
 
     private function _setValueGroup($plugin, $permission, $value, $groupID)
@@ -109,17 +123,25 @@ class Handler
     }
 
     /**
-     * @param $permission
-     * @param $userID
+     * Sets the value for a user.
+     *
+     * @param mixed $permission ...
+     * @param int   $userID     ...
+     *
+     * @return true if the permission was set successfully
      */
-    public function _setValueUser($permission, $userID)
+    private function _setValueUser($permission, $userID)
     {
 
     }
 
     /**
-     * @param $plugin
-     * @param array $groups
+     * Inserts the default permissions for the given plugin from the access.xml.
+     *
+     * @param string $plugin the name of the plugin
+     * @param array  $groups the ...
+     *
+     * @return void
      */
     public function initiateDefault($plugin, $groups = [])
     {
@@ -157,7 +179,11 @@ class Handler
     }
 
     /**
-     * @param $groupID
+     * ...
+     *
+     * @param int $groupID ...
+     *
+     * @return void
      */
     public function initiateGroup($groupID)
     {
@@ -170,6 +196,14 @@ class Handler
         }
     }
 
+    /**
+     * Loads the permissions for the given plugin.
+     *
+     * @param string $plugin the name of the plugin
+     *
+     * @return array an array with all permissions that are defined for the given
+     *               plugin
+     */
     public function loadPermissions($plugin)
     {
 

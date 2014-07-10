@@ -50,11 +50,11 @@ class Upload
     /**
      * Uploads a file into the storage folder
      *
-     * @param array $file Array of the file which should be uploaded,
-     * using the $_FILES Array
-     * @param string $plugin Plugin Name
+     * @param array  $file       Array of the file which should be uploaded,
+     *                           using the $_FILES Array
+     * @param string $plugin     Plugin Name
      * @param string $customName Rename File to $name
-     * Class
+     *                           Class
      *
      * @return array
      **/
@@ -115,8 +115,8 @@ class Upload
     /**
      * Move the uploaded file
      *
-     * @param array $file File Array
-     * @param string $plugin Plugin Name
+     * @param array  $file       File Array
+     * @param string $plugin     Plugin Name
      * @param string $customName Customname for the final file
      *
      * @return string
@@ -148,6 +148,7 @@ class Upload
      * Create a destination Folder
      *
      * @param string $path Filepath of the Folder
+     *
      * @throws \ErrorException
      *
      * @return boolean
@@ -171,13 +172,12 @@ class Upload
 
     /**
      * Filters the name string
-     * @ToDo: Filter for invalid characters, only allow [1-9A-Za-z]
+     * TODO Filter for invalid characters, only allow [1-9A-Za-z]
      *
-     * @param $name String
+     * @param String $name the name to filter
      *
-     * @return String
+     * @return String the string where spaces where replaces through -
      **/
-
     private function _sanitizeName($name)
     {
 

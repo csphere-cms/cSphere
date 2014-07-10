@@ -91,7 +91,7 @@ abstract class Base
     {
         // Set class options
         $this->plugin = $plugin;
-        $this->table  = $table;
+        $this->table = $table;
         $this->schema = $plugin;
 
         if (!empty($table)) {
@@ -101,7 +101,7 @@ abstract class Base
 
         // Get important objects
         $this->loader = \csphere\core\service\Locator::get();
-        $this->view   = $this->loader->load('view');
+        $this->view = $this->loader->load('view');
     }
 
     /**
@@ -116,8 +116,8 @@ abstract class Base
 
     public function map($action = '', $tpl = '', $previous = '')
     {
-        $this->action   = $action;
-        $this->tpl      = $tpl;
+        $this->action = $action;
+        $this->tpl = $tpl;
         $this->previous = ($previous == '') ? 'list' : $previous;
 
         // Manage should be handled like list
@@ -156,10 +156,10 @@ abstract class Base
 
         // Data array
         $data = ['action_name' => $act,
-                 'plugin_name' => $plg,
-                 'message'     => $msg,
-                 'previous'    => $previous,
-                 'type'        => $type];
+            'plugin_name' => $plg,
+            'message' => $msg,
+            'previous' => $previous,
+            'type' => $type];
 
         // Change template file and send to view method
         $this->tpl = 'message';
@@ -170,18 +170,19 @@ abstract class Base
     /**
      * Send data array to template file
      *
-     * @param array   $data         Data as an array
-     * @param integer $rid          Record ID if important for URL
-     * @param boolean $skip         Whether to skip the callback
-     * @param boolean $breadcrumb   Activate Breadcrumb
+     * @param array   $data       Data as an array
+     * @param integer $rid        Record ID if important for URL
+     * @param boolean $skip       Whether to skip the callback
+     * @param boolean $breadcrumb Activate Breadcrumb
      *
      * @return void
      **/
 
-    protected function view(array $data, $rid = 0, $skip = false, $breadcrumb = false)
-    {
+    protected function view(array $data, $rid = 0, $skip = false,
+        $breadcrumb = false
+    ) {
 
-        if($breadcrumb){
+        if ($breadcrumb) {
             // Set breadcrumb
             $this->breadcrumb($rid);
         }

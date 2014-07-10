@@ -72,7 +72,7 @@ class Checks
      * @throws \Exception
      *
      * @return void
-    **/
+     **/
 
     private function _validate()
     {
@@ -116,7 +116,7 @@ class Checks
             } elseif (file_exists($target)) {
 
                 $this->_existance = true;
-                $result           = true;
+                $result = true;
             }
         }
 
@@ -126,7 +126,7 @@ class Checks
     /**
      * Set target for requests
      *
-     * @param string  $target Name of target
+     * @param string $target Name of target
      *
      * @throws \Exception
      *
@@ -141,11 +141,11 @@ class Checks
             throw new \Exception('Name of plugin target contains unallowed chars');
         }
 
-        $metadata=new metadata();
-        $type=$metadata->templateType($this->_plugin, $target);
+        $metadata = new metadata();
+        $type = $metadata->templateType($this->_plugin, $target);
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
-                     . '/actions/' . $type. '/' . $target . '.php';
+            . '/actions/' . $type . '/' . $target . '.php';
 
     }
 
@@ -160,11 +160,11 @@ class Checks
     public function setTemplate($target)
     {
 
-        $metadata=new metadata();
-        $type=$metadata->templateType($this->_plugin,$target);
+        $metadata = new metadata();
+        $type = $metadata->templateType($this->_plugin, $target);
 
         $this->_file = 'csphere/plugins/' . $this->_plugin
-                     . '/templates/' . $type. '/' . $target . '.tpl';
+            . '/templates/' . $type . '/' . $target . '.tpl';
 
     }
 
@@ -188,7 +188,7 @@ class Checks
             throw new \Exception('Plugin target not found: "' . $this->_file . '"');
         } else {
 
-            $place = ($path == true) ? $this->_path . $this->_file :  $this->_file;
+            $place = ($path == true) ? $this->_path . $this->_file : $this->_file;
         }
 
         return isset($place) ? $place : '';

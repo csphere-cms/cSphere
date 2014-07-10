@@ -58,6 +58,7 @@ class Driver_Access extends Base
      *
      * @param array $array Formated array generated earlier
      *
+     * @throws \ErrorException if the access file is malformed
      * @return array
      **/
 
@@ -65,10 +66,14 @@ class Driver_Access extends Base
     {
         $ret=[];
 
-        foreach ($array['permission'] as $permission){
+        foreach ($array['permission'] as $permission) {
 
-            if (!isset($permission['attr'][0]['name']) || !isset($permission['type'][0]['value'])) {
-                throw new \ErrorException("Malformed Access File of Plugin: ".$this->path);
+            if (!isset($permission['attr'][0]['name'])
+                || !isset($permission['type'][0]['value'])
+            ) {
+                throw new \ErrorException(
+                    "Malformed Access File of Plugin: ".$this->path
+                );
             }
 
             $tmp=[];

@@ -19,7 +19,7 @@ $rad = new \csphere\core\rad\Listed('blog');
 // Define closure to execute before data is send to template
 $data = function ($data) {
 
-    for($i = 0; $i < count($data); ++$i) {
+    for ($i = 0; $i < count($data); ++$i) {
 
         // Get record option for youtube
         $dm_options = new \csphere\core\datamapper\Options('blog');

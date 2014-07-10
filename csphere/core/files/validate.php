@@ -48,10 +48,8 @@ class Validate
     /**
      * Saves the File which must be validated
      *
-     * @param array $file : File Location
-     *
-     **/
-
+     * @param array $file file Location
+     */
     public function __construct($file)
     {
 
@@ -69,8 +67,9 @@ class Validate
      * on its mime and file extension
      *
      * @param string $validationSet Defines the ValidationSet (e.g. image)
-     * @param bool $mime Flag for Mime Check
-     * @param bool $fileEnding Flag for File EndingCheck
+     * @param bool   $mime          Flag for Mime Check
+     * @param bool   $fileEnding    Flag for File EndingCheck
+     *
      * @throws \ErrorException
      *
      * @return bool
@@ -81,7 +80,9 @@ class Validate
 
         $validate = true;
 
-        if (!empty(Validate::$_fileEnding[$validationSet]) && !empty(Validate::$_mime[$validationSet])) {
+        if (!empty(Validate::$_fileEnding[$validationSet])
+            && !empty(Validate::$_mime[$validationSet])
+        ) {
             if ($mime) {
                 $validate = $this->_mimeCheck($validationSet);
             }
@@ -99,7 +100,7 @@ class Validate
     /**
      * Compares file mime with filter set
      *
-     * @param string $validationSet
+     * @param string $validationSet Defines the ValidationSet (e.g. image)
      *
      * @return bool
      */
@@ -125,7 +126,7 @@ class Validate
     /**
      * Compares file extension with filter set
      *
-     * @param string $validationSet
+     * @param string $validationSet Defines the ValidationSet (e.g. image)
      *
      * @return bool
      */
@@ -148,6 +149,7 @@ class Validate
 
     /**
      * Defines several set of allowed file endings depending on filter
+     *
      * @var array
      */
     private static $_fileEnding = [
@@ -156,6 +158,7 @@ class Validate
 
     /**
      * Defines several set of allowed mime types depending on filter
+     *
      * @var array
      */
     private static $_mime = [
