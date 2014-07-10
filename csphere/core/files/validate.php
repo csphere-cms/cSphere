@@ -147,21 +147,24 @@ class Validate
         return $validate;
     }
 
+
     /**
      * Defines several set of allowed file endings depending on filter
      *
      * @var array
      */
-    private static $_fileEnding = [
+    /*private static $_fileEnding = [
         "image" => ["jpeg", "jpg", "png", "gif"],
-    ];
+    ];*/
 
     /**
      * Defines several set of allowed mime types depending on filter
      *
      * @var array
      */
+    /*
     private static $_mime = [
         "image" => ["image/jpeg", "image/png", "image/gif"],
     ];
+    */
 }

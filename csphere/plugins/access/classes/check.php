@@ -67,7 +67,7 @@ class Check
     public function setUser($userID)
     {
         if (empty($userID)) {
-            $session = new \csphere\core\session\Session();
+            // $session = new \csphere\core\session\Session();
             // TODO: still correct or debug rest?
             $userID = 1; //$session->get("user_id");
 
@@ -140,6 +140,6 @@ class Check
      */
     private function _checkUser($userID, $permission)
     {
-        return false;
+        return $this->_handler->getValueUser($permission, $userID);
     }
 }

@@ -58,7 +58,11 @@ class Handler
      */
     public function getValueUser($permission, $userID)
     {
+        if ($permission && $userID) {
+            // TODO
+        }
 
+        return false;
     }
 
     /**
@@ -130,10 +134,13 @@ class Handler
      *
      * @return true if the permission was set successfully
      */
+    /*
     private function _setValueUser($permission, $userID)
     {
-
+      // TODO
     }
+    */
+
 
     /**
      * Inserts the default permissions for the given plugin from the access.xml.
