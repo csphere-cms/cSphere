@@ -67,11 +67,12 @@ class Session
 
         $dns = ($request['dns'] == 'localhost') ? '' : $request['dns'];
 
-        $salt = mcrypt_create_iv(40, MCRYPT_DEV_URANDOM);
+        //ToDo: Fix Session Management
+        //$salt = mcrypt_create_iv(40, MCRYPT_DEV_URANDOM);
 
-        $name = 'csphere_' . md5($request['dns'] . $request['dirname'] . $salt);
+        //$name = 'csphere_' . md5($request['dns'] . $request['dirname'] . $salt);
 
-        session_name($name);
+        //session_name($name);
 
         $secure = ($request['protocol'] == 'https') ? true : false;
 
