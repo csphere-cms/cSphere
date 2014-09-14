@@ -5,7 +5,7 @@
 
         <br>
 
-        <form class="form-horizontal" role="form" action="{* link users/login *}" name="form_login" method="POST">
+        <form role="form" action="{* link users/login *}" name="form_login" method="POST">
 
             {* tpl default/msg_error *}
 
