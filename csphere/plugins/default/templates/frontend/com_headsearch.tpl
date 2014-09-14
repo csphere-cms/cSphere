@@ -26,7 +26,7 @@
             {* lang default.records *}: {* var records *}{* if search != '' *} - {* lang default.hits *}: {* var hits *}{* endif search *}
         </span><!--END header help-block-->
 
-        <div class="col-md-5 row pull-right">
+        <div class="pull-right">
             <form class="form-inline" role="form" action="{* link $plugin$/$action$ *}" method="POST">
                 <div class="input-group">
                     <input type="search" class="form-control" name="search" maxlength="80" size="20" value="{* var search *}" placeholder="{* com lang search *}">
