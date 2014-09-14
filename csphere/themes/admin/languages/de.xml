@@ -20,7 +20,7 @@
         <web url="http://www.csphere.eu" />
     </contact>
     <definitions>
-        <define name="Admin">Admin</define>
+        <define name="admin">Admin</define>
         <define name="content">Inhalte</define>
         <define name="system">System</define>
     </definitions>
