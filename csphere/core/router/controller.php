@@ -206,6 +206,10 @@ class Controller
             $plugin = '';
         }
 
+        if (empty($config['default']['action'])) {
+            $config['default']['action']="list";
+        }
+        
         if (empty($plugin)) {
 
             if (empty($config['default']['plugin'])) {
@@ -213,10 +217,6 @@ class Controller
             }
 
             $request['plugin']=$config['default']['plugin'];
-
-            if (empty($config['default']['action'])) {
-                $config['default']['action']="list";
-            }
 
             $request['action']=$config['default']['action'];
 
