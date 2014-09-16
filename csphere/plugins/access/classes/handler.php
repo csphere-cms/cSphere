@@ -45,7 +45,7 @@ class Handler
         $table->where("group_id", "=", $group);
         $res = $table->first();
 
-        return $res['access_group_value'];
+        return isset($res['access_group_value']) ? $res['access_group_value'] : 0;
     }
 
     /**
@@ -64,7 +64,7 @@ class Handler
             $table->where("group_id", "=", $userID);
             $res = $table->first();
 
-            return $res['access_user_value'];
+            return isset($res['access_user_value']) ? $res['access_user_value'] : 0;
         }
 
         return false;
