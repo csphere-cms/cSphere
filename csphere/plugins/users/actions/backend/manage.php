@@ -13,7 +13,13 @@
  * @link      http://www.csphere.eu
  **/
 
- // Get RAD class for this action
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('content');
+$bread->plugin('users', 'manage');
+$bread->trace();
+
+// Get RAD class for this action
 $rad = new \csphere\core\rad\Listed('users');
 
 $rad->map('manage', 'manage');

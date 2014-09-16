@@ -13,6 +13,16 @@
  * @link      http://www.csphere.eu
  **/
 
+// Policies ID
+$id = \csphere\core\http\Input::get('get', 'id');
+
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('content');
+$bread->plugin('policies', 'manage');
+$bread->add('edit', 'policies/edit/id/' . $id);
+$bread->trace();
+
 // Get RAD class for this action
 $rad = new \csphere\core\rad\Edit('policies');
 

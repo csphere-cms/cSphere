@@ -13,6 +13,12 @@
  * @link      http://www.csphere.eu
  **/
 
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('content');
+$bread->plugin('sites', 'manage');
+$bread->add('create');
+$bread->trace();
+
 // Get RAD class for this action
 $rad = new \csphere\core\rad\Create('sites');
 

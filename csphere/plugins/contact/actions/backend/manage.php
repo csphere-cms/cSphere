@@ -13,6 +13,12 @@
  * @link      http://www.csphere.eu
  **/
 
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('admin');
+$bread->add('content');
+$bread->plugin('contact', 'manage');
+$bread->trace();
+
  // Get RAD class for this action
 $rad = new \csphere\core\rad\Listed('contact');
 
