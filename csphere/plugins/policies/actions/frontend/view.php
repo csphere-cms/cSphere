@@ -19,7 +19,6 @@ $id = \csphere\core\http\Input::get('get', 'id');
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('default');
 $bread->add('default', 'default');
-$bread->plugin('policies');
 $bread->add('view', 'policies/view/id/' . $id);
 $bread->trace();
 
