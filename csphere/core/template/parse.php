@@ -208,7 +208,10 @@ abstract class Parse
             // HHVM does not support ENT_SUBSTITUTE and ENT_HTML5 yet
             $escape = htmlspecialchars($part['data'], ENT_QUOTES, 'UTF-8', false);
 
-            $escape = nl2br($escape, false);
+            // @TODO Maybe another way ??
+            if ($data['action'] != "edit") {
+                $escape = nl2br($escape, false);
+            }
 
         } else {
 
