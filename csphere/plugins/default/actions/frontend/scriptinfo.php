@@ -13,6 +13,12 @@
  * @link      http://www.csphere.eu
  **/
 
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('default');
+$bread->add('default', 'default');
+$bread->add('scriptinfo');
+$bread->trace();
+
 $loader = \csphere\core\service\Locator::get();
 
 $year = date('Y');

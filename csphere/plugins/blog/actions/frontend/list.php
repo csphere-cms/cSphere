@@ -14,8 +14,8 @@
  **/
 
 // Add breadcrumb navigation
-$bread = new \csphere\core\template\Breadcrumb('admin');
-$bread->add('content');
+$bread = new \csphere\core\template\Breadcrumb('default');
+$bread->add('default', 'default');
 $bread->plugin('blog', 'list');
 $bread->trace();
 

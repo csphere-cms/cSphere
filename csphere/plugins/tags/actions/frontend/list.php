@@ -13,6 +13,11 @@
  * @link      http://www.csphere.eu
  **/
 
+$bread = new \csphere\core\template\Breadcrumb('default');
+$bread->add('default', 'default');
+$bread->plugin('tags');
+$bread->trace();
+
  // Get RAD class for this action
 $rad = new \csphere\core\rad\Listed('tags');
 

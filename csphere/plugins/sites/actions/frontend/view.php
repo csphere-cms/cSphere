@@ -28,7 +28,9 @@ $rad = new \csphere\core\rad\View('sites');
 $data = function ($array) {
     if ($array['site_publish'] == 1) {
         // if site is activated, add Breadcrumb navigation
-        $bread = new \csphere\core\template\Breadcrumb('sites');
+        $bread = new \csphere\core\template\Breadcrumb('default');
+        $bread->add('default', 'default');
+        $bread->plugin('sites');
         $url   = 'sites/view/id/' . (int)$array['site_id'];
         $bread->add('', $url, $array['site_title']);
         $bread->trace();
@@ -38,7 +40,9 @@ $data = function ($array) {
         $array['site_title']   = $lang['error403_title'];
         $array['site_content'] = $lang['error403_description'];
         $array['site_layout']  = 1;
-        $bread = new \csphere\core\template\Breadcrumb('sites');
+        $bread = new \csphere\core\template\Breadcrumb('default');
+        $bread->add('default', 'default');
+        $bread->plugin('sites');
         $url   = 'sites/view/id/' . (int)$array['site_id'];
         $bread->add('', $url, $array['site_title']);
         $bread->trace();

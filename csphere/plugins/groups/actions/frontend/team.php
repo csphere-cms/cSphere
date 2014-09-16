@@ -13,6 +13,13 @@
  * @link      http://www.csphere.eu
  **/
 
+// Add breadcrumb navigation
+$bread = new \csphere\core\template\Breadcrumb('default');
+$bread->add('default', 'default');
+$bread->plugin('groups');
+$bread->add('team', 'groups/team');
+$bread->trace();
+
 // Get record option for team
 $dm_options = new \csphere\core\datamapper\Options('groups');
 $options    = $dm_options->load();

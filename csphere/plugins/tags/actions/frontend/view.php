@@ -13,6 +13,15 @@
  * @link      http://www.csphere.eu
  **/
 
+// tags ID
+$id = \csphere\core\http\Input::get('get', 'id');
+
+$bread = new \csphere\core\template\Breadcrumb('default');
+$bread->add('default', 'default');
+$bread->plugin('tags');
+$bread->add('view', 'tags/view/id/' . $id);
+$bread->trace();
+
  // Get RAD class for this action
 $rad = new \csphere\core\rad\View('tags');
 
