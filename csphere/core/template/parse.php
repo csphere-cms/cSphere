@@ -209,7 +209,7 @@ abstract class Parse
             $escape = htmlspecialchars($part['data'], ENT_QUOTES, 'UTF-8', false);
 
             // @TODO Maybe another way ??
-            if ($data['action'] != "edit") {
+            if (isset($data['action']) && $data['action'] != "edit") {
                 $escape = nl2br($escape, false);
             }
 
