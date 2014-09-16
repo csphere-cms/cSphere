@@ -20,7 +20,7 @@ if ($access->checkAccess("groupread") || $access->checkAccess("access.read")) {
 
     // Add breadcrumb navigation
     $bread = new \csphere\core\template\Breadcrumb('admin');
-    $bread->add('system');
+    $bread->add('content');
     $bread->plugin('access', 'control');
     $bread->trace();
 

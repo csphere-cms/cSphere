@@ -21,7 +21,7 @@ $name = \csphere\core\http\Input::get('get', 'name');
 
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('admin');
-$bread->add('system');
+$bread->add('content');
 $bread->plugin('access', 'manage');
 $bread->add('details', 'access/details/name/' . $name);
 $bread->trace();
