@@ -26,4 +26,21 @@
             </primary>
         </table>
     </tables>
+    <data>
+        <insert table="access_user">
+            <column name="group_id">1</column>
+            <column name="access_user_permission">access.read</column>
+            <column name="access_user_value">1</column>
+        </insert>
+        <insert table="access_user">
+            <column name="group_id">1</column>
+            <column name="access_user_permission">access.edit</column>
+            <column name="access_user_value">1</column>
+        </insert>
+        <insert table="access_user">
+            <column name="group_id">1</column>
+            <column name="access_user_permission">access.reset</column>
+            <column name="access_user_value">1</column>
+        </insert>
+	</data>
 </database>

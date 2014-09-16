@@ -59,7 +59,12 @@ class Handler
     public function getValueUser($permission, $userID)
     {
         if ($permission && $userID) {
-            // TODO
+            $table = new \csphere\core\datamapper\Finder("access", "user");
+            $table->where("access_user_permission", "=", $permission);
+            $table->where("group_id", "=", $userID);
+            $res = $table->first();
+
+            return $res['access_user_value'];
         }
 
         return false;

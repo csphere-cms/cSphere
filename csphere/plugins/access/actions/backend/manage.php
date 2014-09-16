@@ -15,7 +15,7 @@
 
 
 $access = new \csphere\plugins\access\classes\Check("access");
-if ($access->checkAccess("groupread")) {
+if ($access->checkAccess("groupread") || $access->checkAccess("access.read")) {
     $loader = \csphere\core\service\Locator::get();
 
     // Add breadcrumb navigation

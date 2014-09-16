@@ -17,13 +17,13 @@ $check = new \csphere\plugins\access\classes\Check("access");
 
 $loader = \csphere\core\service\Locator::get();
 
-$dir = \csphere\core\http\Input::get('get', 'dir');
+$name = \csphere\core\http\Input::get('get', 'name');
 
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('admin');
 $bread->add('system');
-$bread->plugin('access', 'control');
-$bread->add('details', 'access/details/dir/' . $dir);
+$bread->plugin('access', 'manage');
+$bread->add('details', 'access/details/name/' . $name);
 $bread->trace();
 
 //@ToDo: Ensure Plugin is existent.
@@ -32,7 +32,7 @@ $data['plugin']['name'] = htmlspecialchars($_GET['name']);
 $handler = new \csphere\plugins\access\classes\Handler();
 
 if (!empty($_POST)) {
-    if ($check->checkAccess("groupedit")) {
+    if ($check->checkAccess("groupedit") || $check->checkAccess("access.read")) {
         $handler->updatePlugin($data['plugin']['name']);
     } else {
         die("Sorry, you are not allowed to edit Group Permissions.");
