@@ -306,7 +306,7 @@ abstract class Hooks
                          . $dirname . '">' . "\n";
 
         // Append breadcrumb navigation
-        $data['content'] .= $data['breadcrumb'] . "\n";
+        //$data['content'] .= $data['breadcrumb'] . "\n";
 
         return $data;
     }
