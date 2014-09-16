@@ -21,5 +21,11 @@
     </contact>
     <definitions>
         <define name="access">Zugriff</define>
+        <define name="reset">Zurücksetzen</define>
+        <define name="details">Bearbeiten</define>
+        
+        <define name="permission_groupread">Darf Gruppenzugriffe sehen?</define>
+        <define name="permission_groupedit">Darf Gruppenzugriffe bearbeiten?</define>
+        <define name="permission_reset">Darf Gruppenzugriffe zurücksetzen?</define>
     </definitions>
 </language>
