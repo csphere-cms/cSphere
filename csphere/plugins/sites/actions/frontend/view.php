@@ -30,7 +30,6 @@ $data = function ($array) {
         // if site is activated, add Breadcrumb navigation
         $bread = new \csphere\core\template\Breadcrumb('default');
         $bread->add('default', 'default');
-        $bread->plugin('sites');
         $url   = 'sites/view/id/' . (int)$array['site_id'];
         $bread->add('', $url, $array['site_title']);
         $bread->trace();
