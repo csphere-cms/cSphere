@@ -16,7 +16,7 @@
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('default');
 $bread->add('default', 'default');
-$bread->plugin('groups');
+$bread->plugin('groups', 'list');
 $bread->trace();
 
  // Get RAD class for this action
