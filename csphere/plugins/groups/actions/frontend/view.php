@@ -19,7 +19,7 @@ $id = \csphere\core\http\Input::get('get', 'id');
 // Add breadcrumb navigation
 $bread = new \csphere\core\template\Breadcrumb('default');
 $bread->add('default', 'default');
-$bread->plugin('groups');
+$bread->plugin('groups', 'list');
 $bread->add('view', 'groups/view/id/' . $id);
 $bread->trace();
 
