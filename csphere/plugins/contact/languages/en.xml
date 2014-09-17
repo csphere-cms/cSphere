@@ -24,5 +24,6 @@
         <define name="subject">Subject</define>
         <define name="message">Message</define>
         <define name="reply">Answer</define>
+        <define name="replyDate">Date of answer</define>
     </definitions>
 </language>

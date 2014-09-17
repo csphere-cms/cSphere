@@ -38,17 +38,27 @@
                     {* var contact.contact_message *}
                 </td>
             </tr>
+            {* if contact.contact_reply != '' *}
+                <tr>
+                    <th>{* lang contact.reply *}</th>
+                    <td>{* var contact.contact_reply *}</td>
+                </tr>
+                <tr>
+                    <th>{* lang contact.replyDate *}</th>
+                    <td>{* date contact.contact_reply_date *}</td>
+                </tr>
+            {* endif contact.contact_reply *}
         </table><!--END table-->
 
         <br>
+        {* if contact.contact_reply == '' *}
+            <form class="form" id="reply" role="form" action="{* link contact/reply/id/$contact.contact_id *}" method="POST">
 
-        <form class="form" id="reply" role="form" action="{* link contact/reply *}" method="POST">
+                {* tpl default/com_textarea rows=4 name=contact_reply label=contact.reply value=contact.contact_reply holder=contact.reply *}
 
-            {* tpl default/com_textarea rows=4 name=contact_message label=contact.reply value=contact.contact_reply holder=contact.reply *}
+                {* tpl default/com_submit_btn caption=default.send *}
 
-            {* tpl default/com_submit_btn caption=default.send *}
-
-        </form>
-
+            </form>
+        {* endif contact.contact_reply *}
     </div><!--END panel-body-->
 </div><!--END panel-->

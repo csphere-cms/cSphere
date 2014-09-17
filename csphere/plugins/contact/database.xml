@@ -12,6 +12,8 @@
                 <column name="contact_url" datatype="varchar" max="200" default="" />
                 <column name="contact_subject" datatype="varchar" max="200" default="" />
                 <column name="contact_message" datatype="text" max="0" default="" />
+                <column name="contact_reply" datatype="text" max="0" default="" />
+                <column name="contact_reply_date" datatype="integer" max="0" default="0" />
             </columns>
             <primary>
                 <column name="contact_id" />
