@@ -49,7 +49,7 @@ class File
         $scandir = array_flip($scandir);
 
         // Remove given entries
-        unset($scandir['.'], $scandir['..'], $scandir['.DS_Store']);
+        unset($scandir['.'], $scandir['..'], $scandir['.DS_Store'], $scandir['.svn']);
 
         foreach ($remove AS $name) {
 
