@@ -10,6 +10,11 @@
 /.project
 /.settings
 
+# CodeKit and Sublime Text 2 project files
+config.codekit
+*.sublime-project
+*.sublime-workspace
+
 # Webserver specific configuration
 /.htaccess
 /lighttpd.conf
