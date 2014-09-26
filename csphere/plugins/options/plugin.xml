@@ -9,7 +9,7 @@
     <name>Options</name>
     <info>Manage options of plugins</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-wrench</icon>
+    <icon type="fontawesome">fa-cogs</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>

@@ -9,7 +9,7 @@
     <name>Policies</name>
     <info>Write and publish imprint, term of use and privacy protection</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-paragraph</icon>
+    <icon type="fontawesome">fa-copyright</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>

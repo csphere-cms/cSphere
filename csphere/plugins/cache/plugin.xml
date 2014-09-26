@@ -9,7 +9,7 @@
     <name>Cache</name>
     <info>Stores prepared data</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-cloud</icon>
+    <icon type="fontawesome">fa-archive</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>

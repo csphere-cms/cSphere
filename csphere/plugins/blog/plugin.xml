@@ -9,7 +9,7 @@
     <name>Blog</name>
     <info>Write and publish blogs</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-book</icon>
+    <icon type="fontawesome">fa-newspaper-o</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>

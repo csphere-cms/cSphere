@@ -9,7 +9,7 @@
     <name>Database</name>
     <info>Overview and tools for database content</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-archive</icon>
+    <icon type="fontawesome">fa-database</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>

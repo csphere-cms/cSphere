@@ -9,7 +9,7 @@
     <name>Contact</name>
     <info>Provides a contact form</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-envelope-o</icon>
+    <icon type="fontawesome">fa-inbox</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>
