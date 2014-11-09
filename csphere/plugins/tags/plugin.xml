@@ -7,7 +7,7 @@
     <copyright>cSphere Team</copyright>
     <license>Simplified BSD License</license>
     <name>Tags</name>
-    <info>Semantic descriptions for other plugins</info>
+    <info>jQuery plugin providing a Twitter Bootstrap user interface for managing tags - TimSchlechter@github</info>
     <engine name="csphere" version_min="2013.0" />
     <icon type="fontawesome">fa-tags</icon>
     <authors>
