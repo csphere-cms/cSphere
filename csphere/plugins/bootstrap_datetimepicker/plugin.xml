@@ -9,7 +9,7 @@
     <name>Bootstrap Datetimepicker</name>
     <info>Datetimepicker for Bootstrap from smalot@Github</info>
     <engine name="csphere" version_min="2013.0" />
-    <icon type="fontawesome">fa-css3</icon>
+    <icon type="fontawesome">fa-calendar</icon>
     <authors>
         <current>cSphere Team</current>
         <past>cSphere Team</past>
