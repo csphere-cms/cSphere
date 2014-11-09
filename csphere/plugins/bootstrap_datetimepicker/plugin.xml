@@ -28,6 +28,6 @@
     </entries>
     <startup>
         <file type="javascript" top="false" name="bootstrap-datetimepicker.min.js" />
-        <file type="stylesheet" top="true" name="bootstrap-datetimepicker.min.css" />
+        <file type="stylesheet" top="false" name="bootstrap-datetimepicker.min.css" />
     </startup>
 </plugin>
