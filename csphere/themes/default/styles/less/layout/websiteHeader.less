@@ -1,0 +1,25 @@
+#websiteHeader {
+    min-height: @websiteHeader-height;
+
+    //  ##websiteHeader NAVBAR-TOGGLE
+    .navbar-toggle {
+        border: none;
+        .rounded(2px);
+        color: @color-white;
+        font-size: 1.1em;
+        height: @websiteHeader-toggle-height;
+        line-height: @websiteHeader-toggle-height;
+        margin-bottom: 0;
+        margin-top: ((@websiteHeader-height - @websiteHeader-toggle-height) / 2);
+        padding: 0;
+        text-shadow: 0 -1px 0 @color-black;
+        .transition(all, .15s, linear);
+        width: @websiteHeader-toggle-width;
+
+        //  ##websiteHeader NAVBAR-TOGGLE HOVER
+        &:hover {
+            background-color: @websiteHeader-toggle-hover-bg;
+            color: @websiteHeader-toggle-hover-color;
+        }
+    }
+}

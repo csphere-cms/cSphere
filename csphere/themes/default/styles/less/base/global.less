@@ -1,0 +1,43 @@
+//  ------------------------------------------------------------
+//
+//    *Filename                 global.less
+//    *Description              BASIC STYLES
+//    *Author                   Stefan Gräwe <sgrwe>
+//
+//  ------------------------------------------------------------
+
+
+body {
+    background-color: @body-background;
+    color: @font-color-base;
+    font-family: @font-family-base;
+    padding: 75px 0 60px;
+}
+
+
+//  ##LINKS
+//  ------------------------------------------------------------
+a:link, a:visited {
+    outline: none !important;
+    text-decoration: none;
+    .transition(color, .15s, linear);
+}
+
+
+//  ##BUTTONS
+//  ------------------------------------------------------------
+button { outline: none !important; }
+
+
+//  ##SELECTIONS
+//  ------------------------------------------------------------
+::-moz-selection {
+    background: @project-color;
+    color: @color-white;
+    text-shadow: none;
+}
+::selection {
+    background: @project-color;
+    color: @color-white;
+    text-shadow: none;
+}

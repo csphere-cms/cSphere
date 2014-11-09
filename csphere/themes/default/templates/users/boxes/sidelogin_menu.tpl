@@ -13,4 +13,4 @@
             <li role="presentation"><a href="{* link users/logout *}" role="menuitem" tabindex="-1">{* lang logout *}</a></li>
         </ul>
     </li>
-</ul><!--END navbar-nav->
+</ul><!--END navbar-right->

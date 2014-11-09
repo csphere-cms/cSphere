@@ -1,0 +1,67 @@
+//  ------------------------------------------------------------
+//
+//    *Filename                 variables.less
+//    *Description              VARIABLES
+//    *Author                   Stefan Gräwe <sgrwe>
+//
+//  ------------------------------------------------------------
+
+
+//  ##GLOBALS
+//  ------------------------------------------------------------
+@project-color:                            @color-boston-blue;
+@body-background:                          @color-white;
+
+
+//  ##FONTS
+//  ------------------------------------------------------------
+@font-family-open-sans:                    'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-family-noto-sans:                    'Noto Sans', @font-family-open-sans;
+
+@font-family-base:                         @font-family-open-sans;
+@font-family-alternative:                  @font-family-noto-sans;
+@font-color-base:                          #333;
+
+
+//  ##PROJECT-COLORS
+//  ------------------------------------------------------------
+@color-boston-blue:                        #4091c2;
+
+
+//  ##COLORS
+//  ------------------------------------------------------------
+@color-black:                              #000;
+@color-white:                              #fff;
+
+
+//  ##MEDIA-QUERIES
+//  ------------------------------------------------------------
+@screen-xs:                                480px;
+@screen-xs-min:                            @screen-xs;
+@screen-phone:                             @screen-xs-min;
+
+@screen-sm:                                768px;
+@screen-sm-min:                            @screen-sm;
+@screen-tablet:                            @screen-sm-min;
+
+@screen-md:                                992px;
+@screen-md-min:                            @screen-md;
+@screen-desktop:                           @screen-md-min;
+
+@screen-lg:                                1200px;
+@screen-lg-min:                            @screen-lg;
+@screen-lg-desktop:                        @screen-lg-min;
+
+@screen-xs-max:                            (@screen-sm-min - 1);
+@screen-sm-max:                            (@screen-md-min - 1);
+@screen-md-max:                            (@screen-lg-min - 1);
+
+
+//  ##websiteHeader
+//  ------------------------------------------------------------
+@websiteHeader-height:                     50px;
+
+@websiteHeader-toggle-height:              36px;
+@websiteHeader-toggle-width:               @websiteHeader-toggle-height;
+@websiteHeader-toggle-hover-bg:            @project-color;
+@websiteHeader-toggle-hover-color:         @color-white;

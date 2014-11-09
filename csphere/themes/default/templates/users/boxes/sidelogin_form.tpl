@@ -2,4 +2,4 @@
     <li>
        <a href="{* link users/login *}">{* lang login *}</a>
     </li>
-</ul><!--END navbar-nav-->
+</ul><!--END navbar-right-->
