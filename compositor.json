@@ -1,0 +1,138 @@
+{
+  "name": "csphere-cms/cSphere",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "dev",
+  "style": {
+    "name": "Default",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/BannerHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "fontWeight": 400,
+    "bold": 600,
+    "lineHeight": 1.5,
+    "typeScale": [
+      72,
+      48,
+      24,
+      20,
+      16,
+      14,
+      12
+    ],
+    "monospace": "Menlo, monospace",
+    "heading": {
+      "fontFamily": null,
+      "fontStyle": null,
+      "fontWeight": 600,
+      "lineHeight": 1.25,
+      "textTransform": null,
+      "letterSpacing": null
+    },
+    "h0": {},
+    "h1": {},
+    "h2": {},
+    "h3": {},
+    "h4": {},
+    "h5": {},
+    "h6": {},
+    "alternativeText": {},
+    "space": [
+      0,
+      8,
+      16,
+      32,
+      48,
+      64,
+      96
+    ],
+    "layout": {
+      "maxWidth": 1024,
+      "centered": false
+    },
+    "colors": {
+      "text": "#111",
+      "background": "#fff",
+      "primary": "#08e",
+      "secondary": "#059",
+      "highlight": "#e08",
+      "border": "#ddd",
+      "muted": "#eee"
+    },
+    "border": {
+      "width": 1,
+      "radius": 2
+    },
+    "link": {},
+    "button": {
+      "hover": {
+        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
+      }
+    },
+    "input": {},
+    "body": {
+      "margin": 0
+    },
+    "breakpoints": {
+      "xs": "@media screen and (max-width:40em)",
+      "sm": "@media screen and (min-width:40em)",
+      "md": "@media screen and (min-width:52em)",
+      "lg": "@media screen and (min-width:64em)"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/csphere-cms/cSphere",
+          "text": "GitHub"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "cSphere",
+      "subhead": "Generic PHP Web-CMS with low footprint and high extensibility",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "cSphere: Generic PHP Web-CMS with low footprint and high extensibility",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "csphere-cms",
+          "repo": "cSphere"
+        }
+      ]
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n\n<p>The current version is available under the terms of the &apos;Simplified BSD License&apos;</p>\n<p>Website: <a href=\"http://www.csphere.eu\">http://www.csphere.eu</a></p>\n<p><a href=\"https://travis-ci.org/csphere-cms/csphere\"><img src=\"https://travis-ci.org/csphere-cms/csphere.svg?branch=dev\"></a></p>\n<p><a href=\"https://scrutinizer-ci.com/g/csphere-cms/csphere/\"><img src=\"https://scrutinizer-ci.com/g/csphere-cms/csphere/badges/quality-score.png?s=8d1d858ac3fffceb2cfb030c67d64c0380c4e44c\"></a></p>\n<h1>Table of contents</h1>\n<ol>\n<li>Features</li>\n<li>Requirements</li>\n<li>Installation</li>\n<li>Documentation</li>\n</ol>\n<h1>Features</h1>\n<p>This Web-CMS can be used for nearly every use case from a blog to a large community driven website with a forum and additional services. It is mainly optimized for fast creation and long-time maintenance of highly dynamic content. Thanks to advanced caching techniques it is able to scale up alot. It includes e.g.:</p>\n<ul>\n<li>Complete multi language support with English and German shipped already</li>\n<li>Modern and slim HTML5 interface using jQuery, Bootstrap and FontAwesome</li>\n<li>Plugins to easily add more functionality</li>\n<li>Themes to change the design and even override the design of all plugins</li>\n<li>Flawless underlying framework with high quality and zero external requirements</li>\n<li>Powerful debug and error functionality for developers</li>\n<li>Fast development of new plugins with rapid application development tools</li>\n<li>Full AJAX support for title, content and every sub-content (called box) </li>\n<li>All you need to start: users, groups, a blog with tags and a contact form</li>\n</ul>\n<p>We have over 10 years experience in providing OpenSource Web-CMS with PHP. This project started back in 2003 as a CMS for esport related pages and is now reduced to only contain the lowest possible feature set every website needs.</p>\n<p>If you (mainly) need the following functionality you might NOT want to use cSphere:</p>\n<ul>\n<li>cSphere does NOT and won&apos;t ever provide any console tools to tamper with</li>\n<li>cSphere does NOT provide anything to assist with the creation of rich web APIs</li>\n<li>cSphere does NOT support any kind of PHP annotations or alike magic behavior</li>\n<li>cSphere does NOT use old autoloading techniques, it depends on namespaces instead</li>\n</ul>\n<h1>Requirements</h1>\n<p>At least PHP 5.4.0 or HHVM 2.4.0 on any webserver (PHP builtin webserver works, too)</p>\n<p>The following PHP extensions must be available:</p>\n<ul>\n<li>date, fileinfo, filter, json, mcrypt, pcre, session, xml</li>\n</ul>\n<p>One of the following database servers (with PDO extension in PHP):</p>\n<ul>\n<li>Microsoft SQL Server 2012+ / Microsoft LocalDB 2012+ (pdo_sqlsrv)</li>\n<li>MySQL 5.5+ / MariaDB 5.5+ (pdo_mysql)</li>\n<li>PostgreSQL 9.0+ (pdo_pgsql)</li>\n<li>SQLite 3.0+ (pdo_sqlite)</li>\n</ul>\n<p>Legend: + means that the given version or any newer one will work</p>\n<h1>Installation</h1>\n<ol>\n<li><p>Download a release version or clone the GIT repository</p>\n</li>\n<li><p>Upload the whole csphere directory and index.php</p>\n</li>\n<li><p>Look into the webserver directory to grab the corresponding settings file</p>\n</li>\n<li><p>Change that file to match your environment and upload it to where index.php is located</p>\n</li>\n<li><p>Grant the csphere/config directory write access so that install can create a config file</p>\n</li>\n<li><p>Grant the csphere/storage directory and all subdirectories write access on filesystem</p>\n</li>\n<li><p>Do the following when running it on a self-managed webserver:</p>\n</li>\n<li><p>Start your webserver, e.g. the PHP builtin webserver in tools/server directory</p>\n</li>\n<li><p>Start your database server when not using SQLite, since SQLite is already builtin in PHP</p>\n</li>\n</ol>\n<p>Now open your website and follow the installation instructions</p>\n<h1>Documentation</h1>\n<p>For further information look into the docs directory or visit our website</p>\n<p>The API documentation can be generated inside the tools/documentor directory</p>\n<p>Afterwards the API documentation is available in tools/tmp/api and includes all core classes</p>\n<p>For support use our forums on the official website:</p>\n<ul>\n<li><a href=\"http://www.csphere.eu\">http://www.csphere.eu</a></li>\n</ul>\n<p>If you&apos;ve found a bug or have a feature request use the Github Issue Tracker:</p>\n<ul>\n<li><a href=\"https://github.com/csphere-dev/csphere/issues\">https://github.com/csphere-dev/csphere/issues</a></li>\n</ul>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/csphere-cms/cSphere",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/csphere-cms",
+          "text": "csphere-cms"
+        }
+      ]
+    }
+  ]
+}
